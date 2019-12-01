@@ -1,0 +1,788 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28052,        780]
+NotebookOptionsPosition[     23284,        711]
+NotebookOutlinePosition[     23766,        729]
+CellTagsIndexPosition[     23723,        726]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",
+ CellChangeTimes->{{3.7841510780916433`*^9, 
+  3.784151080406252*^9}},ExpressionUUID->"012d850a-5d73-47f4-806c-\
+1f894ff531cd"],
+
+Cell["Classical Mechanics in Curved Space", "BookChapterTitle",
+ CellChangeTimes->{{3.78411302661445*^9, 
+  3.7841130382260857`*^9}},ExpressionUUID->"8608d44a-d9cb-4770-844b-\
+035552d6c4b7"],
+
+Cell["Yue Zhengyuan", "Text",
+ CellChangeTimes->{{3.78411548791698*^9, 
+  3.7841155051647167`*^9}},ExpressionUUID->"91758d12-547e-4173-a383-\
+ebd31c4e082a"],
+
+Cell["November 30, 2019", "Text",
+ CellChangeTimes->{{3.78411548791698*^9, 
+  3.784115504306971*^9}},ExpressionUUID->"02be6339-d8c0-4823-9d2b-\
+3036220d03bf"],
+
+Cell[CellGroupData[{
+
+Cell["Motion on 2-Dimensional Surface", "Section",
+ CellChangeTimes->{{3.784113119315168*^9, 3.784113136616572*^9}, {
+   3.784114003493164*^9, 3.7841140088557043`*^9}, 3.7841155404628468`*^9, {
+   3.784116703699729*^9, 3.7841167203966217`*^9}, {3.78411707007821*^9, 
+   3.7841170872034817`*^9}, {3.784148868124219*^9, 3.7841488879288397`*^9}, {
+   3.784152050722723*^9, 
+   3.784152056381646*^9}},ExpressionUUID->"f52cb8a1-5ec4-45f8-b436-\
+a8ff61d410a6"],
+
+Cell[TextData[{
+ "Before we generalize the concept of surfaces to higher dimensional spaces, \
+let us first review the simplest case. Points on a 2-dimensional surface can \
+be described by two variables ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["u", "1"], ",", 
+    SuperscriptBox["u", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "15cbefac-0c2a-4c03-8655-a2b2fd1373ed"],
+ " (called the curvilinear coordinates). Beginners are usually taught to \
+embed the surface into the 3-dimensional Euclidean space, i.e. give the \
+relation between the Cartesian and the curvilinear coordinates:"
+}], "Text",
+ CellChangeTimes->{{3.784148904026026*^9, 3.7841489283266993`*^9}, {
+  3.784148958611969*^9, 3.784149055049481*^9}, {3.784149459031404*^9, 
+  3.7841494671382837`*^9}, {3.784150468752199*^9, 
+  3.784150515757687*^9}},ExpressionUUID->"9dd78369-2087-467c-9e63-\
+70d8b69f2dd8"],
+
+Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     RowBox[{
+      SuperscriptBox["x", "1"], "=", 
+      RowBox[{
+       SuperscriptBox["x", "1"], "(", 
+       RowBox[{
+        SuperscriptBox["u", "1"], ",", 
+        SuperscriptBox["u", "2"]}], ")"}]}]},
+    {
+     RowBox[{
+      SuperscriptBox["x", "2"], "=", 
+      RowBox[{
+       SuperscriptBox["x", "3"], 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["u", "1"], ",", 
+         SuperscriptBox["u", "2"]}], ")"}]}]}]},
+    {
+     RowBox[{
+      SuperscriptBox["x", "3"], "=", 
+      RowBox[{
+       SuperscriptBox["x", "3"], 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["u", "1"], ",", 
+         SuperscriptBox["u", "2"]}], ")"}]}]}]}
+   }], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.7841490608664503`*^9, 
+  3.7841491060618353`*^9}},ExpressionUUID->"7c6bbc4d-cd4a-4350-a9e0-\
+daa6bf1ef8ae"],
+
+Cell["They are the components of the vector", "Text",
+ CellChangeTimes->{{3.784149111193625*^9, 3.784149175973832*^9}, {
+  3.784149647205984*^9, 
+  3.784149669410843*^9}},ExpressionUUID->"bca77f6f-6c0e-460f-ad5f-\
+aff92ba8fb30"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"x", "=", 
+   RowBox[{
+    SuperscriptBox["x", "i"], 
+    SubscriptBox["e", "i"]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.784149111193625*^9, 3.784149175973832*^9}, {
+   3.784149647205984*^9, 3.784149712293256*^9}, {3.7841498090544147`*^9, 
+   3.784149809231771*^9}, 
+   3.784152271774384*^9},ExpressionUUID->"98453a88-fe9c-4394-9bd4-\
+5812f909f4f3"],
+
+Cell[TextData[{
+ "As an example, the 2-dimensional sphere of radius ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "db4cf37f-674b-4040-9010-d81e107f2da7"],
+ " is determined by the two angles ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["u", "1"], "=", "\[Theta]"}], ",", 
+    RowBox[{
+     SuperscriptBox["u", "2"], "=", "\[CurlyPhi]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b8b996f5-c464-4b1e-9930-b86ef7c6b75d"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.784149111193625*^9, 3.784149175973832*^9}, {
+  3.784149647205984*^9, 
+  3.784149668926826*^9}},ExpressionUUID->"af1cf414-2ac4-406a-ab3a-\
+07e78a016964"],
+
+Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     RowBox[{
+      SuperscriptBox["x", "1"], "="}], 
+     RowBox[{"a", " ", "sin", " ", 
+      SuperscriptBox["u", "1"], "cos", " ", 
+      SuperscriptBox["u", "2"]}]},
+    {
+     RowBox[{
+      SuperscriptBox["x", "2"], "="}], 
+     RowBox[{"a", " ", "sin", " ", 
+      SuperscriptBox["u", "1"], "sin", " ", 
+      SuperscriptBox["u", "2"]}]},
+    {
+     RowBox[{
+      SuperscriptBox["x", "3"], "="}], 
+     RowBox[{"a", " ", "cos", " ", 
+      SuperscriptBox["u", "1"]}]}
+   }], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.784149111193625*^9, 
+  3.784149247509562*^9}},ExpressionUUID->"57756acd-bc91-405f-901e-\
+b6bfab5fed3d"],
+
+Cell[TextData[{
+ "A parametric curve ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "(", "t", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f58dca33-86bb-4ae5-a58b-f34eb9c0692b"],
+ " on the surface is given by"
+}], "Text",
+ CellChangeTimes->{{3.784149291262251*^9, 
+  3.784149338373543*^9}},ExpressionUUID->"06805f7a-8608-4df8-a9a6-\
+aaa9c541e37b"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["u", "1"], "=", 
+    RowBox[{
+     SuperscriptBox["u", "1"], "(", "t", ")"}]}], ",", "  ", 
+   RowBox[{
+    SuperscriptBox["u", "2"], "=", 
+    RowBox[{
+     SuperscriptBox["u", "2"], "(", "t", ")"}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.784149291262251*^9, 
+  3.784149355414773*^9}},ExpressionUUID->"3bb2e7d7-4e09-4693-801d-\
+0d3588284bab"],
+
+Cell[TextData[{
+ "The parameter ",
+ Cell[BoxData[
+  FormBox["t", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f59807ba-78e1-47e8-b355-c24fb66c4b51"],
+ " can be understood as the time (in classical mechanics), so the curve \
+represents the path of a moving point on the surface. "
+}], "Text",
+ CellChangeTimes->{{3.7841493923254747`*^9, 3.784149447015224*^9}, {
+   3.7841494784722652`*^9, 3.784149499277546*^9}, {3.784149635203182*^9, 
+   3.7841496394276*^9}, {3.784149953831704*^9, 3.784149955339717*^9}, 
+   3.7841508397952023`*^9},ExpressionUUID->"d3892209-6c49-4278-99be-\
+b9508bbfabaa"],
+
+Cell["\<\
+But in order to see the world in the eyes of creatures living in the surface, \
+we want to use a set of basis vectors that are always lying in (i.e. tangent \
+to) the surface. It will vary from point to point from our perspective, but \
+is constant for those 2D creatures. \
+\>", "Text",
+ CellChangeTimes->{{3.784149920228649*^9, 3.784149928958125*^9}, {
+   3.784149969421937*^9, 3.78415018302962*^9}, 
+   3.78415054393779*^9},ExpressionUUID->"5f91cf09-4f75-432d-aa3f-\
+281900f14642"],
+
+Cell[TextData[{
+ "For a specific point P: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SubsuperscriptBox["u", "p", "1"], ",", 
+     SubsuperscriptBox["u", "p", "2"]}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0bd41d26-1df2-4ad3-baf1-ac2d14016a67"],
+ " on the surface, we consider two special parametric curves through it:"
+}], "Text",
+ CellChangeTimes->{{3.784149920228649*^9, 3.784149928958125*^9}, {
+  3.784149969421937*^9, 3.784150255982728*^9}, {3.784150548305908*^9, 
+  3.784150548432501*^9}, {3.784152645569219*^9, 
+  3.7841526506189613`*^9}},ExpressionUUID->"51e4ad50-9952-405a-bce8-\
+a2eae221c681"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["c", "1"], ":", " ", 
+     RowBox[{
+      SuperscriptBox["u", "1"], "(", "t", ")"}]}], "=", 
+    RowBox[{
+     SubsuperscriptBox["u", "p", "1"], "+", "t"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["u", "2"], "(", "t", ")"}], "=", 
+    SubsuperscriptBox["u", "p", "2"]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.784149920228649*^9, 3.784149928958125*^9}, {
+  3.784149969421937*^9, 3.784150315164254*^9}, {3.7841525958412123`*^9, 
+  3.784152609372693*^9}},ExpressionUUID->"a3445d1d-d381-4e27-856b-\
+6d53489a2ad2"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["c", "2"], ":", " ", 
+     RowBox[{
+      SuperscriptBox["u", "1"], "(", "t", ")"}]}], "=", 
+    SubsuperscriptBox["u", "p", "1"]}], ",", " ", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["u", "2"], "(", "t", ")"}], "=", 
+    RowBox[{
+     SubsuperscriptBox["u", "p", "2"], "+", "t"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.784149920228649*^9, 3.784149928958125*^9}, {
+  3.784149969421937*^9, 3.7841503289992447`*^9}, {3.7841526122993307`*^9, 
+  3.784152632838565*^9}},ExpressionUUID->"5c6d1586-1bd8-4435-a990-\
+d9a6dffe82f5"],
+
+Cell[TextData[{
+ "One of the ",
+ Cell[BoxData[
+  FormBox["u", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b3f845b1-9b09-4959-a16f-e8d60559cd72"],
+ " coordinates is constant. The tangent vectors to these two curves are just \
+what we need:"
+}], "Text",
+ CellChangeTimes->{{3.784150352824911*^9, 3.7841503900609827`*^9}, {
+  3.784150423896414*^9, 
+  3.7841504477778254`*^9}},ExpressionUUID->"094a34a8-be68-43bd-81b2-\
+002547091546"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubsuperscriptBox["\[Epsilon]", "1", "i"], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", 
+       SuperscriptBox["u", "1"]}], 
+      RowBox[{"\[DifferentialD]", "t"}]], 
+     FractionBox[
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["x", "i"]}], 
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["u", "1"]}]]}], "=", 
+    FractionBox[
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["x", "i"]}], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["u", "1"]}]]}]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.784150352824911*^9, 3.7841503900609827`*^9}, {
+  3.784150423896414*^9, 3.784150449217411*^9}, {3.784150561126329*^9, 
+  3.784150570541005*^9}, {3.78415061490414*^9, 3.7841506454825897`*^9}, {
+  3.7841525634120398`*^9, 
+  3.784152580427704*^9}},ExpressionUUID->"99f81788-d63c-4f47-a0fe-\
+4225ea9bcf62"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubsuperscriptBox["\[Epsilon]", "2", "i"], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", 
+       SuperscriptBox["u", "2"]}], 
+      RowBox[{"\[DifferentialD]", "t"}]], 
+     FractionBox[
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["x", "i"]}], 
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["u", "2"]}]]}], "=", 
+    FractionBox[
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["x", "i"]}], 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["u", "2"]}]]}]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.784150352824911*^9, 3.7841503900609827`*^9}, {
+  3.784150423896414*^9, 3.784150449217411*^9}, {3.784150561126329*^9, 
+  3.784150570541005*^9}, {3.78415061490414*^9, 3.784150660334745*^9}, {
+  3.784152587011656*^9, 
+  3.7841525906831617`*^9}},ExpressionUUID->"9d8d86e0-8084-494f-a3eb-\
+4ebb37cda653"],
+
+Cell["Sometimes, people get lazy and simply write", "Text",
+ CellChangeTimes->{{3.784150671738224*^9, 
+  3.784150684660437*^9}},ExpressionUUID->"dc0dfcce-014f-46cb-a151-\
+538e157b74d6"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Epsilon]", "i"], "=", 
+   RowBox[{
+    FractionBox["\[PartialD]", 
+     RowBox[{"\[PartialD]", 
+      SuperscriptBox["u", "i"]}]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"i", "=", "1"}], ",", "2"}], ")"}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.784150671738224*^9, 3.7841507034827127`*^9}, {
+  3.7841511955570297`*^9, 
+  3.784151198342861*^9}},ExpressionUUID->"a7ad4a16-be1d-4fe4-b69f-\
+43d753384c77"],
+
+Cell["\<\
+as the basis \[OpenCurlyDoubleQuote]vector\[CloseCurlyDoubleQuote]. Now we \
+analyze the motion in this new (curvilinear) coordinate system, which varies \
+from place to place. \
+\>", "Text",
+ CellChangeTimes->{{3.784150708140407*^9, 3.784150764379046*^9}, {
+   3.7841508312607718`*^9, 3.784150831261324*^9}, {3.784151236118231*^9, 
+   3.784151239151473*^9}, 
+   3.784151950938533*^9},ExpressionUUID->"cf639cdb-6d5a-4894-8c77-\
+a8cdb44e2c3e"],
+
+Cell["\<\
+From (1) and (2), the Cartesian components of the tangent vector (velocity) \
+to the curve is given by\
+\>", "Text",
+ CellChangeTimes->{{3.784150708140407*^9, 3.784150764379046*^9}, {
+  3.7841508465915117`*^9, 3.784150888658469*^9}, {3.784151069664072*^9, 
+  3.7841510718113832`*^9}},ExpressionUUID->"0e6cbfb9-8082-4e38-85b6-\
+8a75254dee46"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["v", "i"], "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[DifferentialD]", 
+      SuperscriptBox["x", "i"]}], 
+     RowBox[{"\[DifferentialD]", "t"}]], "=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", 
+       SuperscriptBox["u", "j"]}], 
+      RowBox[{"\[DifferentialD]", "t"}]], 
+     FractionBox[
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["x", "i"]}], 
+      RowBox[{"\[PartialD]", 
+       SuperscriptBox["u", "j"]}]]}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.7841493923254747`*^9, 3.784149447015224*^9}, {
+   3.7841494784722652`*^9, 3.78414961755793*^9}, {3.7841497231233397`*^9, 
+   3.784149746839778*^9}, {3.7841498134866323`*^9, 3.784149813671452*^9}, 
+   3.784149909077887*^9},ExpressionUUID->"1625f900-63de-48f2-b167-\
+b572a809b726"],
+
+Cell["\<\
+What about the component in the curvilinear system? We need to introduce a \
+third vector orthogonal to the first two, that is, the normal vector to the \
+surface. For 2-dimensional surfaces, this can be done via the cross product:\
+\>", "Text",
+ CellChangeTimes->{{3.784151214533886*^9, 3.784151244857833*^9}, {
+  3.784151308323916*^9, 
+  3.7841513681943007`*^9}},ExpressionUUID->"2b83f5aa-c54d-4b59-af59-\
+773e64b02b25"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[Epsilon]", "3"], "=", 
+   RowBox[{"n", "=", 
+    RowBox[{
+     SubscriptBox["\[Epsilon]", "1"], "\[Cross]", 
+     SubscriptBox["\[Epsilon]", "2"]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.784151214533886*^9, 3.784151244857833*^9}, {
+  3.784151308323916*^9, 
+  3.784151396091508*^9}},ExpressionUUID->"4855fa24-d873-4b57-b229-\
+167aa9848e4b"],
+
+Cell["\<\
+With these three basis vectors, we rewrite the position vector as\
+\>", "Text",
+ CellChangeTimes->{{3.784151588736306*^9, 3.784151600371529*^9}, {
+  3.784152216361703*^9, 
+  3.784152236720166*^9}},ExpressionUUID->"fdd49684-02a3-43a2-9cfd-\
+0e555180e24f"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"x", "(", "t", ")"}], " ", "=", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "i"], "(", "t", ")"}], " ", 
+    RowBox[{
+     SubscriptBox["\[Epsilon]", "i"], "(", "t", ")"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.784151588736306*^9, 3.784151600371529*^9}, {
+  3.784152216361703*^9, 
+  3.7841522497848186`*^9}},ExpressionUUID->"ff3e4b0e-b09d-43ea-836b-\
+206e3c04a835"],
+
+Cell["The time derivative of the position vector is ", "Text",
+ CellChangeTimes->{{3.784151588736306*^9, 
+  3.784151600371529*^9}},ExpressionUUID->"7599902a-6f07-4f04-bc33-\
+65fcaf3a248f"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{"\[DifferentialD]", "x"}], 
+    RowBox[{"\[DifferentialD]", "t"}]], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["\[DifferentialD]", 
+      RowBox[{"\[DifferentialD]", "t"}]], 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["x", "i"], 
+       SubscriptBox["\[Epsilon]", "i"]}], ")"}]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", 
+         SuperscriptBox["x", "\[ImaginaryI]"]}], 
+        RowBox[{"\[DifferentialD]", "t"}]], 
+       SubscriptBox["\[Epsilon]", "i"]}], "+", 
+      RowBox[{
+       SuperscriptBox["x", "i"], 
+       FractionBox[
+        RowBox[{"\[DifferentialD]", 
+         SubscriptBox["\[Epsilon]", "i"]}], 
+        RowBox[{"\[DifferentialD]", "t"}]]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[DifferentialD]", 
+         SuperscriptBox["u", "j"]}], 
+        RowBox[{"\[DifferentialD]", "t"}]], 
+       FractionBox[
+        RowBox[{"\[PartialD]", 
+         SuperscriptBox["x", "i"]}], 
+        RowBox[{"\[PartialD]", 
+         SuperscriptBox["u", "j"]}]], 
+       SubscriptBox["\[Epsilon]", "i"]}], "+", 
+      RowBox[{
+       SuperscriptBox["x", "i"], 
+       FractionBox[
+        RowBox[{"\[DifferentialD]", 
+         SuperscriptBox["u", "j"]}], 
+        RowBox[{"\[DifferentialD]", "t"}]], 
+       FractionBox[
+        RowBox[{"\[PartialD]", 
+         SubscriptBox["\[Epsilon]", "i"]}], 
+        RowBox[{"\[PartialD]", 
+         SuperscriptBox["u", "j"]}]]}]}]}]}]}], TraditionalForm]], "Equation",\
+
+ CellChangeTimes->{{3.784151588736306*^9, 3.784151692031188*^9}, {
+  3.784151734136674*^9, 3.784151857979663*^9}, {3.784152200536703*^9, 
+  3.7841522125037727`*^9}, {3.7841523494712954`*^9, 
+  3.784152386902026*^9}},ExpressionUUID->"5a7db91a-01f1-4dfd-a625-\
+59256c244c4b"],
+
+Cell[TextData[{
+ "Here comes the key observation: the derivative ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[PartialD]", 
+     SubscriptBox["\[Epsilon]", "i"]}], "/", 
+    RowBox[{"\[PartialD]", 
+     SubscriptBox["u", "j"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "71a5b33d-54c4-4dc3-97ba-f770d47246c2"],
+ " can be expressed as a linear combination of the basis vectors ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Epsilon]", "k"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"k", "=", "1"}], ",", "2", ",", "3"}], ")"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "61e597cb-1d65-48cf-b60e-4bdceb239fc4"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.784152389051642*^9, 3.784152506775627*^9}, {
+  3.784152752330781*^9, 
+  3.784152787342527*^9}},ExpressionUUID->"3177cc23-014e-461e-9dc2-\
+3a6ecd0f899c"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{"\[PartialD]", 
+     SubscriptBox["\[Epsilon]", "i"]}], 
+    RowBox[{"\[PartialD]", 
+     SuperscriptBox["u", "j"]}]], "=", 
+   RowBox[{
+    SubsuperscriptBox["\[CapitalGamma]", 
+     RowBox[{"i", " ", "j"}], "k"], 
+    SubscriptBox["\[Epsilon]", "k"]}]}], TraditionalForm]], "EquationNumbered",\
+
+ CellChangeTimes->{{3.784152389051642*^9, 3.784152556898985*^9}, {
+  3.784152658139307*^9, 
+  3.7841526605888157`*^9}},ExpressionUUID->"43086839-b708-4758-bdd4-\
+7610e72fdfb5"],
+
+Cell[TextData[{
+ "The coefficients ",
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox["\[CapitalGamma]", 
+    RowBox[{"i", " ", "j"}], "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d74c7275-2a92-40b3-8429-3363db6d95dc"],
+ " are collectively called the ",
+ StyleBox["Christoffel symbol",
+  FontWeight->"Bold"],
+ ", and will be determined later. Then"
+}], "Text",
+ CellChangeTimes->{{3.784152706793432*^9, 3.784152707631447*^9}, {
+  3.784152794838921*^9, 
+  3.784152864558737*^9}},ExpressionUUID->"352252c7-473f-4321-acf0-\
+9b844fc5f673"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{"\[DifferentialD]", "x"}], 
+    RowBox[{"\[DifferentialD]", "t"}]], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[DifferentialD]", 
+        SuperscriptBox["u", "j"]}], 
+       RowBox[{"\[DifferentialD]", "t"}]], 
+      FractionBox[
+       RowBox[{"\[PartialD]", 
+        SuperscriptBox["x", "k"]}], 
+       RowBox[{"\[PartialD]", 
+        SuperscriptBox["u", "j"]}]], 
+      SubscriptBox["\[Epsilon]", "k"]}], "+", 
+     RowBox[{
+      SuperscriptBox["x", "i"], 
+      FractionBox[
+       RowBox[{"\[DifferentialD]", 
+        SuperscriptBox["u", "j"]}], 
+       RowBox[{"\[DifferentialD]", "t"}]], 
+      SubsuperscriptBox["\[CapitalGamma]", 
+       RowBox[{"i", " ", "j"}], "k"], 
+      SubscriptBox["\[Epsilon]", "k"]}]}], "=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[DifferentialD]", 
+       SuperscriptBox["u", "j"]}], 
+      RowBox[{"\[DifferentialD]", "t"}]], 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"\[PartialD]", 
+         SuperscriptBox["x", "k"]}], 
+        RowBox[{"\[PartialD]", 
+         SuperscriptBox["u", "j"]}]], "+", 
+       RowBox[{
+        SuperscriptBox["x", "i"], 
+        SubsuperscriptBox["\[CapitalGamma]", 
+         RowBox[{"i", " ", "j"}], "k"]}]}], ")"}], 
+     SubscriptBox["\[Epsilon]", "k"]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.784152706793432*^9, 3.7841527168566732`*^9}, {
+  3.7841528708665667`*^9, 3.784152895100844*^9}, {3.784152928026249*^9, 
+  3.784152947466742*^9}},ExpressionUUID->"e57fe451-21b4-4ff2-81b5-\
+1f4b1d96353c"],
+
+Cell[TextData[{
+ "We note that in this equation, ",
+ Cell[BoxData[
+  FormBox["j", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bc31af7a-7c41-4e93-b0ea-28fedb5cb98b"],
+ " sums over 1 and 2, but ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"i", ",", "k"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9b141cd6-22e1-478c-a9b3-b788f6915422"],
+ " sum over 1 to 3."
+}], "Text",
+ CellChangeTimes->{{3.784153956920343*^9, 
+  3.784153991020937*^9}},ExpressionUUID->"19bb09d2-0b95-45dc-9a33-\
+03a36bb94dd8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Connection and Covariant Derivative", "Section",
+ CellChangeTimes->{{3.784113401029408*^9, 
+  3.784113408742794*^9}},ExpressionUUID->"6573fc36-8a15-4f20-ba79-\
+aab27923cd62"],
+
+Cell[CellGroupData[{
+
+Cell["Parallel Transport", "Subsection",
+ CellChangeTimes->{
+  3.7841134107429867`*^9, {3.784115607776826*^9, 
+   3.7841156401023827`*^9}},ExpressionUUID->"ef41c4bb-66aa-4f6b-9541-\
+b4f6e285d273"],
+
+Cell["a", "Text",
+ CellChangeTimes->{
+  3.784115653404236*^9},ExpressionUUID->"b8590567-263c-43d7-a052-\
+d8ccbad3b6df"]
+}, Open  ]],
+
+Cell["Covariant Derivative", "Subsection",
+ CellChangeTimes->{{3.784115646479102*^9, 
+  3.7841156507871723`*^9}},ExpressionUUID->"5c7ab07d-4529-436d-8640-\
+457dd6d73fda"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Constant Velocity and Geodesic", "Section",
+ CellChangeTimes->{{3.78411362889671*^9, 
+  3.784113635168378*^9}},ExpressionUUID->"b7888fac-33de-49d5-b589-\
+2242358fb346"],
+
+Cell["a", "Text",
+ CellChangeTimes->{
+  3.7841139271657867`*^9},ExpressionUUID->"799e8e59-275f-4d53-bde5-\
+77ed66f15a97"]
+}, Open  ]],
+
+Cell["The Principle of Least Distance", "Section",
+ CellChangeTimes->{{3.784113973098426*^9, 3.784113996315301*^9}, {
+  3.784115475906556*^9, 
+  3.784115477279277*^9}},ExpressionUUID->"9eb53598-7bb8-4f12-a02a-\
+ad5f1d475f46"]
+}, Open  ]]
+},
+WindowSize->{1440, 808},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 197, 4, 274, "BookChapterNumber",ExpressionUUID->"012d850a-5d73-47f4-806c-1f894ff531cd"],
+Cell[780, 28, 190, 3, 235, "BookChapterTitle",ExpressionUUID->"8608d44a-d9cb-4770-844b-035552d6c4b7"],
+Cell[973, 33, 156, 3, 38, "Text",ExpressionUUID->"91758d12-547e-4173-a383-ebd31c4e082a"],
+Cell[1132, 38, 158, 3, 38, "Text",ExpressionUUID->"02be6339-d8c0-4823-9d2b-3036220d03bf"],
+Cell[CellGroupData[{
+Cell[1315, 45, 454, 7, 103, "Section",ExpressionUUID->"f52cb8a1-5ec4-45f8-b436-a8ff61d410a6"],
+Cell[1772, 54, 923, 19, 101, "Text",ExpressionUUID->"9dd78369-2087-467c-9e63-70d8b69f2dd8"],
+Cell[2698, 75, 891, 31, 133, "EquationNumbered",ExpressionUUID->"7c6bbc4d-cd4a-4350-a9e0-daa6bf1ef8ae"],
+Cell[3592, 108, 228, 4, 38, "Text",ExpressionUUID->"bca77f6f-6c0e-460f-ad5f-aff92ba8fb30"],
+Cell[3823, 114, 401, 10, 54, "Equation",ExpressionUUID->"98453a88-fe9c-4394-9bd4-5812f909f4f3"],
+Cell[4227, 126, 727, 21, 43, "Text",ExpressionUUID->"af1cf414-2ac4-406a-ab3a-07e78a016964"],
+Cell[4957, 149, 678, 22, 125, "Equation",ExpressionUUID->"57756acd-bc91-405f-901e-b6bfab5fed3d"],
+Cell[5638, 173, 378, 11, 38, "Text",ExpressionUUID->"06805f7a-8608-4df8-a9a6-aaa9c541e37b"],
+Cell[6019, 186, 438, 14, 55, "EquationNumbered",ExpressionUUID->"3bb2e7d7-4e09-4693-801d-0d3588284bab"],
+Cell[6460, 202, 616, 13, 38, "Text",ExpressionUUID->"d3892209-6c49-4278-99be-b9508bbfabaa"],
+Cell[7079, 217, 494, 9, 67, "Text",ExpressionUUID->"5f91cf09-4f75-432d-aa3f-281900f14642"],
+Cell[7576, 228, 662, 16, 48, "Text",ExpressionUUID->"51e4ad50-9952-405a-bce8-a2eae221c681"],
+Cell[8241, 246, 622, 17, 60, "Equation",ExpressionUUID->"a3445d1d-d381-4e27-856b-6d53489a2ad2"],
+Cell[8866, 265, 627, 18, 60, "Equation",ExpressionUUID->"5c6d1586-1bd8-4435-a990-d9a6dffe82f5"],
+Cell[9496, 285, 457, 12, 38, "Text",ExpressionUUID->"094a34a8-be68-43bd-81b2-002547091546"],
+Cell[9956, 299, 913, 25, 86, "EquationNumbered",ExpressionUUID->"99f81788-d63c-4f47-a0fe-4225ea9bcf62"],
+Cell[10872, 326, 911, 25, 86, "EquationNumbered",ExpressionUUID->"9d8d86e0-8084-494f-a3eb-4ebb37cda653"],
+Cell[11786, 353, 185, 3, 38, "Text",ExpressionUUID->"dc0dfcce-014f-46cb-a151-538e157b74d6"],
+Cell[11974, 358, 497, 15, 79, "EquationNumbered",ExpressionUUID->"a7ad4a16-be1d-4fe4-b69f-43d753384c77"],
+Cell[12474, 375, 452, 9, 38, "Text",ExpressionUUID->"cf639cdb-6d5a-4894-8c77-a8cdb44e2c3e"],
+Cell[12929, 386, 351, 7, 38, "Text",ExpressionUUID->"0e6cbfb9-8082-4e38-85b6-8a75254dee46"],
+Cell[13283, 395, 859, 24, 84, "EquationNumbered",ExpressionUUID->"1625f900-63de-48f2-b167-b572a809b726"],
+Cell[14145, 421, 432, 8, 67, "Text",ExpressionUUID->"2b83f5aa-c54d-4b59-af59-773e64b02b25"],
+Cell[14580, 431, 412, 11, 49, "Equation",ExpressionUUID->"4855fa24-d873-4b57-b229-167aa9848e4b"],
+Cell[14995, 444, 264, 6, 38, "Text",ExpressionUUID->"fdd49684-02a3-43a2-9cfd-0e555180e24f"],
+Cell[15262, 452, 440, 13, 54, "Equation",ExpressionUUID->"ff3e4b0e-b09d-43ea-836b-206e3c04a835"],
+Cell[15705, 467, 188, 3, 38, "Text",ExpressionUUID->"7599902a-6f07-4f04-bc33-65fcaf3a248f"],
+Cell[15896, 472, 1865, 56, 84, "Equation",ExpressionUUID->"5a7db91a-01f1-4dfd-a625-59256c244c4b"],
+Cell[17764, 530, 901, 27, 44, "Text",ExpressionUUID->"3177cc23-014e-461e-9dc2-3a6ecd0f899c"],
+Cell[18668, 559, 537, 16, 79, "EquationNumbered",ExpressionUUID->"43086839-b708-4758-bdd4-7610e72fdfb5"],
+Cell[19208, 577, 566, 16, 49, "Text",ExpressionUUID->"352252c7-473f-4321-acf0-9b844fc5f673"],
+Cell[19777, 595, 1623, 48, 89, "Equation",ExpressionUUID->"e57fe451-21b4-4ff2-81b5-1f4b1d96353c"],
+Cell[21403, 645, 545, 16, 38, "Text",ExpressionUUID->"19bb09d2-0b95-45dc-9a33-03a36bb94dd8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21985, 666, 180, 3, 103, "Section",ExpressionUUID->"6573fc36-8a15-4f20-ba79-aab27923cd62"],
+Cell[CellGroupData[{
+Cell[22190, 673, 196, 4, 59, "Subsection",ExpressionUUID->"ef41c4bb-66aa-4f6b-9541-b4f6e285d273"],
+Cell[22389, 679, 119, 3, 38, "Text",ExpressionUUID->"b8590567-263c-43d7-a052-d8ccbad3b6df"]
+}, Open  ]],
+Cell[22523, 685, 170, 3, 59, "Subsection",ExpressionUUID->"5c7ab07d-4529-436d-8640-457dd6d73fda"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22730, 693, 174, 3, 103, "Section",ExpressionUUID->"b7888fac-33de-49d5-b589-2242358fb346"],
+Cell[22907, 698, 121, 3, 38, "Text",ExpressionUUID->"799e8e59-275f-4d53-bde5-77ed66f15a97"]
+}, Open  ]],
+Cell[23043, 704, 225, 4, 103, "Section",ExpressionUUID->"9eb53598-7bb8-4f12-a02a-ad5f1d475f46"]
+}, Open  ]]
+}
+]
+*)
+
