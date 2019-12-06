@@ -1,0 +1,118 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4007,        110]
+NotebookOptionsPosition[      2772,         83]
+NotebookOutlinePosition[      3223,        100]
+CellTagsIndexPosition[      3180,         97]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"5eba364a-07e7-40f3-8f1d-9db54b7d9421"],
+
+Cell["Differential Form and Manifold Integration", "BookChapterTitle",
+ CellChangeTimes->{{3.7842724074754543`*^9, 
+  3.784272423061192*^9}},ExpressionUUID->"20498251-f17f-45ae-883d-\
+a404ce06a71f"],
+
+Cell["Yue Zhengyuan - December 2, 2019", "Text",
+ CellChangeTimes->{{3.78427353390244*^9, 
+  3.7842735399413567`*^9}},ExpressionUUID->"3046991f-3451-4fb1-b99b-\
+6b0a98461a0d"],
+
+Cell[CellGroupData[{
+
+Cell["Exterior (Wedge) Product", "Section",
+ CellChangeTimes->{{3.784273525374548*^9, 3.7842735280633698`*^9}, {
+  3.7843255701829977`*^9, 
+  3.784325579697945*^9}},ExpressionUUID->"be01f3b4-7a6a-4710-9bcd-\
+17ee7c028391"],
+
+Cell[TextData[{
+ "In three-dimensional vector space, we already encountered an anti-symmetric \
+operation on the vectors, called the ",
+ StyleBox["cross product",
+  FontWeight->"Bold"],
+ ". A natural thinking is whether we can generalize it to vector spaces of \
+other dimensions. The answer is yes, and the resulting operation is called \
+the ",
+ StyleBox["exterior product",
+  FontWeight->"Bold"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.7842735450573273`*^9, 3.784273545391841*^9}, {
+  3.7842736115557337`*^9, 3.7842736437361393`*^9}, {3.784326029559675*^9, 
+  3.7843260446162558`*^9}, {3.7843261312450647`*^9, 
+  3.784326216494718*^9}},ExpressionUUID->"63fe84d8-666e-45dd-88ff-\
+1566ded7ac07"]
+}, Open  ]],
+
+Cell["Differential Form", "Section",
+ CellChangeTimes->{{3.784272428350787*^9, 
+  3.78427243132215*^9}},ExpressionUUID->"0677460c-31e1-4a9c-853e-\
+85ecb1e15cfb"],
+
+Cell["General Stokes\[CloseCurlyQuote] Theorem", "Section",
+ CellChangeTimes->{{3.784272442917959*^9, 
+  3.784272451986478*^9}},ExpressionUUID->"9ac1a5f5-cc23-494d-928d-\
+78b28fc36fa8"],
+
+Cell["Application: Maxwell Equations", "Section",
+ CellChangeTimes->{{3.784272456133366*^9, 
+  3.784272464070458*^9}},ExpressionUUID->"b1723cc5-c81f-4222-bb58-\
+436e6b5dd595"],
+
+Cell["Application: Homology and Cohomology", "Section",
+ CellChangeTimes->{{3.784445398677737*^9, 
+  3.784445408786796*^9}},ExpressionUUID->"b5f71191-9aea-4b24-a013-\
+ae94e3a5854e"]
+}, Open  ]]
+},
+WindowSize->{1440, 808},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"5eba364a-07e7-40f3-8f1d-9db54b7d9421"],
+Cell[707, 25, 198, 3, 220, "BookChapterTitle",ExpressionUUID->"20498251-f17f-45ae-883d-a404ce06a71f"],
+Cell[908, 30, 175, 3, 36, "Text",ExpressionUUID->"3046991f-3451-4fb1-b99b-6b0a98461a0d"],
+Cell[CellGroupData[{
+Cell[1108, 37, 222, 4, 96, "Section",ExpressionUUID->"be01f3b4-7a6a-4710-9bcd-17ee7c028391"],
+Cell[1333, 43, 697, 16, 64, "Text",ExpressionUUID->"63fe84d8-666e-45dd-88ff-1566ded7ac07"]
+}, Open  ]],
+Cell[2045, 62, 161, 3, 96, "Section",ExpressionUUID->"0677460c-31e1-4a9c-853e-85ecb1e15cfb"],
+Cell[2209, 67, 185, 3, 58, "Section",ExpressionUUID->"9ac1a5f5-cc23-494d-928d-78b28fc36fa8"],
+Cell[2397, 72, 175, 3, 58, "Section",ExpressionUUID->"b1723cc5-c81f-4222-bb58-436e6b5dd595"],
+Cell[2575, 77, 181, 3, 58, "Section",ExpressionUUID->"b5f71191-9aea-4b24-a013-ae94e3a5854e"]
+}, Open  ]]
+}
+]
+*)
+
