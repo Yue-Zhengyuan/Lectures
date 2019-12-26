@@ -1,0 +1,277 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9118,        269]
+NotebookOptionsPosition[      7661,        240]
+NotebookOutlinePosition[      8112,        257]
+CellTagsIndexPosition[      8069,        254]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"928047c8-679d-4285-b42b-dc238be1e98c"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[DoubleStruckCapitalZ]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d68b9d54-e457-4a50-af2e-c507df453a3b"],
+ " Lattice Gauge Theory"
+}], "BookChapterTitle",
+ CellChangeTimes->{{3.786341471375848*^9, 3.786341482469371*^9}, {
+  3.786342819778603*^9, 
+  3.7863428246061773`*^9}},ExpressionUUID->"686164e5-0973-4c4d-b7fe-\
+c10189677e14"],
+
+Cell[CellGroupData[{
+
+Cell["System Hamiltonian", "Section",
+ CellChangeTimes->{{3.7863415240277348`*^9, 
+  3.78634153033044*^9}},ExpressionUUID->"b9a80475-eea9-45bf-a1bd-\
+75cee1fa749b"],
+
+Cell[TextData[{
+ "Consider a two-dimensional (for convenience) square lattice, with spins \
+located on the ",
+ StyleBox["links",
+  FontWeight->"Bold"],
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "(instead of the ",
+ StyleBox["vertices",
+  FontWeight->"Bold"],
+ "). In the following, the vertices will be labelled by ",
+ Cell[BoxData[
+  FormBox["v", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5ef32f6c-6bd3-4e98-97d2-ad0236caf185"],
+ ", and the links by ",
+ Cell[BoxData[
+  FormBox["l", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "223eaab7-cd01-4982-a922-e310eb2a1a32"],
+ ". If a link ",
+ Cell[BoxData[
+  FormBox["l", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "db917bdb-b51c-4507-ba3c-e729db4922fb"],
+ " connects to a vertex ",
+ Cell[BoxData[
+  FormBox["v", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cd6f50b0-ba2f-4aee-b2b7-b684d9e2ef0a"],
+ ", we write ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"l", "\[Element]", "v"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f685712b-2aa1-4c37-8651-1598a98aef9e"],
+ ". We also use the letter ",
+ Cell[BoxData[
+  FormBox["p", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c7613f92-0a5c-481a-89a1-4a38e2334322"],
+ " to refer to ",
+ StyleBox["plaquettes",
+  FontWeight->"Bold"],
+ " (i.e. squares bounded by four links). "
+}], "Text",
+ CellChangeTimes->{{3.7863460136657467`*^9, 3.786346047664448*^9}, {
+  3.786346111962471*^9, 3.786346127735468*^9}, {3.7863481657683973`*^9, 
+  3.7863481771443157`*^9}, {3.7863482836976843`*^9, 3.786348523800582*^9}, {
+  3.78634857443532*^9, 3.7863486303348007`*^9}, {3.786348679577331*^9, 
+  3.7863486861644163`*^9}, {3.7863487402579107`*^9, 
+  3.786348767337431*^9}},ExpressionUUID->"4149c072-577e-45d0-abb4-\
+88106a324cf8"],
+
+Cell[TextData[{
+ "The spin operators on the link ",
+ Cell[BoxData[
+  FormBox["l", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2d600824-3a19-43cf-8721-befc88a85d3f"],
+ " are denoted by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Sigma]", "1"], "(", "l", ")"}], ",", " ", 
+    RowBox[{
+     SubscriptBox["\[Sigma]", "3"], "(", "l", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d3a32a95-8a36-42b1-b181-f6b45c4b460a"],
+ ". In the ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{RowBox[{"\[PlusMinus]", "z"}]},
+    "Ket"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "85dd40fc-86d2-4edc-b08f-88d48a8cf72c"],
+ " basis of the spin, they are represented by the Pauli matrices:"
+}], "Text",
+ CellChangeTimes->{{3.7863460136657467`*^9, 3.786346047664448*^9}, {
+  3.786346111962471*^9, 3.786346127735468*^9}, {3.7863481657683973`*^9, 
+  3.7863481771443157`*^9}, {3.7863482836976843`*^9, 
+  3.786348523800582*^9}},ExpressionUUID->"9eacdb06-555b-4da7-8557-\
+2c08d2b3cb3e"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Sigma]", "1"], "=", 
+    RowBox[{"(", GridBox[{
+       {"0", "1"},
+       {"1", "0"}
+      }], ")"}]}], ",", "             ", 
+   RowBox[{
+    SubscriptBox["\[Sigma]", "3"], "=", 
+    RowBox[{"(", GridBox[{
+       {"1", "0"},
+       {"0", 
+        RowBox[{"-", "1"}]}
+      }], ")"}]}]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.7863460136657467`*^9, 3.786346047664448*^9}, {
+  3.786346111962471*^9, 3.786346127735468*^9}, {3.7863481657683973`*^9, 
+  3.7863481771443157`*^9}, {3.7863482836976843`*^9, 3.786348550999693*^9}, {
+  3.786349077758129*^9, 
+  3.786349078415021*^9}},ExpressionUUID->"de7163e8-17d8-4bb4-8c25-\
+5e72136f8311"],
+
+Cell[TextData[{
+ "Because of the anti-commutativity ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[Sigma]", "1"], "(", "l", ")"}], ",", " ", 
+      RowBox[{
+       SubscriptBox["\[Sigma]", "3"], "(", "l", ")"}]}], "}"}], "=", "0"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0de67cb9-c349-4e32-bbd7-50aee10208e9"],
+ " of the two operators, they are said to form a ",
+ StyleBox["conjugate",
+  FontWeight->"Bold"],
+ " pair. "
+}], "Text",
+ CellChangeTimes->{{3.786348788015526*^9, 3.7863488258462267`*^9}, {
+  3.7863488856969213`*^9, 
+  3.786348911656618*^9}},ExpressionUUID->"009deb45-0fb6-4dcb-b48b-\
+1694238bad2d"],
+
+Cell["We define the following Hamiltonian of the system:", "Text",
+ CellChangeTimes->{{3.7863460136657467`*^9, 3.786346047664448*^9}, {
+  3.786346111962471*^9, 3.786346127735468*^9}, {3.7863481657683973`*^9, 
+  3.7863481771443157`*^9}},ExpressionUUID->"dd4dbd2b-64fe-469f-b303-\
+ddd73ea4c31c"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"H", "=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{
+      UnderscriptBox["\[Sum]", "v"], " ", 
+      SubscriptBox["A", "v"]}]}], "-", 
+    RowBox[{
+     UnderscriptBox["\[Sum]", "p"], " ", 
+     SubscriptBox["B", "p"]}]}]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.7863460136657467`*^9, 3.786346047664448*^9}, {
+  3.786346111962471*^9, 3.786346127735468*^9}, {3.7863481657683973`*^9, 
+  3.786348178934423*^9}, {3.7863486971278963`*^9, 3.786348716649386*^9}, {
+  3.786349122261661*^9, 
+  3.786349124010367*^9}},ExpressionUUID->"640be627-ac41-43e2-8a60-\
+bb488d8b3862"],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["vertex operator",
+  FontWeight->"Bold"],
+ " and the ",
+ StyleBox["plaquette operator",
+  FontWeight->"Bold"],
+ " are given by"
+}], "Text",
+ CellChangeTimes->{{3.786348995164877*^9, 
+  3.786349025675519*^9}},ExpressionUUID->"56f486fd-2198-48c2-84dc-\
+e241a966a950"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["A", "v"], "=", 
+    RowBox[{
+     UnderscriptBox["\[Product]", 
+      RowBox[{"l", "\[Element]", "v"}]], " ", 
+     RowBox[{
+      SubscriptBox["\[Sigma]", "1"], "(", "l", ")"}]}]}], ",", 
+   "             ", 
+   RowBox[{
+    SubscriptBox["B", "p"], "=", 
+    RowBox[{
+     UnderscriptBox["\[Product]", 
+      RowBox[{"l", "\[Element]", "p"}]], " ", 
+     RowBox[{
+      SubscriptBox["\[Sigma]", "3"], "(", "l", ")"}]}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.786348995164877*^9, 3.786349069563342*^9}, {
+  3.786349108412937*^9, 
+  3.786349114589211*^9}},ExpressionUUID->"c94c358d-4507-4c4f-beac-\
+de7221d5ad9e"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 808},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"928047c8-679d-4285-b42b-dc238be1e98c"],
+Cell[707, 25, 427, 11, 221, "BookChapterTitle",ExpressionUUID->"686164e5-0973-4c4d-b7fe-c10189677e14"],
+Cell[CellGroupData[{
+Cell[1159, 40, 164, 3, 96, "Section",ExpressionUUID->"b9a80475-eea9-45bf-a1bd-75cee1fa749b"],
+Cell[1326, 45, 1855, 52, 91, "Text",ExpressionUUID->"4149c072-577e-45d0-abb4-88106a324cf8"],
+Cell[3184, 99, 1075, 29, 42, "Text",ExpressionUUID->"9eacdb06-555b-4da7-8557-2c08d2b3cb3e"],
+Cell[4262, 130, 721, 21, 72, "EquationNumbered",ExpressionUUID->"de7163e8-17d8-4bb4-8c25-5e72136f8311"],
+Cell[4986, 153, 711, 22, 36, "Text",ExpressionUUID->"009deb45-0fb6-4dcb-b48b-1694238bad2d"],
+Cell[5700, 177, 293, 4, 36, "Text",ExpressionUUID->"dd4dbd2b-64fe-469f-b303-ddd73ea4c31c"],
+Cell[5996, 183, 625, 16, 77, "EquationNumbered",ExpressionUUID->"640be627-ac41-43e2-8a60-bb488d8b3862"],
+Cell[6624, 201, 300, 11, 36, "Text",ExpressionUUID->"56f486fd-2198-48c2-84dc-e241a966a950"],
+Cell[6927, 214, 706, 22, 77, "EquationNumbered",ExpressionUUID->"c94c358d-4507-4c4f-beac-de7221d5ad9e"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

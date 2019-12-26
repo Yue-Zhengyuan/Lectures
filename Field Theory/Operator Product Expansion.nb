@@ -1,0 +1,62 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1622,         52]
+NotebookOptionsPosition[       980,         33]
+NotebookOutlinePosition[      1431,         50]
+CellTagsIndexPosition[      1388,         47]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"a4bfc887-7c38-4067-ba71-31bc02189f7b"],
+
+Cell["Operator Product Expansion", "BookChapterTitle",
+ CellChangeTimes->{{3.785152348282815*^9, 
+  3.785152354174488*^9}},ExpressionUUID->"645493ee-18eb-4833-80af-\
+86877bd8cf9a"],
+
+Cell["", "Section",ExpressionUUID->"5c0f7584-11d7-4f03-9e0c-9f597dfca546"]
+}, Open  ]]
+},
+WindowSize->{1440, 808},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"a4bfc887-7c38-4067-ba71-31bc02189f7b"],
+Cell[707, 25, 180, 3, 220, "BookChapterTitle",ExpressionUUID->"645493ee-18eb-4833-80af-86877bd8cf9a"],
+Cell[890, 30, 74, 0, 96, "Section",ExpressionUUID->"5c0f7584-11d7-4f03-9e0c-9f597dfca546"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
