@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2552,         78]
-NotebookOptionsPosition[      1691,         55]
-NotebookOutlinePosition[      2142,         72]
-CellTagsIndexPosition[      2099,         69]
+NotebookDataLength[      2584,         79]
+NotebookOptionsPosition[      1722,         56]
+NotebookOutlinePosition[      2173,         73]
+CellTagsIndexPosition[      2130,         70]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -39,11 +39,12 @@ Cell[TextData[{
  "The most important application of the ",
  StyleBox["discrete Fourier transform",
   FontWeight->"Bold"],
- " is in the solid state physics, when going back and forth between the real \
-lattice and the momentum (reciprocal) lattice. "
+ " is in the quantum mechanics when going back and forth between the real \
+space and the momentum space. "
 }], "Text",
- CellChangeTimes->{{3.787181557319037*^9, 
-  3.787181622747303*^9}},ExpressionUUID->"d95fac49-4f5a-479c-9b32-\
+ CellChangeTimes->{{3.787181557319037*^9, 3.787181622747303*^9}, {
+  3.787204292425671*^9, 
+  3.7872043272591047`*^9}},ExpressionUUID->"d95fac49-4f5a-479c-9b32-\
 f03f93666f42"]
 }, Open  ]],
 
@@ -76,13 +77,11 @@ Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"4eecd5ef-f542-47
 Cell[707, 25, 195, 3, 220, "BookChapterTitle",ExpressionUUID->"83666aea-518b-4722-b3b0-aeb39ac00de9"],
 Cell[CellGroupData[{
 Cell[927, 32, 170, 3, 96, "Section",ExpressionUUID->"c32a27ec-4ae9-41c7-865b-b43dd2282854"],
-Cell[1100, 37, 387, 9, 64, "Text",ExpressionUUID->"d95fac49-4f5a-479c-9b32-f03f93666f42"]
+Cell[1100, 37, 418, 10, 64, "Text",ExpressionUUID->"d95fac49-4f5a-479c-9b32-f03f93666f42"]
 }, Open  ]],
-Cell[1502, 49, 173, 3, 96, "Section",ExpressionUUID->"b4562d4e-18b8-4ec6-9e68-1bcec8e098e7"]
+Cell[1533, 50, 173, 3, 96, "Section",ExpressionUUID->"b4562d4e-18b8-4ec6-9e68-1bcec8e098e7"]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
