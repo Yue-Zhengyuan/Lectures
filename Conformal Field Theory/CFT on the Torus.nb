@@ -1,0 +1,72 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2124,         64]
+NotebookOptionsPosition[      1387,         44]
+NotebookOutlinePosition[      1838,         61]
+CellTagsIndexPosition[      1795,         58]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"98764332-b8ff-4d86-8663-3d656ab3dd61"],
+
+Cell["The Operator Formalism", "BookChapterTitle",
+ CellChangeTimes->{{3.784671151268355*^9, 3.784671158561955*^9}, {
+  3.787890384016653*^9, 
+  3.787890388106969*^9}},ExpressionUUID->"057e765a-444c-4212-8474-\
+ce6c3788f612"],
+
+Cell["Radial Quantization", "Section",
+ CellChangeTimes->{{3.7846711719219723`*^9, 3.784671179218652*^9}, {
+  3.7878939039122562`*^9, 
+  3.787893907311692*^9}},ExpressionUUID->"4654f79b-bdb3-42f8-85a2-\
+70cee6032b39"],
+
+Cell["Virasoro Algebra", "Section",
+ CellChangeTimes->{{3.7846712041476507`*^9, 3.7846712112211733`*^9}, {
+  3.787893926137987*^9, 
+  3.7878939305669613`*^9}},ExpressionUUID->"716febaf-1f9f-4a02-a53a-\
+0d087e6b537d"]
+}, Open  ]]
+},
+WindowSize->{1440, 808},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"98764332-b8ff-4d86-8663-3d656ab3dd61"],
+Cell[707, 25, 225, 4, 220, "BookChapterTitle",ExpressionUUID->"057e765a-444c-4212-8474-ce6c3788f612"],
+Cell[935, 31, 217, 4, 96, "Section",ExpressionUUID->"4654f79b-bdb3-42f8-85a2-70cee6032b39"],
+Cell[1155, 37, 216, 4, 58, "Section",ExpressionUUID->"716febaf-1f9f-4a02-a53a-0d087e6b537d"]
+}, Open  ]]
+}
+]
+*)
+
