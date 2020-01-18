@@ -1,0 +1,64 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1771,         56]
+NotebookOptionsPosition[      1128,         37]
+NotebookOutlinePosition[      1579,         54]
+CellTagsIndexPosition[      1536,         51]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"d6d5a36d-fb72-448d-9b49-403cda265468"],
+
+Cell["Tight-Binding Model", "BookChapterTitle",
+ CellChangeTimes->{{3.7880599229531393`*^9, 
+  3.7880599322923613`*^9}},ExpressionUUID->"1ba0370a-1fcd-46c1-9a43-\
+3c149dfc04ab"],
+
+Cell["Example: Simple Cubic Lattice", "Section",
+ CellChangeTimes->{{3.7880599408986263`*^9, 3.788059956425626*^9}, {
+  3.788060375914742*^9, 
+  3.788060378716913*^9}},ExpressionUUID->"c0d1d507-339f-4427-94dd-\
+526422ef69bc"]
+}, Open  ]]
+},
+WindowSize->{1440, 808},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"d6d5a36d-fb72-448d-9b49-403cda265468"],
+Cell[707, 25, 177, 3, 220, "BookChapterTitle",ExpressionUUID->"1ba0370a-1fcd-46c1-9a43-3c149dfc04ab"],
+Cell[887, 30, 225, 4, 96, "Section",ExpressionUUID->"c0d1d507-339f-4427-94dd-526422ef69bc"]
+}, Open  ]]
+}
+]
+*)
+
