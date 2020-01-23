@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    108631,       3015]
-NotebookOptionsPosition[     97581,       2873]
-NotebookOutlinePosition[     98307,       2898]
-CellTagsIndexPosition[     98264,       2895]
+NotebookDataLength[    134754,       3799]
+NotebookOptionsPosition[    121690,       3635]
+NotebookOutlinePosition[    122416,       3660]
+CellTagsIndexPosition[    122373,       3657]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2868,6 +2868,768 @@ Cell["Wick\[CloseCurlyQuote]s Theorem", "Subsection",
  CellChangeTimes->{{3.787125367894902*^9, 
   3.787125370256359*^9}},ExpressionUUID->"8cb31fe7-24b3-4fcd-8a02-\
 a12d40f59928"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Application to Grassmann Tensor Network", "Section",
+ CellChangeTimes->{{3.788566613242832*^9, 
+  3.788566622350594*^9}},ExpressionUUID->"f5dafb62-00de-416e-bf2c-\
+bf8c19d87aac"],
+
+Cell["A Grassmann tensor has the form", "Text",
+ CellChangeTimes->{{3.788566766031617*^9, 
+  3.788566777318974*^9}},ExpressionUUID->"6d2ac988-b234-4be4-8f83-\
+7e4fbdda39e6"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubsuperscriptBox[
+    RowBox[{"T", "(", "\[Eta]", ")"}], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["i", "1"], 
+      SubscriptBox["i", "2"]}], "..."}], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["n", "1"], 
+      SubscriptBox["n", "2"]}], "..."}]], "=", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["T", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["i", "1"], 
+        SubscriptBox["i", "2"]}], "..."}], 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["n", "1"], 
+        SubscriptBox["n", "2"]}], "..."}]], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SubscriptBox["\[Eta]", "1"], ")"}], 
+      SubscriptBox["n", "1"]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SubscriptBox["\[Eta]", "2"], ")"}], 
+      SubscriptBox["n", "2"]]}], "..."}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.7885667828271112`*^9, 3.788566801923437*^9}, {
+   3.788578658205813*^9, 3.7885787418571167`*^9}, 
+   3.7885792944213142`*^9},ExpressionUUID->"001a1a90-55d9-4bdd-ac93-\
+8de695730663"],
+
+Cell[TextData[{
+ "where ",
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox["T", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["i", "1"], 
+      SubscriptBox["i", "2"]}], "..."}], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["n", "1"], 
+      SubscriptBox["n", "2"]}], "..."}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "29a95bdd-01f0-4bab-80e7-772078827aa4"],
+ " is a usual complex tensor, and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Eta]", "1"], ",", 
+    SubscriptBox["\[Eta]", "2"], ",", "..."}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2f7df518-df69-4f4f-b785-491af6d3de78"],
+ " are Grassmann numbers."
+}], "Text",
+ CellChangeTimes->{{3.7885787437905912`*^9, 
+  3.788578781071567*^9}},ExpressionUUID->"84c3b5af-c819-4394-b84e-\
+406211b900bc"],
+
+Cell["Define the \[OpenCurlyDoubleQuote]Grassmann metric\
+\[CloseCurlyDoubleQuote]", "Text",
+ CellChangeTimes->{{3.788566662992248*^9, 
+  3.788566674070971*^9}},ExpressionUUID->"acf8c0c7-d9d5-4f74-93c8-\
+c41c14213ce0"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["g", 
+     RowBox[{
+      OverscriptBox["\[Eta]", "_"], "\[Eta]"}]], "\[Congruent]", 
+    RowBox[{
+     RowBox[{"\[DifferentialD]", 
+      OverscriptBox["\[Eta]", "_"]}], 
+     RowBox[{"\[DifferentialD]", "\[Eta]"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", 
+        OverscriptBox["\[Eta]", "_"]}], "\[Eta]"}]]}]}], "=", 
+   RowBox[{
+    RowBox[{"\[DifferentialD]", 
+     OverscriptBox["\[Eta]", "_"]}], 
+    RowBox[{"\[DifferentialD]", "\[Eta]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{
+       OverscriptBox["\[Eta]", "_"], "\[Eta]"}]}], ")"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.788566662992248*^9, 
+  3.7885667267243757`*^9}},ExpressionUUID->"325967ac-781c-488e-97b1-\
+4a3d27d78696"],
+
+Cell[TextData[{
+ "The contraction of two Grassmann tensors ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"F", "(", "\[Theta]", ")"}], ",", 
+    RowBox[{"G", "(", "\[Eta]", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a686054a-ab1a-4f59-9d45-1e856d55b196"],
+ " between the ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bcefdd87-4c9e-4a1b-9485-0d671b571f29"],
+ "th index of ",
+ Cell[BoxData[
+  FormBox["F", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7ae4cc8b-6550-4203-a99f-db68218463f6"],
+ " and the ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "826d8ac0-c8ea-4043-8d5e-3f104162d8a7"],
+ "th index of ",
+ Cell[BoxData[
+  FormBox["G", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3d4411e6-7cd9-43c2-9d8b-93092a4201cc"],
+ " is ",
+ StyleBox["defined",
+  FontSlant->"Italic"],
+ " as"
+}], "Text",
+ CellChangeTimes->{{3.788566727699346*^9, 3.78856675325632*^9}, {
+  3.788578791646195*^9, 
+  3.788578864117969*^9}},ExpressionUUID->"a2bc851e-ed87-43b3-b180-\
+518f7fd77c7d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubsuperscriptBox[
+    RowBox[{"[", 
+     RowBox[{"F", "\[CenterDot]", "G"}], "]"}], 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["i", "1"], "..."}], 
+      SubscriptBox["j", "1"]}], "..."}], 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["m", "1"], "..."}], 
+      SubscriptBox["n", "1"]}], "..."}]], "=", 
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     UnderscriptBox[
+      UnderscriptBox[
+       RowBox[{
+        RowBox[{"\[DifferentialD]", 
+         SubscriptBox["\[Theta]", "a"]}], 
+        RowBox[{"\[DifferentialD]", 
+         SubscriptBox["\[Eta]", "b"]}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           SubscriptBox["\[Theta]", "a"], 
+           SubscriptBox["\[Eta]", "b"]}]}], ")"}]}], "\[UnderBrace]"], 
+      SubscriptBox["g", 
+       RowBox[{
+        SubscriptBox["\[Theta]", "a"], 
+        SubscriptBox["\[Eta]", "b"]}]]], 
+     RowBox[{
+      UnderscriptBox["\[Sum]", 
+       RowBox[{
+        SubscriptBox["i", "a"], ",", 
+        SubscriptBox["j", "b"]}]], 
+      RowBox[{
+       SubscriptBox["\[Delta]", 
+        RowBox[{
+         SubscriptBox["i", "a"], 
+         SubscriptBox["j", "b"]}]], 
+       SubsuperscriptBox[
+        RowBox[{"F", "(", "\[Theta]", ")"}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            SubscriptBox["i", "1"], "..."}], 
+           SubscriptBox["i", "a"]}], "..."}], 
+         SubscriptBox["i", "r"]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            SubscriptBox["m", "1"], "..."}], 
+           SubscriptBox["m", "a"]}], "..."}], 
+         SubscriptBox["m", "r"]}]], 
+       SubsuperscriptBox[
+        RowBox[{"G", "(", "\[Eta]", ")"}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            SubscriptBox["j", "1"], "..."}], 
+           SubscriptBox["j", "b"]}], "..."}], 
+         SubscriptBox["j", "s"]}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            SubscriptBox["n", "1"], "..."}], 
+           SubscriptBox["n", "b"]}], "..."}], 
+         SubscriptBox["n", "s"]}]]}]}]}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.7885788707395973`*^9, 3.788579015566259*^9}, {
+  3.788579619813163*^9, 3.788579634485559*^9}, {3.788580647748583*^9, 
+  3.788580653718965*^9}, {3.788581076937129*^9, 3.788581077326274*^9}, {
+  3.788581241277884*^9, 3.788581250336904*^9}, {3.788581460817824*^9, 
+  3.788581461305669*^9}},ExpressionUUID->"ffcd4560-515f-40fb-9eb0-\
+15d48ba4ad04"],
+
+Cell[TextData[{
+ "As a special case, we consider ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "=", "r"}], ",", " ", 
+    RowBox[{"b", "=", "1"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c3955745-3181-4738-b72f-4d19dd40777e"],
+ ", i.e. the contraction between the ",
+ StyleBox["last",
+  FontSlant->"Italic"],
+ " index of ",
+ Cell[BoxData[
+  FormBox["F", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "df60cb89-264e-4fc3-bb78-e3011363a2eb"],
+ " and the ",
+ StyleBox["first",
+  FontSlant->"Italic"],
+ " index of ",
+ Cell[BoxData[
+  FormBox["G", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d653b88b-6d0c-4387-a49b-29687d5b8eb6"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.788579020713437*^9, 
+  3.7885790712605667`*^9}},ExpressionUUID->"b955c945-a266-4d71-ace5-\
+df44cc21654a"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   SubsuperscriptBox[
+    RowBox[{"[", 
+     RowBox[{"F", "\[CenterDot]", "G"}], "]"}], 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SubscriptBox["i", "1"], "..."}], 
+       SubscriptBox["i", 
+        RowBox[{"r", "-", "1"}]], 
+       SubscriptBox["j", "2"]}], "..."}], 
+     SubscriptBox["j", "s"]}], 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SubscriptBox["m", "1"], "..."}], 
+       SubscriptBox["m", 
+        RowBox[{"r", "-", "1"}]], 
+       SubscriptBox["n", "2"]}], "..."}], 
+     SubscriptBox["n", "s"]}]], "=", 
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     RowBox[{"\[DifferentialD]", 
+      SubscriptBox["\[Theta]", "r"]}], 
+     RowBox[{"\[DifferentialD]", 
+      SubscriptBox["\[Eta]", "1"]}], " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{
+        SubscriptBox["\[Theta]", "r"], 
+        SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+     RowBox[{
+      UnderscriptBox["\[Sum]", 
+       RowBox[{
+        SubscriptBox["i", "r"], ",", 
+        SubscriptBox["j", "1"]}]], 
+      RowBox[{
+       SubscriptBox["\[Delta]", 
+        RowBox[{
+         SubscriptBox["i", "r"], 
+         SubscriptBox["j", "1"]}]], 
+       SubsuperscriptBox[
+        RowBox[{"F", "(", "\[Theta]", ")"}], 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["i", "1"], "..."}], 
+         SubscriptBox["i", "r"]}], 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["m", "1"], "..."}], 
+         SubscriptBox["m", "r"]}]], 
+       SubsuperscriptBox[
+        RowBox[{"G", "(", "\[Eta]", ")"}], 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["j", "1"], "..."}], 
+         SubscriptBox["j", "s"]}], 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["n", "1"], "..."}], 
+         SubscriptBox["n", "s"]}]]}]}]}]}]}], 
+  TraditionalForm], "\[LineSeparator]", 
+ FormBox[
+  RowBox[{"=", 
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     RowBox[{"\[DifferentialD]", 
+      SubscriptBox["\[Theta]", "r"]}], 
+     RowBox[{"\[DifferentialD]", 
+      SubscriptBox["\[Eta]", "1"]}], " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{
+        SubscriptBox["\[Theta]", "r"], 
+        SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+     RowBox[{
+      UnderscriptBox["\[Sum]", 
+       SuperscriptBox["i", "\[Prime]"]], " ", 
+      RowBox[{
+       SubsuperscriptBox[
+        RowBox[{"F", "(", "\[Theta]", ")"}], 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["i", "1"], "..."}], 
+         SubscriptBox["i", 
+          RowBox[{"r", "-", "1"}]], 
+         SuperscriptBox["i", "\[Prime]"]}], 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["m", "1"], "..."}], 
+         SubscriptBox["m", "r"]}]], 
+       SubsuperscriptBox[
+        RowBox[{"G", "(", "\[Eta]", ")"}], 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["i", "\[Prime]"], 
+           SubscriptBox["j", "2"]}], "..."}], 
+         SubscriptBox["j", "s"]}], 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["n", "1"], "..."}], 
+         SubscriptBox["n", "s"]}]]}]}]}]}]}], 
+  TraditionalForm], "\[LineSeparator]", 
+ FormBox[
+  RowBox[{"=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Integral]", 
+        RowBox[{
+         RowBox[{"\[DifferentialD]", 
+          SubscriptBox["\[Theta]", "r"]}], 
+         RowBox[{"\[DifferentialD]", 
+          SubscriptBox["\[Eta]", "1"]}], " ", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            SubscriptBox["\[Theta]", "r"], 
+            SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+         RowBox[{
+          UnderscriptBox["\[Sum]", 
+           SuperscriptBox["i", "\[Prime]"]], " ", 
+          RowBox[{
+           SubsuperscriptBox["F", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["i", "1"], "..."}], 
+             SubscriptBox["i", 
+              RowBox[{"r", "-", "1"}]], 
+             SuperscriptBox["i", "\[Prime]"]}], 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["m", "1"], "..."}], 
+             SubscriptBox["m", "r"]}]], " ", 
+           SubsuperscriptBox["G", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               SuperscriptBox["i", "\[Prime]"], " ", 
+               SubscriptBox["j", "2"]}], "..."}], 
+             SubscriptBox["j", "s"]}], 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["n", "1"], "..."}], 
+             SubscriptBox["n", "s"]}]], " ", 
+           SubsuperscriptBox["\[Theta]", "1", 
+            SubscriptBox["m", "1"]]}]}]}]}], "..."}], 
+      SubsuperscriptBox["\[Theta]", "r", 
+       SubscriptBox["m", "r"]], 
+      SubsuperscriptBox["\[Eta]", "1", 
+       SubscriptBox["n", "1"]]}], "..."}], 
+    SubsuperscriptBox["\[Eta]", "s", 
+     SubscriptBox["n", "s"]]}]}], TraditionalForm]}], "Equation",
+ CellChangeTimes->{{3.788566727699346*^9, 3.78856675325632*^9}, {
+  3.788578791646195*^9, 3.788578813432026*^9}, {3.788579082341654*^9, 
+  3.788579407923888*^9}, {3.7885805409964323`*^9, 3.788580562462308*^9}, {
+  3.788580658002944*^9, 3.788580685712552*^9}, {3.788581061207506*^9, 
+  3.7885810722662153`*^9}, {3.788581464452317*^9, 
+  3.78858146584511*^9}},ExpressionUUID->"dabec5d4-f2e2-446e-b376-\
+feb2d2d7bdcc"],
+
+Cell["Focus on the Grassmann integral:", "Text",
+ CellChangeTimes->{{3.7885794571249332`*^9, 
+  3.788579464774558*^9}},ExpressionUUID->"6ca2fac1-0413-4509-a117-\
+87dcb00c915d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"I", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Integral]", 
+        RowBox[{
+         RowBox[{"\[DifferentialD]", 
+          SubscriptBox["\[Theta]", "r"]}], 
+         RowBox[{"\[DifferentialD]", 
+          SubscriptBox["\[Eta]", "1"]}], " ", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            SubscriptBox["\[Theta]", "r"], 
+            SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+         SubsuperscriptBox["\[Theta]", "1", 
+          SubscriptBox["m", "1"]]}]}], "..."}], 
+      SubsuperscriptBox["\[Theta]", "r", 
+       SubscriptBox["m", "r"]], 
+      SubsuperscriptBox["\[Eta]", "1", 
+       SubscriptBox["n", "1"]]}], "..."}], 
+    SubsuperscriptBox["\[Eta]", "s", 
+     SubscriptBox["n", "s"]]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.7885794571249332`*^9, 3.788579465767684*^9}, {
+  3.7885795501518183`*^9, 3.788579554973295*^9}, {3.788579704995755*^9, 
+  3.78857970522327*^9}},ExpressionUUID->"7b0d2696-527a-407f-b942-\
+bfe9610a82fa"],
+
+Cell["Consider respectively the four cases:", "Text",
+ CellChangeTimes->{{3.788579584469193*^9, 3.7885796030099916`*^9}, {
+  3.788579652801488*^9, 
+  3.788579685812598*^9}},ExpressionUUID->"a4f3bd08-287a-4efc-9c8b-\
+70cd079962da"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["m", "r"], ",", 
+     SubscriptBox["n", "1"]}], ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"0", ",", "0"}], ")"}], " ", ":", "\[LineSeparator]", " ", 
+     "I"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"\[Integral]", 
+          RowBox[{
+           RowBox[{"\[DifferentialD]", 
+            SubscriptBox["\[Theta]", "r"]}], 
+           RowBox[{"\[DifferentialD]", 
+            SubscriptBox["\[Eta]", "1"]}], " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{
+              SubscriptBox["\[Theta]", "r"], 
+              SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+           SubsuperscriptBox["\[Theta]", "1", 
+            SubscriptBox["m", "1"]]}]}], "..."}], 
+        SubsuperscriptBox["\[Theta]", 
+         RowBox[{"r", "-", "1"}], 
+         SubscriptBox["m", 
+          RowBox[{"r", "-", "1"}]]], 
+        SubsuperscriptBox["\[Eta]", "2", 
+         SubscriptBox["n", "2"]]}], "..."}], 
+      SubsuperscriptBox["\[Eta]", "s", 
+       SubscriptBox["n", "s"]]}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         SubsuperscriptBox["\[Theta]", "1", 
+          SubscriptBox["m", "1"]], "..."}], 
+        SubsuperscriptBox["\[Theta]", 
+         RowBox[{"r", "-", "1"}], 
+         SubscriptBox["m", 
+          RowBox[{"r", "-", "1"}]]], 
+        SubsuperscriptBox["\[Eta]", "2", 
+         SubscriptBox["n", "2"]]}], "..."}], 
+      SubsuperscriptBox["\[Eta]", "s", 
+       SubscriptBox["n", "s"]]}]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.788579584469193*^9, 3.7885796038340187`*^9}, {
+  3.7885796809587793`*^9, 3.7885797667111073`*^9}, {3.788579812038781*^9, 
+  3.7885798163531017`*^9}},ExpressionUUID->"c0eb0f22-ad1e-4948-91e9-\
+afa7f97f4097"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["m", "r"], ",", 
+     SubscriptBox["n", "1"]}], ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"0", ",", "1"}], ")"}], " ", ":", "\[LineSeparator]", " ", 
+     "I"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"\[Integral]", 
+          RowBox[{
+           RowBox[{"\[DifferentialD]", 
+            SubscriptBox["\[Theta]", "r"]}], 
+           RowBox[{"\[DifferentialD]", 
+            SubscriptBox["\[Eta]", "1"]}], " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{
+              SubscriptBox["\[Theta]", "r"], 
+              SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+           SubsuperscriptBox["\[Theta]", "1", 
+            SubscriptBox["m", "1"]]}]}], "..."}], 
+        SubsuperscriptBox["\[Theta]", 
+         RowBox[{"r", "-", "1"}], 
+         SubscriptBox["m", 
+          RowBox[{"r", "-", "1"}]]], 
+        SubscriptBox["\[Eta]", "1"], 
+        SubsuperscriptBox["\[Eta]", "2", 
+         SubscriptBox["n", "2"]]}], "..."}], 
+      SubsuperscriptBox["\[Eta]", "s", 
+       SubscriptBox["n", "s"]]}], "=", "0"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.788579584469193*^9, 3.7885796038340187`*^9}, {
+  3.7885796809587793`*^9, 3.7885798198846483`*^9}, {3.7885798620001373`*^9, 
+  3.788579870900482*^9}},ExpressionUUID->"e6944766-8d87-4901-89af-\
+10f0c0f0db0a"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["m", "r"], ",", 
+     SubscriptBox["n", "1"]}], ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", ",", "0"}], ")"}], " ", ":", "\[LineSeparator]", " ", 
+     "I"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"\[Integral]", 
+          RowBox[{
+           RowBox[{"\[DifferentialD]", 
+            SubscriptBox["\[Theta]", "r"]}], 
+           RowBox[{"\[DifferentialD]", 
+            SubscriptBox["\[Eta]", "1"]}], " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{
+              SubscriptBox["\[Theta]", "r"], 
+              SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+           SubsuperscriptBox["\[Theta]", "1", 
+            SubscriptBox["m", "1"]]}]}], "..."}], 
+        SubsuperscriptBox["\[Theta]", 
+         RowBox[{"r", "-", "1"}], 
+         SubscriptBox["m", 
+          RowBox[{"r", "-", "1"}]]], 
+        SubscriptBox["\[Theta]", "r"], 
+        SubsuperscriptBox["\[Eta]", "2", 
+         SubscriptBox["n", "2"]]}], "..."}], 
+      SubsuperscriptBox["\[Eta]", "s", 
+       SubscriptBox["n", "s"]]}], "=", "0"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.788579584469193*^9, 3.7885796038340187`*^9}, {
+  3.7885796809587793`*^9, 3.7885798198846483`*^9}, {3.7885798620001373`*^9, 
+  3.788579896588017*^9}},ExpressionUUID->"eaa3a4cd-e609-4634-849f-\
+5a2d7005aa9a"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["m", "r"], ",", 
+     SubscriptBox["n", "1"]}], ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", ",", "1"}], ")"}], " ", ":", "\[LineSeparator]", " ", 
+     "I"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Integral]", 
+         RowBox[{
+          RowBox[{"\[DifferentialD]", 
+           SubscriptBox["\[Theta]", "r"]}], 
+          RowBox[{"\[DifferentialD]", 
+           SubscriptBox["\[Eta]", "1"]}], " ", 
+          RowBox[{"(", 
+           RowBox[{"1", "-", 
+            RowBox[{
+             SubscriptBox["\[Theta]", "r"], 
+             SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+          SubsuperscriptBox["\[Theta]", "1", 
+           SubscriptBox["m", "1"]]}]}], "..."}], 
+       SubsuperscriptBox["\[Theta]", 
+        RowBox[{"r", "-", "1"}], 
+        SubscriptBox["m", 
+         RowBox[{"r", "-", "1"}]]], 
+       SubscriptBox["\[Theta]", "r"], 
+       SubscriptBox["\[Eta]", "1"], 
+       SubsuperscriptBox["\[Eta]", "2", 
+        SubscriptBox["n", "2"]]}], "..."}], 
+     SubsuperscriptBox["\[Eta]", "s", 
+      SubscriptBox["n", "s"]]}]}]}], TraditionalForm], "\[LineSeparator]", 
+ FormBox[
+  RowBox[{"=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Integral]", 
+         RowBox[{
+          RowBox[{"\[DifferentialD]", 
+           SubscriptBox["\[Theta]", "r"]}], 
+          RowBox[{"\[DifferentialD]", 
+           SubscriptBox["\[Eta]", "1"]}], " ", 
+          RowBox[{"(", 
+           RowBox[{"1", "-", 
+            RowBox[{
+             SubscriptBox["\[Theta]", "r"], 
+             SubscriptBox["\[Eta]", "1"]}]}], ")"}], 
+          SubscriptBox["\[Theta]", "r"], 
+          SubscriptBox["\[Eta]", "1"], 
+          SubsuperscriptBox["\[Theta]", "1", 
+           SubscriptBox["m", "1"]]}]}], "..."}], 
+       SubsuperscriptBox["\[Theta]", 
+        RowBox[{"r", "-", "1"}], 
+        SubscriptBox["m", 
+         RowBox[{"r", "-", "1"}]]], 
+       SubsuperscriptBox["\[Eta]", "2", 
+        SubscriptBox["n", "2"]]}], "..."}], 
+     SubsuperscriptBox["\[Eta]", "s", 
+      SubscriptBox["n", "s"]]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         SubsuperscriptBox["\[Theta]", "1", 
+          SubscriptBox["m", "1"]]}], "..."}], 
+       SubsuperscriptBox["\[Theta]", 
+        RowBox[{"r", "-", "1"}], 
+        SubscriptBox["m", 
+         RowBox[{"r", "-", "1"}]]], 
+       SubsuperscriptBox["\[Eta]", "2", 
+        SubscriptBox["n", "2"]]}], "..."}], 
+     SubsuperscriptBox["\[Eta]", "s", 
+      SubscriptBox["n", "s"]]}]}]}], TraditionalForm]}], "Equation",
+ CellChangeTimes->{{3.788579584469193*^9, 3.7885796038340187`*^9}, {
+  3.7885796809587793`*^9, 3.7885798198846483`*^9}, {3.7885798620001373`*^9, 
+  3.788579932869664*^9}, {3.788580126012628*^9, 
+  3.7885801305122137`*^9}},ExpressionUUID->"5506fe61-6ba2-49f9-b5a7-\
+2b732a5f9ffd"],
+
+Cell["These can be expressed collectively as", "Text",
+ CellChangeTimes->{{3.7885801709674883`*^9, 
+  3.788580179353985*^9}},ExpressionUUID->"1e98c0ec-28d5-4ca3-92b5-\
+ea38ab262f3f"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"I", "=", 
+   RowBox[{
+    SubscriptBox["\[Delta]", 
+     RowBox[{
+      SubscriptBox["m", "r"], 
+      SubscriptBox["n", "1"]}]], 
+    RowBox[{
+     UnderoverscriptBox["\[Product]", 
+      RowBox[{"a", "=", "1"}], 
+      RowBox[{"r", "-", "1"}]], " ", 
+     RowBox[{
+      SubsuperscriptBox["\[Theta]", "a", 
+       SubscriptBox["m", "a"]], 
+      RowBox[{
+       UnderoverscriptBox["\[Product]", 
+        RowBox[{"b", "=", "2"}], "s"], " ", 
+       SubsuperscriptBox["\[Eta]", "b", 
+        SubscriptBox["n", "b"]]}]}]}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.7885801709674883`*^9, 
+  3.788580296525053*^9}},ExpressionUUID->"594fe8f8-672c-445c-b43e-\
+7a65a01cabe0"],
+
+Cell[TextData[{
+ "With this new Kronecker-delta, the summation over ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "r"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4ed3ef66-84a0-46bf-87ba-9273faccdade"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d3501ea7-173d-4bd7-a600-138c7b9e4635"],
+ " is reduced to another contraction"
+}], "Text",
+ CellChangeTimes->{{3.788580712346156*^9, 
+  3.788580755440559*^9}},ExpressionUUID->"cf846832-9284-431c-afb4-\
+f6e73bd19169"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -3015,6 +3777,28 @@ Cell[95411, 2809, 1948, 54, 147, "Equation",ExpressionUUID->"2992f44d-80be-4791-
  InitializationCell->True]
 }, Open  ]],
 Cell[97374, 2866, 179, 3, 56, "Subsection",ExpressionUUID->"8cb31fe7-24b3-4fcd-8a02-a12d40f59928"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97590, 2874, 184, 3, 96, "Section",ExpressionUUID->"f5dafb62-00de-416e-bf2c-bf8c19d87aac"],
+Cell[97777, 2879, 173, 3, 36, "Text",ExpressionUUID->"6d2ac988-b234-4be4-8f83-7e4fbdda39e6"],
+Cell[97953, 2884, 1060, 35, 59, "Equation",ExpressionUUID->"001a1a90-55d9-4bdd-ac93-8de695730663"],
+Cell[99016, 2921, 829, 27, 49, "Text",ExpressionUUID->"84c3b5af-c819-4394-b84e-406211b900bc"],
+Cell[99848, 2950, 218, 4, 36, "Text",ExpressionUUID->"acf8c0c7-d9d5-4f74-93c8-c41c14213ce0"],
+Cell[100069, 2956, 839, 26, 53, "Equation",ExpressionUUID->"325967ac-781c-488e-97b1-4a3d27d78696"],
+Cell[100911, 2984, 1175, 37, 36, "Text",ExpressionUUID->"a2bc851e-ed87-43b3-b180-518f7fd77c7d"],
+Cell[102089, 3023, 2594, 82, 106, "EquationNumbered",ExpressionUUID->"ffcd4560-515f-40fb-9eb0-15d48ba4ad04"],
+Cell[104686, 3107, 867, 29, 36, "Text",ExpressionUUID->"b955c945-a266-4d71-ace5-df44cc21654a"],
+Cell[105556, 3138, 5276, 165, 265, "Equation",ExpressionUUID->"dabec5d4-f2e2-446e-b376-feb2d2d7bdcc"],
+Cell[110835, 3305, 176, 3, 36, "Text",ExpressionUUID->"6ca2fac1-0413-4509-a117-87dcb00c915d"],
+Cell[111014, 3310, 1062, 29, 70, "Equation",ExpressionUUID->"7b0d2696-527a-407f-b942-bfe9610a82fa"],
+Cell[112079, 3341, 230, 4, 36, "Text",ExpressionUUID->"a4f3bd08-287a-4efc-9c8b-70cd079962da"],
+Cell[112312, 3347, 1886, 55, 98, "Equation",ExpressionUUID->"c0eb0f22-ad1e-4948-91e9-afa7f97f4097"],
+Cell[114201, 3404, 1477, 43, 98, "Equation",ExpressionUUID->"e6944766-8d87-4901-89af-10f0c0f0db0a"],
+Cell[115681, 3449, 1479, 43, 98, "Equation",ExpressionUUID->"eaa3a4cd-e609-4634-849f-5a2d7005aa9a"],
+Cell[117163, 3494, 2993, 88, 152, "Equation",ExpressionUUID->"5506fe61-6ba2-49f9-b5a7-2b732a5f9ffd"],
+Cell[120159, 3584, 182, 3, 36, "Text",ExpressionUUID->"1e98c0ec-28d5-4ca3-92b5-ea38ab262f3f"],
+Cell[120344, 3589, 731, 23, 92, "EquationNumbered",ExpressionUUID->"594fe8f8-672c-445c-b43e-7a65a01cabe0"],
+Cell[121078, 3614, 584, 17, 36, "Text",ExpressionUUID->"cf846832-9284-431c-afb4-f6e73bd19169"]
 }, Open  ]]
 }, Open  ]]
 }

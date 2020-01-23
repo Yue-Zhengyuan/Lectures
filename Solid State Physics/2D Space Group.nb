@@ -1,0 +1,59 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1456,         49]
+NotebookOptionsPosition[       906,         31]
+NotebookOutlinePosition[      1357,         48]
+CellTagsIndexPosition[      1314,         45]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"380bb8e6-b5a6-4c7c-86cd-b048ea97a77a"],
+
+Cell["Space Group in Two Dimensions", "BookChapterTitle",
+ CellChangeTimes->{{3.788500478032074*^9, 
+  3.788500486142396*^9}},ExpressionUUID->"d747f4f9-2e94-4d68-a7d3-\
+42a17bcf783f"]
+}, Open  ]]
+},
+WindowSize->{808, 808},
+WindowMargins->{{84, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"380bb8e6-b5a6-4c7c-86cd-b048ea97a77a"],
+Cell[707, 25, 183, 3, 272, "BookChapterTitle",ExpressionUUID->"d747f4f9-2e94-4d68-a7d3-42a17bcf783f"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
