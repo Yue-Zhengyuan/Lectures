@@ -1,0 +1,496 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16338,        488]
+NotebookOptionsPosition[     12760,        429]
+NotebookOutlinePosition[     13210,        446]
+CellTagsIndexPosition[     13167,        443]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"63964c66-5ba2-4051-b06e-f67917275d57"],
+
+Cell["Statistical Ensembles", "BookChapterTitle",
+ CellChangeTimes->{{3.789945237753244*^9, 
+  3.789945242373826*^9}},ExpressionUUID->"df70ec33-fd6d-4540-bb2e-\
+5163c197230d"],
+
+Cell[CellGroupData[{
+
+Cell["Density Matrices for Various Statistical Ensembles", "Section",
+ CellChangeTimes->{{3.789945254495922*^9, 
+  3.78994527322086*^9}},ExpressionUUID->"748d61a0-95d1-44e2-9354-\
+33ebbd052e77"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Microcanonical (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", " ", "V", " ", "E"}], TraditionalForm]],ExpressionUUID->
+  "0b971809-6491-4b7c-bb55-84e64e712c67"],
+ ") Ensemble"
+}], "Subsection",
+ CellChangeTimes->{{3.789688504648645*^9, 3.789688515925967*^9}, {
+  3.789688678806775*^9, 
+  3.789688707934154*^9}},ExpressionUUID->"03f23bec-2818-4590-a225-\
+1e6266c2fcad"],
+
+Cell[TextData[{
+ "Microcanonical ensemble corresponds to a \[OpenCurlyDoubleQuote]completely \
+closed\[CloseCurlyDoubleQuote] system. For such a system, all microscopic \
+states satisfying the macroscopic constraints (usually given by the number of \
+particles ",
+ Cell[BoxData[
+  FormBox["N", TraditionalForm]],ExpressionUUID->
+  "8155ac2b-3bc0-4a5c-9025-a18ecaf5b915"],
+ ", system volume ",
+ Cell[BoxData[
+  FormBox["V", TraditionalForm]],ExpressionUUID->
+  "422716fa-b8a4-4ad8-acaa-0ecf94680b88"],
+ " and energy ",
+ Cell[BoxData[
+  FormBox["E", TraditionalForm]],ExpressionUUID->
+  "489f20d9-308e-4440-bde6-8974c3d35098"],
+ ") are ",
+ StyleBox["equally possible",
+  FontSlant->"Italic"],
+ " in the ensemble. Thus"
+}], "Text",
+ CellChangeTimes->{{3.789706427308587*^9, 3.789706547194004*^9}, {
+  3.789706630372938*^9, 
+  3.789706633097557*^9}},ExpressionUUID->"e2368683-e93d-42ae-80d4-\
+ee335431c213"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[Rho]", "=", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"W", "(", 
+      RowBox[{"N", ",", "E", ",", "V"}], ")"}]], 
+    RowBox[{
+     UnderscriptBox["\[Sum]", "n"], 
+     RowBox[{
+      SubscriptBox["\[Delta]", 
+       RowBox[{
+        SubscriptBox["E", "n"], ",", "E"}]], 
+      TemplateBox[{RowBox[{" ", "n"}]},
+       "Ket"], 
+      TemplateBox[{"n"},
+       "Bra"]}]}]}]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.789688519139254*^9, 3.789688554648621*^9}, {
+  3.789706684728209*^9, 
+  3.78970669702568*^9}},ExpressionUUID->"8b16c771-ecda-43b7-88f9-\
+53e1adce6866"],
+
+Cell[TextData[{
+ "Here ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"W", "(", 
+    RowBox[{"N", ",", "E", ",", "V"}], ")"}], TraditionalForm]],
+  ExpressionUUID->"7750bd41-0e9e-4843-b417-dff893176ae5"],
+ " is the number of allowed microscopic states. The Kronecker delta makes \
+explicit the constraint on energy. "
+}], "Text",
+ CellChangeTimes->{{3.789688556869266*^9, 3.789688590127162*^9}, {
+  3.789706474515769*^9, 3.789706483536105*^9}, {3.789706613844681*^9, 
+  3.7897066409438963`*^9}, {3.789706699638605*^9, 
+  3.789706702095696*^9}},ExpressionUUID->"e1899104-ae94-4784-b51b-\
+194fcafcd340"],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["entropy",
+  FontWeight->"Bold"],
+ " of the system is defined as"
+}], "Text",
+ CellChangeTimes->{{3.789706379844214*^9, 
+  3.7897063896895447`*^9}},ExpressionUUID->"f2746c79-43c9-4cf2-8ec3-\
+01075b509956"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"S", "\[Congruent]", 
+   RowBox[{"Tr", "(", 
+    RowBox[{"\[Rho]", " ", "ln", " ", "\[Rho]"}], ")"}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.789706379844214*^9, 
+  3.78970640259408*^9}},ExpressionUUID->"008b2385-c674-4d4d-b5ad-\
+e40749891f54"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Canonical (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", " ", "V", " ", "T"}], TraditionalForm]],ExpressionUUID->
+  "cdff3444-efba-49e8-9c6c-4690fe67cac4"],
+ ") Ensemble"
+}], "Subsection",
+ CellChangeTimes->{{3.789688556869266*^9, 3.7896885997923594`*^9}, {
+  3.7896886876196203`*^9, 
+  3.78968871652565*^9}},ExpressionUUID->"02ba2057-46df-4b1c-a2c7-\
+bfbdf392b0e6"],
+
+Cell[TextData[{
+ "Here we consider a small system (labeled by ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],ExpressionUUID->
+  "b48b0d2d-4b1f-4093-b16e-f9af67bfb2f2"],
+ ") in contact with a very large ",
+ StyleBox["heat",
+  FontSlant->"Italic"],
+ " reservoir (labeled by ",
+ Cell[BoxData[
+  FormBox["B", TraditionalForm]],ExpressionUUID->
+  "ef59efbf-08f2-4af2-b120-02567faf9823"],
+ "). They can exchange ",
+ StyleBox["heat",
+  FontSlant->"Italic"],
+ " to reach equilibrium. The small system together with the large ensemble is \
+describe by the microcanonical ensemble. "
+}], "Text",
+ CellChangeTimes->{{3.7897069079004183`*^9, 3.789706987795092*^9}, {
+  3.7897070395291224`*^9, 
+  3.78970712096183*^9}},ExpressionUUID->"8fe66ee6-a9da-4c69-a215-\
+91ced6b2adfe"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[Rho]", "=", 
+   RowBox[{
+    FractionBox["1", "Z"], 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[Beta]"}], " ", "H"}]], "       ", 
+    RowBox[{"(", 
+     RowBox[{"\[Beta]", "\[Congruent]", 
+      FractionBox["1", "T"]}], ")"}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.789688621002405*^9, 3.789688640242464*^9}, {
+  3.789688718871058*^9, 
+  3.789688725807193*^9}},ExpressionUUID->"398bd274-c178-4715-99df-\
+f05507d8825e"],
+
+Cell[TextData[{
+ "Where ",
+ Cell[BoxData[
+  FormBox["Z", TraditionalForm]],ExpressionUUID->
+  "23cfae50-080e-4b23-bcc4-15f1302d3acf"],
+ " is a normalization factor, called the ",
+ StyleBox["partition function",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.789688643123766*^9, 3.789688655973431*^9}, {
+  3.789688948518723*^9, 
+  3.7896889579405193`*^9}},ExpressionUUID->"8915598c-fa50-4345-86d9-\
+94b7d56bc1d6"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Z", "=", 
+   RowBox[{"Tr", "(", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[Beta]"}], " ", "H"}]], ")"}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.789688643123766*^9, 
+  3.789688667095538*^9}},ExpressionUUID->"3db8f7d5-3baa-41ee-b92b-\
+d48148b5368c"],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["free energy",
+  FontWeight->"Bold"],
+ " is"
+}], "Text",
+ CellChangeTimes->{{3.78968886235703*^9, 
+  3.789688867505044*^9}},ExpressionUUID->"0e646814-db6f-4704-bf2d-\
+2fb28dea543c"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"F", "=", 
+   RowBox[{
+    RowBox[{"-", "T"}], " ", "ln", " ", "Z"}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.78968886235703*^9, 
+  3.7896888748841867`*^9}},ExpressionUUID->"a1e9129f-d81f-4597-9eff-\
+960464efcd15"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Grand Canonical (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Mu]", " ", "V", " ", "T"}], TraditionalForm]],ExpressionUUID->
+  "5118c25c-7104-4f31-bd5e-a42a6757401d"],
+ ") Ensemble"
+}], "Subsection",
+ CellChangeTimes->{{3.789688556869266*^9, 3.7896885997923594`*^9}, {
+  3.7896886876196203`*^9, 
+  3.7896887397085743`*^9}},ExpressionUUID->"a2429afa-37bd-40f3-9731-\
+0991407531d3"],
+
+Cell[TextData[{
+ "Here we consider a small system in contact with a very large ",
+ StyleBox["heat and particle",
+  FontSlant->"Italic"],
+ " reservoir. They can exchange ",
+ StyleBox["heat and particles",
+  FontSlant->"Italic"],
+ " to reach equilibrium. "
+}], "Text",
+ CellChangeTimes->{{3.78970700502313*^9, 
+  3.789707054627659*^9}},ExpressionUUID->"c1d681a3-81f4-49bf-a1a2-\
+2f484c78a971"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[Rho]", "=", 
+   RowBox[{
+    FractionBox["1", "\[CapitalXi]"], 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[Beta]"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"H", "-", 
+        RowBox[{"\[Mu]", " ", "N"}]}], ")"}]}]], "       ", 
+    RowBox[{"(", 
+     RowBox[{"\[Beta]", "\[Congruent]", 
+      FractionBox["1", "T"]}], ")"}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.789688763899075*^9, 
+  3.789688778381312*^9}},ExpressionUUID->"e6c7889c-5fac-4e79-a954-\
+f5e4f9171e6f"],
+
+Cell[TextData[{
+ "Where ",
+ Cell[BoxData[
+  FormBox["\[CapitalXi]", TraditionalForm]],ExpressionUUID->
+  "cd2e3002-2098-4b6b-8d2e-ee2744808826"],
+ " is the ",
+ StyleBox["grand partition function",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.789688643123766*^9, 3.789688655973431*^9}, {
+  3.789688790088126*^9, 3.789688791406742*^9}, {3.78968890380579*^9, 
+  3.7896889047136374`*^9}},ExpressionUUID->"3bda7618-a706-4a0f-a43c-\
+b4deb7e3559e"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[CapitalXi]", "=", 
+   RowBox[{"Tr", "(", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[Beta]"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"H", "-", 
+        RowBox[{"\[Mu]", " ", "N"}]}], ")"}]}]], ")"}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.789688643123766*^9, 3.789688667095538*^9}, {
+  3.789688795510565*^9, 3.789688800165791*^9}, {3.7896889005868187`*^9, 
+  3.789688901694866*^9}},ExpressionUUID->"a7947bb3-31b8-48cb-b86d-\
+703354c6ce1e"],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["grand potential",
+  FontWeight->"Bold"],
+ " is"
+}], "Text",
+ CellChangeTimes->{{3.789688880520383*^9, 
+  3.789688888916891*^9}},ExpressionUUID->"00741633-1fac-4bbb-a0ff-\
+422a7f09f9bd"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[CapitalOmega]", "=", 
+   RowBox[{
+    RowBox[{"-", "T"}], " ", "ln", " ", "\[CapitalXi]"}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.789688880520383*^9, 
+  3.789688898796274*^9}},ExpressionUUID->"6d8b609d-7516-4941-b71d-\
+952c4bfd796a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 1: Fermi Distribution", "Section",
+ CellChangeTimes->{{3.789945276256798*^9, 3.7899452878668127`*^9}, {
+  3.789946211037655*^9, 
+  3.789946214628685*^9}},ExpressionUUID->"3b662f3b-e901-4e17-b783-\
+c856b4738aba"],
+
+Cell["The Hamiltonian is", "Text",
+ CellChangeTimes->{{3.7899463238430157`*^9, 
+  3.789946334516746*^9}},ExpressionUUID->"05d7f604-7d36-4985-9c03-\
+92086b67032f"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"H", "=", 
+   RowBox[{
+    UnderscriptBox["\[Sum]", "n"], " ", 
+    RowBox[{
+     SubscriptBox["E", "n"], 
+     SubsuperscriptBox["c", "n", "\[Dagger]"], 
+     SubscriptBox["c", "n"]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.7899463238430157`*^9, 3.789946356754809*^9}, {
+  3.7899465051449833`*^9, 
+  3.7899465088743277`*^9}},ExpressionUUID->"47ce70c9-0362-4f43-aff2-\
+f4153c2f568d"],
+
+Cell[TextData[{
+ "Here ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8146ce8f-11b2-415a-bba0-e8306a675f0d"],
+ " labels the quantum states of one fermion. This Hamiltonian is already in \
+diagonal form. "
+}], "Text",
+ CellChangeTimes->{{3.7899463585717907`*^9, 3.789946376321722*^9}, {
+  3.789946458675453*^9, 3.789946470389957*^9}, {3.789946502873201*^9, 
+  3.789946519483479*^9}},ExpressionUUID->"0a37ab50-2043-4832-aaf2-\
+d93cf93e83d6"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Grand Canonical Ensemble Approach"
+}], "Subsection",
+ CellChangeTimes->{{3.789945546612567*^9, 3.7899455547017527`*^9}, {
+  3.7899462284019957`*^9, 
+  3.789946229143487*^9}},ExpressionUUID->"e9679f3d-842b-4b02-967b-\
+a5ab86a1ea66"],
+
+Cell["The grand canonical partition function is", "Text",
+ CellChangeTimes->{{3.7899464146621113`*^9, 
+  3.789946423936117*^9}},ExpressionUUID->"050a2f11-09e6-4fe7-b030-\
+78dbfa04f3a1"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[CapitalXi]", "=", 
+   RowBox[{"Tr", "(", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[Beta]"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"H", "-", 
+        RowBox[{"\[Mu]", " ", "N"}]}], ")"}]}]], ")"}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.7899464146621113`*^9, 
+  3.7899464346966543`*^9}},ExpressionUUID->"c8bdfea5-7dd3-4c25-b0f8-\
+fecef9e65e94"]
+}, Open  ]],
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Canonical Ensemble Approach"
+}], "Subsection",
+ CellChangeTimes->{{3.789945546612567*^9, 
+  3.7899455547017527`*^9}},ExpressionUUID->"2e9a91f2-7c24-462d-88b2-\
+5ad4b2670aee"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{717, 808},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"63964c66-5ba2-4051-b06e-f67917275d57"],
+Cell[707, 25, 175, 3, 220, "BookChapterTitle",ExpressionUUID->"df70ec33-fd6d-4540-bb2e-5163c197230d"],
+Cell[CellGroupData[{
+Cell[907, 32, 194, 3, 129, "Section",ExpressionUUID->"748d61a0-95d1-44e2-9354-33ebbd052e77"],
+Cell[CellGroupData[{
+Cell[1126, 39, 416, 13, 56, "Subsection",ExpressionUUID->"03f23bec-2818-4590-a225-1e6266c2fcad"],
+Cell[1545, 54, 903, 24, 118, "Text",ExpressionUUID->"e2368683-e93d-42ae-80d4-ee335431c213"],
+Cell[2451, 80, 632, 20, 83, "EquationNumbered",ExpressionUUID->"8b16c771-ecda-43b7-88f9-53e1adce6866"],
+Cell[3086, 102, 594, 14, 64, "Text",ExpressionUUID->"e1899104-ae94-4784-b51b-194fcafcd340"],
+Cell[3683, 118, 240, 8, 36, "Text",ExpressionUUID->"f2746c79-43c9-4cf2-8ec3-01075b509956"],
+Cell[3926, 128, 304, 8, 46, "EquationNumbered",ExpressionUUID->"008b2385-c674-4d4d-b5ad-e40749891f54"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4267, 141, 414, 13, 56, "Subsection",ExpressionUUID->"02ba2057-46df-4b1c-a2c7-bfbdf392b0e6"],
+Cell[4684, 156, 767, 21, 118, "Text",ExpressionUUID->"8fe66ee6-a9da-4c69-a215-91ced6b2adfe"],
+Cell[5454, 179, 517, 15, 71, "EquationNumbered",ExpressionUUID->"398bd274-c178-4715-99df-f05507d8825e"],
+Cell[5974, 196, 421, 12, 36, "Text",ExpressionUUID->"8915598c-fa50-4345-86d9-94b7d56bc1d6"],
+Cell[6398, 210, 342, 10, 54, "EquationNumbered",ExpressionUUID->"3db8f7d5-3baa-41ee-b92b-d48148b5368c"],
+Cell[6743, 222, 216, 8, 36, "Text",ExpressionUUID->"0e646814-db6f-4704-bf2d-2fb28dea543c"],
+Cell[6962, 232, 274, 8, 46, "EquationNumbered",ExpressionUUID->"a1e9129f-d81f-4597-9eff-960464efcd15"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7273, 245, 427, 13, 56, "Subsection",ExpressionUUID->"a2429afa-37bd-40f3-9731-0991407531d3"],
+Cell[7703, 260, 391, 11, 91, "Text",ExpressionUUID->"c1d681a3-81f4-49bf-a1a2-2f484c78a971"],
+Cell[8097, 273, 567, 17, 71, "EquationNumbered",ExpressionUUID->"e6c7889c-5fac-4e79-a954-f5e4f9171e6f"],
+Cell[8667, 292, 452, 12, 36, "Text",ExpressionUUID->"3bda7618-a706-4a0f-a43c-b4deb7e3559e"],
+Cell[9122, 306, 538, 14, 54, "EquationNumbered",ExpressionUUID->"a7947bb3-31b8-48cb-b86d-703354c6ce1e"],
+Cell[9663, 322, 221, 8, 36, "Text",ExpressionUUID->"00741633-1fac-4bbb-a0ff-422a7f09f9bd"],
+Cell[9887, 332, 298, 8, 46, "EquationNumbered",ExpressionUUID->"6d8b609d-7516-4941-b71d-952c4bfd796a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10234, 346, 225, 4, 96, "Section",ExpressionUUID->"3b662f3b-e901-4e17-b783-c856b4738aba"],
+Cell[10462, 352, 162, 3, 36, "Text",ExpressionUUID->"05d7f604-7d36-4985-9c03-92086b67032f"],
+Cell[10627, 357, 435, 12, 74, "Equation",ExpressionUUID->"47ce70c9-0362-4f43-aff2-f4153c2f568d"],
+Cell[11065, 371, 496, 12, 64, "Text",ExpressionUUID->"0a37ab50-2043-4832-aaf2-d93cf93e83d6"],
+Cell[CellGroupData[{
+Cell[11586, 387, 280, 8, 56, "Subsection",ExpressionUUID->"e9679f3d-842b-4b02-967b-a5ab86a1ea66"],
+Cell[11869, 397, 185, 3, 36, "Text",ExpressionUUID->"050a2f11-09e6-4fe7-b030-78dbfa04f3a1"],
+Cell[12057, 402, 437, 13, 54, "Equation",ExpressionUUID->"c8bdfea5-7dd3-4c25-b0f8-fecef9e65e94"]
+}, Open  ]],
+Cell[12509, 418, 223, 7, 56, "Subsection",ExpressionUUID->"2e9a91f2-7c24-462d-88b2-5ad4b2670aee"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
