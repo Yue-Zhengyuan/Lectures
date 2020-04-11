@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9192,        255]
-NotebookOptionsPosition[      6927,        214]
-NotebookOutlinePosition[      7378,        231]
-CellTagsIndexPosition[      7335,        228]
+NotebookDataLength[      9075,        251]
+NotebookOptionsPosition[      6905,        211]
+NotebookOutlinePosition[      7355,        228]
+CellTagsIndexPosition[      7312,        225]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,15 +23,11 @@ Cell[CellGroupData[{
 Cell[TextData[
 CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"5eba364a-07e7-40f3-8f1d-9db54b7d9421"],
 
-Cell["Differential Form and Manifold Integration", "BookChapterTitle",
- CellChangeTimes->{{3.7842724074754543`*^9, 
-  3.784272423061192*^9}},ExpressionUUID->"20498251-f17f-45ae-883d-\
+Cell["Differential Forms", "BookChapterTitle",
+ CellChangeTimes->{{3.7842724074754543`*^9, 3.784272423061192*^9}, {
+  3.793228686523554*^9, 
+  3.793228689962648*^9}},ExpressionUUID->"20498251-f17f-45ae-883d-\
 a404ce06a71f"],
-
-Cell["Yue Zhengyuan - December 2, 2019", "Text",
- CellChangeTimes->{{3.78427353390244*^9, 
-  3.7842735399413567`*^9}},ExpressionUUID->"3046991f-3451-4fb1-b99b-\
-6b0a98461a0d"],
 
 Cell[CellGroupData[{
 
@@ -89,13 +85,13 @@ The result is called the ",
   3.7843260446162558`*^9}, {3.7843261312450647`*^9, 3.784326216494718*^9}, {
   3.7852908856775723`*^9, 3.785290918605589*^9}, {3.785291480289413*^9, 
   3.785291492540792*^9}},ExpressionUUID->"4d7b5f78-6df9-466b-9efc-\
-e6a7f6a04e5c"],
-
-Cell["Exterior Forms", "Subsection",
- CellChangeTimes->{{3.785291435843965*^9, 
-  3.7852914405459538`*^9}},ExpressionUUID->"4f374944-3e37-4d13-8ca3-\
-60de0f828a40"]
+e6a7f6a04e5c"]
 }, Open  ]],
+
+Cell["Manifolds", "Section",
+ CellChangeTimes->{{3.793228724037203*^9, 
+  3.793228727069332*^9}},ExpressionUUID->"7cadfcb0-a626-4ce5-b064-\
+d09d3d5d5a2c"],
 
 Cell["Differential Form", "Section",
  CellChangeTimes->{{3.784272428350787*^9, 
@@ -137,11 +133,12 @@ Cell[BoxData[
 Cell[TextData[{
  StyleBox["\[OpenCurlyDoubleQuote]Proof\[CloseCurlyDoubleQuote]",
   FontWeight->"Bold"],
- ": Here we only give an intuitive about not perfectly rigorous description \
-on this theorem. "
+ ": Here we only give an intuitive but not rigorous understanding on this \
+theorem. "
 }], "Text",
- CellChangeTimes->{{3.785290785368836*^9, 
-  3.785290829295974*^9}},ExpressionUUID->"79d756d0-129c-44e2-baf1-\
+ CellChangeTimes->{{3.785290785368836*^9, 3.785290829295974*^9}, {
+  3.794137420714658*^9, 
+  3.794137431659692*^9}},ExpressionUUID->"79d756d0-129c-44e2-baf1-\
 714ecd161b77"],
 
 Cell[TextData[{
@@ -185,7 +182,7 @@ Cell["Area Integral and Complex Contour Integration", "Subsection",
 ae94e3a5854e"],
 
 Cell[TextData[{
- "We know that the usual Gauss\[CloseCurlyQuote] Theorem and convert a flux \
+ "We know that the usual Gauss\[CloseCurlyQuote] Theorem converts a flux \
 integral (on 2D manifold) to a volume integral of the divergence (in 3D). \
 What about an ",
  StyleBox["area ",
@@ -193,15 +190,15 @@ What about an ",
  "integral of the divergence in 2D?"
 }], "Text",
  CellChangeTimes->{{3.7852900043879766`*^9, 3.785290068054566*^9}, {
-  3.785290640907096*^9, 
-  3.785290659443705*^9}},ExpressionUUID->"49d0cea5-079d-4109-99df-\
+  3.785290640907096*^9, 3.785290659443705*^9}, {3.794137453943324*^9, 
+  3.7941374556986923`*^9}},ExpressionUUID->"49d0cea5-079d-4109-99df-\
 e086b2261eb6"]
 }, Open  ]],
 
-Cell["Example: Maxwell Equations", "Subsection",
+Cell["Example in Physics: Maxwell Equations", "Subsection",
  CellChangeTimes->{{3.784445398677737*^9, 3.784445408786796*^9}, {
-  3.785289783378161*^9, 
-  3.785289786113933*^9}},ExpressionUUID->"67675b26-2ac7-49fe-bf43-\
+  3.785289783378161*^9, 3.785289786113933*^9}, {3.793183375215122*^9, 
+  3.793183377592266*^9}},ExpressionUUID->"67675b26-2ac7-49fe-bf43-\
 6ae6eb001555"]
 }, Open  ]],
 
@@ -212,8 +209,8 @@ Cell["Homology and Cohomology", "Section",
 b7c8ccd669ab"]
 }, Open  ]]
 },
-WindowSize->{1440, 808},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{718, 808},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
 StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
   CharacterEncoding -> "UTF-8"],
@@ -232,30 +229,29 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"5eba364a-07e7-40f3-8f1d-9db54b7d9421"],
-Cell[707, 25, 198, 3, 220, "BookChapterTitle",ExpressionUUID->"20498251-f17f-45ae-883d-a404ce06a71f"],
-Cell[908, 30, 175, 3, 36, "Text",ExpressionUUID->"3046991f-3451-4fb1-b99b-6b0a98461a0d"],
+Cell[707, 25, 223, 4, 220, "BookChapterTitle",ExpressionUUID->"20498251-f17f-45ae-883d-a404ce06a71f"],
 Cell[CellGroupData[{
-Cell[1108, 37, 222, 4, 96, "Section",ExpressionUUID->"be01f3b4-7a6a-4710-9bcd-17ee7c028391"],
-Cell[1333, 43, 615, 17, 36, "Text",ExpressionUUID->"63fe84d8-666e-45dd-88ff-1566ded7ac07"],
-Cell[1951, 62, 502, 12, 46, "EquationNumbered",ExpressionUUID->"0c379a6f-812a-4dbd-a48d-4bacf53bc63c"],
-Cell[2456, 76, 664, 15, 64, "Text",ExpressionUUID->"4d7b5f78-6df9-466b-9efc-e6a7f6a04e5c"],
-Cell[3123, 93, 164, 3, 56, "Subsection",ExpressionUUID->"4f374944-3e37-4d13-8ca3-60de0f828a40"]
+Cell[955, 33, 222, 4, 96, "Section",ExpressionUUID->"be01f3b4-7a6a-4710-9bcd-17ee7c028391"],
+Cell[1180, 39, 615, 17, 64, "Text",ExpressionUUID->"63fe84d8-666e-45dd-88ff-1566ded7ac07"],
+Cell[1798, 58, 502, 12, 46, "EquationNumbered",ExpressionUUID->"0c379a6f-812a-4dbd-a48d-4bacf53bc63c"],
+Cell[2303, 72, 664, 15, 91, "Text",ExpressionUUID->"4d7b5f78-6df9-466b-9efc-e6a7f6a04e5c"]
 }, Open  ]],
-Cell[3302, 99, 161, 3, 96, "Section",ExpressionUUID->"0677460c-31e1-4a9c-853e-85ecb1e15cfb"],
+Cell[2982, 90, 154, 3, 96, "Section",ExpressionUUID->"7cadfcb0-a626-4ce5-b064-d09d3d5d5a2c"],
+Cell[3139, 95, 161, 3, 58, "Section",ExpressionUUID->"0677460c-31e1-4a9c-853e-85ecb1e15cfb"],
 Cell[CellGroupData[{
-Cell[3488, 106, 185, 3, 58, "Section",ExpressionUUID->"9ac1a5f5-cc23-494d-928d-78b28fc36fa8"],
-Cell[3676, 111, 257, 8, 36, "Text",ExpressionUUID->"64b95546-ea3a-463e-9cfd-43a1bd898b43"],
-Cell[3936, 121, 455, 13, 72, "EquationNumbered",ExpressionUUID->"ea418dda-a548-43ab-b480-1791bf4625b8"],
-Cell[4394, 136, 339, 8, 36, "Text",ExpressionUUID->"79d756d0-129c-44e2-baf1-714ecd161b77"],
-Cell[4736, 146, 805, 25, 36, "Text",ExpressionUUID->"7b350548-3265-4168-855b-8042a74fe7e5"],
-Cell[5544, 173, 146, 3, 36, "Text",ExpressionUUID->"ab2548ee-b79f-4417-bb26-a010583fc446"],
+Cell[3325, 102, 185, 3, 58, "Section",ExpressionUUID->"9ac1a5f5-cc23-494d-928d-78b28fc36fa8"],
+Cell[3513, 107, 257, 8, 36, "Text",ExpressionUUID->"64b95546-ea3a-463e-9cfd-43a1bd898b43"],
+Cell[3773, 117, 455, 13, 72, "EquationNumbered",ExpressionUUID->"ea418dda-a548-43ab-b480-1791bf4625b8"],
+Cell[4231, 132, 378, 9, 64, "Text",ExpressionUUID->"79d756d0-129c-44e2-baf1-714ecd161b77"],
+Cell[4612, 143, 805, 25, 64, "Text",ExpressionUUID->"7b350548-3265-4168-855b-8042a74fe7e5"],
+Cell[5420, 170, 146, 3, 36, "Text",ExpressionUUID->"ab2548ee-b79f-4417-bb26-a010583fc446"],
 Cell[CellGroupData[{
-Cell[5715, 180, 268, 4, 56, "Subsection",ExpressionUUID->"b5f71191-9aea-4b24-a013-ae94e3a5854e"],
-Cell[5986, 186, 455, 11, 64, "Text",ExpressionUUID->"49d0cea5-079d-4109-99df-e086b2261eb6"]
+Cell[5591, 177, 268, 4, 56, "Subsection",ExpressionUUID->"b5f71191-9aea-4b24-a013-ae94e3a5854e"],
+Cell[5862, 183, 500, 11, 91, "Text",ExpressionUUID->"49d0cea5-079d-4109-99df-e086b2261eb6"]
 }, Open  ]],
-Cell[6456, 200, 223, 4, 56, "Subsection",ExpressionUUID->"67675b26-2ac7-49fe-bf43-6ae6eb001555"]
+Cell[6377, 197, 280, 4, 56, "Subsection",ExpressionUUID->"67675b26-2ac7-49fe-bf43-6ae6eb001555"]
 }, Open  ]],
-Cell[6694, 207, 217, 4, 96, "Section",ExpressionUUID->"722f2fb2-c6de-4efb-a271-b7c8ccd669ab"]
+Cell[6672, 204, 217, 4, 96, "Section",ExpressionUUID->"722f2fb2-c6de-4efb-a271-b7c8ccd669ab"]
 }, Open  ]]
 }
 ]
