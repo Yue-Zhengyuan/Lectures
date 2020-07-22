@@ -188,7 +188,7 @@ This follows immediately from the fact that "boundaries have no boundary", since
 
 *Definition*:
 
-- **The $r$-th homology group $H_r(K)$** $(0 \le r \le n)$:
+- **The $r$-th homology group (同调群) $H_r(K)$** $(0 \le r \le n)$:
     
     $$
     H_r(K) \equiv Z_r(K) / B_r(K)
@@ -235,10 +235,6 @@ $$
 - The theorem tells us that:
     - Homology group of one topological space is *independent of* the triangulation used;
     - Homology groups of two *homeomorphic* topological spaces are *isomorphic*  ("the same").
-
-----
-
-### Examples of Homology Groups
 
 ----
 

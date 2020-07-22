@@ -9,12 +9,15 @@
     - **Range**
     - **Image**
 - Special named for maps
-    - **Injective maps**
-    - **Surjective maps**
-    - **Bijective maps**
+    - **Injective maps (单映射)**
+    - **Surjective maps (满映射)**
+    - **Bijective maps (双映射)**
+        
+        *Remark*: Bijective maps is the same as **invertible maps (可逆映射)**
+
     - **Inclusion map**
-- **Homomorphism**: Preserving algebraic structure of domain
-    - **Isomorphism**
+- **Homomorphism (同态)**: Preserving algebraic structure of domain
+    - **Isomorphism (同构)**
     - **Isomorphic sets**
 
 ### Equivalence Relation and Equivalence Class
