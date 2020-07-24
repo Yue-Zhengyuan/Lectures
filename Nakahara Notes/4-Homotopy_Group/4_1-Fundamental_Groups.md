@@ -81,10 +81,11 @@ The fact that *the homotopic relation is an equivalence relation* motivates the 
 
 - **Fundamental group (the first homotopy group) $\pi_1(X,x)$**: the *group* of homotopy classes of loops at point $x$ in the topological space $X$
     
-    - **Group structure** (the *proof* that elements in $\pi_1(X,x)$ form a group is given below)
-        - Product: $[\alpha] * [\beta] \equiv [\alpha * \beta]$
-        - Identity: $[c_x]$
-        - Inverse: $[\alpha]^{-1}$ = $[\alpha^{-1}]$
+    **Group structure**:
+
+    - Product: $[\alpha] * [\beta] \equiv [\alpha * \beta]$
+    - Identity: $[c_x]$
+    - Inverse: $[\alpha]^{-1}$ = $[\alpha^{-1}]$
 
 ----
 

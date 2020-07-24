@@ -26,9 +26,9 @@ $$
 
 *Definition*:
 
-- **Homotopic functions**: two functions that can be *"continuously deformed"* to each other. 
+- **Homotopic maps**: two maps that can be *"continuously deformed"* to each other. 
     
-    Mathematically, two functions $f, g: X \rightarrow Y$ are **homotopic** if we can find a *continuous* function $F: X \times I \rightarrow Y$ such that
+    Mathematically, two maps $f, g: X \rightarrow Y$ are **homotopic** if we can find a *continuous* map $F: X \times I \rightarrow Y$ such that
 
     $$
         F(x, 0) = f(x), \quad
@@ -37,7 +37,7 @@ $$
 
     Since this is an equivalence relation, it is denoted by $f \sim g$
     
-    - **Homotopy**: the function $F$
+    - **Homotopy**: the map $F$
 
 - **Homotopy equivalent topological spaces**: two topological spaces $X,Y$ are **homotopy equivalent** (or **of the same homotopy type**) if we can find *continuous* maps
     
@@ -52,7 +52,7 @@ $$
 
     denoted by $X \simeq Y$.
 
-    - **Homotopic equivalence**: the functions $f, g$; they are called the **homotopy inverse** of each other.
+    - **Homotopic equivalence**: the maps $f, g$; they are called the **homotopy inverse** of each other.
 
     *Remark*: Recall the definition of *homeomorphism*, which requires
 
@@ -117,7 +117,9 @@ $$
 
 ----
 
-*Theorem*: **The fundamental group of a contractible space is trivial**.
+*Theorem*: **(Fundamental group of a contractible space is trivial)**
+
+Let $X$ be a contractible topological space, then
 
 $$
 \pi_1(X, x_0) \cong \{e\}

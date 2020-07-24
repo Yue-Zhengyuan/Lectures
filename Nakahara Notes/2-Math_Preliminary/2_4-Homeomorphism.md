@@ -17,7 +17,11 @@
     (g \circ f = \text{id}_X) 
     $$
 
-    - **Homeomorphism**: the funtions $f, g$; they are the *inverse* of each other. 
+    - **Homeomorphism**: the funtions $f, g$
+    
+*Remark*: By definition, $f, g$ are the *inverse* of each other. Thus we may adopt an alternative (and equivalent) definition of homeomorphisms:
+
+- **Homeomorphism**: a *continuous and bijective* map $f$ between two topological spaces, whose inverse $f^{-1}$ is *also continuous* (and obviously bijective)
 
 ----
 

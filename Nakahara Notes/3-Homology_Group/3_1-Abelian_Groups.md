@@ -16,6 +16,8 @@
 
 </center>
 
+Whenever we use the additive notation, we have assumed that we are dealing with an Abelian group. 
+
 *Definition*: Let $G, G_1, G_2$ be groups
 
 - **Homomorphism (同态)**
