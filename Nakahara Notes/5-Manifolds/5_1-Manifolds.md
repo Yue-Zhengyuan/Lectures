@@ -19,7 +19,7 @@
         
         - **Coordinate of point $p$**: the *image* of $p \in U_i$ under the map $\varphi_i$
 
-        $$ \varphi_i: p \mapsto \{x^1(p),...,x^m(p)\}$$
+        $$ \varphi_i: p \mapsto (\varphi_i^1(p),...,\varphi_i^m(p))$$
         
         *Remark*: it is in this sense that $U_i$ is *locally similar* to $\mathbb{R}^m$
     

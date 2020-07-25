@@ -20,7 +20,14 @@ Let $p$ be a point in $M$, which is mapped to $f(p) \in N$.
 
     $$ \psi \circ f \circ \varphi^{-1}: \mathbb{R}^m \rightarrow \mathbb{R}^n $$
 
-    *Remark*: if $f$ is a *function* (i.e. $N = \mathbb{R}^n$, so that $\psi = \text{id}_V$), the coordinate representation is simply $f \circ \varphi^{-1}$.
+    *Special cases*: 
+
+    - **Curve $c$**: from real line interval $M \subset \mathbb{R}$ to manifold   
+        Coordinate representation: $\psi \circ c$   
+        The set of *smooth* functions on $M$: $\mathcal{F}(M)$
+    
+    - **(Real-valued) Function $f$**: from manifold to real line $N \subset \mathbb{R}$   
+        Coordinate representation: $f \circ \varphi^{-1}$
 
 - **Differentiability (smoothness) of $f$ at $p$**: if the coordinate representation of $f$ is differentiable (in the usual sense) at the coordinate $\varphi(p)$, we say $f$ is **differentiable at $p$**.
 
@@ -35,5 +42,309 @@ Let $p$ be a point in $M$, which is mapped to $f(p) \in N$.
     - The dimension of two diffeomorphic manifolds must be the same;
     - The diffeomorphic relation is an *equivalence relation*.
 
-### Vectors
+### Tangent Vectors and Tangent Space
+
+#### Tangent Vector and Tangent Space in Euclidean Space
+
+Let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart $(U, \varphi)$ near $p$. A curve $c: (a,b) \subset \mathbb{R} \rightarrow M \, (a < 0 < b)$ goes across the point $p = c(0)$. 
+
+In order to use our previous geometrical intuition to find the tangent vectors to $M$, we *embed* $M$ into an $n$-dimensional $(n \ge m)$ Euclidean space $\mathbb{R}^n$. (The operation of embedding will be described [later](#sub-manifolds).) Suppose the chart $(U, \varphi)$ is embedded by the equations
+
+$$
+X^\mu = X^\mu(x^1, ..., x^m) \qquad
+\mu = 1,2,...,n
+$$
+
+where $x = \varphi(q)$ are coordinates of any point $q \in M$. 
+
+*Example*: a 2-sphere $S^2$ is embedded in the Euclidean space $\mathbb{R}^3$ by 
+
+$$
+\left\{
+\begin{aligned}
+    X^1 &= \sin{x^1} \cos{x^2} \\
+    X^2 &= \sin{x^1} \sin{x^2} \\ 
+    X^3 &= \cos{x^1}
+\end{aligned}
+\right. , \qquad
+\begin{aligned}
+    &0 \le x^1 \le \pi \\
+    &0 \le x^2 < 2 \pi
+\end{aligned}
+$$
+
+- **Tangent vector**
+
+Let us find the tangent vector at $p$, whose coordinates are $\varphi(p) = (x^1_0, ..., x^m_0)$, along some general curve $c: (a,b) \rightarrow M$. The coordinate representation is
+
+$$
+\varphi \circ c(t) \equiv (x^1(t), ..., x^m(t))
+$$
+
+The curve is then embedded in $\mathbb{R}^n$ by
+
+$$
+X^\mu = X^\mu(x^1(t), ..., x^m(t)) \qquad
+i = 1,2,...,n
+$$
+
+The $i$th component of the **tangent vector** at $p$ along $c$ (expressed in $\mathbb{R}^n$) is then easily found to be
+
+$$
+v^\mu = \frac{d X^\mu}{dt}(0)
+=
+\frac{\partial X^\mu}{\partial x^\nu}(x_0)
+\frac{d x^\nu}{dt}(0)
+$$
+
+- **Tangent space and its basis vectors**
+
+There are $m$ special curves passing the point $p$:
+
+$$
+\varphi \circ c_i(t) = (x^1_0, ..., \underbrace{t}_{i\text{th slot}}, ..., x^m_0), 
+\quad i = 1,2,...,m
+$$
+
+i.e. except the $i$th coordinate (set to $t$), the others are all fixed. Then the tangent vector along $c_\mu$ is
+
+$$
+e_\mu = (0, ..., 0, \underbrace{\frac{\partial X^\mu}{\partial x^\mu}(x_0)}_{\mu \text{th slot}}, 0, ..., 0)
+$$
+
+The $m$ vectors $\{e_1, ..., e_m\}$ form a **coordinate basis** of the **tangent space** (denoted by $T_p M$) at the point $p$. We see that $\dim{T_p M} = \dim{M}$.
+
+#### Definition without Euclidean Space
+
+In the above analysis, we discover some differential operators independent of the embedding function $X^\mu$. They are adopted as the definitions that exist by themselves.
+
+Again, let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart $(U, \varphi)$ near $p$; the local coordinates are labelled by $x$. A curve $c: (a,b) \subset \mathbb{R} \rightarrow M \, (a < 0 < b)$ goes across the point $p = c(0)$. 
+
+- **Tangent vector $V$ at $p$ to $M$ along the direction of $c$**: the differential operator $V$ determined by $c(t)$ (and the coordinate variables) as
+
+    $$
+    V \equiv V^\mu \left(\frac{\partial}{\partial x^\mu}\right)
+    = V^\mu e_\mu, \quad
+    V^\mu = \frac{d (\varphi^\mu \circ c) (t)}{dt}
+    $$
+
+    *Remark*: 
+
+    - The numbers $V^\mu$ are called the **components of $V$**.
+    
+    - The vector $V \in T_p M$ can act on a smooth function $f \in \mathcal{F(M)}: M \rightarrow \mathbb{R}$, denoted by
+
+        $$
+        V[f] = V^\mu \partial_\mu (f \circ \varphi^{-1})(x)
+        $$
+
+- **Tangent space $T_p M$**: the vector space spanned by all tangent vectors at $p$ to $M$.
+
+    - **Coordinate basis of $T_p M$**
+        
+        $$
+        e_\mu \equiv \frac{\partial}{\partial x^\mu}, \quad
+        \mu = 1,2,...,m
+        $$
+
+#### Change of Basis
+
+### One-forms and Cotangent Space
+
+*Definition*:
+
+- **Cotangent space $T_p^* M$**: the *dual space* of the tangent space $T_p M$
+
+- **Cotangent vectors (one-forms)**: elements in $T_p^* M$ (i.e. *linear* functions $\omega: T_p M \rightarrow \mathbb{R}$)
+
+#### General Form of $\omega$
+
+$$
+\omega = \omega_\mu dx^\mu
+$$
+
+#### Inner Product
+
+*Definition*: 
+
+- **Inner product**: a *bilinear function*: $\langle \, , \, \rangle: T_p^* M \times T_p M \rightarrow \mathbb{R}$ defined by
+
+$$
+\begin{aligned}
+    \langle \omega , V \rangle
+    &= \left\langle \omega_\mu dx^\mu, V^\nu \frac{\partial}{\partial  x^\nu} \right\rangle
+    \\ &\equiv 
+    \omega_\mu V^\nu 
+    \left\langle dx^\mu, \frac{\partial}{\partial  x^\nu} \right\rangle
+    = \omega_\mu V^\mu
+\end{aligned}
+$$
+
+#### Change of Basis
+
+### Tensors and Tensor Fields
+
+*Definition*:
+
+- **Tensor of type $(r,s)$**: a *multi-linear* function $T: \bigotimes^r T_p^* M \bigotimes^s T_p M \rightarrow \mathbb{R}$ which send $r$ dual vectors and $s$ vectors to a real number. 
+
+    $$
+    T = T^{\mu_1 ... \mu_r}_{\nu_1 ... \nu_s}
+    \partial_{\mu_1} ... \partial_{\mu_r}
+    dx^{\nu_1} ... dx^{\nu_s} 
+    \quad
+    \left(
+        \partial_\mu \equiv \frac{\partial}{\partial x^\mu}
+    \right)
+    $$
+
+    Action on dual vectors and vectors:
+
+    $$
+    T(\omega_1, ..., \omega_r; V_1, ..., V_s) =
+    T^{\mu_1 ... \mu_r}_{\nu_1 ... \nu_s}
+    (\omega_1)_{\mu_1} ... (\omega_r)_{\mu_r}
+    V_1^{\nu_1} ... V_s^{\nu_s}
+    $$
+
+    *Remark*: The set of all $(r,s)$-tensors defined at point $p \in M$ are denoted by $\mathcal{T}^r_{s,p}(M)$.
+    
+    *Special cases*:
+
+    - Dual vector: tensor of type $(0,1)$
+        
+        *Remark*: We can now write the inner product as $\langle \omega,V \rangle = \omega(V)$.
+    
+    - Vector: tensor of type $(1,0)$
+
+- **Tensor fields**: a tensor which is assigned *smoothly* to each point of the manifold $M$
+    
+    - **Vector fields**: a vector which is assigned *smoothly* to each point of the manifold $M$
+
+### Induced Maps
+
+*Definition*: Let $f: M \rightarrow N$ be a smooth map. 
+
+<center>
+
+![](Fig-5_10.png)   
+*Inducing $f_*: T_p M \rightarrow T_{f(p)} N$ from $f: M \rightarrow N$*
+
+</center>
+
+- **Differential map $f_*$**: a map from tangent vectors to $M$ to tangent vectors to $N$.
+
+    $$
+    f_*: T_p M \rightarrow T_{f(p)} N
+    $$
+
+    For any vector $V \in T_p M$ and any smooth function $g: N \rightarrow \mathbb{R}$, the differential map is *defined* to satisfy
+
+    $$
+    (f_* V)[g] \equiv V[g \circ f]
+    $$
+    
+    *Explicit form*:
+
+    Let $(U,\varphi), (U^\prime,\psi)$ be two charts covering $p \in M, f(p) \in N$ respectively, with the coordinates denoted by $x = \varphi(p), y = \psi(p)$. 
+    
+    Vectors in $T_p M, T_{f(p)} N$ have the general form
+
+    $$
+    \begin{aligned}
+        V &= V^\mu \frac{\partial}{\partial x^\mu} \in T_p M
+        \\
+        f_* V \equiv W &= W^\alpha \frac{\partial}{\partial y^\alpha} \in T_{f(p)} N
+    \end{aligned}
+    $$
+
+    Writing the defining property explicitly:
+
+    $$
+    \begin{aligned}
+        (f_* V)[g] &= W^\alpha \frac{\partial (g \circ \psi^{-1})(y)}{\partial y^\alpha}
+        \\
+        V[g \circ f] &= V^\mu \frac{\partial (g \circ f \circ \varphi^{-1})(x)}{\partial x^\mu}
+    \end{aligned}
+    $$
+
+    Now we make the special choice $g = \psi^\nu$, then
+
+    $$
+    \begin{aligned}
+        \psi^\nu \circ \psi^{-1}(y) = \psi^\nu (f(p)) &= y^\nu \\
+        \psi^\nu \circ f \circ \varphi^{-1}(x) = \psi^\nu (f(p)) &= y^\nu
+    \end{aligned}
+    $$
+
+    Since $\partial y^\nu / \partial y^\alpha = \delta_\alpha^\nu$, finally we obtain
+
+    $$
+    W^\nu = (f_* V)^\nu
+    = V^\mu \frac{\partial y^\nu}{\partial x^\mu}
+    $$
+
+    *Special cases*:
+
+    - $M, N = \mathbb{R}$
+
+        Obviously, $T_p \mathbb{R} = \mathbb{R}$. Therefore, $f$ and $f_*$ both reduce to ordinary one-variable functions. 
+
+    *Remark*: The differential map can be naturally generalized to a map of $(r,0)$-tensors
+
+    $$
+    f_*: \mathcal{T}^r_{0,p}(M) \rightarrow \mathcal{T}^r_{0,f(p)}(N)
+    $$
+
+- **Pullback $f^*$**: a map from *cotangent* vectors to $N$ *back* to *cotangent* vectors to $M$.
+
+    $$
+    f^*: T_{f(p)}^* N \rightarrow T_p^* M
+    $$
+
+    For any $V \in T_p M, \, \omega \in T_{f(p)}^* N$, the pullback should satisfy
+
+    $$
+    \langle f^* \omega, V \rangle 
+    = \langle \omega, f_* V \rangle
+    $$
+
+    *Explicit form*:
+
+    Let $(U,\varphi), (U^\prime,\psi)$ be two charts covering $p \in M, f(p) \in N$ respectively, with the coordinates denoted by $x = \varphi(p), y = \psi(p)$ respectively. 
+    
+    Dual vectors in $T_{f(p)}^* N, T_p^* M$ have the general form
+
+    $$
+    \begin{aligned}
+        \omega &= \omega_\alpha dy^\alpha \in T_{f(p)}^* N
+        \\
+        f^* \omega \equiv \xi &= \xi_\mu dx^\mu \in T_p^* M
+    \end{aligned}
+    $$
+
+    Writing the defining property explicitly:
+
+    $$
+    \begin{aligned}
+        \langle f^* \omega, V \rangle &= \xi_\mu V^\mu
+        \\
+        \langle \omega, f_* V \rangle &= 
+        \omega_\alpha V^\mu \frac{\partial y^\alpha}{\partial x^\mu}
+    \end{aligned}
+    $$
+
+    Since $V^\mu$ is arbitrary, we must have
+
+    $$
+    \xi_\mu = (f^* \omega)_\mu = \omega_\alpha \frac{\partial y^\alpha}{\partial x^\mu}
+    $$
+
+    *Remark*: The pullback map can be naturally generalized to a map of $(0,s)$-tensors
+
+    $$
+    f_*: \mathcal{T}^0_{s,p}(M) \rightarrow \mathcal{T}^0_{s,f(p)}(N)
+    $$
+
+### Sub-manifolds
 
