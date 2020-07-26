@@ -157,7 +157,7 @@ Again, let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart 
 
 - **Cotangent vectors (one-forms)**: elements in $T_p^* M$ (i.e. *linear* functions $\omega: T_p M \rightarrow \mathbb{R}$)
 
-#### General Form of $\omega$
+#### General Form of One-forms
 
 $$
 \omega = \omega_\mu dx^\mu
@@ -286,11 +286,11 @@ $$
 
     *Special cases*:
 
-    - $M, N = \mathbb{R}$
+    - $M = \mathbb{R}$, and $N$ is 1-dimensional
 
         Obviously, $T_p \mathbb{R} = \mathbb{R}$. Therefore, $f$ and $f_*$ both reduce to ordinary one-variable functions. 
 
-    *Remark*: The differential map can be naturally generalized to a map of $(r,0)$-tensors
+    *Remark*: The pushforward can be naturally generalized to a map of $(r,0)$-tensors
 
     $$
     f_*: \mathcal{T}^r_{0,p}(M) \rightarrow \mathcal{T}^r_{0,f(p)}(N)
@@ -340,10 +340,10 @@ $$
     \xi_\mu = (f^* \omega)_\mu = \omega_\alpha \frac{\partial y^\alpha}{\partial x^\mu}
     $$
 
-    *Remark*: The pullback map can be naturally generalized to a map of $(0,s)$-tensors
+    *Remark*: The pullback can be naturally generalized to a map of $(0,s)$-tensors
 
     $$
-    f_*: \mathcal{T}^0_{s,p}(M) \rightarrow \mathcal{T}^0_{s,f(p)}(N)
+    f^*: \mathcal{T}^0_{s,p}(M) \rightarrow \mathcal{T}^0_{s,f(p)}(N)
     $$
 
 ### Sub-manifolds

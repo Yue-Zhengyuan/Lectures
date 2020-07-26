@@ -54,7 +54,7 @@ $$
 
 *Definition*: 
 
-- **Tensor**: a (real-valued) tensor $T$ of *type (p,q)* is a multi-linear map from $p$ dual vectors (in $V^*$) and $q$ vectors (in V) to $\mathbb{R}$, i.e.
+- **Tensor of type $(p,q)$**: a multi-linear map from $p$ dual vectors (in $V^*$) and $q$ vectors (in V) to $\mathbb{R}$, i.e.
     
     $$
     T: \bigotimes^p V^* \bigotimes V \rightarrow \mathbb{R}
@@ -62,12 +62,21 @@ $$
 
     *Example*:
 
-    - Dual vectors (from vector to $\mathbb{R}$):   
-        tensor of type $(0,1)$
+    - Dual vectors (from vector to $\mathbb{R}$): type $(0,1)$
 
-    - Vectors (from dual vectors (linear functions) to $\mathbb{R}$):   
-        tensor of type $(1,0)$
+    - Vectors (from dual vectors to $\mathbb{R}$): type $(1,0)$
 
-- **Tensor space**
-- **Tensor product**
+- **Tensor space $\mathcal{T}^p_q$**: The set of all tensors of the same type $(p,q)$ 
+
+- **Tensor product**: Let $\mu \in \mathcal{T}^p_q, \, \nu \in \mathcal{T}^r_s$. The tensor product of $\mu$ and $\nu$ (denoted by $\tau \equiv \mu \otimes \nu$) is an element in $\mathcal{T}^{p+r}_{q+s}$ defined by
+
+    $$
+    \begin{aligned}
+        &\tau(\omega_1,...,\omega_p,\xi_1,...,\xi_r; u_1,...,u_q,v_1,...,v_s) 
+        \\ & \quad \equiv 
+        \mu(\omega_1,...,\omega_p; u_1,...,u_q)
+        \nu(\xi_1,...,\xi_r; v_1,...,v_s)
+    \end{aligned}
+    $$
+
 - **Tensor contraction**
