@@ -232,7 +232,7 @@ $$
 
 </center>
 
-- **Differential map $f_*$**: a map from tangent vectors to $M$ to tangent vectors to $N$.
+- **Differential map (pushforward) $f_*$**: a map from tangent vectors to $M$ to tangent vectors to $N$.
 
     $$
     f_*: T_p M \rightarrow T_{f(p)} N
@@ -311,7 +311,7 @@ $$
 
     *Explicit form*:
 
-    Let $(U,\varphi), (U^\prime,\psi)$ be two charts covering $p \in M, f(p) \in N$ respectively, with the coordinates denoted by $x = \varphi(p), y = \psi(p)$ respectively. 
+    Let $(U,\varphi), (U^\prime,\psi)$ be two charts covering $p \in M, f(p) \in N$ respectively, with the coordinates denoted by $x = \varphi(p), y = \psi(f(p))$ respectively. 
     
     Dual vectors in $T_{f(p)}^* N, T_p^* M$ have the general form
 
