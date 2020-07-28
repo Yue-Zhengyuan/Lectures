@@ -1,65 +1,63 @@
 ## Differential Forms
 
-### Permutation
-
-*Definition*:
-
-- **Symmetrizer $\mathcal{S}$**
-- **Anti-Symmetrizer $\mathcal{A}$**
-
-### Differential Forms
-
 *Definition*:
 
 - **Differential form of order $r$ ($r$-form)**: a *totally anti-symmetric* tensor of type $(0,r)$ (sending $r$ (tangent) vectors to a number)
+
+    *General expression of $r$-forms*:
+
+    A general $(0,r)$-tensor $\omega$ has the local coordinate expression
+
+    $$
+    \omega^{(r)} = \omega_{\mu_1 ... \mu_r}
+    dx^{\mu_1} \cdots dx^{\mu_r} 
+    $$
+
+    By *totally anti-symmetric*, we mean that for *any* two indices $\mu, \nu$ of $\omega$
+
+    $$
+    \omega_{... \mu ... \nu ...}
+    = - \omega_{... \nu ... \mu ...}
+    $$
+
+    This requirement can be reformulated in more general language: let $P$ be a permutation of the $r$ indices of $\omega$, i.e. an element of the **symmetric group $S_r$**, then
+
+    $$
+    \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
+    = \text{sgn}(P) \, \omega_{\mu_1 ... \mu_r}
+    $$
+
+    It follows that the indices of *non-vanishing* components of $\omega$ must take values *different* from each other.
+
+    Collecting all terms in $\omega$ which are obtained from a permutation of index order, the anti-symmetry of $\omega$ allows us to rewrite these terms as
+
+    $$
+    \begin{aligned}
+        &\sum_{P \in S_r} \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
+        dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
+        \\ &=
+        \omega_{\mu_1 ... \mu_r} 
+        \sum_{P \in S_r} \text{sgn}(P) \, 
+        dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
+    \end{aligned}
+    $$
     
-    *Special case*: We already know what is 1-form; they are of the form
+    *Examples of different order*:
+    
+    - **0-Form**: formally *defined* as **functions** in $\mathcal{F}(M)$
+
+        $$ \omega^{(0)} = f \in \mathcal{F}(M) $$
+
+    - **1-form**: general expression
         
-    $$
-    \omega = \omega_\mu dx^\mu
-    $$
+        $$
+        \omega^{(1)} = \omega_\mu dx^\mu
+        $$
 
-    In particular, the differentials $dx^\mu$ themselves are 1-forms. 
-
-    - **0-form**: we formally define functions in $\mathcal{F}(M)$ as 0-forms
-
-- **Wedge product of 1-forms**: *totally anti-symmetric* tensor product of the involved 1-forms
-
-    $$
-    dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
-    \equiv \sum_{P \in S_r} \text{sgn}(P) \,
-    dx^{\mu_{P(1)}} \otimes \cdots \otimes dx^{\mu_{P(r)}}
-    $$
-
-    *Remark*: 
-    - The wedge product of $r$ 1-forms is an $r$-form.
+        including $dx^\mu$ and the ordinary differential of functions $df$. There is no concept of "anti-symmetric" for 1-forms.
     
-    - All $r$-forms of the above form at point $p \in M$ form a basis of the vector space of $r$-forms (denoted by $\Omega^r_p(M)$)
-    
-    - If $\dim{M} = m$, we can easily obtain
 
-        $$
-        \dim{\Omega^r_p(M)} =
-        \begin{pmatrix}
-            m \\ r
-        \end{pmatrix}
-        \equiv \frac{m!}{r!(m-r)!}
-        $$
-
-        since we are *selecting* $r$ 1-forms from the $m$ dual bases from $T_p^* M$.
-    
-    - An arbitrary $r$-form $\omega \in \Omega^r_p(M)$ can be written as linear superposition of the basis $r$-forms:
-
-        $$
-        \omega = \frac{1}{r!} \omega_{\mu_1 ... \mu_r}
-        dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
-        $$
-
-        where $\omega_{\mu_1 ... \mu_r}$ is also *totally anti-symmetric* to keep LHS invariant.
-
-    *Properties of wedge product*:
-
-- **Exterior product of two differential forms**: let $\omega \in \Omega^r_p(M), \xi \in \Omega^s_p(M)$be two differential forms; the wedge product of them (denoted by $\omega \wedge \xi$) is defined as an element in $\Omega^{r+s}_p(M)$, which acts on vectors $V_i \in T_p M$ in the following way:
+- **Wedge (exterior) product of differential forms (generalized)**: let $\omega \in \Omega^r_p(M), \xi \in \Omega^s_p(M)$be two differential forms; the wedge product of them (denoted by $\omega \wedge \xi$) is defined as an element in $\Omega^{r+s}_p(M)$, which acts on vectors $V_i \in T_p M$ in the following way:
 
     $$
     \begin{aligned}
@@ -71,29 +69,58 @@
     \end{aligned}
     $$
 
-    *Properties*:
+*Remark*: 
 
-    Let $\omega \in \Omega^q_p(M), \xi \in \Omega^r_p(M), \eta \in \Omega^s_p(M)$. Then
+- The wedge product of $r$ 1-forms is an $r$-form.
 
-    - $\omega \wedge \xi = (-1)^{qr} \xi \wedge \omega$
+- All $r$-forms of the above form at point $p \in M$ form a basis of the vector space of $r$-forms (denoted by $\Omega^r_p(M)$)
 
-        - In particular, if $q$ is odd, then $\omega \wedge \omega = 0$
+    $$
+    dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+    \equiv \sum_{P \in S_r} \text{sgn}(P) \,
+    dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
+    $$
 
-    - (Associativity) $(\omega \wedge \xi) \wedge \eta = \omega \wedge (\xi \wedge \eta)$
+- If $\dim{M} = m$, we can easily obtain
 
-    *Remark*:
+    $$
+    \dim{\Omega^r_p(M)} =
+    \begin{pmatrix}
+        m \\ r
+    \end{pmatrix}
+    \equiv \frac{m!}{r!(m-r)!}
+    $$
 
-    - The wedge product between 1-forms can be regarded as a special case of the exterior product.
+    since we are *selecting* $r$ 1-forms from the $m$ dual bases from $T_p^* M$.
 
-    - If $q + r > m$, $\omega \wedge \xi$ *vanishes identically*.
-    
-    - The space of differential forms of *all order*
+*General expression of $r$-forms*:
 
-        $$
-        \Omega^*_p(M) \equiv \bigoplus_{i=1}^m \Omega^i_p(M)
-        $$
+$$
+\omega = \frac{1}{r!} \omega_{\mu_1 ... \mu_r}
+dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+$$
 
-        is *closed* under the exterior product.
+where $\omega_{\mu_1 ... \mu_r}$ is also *totally anti-symmetric* to keep LHS invariant.
+
+#### Properties of Wedge Product
+
+Let $\omega \in \Omega^q_p(M), \xi \in \Omega^r_p(M), \eta \in \Omega^s_p(M), \, \dim{M} = m$. Then
+
+- $\omega \wedge \xi = (-1)^{qr} \xi \wedge \omega$
+
+    - In particular, if $q$ is odd, then $\omega \wedge \omega = 0$
+
+- (Associativity) $(\omega \wedge \xi) \wedge \eta = \omega \wedge (\xi \wedge \eta)$
+
+- If $q + r > m$, $\omega \wedge \xi$ *vanishes identically*.
+
+- The space of differential forms of *all order*
+
+    $$
+    \Omega^*_p(M) \equiv \bigoplus_{i=1}^m \Omega^i_p(M)
+    $$
+
+    is *closed* under the exterior product.
 
 ### Exterior Derivatives
 
@@ -109,95 +136,157 @@
     the exterior derivative $d_r: \Omega^r(M) \rightarrow \Omega^{r+1}(M)$ (or simply denoted by $d$) acts on $\omega$ as follows:
 
     $$
-    d_r \omega \equiv \frac{1}{r!} \left( 
-        \frac{\partial}{\partial x^\nu}
-        \omega_{\mu_1 ... \mu_r}
-    \right) dx^\nu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+    d \omega \equiv \frac{\partial}{\partial x^\mu}
+    \left( 
+        \frac{1}{r!} \omega_{\mu_1 ... \mu_r}
+    \right) dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
     $$
 
-#### Relation to Usual Vector Calculus
+#### Coordinate-free Expression
 
-- 0-forms: **Gradient**
+- Action on 1-forms
+
+    $$
+    (d\omega)(X,Y) = X[\omega(Y)] - Y[\omega(X)] - \omega([X,Y])
+    $$
+
+    *Proof*: Using the coordinate expression
+
+    $$
+    X = X^\mu \partial_\mu, \quad
+    Y = Y^\mu \partial_\mu, \quad
+    \omega = \omega_\mu dx^\mu
+    $$
+
+    we obtain
+
+    $$
+    \begin{aligned}
+        \text{LHS}
+        &= \partial_\mu \omega_{\nu}
+        (dx^\mu \wedge dx^{\nu})(X, Y)
+        \\
+        &= \partial_\mu \omega_{\nu} (
+            X^\mu Y^\nu - Y^\mu X^\nu
+        )
+        \\
+        \text{RHS} 
+        &= X^\mu \partial_\mu (\omega_\nu Y^\nu)
+        - Y^\mu \partial_\mu (\omega_\nu X^\nu)
+        \\ &\quad
+        - \omega_\nu (
+            X^\mu \partial_\mu Y^\nu 
+            - Y^\mu \partial_\mu X^\nu
+        )
+        \\
+        &= \partial_\mu \omega_\nu (X^\mu Y^\nu - X^\nu Y^\mu) = \text{LHS} \qquad \blacksquare
+    \end{aligned}
+    $$
+
+- General formula for $r$-forms
     
     $$
     \begin{aligned}
-        \omega_0 &= f(\mathbf{r}) \\ \Rightarrow
-        d \omega_0 &=
-        \partial_x f \, dx
-        + \partial_y f \, dy
-        + \partial_z f \, dz
-        \equiv \nabla f \cdot d \mathbf{r}
+        &(d\omega)(X_1, ..., X_r, X_{r+1}) \\
+        &= \sum_{i=1}^r (-1)^{i+1} X_i[\omega(X_1, ..., \cancel{X_i}, ..., X_{r+1})]
+        \\ &\quad
+        + \sum_{i<j} (-1)^{i+j} 
+        \omega([X_i,X_j], X_1, ..., \cancel{X_i}, ..., \cancel{X_j}, ..., X_{r+1})
     \end{aligned}
     $$
 
-    This reduce to the usual differential of a function, corresponding to **gradient** $\nabla f(\mathbf{r})$. 
-
-- 1-forms: **Curl**
-
-    $$
-    \begin{aligned}
-        \omega_1 &= \omega_x(\mathbf{r}) dx + \omega_y(\mathbf{r}) dy + \omega_z(\mathbf{r}) dz
-        \\ \Rightarrow
-        d\omega_1 &= (
-            \partial_y \omega_x dy \wedge dx 
-            + \partial_z \omega_x dz \wedge dx
-        ) \\ &\quad + (
-            \partial_x \omega_y dx \wedge dy
-            + \partial_z \omega_y dz \wedge dy
-        ) \\ &\quad + (
-            \partial_x \omega_z dx \wedge dz
-            + \partial_y \omega_z dy \wedge dz
-        ) \\
-        &= (\partial_y \omega_z - \partial_z \omega_y) dy \wedge dz
-        \\ &\quad + 
-        (\partial_z \omega_x - \partial_x \omega_z) dz \wedge dx +
-        (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy
-    \end{aligned}
-    $$
-
-    The three components correspond to the **curl** $\nabla \times \mathbf{\omega}$ of a usual vector field $\omega \equiv (\omega_x, \omega_y, \omega_z)$.
-
-- 2-forms: **Divergence**
-
-    $$
-    \begin{aligned}
-        \omega_2 &= 
-        \omega_{xy}(\mathbf{r}) \, dx \wedge dy 
-        + \omega_{yz}(\mathbf{r}) \, dy \wedge dz
-        + \omega_{zx}(\mathbf{r}) \, dz \wedge dx
-        \\ \Rightarrow
-        d\omega_2 &= 
-        \partial_z \omega_{xy} \, dz \wedge dy \wedge dx 
-        \\ &\quad + 
-        \partial_x \omega_{yz} \, dx \wedge dy \wedge dz
-        +
-        \partial_y \omega_{zx} \,dy \wedge dz \wedge dx
-        \\
-        &= (\partial_x \omega_{yz} + \partial_y \omega_{zx} + \partial_z \omega_{xy}) \, dx \wedge dy \wedge dz
-    \end{aligned}
-    $$
-
-    The coefficient corresponds to the **divergence** $\nabla \cdot \omega$ of a usual vector field $\omega \equiv (\omega_{yz}, \omega_{zx}, \omega_{xy})$.
-
-- 3-forms: Related to [**Gauss' theorem** and **Stokes' theorem**](../6-de_Rham/6_1-Stokes_Theorem.md)
-
-    $$
-    \omega_3 = 
-    \omega_{xyz}(\mathbf{r}) \, dx \wedge dy \wedge dz
-    \, \Rightarrow \,
-    d\omega_3 = 0
-    $$
 
 #### Properties of Exterior Derivative
 
-- If $\xi \in \Omega^q(M), \omega \in \Omega^r(M)$, then
+- Exterior derivative is *nilpotent*:
     
-    $$ d(\xi \wedge \omega) = d\xi \wedge \omega + (-1)^q \xi \wedge d\omega$$
+    $$
+    d^2 \equiv d_{r+1} \circ d_r = 0
+    $$
 
-- $d^2 \equiv d_{r+1} \circ d_r = 0$
+- Exterior derivative with exterior product
+
+    Let $\xi \in \Omega^q(M), \omega \in \Omega^r(M)$.
+    
+    $$
+    d(\xi \wedge \omega) = d\xi \wedge \omega + (-1)^q \xi \wedge d\omega
+    $$
+
+- Exterior derivative *commutes* with pullback
+    
+    Let $\omega \in \Omega^r(N), \, f: M \rightarrow N$
+
+    $$
+    d(f^* \omega) = f^*(d \omega)
+    $$
+    
+    *Proof*: Let the coordinates used in $M, N$ be $x, y$ respectively. Using the coordinate expression, we obtain
+
+    $$
+    \begin{aligned}
+        d (f^*\omega) 
+        &= \frac{1}{r!} 
+        \partial_\mu (f^* \omega)_{\mu_1 ... \mu_r}
+        dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+        \\
+        &= \frac{1}{r!} 
+        \partial_\mu \left(
+            \omega_{\nu_1 ... \nu_s}
+            \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
+            \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+        \right)
+        dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+    \end{aligned}
+    $$
+
+    We note that $x^\mu$ is a *new variable*
+
+    On the other hand,
+
+    $$
+    \begin{aligned}
+        f^* (d\omega)
+        &= (d\omega)_{\nu \nu_1 ... \nu_r}
+        \frac{\partial y^{\nu}}{\partial x^{\mu}}
+        \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
+        \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+        dx^\mu dx^{\mu_1} \cdots dx^{\mu_r}
+        \\
+        &= \frac{\partial \omega_{\nu_1 ... \nu_s}}{\partial y^\nu}
+        \frac{\partial y^{\nu}}{\partial x^{\mu}}
+        \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
+        \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+        dx^\mu dx^{\mu_1} \cdots dx^{\mu_r}
+        \\
+        &= (\partial_\mu \omega_{\nu_1 ... \nu_s})
+        \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
+        \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+        dx^\mu dx^{\mu_1} \cdots dx^{\mu_r}
+        \\
+        &= \frac{1}{r!} 
+        \partial_\mu \left(
+            \omega_{\nu_1 ... \nu_s}
+            \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
+            \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+        \right)
+        dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+    \end{aligned}
+    $$
+
+    Thus the two sides are equal. $\blacksquare$
+
+- Pullback is *distributive* over exterior product:
+    
+    Let $\xi, \omega$ be differential forms defined in $N$, and $f: M \rightarrow N$
+
+    $$
+    f^*(\xi \wedge \omega) = (f^* \xi) \wedge (f^* \omega)
+    $$
 
 ### Interior Product and Lie Derivative of Forms
 
 *Definition*:
 
 - **Interior product**
+
+### Application to Classical Mechanics

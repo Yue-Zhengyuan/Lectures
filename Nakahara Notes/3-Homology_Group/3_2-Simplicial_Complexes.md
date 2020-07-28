@@ -6,7 +6,7 @@
 
 - **Geometrically independent**: A set of $r+1$ points in $\mathbb{R}^m (m \ge r)$is said to be *geometrically independent* if there is no $r-1$ dimensional hyperplane containing all of them, i.e. the points can form an $r$-dimensional object
 
-- **$r$-Simplex (单纯形)**: An object $\sigma_r$ containing an $r$-dimensional region determined by $r+1$ *geometrically independent* points $p_0, ..., p_r$ in $\mathbb{R}^m (m \ge r)$
+- **$r$-Simplex (单纯形) $\sigma_r$**: An object containing an $r$-dimensional region determined by $r+1$ *geometrically independent* points $p_0, ..., p_r$ in $\mathbb{R}^m (m \ge r)$
 
     $$
     \begin{aligned}
@@ -46,5 +46,7 @@
 > 2. The intersection of any two simplexes in $K$ is either *empty* or *a common face of the two simplexes*.
 
 - **Polyhedron**
+
 - **Triangulable topological space**
+
     - **Triangulation (三角剖分) of topological space**

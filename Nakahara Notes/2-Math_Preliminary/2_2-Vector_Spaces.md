@@ -15,9 +15,12 @@
 
     which is a *homomorphism* preserving the algebraic structure (vector addition and scalar multiplication) of the vector space $V$.
 
-- **Image and kernel of the map $f$**
-- **Linear functions**
+    - **Image and kernel of the map $f$**
+    - **Linear functions**
+
 - **Isomorphic vector spaces**
+
+----
 
 *Theorem*: (**Relation between $\ker{f}$ and $\text{im }f$**)
 
@@ -26,6 +29,8 @@ Let $f: V \rightarrow W$ be a linear map. Then
 $$
 \dim{V} = \dim{\ker{f}}  + \dim{\text{im }f}
 $$
+
+----
 
 ### Dual Vector Space
 
@@ -36,11 +41,15 @@ $$
 - **Inner product**
 - **Adjoint of linear maps**
 
+----
+
 *Theorem*: (**Dimension of $\tilde{f}$**)
 
 $$
 \dim{\text{im }f} = \dim{\text{im }\tilde{f}}
 $$
+
+----
 
 *Theorem*: (**Toy index theorem**)
 
@@ -49,6 +58,8 @@ Let $V, W$ be *finite*-dimensional vector spaces, and $f: V\rightarrow W$. Then
 $$
 \dim{\ker{f}} - \dim{\ker{\tilde{f}}} = \dim{V} - \dim{W}
 $$
+
+----
 
 ### Tensors
 

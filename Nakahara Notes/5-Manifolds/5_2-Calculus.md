@@ -149,6 +149,41 @@ Again, let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart 
 
 #### Change of Basis
 
+Suppose we have two charts $(U_i, \varphi_i), (U_j, \varphi_j)$ that cover a common point $p \in M$. The coordinates of $p$ in the two charts are $x \equiv \varphi_i(p), y \equiv \varphi_j(p)$. The basis vectors in the two charts are 
+
+$$
+e_\mu \equiv \frac{\partial}{\partial x^\mu}, \quad
+\tilde{e}_\mu \equiv \frac{\partial}{\partial y^\mu}
+$$
+
+They are related by the *Jacobian*
+
+$$
+\frac{\partial}{\partial x^\mu} =
+\frac{\partial y^\nu}{\partial x^\mu}
+\frac{\partial}{\partial y^\nu}
+\, \Rightarrow \,
+e_\mu = 
+\frac{\partial y^\nu}{\partial x^\mu}
+\tilde{e}_\nu
+$$
+
+For any vector $V \in T_p M$, its components under the two bases are determined by
+
+$$
+V = V^\mu e_\mu = \tilde{V}_\mu \tilde{e}_\mu
+$$
+
+Therefore (we also write down the transformation from $e_\mu$ to $\tilde{e}_\mu$)
+
+$$
+\tilde{e}_\mu = \frac{\partial x^\nu}{\partial y^\mu} e_\nu
+, \quad
+\tilde{V}^\mu = \frac{\partial y^\mu}{\partial x^\nu} V^\nu
+$$
+
+We notice that the transformation matrices for $V^\mu$ and $e_\mu$ are *inverse* of each other. 
+
 ### One-forms and Cotangent Space
 
 *Definition*:
@@ -186,7 +221,13 @@ $$
 
 *Definition*:
 
-- **Tensor of type $(r,s)$**: a *multi-linear* function $T: \bigotimes^r T_p^* M \bigotimes^s T_p M \rightarrow \mathbb{R}$ which send $r$ dual vectors and $s$ vectors to a real number. 
+- **Tensor of type $(r,s)$**: a *multi-linear* function 
+    
+    $$
+    T: \bigotimes^r T_p^* M \bigotimes^s T_p M \rightarrow \mathbb{R}
+    $$ 
+    
+    which send $r$ dual vectors and $s$ vectors to a real number. Its general local coordinate expression is
 
     $$
     T = T^{\mu_1 ... \mu_r}_{\nu_1 ... \nu_s}
@@ -207,15 +248,37 @@ $$
     V_1^{\nu_1} ... V_s^{\nu_s}
     $$
 
-    *Remark*: The set of all $(r,s)$-tensors defined at point $p \in M$ are denoted by $\mathcal{T}^r_{s,p}(M)$.
+    The set of all $(r,s)$-tensors at point $p \in M$ is denoted by $\mathcal{T}^r_{s,p}(M)$.
     
     *Special cases*:
 
-    - Dual vector: tensor of type $(0,1)$
+    - Dual vectors (1-forms): type $(0,1)$
+
+        $$
+        \Omega^1(M) \equiv \mathcal{T}^0_1(M)
+        $$
         
         *Remark*: We can now write the inner product as $\langle \omega,V \rangle = \omega(V)$.
     
-    - Vector: tensor of type $(1,0)$
+    - Functions (defined as 0-forms): type $(0,0)$
+
+        $$
+        \mathcal{F}(M) \equiv
+        \Omega^0(M) \equiv 
+        \mathcal{T}^0_0(M)
+        $$
+
+    - [$r$-Forms](5_4-Differential_Form.md): type $(0,r)$ (but is of a *special* kind)
+
+        $$
+        \Omega^r(M) \subset \mathcal{T}^0_r(M)
+        $$
+    
+    - Vectors: type $(1,0)$
+
+        $$
+        \mathfrak{X}(M) \equiv \mathcal{T}^1_0(M)
+        $$
 
 - **Tensor fields**: a tensor which is assigned *smoothly* to each point of the manifold $M$
     
@@ -290,7 +353,7 @@ $$
 
         Obviously, $T_p \mathbb{R} = \mathbb{R}$. Therefore, $f$ and $f_*$ both reduce to ordinary one-variable functions. 
 
-    *Remark*: The pushforward can be naturally generalized to a map of $(r,0)$-tensors
+    *Generalization of pushforward*: 
 
     $$
     f_*: \mathcal{T}^r_{0,p}(M) \rightarrow \mathcal{T}^r_{0,f(p)}(N)
@@ -307,6 +370,12 @@ $$
     $$
     \langle f^* \omega, V \rangle 
     = \langle \omega, f_* V \rangle
+    $$
+
+    or using the alternative notation
+
+    $$
+    (f^* \omega)(V) = \omega(f_* V)
     $$
 
     *Explicit form*:
@@ -330,20 +399,53 @@ $$
         \langle f^* \omega, V \rangle &= \xi_\mu V^\mu
         \\
         \langle \omega, f_* V \rangle &= 
-        \omega_\alpha V^\mu \frac{\partial y^\alpha}{\partial x^\mu}
+        \omega_\nu V^\mu \frac{\partial y^\nu}{\partial x^\mu}
     \end{aligned}
     $$
 
     Since $V^\mu$ is arbitrary, we must have
 
     $$
-    \xi_\mu = (f^* \omega)_\mu = \omega_\alpha \frac{\partial y^\alpha}{\partial x^\mu}
+    \xi_\mu = (f^* \omega)_\mu = \omega_\nu \frac{\partial y^\nu}{\partial x^\mu}
     $$
 
-    *Remark*: The pullback can be naturally generalized to a map of $(0,s)$-tensors
+    *Generalization of pullback*:
 
     $$
-    f^*: \mathcal{T}^0_{s,p}(M) \rightarrow \mathcal{T}^0_{s,f(p)}(N)
+    f^*: \mathcal{T}^0_{s,f(p)}(N) \rightarrow \mathcal{T}^0_{s,p}(M)
+    $$
+
+    For $\omega \in \mathcal{T}^0_{s,f(p)}(N)$ and vectors $V_i \in T_p M$, we *define*
+
+    $$
+    (f^* \omega)(V_1, ..., V_s) \equiv \omega(f_* V_1, ..., f_* V_s)
+    $$
+
+    The component form is
+
+    $$
+    \begin{aligned}
+        &(f^* \omega)_{\mu_1 ... \mu_s} 
+        V_1^{\mu_1} \cdots V_s^{\mu_s}
+        = \omega_{\nu_1 ... \nu_s} 
+        (f_* V_1)^{\nu_1} \cdots (f_* V_s)^{\nu_s}
+        \\ &\quad
+        = \omega_{\nu_1 ... \nu_s} 
+        \left(
+            V_1^{\mu_1} \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}}
+        \right) \cdots \left(
+            V_s^{\mu_s} \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+        \right)
+    \end{aligned}
+    $$
+
+    Therefore
+
+    $$
+    (f^* \omega)_{\mu_1 ... \mu_s} 
+    = \omega_{\nu_1 ... \nu_s} 
+    \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
+    \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
     $$
 
 ### Sub-manifolds
