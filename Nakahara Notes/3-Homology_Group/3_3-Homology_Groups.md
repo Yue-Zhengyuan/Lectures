@@ -26,7 +26,11 @@
         (p_{i_0} p_{i_1} ... ) = \text{sgn}(P) (p_0 p_1 ... p_r)
         $$
 
-        where $\text{sgn}(P) = \pm 1$ is the parity of the permutation $P$. 
+        where $\text{sgn}(P) = \pm 1$ is the parity of the permutation $P$. In particular, we note that
+
+        $$
+        (p_1 p_2 ... p_r p_0) = (-1)^r (p_0 p_1 ... p_r)
+        $$
 
     - $r = 0$
         

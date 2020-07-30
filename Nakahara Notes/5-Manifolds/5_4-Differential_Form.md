@@ -2,62 +2,74 @@
 
 *Definition*:
 
-- **Differential form of order $r$ ($r$-form)**: a *totally anti-symmetric* tensor of type $(0,r)$ (sending $r$ (tangent) vectors to a number)
+- **Differential form of degree $r$ ($r$-form)**: a *totally anti-symmetric* tensor $\omega$ of type $(0,r)$ (sending $r$ vectors to a number)
 
-    *General expression of $r$-forms*:
+    The **degree** $r$ is denoted by $\deg{\omega} = r$. 
 
-    A general $(0,r)$-tensor $\omega$ has the local coordinate expression
+    The **set of all $r$-forms** defined in $T_p^* M$ is denoted by $\Omega^r_p(M)$. Sometimes the point $p$ will not be specified. 
 
-    $$
-    \omega^{(r)} = \omega_{\mu_1 ... \mu_r}
-    dx^{\mu_1} \cdots dx^{\mu_r} 
-    $$
+    *Meaning of total anti-symmetry*:
 
-    By *totally anti-symmetric*, we mean that for *any* two indices $\mu, \nu$ of $\omega$
+    If we swap any two vectors that the $r$-form acts on, the result will *change sign*. In other words, for any $r$-form $\omega$, any $r$-permutation $P$ and any $r$ vectors $V_i \in T_p M$:
 
     $$
-    \omega_{... \mu ... \nu ...}
-    = - \omega_{... \nu ... \mu ...}
+    \omega(V_{P(1)}, ..., V_{P(r)})
+    = \text{sgn}(P) \, \omega(V_1, ..., V_r)
     $$
 
-    This requirement can be reformulated in more general language: let $P$ be a permutation of the $r$ indices of $\omega$, i.e. an element of the **symmetric group $S_r$**, then
+    In local coordinates, this requirement can be translated as
+
+    $$
+    \begin{aligned}
+        \omega_{\mu_1 ... \mu_r} 
+        V_{P(1)}^{\mu_1} \cdots V_{P(r)}^{\mu_r}
+        &= \text{sgn}(P) \,
+        \omega_{\mu_1 ... \mu_r} 
+        V_{1}^{\mu_1} \cdots V_{r}^{\mu_r}
+        \\ 
+        &= \text{sgn}(P) \,
+        \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
+        V_{P(1)}^{\mu_{P(1)}} \cdots V_{P(r)}^{\mu_{P(r)}}
+        \\
+        \Rightarrow
+        \omega_{\mu_1 ... \mu_r} 
+        &= \text{sgn}(P) \,
+        \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
+    \end{aligned}
+    $$
+
+    or equivalently (since $\text{sgn}(P) = \pm 1$)
 
     $$
     \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
     = \text{sgn}(P) \, \omega_{\mu_1 ... \mu_r}
     $$
 
-    It follows that the indices of *non-vanishing* components of $\omega$ must take values *different* from each other.
-
-    Collecting all terms in $\omega$ which are obtained from a permutation of index order, the anti-symmetry of $\omega$ allows us to rewrite these terms as
-
-    $$
-    \begin{aligned}
-        &\sum_{P \in S_r} \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
-        dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
-        \\ &=
-        \omega_{\mu_1 ... \mu_r} 
-        \sum_{P \in S_r} \text{sgn}(P) \, 
-        dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
-    \end{aligned}
-    $$
+    *Special cases*: 
     
-    *Examples of different order*:
-    
+    The concept of "anti-symmetric" does not apply to **0-forms** and **1-forms**, which are defined as
+
     - **0-Form**: formally *defined* as **functions** in $\mathcal{F}(M)$
 
-        $$ \omega^{(0)} = f \in \mathcal{F}(M) $$
+    $$ \omega^{(0)} = f \in \mathcal{F}(M) $$
 
-    - **1-form**: general expression
+    - **1-Form**: general expression in local coordinates
         
         $$
         \omega^{(1)} = \omega_\mu dx^\mu
         $$
 
-        including $dx^\mu$ and the ordinary differential of functions $df$. There is no concept of "anti-symmetric" for 1-forms.
-    
+        including the dual basis $dx^\mu$ of $T_p^* M$. 
 
-- **Wedge (exterior) product of differential forms (generalized)**: let $\omega \in \Omega^r_p(M), \xi \in \Omega^s_p(M)$be two differential forms; the wedge product of them (denoted by $\omega \wedge \xi$) is defined as an element in $\Omega^{r+s}_p(M)$, which acts on vectors $V_i \in T_p M$ in the following way:
+- **Wedge (exterior) product of differential forms**: 
+    
+    Let $\omega \in \Omega^r_p(M), \xi \in \Omega^s_p(M)$. The **wedge (exterior) product** $\omega \wedge \xi$ is defined as an $(r+s)$-form:
+    
+    $$
+    \omega \wedge \xi \in \Omega^{r+s}_p(M)
+    $$
+    
+    which acts on $r+s$ vectors $V_i \in T_p M$ as
 
     $$
     \begin{aligned}
@@ -69,17 +81,192 @@
     \end{aligned}
     $$
 
+    where $S_r$ denotes the **symmetric group** of all $r$-permutations.
+
+#### Properties of Wedge Product
+
+Let $\omega, \xi, \eta$ be differential forms defined in $M$, and 
+
+$$
+\dim{M} = m, \quad \deg{\omega} = q, \quad
+\deg{\xi} = r, \quad \deg{\eta} = s
+$$ 
+
+Then
+
+- **Graded anti-commutativity**
+    
+    $$ \omega \wedge \xi = (-1)^{qr} \xi \wedge \omega $$
+
+    *Proof*:
+    
+    *Corollary*: 
+
+    - For two 1-forms $\omega, \xi$
+
+        $$ \omega \wedge \xi = - \xi \wedge \omega $$
+    
+    - If $q$ is odd, then 
+
+        $$ 
+        \omega \wedge \omega = (-1)^{q^2} \omega \wedge \omega = -\omega \wedge \omega = 0
+        $$
+
+- **Associativity**
+  
+    $$ (\omega \wedge \xi) \wedge \eta = \omega \wedge (\xi \wedge \eta) $$
+
+#### Wedge Product of Dual Basis Vectors
+
+We start from 2 dual basis vectors. In local coordinates, let
+
+$$
+\omega = dx^{\mu_1}, \quad \xi = dx^{\mu_2}
+$$
+
+then
+
+$$
+\begin{aligned}
+    (\omega \wedge \xi)(V_1, V_2)
+    &= \sum_{P \in S_2} \text{sgn}(P) \,
+    \omega(V_{P(1)}) \, \xi(V_{P(2)})
+    \\
+    &= \sum_{P \in S_2} \text{sgn}(P) \,
+    V_{P(1)}^{\mu_1} V_{P(2)}^{\mu_2}
+    \\
+    &= \sum_{P \in S_2} \text{sgn}(P) \,
+    V_{1}^{\mu_{P(1)}} V_{2}^{\mu_{P(2)}}
+\end{aligned}
+$$
+
+In the last step we are in fact summing over $P^{-1}$. But $\text{sgn}(P) = \text{sgn}(P^{-1})$, so we need not change the notation. Therefore
+
+$$
+dx^{\mu_1} \wedge dx^{\mu_2} 
+= \sum_{P\in S_2} \text{sgn}(P) \, dx^{\mu_{P(1)}} dx^{\mu_{P(2)}}
+$$
+
+Next we proceed to the product of 3 dual basis vectors (associativity of wedge product makes things easier): let $\eta = dx^{\mu_3}$, then
+
+$$
+\begin{aligned}
+    &\omega \wedge \xi \wedge \eta
+    = (\omega \wedge \xi) \wedge \eta
+    \\ & \quad 
+    = \frac{1}{2! 1!}\sum_{P \in S_{3}} \text{sgn}(P) \,
+    (\omega \wedge \xi)(V_{P(1)}, V_{P(2)}) \,
+    \eta(V_{P(3)})
+    \\ & \quad
+    = \frac{1}{2} \sum_{P \in S_3} \text{sgn}(P) \,
+    \left( 
+        V_{P(1)}^{\mu_1} V_{P(2)}^{\mu_2} V_{P(3)}^{\mu_3}
+        - V_{P(1)}^{\mu_2} V_{P(2)}^{\mu_1} V_{P(3)}^{\mu_3}
+    \right)
+    \\ & \quad
+    = \frac{1}{2} \sum_{P \in S_3} \text{sgn}(P) \,
+    \left( 
+        V_{P(1)}^{\mu_1} V_{P(2)}^{\mu_2} V_{P(3)}^{\mu_3}
+        - V_{P'(2)}^{\mu_2} V_{P'(1)}^{\mu_1} V_{P'(3)}^{\mu_3}
+    \right)
+\end{aligned}
+$$
+
+Here $P' = (12) P \in S_3$ (i.e. $P$ combined with exchange of 1 and 2). Obviously $\text{sgn}(P) = -\text{sgn}(P')$. Therefore we can merge the two terms and cancel the $1/2$ factor:
+
+$$
+\begin{aligned}
+    \omega \wedge \xi \wedge \eta
+    &= \sum_{P \in S_3} \text{sgn}(P) \,
+    V_{P(1)}^{\mu_1} V_{P(2)}^{\mu_2} V_{P(3)}^{\mu_3}
+    \\ 
+    &= \sum_{P \in S_3} \text{sgn}(P) \,
+    V_{1}^{\mu_{P(1)}} V_{2}^{\mu_{P(2)}} V_{3}^{\mu_{P(3)}}
+\end{aligned}
+$$
+
+Finally, 
+
+$$
+dx^{\mu_1} \wedge dx^{\mu_2} \wedge dx^{\mu_3}
+= \sum_{P \in S_3} \text{sgn}(P) \,
+dx^{\mu_{P(1)}} dx^{\mu_{P(2)}} dx^{\mu_{P(3)}}
+$$
+
+Similar process goes on, which finally leads to the *general* expression:
+
+$$
+dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+= \sum_{P \in S_r} \text{sgn}(P) \,
+dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
+$$
+
+#### General Expression of $r$-Forms
+
+A general $(0,r)$-tensor $\omega$ has the local coordinate expression
+
+$$
+\omega^{(r)} = \omega_{\mu_1 ... \mu_r}
+dx^{\mu_1} \cdots dx^{\mu_r} 
+$$
+
+The *total anti-symmetry* requires that
+
+$$
+\omega_{\mu_{P(1)} ... \mu_{P(r)}} 
+= \text{sgn}(P) \, \omega_{\mu_1 ... \mu_r}
+$$
+
+Collecting all terms in $\omega$ which are obtained from a permutation of index degree, the anti-symmetry of $\omega$ allows us to rewrite these terms as
+
+$$
+\begin{aligned}
+    &\sum_{P \in S_r} \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
+    dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
+    \\ &=
+    \omega_{\mu_1 ... \mu_r} 
+    \sum_{P \in S_r} \text{sgn}(P) \, 
+    dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
+\end{aligned}
+$$
+
+The additional $1/r!$ factor is due to repeated counting. For example, when $r = 2$:
+
+$$
+\begin{aligned}
+    &\sum_{P \in S_2} \omega_{\mu_{P(1)} \mu_{P(2)}} 
+    dx^{\mu_{P(1)}} dx^{\mu_{P(2)}}
+    \\
+    &= \omega_{\mu_1 \mu_2} dx^{\mu_1} dx^{\mu_2}
+    + \omega_{\mu_2 \mu_1} dx^{\mu_2} dx^{\mu_1}
+    \\
+    &= \omega_{\mu_1 \mu_2} (
+        dx^{\mu_1} dx^{\mu_2} - dx^{\mu_2} dx^{\mu_1}
+    )
+\end{aligned}
+$$
+
+Recall that
+
+$$
+\sum_{P \in S_r} \text{sgn}(P) \,
+dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
+= dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+$$
+
+Thus we finally obtain the *general expression* of $r$-forms:
+
+$$
+\omega = \frac{1}{r!} \omega_{\mu_1 ... \mu_r} 
+dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+$$
+
 *Remark*: 
 
-- The wedge product of $r$ 1-forms is an $r$-form.
+- We have now shown that an $m$-dimensional manifold $M$ can only have non-vanishing differential forms *up to degree $m$*. 
 
 - All $r$-forms of the above form at point $p \in M$ form a basis of the vector space of $r$-forms (denoted by $\Omega^r_p(M)$)
 
-    $$
-    dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
-    \equiv \sum_{P \in S_r} \text{sgn}(P) \,
-    dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
-    $$
 
 - If $\dim{M} = m$, we can easily obtain
 
@@ -93,28 +280,9 @@
 
     since we are *selecting* $r$ 1-forms from the $m$ dual bases from $T_p^* M$.
 
-*General expression of $r$-forms*:
 
-$$
-\omega = \frac{1}{r!} \omega_{\mu_1 ... \mu_r}
-dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
-$$
 
-where $\omega_{\mu_1 ... \mu_r}$ is also *totally anti-symmetric* to keep LHS invariant.
-
-#### Properties of Wedge Product
-
-Let $\omega \in \Omega^q_p(M), \xi \in \Omega^r_p(M), \eta \in \Omega^s_p(M), \, \dim{M} = m$. Then
-
-- $\omega \wedge \xi = (-1)^{qr} \xi \wedge \omega$
-
-    - In particular, if $q$ is odd, then $\omega \wedge \omega = 0$
-
-- (Associativity) $(\omega \wedge \xi) \wedge \eta = \omega \wedge (\xi \wedge \eta)$
-
-- If $q + r > m$, $\omega \wedge \xi$ *vanishes identically*.
-
-- The space of differential forms of *all order*
+- The space of differential forms of *all degree*
 
     $$
     \Omega^*_p(M) \equiv \bigoplus_{i=1}^m \Omega^i_p(M)
@@ -136,11 +304,14 @@ Let $\omega \in \Omega^q_p(M), \xi \in \Omega^r_p(M), \eta \in \Omega^s_p(M), \,
     the exterior derivative $d_r: \Omega^r(M) \rightarrow \Omega^{r+1}(M)$ (or simply denoted by $d$) acts on $\omega$ as follows:
 
     $$
-    d \omega \equiv \frac{\partial}{\partial x^\mu}
+    d \omega \equiv \frac{1}{r!} 
     \left( 
-        \frac{1}{r!} \omega_{\mu_1 ... \mu_r}
+        \frac{\partial}{\partial x^\mu}
+        \omega_{\mu_1 ... \mu_r}
     \right) dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
     $$
+
+    The $1/r!$ factor is inherited from $\omega$. 
 
 #### Coordinate-free Expression
 

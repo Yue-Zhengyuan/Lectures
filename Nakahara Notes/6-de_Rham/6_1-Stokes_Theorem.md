@@ -1,33 +1,42 @@
 ## Stokes' Theorem
 
-### Preliminary: Integration or $r$-forms in $\mathbb{R}^r$
+### Preliminary: Integration of Differential Forms in $\mathbb{R}^m$
 
 *Definition*:
 
-- **Standard $r$-simplex in $\mathbb{R}^r$**: an *oriented* $r$-simplex $\bar{\sigma}_r = (p_0 p_1 ... p_r)$, which is an $r$-dimensional object in $\mathbb{R}^r$ constructed from the following $r+1$ "standard" points
+- **Standard $r$-simplex in $\mathbb{R}^m$**: an *oriented* $r$-simplex $\bar{\sigma}_r = (p_0 p_1 ... p_r)$, which is an $r$-dimensional object in $\mathbb{R}^m \, (r \le m)$ constructed from the following $r+1$ "standard" points
 
     $$
     \begin{aligned}
-        p_0 &= (0, 0, ..., 0) &\quad &\text{(the origin)}\\
-        p_1 &= (0, 1, ..., 0) \\
+        p_0 &= (0, 0, ..., 0, 0, ..., 0) &\quad &\text{(the origin)}\\
+        p_1 &= (0, 1, ..., 0, 0, ..., 0) \\
         &\vdots \\
-        p_r &= (0, 0, ..., 1)
-        &\quad &\text{(unit vector of each axis)}
+        p_r &= (0, 0, ..., 1, 0, ..., 0)
+        &\quad &\text{(unit vector of axis 1 to r)}
     \end{aligned}
     $$
 
     By general definition of simplexes, the coordinates inside an standard $r$-simplex are
 
     $$
-    \bar{\sigma}_r = \left\{
-        (x^1, ..., x^r) \in \mathbb{R}^r 
-        \mid
-        x^\mu \ge 0, \, 
-        \sum_{\mu=1}^r x^\mu \le 1
-    \right\}
+    \begin{aligned}
+        \bar{\sigma}_r 
+        &= \left\{
+            x = \sum_{\mu=0}^r x^\mu p_\mu 
+            \in \mathbb{R}^m \mid 
+            x_\mu \ge 0, \, \sum_{\mu=0}^r x^\mu = 1
+        \right\}
+        \\
+        &= \left\{
+            (x^1, ..., x^r, 0, ..., 0) \in \mathbb{R}^m 
+            \mid
+            x^\mu \ge 0, \, 
+            \sum_{\mu=1}^r x^\mu \le 1
+        \right\}
+    \end{aligned}
     $$
 
-    *Example*: Standard 2- and 3-simplex
+    *Example*: Standard 2-simplex in $\mathbb{R}^2$ and 3-simplex in $\mathbb{R}^3$ 
 
     <center>
 
@@ -36,20 +45,34 @@
 
     </center>
 
-- **Integration of $r$-form on the standard $r$-simplex**
+- **Integration of $r$-form on $r$-simplex in $\mathbb{R}^r$**
 
-    A general $r$-form in $\mathbb{R}^n$ is
+    A general $r$-form (*volume element*) in $\mathbb{R}^r$ is
 
     $$
     \omega = a(x) \, dx^1 \wedge \cdots \wedge dx^r
-    = a(x) \, dx^1 \cdots dx^r
     $$
 
-    Then *define*
+    Then we *define* integration on the *standard* simplex as
 
     $$
-    \int_{\bar{\sigma}_r} \omega \equiv
-    \int_{\bar{\sigma}_r} a(x) dx^1 \cdots dx^r
+    \begin{aligned}
+        \int_{\bar{\sigma}_r} \omega 
+        &\equiv
+        \int_{\bar{\sigma}_r} a(x) dx^1 \cdots dx^r
+        \\
+        &= \int_0^1 dx^1 \int_0^{1-x^1}dx^2 \cdots
+        \int_0^{1-\sum_{\mu=1}^{r-1} x^\mu} dx^r a(x)
+    \end{aligned}
+    $$
+
+    For integration on *non-standard* simplexes $\sigma_r$, we can always apply an invertible transformation $y = f(x)$ such that $\bar{\sigma}_r = f (\sigma_r)$; then 
+
+    $$
+    \int_{\sigma_r} a(x) dx^1 \cdots dx^r
+    = \int_{\bar{\sigma}_r} a(y) \left(
+        \det \frac{\partial x}{\partial y}
+    \right) dy^1 \cdots dy^r
     $$
 
 ### Chain, Cycle, Boundary on Manifolds
@@ -97,7 +120,7 @@ Let $f: \sigma_r \rightarrow M$ be a smooth map ($f$ needs not be invertible).
 
         $$
         \partial : C_r(M) \rightarrow C_{r-1}(M), \quad
-        \partial c_r = \sum_i a_i \partial s_{r,i}
+        \partial c_r = \sum_i a_i \, \partial s_{r,i}
         $$
 
         *Remark*: The general result $\partial^2 = 0$ (a boundary has no boundary) still holds here.
@@ -136,7 +159,7 @@ where $f$ is a smooth map from a region *containing* $\sigma_r$ to $M$ (sometime
 
 *Theorem*: (**Stokes' theorem**)
 
-Let $\omega$ be an $(r-1)$-form, and $c$ be an $r$-chain in $M$. Then
+Let $\omega \in \Omega^{r-1}(M), \, c \in C_r(M)$, where $M$ is an $m$-dimensional manifold. Then
 
 $$
 \int_c d \omega = \int_{\partial c} \omega
@@ -144,83 +167,247 @@ $$
 
 *Proof*:
 
-The integration over $c, \partial c$ can be separated to
+- Reducing the integral to parts
 
-$$
-\begin{aligned}
-    \int_c d\omega &= \sum_i a_i \int_{s_{r,i}} d\omega
-    \\
-    \int_{\partial c} \omega &= \sum_i a_i \int_{\partial s_{r,i}} d\omega
-\end{aligned}
-$$
+    The integration over $c, \partial c$ can be separated to
 
-Then it suffices to prove that on a single simplex, we have
+    $$
+    \begin{aligned}
+        \int_c d\omega &= \sum_i a_i \int_{s_{r,i}} d\omega
+        \\
+        \int_{\partial c} \omega &= \sum_i a_i \int_{\partial s_{r,i}} d\omega
+    \end{aligned}
+    $$
 
-$$
-\int_{s_r} d \omega = \int_{\partial s_r} \omega
-$$
+    Then it suffices to prove that on a **single simplex**, we have
 
-By definition of integration on a single simplex,
+    $$
+    \int_{s_r} d \omega = \int_{\partial s_r} \omega
+    $$
 
-$$
-\begin{aligned}
-    \int_{s_r} d \omega 
-    &= \int_{\sigma_r} f^* d \omega
-    = \int_{\sigma_r} d(f^* \omega)
-    \\
-    \int_{\partial s_r} \omega 
-    &= \int_{\partial \sigma_r} f^* \omega 
-\end{aligned}
-$$
+    By definition of integration on a single simplex,
 
-where $f: \sigma_r \rightarrow M$. Then $\psi \equiv f^* \omega$ is a general $(r-1)$-form in $\mathbb{R}^r$, and we only need to prove
+    $$
+    \begin{aligned}
+        \int_{s_r} d \omega 
+        &= \int_{\sigma_r} f^* d \omega
+        = \int_{\sigma_r} d(f^* \omega)
+        \\
+        \int_{\partial s_r} \omega 
+        &= \int_{\partial \sigma_r} f^* \omega 
+    \end{aligned}
+    $$
 
-$$
-\int_{\sigma_r} d \psi = \int_{\partial \sigma_r} \psi
-$$
+    where $f: \sigma_r \rightarrow M$, where $\sigma_r$ is an $r$-simplex in $\mathbb{R}^r$. 
+    
+    The integrand $\psi \equiv f^* \omega$ is a general $(r-1)$-form in $\mathbb{R}^r$:
 
-An $(r-1)$-form in $\mathbb{R}^r$ has the general form
+    $$
+    \psi = \sum_\mu a_\mu(x) \, dx^1 \wedge \cdots \wedge \cancel{dx^\mu} \wedge \cdots \wedge dx^r
+    $$
 
-$$
-\psi = \sum_\mu a_\mu(x) \, dx^1 \wedge \cdots \wedge \cancel{dx^\mu} \wedge \cdots \wedge dx^r
-$$
+    Since integration is distributive, we only need to prove for one term (say the $\mu = r$ term). Then we can set
 
-Since integration is distributive, we only need to prove for one term (say the $\mu = r$ term). Then we can set
+    $$
+    \begin{aligned}
+        \psi &= a(x) \, dx^1 \wedge \cdots \wedge dx^{r-1}
+        \\
+        \Rightarrow
+        d\psi &= \partial_r a(x) \, 
+        dx^r \wedge dx^1 \wedge \cdots \wedge dx^{r-1}
+        \\
+        &= (-1)^{r-1} \partial_r a(x) \,
+        dx^1 \wedge \cdots \wedge dx^{r-1} \wedge dx^r
+    \end{aligned}
+    $$
 
-$$
-\begin{aligned}
-    \psi &= a(x) \, dx^1 \wedge \cdots \wedge dx^{r-1}
-    \\
-    d\psi &= \partial_r a(x) \, dx^r \wedge dx^1 \wedge \cdots \wedge dx^{r-1}
-    \\
-    &= (-1)^{r-1} \partial_r a(x) dx^1 \wedge \cdots \wedge dx^{r-1} \wedge dx^r
-\end{aligned}
-$$
+    In addition, if the $r$-simplex is not standard, we *linearly* transform it to one. Finally, we only need to prove Stokes' theorem for integration on one standard $r$-simplex in $\mathbb{R}^r$:
+
+    $$
+    \int_{\bar{\sigma}_r} d \psi 
+    = \int_{\partial \bar{\sigma}_r} \psi
+    $$
+
+- Integration of $\int_{\bar{\sigma}_r} d \psi$
+
+    By definition of integration on a simplex in $\mathbb{R}^n$
+
+    $$
+    \begin{aligned}
+        \int_{\bar{\sigma}_r} d \psi
+        &= (-1)^{r-1} \int_{\bar{\sigma}_r}
+        \partial_r a(x) \, dx^1 \cdots dx^r
+    \end{aligned}
+    $$
+
+    The integration range can be rewritten as
+
+    $$
+    \begin{aligned}
+        &\int_{\bar{\sigma}_r}
+        dx^1 \cdots dx^r
+        = \int_{
+            x^\mu \ge 0, \, 
+            \sum_{\mu=1}^r x^\mu \le 1
+        } dx^1 \cdots dx^r
+        \\
+        &= \int_{
+            x^\mu \ge 0, \, 
+            \sum_{\mu=1}^{r-1} x^\mu \le 1
+        } dx^1 \cdots dx^{r-1}
+        \int_{0}^{1 - \sum_{\mu=1}^{r-1} x^\mu}
+        dx^{r-1}
+    \end{aligned}
+    $$
+
+    Then we can first integrate over $x^r$:
+
+    $$
+    \begin{aligned}
+        \int_{\bar{\sigma}_r} d \psi
+        &= (-1)^{r-1} \int_{\bar{\sigma}_{r-1}} 
+        dx^1 \cdots dx^{r-1}
+        \\ &\quad \times \left[
+            a \left( x^1, ..., x^{r-1}, 1 - \sum_{\mu=1}^{r-1} x^\mu \right)
+            - a(x^1, ..., x^{r-1}, 0)
+        \right]
+    \end{aligned}
+    $$
+
+- Integration of $\int_{\partial \bar{\sigma}_r} \psi$
+
+    Recall that the general definition of boundary gives
+
+    $$
+    \begin{aligned}
+        \partial \bar{\sigma}_r
+        &= \sum_{i=0}^r (-1)^i (p_0 ... \cancel{p_i}... p_r)
+        \\
+        \Rightarrow
+        \int_{\partial \sigma_r} \psi
+        &= \sum_{i=0}^r (-1)^i \int_{(p_0 ... \cancel{p_i}... p_r)} \psi
+    \end{aligned}
+    $$
+
+    Note that in the $(r-1)$-simplex $(p_0 ... \cancel{p_i}... p_r)$, the value of $x^i$ is *constant*, which gives zero after integration except when $i = 0, \, r$. Thus
+
+    $$
+    \begin{aligned}
+        \int_{\partial \sigma_r} \psi
+        &= \int_{(p_1 ... p_r)} \psi
+        + (-1)^r \int_{(p_0 p_1 ... p_{r-1})} \psi
+    \end{aligned}
+    $$
+
+    The second term is integration over the standard $\bar{\sigma}_{r-1}$ in $\mathbb{R}^{r}$, on which $x^r = 0$:
+
+    $$
+    \begin{aligned}
+        (-1)^r \int_{(p_0 p_1 ... p_{r-1})} \psi
+        = (-1)^r \int_{\bar{\sigma}_{r-1}} 
+        a(x^1, ..., x^{r-1}, 0) \,
+        dx^1 \cdots dx^{r-1}
+    \end{aligned}
+    $$
+
+    For the first term involving the *non-standard* $(r-1)$-simplex $(p_1 ... p_r)$ in $\mathbb{R}^r$:
+
+    $$
+    (p_1 ... p_r)
+    = \left\{
+        x = \sum_{\mu=1}^r x^\mu p_\mu 
+        \in \mathbb{R}^r \mid 
+        x^\mu \ge 0, \, \sum_{\mu=1}^r x^\mu = 1
+    \right\}
+    $$
+
+    we need to **project** it to $\bar{\sigma}_{r-1} \equiv (p_0 p_1 ... p_{r-1})$ in $\mathbb{R}^{r-1}$ (remove the extra component $x^r$).
+
+    *Example*: 
+
+    <center>
+
+    ![](Fig-6_1.png)   
+    *Standard 2-simplex and 3-simplex*
+
+    </center>
+    
+    - Integration on $(p_1 p_2)$: 
+
+        $$
+        \begin{aligned}
+            \int_{(p_1 p_2)} \psi
+            &= \int_{(p_1 p_2)} a(x^1, x^2) \, dx^1
+            \\
+            &=\int_{(p_1 p_0)} a(x^1, 1-x^1) \, dx^1
+            \\
+            &= -\int_{\bar{\sigma}_1} a(x^1, 1-x^1) \, dx^1
+        \end{aligned}
+        $$
+
+    - Integration on $(p_1 p_2 p_3)$:
+
+        $$
+        \begin{aligned}
+            \int_{(p_1 p_2 p_3)} \psi
+            &= \int_{(p_1 p_2 p_0)} a(x^1, x^2, x^3) \, dx^1 dx^2
+            \\
+            &= \int_{(p_0 p_1 p_2)} a(x^1, x^2, 1 - (x^1 + x^2)) \, dx^1 dx^2
+            \\
+            &= \int_{\bar{\sigma}_2} a(x^1, x^2, 1 - (x^1 + x^2)) \, dx^1 dx^2
+        \end{aligned}
+        $$
+
+    Now we can write down the general formula to project $(p_1 p_2 ... p_r)$:
+    
+    $$
+    \begin{aligned}
+        \int_{(p_1 ... p_r)} \psi
+        &= (-1)^{r-1} \int_{\bar{\sigma}_{r-1}} 
+        dx^1 \cdots dx^{r-1}
+        \\
+        & \qquad \times a \left(
+            x^1, ..., x^{r-1}, 1 - \sum_{\mu=1}^{r-1} x^\mu
+        \right) 
+    \end{aligned}
+    $$
+    
+    The $(-1)^{r-1}$ factor preserves simplex orientation:
+    
+    $$
+    (p_1 p_2 ... p_{r-1} p_r) 
+    \xrightarrow{\text{project}}
+    (p_1 p_2 ... p_{r-1} p_0)
+    = (-1)^{r-1} \bar{\sigma}_{r-1}
+    $$
+
+    Therefore
+
+    $$
+    \begin{aligned}
+        \int_{\partial \sigma_r} \psi
+        &= (-1)^{r-1} \int_{\bar{\sigma}_{r-1}} 
+        dx^1 \cdots dx^{r-1}
+        \\ &\quad \times \left[
+            a \left( x^1, ..., x^{r-1}, 1 - \sum_{\mu=1}^{r-1} x^\mu \right)
+            - a(x^1, ..., x^{r-1}, 0)
+        \right]
+    \end{aligned}
+    $$
+
+Now we have finished the proof of Stokes' theorem. $\blacksquare$
 
 ----
 
 ### Usual Vector Calculus Theorems
 
-- 0-forms: **Gradient** integration on curves
-    
-    $$
-    \begin{aligned}
-        \omega_0 &= f(\mathbf{r}) \\ \Rightarrow
-        d \omega_0 &=
-        \partial_x f \, dx
-        + \partial_y f \, dy
-        + \partial_z f \, dz
-        \equiv \nabla f \cdot d \mathbf{r}
-    \end{aligned}
-    $$
-
-    This reduce to the usual differential of a function, corresponding to **gradient** $\nabla f(\mathbf{r})$. 
+Consider differential forms in $\mathbb{R}^3$:
 
 - 1-forms: **Curl**
 
     $$
     \begin{aligned}
-        \omega_1 &= \omega_x(\mathbf{r}) dx + \omega_y(\mathbf{r}) dy + \omega_z(\mathbf{r}) dz
+        \omega^{(1)} &= \omega_x(\mathbf{r}) dx + \omega_y(\mathbf{r}) dy + \omega_z(\mathbf{r}) dz
         \\ \Rightarrow
         d\omega_1 &= (
             \partial_y \omega_x dy \wedge dx 
@@ -245,11 +432,23 @@ $$
 
     $$
     \begin{aligned}
-        \omega_2 &= 
-        \omega_{xy}(\mathbf{r}) \, dx \wedge dy 
-        + \omega_{yz}(\mathbf{r}) \, dy \wedge dz
-        + \omega_{zx}(\mathbf{r}) \, dz \wedge dx
-        \\ \Rightarrow
+        \omega^{(2)} &= \frac{1}{2}
+        \omega_{\mu \nu}(\mathbf{r}) \,
+        dx^{\mu} \wedge dx^{\nu}
+        \\
+        &= \frac{1}{2} (
+            \omega_{12} \, dx^1 \wedge dx^2 + \omega_{13} \, dx^1 \wedge dx^3
+            \\ &\qquad 
+            + \omega_{21} \, dx^2 \wedge dx^1 + \omega_{23} \, dx^2 \wedge dx^3
+            \\ &\qquad
+            + \omega_{31} \, dx^3 \wedge dx^1 + \omega_{32} \, dx^3 \wedge dx^2
+        )
+        \\
+        &= \omega_{12} \, dx^1 \wedge dx^2
+        + \omega_{23} \, dx^2 \wedge dx^3
+        + \omega_{31} \, dx^3 \wedge dx^1
+        \\ 
+        \Rightarrow
         d\omega_2 &= 
         \partial_z \omega_{xy} \, dz \wedge dy \wedge dx 
         \\ &\quad + 
@@ -263,14 +462,6 @@ $$
 
     The coefficient corresponds to the **divergence** $\nabla \cdot \boldsymbol{\omega}$ of a usual vector field $\boldsymbol{\omega} \equiv (\omega_{yz}, \omega_{zx}, \omega_{xy})$.
 
-- 3-forms: 
-
-    $$
-    \omega_3 = 
-    \omega_{xyz}(\mathbf{r}) \, dx \wedge dy \wedge dz
-    \, \Rightarrow \,
-    d\omega_3 = 0
-    $$
 
 *Corollary*: Theorems in usual vector calculus $(M = \mathbb{R}^3)$
 

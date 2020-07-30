@@ -14,11 +14,9 @@
         \langle p_0 p_1 ... p_r \rangle
         \\ &= 
         \left\{
-            x \in \mathbb{R}^m \mid
-            x = \sum_{i=0}^r c_i p_i, \quad
-            (c_i \ge 0) \land \left(
-                \sum_{i=0}^r c_i = 1
-            \right)
+            x = \sum_{i=0}^r c_i p_i 
+            \in \mathbb{R}^m \mid
+            c_i \ge 0, \, \sum_{i=0}^r c_i = 1
         \right\}
     \end{aligned}
     $$
