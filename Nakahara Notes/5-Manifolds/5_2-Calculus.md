@@ -284,7 +284,7 @@ $$
     
     - **Vector fields**: a vector which is assigned *smoothly* to each point of the manifold $M$
 
-### Induced Maps
+### Induced Maps: Pushforward and Pullback
 
 *Definition*: Let $f: M \rightarrow N$ be a smooth map. 
 

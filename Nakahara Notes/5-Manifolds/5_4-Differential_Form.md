@@ -151,20 +151,21 @@ Next we proceed to the product of 3 dual basis vectors (associativity of wedge p
 
 $$
 \begin{aligned}
-    &\omega \wedge \xi \wedge \eta
-    = (\omega \wedge \xi) \wedge \eta
-    \\ & \quad 
-    = \frac{1}{2! 1!}\sum_{P \in S_{3}} \text{sgn}(P) \,
+    &\omega \wedge \xi \wedge \eta \, (V_1, V_2, V_3)
+    \\
+    &= (\omega \wedge \xi) \wedge \eta \, (V_1, V_2, V_3)
+    \\ 
+    &= \frac{1}{2! 1!}\sum_{P \in S_{3}} \text{sgn}(P) \,
     (\omega \wedge \xi)(V_{P(1)}, V_{P(2)}) \,
     \eta(V_{P(3)})
-    \\ & \quad
-    = \frac{1}{2} \sum_{P \in S_3} \text{sgn}(P) \,
+    \\ 
+    &= \frac{1}{2} \sum_{P \in S_3} \text{sgn}(P) 
     \left( 
         V_{P(1)}^{\mu_1} V_{P(2)}^{\mu_2} V_{P(3)}^{\mu_3}
         - V_{P(1)}^{\mu_2} V_{P(2)}^{\mu_1} V_{P(3)}^{\mu_3}
     \right)
-    \\ & \quad
-    = \frac{1}{2} \sum_{P \in S_3} \text{sgn}(P) \,
+    \\ 
+    &= \frac{1}{2} \sum_{P \in S_3} \text{sgn}(P) 
     \left( 
         V_{P(1)}^{\mu_1} V_{P(2)}^{\mu_2} V_{P(3)}^{\mu_3}
         - V_{P'(2)}^{\mu_2} V_{P'(1)}^{\mu_1} V_{P'(3)}^{\mu_3}
@@ -210,51 +211,56 @@ $$
 dx^{\mu_1} \cdots dx^{\mu_r} 
 $$
 
-The *total anti-symmetry* requires that
+Recall that *total anti-symmetry* requires that
 
 $$
 \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
 = \text{sgn}(P) \, \omega_{\mu_1 ... \mu_r}
 $$
 
-Collecting all terms in $\omega$ which are obtained from a permutation of index degree, the anti-symmetry of $\omega$ allows us to rewrite these terms as
+which means that for nonzero $\omega_{\mu_{P(1)} ... \mu_{P(r)}}$, the indices $\mu_1, ..., \mu_r$ are *all different from each other*. 
+
+Next, we exploit the anti-symmetry of $\omega$ and collect all terms in $\omega$ which are obtained from an $r$-permutation. For example, the 2-form in $M = \mathbb{R}^3$ is
 
 $$
 \begin{aligned}
-    &\sum_{P \in S_r} \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
-    dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
-    \\ &=
-    \omega_{\mu_1 ... \mu_r} 
-    \sum_{P \in S_r} \text{sgn}(P) \, 
-    dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
-\end{aligned}
-$$
-
-The additional $1/r!$ factor is due to repeated counting. For example, when $r = 2$:
-
-$$
-\begin{aligned}
-    &\sum_{P \in S_2} \omega_{\mu_{P(1)} \mu_{P(2)}} 
+    \omega^{(2)} &= 
+    \omega_{12} dx^1 dx^2 + \omega_{13} dx^1 dx^3 
+    \\ &\quad 
+    + \omega_{21} dx^2 dx^1 + \omega_{23} dx^2 dx^3
+    + \omega_{31} dx^3 dx^1 + \omega_{32} dx^3 dx^2
+    \\
+    &= \omega_{12} (dx^1 dx^2 - dx^2 dx^1)
+    \\ &\quad 
+    + \omega_{13} (dx^1 dx^3 - dx^3 dx^1)
+    + \omega_{23} (dx^2 dx^3 - dx^3 dx^2)
+    \\
+    &= \sum_{\mu_1 < \mu_2} \omega_{\mu_1 \mu_2}
+    (dx^{\mu_1} dx^{\mu_2} - dx^{\mu_2} dx^{\mu_1})
+    \\
+    &= \sum_{\mu_1 < \mu_2} \omega_{\mu_1 \mu_2}
+    \sum_{P\in S_2} \text{sgn}(P) \,
     dx^{\mu_{P(1)}} dx^{\mu_{P(2)}}
-    \\
-    &= \omega_{\mu_1 \mu_2} dx^{\mu_1} dx^{\mu_2}
-    + \omega_{\mu_2 \mu_1} dx^{\mu_2} dx^{\mu_1}
-    \\
-    &= \omega_{\mu_1 \mu_2} (
-        dx^{\mu_1} dx^{\mu_2} - dx^{\mu_2} dx^{\mu_1}
-    )
 \end{aligned}
 $$
 
-Recall that
+In general, for an $r$-form
 
 $$
-\sum_{P \in S_r} \text{sgn}(P) \,
-dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
-= dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+\begin{aligned}
+    \omega^{(r)}
+    &= \sum_{\mu_1 < \cdots < \mu_r} 
+    \omega_{\mu_1 ... \mu_r}
+    \sum_{P\in S_r} \text{sgn}(P) \,
+    dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
+    \\
+    &= \sum_{\mu_1 < \cdots < \mu_r} 
+    \omega_{\mu_1 ... \mu_r} \,
+    dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+\end{aligned}
 $$
 
-Thus we finally obtain the *general expression* of $r$-forms:
+We can also remove the constraint $\mu_1 < \cdots < \mu_r$ and introduce a factor of $1/r!$ to account for repeated counting:
 
 $$
 \omega = \frac{1}{r!} \omega_{\mu_1 ... \mu_r} 
@@ -265,10 +271,14 @@ $$
 
 - We have now shown that an $m$-dimensional manifold $M$ can only have non-vanishing differential forms *up to degree $m$*. 
 
-- All $r$-forms of the above form at point $p \in M$ form a basis of the vector space of $r$-forms (denoted by $\Omega^r_p(M)$)
+- All $r$-forms at point $p \in M \, (\dim{M} = m)$ of the form 
 
+    $$
+    dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}, \quad
+    1 \le \mu_1, ..., \mu_r \le m
+    $$
 
-- If $\dim{M} = m$, we can easily obtain
+    form a set of *basis* of the vector space $\Omega^r_p(M)$, and
 
     $$
     \dim{\Omega^r_p(M)} =
@@ -297,21 +307,36 @@ $$
 - **Exterior derivative on differential forms**: for a general $r$-form
     
     $$
-    \omega = \frac{1}{r!} \omega_{\mu_1 ... \mu_r}
+    \begin{aligned}
+        \omega 
+        &= \sum_{\mu_1 < \cdots < \mu_r} 
+        \omega_{\mu_1 ... \mu_r} \,
         dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+        \\
+        &= \frac{1}{r!} \omega_{\mu_1 ... \mu_r}
+        dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+    \end{aligned}
     $$
 
-    the exterior derivative $d_r: \Omega^r(M) \rightarrow \Omega^{r+1}(M)$ (or simply denoted by $d$) acts on $\omega$ as follows:
+    the exterior derivative $d_r: \Omega^r(M) \rightarrow \Omega^{r+1}(M)$ (or simply $d$) is defined to act on $\omega$ as follows:
 
     $$
-    d \omega \equiv \frac{1}{r!} 
-    \left( 
-        \frac{\partial}{\partial x^\mu}
-        \omega_{\mu_1 ... \mu_r}
-    \right) dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+    \begin{aligned}
+        d \omega &\equiv 
+        \sum_{\mu_1 < \cdots < \mu_r} \left(
+            \frac{\partial}{\partial x^\mu} 
+            \omega_{\mu_1 ... \mu_r}
+        \right) dx^\mu \wedge
+        dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+        \\
+        &= \frac{1}{r!} \left( 
+            \frac{\partial}{\partial x^\mu}
+            \omega_{\mu_1 ... \mu_r}
+        \right) dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+    \end{aligned}
     $$
 
-    The $1/r!$ factor is inherited from $\omega$. 
+    Due to anti-commutativity of 1-forms with respect to wedge product, we see that nonzero terms must have $\mu \ne \mu_1, ..., \mu_r$. 
 
 #### Coordinate-free Expression
 
@@ -369,7 +394,7 @@ $$
 
 #### Properties of Exterior Derivative
 
-- Exterior derivative is *nilpotent*:
+- Exterior derivative is **nilpotent**:
     
     $$
     d^2 \equiv d_{r+1} \circ d_r = 0
@@ -383,7 +408,7 @@ $$
     d(\xi \wedge \omega) = d\xi \wedge \omega + (-1)^q \xi \wedge d\omega
     $$
 
-- Exterior derivative *commutes* with pullback
+- Exterior derivative **commutes** with pullback
     
     Let $\omega \in \Omega^r(N), \, f: M \rightarrow N$
 
@@ -409,8 +434,6 @@ $$
         dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
     \end{aligned}
     $$
-
-    We note that $x^\mu$ is a *new variable*
 
     On the other hand,
 
@@ -446,7 +469,7 @@ $$
 
     Thus the two sides are equal. $\blacksquare$
 
-- Pullback is *distributive* over exterior product:
+- Pullback is **distributive** over exterior product:
     
     Let $\xi, \omega$ be differential forms defined in $N$, and $f: M \rightarrow N$
 
