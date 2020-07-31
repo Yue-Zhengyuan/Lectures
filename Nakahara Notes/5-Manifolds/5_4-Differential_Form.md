@@ -416,12 +416,14 @@ $$
     d(f^* \omega) = f^*(d \omega)
     $$
     
+    <span style="color:red">
+    
     *Proof*: Let the coordinates used in $M, N$ be $x, y$ respectively. Using the coordinate expression, we obtain
 
     $$
     \begin{aligned}
-        d (f^*\omega) 
-        &= \frac{1}{r!} 
+        &d (f^*\omega) 
+        = \frac{1}{r!} 
         \partial_\mu (f^* \omega)_{\mu_1 ... \mu_r}
         dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
         \\
@@ -439,35 +441,38 @@ $$
 
     $$
     \begin{aligned}
-        f^* (d\omega)
-        &= (d\omega)_{\nu \nu_1 ... \nu_r}
-        \frac{\partial y^{\nu}}{\partial x^{\mu}}
-        \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
-        \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
-        dx^\mu dx^{\mu_1} \cdots dx^{\mu_r}
-        \\
-        &= \frac{\partial \omega_{\nu_1 ... \nu_s}}{\partial y^\nu}
-        \frac{\partial y^{\nu}}{\partial x^{\mu}}
-        \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
-        \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
-        dx^\mu dx^{\mu_1} \cdots dx^{\mu_r}
-        \\
-        &= (\partial_\mu \omega_{\nu_1 ... \nu_s})
-        \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
-        \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
-        dx^\mu dx^{\mu_1} \cdots dx^{\mu_r}
-        \\
-        &= \frac{1}{r!} 
-        \partial_\mu \left(
-            \omega_{\nu_1 ... \nu_s}
-            \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
-            \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+        &f^* (d\omega)
+        = f^* \left(
+            \frac{1}{r!} \left( 
+                \frac{\partial}{\partial y^\mu}
+                \omega_{\mu_1 ... \mu_r}
+            \right) dy^\mu \wedge dy^{\mu_1} \wedge \cdots \wedge dy^{\mu_r}
         \right)
-        dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
+        \\
+        &= \frac{1}{r!} \left( 
+            \frac{\partial}{\partial y^\nu}
+            \omega_{\nu_1 ... \nu_r}
+        \right)
+        \frac{\partial y^{\nu}}{\partial x^{\mu}} dx^{\mu}
+        \wedge
+        \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} dx^{\mu_1}
+        \wedge \cdots \wedge
+        \frac{\partial y^{\nu_r}}{\partial x^{\mu_r}} dx^{\mu_r}
+        \\
+        &= \frac{1}{r!} ( 
+            \partial_\mu \omega_{\nu_1 ... \nu_r}
+        )
+        \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}}
+        \cdots
+        \frac{\partial y^{\nu_r}}{\partial x^{\mu_r}} \,
+        dx^{\mu} \wedge dx^{\mu_1}
+        \wedge \cdots \wedge dx^{\mu_r}
     \end{aligned}
     $$
 
     Thus the two sides are equal. $\blacksquare$
+
+    </span>
 
 - Pullback is **distributive** over exterior product:
     

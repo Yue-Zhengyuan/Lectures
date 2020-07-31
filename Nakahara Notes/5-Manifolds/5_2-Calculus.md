@@ -409,32 +409,32 @@ $$
     \xi_\mu = (f^* \omega)_\mu = \omega_\nu \frac{\partial y^\nu}{\partial x^\mu}
     $$
 
-    *Generalization of pullback*:
+    *Generalization to pullback of $(0,r)$-tensors*:
 
     $$
-    f^*: \mathcal{T}^0_{s,f(p)}(N) \rightarrow \mathcal{T}^0_{s,p}(M)
+    f^*: \mathcal{T}^0_{r,f(p)}(N) \rightarrow \mathcal{T}^0_{r,p}(M)
     $$
 
-    For $\omega \in \mathcal{T}^0_{s,f(p)}(N)$ and vectors $V_i \in T_p M$, we *define*
+    For $\omega \in \mathcal{T}^0_{r,f(p)}(N)$ and vectors $V_i \in T_p M$, we *define*
 
     $$
-    (f^* \omega)(V_1, ..., V_s) \equiv \omega(f_* V_1, ..., f_* V_s)
+    (f^* \omega)(V_1, ..., V_r) \equiv \omega(f_* V_1, ..., f_* V_r)
     $$
 
     The component form is
 
     $$
     \begin{aligned}
-        &(f^* \omega)_{\mu_1 ... \mu_s} 
-        V_1^{\mu_1} \cdots V_s^{\mu_s}
-        = \omega_{\nu_1 ... \nu_s} 
-        (f_* V_1)^{\nu_1} \cdots (f_* V_s)^{\nu_s}
+        &(f^* \omega)_{\mu_1 ... \mu_r} 
+        V_1^{\mu_1} \cdots V_r^{\mu_r}
+        = \omega_{\nu_1 ... \nu_r} 
+        (f_* V_1)^{\nu_1} \cdots (f_* V_r)^{\nu_r}
         \\ &\quad
-        = \omega_{\nu_1 ... \nu_s} 
+        = \omega_{\nu_1 ... \nu_r} 
         \left(
             V_1^{\mu_1} \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}}
         \right) \cdots \left(
-            V_s^{\mu_s} \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+            V_r^{\mu_r} \frac{\partial y^{\nu_r}}{\partial x^{\mu_r}}
         \right)
     \end{aligned}
     $$
@@ -442,10 +442,20 @@ $$
     Therefore
 
     $$
-    (f^* \omega)_{\mu_1 ... \mu_s} 
-    = \omega_{\nu_1 ... \nu_s} 
+    (f^* \omega)_{\mu_1 ... \mu_r} 
+    = \omega_{\nu_1 ... \nu_r} 
     \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} \cdots
-    \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
+    \frac{\partial y^{\nu_r}}{\partial x^{\mu_r}}
+    $$
+
+    i.e. $f^* \omega$ has the local coordinate expression
+
+    $$
+    f^* \omega
+    = \omega_{\nu_1 ... \nu_r} 
+    \frac{\partial y^{\nu_1}}{\partial x^{\mu_1}} dx^{\mu_1}
+    \cdots
+    \frac{\partial y^{\nu_r}}{\partial x^{\mu_r}} dx^{\mu_r}
     $$
 
 ### Sub-manifolds
