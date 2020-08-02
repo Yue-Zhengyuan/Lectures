@@ -28,7 +28,7 @@ $$
 
 - **Homotopic maps**: two maps that can be *"continuously deformed"* to each other. 
     
-    Mathematically, two maps $f, g: X \rightarrow Y$ are **homotopic** if we can find a *continuous* map $F: X \times I \rightarrow Y$ such that
+    Mathematically, two maps $f, g: X \to Y$ are **homotopic** if we can find a *continuous* map $F: X \times I \to Y$ such that
 
     $$
         F(x, 0) = f(x), \quad
@@ -41,7 +41,7 @@ $$
 
 - **Homotopy equivalent topological spaces**: two topological spaces $X,Y$ are **homotopy equivalent** (or **of the same homotopy type**) if we can find *continuous* maps
     
-    $$f: X \rightarrow Y, \quad g: Y \rightarrow X$$
+    $$f: X \to Y, \quad g: Y \to X$$
 
     such that
 
@@ -71,7 +71,7 @@ $$
 
 *Theorem*: (**Fundamental group is a topological invariant**)
 
-Let $X, Y$ be topological spaces of the same homotopy type, with $f: X \rightarrow Y$ being the homotopic equivalence. Then
+Let $X, Y$ be topological spaces of the same homotopy type, with $f: X \to Y$ being the homotopic equivalence. Then
 
 $$
 \pi_1(X, x_0) \cong \pi_1(Y, f(x_0))
@@ -83,13 +83,13 @@ $$
 
 *Definition*:
 
-- **Retract (收缩)**: a *subspace* $R$ of the whole topological space $X$, which can be obtained by a *continuous* map $f: X \rightarrow R$ such that $f|_R = \text{id}_R$ (i.e. the points on $R$ are kept unchanged).
+- **Retract (收缩)**: a *subspace* $R$ of the whole topological space $X$, which can be obtained by a *continuous* map $f: X \to R$ such that $f|_R = \text{id}_R$ (i.e. the points on $R$ are kept unchanged).
 
     - **Retraction**: the continuous map $f$
 
 - **Deformation retract (形变收缩)**: a *subspace* $R$ of the whole topological space $X$, which can be obtained by *deforming* $X$ while keeping the points in $R$ *unchanged*.
     
-    Mathematically, there exist a *continuous* map $H: X \times I \rightarrow X$ such that
+    Mathematically, there exist a *continuous* map $H: X \times I \to X$ such that
 
     $$
     \begin{aligned}
@@ -104,7 +104,7 @@ $$
 
 - **Contractible topological space**: a topological space whose deformation retract can be a *single point* in it.
 
-    Mathematically, we can find a homotopy $H: X \times I \rightarrow X$ such that ($a \in X$ is a point)
+    Mathematically, we can find a homotopy $H: X \times I \to X$ such that ($a \in X$ is a point)
 
     $$
     \begin{aligned}

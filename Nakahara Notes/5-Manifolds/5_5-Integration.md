@@ -56,7 +56,7 @@
 
 ### Integration of Forms
 
-Let $f: M \rightarrow \mathbb{R}$ be a function defined on $m$-dimensional manifold $M$; $\omega$ is a volume element. 
+Let $f: M \to \mathbb{R}$ be a function defined on $m$-dimensional manifold $M$; $\omega$ is a volume element. 
 
 #### On One Chart
 
@@ -74,7 +74,7 @@ Here we used $dx^1 \cdots dx^m = dx^1 \wedge \cdots dx^m$.
 
 *Definition*: Take an *open* covering $\{U_i\}$ of $M$ such that each point in $M$ is covered with *a finite number of $U_i$* (we assume that this is possible).
 
-- **Partition of unity**: a family of differentiable functions $\varepsilon_i: M \rightarrow \mathbb{R}$ satisfying:
+- **Partition of unity**: a family of differentiable functions $\varepsilon_i: M \to \mathbb{R}$ satisfying:
     
     > - $0 \le \varepsilon_i(p) \le 1$
     >

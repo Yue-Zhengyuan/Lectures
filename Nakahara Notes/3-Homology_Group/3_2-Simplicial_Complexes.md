@@ -21,7 +21,7 @@
     \end{aligned}
     $$
 
-    - **Barycentric coordinate**: $(c_0, ..., c_r)$
+    - **Barycentric coordinate (重心坐标)**: $(c_0, ..., c_r)$
     
     *Remark*: Since $\sigma_r$ is bounded and closed, it is *compact*.
     

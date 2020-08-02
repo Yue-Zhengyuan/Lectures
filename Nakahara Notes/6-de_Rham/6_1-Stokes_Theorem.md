@@ -88,7 +88,7 @@
 
 </center>
 
-Let $f: \sigma_r \rightarrow M$ be a smooth map ($f$ needs not be invertible).
+Let $f: \sigma_r \to M$ be a smooth map ($f$ needs not be invertible).
 
 - **Singular $r$-simplex in $M$**: the image $s_r \equiv f(\sigma_r)$
 
@@ -119,7 +119,7 @@ Let $f: \sigma_r \rightarrow M$ be a smooth map ($f$ needs not be invertible).
     - **Boundary map**: a linear map on chains
 
         $$
-        \partial : C_r(M) \rightarrow C_{r-1}(M), \quad
+        \partial : C_r(M) \to C_{r-1}(M), \quad
         \partial c_r = \sum_i a_i \, \partial s_{r,i}
         $$
 
@@ -153,7 +153,7 @@ $$
 \int_{s_r} \omega \equiv \int_{\sigma_r} f^* \omega
 $$
 
-where $f$ is a smooth map from a region *containing* $\sigma_r$ to $M$ (sometimes simply written as $f: \sigma_r \rightarrow M$), and $f^*$ is the corresponding pullback from $r$-forms in $M$ to $r$-forms in $\mathbb{R}^r$. 
+where $f$ is a smooth map from a region *containing* $\sigma_r$ to $M$ (sometimes simply written as $f: \sigma_r \to M$), and $f^*$ is the corresponding pullback from $r$-forms in $M$ to $r$-forms in $\mathbb{R}^r$. 
 
 ----
 
@@ -198,7 +198,7 @@ $$
     \end{aligned}
     $$
 
-    where $f: \sigma_r \rightarrow M$, where $\sigma_r$ is an $r$-simplex in $\mathbb{R}^r$. 
+    where $f: \sigma_r \to M$, where $\sigma_r$ is an $r$-simplex in $\mathbb{R}^r$. 
     
     The integrand $\psi \equiv f^* \omega$ is a general $(r-1)$-form in $\mathbb{R}^r$:
 

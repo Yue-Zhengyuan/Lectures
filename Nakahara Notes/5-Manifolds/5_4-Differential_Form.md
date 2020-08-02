@@ -318,7 +318,7 @@ $$
     \end{aligned}
     $$
 
-    the exterior derivative $d_r: \Omega^r(M) \rightarrow \Omega^{r+1}(M)$ (or simply $d$) is defined to act on $\omega$ as follows:
+    the exterior derivative $d_r: \Omega^r(M) \to \Omega^{r+1}(M)$ (or simply $d$) is defined to act on $\omega$ as follows:
 
     $$
     \begin{aligned}
@@ -410,7 +410,7 @@ $$
 
 - Exterior derivative **commutes** with pullback
     
-    Let $\omega \in \Omega^r(N), \, f: M \rightarrow N$
+    Let $\omega \in \Omega^r(N), \, f: M \to N$
 
     $$
     d(f^* \omega) = f^*(d \omega)
@@ -476,7 +476,7 @@ $$
 
 - Pullback is **distributive** over exterior product:
     
-    Let $\xi, \omega$ be differential forms defined in $N$, and $f: M \rightarrow N$
+    Let $\xi, \omega$ be differential forms defined in $N$, and $f: M \to N$
 
     $$
     f^*(\xi \wedge \omega) = (f^* \xi) \wedge (f^* \omega)

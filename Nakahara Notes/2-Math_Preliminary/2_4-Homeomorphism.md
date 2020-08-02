@@ -8,7 +8,7 @@
 
     Mathematically, two spaces $X, Y$ are **homeomorphic** to each other if we can find two *continuous* maps
 
-    $$f: X \rightarrow Y, \quad g: Y \rightarrow X$$
+    $$f: X \to Y, \quad g: Y \to X$$
 
     such that
 

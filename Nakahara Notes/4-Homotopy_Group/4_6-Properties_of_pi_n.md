@@ -24,7 +24,7 @@ $$
 
 *Theorem*: (**Homotopy groups are a topological invariants**)
 
-Let $X, Y$ be topological spaces of the same homotopy type, with $f: X \rightarrow Y$ being the homotopic equivalence. Then
+Let $X, Y$ be topological spaces of the same homotopy type, with $f: X \to Y$ being the homotopic equivalence. Then
 
 $$
 \pi_n(X, x_0) \cong \pi_n(Y, f(x_0))
@@ -57,7 +57,7 @@ $$
 
 *Definition*:
 
-- **Covering space of topological space $X$**: another topological space $\tilde{X}$ which can "cover" $X$ via some continuous *surjective* map $p: \tilde{X} \rightarrow X$.
+- **Covering space of topological space $X$**: another topological space $\tilde{X}$ which can "cover" $X$ via some continuous *surjective* map $p: \tilde{X} \to X$.
     
     Mathematically, "cover" means that for each $x \in X$, we can find a *connected open neighborhood* $U \subset X$, such that $p^{-1}(U)$ is a *disjoint union* of open sets in $\tilde{X}$, each of which is mapped *homeomorphically* to $U$ by $p$ (i.e. $p$ restricted to one of these open sets is a homeomorphism)
 
@@ -67,7 +67,7 @@ $$
 
 *Example*: 
 
-- $\mathbb{R}$ is the universal covering space of $S^1$ with the map $p: x \rightarrow e^{2\pi i x}$. 
+- $\mathbb{R}$ is the universal covering space of $S^1$ with the map $p: x \to e^{2\pi i x}$. 
 
 ----
 
@@ -77,7 +77,7 @@ Let $\tilde{X}$ be the universal covering space of a *connected* topological spa
 
 $$
 p_*: \pi_n(\tilde{X}, \tilde{x_0})
-\rightarrow \pi_n(X, x_0)
+\to \pi_n(X, x_0)
 $$
 
 is an *isomorphism* when $n \ge 2$ (*not applicable* to the case $n = 1$). 

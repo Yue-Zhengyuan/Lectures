@@ -18,7 +18,7 @@ Let $p$ be a point in $M$, which is mapped to $f(p) \in N$.
 
     Mathematically, let $(U,\varphi)$ be a chart containing $p$, and $(V, \psi)$ be a chart containing $f(p)$. The coordinate representation of $f$ is (read from right to left)
 
-    $$ \psi \circ f \circ \varphi^{-1}: \mathbb{R}^m \rightarrow \mathbb{R}^n $$
+    $$ \psi \circ f \circ \varphi^{-1}: \mathbb{R}^m \to \mathbb{R}^n $$
 
     *Special cases*: 
 
@@ -35,7 +35,7 @@ Let $p$ be a point in $M$, which is mapped to $f(p) \in N$.
     
     - **Diffeomorphic manifolds**: if we can find a diffeomorphism between two manifolds, then they are **diffeomorphic** to each other. 
     
-    - **Diffeomorphism group $\text{Diff}(M)$**: the group containing all diffeomorphism $f: M \rightarrow M$.
+    - **Diffeomorphism group $\text{Diff}(M)$**: the group containing all diffeomorphism $f: M \to M$.
 
     *Remark*:
     
@@ -46,7 +46,7 @@ Let $p$ be a point in $M$, which is mapped to $f(p) \in N$.
 
 #### Tangent Vector and Tangent Space in Euclidean Space
 
-Let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart $(U, \varphi)$ near $p$. A curve $c: (a,b) \subset \mathbb{R} \rightarrow M \, (a < 0 < b)$ goes across the point $p = c(0)$. 
+Let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart $(U, \varphi)$ near $p$. A curve $c: (a,b) \subset \mathbb{R} \to M \, (a < 0 < b)$ goes across the point $p = c(0)$. 
 
 In order to use our previous geometrical intuition to find the tangent vectors to $M$, we *embed* $M$ into an $n$-dimensional $(n \ge m)$ Euclidean space $\mathbb{R}^n$. (The operation of embedding will be described [later](#sub-manifolds).) Suppose the chart $(U, \varphi)$ is embedded by the equations
 
@@ -75,7 +75,7 @@ $$
 
 - **Tangent vector**
 
-Let us find the tangent vector at $p$, whose coordinates are $\varphi(p) = (x^1_0, ..., x^m_0)$, along some general curve $c: (a,b) \rightarrow M$. The coordinate representation is
+Let us find the tangent vector at $p$, whose coordinates are $\varphi(p) = (x^1_0, ..., x^m_0)$, along some general curve $c: (a,b) \to M$. The coordinate representation is
 
 $$
 \varphi \circ c(t) \equiv (x^1(t), ..., x^m(t))
@@ -118,7 +118,7 @@ The $m$ vectors $\{e_1, ..., e_m\}$ form a **coordinate basis** of the **tangent
 
 In the above analysis, we discover some differential operators independent of the embedding function $X^\mu$. They are adopted as the definitions that exist by themselves.
 
-Again, let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart $(U, \varphi)$ near $p$; the local coordinates are labelled by $x$. A curve $c: (a,b) \subset \mathbb{R} \rightarrow M \, (a < 0 < b)$ goes across the point $p = c(0)$. 
+Again, let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart $(U, \varphi)$ near $p$; the local coordinates are labelled by $x$. A curve $c: (a,b) \subset \mathbb{R} \to M \, (a < 0 < b)$ goes across the point $p = c(0)$. 
 
 - **Tangent vector $V$ at $p$ to $M$ along the direction of $c$**: the differential operator $V$ determined by $c(t)$ (and the coordinate variables) as
 
@@ -132,7 +132,7 @@ Again, let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart 
 
     - The numbers $V^\mu$ are called the **components of $V$**.
     
-    - The vector $V \in T_p M$ can act on a smooth function $f \in \mathcal{F(M)}: M \rightarrow \mathbb{R}$, denoted by
+    - The vector $V \in T_p M$ can act on a smooth function $f \in \mathcal{F(M)}: M \to \mathbb{R}$, denoted by
 
         $$
         V[f] = V^\mu \partial_\mu (f \circ \varphi^{-1})(x)
@@ -190,7 +190,7 @@ We notice that the transformation matrices for $V^\mu$ and $e_\mu$ are *inverse*
 
 - **Cotangent space $T_p^* M$**: the *dual space* of the tangent space $T_p M$
 
-- **Cotangent vectors (one-forms)**: elements in $T_p^* M$ (i.e. *linear* functions $\omega: T_p M \rightarrow \mathbb{R}$)
+- **Cotangent vectors (one-forms)**: elements in $T_p^* M$ (i.e. *linear* functions $\omega: T_p M \to \mathbb{R}$)
 
 #### General Form of One-forms
 
@@ -202,7 +202,7 @@ $$
 
 *Definition*: 
 
-- **Inner product**: a *bilinear function*: $\langle \, , \, \rangle: T_p^* M \times T_p M \rightarrow \mathbb{R}$ defined by
+- **Inner product**: a *bilinear function*: $\langle \, , \, \rangle: T_p^* M \times T_p M \to \mathbb{R}$ defined by
 
 $$
 \begin{aligned}
@@ -224,7 +224,7 @@ $$
 - **Tensor of type $(r,s)$**: a *multi-linear* function 
     
     $$
-    T: \bigotimes^r T_p^* M \bigotimes^s T_p M \rightarrow \mathbb{R}
+    T: \bigotimes^r T_p^* M \bigotimes^s T_p M \to \mathbb{R}
     $$ 
     
     which send $r$ dual vectors and $s$ vectors to a real number. Its general local coordinate expression is
@@ -286,22 +286,22 @@ $$
 
 ### Induced Maps: Pushforward and Pullback
 
-*Definition*: Let $f: M \rightarrow N$ be a smooth map. 
+*Definition*: Let $f: M \to N$ be a smooth map. 
 
 <center>
 
 ![](Fig-5_10.png)   
-*Inducing $f_*: T_p M \rightarrow T_{f(p)} N$ from $f: M \rightarrow N$*
+*Inducing $f_*: T_p M \to T_{f(p)} N$ from $f: M \to N$*
 
 </center>
 
 - **Differential map (pushforward) $f_*$**: a map from tangent vectors to $M$ to tangent vectors to $N$.
 
     $$
-    f_*: T_p M \rightarrow T_{f(p)} N
+    f_*: T_p M \to T_{f(p)} N
     $$
 
-    For any vector $V \in T_p M$ and any smooth function $g: N \rightarrow \mathbb{R}$, the differential map is *defined* to satisfy
+    For any vector $V \in T_p M$ and any smooth function $g: N \to \mathbb{R}$, the differential map is *defined* to satisfy
 
     $$
     (f_* V)[g] \equiv V[g \circ f]
@@ -356,13 +356,13 @@ $$
     *Generalization of pushforward*: 
 
     $$
-    f_*: \mathcal{T}^r_{0,p}(M) \rightarrow \mathcal{T}^r_{0,f(p)}(N)
+    f_*: \mathcal{T}^r_{0,p}(M) \to \mathcal{T}^r_{0,f(p)}(N)
     $$
 
 - **Pullback $f^*$**: a map from *cotangent* vectors to $N$ *back* to *cotangent* vectors to $M$.
 
     $$
-    f^*: T_{f(p)}^* N \rightarrow T_p^* M
+    f^*: T_{f(p)}^* N \to T_p^* M
     $$
 
     For any $V \in T_p M, \, \omega \in T_{f(p)}^* N$, the pullback should satisfy
@@ -412,7 +412,7 @@ $$
     *Generalization to pullback of $(0,r)$-tensors*:
 
     $$
-    f^*: \mathcal{T}^0_{r,f(p)}(N) \rightarrow \mathcal{T}^0_{r,p}(M)
+    f^*: \mathcal{T}^0_{r,f(p)}(N) \to \mathcal{T}^0_{r,p}(M)
     $$
 
     For $\omega \in \mathcal{T}^0_{r,f(p)}(N)$ and vectors $V_i \in T_p M$, we *define*

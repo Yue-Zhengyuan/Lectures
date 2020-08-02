@@ -6,7 +6,7 @@
 
 *Definition*: Let $V, W$ be two vector spaces over the field $K$ (such as $\mathbb{C}, \mathbb{R}$).
 
-- **Linear maps**: a map $f: V \rightarrow W$ satisfying
+- **Linear maps**: a map $f: V \to W$ satisfying
 
     $$
     f(a_1 v_1 + a_2 v_2) = a_1 f(v_1) + a_2 f(v_2)
@@ -24,7 +24,7 @@
 
 *Theorem*: (**Relation between $\ker{f}$ and $\text{im }f$**)
 
-Let $f: V \rightarrow W$ be a linear map. Then
+Let $f: V \to W$ be a linear map. Then
 
 $$
 \dim{V} = \dim{\ker{f}}  + \dim{\text{im }f}
@@ -53,7 +53,7 @@ $$
 
 *Theorem*: (**Toy index theorem**)
 
-Let $V, W$ be *finite*-dimensional vector spaces, and $f: V\rightarrow W$. Then
+Let $V, W$ be *finite*-dimensional vector spaces, and $f: V\to W$. Then
 
 $$
 \dim{\ker{f}} - \dim{\ker{\tilde{f}}} = \dim{V} - \dim{W}
@@ -68,7 +68,7 @@ $$
 - **Tensor of type $(p,q)$**: a multi-linear map from $p$ dual vectors (in $V^*$) and $q$ vectors (in V) to $\mathbb{R}$, i.e.
     
     $$
-    T: \bigotimes^p V^* \bigotimes V \rightarrow \mathbb{R}
+    T: \bigotimes^p V^* \bigotimes V \to \mathbb{R}
     $$
 
     *Example*:

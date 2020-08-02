@@ -17,11 +17,29 @@
 - **$r$-Cocycle group $Z^r(M)$**: the set of all **closed** $r$-forms in $M$
     
     - **Closed $r$-form**: an $r$-form whose derivative is zero
+    
+    $$
+    Z^r(M) = \ker{d_r} = \{
+        \omega \in \Omega^r(M) \mid
+        d_r \omega = 0
+    \}
+    $$
 
 - **$r$-Coboundary group $B^r(M)$**: the set of all **exact** $r$-forms in $M$
     
     - **Exact $r$-form**: an $r$-form which is the derivative of an $(r-1)$-form
     
+    $$
+    \begin{aligned}
+        B^r(M) &= \text{im } d_{r-1} \\
+        &= \{
+            \omega \in \Omega^r(M) \mid
+            \omega = d_{r-1} \xi , \,
+            \exist \xi \in \Omega^{r-1}(M)
+        \}
+    \end{aligned}
+    $$
+
     *Remark*: 
     
     - Since $d^2 = 0$, *an exact form must be closed*, i.e. 

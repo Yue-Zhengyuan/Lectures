@@ -58,9 +58,10 @@ Whenever we use the additive notation, we have assumed that we are dealing with 
 
 *Theorem*: (**Fundamental theorem of homomorphism**)
 
-Let $f: G_1 \rightarrow G_2$ be a homomorphism. 
+Let $f: G_1 \to G_2$ be a group homomorphism. 
 
 - *Lemma*:
+    
     - $\ker{f} = \{x|x\in G_1, f(x) = 0\}$ is a subgroup of $G_1$
     - $\text{im }f = \{y|y \in f(G_1) \subset G_2\}$ is a subgroup of $G_2$
 

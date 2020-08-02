@@ -6,14 +6,14 @@
 
 - **Path**: a *continuous* map from the interval $I = [0,1]$ to a topological space $X$
     
-    $$ \alpha: I \rightarrow X $$
+    $$ \alpha: I \to X $$
 
     - **Loop at point $x_0$**: a *closed path* whose initial point and end point are both at $x_0$, i.e. $\alpha(0) = \alpha(1) = x_0$ 
     
     - **Constant path**: a path only at a constant point
 
         $$
-        c_x: I \rightarrow X \quad c_x(s) = x \in X, \forall s \in I
+        c_x: I \to X \quad c_x(s) = x \in X, \forall s \in I
         $$
     
 - **Product of two paths**: if the end point of path $\alpha$ is the *same* as the initial point of another path $\beta$
@@ -46,7 +46,7 @@
 
 - **Homotopic loops (同伦环路)**: Two loops $\alpha, \beta$ at the *same point* $x_0$ are **homotopic** if they can be *continuously deformed to each other*.
 
-    - **Homotopy (同伦)**: the *continuous* map $F: I \times I \rightarrow X$ which deform the two loops to each other. Concretely, 
+    - **Homotopy (同伦)**: the *continuous* map $F: I \times I \to X$ which deform the two loops to each other. Concretely, 
 
         $$
         \begin{aligned}

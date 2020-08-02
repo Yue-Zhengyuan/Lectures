@@ -1,4 +1,4 @@
-## Homology Groups of Simplicial Complexes
+## Homology Groups of Simplicial Complexes <br>Part 1: Definitions and Theorems
 
 ### Oriented Simplexes
 
@@ -38,7 +38,7 @@
 
 ### Chain, Cycle, Boundary and Corresponding Groups
 
-*Notation*:
+*Definition*: Let
 
 <center>
 
@@ -49,8 +49,6 @@
 |Number of $r$-simplexes in $K$|$I_r$|
 
 </center>
-
-*Definition*:
     
 - **$r$-Chain**: A linear combination of all oriented $r$-simplexes in $K$
 
@@ -118,30 +116,30 @@
     
     *Remark*: 
     
-    - $\partial_r \sigma_r$ is an $(r-1)$-chain.
-
-    - $\partial_r$ can be regarded as a **boundary operator**, which is a *homomorphism* acting *linearly* on simplexes contained in an $r$-chain $c \in C_r(K)$:
-
-        $$
-        \partial_r: C_r(K) \rightarrow C_{r-1}(K)
-        $$
+    - $\partial_r \sigma_r$ (or simply $\partial \sigma_r$) is an $(r-1)$-chain (when $r>0$).
+    
+    - $\partial_r$ (or simply $\partial$) can be regarded as a **boundary operator**, which is a *homomorphism* acting *linearly* on simplexes contained in an $r$-chain $c \in C_r(K)$:
 
         $$
-        \partial_r c \equiv \partial_r \left(
+        \partial_r: C_r(K) \to C_{r-1}(K)
+        $$
+
+        $$
+        \partial c \equiv \partial \left(
             \sum_i c_i \sigma_{r,i}
         \right)
-        = \sum_i c_i (\partial_r \sigma_{r,i})
+        = \sum_i c_i (\partial \sigma_{r,i})
         $$
     
-- **Chain complex $C(K)$ associated with $K$**: ($n$ is the dimension of $K$)
+- **Chain complex $C(K)$ associated with $K \, (\dim{K} = n)$:**
 
     $$
     0 \xrightarrow{i} C_n(K) 
-    \xrightarrow{\partial_n} C_{n-1}(K)
-    \xrightarrow{\partial_{n-1}} \cdots
-    \xrightarrow{\partial_2} C_1(K)
-    \xrightarrow{\partial_1} C_0(K)
-    \xrightarrow{\partial_0} 0
+    \xrightarrow{\partial} C_{n-1}(K)
+    \xrightarrow{\partial} \cdots
+    % \xrightarrow{\partial} C_1(K)
+    \xrightarrow{\partial} C_0(K)
+    \xrightarrow{\partial} 0
     $$
 
 - **$r$-Cycle group $Z_r(K)$**: the *kernel* of the boundary operator $\partial_r$, which is a *subgroup* of $C_r(K)$.
@@ -152,13 +150,19 @@
     $$
 
     - **$r$-Cycle**: An element in $Z_r(K)$, i.e. an $r$-chain *"without boundary"*
+    
+    *Remark*: We have defined that all points (0-simplexes) have no boundary. Therefore $Z_0(K) = C_0(K)$ 
 
 - **$r$-Boundary group $B_r(K)$**: the *image* of the boundary operator $\partial_{r+1}$, which is also a *subgroup* of $C_r(K)$.
     
     $$
     \begin{aligned}
         B_r(K) &= \text{im }{\partial_{r+1}} \\
-        &= \{c \in C_r(K) \mid [\exist d \in C_{r+1}(K)]  \, c = \partial_{r+1}d\}
+        &= \{
+            c \in C_r(K) \mid 
+            c = \partial_{r+1}d, \,
+            \exist d \in C_{r+1}(K)
+        \}
     \end{aligned}
     $$
 
