@@ -1,5 +1,3 @@
-# Minimal Models
-
 ## Unitarity and The Kac Determinant
 
 Now we construct representations of the Virasoro algebra of the holomorphic part
@@ -10,7 +8,7 @@ $$
 + \frac{c}{12} n (n^2 - 1) \delta_{n+m, 0}
 $$
 
-### Requirements for Unitary Representation of Virasoro Algebra
+### Unitary Representation of Virasoro Algebra
 
 A representation of the Virasoro algebra is said to be **unitary** if it contains *no negative-norm states*.
 
@@ -37,7 +35,7 @@ $$
 
 Thus *all representations with negative central charge or negative conformal dimensions are non-unitary*.
 
-#### The Kac Determinant
+### The Kac Determinant
 
 The **Kac determinant** is the determinant of the **Gram matrix** defined as
 
@@ -178,7 +176,7 @@ $$
 \end{aligned}
 $$
 
-![image](Minimal Models_gr1.eps)
+![image](Fig-7_1.png)
 
 The functions $h_{r,s}$ can be expressed in many ways:
 
