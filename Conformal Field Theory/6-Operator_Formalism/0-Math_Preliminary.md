@@ -1,4 +1,4 @@
-## Math Preliminary on Complex Analysis 
+## Math Preliminary: Complex Analysis 
 
 ### Cauchy Integral Formula
 

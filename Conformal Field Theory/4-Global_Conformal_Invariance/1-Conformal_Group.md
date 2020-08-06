@@ -1,4 +1,4 @@
-## The Conformal Group in Dimension \> 2
+## The Conformal Group
 
 *By definition*, a **conformal transformation** of the coordinates is an *invertible* mapping $x\to x'$ which *leaves the metric invariant up to a scale*:
 
