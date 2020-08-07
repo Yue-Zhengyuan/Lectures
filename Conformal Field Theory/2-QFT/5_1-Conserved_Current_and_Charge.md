@@ -331,7 +331,8 @@ Therefore, we may generalize the energy-momentum tensor as the
 functional derivative of the action with respect to the metric:
 
 $$
-\delta  S = -\frac{1}{2} \int d^dx T^{\mu  \nu} \delta  g_{\mu  \nu}
+\delta  S = -\frac{1}{2} \int d^dx \, 
+T^{\mu  \nu} \delta  g_{\mu  \nu}
 $$
 
-which is also applicable to curved spacetime.
+which is also applicable to curved spacetime with minor modification:
