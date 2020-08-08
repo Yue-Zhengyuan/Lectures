@@ -2,42 +2,26 @@
 
 ### Cauchy Integral Formula
 
-For any function defined in a region on the complex plane, we have the expansion around the point $z_0$ in that region:
+For any function defined in a region on the complex plane, we have the **Laurent expansion** around a point $z_0$ in that region:
 
 $$
-f(z)=\sum_{n=-\infty}^{+\infty} a_n
-(z - z_0)^n
+f(z) = \sum_{n=-\infty}^{+\infty} 
+a_n (z - z_0)^n
 $$
 
-The $n<0$ part is called the **pricipal part**, and the normal $n\ge 0$ part is the **analytic part**.
+The $n < 0$ part is called the **principal part**, and the usual $n \ge 0$ part is the **analytic part**.
 The coefficients can be found by the **Cauchy integral formula**:
 
 $$
 a_n = \frac{1}{2\pi i}
 \oint_C dz \,
-\frac{f(z)}{(z - z_0)^{n+1}}
+\frac{f(z)}{(z - z_0)^{n+1}}, \quad
+n \in \mathbb{Z}
 $$
 
-valid for both positive and negative $n$. The integration path $C$ must
-enclose the point $z_0$.
+The integration path $C$ must enclose the point $z_0$.
 
-Compare the analytic part with the Taylor series, we find:
-
-1. for $n\ge 0$
-
-    $$
-    f^{(n)}(z_0)
-    = \frac{n!}{2\pi i}
-    \oint_C dz \frac{f(z)}{(z-z_0)^n}
-    $$
-
-2. for $n=0$
-
-    $$
-    f(z_0)
-    = \frac{1}{2\pi i}
-    \oint_C dz \, \frac{f(z)}{z-z_0}
-    $$
+----
 
 *Explanation of the Cauchy Integral Formula:*
 
@@ -75,6 +59,26 @@ $$
 \end{aligned}
 $$
 
+----
+
+*Remark*: Comparing the analytic part with the usual Taylor series, we find:
+
+1. for $n\ge 0$
+
+    $$
+    f^{(n)}(z_0)
+    = \frac{n!}{2\pi i}
+    \oint_C dz \frac{f(z)}{(z-z_0)^n}
+    $$
+
+2. for $n=0$
+
+    $$
+    f(z_0)
+    = \frac{1}{2\pi i}
+    \oint_C dz \, \frac{f(z)}{z-z_0}
+    $$
+
 ### The Residue Theorem
 
 Suppose that
@@ -87,7 +91,7 @@ $$
 and let $C$ be a closed path enclosing $z=z_0$ but no other singular points of $f(z)$. Then the **residue theorem** states that
 
 $$
-\oint_Cdz f(z)=2 \pi i a_{-1}
+\oint_C dz \, f(z) = 2 \pi i a_{-1}
 $$
 
 This is just the Cauchy Integral Formula for $n=-1$.

@@ -1,339 +1,4 @@
-
-
-### Energy-Momentum Tensor in 2D 
-
-#### *Proposition*: CFT in 2D has traceless energy-momentum tensor
-
-*Proof*:
-
-#### Holomorphic Components of the Energy-Momentum Tensor 
-
-The energy-momentum tensor $T_{\mu  \nu}$ transforms in the same way as the metric $g_{\mu  \nu}$:
-
-$$
-\begin{aligned}
-    T_{z z} 
-    &=
-    \frac{\partial x^0}{\partial z} \frac{\partial x^0}{\partial z}T_{00}+\frac{\partial x^0}{\partial z} \frac{\partial x^1}{\partial z}T_{01}+\frac{\partial
-    x^1}{\partial z} \frac{\partial x^0}{\partial z}T_{10}+\frac{\partial x^1}{\partial z} \frac{\partial x^1}{\partial z}T_{11}
-    \\
-    &= \frac{1}{2} \times \frac{1}{2}T_{00}+\frac{1}{2} \frac{-i}{2}T_{01}+\frac{-i}{2} \frac{1}{2}T_{10}+\frac{-i}{2} \frac{-i}{2}T_{11}
-    \\
-    &=\frac{1}{4} \left(T_{00}-2i T_{10}-T_{11} \right)
-\end{aligned}
-$$
-
-Proceeding in the same way, we find
-
-$$
-\begin{aligned}
-    T_{\bar{z} \bar{z}} 
-    &= \frac{1}{4} (T_{00}+2i T_{10}-T_{11})
-    \\
-    T_{z \bar{z}} = T_{\bar{z}z}
-    &= \frac{1}{4} (T_{00}+T_{11})
-\end{aligned}
-$$
-
-Since the energy-momentum tensor for 2D CFT is traceless, we can
-simplify the relations further:
-
-$$
-\begin{aligned}
-    T_{z z}
-    &= \frac{1}{2} (T_{00}-i T_{10})
-    \\
-    T_{\bar{z} \bar{z}}
-    &=\frac{1}{2} (T_{00}+i T_{10})
-    \\
-    T_{z \bar{z}} = T_{\bar{z}z} &=0
-\end{aligned}
-$$
-
-We now show that $T_{z z},T_{\bar{z} \bar{z}}$ depends only on $z$ and $\bar{z}$ respectively, so we define
-
-$$
-T(z)\equiv 2\pi  T_{z z}(z), 
-\quad
-\bar{T}(\bar{z}) \equiv 2\pi T_{\bar{z} \bar{z}}(\bar{z})
-$$
-
-*Proof*:
-
-Recall that
-
-$$
-\partial^{\mu}T_{\mu  \nu}=0
-$$
-
-In *Euclidean* spacetime, this is explicitly
-
-$$
-\partial_0T_{00}+\partial_1T_{10}
-= \partial_0T_{01}+\partial_1T_{11}
-= 0
-$$
-
-Since the energy-momentum tensor is traceless and symmetric:
-
-$$
-\begin{aligned}
-    \partial_{\bar{z}}T_{z z}
-    &= \frac{1}{4} 
-    (\partial_0 + i\partial_1)
-    (T_{00} - i T_{10})
-    \\
-    &= \frac{1}{4} (
-        \partial_0T_{00}
-        - i \partial_0 T_{10}
-        + i \partial_1 T_{00}
-        +\partial_1T_{10}
-    )
-    \\
-    &= \frac{1}{4} (
-        \partial_0T_{00}
-        - i \partial_0 T_{01}
-        - i \partial_1 T_{11}
-        +\partial_1T_{10}
-    )
-    \\
-    &= \frac{1}{4} [
-        (\partial_0T_{00} + \partial_1T_{10})
-        - i (\partial_0T_{01} + \partial_1T_{11})
-    ]
-    = 0
-\end{aligned}
-$$
-
-Similarly, we can show that $\partial_zT_{\bar{z} \bar{z}}=0$.
-$\blacksquare$
-
-### Conformal Ward-Takahashi Identity 
-
-### Conserved Charge of Conformal Symmetry 
-
-The conserved charge corresponding to the conformal transformation $x\to x+\epsilon$ on the cylinder is given by
-
-$$
-Q=\int_0^L dx^1 \, j_0
-\quad
-\text{at } x^0 = \text{const}
-$$
-
-Here the current $j_{\mu}=T_{\mu  \nu} \epsilon^{\nu}$, and $L$ is the circumference of the cylinder. 
-
-After mapping to the complex plane using $z=e^{x^0+i x^1}$, constant $x^0$ becomes constant $|z|$. The radius of the integration contour is then $R=\exp \left(x^0\right)$, and
-
-$$
-\oint dz \, f(z)
-= i R \int_0^{2 \pi R} dx^1 \, e^{i x^1} f(x^1)
-$$
-
-Then
-
-$$
-\begin{aligned}
-    \int_0^{2\pi R} dx^1 \, j_0
-    &=\int_0^{2 \pi R} dx^1 \, e^{i x^1}
-    \left(j_0 e^{-i x^1} \right)
-    \\
-    &= \frac{1}{i R} \oint dz 
-    \left(j_0 e^{-i x^1} \right)
-    =
-    \frac{1}{i} \oint dz 
-    \left(j_0 e^{-x^0 - i x^1} \right)
-    \\
-    &=\frac{1}{i} \oint dz \, \frac{j_0}{z}
-\end{aligned}
-$$
-
-Find the holomorphic components of the current
-
-$$
-\begin{aligned}
-    j_0 
-    &= \frac{\partial z}{\partial x^0}j_z+\frac{\partial \bar{z}}{\partial x^0}j_{\bar{z}}
-    = j_z+j_{\bar{z}}
-    \\
-    &= T_{z z} \epsilon (z)+T_{\bar{z} \bar{z}} \epsilon (\bar{z})
-    \\
-    &= \frac{1}{2\pi} (
-        T(z) \epsilon(z)
-        + \bar{T}(\bar{z}) \bar{\epsilon}(\bar{z})
-    )
-\end{aligned}
-$$
-
-When integrating, we need to treat $\bar{z}$ as the complex conjugate of $z$:
-
-$$
-\frac{1}{i} \oint dz
-= \frac{1}{i} \oint d\bar{z}
-= -\frac{1}{i} \oint d\bar{z}
-$$
-
-So the integration is converted to a contour integration around the origin:
-
-$$
-Q
-\equiv Q_{\epsilon} + Q_{\bar{\epsilon}}
-= \frac{1}{2 \pi i} \left(
-    \oint dz \, T(z)\epsilon (z)
-    + \oint d\bar{z} \, \bar{T}(\bar{z}) \bar{\epsilon}(\bar{z})
-\right)
-$$
-
-Both contours are counter-clockwise. The *Ward identity* implies that $Q$ is the generator of conformal transformations, i.e.
-
-$$
-\begin{aligned}
-    \delta_{\epsilon ,\bar{\epsilon}} \phi(w,\bar{w})
-    &= -\left[Q, \phi(w,\bar{w})\right]
-    \\
-    &= -\frac{1}{2 \pi i} \oint dz \, [
-        T(z)\epsilon (z), 
-        \phi(w,\bar{w})
-    ]
-    \\ &\quad
-    - \frac{1}{2 \pi i} \oint d\bar{z} \, [
-        \bar{T}(\bar{z}) \bar{\epsilon}(\bar{z}),
-        \phi(w,\bar{w})
-    ]
-\end{aligned}
-$$
-
-Using normal ordering, we can simplify further to
-
-$$
-\delta_{\epsilon ,\bar{\epsilon}} \phi(w,\bar{w})
-= -\frac{1}{2 \pi i} \oint_w dz \, 
-\epsilon (z) T(z)\phi(w,\bar{w})
-+ \text{anti-holomorphic}
-$$
-
-### Operator Product Expansion (OPE)
-
-Previously, we have derived that for a quasi-primary field
-
-$$
-\delta_{\epsilon ,\bar{\epsilon}} \phi 
-=
-- (h \phi  \partial \epsilon + \epsilon \partial \phi)
-- (
-    \bar{h} \phi \bar{\partial} \bar{\epsilon}
-    + \bar{\epsilon} \bar{\partial} \phi
-)
-$$
-
-We identify that
-
-$$
-\begin{aligned}
-    &h \phi(w,\bar{w}) \partial_w \epsilon (w) + \epsilon (w) \partial_w \phi(w,\bar{w})
-    \\ &\qquad
-    =\frac{1}{2 \pi i} \oint_w dz \epsilon
-    (z) T(z)\phi(w,\bar{w})
-\end{aligned}
-$$
-
-and similarly for the anti-holomorphic part. But we can write the LHS as integral around the point $w$ using Cauchy integral formula (acting on the coordinate change $\epsilon$ only:
-
-$$
-\begin{aligned}
-    h \phi(w,\bar{w}) \partial_w\epsilon (w)
-    &= \frac{1}{2 \pi i} \oint_w dz \frac{\epsilon(z)}{(z-w)^2}h \phi(w,\bar{w})
-    \\
-    \epsilon (w)\partial_w\phi(w,\bar{w})
-    &= \frac{1}{2 \pi i} \oint_w dz \frac{\epsilon(z)}{z-w} \partial_w\phi(w,\bar{w})
-\end{aligned}
-$$
-
-Therefore
-
-$$
-\begin{aligned}
-    T(z)\phi(w,\bar{w})
-    &= \frac{h}{(z-w)^2} \phi(w,\bar{w})
-    + \frac{1}{z-w} \partial_w \phi(w,\bar{w})
-    + \text{reg.}
-    \\
-    \bar{T} (\bar{z}) \phi(w,\bar{w})
-    &= \frac{\bar{h}}{(\bar{z}-\bar{w})^2} \phi(w,\bar{w})
-    + \frac{1}{\bar{z}-\bar{w}} \partial_{\bar{w}} \phi(w,\bar{w})
-    +\text{reg.}
-\end{aligned}
-$$
-
-### Conformal Ward-Takahashi Identity
-
-## OPE of Energy-Momentum Tensor with Itself
-
-### Laurent Mode Expansion of the Fields
-
-#### Around the Origin
-
-A field $\phi(z, \bar{z})$ of conformal dimensions
-$(h, \bar{h})$ can be expanded as a Laurent series around the
-origin 0:
-
-$$
-\phi(z, \bar{z})
-= \sum_{m=-\infty}^{\infty} \sum_{n=-\infty}^{\infty} 
-z^{-m-h} \bar{z}^{-n-\bar{h}} \phi_{m,n}
-$$
-
-Using the Cauchy Integral Formula, the modes are
-
-$$
-\phi_{m,n} = 
-\frac{1}{2 \pi i} \oint dz \, z^{m+h-1} 
-\frac{1}{2 \pi i} \oint d\bar{z} \, \bar{z}^{n+\bar{h}-1} \phi(z, \bar{z})
-$$
-
-Taking the Hermitian conjugate of the field:
-
-$$
-\phi^\dagger(z, \bar{z})
-= \sum_{m=-\infty}^{\infty} \sum_{n=-\infty}^{\infty} 
-\bar{z}^{-m-h} z^{-n-\bar{h}} \phi_{m,n}^\dagger
-$$
-
-Meanwhile, we have
-
-$$
-\begin{aligned}
-    \phi^\dagger(z, \bar{z})
-    &= \bar{z}^{-2h}z^{-2\bar{h}} 
-    \phi \left(\frac{1}{\bar{z}}, \, \frac{1}{z} \right)
-    \\
-    &=\bar{z}^{-2h}z^{-2\bar{h}} 
-    \sum_{m=-\infty}^{\infty} \sum_{n=-\infty}^{\infty} 
-    \bar{z}^{m+h} z^{n+\bar{h}} \phi_{m,n} 
-    \\
-    &= \sum_{m=-\infty}^{\infty} \sum_{n=-\infty}^{\infty}
-    \bar{z}^{m-h} z^{n-\bar{h}} \phi_{m,n}
-\end{aligned}
-$$
-
-Now we find that
-
-$$
-\phi_{-m,-n} = \phi_{m,n}^\dagger
-$$
-
-#### Around Any Point 
-
-For simplicity, we now focus on holomorphic fields depending only on $z$. It is possible to expand around an arbitrary point $w$, instead of the origin:
-
-$$
-\begin{aligned}
-    \phi(z) 
-    &= \sum_n (z-w)^{-n-h} \phi_n(w), 
-    \\
-    \phi_n(w)
-    &=\frac{1}{2 \pi i} \oint_w dz \, z^{n+h-1} \phi(z)
-\end{aligned}
-$$
+## Virasoro Algebra
 
 ### Laurent Modes of the Energy-Momentum Tensor 
 
@@ -562,3 +227,128 @@ $$
 $[\bar{L}_n, \bar{L}_m]$ can be found in the same way using the OPE of $\bar{T} (\bar{z})$ with itself.
 
 Finally, from $T(z)\bar{T} \left(\bar{w} \right)\sim 0$, we have $[L_n, \bar{L}_m]=0$. $\blacksquare$
+
+### Central Extension of Witt Algebra
+
+#### Central Extension of Lie Groups and Lie Algebra
+
+A **central extension** of a group $G$ is a short exact sequence of groups
+
+$$
+1 \to A \to E \to G \to 1
+$$
+
+such that $A$ is in $Z(E)$, the **center** of the group $E$, which is the set of elements in $E$ that commute with every element of $E$:
+
+$$
+Z(E)\equiv
+\{ z\in E \mid z g=g z, \, \forall g\in E\}
+$$
+
+Obviously, the center of $E$ is an *invariant* subgroup of $E$.
+
+The set of isomorphism classes of central extensions of $G$ by $A$ (where $G$ acts *trivially* on $A$) is in one-to-one correspondence with the cohomology group $H^2(G,A)$.
+
+#### Virasoro Algebra
+
+There is a *unique* central extension of the Witt algebra, called the **Virasoro algebra**.
+
+We first consider the holomorphic part. The generators $l_n$ are promoted to $L_n$, and a new element $c\in \mathbb{C}$ (the **central charge**) is introduced so that
+
+$$
+\begin{aligned}
+    [L_n, L_m] &=(n-m)L_{m+n}+c p(n,m)
+    \\
+    [L_n, c] &= 0\\
+    [c,c] &= 0
+\end{aligned}
+$$
+
+where $p$ is a *bilinear* mapping onto $\mathbb{C}$ (this is required by
+the bi-linearity of the Lie bracket). The last two equations mean that
+$c$ commutes with all group elements in the Virasoro algebra. Similar
+relations hold for the anti-holomorphic part ($\bar{l}_n\to \bar{L}_n$
+etc).
+
+Now we determine the explicit form of $p(n,m)$ for Virasoro algebra.
+
+1\. Since the Lie bracket is *anti-symmetric*, we obtain
+
+$\left[L_n,L_m\right]=(n-m)L_{m+n}+c p(n,m)\\
+=-\left[L_m,L_n\right]=-(m-n)L_{n+m}-c p(m,n)$
+
+$\Longrightarrow  p(n,m)=-p(m,n)$
+
+2\. We can always make
+
+$p(1,-1)=0, p(n,0)=0$
+
+If they are not zero, we redefine the $L_n$ operators as
+
+$L_n^{\prime}=L_n+\frac{c p(n,0)}{n} (n\neq 0), L_0^{\prime}=L_0+\frac{c p(1,-1)}{2}$
+
+Then
+
+$\left[L_n^{\prime},L_0^{\prime}\right]=\left[L_n,L_0\right]=n L_n+c p(n,0)=n L_n^{\prime}$
+
+$\left[L_1^{\prime},L_{-1}^{\prime}\right]=\left[L_1,L_{-1}\right]=2L_0+c p(1,-1)=2L_0^{\prime}$
+
+The motivation for the redefinition above is now clear.
+
+3\. The Lie bracket should satisfy the *Jacobi identity*
+
+$\left[\left[L_m,L_n\right],L_l\right]+\left[\left[L_l,L_m\right],L_n\right]+\left[\left[L_n,L_l\right],L_m\right]=0$
+
+For $(m,n,l)\to (m,n,0)$, we have
+
+$(m+n)p(n,m)=0 \Longrightarrow p(n,m)=p(n,-n)\delta_{m+n, 0}$
+
+But we still have $p(1,-1)=0$, thus $p(n,-n)\neq 0$ *is possible only
+when* $| n| \geq 2$.
+
+For $(m,n,l)\to (-n+1,n,-1)$, we have
+
+$(-2n+1)c p(1,-1)+(n+1)c p(n-1,-n+1)+(n-2)c p(-n,n)=0$
+
+Or
+
+$(n+1) p(n-1,-n+1)=(n-2) p(n,-n)$
+
+which allows us to calculate $p(n,-n)$ recursively:
+
+$p(n,-n)=\frac{n+1}{n-2}p(n-1,-n+1)\\
+=\frac{(n+1)n}{(n-2)(n-3)}p(n-2,-n+2)\\
+= \cdots =\left(
+\begin{array}{c}
+ n+1 \\
+ 3 \\
+\end{array}
+\right)p(2,-2)$
+
+By convention, we set
+
+$p(2,-2)=\frac{1}{2}$
+
+Summarize all the above calculations, we finally find
+
+$p(n,m)=\frac{1}{12}n\left(n^2-1\right)\delta_{m+n, 0}$
+
+and the Virasoro algebra is
+
+$\left[L_n,L_m\right]=(n-m)L_{n+m}+\frac{c}{12}n\left(n^2-1\right)\delta_{m+n, 0}$
+
+#### Other Commutation Rules in Virasoro Algebra
+
+Adding the anti-holomorphic parts into the algebra, we further obtain
+
+$\left[\bar{L}_n,\bar{L}_m\right]=(n-m)\bar{L}_{n+m}+\frac{\bar{c}}{12}n\left(n^2-1\right)\delta_{m+n, 0}$
+
+Here $\bar{c}$ is the central charge of the anti-holomorphic sector.
+Some physical constraints (such as the conformal invariance on a torus)
+will fix
+
+$\bar{c}=c$
+
+For the mixed commutator, we still have
+
+$\left[L_n,\bar{L}_m\right]=0$

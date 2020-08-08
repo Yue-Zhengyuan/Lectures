@@ -1,6 +1,6 @@
 ## The Conformal Group in 2D
 
-### Conformal Mappings in 2D
+### Conformal Mappings
 
 Apply the general constraint on conformal transformation
 
@@ -170,20 +170,47 @@ g^{a b}
 \end{pmatrix}
 $$
 
-### Global Conformal Transformations in 2D
+### Global Conformal Transformations
+
+The set of all *global* conformal transformations (everywhere well-defined) consists of mappings of the form
 
 $$
-f(z)=\frac{a z+b}{c z+d}, \quad
-\text{with }
-\det \begin{pmatrix}
+f(z)=\frac{a z+b}{c z+d} 
+\quad \left(
+    a,b,c,d \in \mathbb{C} \, ;
+    \,
+    \det \begin{pmatrix}
+        a & b \\
+        c & d 
+    \end{pmatrix} =1
+\right)
+$$
+
+They are called **projective transformations**. The requirement $ad - bc = 1$ is just a normalization. 
+
+----
+
+*Proof of the form*:
+
+----
+
+Assigning the matrix 
+
+$$
+A = \begin{pmatrix}
     a & b \\
-    c & d 
-\end{pmatrix} =1
+    c & d
+\end{pmatrix}
 $$
 
-### The Witt Algebra
+to the mapping, we can verify that the composition of two projective transformations $f_2 \circ f_1$ corresponds to the matrix $A_2 A_1$. 
 
-The generators of 2D conformal transformation can be found from the Laurent expansion (about the origin) of the mapping $z\to z+\epsilon (z)$: mathematically, we write
+Therefore, the **global conformal group** in 2D is *isomorphic* to the group $SL(2,\mathbb{C})$, the group of *complex invertible $2 \times 2$ matrices with unit determinant*.
+
+
+### Generators of Conformal Transformation
+
+The generators of (global or local) 2D conformal transformation can be found from the Laurent expansion (about the origin) of the mapping $z\to z+\epsilon (z)$: mathematically, we write
 
 $$
 z'= z + \sum_n \epsilon_n z^n
@@ -238,117 +265,3 @@ $$
 $$
 
 called the **Witt algebra**.
-
-### Primary Fields
-
-
-Fields *only depending on* $z$ (i.e. $\phi (z)$) are called **chiral fields**.
-
-Fields *only depending on* $\bar{z}$ (i.e. $\phi (\bar{z})$) are called **anti-chiral fields**.
-
-If a field $\phi (z, \bar{z})$ transforms under *any* (global or local) conformal transformations $z\to w(z)$ according to
-
-$$
-\phi (z, \bar{z}) 
-\to 
-\phi' (w, \bar{w})
-= \left(\frac{dw}{dz}\right)^{-h}
-\left(\frac{d\bar{w}}{d\bar{z}}\right)^{-\bar{h}}
-\phi(z, \bar{z})
-$$
-
-then it is called a **primary field** with $\left(h,\bar{h}\right)$. If this transformation holds only for *global* conformal transformations, then $\phi$ is called a **quasi-primary fields**.
-
-The conformal dimensions are related to the **scaling dimension** and the **planar spin** of the field by
-
-$$
-h=\frac{1}{2}(\Delta +s), \quad
-\bar{h}=\frac{1}{2}(\Delta -s)
-$$
-
-#### Variation under Infinitesimal Conformal Transformations
-
-Consider the infinitesimal transformation
-
-$$
-\begin{aligned}
-    z &\to 
-    w(z)=z+\epsilon (z)
-    \\
-    \bar{z} &\to 
-    \bar{w}(\bar{z}) = \bar{z} + \bar{\epsilon}(\bar{z})
-\end{aligned}
-$$
-
-($\epsilon (z)$ and $\bar{\epsilon}(\bar{z})$ are two *independent* transformations) for which
-
-$$
-\left(\frac{dw}{dz}\right)^{-h}
-= (1 + \partial_z\epsilon)^{-h}
-= 1 - h \partial_z \epsilon (z)
-+ O(\epsilon^2)
-$$
-
-$$
-\left(\frac{d\bar{w}}{d\bar{z}}\right)^{-\bar{h}}
-= (1 + \partial_{\bar{z}}\bar{\epsilon})^{-\bar{h}}
-= 1 - \bar{h}\partial_{\bar{z}}\bar{\epsilon}(\bar{z})
-+ O(\bar{\epsilon}^2)
-$$
-
-Then
-
-$$
-\phi' (w, \bar{w})
-\simeq \left(
-    1 - h\partial_z\epsilon (z)
-    - \bar{h}\partial_{\bar{z}}\bar{\epsilon}(\bar{z})
-\right) \phi (z, \bar{z})
-$$
-
-Meanwhile, Taylor expansion gives
-
-$$
-\phi' (z, \bar{z})
-\simeq \phi' (w, \bar{w})
-- \epsilon (z)\partial \phi (z, \bar{z})
-- \bar{\epsilon}(\bar{z})\bar{\partial} \phi (z, \bar{z})
-$$
-
-Thus the variation of the field is
-
-$$
-\begin{aligned}
-    \delta_{\epsilon ,\bar{\epsilon}}\phi 
-    &\equiv \phi' (z, \bar{z}) - \phi (z, \bar{z})
-    \\
-    &= - (
-        h \phi \partial_z\epsilon 
-        + \epsilon \partial_z\phi
-    ) - (
-        \bar{h} \phi \partial_{\bar{z}}\bar{\epsilon}
-        + \bar{\epsilon}\partial_{\bar{z}}\phi
-    )
-\end{aligned}
-$$
-
-The subscript of $\delta$ means that the variation is due to both
-$\epsilon$ and $\bar{\epsilon}$.
-
-### Restriction on Correlation Functions
-
-The conformal invariance imposes strong restriction on the possible
-forms of the correlation functions of (quasi-)primary fields.
-
-#### Two-Point Functions
-
-$$
-\langle \phi_i(z, \bar{z})\phi_j(w, \bar{w})\rangle 
-= \frac{C_{i j} \delta_{h_i h_j} \delta_{\bar{h}_i \bar{h}_j}}
-{(z-w)^{2h_i} (\bar{z}-\bar{w})^{2\bar{h}_i}}
-$$
-
-The Kronecker-deltas mean that the two-point function vanishes if the
-conformal dimensions of the two fields are different.
-
-#### Three-Point Functions

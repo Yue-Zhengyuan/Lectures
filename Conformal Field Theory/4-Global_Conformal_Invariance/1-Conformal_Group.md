@@ -103,7 +103,7 @@ $$
 f(x) = \frac{2}{d} \partial_{\rho} \epsilon^{\rho}(x)
 $$
 
-### 2. Finite Conformal Transformations
+### Finite Conformal Transformations
 
 $$
 \begin{aligned}
