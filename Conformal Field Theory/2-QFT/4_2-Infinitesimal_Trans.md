@@ -7,7 +7,7 @@ Now consider **infinitesimal transformations**. Assume that the transformation d
 $$
 x^{\mu} \to x'^{\mu}(x,\omega),
 \quad
-\phi (x)\to \phi' \left(x'(x)\right)=\mathcal{F}(\phi (x),\omega)
+\phi (x)\to \phi' \left(x'(x)\right)=F(\phi (x),\omega)
 $$
 
 $\omega =0$ corresponds to doing nothing:
@@ -15,7 +15,7 @@ $\omega =0$ corresponds to doing nothing:
 $$
 x'^{\mu}(x,0)=x^{\mu}, 
 \quad
-\mathcal{F}(\phi (x),0)=\phi (x)
+F(\phi (x),0)=\phi (x)
 $$
 
 For infinitesimal transformations, the parameters are small. This means that all change in position and field can be approximated by terms linear in $\omega_a$:
@@ -23,33 +23,33 @@ For infinitesimal transformations, the parameters are small. This means that all
 $$
 \begin{aligned}
     x'^{\mu}(x,\omega)
-    & =x^{\mu}+\omega_a\frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)
+    & =x^{\mu}
+    + \omega_a \frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)
     \\
-    \phi' \left(x'(x)\right)
+    \phi' (x')
     &= \phi' \left(x+\omega_a\frac{\partial x'}{\partial \omega_a}(x,0)\right)\\
-    &= \mathcal{F}(\phi (x),\omega)=\phi (x)+\omega_a\frac{\partial \mathcal{F}}{\partial \omega_a}(\phi (x),0)
+    &= \phi (x)+\omega_a\frac{\partial F}{\partial \omega_a}(\phi (x),0)
+    \\
+    &= F(\phi (x),\omega)
 \end{aligned}
 $$
 
 The partial derivatives are evaluated at $\omega_a=0$.
 
-The of the infinitesimal transformation is defined by the difference between the new and the old field *at the same position*:
+The **generator** $G_a$ of the infinitesimal transformation is defined by the difference between the new and the old field *at the same position*:
 
 $$
 \phi' (x)-\phi (x)=-i \omega_aG_a\phi (x)
 $$
 
-The coefficient $-i$ is in consistent with the *active picture* of transformations and produce *Hermitian* generators. For multi-component fields, the generator may be a complicated object (not just a single
-number).
-
-The variation of the field is
+The coefficient $-i$ is the conventional choice required by the *active picture* of transformations and produce *Hermitian* generators. Continue calculation: 
 
 $$
 \begin{aligned}
-    \phi' (x)-\phi (x)
+    \text{LHS}
     &=\phi \left(x-\omega_a\frac{\partial x'}{\partial \omega_a}(x,0)\right)
     \\ &\quad
-    +\omega_a \frac{\partial \mathcal{F}}{\partial \omega_a} \left(
+    +\omega_a \frac{\partial F}{\partial \omega_a} \left(
         \phi \left(x-\omega_a\frac{\partial x'}{\partial \omega_a}(x,0)\right), 0
     \right)
     -\phi (x)
@@ -60,12 +60,10 @@ discarding terms of $O\left(\omega^2\right)$:
 
 $$
 \begin{aligned}
-    \phi' (x)-\phi (x)
-    &= -\omega_a\frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)\frac{\partial \phi}{\partial x^{\mu}}(x)
+    \text{LHS}
+    = -\omega_a\frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)\frac{\partial \phi}{\partial x^{\mu}}(x)
     +\omega_a\frac{\partial
-    \mathcal{F}}{\partial \omega_a}(\phi (x),0)
-    \\
-    &=-i \omega_aG_a\phi (x)
+    F}{\partial \omega_a}(\phi (x),0)
 \end{aligned}
 $$
 
@@ -73,38 +71,42 @@ Therefore, the generator is given by
 
 $$
 i G_a\phi (x)
-= \frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)\partial_{\mu} \phi (x)
-- \frac{\partial \mathcal{F}}{\partial \omega_a}(\phi
-(x),0)
+= \frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)
+\, \partial_{\mu} \phi (x)
+- \frac{\partial F}{\partial \omega_a}(\phi(x),0)
 $$
 
-### Common Infinitesimal Transformation Generators on Scalar Fields
+### Infinitesimal Transformation Generators on Scalar Fields
+
+For *scalar* fields, the functional $F$ depends on the parameters $\omega$ only through the coordinates $x$. Therefore
+
+$$
+\begin{aligned}
+    \frac{\partial F}{\partial \omega_a} \overset{!}{=} 0
+    \quad \Rightarrow \quad
+    i G_a\phi (x)
+    = \frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)
+    \, \partial_{\mu} \phi (x)
+\end{aligned}
+$$
+
+Now we give some examples. 
 
 #### Rigid Translation
 
-The translation is *defined* by its effect on the position:
+The *rigid* translation is
 
 $$
 x'^{\mu}=x^{\mu}+\epsilon^{\mu}
 $$
 
-The amount of moving $\epsilon$ is the same for every parts of the
-system, which plays the role of $\omega$. Then we obtain
+where the amount of translation $\epsilon$ is uniform throughout the system. The transformation parameter is just $\epsilon$. Then we obtain
 
 $$
 \frac{\partial x'^{\mu}}{\partial \epsilon^{\nu}}(x,0)=\delta_{\nu}^{\mu}
 $$
 
-*All fields* (no matter it is a scalar or a vector or anything) should not be affected by the rigid translation, i.e. the mapping $\mathcal{F}$ is *always* identity. Hence
-
-$$
-\phi' \left(x'\right)
-=\mathcal{F}(\phi (x),\epsilon)=\phi (x) 
-\Longrightarrow
-\frac{\partial \mathcal{F}}{\partial \epsilon^{\mu}}(\phi (x),0)=0
-$$
-
-We obtain (using $P_{\mu}$ to denote the generators)
+We obtain the generator $P_{\mu}$ corresponding to $\epsilon^\mu$:
 
 $$
 i P_{\nu} \phi (x)
@@ -112,11 +114,10 @@ i P_{\nu} \phi (x)
 = \partial_{\nu} \phi (x)
 $$
 
-Thus, the corresponding generator (called the operator) is
+Simplify:
 
 $$
-P_{\mu} = \frac{1}{i} \partial_{\mu}
-= -i \partial_{\mu}
+P_{\mu} = -i \partial_{\mu}
 $$
 
 #### Lorentz Transformation
@@ -128,7 +129,7 @@ $$
 x'^{\mu} = {\Lambda^{\mu}}_{\nu}x^{\nu}
 $$
 
-Because of the invariance of the proper time
+Because of the invariance of the spacetime interval
 
 $$
 ds^2
@@ -139,8 +140,7 @@ ds^2
 =\eta_{\rho \sigma} dx^{\rho} dx^{\sigma}
 $$
 
-The coordinate transformation matrices $\Lambda$ must satisfy the
-requirement
+We have the following constraint on the transformation matrix $\Lambda$
 
 $$
 \eta_{\mu \nu} 
@@ -181,12 +181,11 @@ $$
 \end{aligned}
 $$
 
+Now we see that $\omega_{\mu \nu}$ should be *antisymmetric*: 
+
 $$
-\Rightarrow 
 \omega_{\rho \sigma} = -\omega_{\sigma  \rho}
 $$
-
-i.e. $\omega_{\mu \nu}$ *is* *antisymmetric*. 
 
 Therefore, when we calculate the derivative $\partial x'^{\mu}/\partial \omega_{\rho \sigma}$, we will get two terms and a factor of 1/2:
 
@@ -214,12 +213,7 @@ $$
 \end{aligned}
 $$
 
-By definition of a *scalar* field, it should be invariant under Lorentz
-transformation, i.e.
-
-$\phi' \left(x'\right)=\mathcal{F}(\phi (x),\epsilon)=\phi (x) \Longrightarrow  \frac{\partial \mathcal{F}}{\partial \omega_a}(\phi (x),0)=0$
-
-Now we find the generator (denoted $L^{\rho \sigma}$)
+Now we find the generator $L^{\rho \sigma}$ corresponding to $\omega_{\rho \sigma}$:
 
 $$
 \begin{aligned}
@@ -239,8 +233,7 @@ $$
 \end{aligned}
 $$
 
-Because of the anti-symmetry of the $\omega$ matrix, we slightly modify
-the left-hand side to include an additional factor of 1/2:
+Because of the anti-symmetry of the $\omega$ matrix, we slightly modify the left-hand side to include an additional factor of 1/2:
 
 $$
 \frac{1}{2}i L^{\rho \sigma} \phi (x)
@@ -250,7 +243,7 @@ $$
 ) \, \phi (x)
 $$
 
-We finally obtain the corresponding generator (called the orbital **angular momentum operator**)
+Finally
 
 $$
 L^{\rho \sigma}
@@ -258,6 +251,27 @@ L^{\rho \sigma}
 $$
 
 It is also anti-symmetric, as expected.
+
+*Remark*: The spatial part of the generator $L$
+
+$$
+\begin{aligned}
+    L_1 &\equiv L^{32} 
+    = -i(x^2 \partial^3 - x^3 \partial^2)
+    \\
+    L_2 &\equiv L^{13} 
+    = -i(x^3 \partial^2 - x^2 \partial^3)
+    \\
+    L_3 &\equiv L^{21} 
+    = -i(x^1 \partial^2 - x^2 \partial^1)
+\end{aligned}
+$$
+
+are called the **orbital angular momentum operators**. They can be collectively written using vector notation
+
+$$
+\boldsymbol{L} = \boldsymbol{x} \times \boldsymbol{p}
+$$
 
 #### Scaling (Dilation)
 
@@ -267,13 +281,13 @@ $$
 x'^{\mu} = \alpha x^{\mu}
 $$
 
-where $\alpha$ is the constant scaling factor, serving as the parameter $\omega$.
+where $\alpha$ is the constant scaling factor, serving as the transformation parameter.
 
 $$
 i G_a\phi (x)
 = \frac{\partial x'^{\mu}}{\partial \omega_a}(x,0) \,
 \partial_{\mu} \phi (x)
-- \frac{\partial \mathcal{F}}{\partial \omega_a}(\phi(x),0)
+- \frac{\partial F}{\partial \omega_a}(\phi(x),0)
 $$
 
 Then we easily find
@@ -282,8 +296,7 @@ $$
 \frac{\partial x'^{\mu}}{\partial \alpha} = x^{\mu}
 $$
 
-For a scalar field invariant under scaling, we again have
-$\partial \mathcal{F}/\partial \alpha =0$. Denoting the scaling generator by $D$ (for "dilation"), we obtain
+The scaling generator $D$ (for "dilation") corresponding to $\alpha$ is
 
 $$
 i D \phi (x) = x^{\mu} \partial_{\mu} \phi (x)
@@ -318,11 +331,11 @@ $$
         } 
     \right)
     \\
-    &= \frac{1}{(1-2b\cdot x+b^2x^2)^2} 
-    (
+    &= (1-2b\cdot x+b^2x^2)^{-2} 
+    \\ &\quad \times [
         -\delta_{\mu}^{\nu}x^2
         (1 - 2b\cdot x + b^2 x^2)
-        \\ &\qquad \qquad
+        \\ &\qquad \quad
         - (x^{\nu} - b^{\nu} x^2)(
             - 2\delta_{\mu}^{\rho} x_{\rho}
             + g_{\rho \sigma} x^2 (
@@ -330,6 +343,7 @@ $$
                 +b^{\rho} \delta_{\mu}^{\sigma}
             )
         )
+    ]
     \\
     &= - \frac{\delta_{\mu}^{\nu} x^2}
         {1 - 2b\cdot x + b^2x^2} 
@@ -346,13 +360,17 @@ $$
 \end{aligned}
 $$
 
-Denote the SCT generator by $K_{\mu}$. For scalar field, we then have
+The SCT generator by $K_{\mu}$ corresponding to $b^\mu$ is then
 
 $$
-i K_{\mu} \phi (x)
-=\frac{\partial x'^{\nu}}{\partial b^{\mu}}(x,0) \,
-\partial_{\nu} \phi (x)
-= -\delta_{\mu}^{\nu}x^2+2x^{\nu}x_{\mu}
+\begin{aligned}
+    i K_{\mu} \phi (x)
+    &= \frac{\partial x'^{\nu}}{\partial b^{\mu}}(x,0) \,
+    \partial_{\nu} \phi (x)
+    \\
+    &= (-\delta_{\mu}^{\nu}x^2+2x^{\nu}x_{\mu}) \,
+    \partial_{\nu} \phi (x)
+\end{aligned}
 $$
 
 Thus
@@ -362,22 +380,3 @@ K_{\mu}
 = -i \,(2x_{\mu}x^{\nu} \partial_{\nu} - x^2 \partial_{\mu})
 $$
 
-### Conserved Charge
-
-The associated with the current $j_a$ is defined as
-
-$$
-Q_a=\int d^{d-1}x \, j_a^0
-$$
-
-The integration is carried in the spatial part only. We verify that its time ($x^0$) derivative indeed vanishes:
-
-$$
-\frac{dQ_a}{dx^0}
-= \int d^{d-1}x \, (\partial_0 j_a^0)
-=-\int d^{d-1}x \, (\partial_i j_a^i)
-$$
-
-In the second equality we used $\partial_{\mu}j_a^{\mu}=0$. 
-
-Gauss' Theorem then converts the integral to a surface integral at infinity, which gives zero provided that the current vanished sufficiently rapidly as $x\to \infty$.

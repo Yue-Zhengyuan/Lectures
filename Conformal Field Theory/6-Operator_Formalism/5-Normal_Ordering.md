@@ -1,6 +1,6 @@
 ## Normal Ordering
 
-From the general form of the OPE of two operators $A,B$
+From the general form of the OPE (with regular terms) of two operators $A,B$
 
 $$
 A(z)B(w)
@@ -96,7 +96,7 @@ $$
     &(A B)(w)
     =\frac{1}{2 \pi i} \oint_w\frac{dz}{z-w}A(z)B(w)
     \\
-    &\quad
+    &
     =\frac{1}{2 \pi i} 
     \oint_{|z|>|w|} \frac{dz}{z-w}A(z)B(w)
     - \frac{1}{2 \pi i} 
@@ -172,7 +172,7 @@ $$
 
     $$
     \begin{aligned}
-        \text{2nd term} &\equiv
+        &\text{2nd term} \equiv
         -\frac{1}{2 \pi i} 
         \oint_{|z|<|w|} \frac{dz}{z-w} B(w) A(z)
         \\
@@ -203,8 +203,8 @@ Define $n=m+p$, and change summation over $p$ to over $n$, then
 
 $$
 \begin{aligned}
-    (A B)(w)
-    &= \sum_{n} \sum_{m\le -h_A} (w-x)^{-n-h_A-h_B} A_m(x) B_{n-m}(x)
+    &(A B)(w)
+    = \sum_{n} \sum_{m\le -h_A} (w-x)^{-n-h_A-h_B} A_m(x) B_{n-m}(x)
     \\ &\qquad
     + \sum_{n} \sum_{m>-h_A} (w-x)^{-n-h_A-h_B} B_{n-m}(x) A_m(x)
     \\
@@ -213,6 +213,7 @@ $$
     \left(
         \sum_{m\le -h_A} A_m(x) B_{n-m}(x)
         + \sum_{m>-h_A} B_{n-m}(x) A_m(x)
-    \right) \blacksquare
+    \right) 
+    \quad \blacksquare
 \end{aligned}
 $$
