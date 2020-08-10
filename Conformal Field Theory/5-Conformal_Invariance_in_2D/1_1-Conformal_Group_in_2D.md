@@ -126,31 +126,34 @@ $$
 
 #### The Metric Tensor
 
-The flat metric in the holomorphic coordinates becomes
+The *flat* metric in the holomorphic coordinates becomes
 
 $$
-g_{i j} =
-\begin{pmatrix}
-    1 & 0 \\
-    0 & 1
-\end{pmatrix}
-\to
-g_{a b} = 
-\frac{\partial x^i}{\partial z^a}
-\frac{\partial x^j}{\partial z^b}
-g_{i j}
-= \begin{pmatrix}
-    0 & 1/2 \\
-    1/2 & 0
-\end{pmatrix}
+\begin{aligned}
+    \eta'_{\mu \nu} 
+    &= \begin{pmatrix}
+        \eta_{z z} & \eta_{z \bar{z}} \\
+        \eta_{\bar{z} z} & \eta_{\bar{z} \bar{z}}
+    \end{pmatrix}
+    \\
+    &= \eta_{\rho \sigma} 
+    \frac{\partial x^\rho}{\partial z^\mu}
+    \frac{\partial x^\sigma}{\partial z^\nu}
+    = \begin{pmatrix}
+        0 & 1/2 \\
+        1/2 & 0
+    \end{pmatrix}
+\end{aligned}
 $$
 
 Here $z^0=z, z^1=\bar{z}$. For example:
 
 $$
 \begin{aligned}
-    g_{z \bar{z}}
-    &=\frac{\partial x^i}{\partial z}\frac{\partial x^j}{\partial \bar{z}}g_{i j}
+    \eta_{z \bar{z}}
+    &= \eta_{\rho \sigma}
+    \frac{\partial x^\rho}{\partial z}
+    \frac{\partial x^\sigma}{\partial \bar{z}}
     \\
     &= \frac{\partial x^0}{\partial z}\frac{\partial x^0}{\partial
     \bar{z}}+\frac{\partial x^1}{\partial z}\frac{\partial x^1}{\partial \bar{z}}
@@ -162,8 +165,8 @@ $$
 The inverse of the metric is then
 
 $$
-g^{a b}
-= \left(g_{a b}\right)^{-1}
+\eta'^{\mu \nu}
+= (\eta'_{\mu \nu})^{-1}
 = \begin{pmatrix}
     0 & 2 \\
     2 & 0
