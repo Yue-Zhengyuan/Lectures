@@ -1,10 +1,11 @@
 ## Example: Free Boson
 
-Action $(c=1,\,x^0=t,\,x^1=x)$
+Usual Action $(c=1,\,x^0=t,\,x^1=x)$
 
 $$
 \begin{aligned}
-    S &= \frac{g}{2} \int dx^2 (\partial_\mu \phi) (\partial^\mu \phi)
+    S &= \frac{g}{2} \int dx^2 
+    \partial_\mu \phi \partial^\mu \phi
     \\
     &= \frac{g}{2} \int dx \, dt \,
     [(\partial_t \phi)^2 - (\partial_x \phi)^2]

@@ -10,14 +10,35 @@ The energy-momentum tensor $T_{\mu  \nu}$ transforms in the same way as the metr
 
 $$
 \begin{aligned}
+    T'_{\mu \nu}
+    &= \begin{pmatrix}
+        T_{zz} & T_{z \bar{z}} \\
+        T_{\bar{z} z} & T_{\bar{z}\bar{z}}
+    \end{pmatrix}
+    = T_{\rho \sigma}
+    \frac{\partial x^\rho}{\partial z^\mu}
+    \frac{\partial x^\sigma}{\partial z^\nu}
+\end{aligned}
+$$
+
+For example:
+
+$$
+\begin{aligned}
     T_{z z} 
     &=
-    \frac{\partial x^0}{\partial z} \frac{\partial x^0}{\partial z}T_{00}+\frac{\partial x^0}{\partial z} \frac{\partial x^1}{\partial z}T_{01}+\frac{\partial
-    x^1}{\partial z} \frac{\partial x^0}{\partial z}T_{10}+\frac{\partial x^1}{\partial z} \frac{\partial x^1}{\partial z}T_{11}
+    \frac{\partial x^0}{\partial z} \frac{\partial x^0}{\partial z}T_{00}
+    + \frac{\partial x^0}{\partial z} \frac{\partial x^1}{\partial z}T_{01}
+    \\ &\qquad
+    +\frac{\partial x^1}{\partial z} \frac{\partial x^0}{\partial z}T_{10}
+    + \frac{\partial x^1}{\partial z} \frac{\partial x^1}{\partial z}T_{11}
     \\
-    &= \frac{1}{2} \times \frac{1}{2}T_{00}+\frac{1}{2} \frac{-i}{2}T_{01}+\frac{-i}{2} \frac{1}{2}T_{10}+\frac{-i}{2} \frac{-i}{2}T_{11}
+    &= \frac{1}{2} \frac{1}{2}T_{00}
+    + \frac{1}{2} \frac{-i}{2}T_{01}
+    + \frac{-i}{2} \frac{1}{2}T_{10}
+    + \frac{-i}{2} \frac{-i}{2}T_{11}
     \\
-    &=\frac{1}{4} \left(T_{00}-2i T_{10}-T_{11} \right)
+    &= \frac{1}{4} (T_{00} - 2i T_{10} - T_{11})
 \end{aligned}
 $$
 
@@ -26,15 +47,14 @@ Proceeding in the same way, we find
 $$
 \begin{aligned}
     T_{\bar{z} \bar{z}} 
-    &= \frac{1}{4} (T_{00}+2i T_{10}-T_{11})
+    &= \frac{1}{4} (T_{00} + 2i \, T_{10} - T_{11})
     \\
     T_{z \bar{z}} = T_{\bar{z}z}
     &= \frac{1}{4} (T_{00}+T_{11})
 \end{aligned}
 $$
 
-Since the energy-momentum tensor for 2D CFT is traceless, we can
-simplify the relations further:
+Since the energy-momentum tensor for 2D CFT is *traceless*, we can further simplify the relations to:
 
 $$
 \begin{aligned}
@@ -51,9 +71,9 @@ $$
 We now show that $T_{z z},T_{\bar{z} \bar{z}}$ depends only on $z$ and $\bar{z}$ respectively, so we define
 
 $$
-T(z)\equiv 2\pi  T_{z z}(z), 
+T(z)\equiv -2\pi  T_{z z}(z), 
 \quad
-\bar{T}(\bar{z}) \equiv 2\pi T_{\bar{z} \bar{z}}(\bar{z})
+\bar{T}(\bar{z}) \equiv -2\pi T_{\bar{z} \bar{z}}(\bar{z})
 $$
 
 *Proof*:
