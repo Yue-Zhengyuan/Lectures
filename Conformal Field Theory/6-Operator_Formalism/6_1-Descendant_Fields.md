@@ -427,14 +427,3 @@ $$
     $$
     l_{-n}=-w^{-n+1} \partial_w
     $$
-
-### Conformal Families
-
-The set consisting of a *primary field* $\phi$ and *all of its descendants* is called a **conformal family**, sometimes denoted by $[\phi]$. The members of a family *transform amongst themselves under conformal transformations*.
-
-### OPE of $T(z)$ with Descendant Fields
-
-### The Operator Algebra
-
-### Conformal Blocks
-

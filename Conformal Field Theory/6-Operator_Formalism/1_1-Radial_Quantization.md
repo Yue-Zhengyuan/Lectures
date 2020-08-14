@@ -71,7 +71,7 @@ origin 0:
 
 $$
 \phi(z, \bar{z})
-= \sum_{m=-\infty}^{\infty} \sum_{n=-\infty}^{\infty} 
+= \sum_{m,n}
 z^{-m-h} \bar{z}^{-n-\bar{h}} \phi_{m,n}
 $$
 
@@ -87,7 +87,7 @@ Taking the Hermitian conjugate of the field:
 
 $$
 \phi^\dagger(z, \bar{z})
-= \sum_{m=-\infty}^{\infty} \sum_{n=-\infty}^{\infty} 
+= \sum_{m,n}
 \bar{z}^{-m-h} z^{-n-\bar{h}} \phi_{m,n}^\dagger
 $$
 
@@ -100,10 +100,10 @@ $$
     \phi \left(\frac{1}{\bar{z}}, \, \frac{1}{z} \right)
     \\
     &=\bar{z}^{-2h}z^{-2\bar{h}} 
-    \sum_{m=-\infty}^{\infty} \sum_{n=-\infty}^{\infty} 
+    \sum_{m,n}
     \bar{z}^{m+h} z^{n+\bar{h}} \phi_{m,n} 
     \\
-    &= \sum_{m=-\infty}^{\infty} \sum_{n=-\infty}^{\infty}
+    &= \sum_{m,n}
     \bar{z}^{m-h} z^{n-\bar{h}} \phi_{m,n}
 \end{aligned}
 $$

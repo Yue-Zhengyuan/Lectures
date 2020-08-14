@@ -116,7 +116,7 @@ $$
     \text{Rigid rotation} &: 
     x'^{\mu} = {M^{\mu}}_{\nu}x^{\nu}
     \\
-    \text{Special conformal trans.} &: 
+    \text{SCT} &: 
     x'^{\mu} =
     \frac{x^{\mu} - b^{\mu}x^2}
     {1 - 2b^{\rho} x_{\rho} + b^2x^2}

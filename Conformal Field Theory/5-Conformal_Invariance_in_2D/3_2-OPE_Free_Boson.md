@@ -1,6 +1,6 @@
 ## Operator Product Expansion: <br>Free Boson
 
-### Energy-Momentum Tensor in Holomorphic Coordinates
+### Energy-Momentum Tensor in Complex Coordinates
 
 Euclidean Action:
 
@@ -124,22 +124,24 @@ $$
 \end{aligned}
 $$
 
-We extract the diagonal elements:
+The non-diagonal elements vanish, as expected. We extract the diagonal elements:
 
 $$
 \begin{aligned}
     T(z) &\equiv -2\pi T_{zz} 
-    = -2\pi g :\partial\phi \, \partial\phi :
+    = -2\pi g \,
+    \mathcal{N}[\partial\phi \, \partial\phi]
     \\
     \bar{T}(\bar{z}) &\equiv -2\pi T_{\bar{z}\bar{z}}
-    = -2\pi g :\bar{\partial}\phi \, \bar{\partial}\phi:
+    = -2\pi g \,
+    \mathcal{N}[\bar{\partial}\phi \, \bar{\partial}\phi]
 \end{aligned}
 $$
 
 Here we imposed *normal ordering*, which means that (e.g. for $T(z)$):
 
 $$
-:\partial\phi(z) \partial\phi(z): \,
+\mathcal{N}[\partial\phi(z) \partial\phi(z)]
 = \lim_{w \to z}
 (\partial \phi(z) \partial \phi(w)
 - \langle \partial \phi(z) \partial \phi(w) \rangle)
@@ -190,13 +192,25 @@ $$
 \sim -\frac{1}{4\pi g} \frac{1}{(z-w)^2}
 $$
 
+*Remark*: Exchanging the two fields ($z$ and $w$) does not affect the correlation function, es expected for bosons.
+
 ### OPE of Field and Energy-Momentum Tensor
+
+Using a generalized Wick's theorem $(\phi_{23}(w) \equiv \phi_2(w) \phi_3(w))$
+
+$$
+\overgroup{\phi_1(z) \, \mathcal{N}(\phi_{23}(w))} 
+= \overgroup{\phi_1(z) \phi_2(w)} \mathcal{N}\phi_3(w)
++ \overgroup{\phi_1(z) \phi_3(w)} \mathcal{N}\phi_2(w)
+$$
+
+we obtain
 
 $$
 \begin{aligned}
     T(z) \partial \phi(w)
-    &= -2\pi g 
-    :\partial\phi(z) \partial\phi(z): 
+    &= -2\pi g \,
+    \mathcal{N}[\partial\phi(z) \partial\phi(z)] \,
     \partial\phi(w)
     \\
     &=  
@@ -206,5 +220,14 @@ $$
 ### OPE of Energy-Momentum Tensor with Itself
 
 $$
-
+\begin{aligned}
+    T(z) T(w) 
+    &= (-2\pi g)^2 \,
+    \mathcal{N}[\partial\phi(z) \partial\phi(z)] \,
+    \mathcal{N}[\partial\phi(w) \partial\phi(w)]
+    \\
+    &= \frac{1/2}{(z-w)^4}
+    + \frac{2T(w)}{(z-w)^2}
+    + \frac{\partial T(w)}{z-w} + \text{reg.}
+\end{aligned}
 $$

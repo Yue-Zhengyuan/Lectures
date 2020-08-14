@@ -98,12 +98,12 @@ forms of the correlation functions of (quasi-)primary fields.
 #### Two-Point Functions
 
 $$
-\langle \phi_i(z, \bar{z}) \phi_j(w, \bar{w}) \rangle 
-= \frac{C_{i j}}{(z-w)^{2h} (\bar{z}-\bar{w})^{2\bar{h}}} 
-\quad
+\langle \phi_a(z, \bar{z}) \phi_b(w, \bar{w}) \rangle 
+= \frac{C_{a b}}{(z-w)^{2h} (\bar{z}-\bar{w})^{2\bar{h}}} 
+\quad \text{if }
 \begin{cases}
-    h_i = h_j = h \\
-    \bar{h}_i = \bar{h}_j = \bar{h}
+    h_a = h_b = h \\
+    \bar{h}_a = \bar{h}_b = \bar{h}
 \end{cases}
 $$
 
