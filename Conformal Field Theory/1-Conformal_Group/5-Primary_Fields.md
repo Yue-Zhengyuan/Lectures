@@ -15,7 +15,11 @@ then it is called a **primary field**. The number $h \, (\bar{h})$ is called the
 
 If this transformation holds only for *global* conformal transformations, then $\phi$ is called a **quasi-primary fields**.
 
+### Chiral Fields
+
 If $\phi$ only depends on $z$, it is called a **chiral field**; if $\phi$ only depends on $\bar{z}$, it is an called **anti-chiral field**.
+
+### Scaling Dimension and Spin
 
 The conformal dimensions are related to the **scaling dimension** and the **planar spin** of the field by
 
