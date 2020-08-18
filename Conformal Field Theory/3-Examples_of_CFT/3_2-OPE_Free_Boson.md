@@ -1,4 +1,4 @@
-## Operator Product Expansion: <br>Free Boson
+## Operator Product Expansion: Free Boson
 
 ### Energy-Momentum Tensor in Complex Coordinates
 
