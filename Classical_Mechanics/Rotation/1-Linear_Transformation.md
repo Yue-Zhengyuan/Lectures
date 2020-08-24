@@ -1,7 +1,6 @@
 # Linear Transformation and Matrix
 
 PHYS1110D Supplementary Material 1   
-by YUE Zhengyuan
 
 <center>
 
@@ -188,16 +187,7 @@ The transformation must satisfy the following two *defining* requirements (calle
 
 In other words, it does not matter whether you perform linear transformations before or after vector addition and scalar multiplication. 
 
-Here we give some examples of linear transformations.
-
-- Rotation
-
-- Reflection
-
-- Projection
-
-
-## Matrix Representation of Linear Transformations
+### Matrix Representation of Linear Transformations
 
 A linear transformation $A$ can be *fully* described by specifying its action on *each* basis vector. Nothing prevents us to express $A e_1, ..., A e_n$ as linear combination of the basis vectors: 
 
@@ -233,7 +223,34 @@ A = \begin{bmatrix}
 \text{(under the basis $\{e_1, e_2\}$)}
 $$
 
+In this construction, $A_{i j}$ means the matrix element at the $i$th row and the $j$th column.
+
 Remember the meaning of each column of the transformation matrix: **the $i$th column is the transformation result of the $i$th basis vector**. 
+
+### Examples of Linear Transformations (in 2D)
+
+- **Rotation**
+
+- **Reflection**
+
+- **Scaling (Dilation)**
+
+*Remark*: **Translation** ($T: v \to v + b$, where $b$ is the translation vector) is not a linear transformation! Since you can easily verify, for two vectors $v, w \in V$
+
+$$
+\left.
+\begin{aligned}
+    T (v + w) &= (v + w) + b
+    \\
+    T v + T w &= (v + w) + 2b
+\end{aligned}
+\right\} \Rightarrow
+T(v + w) \ne Tv + Tw
+$$
+
+You can read [this Wikipedia entry][affine_trans] to see how to use matrices *in higher dimension* to represent translations. 
+
+[affine_trans]: https://en.wikipedia.org/wiki/Affine_transformation#Representation
 
 ## Matrix-Vector Multiplication
 
@@ -293,15 +310,6 @@ v = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-## Determinant of a Matrix
-
-<center>
-
-![image](Figures/2d_det.svg)   
-*Geometric meaning of 2D determinant*
-
-</center>
-
 ## Matrix Product
 
 Suppose we have two linear transformations $A, B$. We first apply $B$ onto a vector $v$, then apply $A$. The result is
@@ -349,7 +357,16 @@ The matrix product defined in this way has the following properties:
 - **Associativity**: $(AB)C = A(BC)$
 - **Non-commutativity**: In general $AB \ne BA$
 
-Please prove or verify them. 
+Please prove (or verify) them. 
+
+## Determinant of a Matrix
+
+<center>
+
+![image](Figures/2d_det.svg)   
+*Geometric meaning of 2D determinant*
+
+</center>
 
 ## Matrix Inversion
 
@@ -602,7 +619,7 @@ Since BQ is parallel to $\boldsymbol{b}$, we can set
 
 $$\overrightarrow{BQ} = \alpha\boldsymbol{b}$$
 
-Then, from $\overrightarrow{OQ} = \overrightarrow{AB} + \overrightarrow{BQ} = \boldsymbol{a} + \alpha\boldsymbol{b}$,we obtain (for the $x,y$ components respectively)
+Then, from $\overrightarrow{OQ} = \overrightarrow{AB} + \overrightarrow{BQ} = \boldsymbol{a} + \alpha\boldsymbol{b}$, we obtain (for the $x,y$ components respectively)
 
 $$
 \left.

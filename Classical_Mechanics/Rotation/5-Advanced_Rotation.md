@@ -1,9 +1,6 @@
 # Some Advanced Topics on Rotation
 
-PHYS1110D Supplementary Material 3   
-by YUE Zhengyuan
-
-In this supplementary material, we introduce some advanced concepts related to rotations.
+In this lecture introduce some advanced concepts related to rotations.
 
 ## The Levi-Civita Symbol
 
