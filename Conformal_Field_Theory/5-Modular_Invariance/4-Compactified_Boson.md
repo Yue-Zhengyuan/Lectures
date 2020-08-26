@@ -57,7 +57,7 @@ j_0 | Q,n\rangle = Q |Q,n\rangle, \quad
 \bar{j}_0 |Q, n \rangle = (Q - nR) |Q, n \rangle
 $$
 
-where $Q$ is the $j_0$ charge to be found later. 
+where $Q$ is the $j_0$ charge to be determined later. 
 
 The partition function of the compactified boson (denoted by $\text{cb.}$) is related to the free boson (denoted by $\text{fb.}$) by
 
@@ -136,4 +136,12 @@ $$
 \right]
 $$
 
-### Appendix: Proof of Poisson Resummation Formula
+### Appendix A: <br>Proof of Poisson Resummation Formula
+
+balabala
+
+### Appendix B: Calculation of Compactification <br>Radius from Partition Function
+
+*Reference: Physical Review B **99**, 115105 (2019)*
+
+

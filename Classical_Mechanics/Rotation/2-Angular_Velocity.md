@@ -1,7 +1,6 @@
 # Matrix Description of Rotations
 
 PHYS1110D Supplementary Material 2   
-by YUE Zhengyuan
 
 ----
 
@@ -54,8 +53,7 @@ To really understand how people "invented" the angular velocity vector and cross
 
 </center>
 
-The matrices of rotation by an angle $\alpha$ ($\alpha >0$ for
-counter-clockwise rotations) around the $x$, $y$ and $z$-axes are, respectively:
+The matrix of rotation by an angle $\alpha$ ($\alpha >0$ for counter-clockwise rotations) around the $z$-axis is
 
 $$
 R_z(\alpha)
@@ -66,7 +64,7 @@ R_z(\alpha)
 \end{bmatrix}
 $$
 
-You can derive them by the meaning of the columns of the matrices. 
+You can easily derive it by the meaning of the columns of a transformation matrix. 
 
 ### EXERCISE
 
@@ -79,7 +77,7 @@ R_x(\alpha)
     0 & \cos  \alpha  & -\sin  \alpha  \\
     0 & \sin  \alpha  & \cos  \alpha
 \end{bmatrix}
-, \quad
+, \,
 R_y(\alpha)
 = \begin{bmatrix}
     \cos  \alpha  & 0 & \sin  \alpha  \\
@@ -100,10 +98,9 @@ To obtain the general rotation matrix (denoted by $R(\theta,\varphi, \alpha$), w
 
 1. **Change basis so that the rotation axis *coincides* with the $z$-axis**
 
-    We first rotate the old *system* $K$ by $\varphi$ around the $z$-axis to
-    get a new *system* $K'$, followed by another rotation of the *new
-    system* $K'$ about $y$ by an angle $\theta$ to get another *system*
-    $K^{\prime\prime}$. This change of basis is simply described by
+    We first rotate the old basis $K = \{e_i\}$ by $\varphi$ around the $z$-axis to get a new basis $K' = \{e'_i\}$, followed by another rotation of $K'$ around the new $y$ by an angle $\theta$ to get another basis $K'' = \{e''_i\}$. 
+    
+    This change of basis is described by the matrix
 
     $$
     \mathcal{D}(\theta ,\varphi)
@@ -113,7 +110,7 @@ To obtain the general rotation matrix (denoted by $R(\theta,\varphi, \alpha$), w
 
 2. **Rotate the object around the $z$-axis in the new system**
 
-    In the new coordinate system, the rotation is just the rotation around $z$-axis by an angle $\alpha$, simply described by
+    In the new basis $K''$, the rotation is just the rotation around $z$-axis by an angle $\alpha$, simply described by
 
     $$ R_z(\alpha)$$
 

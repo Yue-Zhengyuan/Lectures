@@ -41,7 +41,7 @@ $$
 
 The number of basis vectors $n$ is called the **dimension** of $V$ (denoted by $\dim V$). 
 
-The number $v_i$ is called the **components** of the vector $v$ along the basis vector $e_i$. Then the vector $v$ can be also written as (without explicit reference to the basis vectors)
+The number $v_i$ is called the **components** of the vector $v$ along the basis vector $e_i$. Then the vector $v$ can be also written as a **column vector** (without explicit reference to the basis vectors)
 
 $$
 v = \begin{bmatrix}
@@ -189,13 +189,19 @@ In other words, it does not matter whether you perform linear transformations be
 
 ### Matrix Representation of Linear Transformations
 
-A linear transformation $A$ can be *fully* described by specifying its action on *each* basis vector. Nothing prevents us to express $A e_1, ..., A e_n$ as linear combination of the basis vectors: 
+Due to the linearity, a linear transformation $A$ can be *fully* described by specifying its action $e_i \to A e_i$ on *each* basis vector ($i = 1, ..., n$). Then for any vector $v$, we have
+
+$$
+A v = A (v_i e_i) = v_i (A e_i)
+$$
+
+Nothing prevents us to express $A e_i$ as linear combination of the basis vectors: 
 
 $$
 e'_i = A e_i = e_j A_{j i} \qquad (i = 1, ..., n)
 $$
 
-The numbers $A_{j i}$ are linear combination coefficients. We do not write $A_{i j} e_j$ in order to be consistent with the usual convention. 
+The numbers $A_{j i}$ are linear combination coefficients. We do not write $A_{i j} e_j$, which is just a matter of convention. 
 
 For example, when $\dim{V} = 2$:
 
@@ -235,20 +241,20 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
 
 - **Scaling (Dilation)**
 
-*Remark*: **Translation** ($T: v \to v + b$, where $b$ is the translation vector) is not a linear transformation! Since you can easily verify, for two vectors $v, w \in V$
+*Remark*: **Translation** ($T: v \to v + t$, where $t$ is the translation vector) is not a linear transformation! You can easily verify, for two vectors $v, w \in V$
 
 $$
 \left.
 \begin{aligned}
-    T (v + w) &= (v + w) + b
+    T (v + w) &= (v + w) + t
     \\
-    T v + T w &= (v + w) + 2b
+    T v + T w &= (v + w) + 2t
 \end{aligned}
 \right\} \Rightarrow
 T(v + w) \ne Tv + Tw
 $$
 
-You can read [this Wikipedia entry][affine_trans] to see how to use matrices *in higher dimension* to represent translations. 
+You can read [this Wikipedia entry][affine_trans] to see how to use matrices *in $(d+1)$ dimension* to represent $d$-dimensional translations. 
 
 [affine_trans]: https://en.wikipedia.org/wiki/Affine_transformation#Representation
 
@@ -629,8 +635,13 @@ $$
 \end{aligned}
 \right\}
 \, \Rightarrow \,
-\alpha = - \frac{a_{y}}{b_{y}}, \quad
-x_{Q} = a_{x} - \frac{a_{y}b_{x}}{b_{y}}
+\left\{
+\begin{aligned}
+    &\alpha = - \frac{a_{y}}{b_{y}}
+    \\
+    &x_{Q} = a_{x} - \frac{a_{y}b_{x}}{b_{y}}
+\end{aligned}
+\right.
 $$
 
 Finally

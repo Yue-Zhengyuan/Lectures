@@ -1,5 +1,6 @@
 """
     Demostration of change of basis
+    ===============================
 
     Adapted from the StackOverflow answer
     https://stackoverflow.com/a/63568715/10444934
@@ -50,7 +51,7 @@ def vecLabelXY(v, start=(0,0)):
     # return coord
 
 # locator of vectors
-init_e1, init_e2, init_v = np.array([1,0]), np.array([0,1]), np.array([3,2])
+init_e1, init_e2, init_v = np.array([3,1]), np.array([-1,2]), np.array([2,3])
 pt1, = ax.plot(*init_e1, '+', color='red', ms=10, picker=20)
 pt2, = ax.plot(*init_e2, '+', color='blue', ms=10, picker=20)
 ptv, = ax.plot(*init_v, '+', color='green', ms=10, picker=20)
@@ -116,8 +117,9 @@ def on_button_release(event):
 
 def on_motion_notify(event):
     'called when the mouse moves'
-    global picked_artist, aux, init_e1, init_e2, init_v
-    global e1, e2, v
+    global picked_artist
+    global init_e1, init_e2, init_v
+    global e1, e2, v, aux
     if picked_artist is not None and event.inaxes is not None and event.button == MouseButton.LEFT:
         picked_artist.set_data([event.xdata], [event.ydata])
         if picked_artist == pt1:
