@@ -10,13 +10,6 @@
     - Scaling of x (or y)
     - Skew along x (or y)
 """
-"""
-    Demostration of change of basis
-    ===============================
-
-    Adapted from the StackOverflow answer
-    https://stackoverflow.com/a/63568715/10444934
-"""
 
 from matplotlib import pyplot as plt
 from matplotlib.backend_bases import MouseButton

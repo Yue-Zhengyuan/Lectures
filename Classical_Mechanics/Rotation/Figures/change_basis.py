@@ -2,6 +2,9 @@
     Demostration of change of basis
     ===============================
 
+    Drag the basis vectors to see how the components
+    of an arbitrary vector change
+
     Adapted from the StackOverflow answer
     https://stackoverflow.com/a/63568715/10444934
 """
@@ -102,6 +105,16 @@ verts = [np.array([0,0]), vNew[0]*init_e1,
         init_v, vNew[1]*init_e2,]
 aux = Polygon(verts, linestyle='--', linewidth=1, edgecolor='black', fill=False)
 ax.add_artist(aux)
+# grid along basis vectors
+alpha = np.linspace(-10,10,10)
+grid1, grid2 = [], []
+for n in range(-10,10):
+    ## parallel to e1
+    line1 = np.transpose(np.array([a * init_e1 + n * init_e2 for a in alpha]))
+    ## parallel to e2
+    line2 = np.transpose(np.array([a * init_e2 + n * init_e1 for a in alpha]))
+    grid1.append(ax.plot(line1[0], line1[1], color='cornflowerblue', zorder=0)[0])
+    grid2.append(ax.plot(line2[0], line2[1], color='cornflowerblue', zorder=0)[0])
 
 def on_pick(event):
     'called when an element is picked'
@@ -120,22 +133,37 @@ def on_motion_notify(event):
     global picked_artist
     global init_e1, init_e2, init_v
     global e1, e2, v, aux
+    global grid1, grid2
     if picked_artist is not None and event.inaxes is not None and event.button == MouseButton.LEFT:
         picked_artist.set_data([event.xdata], [event.ydata])
-        if picked_artist == pt1:
-            # redraw arrow e1
-            init_e1 = np.array([event.xdata, event.ydata])
-            e1.remove()
-            e1 = FancyArrow(0, 0, *init_e1, **arrow_kw, color='red')
-            ax.add_artist(e1)
-            label_e1.set_position(1.1 * init_e1)
-        elif picked_artist == pt2:
-            # redraw arrow e2
-            init_e2 = np.array([event.xdata, event.ydata])
-            e2.remove()
-            e2 = FancyArrow(0, 0, *init_e2, **arrow_kw, color='blue')
-            ax.add_artist(e2)
-            label_e2.set_position(1.1 * init_e2)
+        if picked_artist == pt1 or picked_artist == pt2:
+            if picked_artist == pt1:
+                # redraw arrow e1
+                init_e1 = np.array([event.xdata, event.ydata])
+                e1.remove()
+                e1 = FancyArrow(0, 0, *init_e1, **arrow_kw, color='red')
+                ax.add_artist(e1)
+                label_e1.set_position(1.1 * init_e1)
+            elif picked_artist == pt2:
+                # redraw arrow e2
+                init_e2 = np.array([event.xdata, event.ydata])
+                e2.remove()
+                e2 = FancyArrow(0, 0, *init_e2, **arrow_kw, color='blue')
+                ax.add_artist(e2)
+                label_e2.set_position(1.1 * init_e2)
+            # redraw gridlines
+            for line1, line2 in zip(grid1, grid2):
+                line1.remove()
+                line2.remove()
+            grid1.clear()
+            grid2.clear()
+            for n in range(-10,10):
+                ## parallel to e1
+                line1 = np.transpose(np.array([a * init_e1 + n * init_e2 for a in alpha]))
+                ## parallel to e2
+                line2 = np.transpose(np.array([a * init_e2 + n * init_e1 for a in alpha]))
+                grid1.append(ax.plot(line1[0], line1[1], color='cornflowerblue', zorder=0)[0])
+                grid2.append(ax.plot(line2[0], line2[1], color='cornflowerblue', zorder=0)[0])
         elif picked_artist == ptv:
             # redraw arrow v
             init_v = np.array([event.xdata, event.ydata])
