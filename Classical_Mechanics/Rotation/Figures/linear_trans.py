@@ -1,9 +1,8 @@
 """
-    Demostration of change of basis
-    ===============================
+    Demostration of linear transformation
+    =====================================
 
-    Drag the basis vectors to see how the components
-    of an arbitrary vector change
+    Drag the basis vectors to see how an arbitrary vector is transformed
 
     Adapted from the StackOverflow answer
     https://stackoverflow.com/a/63568715/10444934

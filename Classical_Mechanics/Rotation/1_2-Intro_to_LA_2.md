@@ -2,15 +2,17 @@
 
 <center>
 
-![image](Figures/LA_video.png)
+![image](Figures/LA_3b1b.png)
 
 </center>
 
-*Note*: The [*Essence of Linear Algebra*][link] video series (by Grant Sanderson, a.k.a. 3Blue1Brown) really helps when learning the mathematical concepts involved in this material.
+*Credit*: Many ideas of this material comes from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
 
-[link]: https://youtu.be/fNk_zzaMoSs
+[LA_3b1b]: https://youtu.be/fNk_zzaMoSs
 
 ## Determinant of a Matrix
+
+### 2D Determinant
 
 <center>
 
@@ -19,11 +21,123 @@
 
 </center>
 
-## Matrix Inversion
+Let $a, b$ be the two columns of a $2 \times 2$ matrix $A$ (**under an orthonormal basis**, but it need not to be the standard one; this is important)
+
+$$
+A = \begin{bmatrix}
+    a_1 & b_1 \\
+    a_2 & b_2
+\end{bmatrix}
+$$
+
+We can use the two vectors to construct a **parallelogram** $ABCD$ (see figure), whose *area* is given by the formula (see [Appendix]; if we are not using the components along an orthonormal basis, the result will be more complicated):
+
+[Appendix]: #appendix-a-brproof-of-geometrical-meaning-of-determinant
+
+$$
+\text{Area of } ABCD = 
+|a_1 b_2 - a_2 b_1|
+$$
+
+The expression inside the absolute value sign $| \, |$ is defined as the **determinant** of matrix $A$, denoted by
+
+$$
+\det A \equiv a_1 b_2 - a_2 b_1
+$$
+
+The determinant can be a negative number. When $\det A > 0$, we say that the two vectors $a, b$ form a **right-hand basis** of the 2D vector space. Thus the standard basis itself 
+
+$$
+e_1 = (1,0)^\top, \quad
+e_2 = (0,1)^\top
+$$ 
+
+is a right-hand basis.
+
+When $\det A = 0$, it means that $a$ and $b$ are *on the same line*.
+
+## 3D Determinant
+
+<center>
+
+![image](Figures/3d_det.png)   
+*Geometric meaning of 3D determinant*
+
+</center>
+
+Similar to the 2D case, let $a, b, c$ be the three columns of a $3 \times 3$ matrix $A$ (**under orthonormal basis**)
+
+$$
+A = \begin{bmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+\end{bmatrix}
+$$
+
+We can use the three vectors to construct a **parallelepiped** (see figure), whose *volume* is given by the formula (see [Appendix](#appendix-a-geometrical-meaning-of-determinant)):
+
+$$
+\begin{aligned}
+    \text{Volume} = 
+    | &a_1 b_2 c_3 + a_2 b_3 c_1 + a_3 b_1 c_2 \\
+    &- a_3 b_2 c_1 - a_2 b_1 c_3 - a_1 b_3 c_2|
+\end{aligned}
+$$
+
+The expression inside the absolute value sign $| \, |$ is defined as the **determinant** of matrix $A$, still denoted by $\det A$. 
+
+When $\det A > 0$, we say that the two vectors $a, b$ form a **right-hand basis** of the 3D vector space. Thus the standard basis itself
+
+$$
+e_1 = (1,0,0)^\top, \quad 
+e_2 = (0,1,0)^\top, \quad
+e_3 = (0,0,1)^\top
+$$ 
+
+is a right-hand basis.
+
+When $\det A = 0$, it means that $a, b, c$ are *on the same plane*.
+
+## Inverse of Linear Transformation and Matrix
+
+For a given linear transformation $A$, *if* we can find another transformation $B$ that can completely cancel the effect of $A$, *and* $A$ can completely cancel the effect of $B$, then we say that $A$ and $B$ are **inverse** of each other. 
+
+The matrix representation of $B$ is called the **inverse** of the matrix $A$. We shall use the notation $A^{-1}$ to denote both the inverse transformation and the inverse matrix.
+
+Mathematically, "completely cancel" means
+
+$$
+A A^{-1} = A^{-1} A = 1
+$$
+
+where $1$ is the **identity transformation**, whose effect is no effect at all. Its matrix representation is called the **identity matrix**.
+
+*Remark*:
+
+- Do *not* use $1/A$ to denote the inverse of $A$.
+- Note that we used the expression "if we can find". This means that some linear transformation does *not* have its inverse.
+- We state without proof that if a linear transformation is invertible, then *its inverse is unique*. 
 
 Here we shall not teach you how to calculate the inverse of an arbitrary invertible matrix, which can be done by computers. 
 
 ### Determinant and Matrix Invertibility
+
+Consider a linear transformation $A$.
+
+<center>
+
+![image](Figures/non_invertible_trans.png)   
+*Non-invertible 2D linear transformation*   
+*(Screenshot from the linear transformation demo)*
+
+</center>
+
+First suppose $A$ is in 2D, it is not difficult to understand if $A$ transforms the two basis vectors to the *same line* (see figure), then we lost the information in one dimension, since any linear combination of $A e_1, A e_2$ gives vectors on that same line. Thus the transformation will *not* be invertible. 
+
+Similarly, for $A$ in 3D, if $A$ transforms the two basis vectors to the *same plane* (including the case when all basis vectors are transformed to the same line), then we lost the information in one (or even two) dimension(s). Then the transformation will *not* be invertible. 
+
+These cases happen when $\det A = 0$. Thus we obtain the following criteria for $A$ to be invertible.
 
 <center>
 
@@ -31,12 +145,15 @@ Here we shall not teach you how to calculate the inverse of an arbitrary inverti
 
 </center>
 
+This holds for any dimensions. 
+
 ### Inverse of Product of Matrices
 
 When you invert a product of matrices, the order of the product sequence should be *reversed*, i.e.
 
 $$
-\left(A_1A_2 \cdots A_n\right){}^{-1}=\left(A_n\right){}^{-1} \cdots \left(A_2\right){}^{-1}\left(A_1\right){}^{-1}
+\left(A_1A_2 \cdots A_n\right){}^{-1}
+= A_n^{-1} \cdots A_2^{-1} A_1^{-1}
 $$
 
 This is easy to understand if you think in terms of the transformations they represent. For example, consider the problem of putting an elephant into a refrigerator with closed doors. We need to do it in 3 steps:
@@ -84,6 +201,23 @@ $$
     A_1^{-1} A_2^{-1} A_3^{-1} | \text{elephant in refrigerator} \rangle
 \end{aligned}
 $$
+
+EXERCISE:
+
+- What is the identity matrix in 2D vector space?
+
+- For a general $2 \times 2$ matrix
+    
+    $$
+    A = \begin{bmatrix}
+        a & b \\
+        c & d
+    \end{bmatrix}
+    $$
+
+    - When will $A$ be invertible?
+    
+    - Explicitly calculate $A^{-1}$. Verify your answer for the last question. 
 
 ## Change of Basis
 
@@ -251,7 +385,7 @@ $$
 
 we say that $A$ and $B$ are **similar** to each other (the word "similar" is chosen for obvious reasons). The "sandwich" operation $\mathcal{D}^{-1}A \mathcal{D}$ is called a **similarity transformation**.
 
-## Appendix A: <br>Proof of Geometrical Meaning of Determinant
+## Appendix A: Geometrical Meaning of Determinant
 
 ### 2D Determinant = Parallelogram Area
 

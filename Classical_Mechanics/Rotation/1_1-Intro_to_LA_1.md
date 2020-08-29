@@ -2,29 +2,29 @@
 
 <center>
 
-![image](Figures/LA_video.png)
+![image](Figures/LA_3b1b.png)
 
 </center>
 
-*Note*: The [*Essence of Linear Algebra*][link] video series (by Grant Sanderson, a.k.a. 3Blue1Brown) really helps when learning the mathematical concepts involved in this material.
+*Credit*: Many ideas of this material comes from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
 
-[link]: https://youtu.be/fNk_zzaMoSs
+[LA_3b1b]: https://youtu.be/fNk_zzaMoSs
 
 ## Vector Spaces and Basis Vectors
 
 ### Vector Spaces
 
-For the purpose of an introductory physics course, a **vector space** (denoted by $V$) can be regarded as the usual plane (2D) or space (3D), and **vectors** are like arrows in the plane or the space. 
+For the purpose of an introductory physics course, a **vector space** (denoted by $V$) can be regarded as the usual plane (2D) or space (3D), and **vectors** are regarded as arrows in the plane or the space. 
 
 We can perform the following operations on vectors:
 
 - **Addition** of vectors
 
-- **Scalar multiplication** on a vector (by real numbers)
+- **Scalar multiplication** on a vector (by *real* numbers)
 
-Later in your life you will have to deal with **complex numbers**, but now we restrict ourselves to the real world.
+    (Later in your life you will have to deal with *complex* numbers, but now we restrict ourselves to the real world.)
 
-I will not show the general mathematical definition, which can be found on [Wikipedia][vec_space] or in any textbook on linear algebra (I personally recommend Chapter 7 and 8 of *Mathematical Methods for Physics and Engineering* by Riley, Hobson and Bence).
+I will not show the general (more abstract) definition of vector spaces in mathematics, which can be found on [Wikipedia][vec_space] or in any textbook on linear algebra (I personally recommend Chapter 7 and 8 of *Mathematical Methods for Physics and Engineering* by Riley, Hobson and Bence).
 
 [vec_space]: https://en.wikipedia.org/wiki/Vector_space
 
@@ -55,24 +55,37 @@ $$
 v_1 = \cdots = v_n = 0
 $$
 
-*Remark*: the components of the $i$th basis vector are simply given by
+i.e. the zero vector is unique. 
 
-$$
-v_i = 1 , \quad \text{other components} = 0
-$$
+*Remarks*:
 
-e.g. for $\dim{V} = 2$, we have
+- Two different vectors may have the same components along different sets of basis vectors. 
 
-$$
-e_1 = \begin{bmatrix}
-    1 \\ 0
-\end{bmatrix}, \quad
-e_2 = \begin{bmatrix}
-    0 \\ 1
-\end{bmatrix}
-$$
+    <center>
 
-You must be aware that **this does not mean that they are the traditional unit vectors along the $x$, $y$, ... axes**. 
+    ![image](Figures/different_basis.svg)   
+    *Two different vectors have the same components (2, 3) <br>under two sets of basis*
+
+    </center>
+
+- The components of the $i$th basis vector are simply given by
+
+    $$
+    v_i = 1 , \quad \text{other components} = 0
+    $$
+
+    e.g. for $\dim{V} = 2$, we have
+
+    $$
+    e_1 = \begin{bmatrix}
+        1 \\ 0
+    \end{bmatrix}, \quad
+    e_2 = \begin{bmatrix}
+        0 \\ 1
+    \end{bmatrix}
+    $$
+
+    You must be aware that **this does not mean that they are the traditional unit vectors along the $x$, $y$, ... axes**. 
 
 ### Note on Notations: Einstein Summation Rule
 
@@ -143,7 +156,7 @@ $$
 u = u_i e_i, \quad v = v_i e_i
 $$
 
-Due to bi-liearity of inner product, $u \cdot v$ can be reduced to the linear combination of the inner product of basis vectors:
+Due to bi-linearity of inner product, $u \cdot v$ can be reduced to the linear combination of the inner product of basis vectors:
 
 $$
 u \cdot v = u_i v_j (e_i \cdot e_j)
@@ -159,7 +172,7 @@ e_i \cdot e_j = \delta_{ij}
 \end{cases}
 $$
 
-i.e. each basis vector has length 1, and is orthogonal to all other basis vectors. You can just imagine them as the unit vector along the $x$, $y$-axes. Such a set of basis vectors is called an **orthonormal basis**.
+i.e. each basis vector has length 1, and is orthogonal to all other basis vectors. You can just imagine them as the familiar unit vectors along the coordinate axes. Such a set of basis vectors is called an **orthonormal basis** (orthogonal and normalized).
 
 Then we recover something you already know:
 
@@ -168,6 +181,10 @@ u \cdot v = u_i v_j \delta_{ij} = u_i v_i
 $$
 
 We emphasize that this definition is valid only when we are using the components of $u,v$ under an orthonormal set of basis.
+
+*Remark*: 
+
+Even the choice of orthonormal basis is *not unique*. For example, you can easily *rotate* the basis to obtain a new one. 
 
 ## Linear Transformations
 
@@ -231,13 +248,58 @@ In this construction, $A_{i j}$ means the matrix element at the $i$th row and th
 
 Remember the meaning of each column of the transformation matrix: **the $i$th column is the transformation result of the $i$th basis vector**. 
 
+### Transpose of Matrix
+
+The matrix obtained by *exchanging lines and rows* of $A$ is called the **transpose** of $A$, denoted by $A^\top$. By definition
+
+$$
+(A^\top)_{i j} \equiv A_{j i}
+$$
+
+For example
+
+$$
+A^\top = \begin{bmatrix}
+    A_{11} & A_{21} \\
+    A_{12} & A_{22}
+\end{bmatrix}
+$$
+
+A column vector can be regarded as a matrix of only one column; so we have
+
+$$
+v^\top = \begin{bmatrix}
+    v_1 & \cdots & v_n
+\end{bmatrix}
+$$
+
+This is called a **row vector**.
+
 ### Examples of Linear Transformations (in 2D)
 
 - **Rotation**
 
+    <center>
+
+    ![image](Figures/rotation_2d.svg)   
+    *2D counter-clockwise rotation by angle $\theta$*
+
+    </center>
+
+    You can easily determine the representation matrix
+
+    $$
+    R(\theta) = \begin{bmatrix}
+        \cos \theta & -\sin \theta\\
+        \sin \theta & \cos \theta
+    \end{bmatrix}
+    $$
+
 - **Reflection**
 
 - **Scaling (Dilation)**
+
+- **Shear**
 
 *Remark*: **Translation** ($T: v \to v + t$, where $t$ is the translation vector) is not a linear transformation! You can easily verify, for two vectors $v, w \in V$
 
@@ -252,9 +314,17 @@ $$
 T(v + w) \ne Tv + Tw
 $$
 
-You can read [this Wikipedia entry][affine_trans] to see how to use matrices *in $(d+1)$ dimension* to represent $d$-dimensional translations. 
+You can read [this Wikipedia article][affine_trans] to see how to use matrices *in $(d+1)$ dimension* to represent $d$-dimensional translations. 
 
 [affine_trans]: https://en.wikipedia.org/wiki/Affine_transformation#Representation
+
+### EXERCISE
+
+Write down the transformation matrices of the 2D linear transformations:
+
+- Reflection with respect to $x$-axis
+- Scaling $e_1$ and $e_2$ by factors $a$ and $b$
+- Shear along direction of $e_1$ by length $t > 0$
 
 ## Matrix-Vector Multiplication
 
@@ -298,11 +368,12 @@ $$
 
 <center>
 
-![image](Figures/Mat_on_vec.png)
+![image](Figures/Mat_on_vec.png)   
+*(Have you watched the videos now?)*
 
 </center>
 
-Compute the components of $A v$ when
+Let
 
 $$
 A = \begin{bmatrix}
@@ -314,9 +385,11 @@ v = \begin{bmatrix}
 \end{bmatrix}
 $$
 
+Compute the transformation result $A v$. (Can you directly read off the answer from the figure above?)
+
 ## Matrix Product
 
-Suppose we have two linear transformations $A, B$. We first apply $B$ onto a vector $v$, then apply $A$. The result is
+Suppose we have two linear transformations $A, B$. We first apply $B$ onto a vector $v$, then apply $A$. The result of the combined transformation is
 
 $$
 \begin{aligned}
@@ -339,10 +412,16 @@ $$
 [A(B v)]_i = C_{ik} v_k
 $$
 
-This means that *$C$ is the representation matrix of the combined transformation $AB$*. Thus we define that the **product** of the representation matrices $A, B$ is given by
+This means that *$C$ is the representation matrix of the combined transformation $AB$*. Thus we define that the **product** of the matrices $A, B$ is 
 
 $$
 (AB)_{i k} \equiv A_{i j} B_{j k}
+$$
+
+so that
+
+$$
+[A(B v)]_i = [(AB) v]_i
 $$
 
 For example, when $\dim{V} = 2$

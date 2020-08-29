@@ -10,7 +10,7 @@ plt.style.use('default')
 dir_path = os.path.dirname(os.path.realpath(__file__))
 solution = False
 
-fig, ax = plt.subplots(figsize=(4,4))
+fig, ax = plt.subplots(figsize=(3,3))
 # set axis limit
 ax.set_ylim(-0.5, 6)
 ax.set_xlim(-0.5, 6)
@@ -43,7 +43,7 @@ if solution:
 
     ## related labels
     ax.text(0.8, 0.65, 'P', **text_kw)
-    ax.text(0.45, 0.02, 'Q', **text_kw)
+    ax.text(0.45, 0.005, 'Q', **text_kw)
 
 # the basis vectors a and b
 arrow_kw = {'color': 'red', 'head_width': 0.2, 'head_length': 0.3, 'width': 0.05, 'length_includes_head': True}
@@ -59,9 +59,9 @@ ax.text(0.15, 0.35, r'$\mathbf{b}$', **text_kw, **text_kw2)
 ax.text(0.9, 0.1, '$x$', **text_kw)
 ax.text(0.1, 0.9, '$y$', **text_kw)
 # add important points
-ax.text(0.02, 0.02, 'O', **text_kw)
-ax.text(0.02, 0.1, 'A', **text_kw)
-ax.text(0.6, 0.15, 'B', **text_kw)
+ax.text(0.01, 0.005, 'O', **text_kw)
+ax.text(0.01, 0.1, 'A', **text_kw)
+ax.text(0.55, 0.15, 'B', **text_kw)
 ax.text(0.85, 0.85, 'C', **text_kw)
 ax.text(0.35, 0.72, 'D', **text_kw)
 
