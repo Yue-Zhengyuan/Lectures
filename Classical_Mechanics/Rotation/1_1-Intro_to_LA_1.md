@@ -10,10 +10,6 @@
 
 [link]: https://youtu.be/fNk_zzaMoSs
 
-## Difference from "Vector Algebra"?
-
-
-
 ## Vector Spaces and Basis Vectors
 
 ### Vector Spaces
