@@ -39,7 +39,7 @@ $$
 
 The number of basis vectors $n$ is called the **dimension** of $V$ (denoted by $\dim V$). 
 
-The number $v_i$ is called the **components** of the vector $v$ along the basis vector $e_i$. Then the vector $v$ can be also written as a **column vector** (without explicit reference to the basis vectors)
+The number $v_i$ is called the **components** of the vector $v$ along the basis vector $e_i$. Then the vector $v$ can be also written as a **column vector** (without explicit reference to the basis we are using)
 
 $$
 v = \begin{bmatrix}
@@ -64,7 +64,7 @@ i.e. the zero vector is unique.
     <center>
 
     ![image](Figures/different_basis.svg)   
-    *Two different vectors have the same components (2, 3) <br>under two sets of basis*
+    *Two different vectors can have the same components (2, 3) <br>under different basis; the figures are drawn to the same scale*
 
     </center>
 
@@ -85,7 +85,7 @@ i.e. the zero vector is unique.
     \end{bmatrix}
     $$
 
-    You must be aware that **this does not mean that they are the traditional unit vectors along the $x$, $y$, ... axes**. 
+    You must be aware that **this does not mean that they are the traditional unit vectors along the coordinate axes**. 
 
 ### Note on Notations: Einstein Summation Rule
 
@@ -121,7 +121,7 @@ $$
 \_ \cdot \_ : V \times V \to \mathbb{R}
 $$
 
-and have the following properties:
+Inner product is *defined to have* the following properties:
 
 - **Symmetry**: $\forall \, u,v \in V$
 
@@ -174,13 +174,13 @@ $$
 
 i.e. each basis vector has length 1, and is orthogonal to all other basis vectors. You can just imagine them as the familiar unit vectors along the coordinate axes. Such a set of basis vectors is called an **orthonormal basis** (orthogonal and normalized).
 
-Then we recover something you already know:
+The **standard basis** (unit vectors along each coordinate axes) you are familiar with is just an orthonormal basis. Then we recover something you already know:
 
 $$
 u \cdot v = u_i v_j \delta_{ij} = u_i v_i
 $$
 
-We emphasize that this definition is valid only when we are using the components of $u,v$ under an orthonormal set of basis.
+We emphasize that **this definition is valid only when we are using the components of $u,v$ under an orthonormal set of basis**.
 
 *Remark*: 
 
@@ -204,13 +204,24 @@ In other words, it does not matter whether you perform linear transformations be
 
 ### Matrix Representation of Linear Transformations
 
-Due to the linearity, a linear transformation $A$ can be *fully* described by specifying its action $e_i \to A e_i$ on *each* basis vector ($i = 1, ..., n$). Then for any vector $v$, we have
+The above definition is somewhat abstract. Let us represent it by something more concrete: the **matrix**. 
+
+Due to the linearity, a linear transformation $A$ can be *fully* described by specifying its action $e_i \to e'_i \equiv A e_i$ on *each* basis vector ($i = 1, ..., n$). Then for any vector $v$, we have
 
 $$
-A v = A (v_i e_i) = v_i (A e_i)
+v' \equiv A v = A (v_i e_i) = v_i (A e_i) = v_i e'_i
 $$
 
-Nothing prevents us to express $A e_i$ as linear combination of the basis vectors: 
+We note that components of $v'$ along the new basis are the same as the components of $v$ along the old basis.
+
+<center>
+
+![image](Figures/linear_trans.svg)   
+*An arbitrary linear transformation in 2D. In this figure $v = 2 e_1 + 2 e_2$.*
+
+</center>
+
+Nothing prevents us to express $e'_i$ as linear combination of the basis vectors: 
 
 $$
 e'_i = A e_i = e_j A_{j i} \qquad (i = 1, ..., n)
@@ -234,7 +245,7 @@ $$
 \end{aligned}
 $$
 
-Then we combine this two column vectors to form a **matrix** that represents the linear transformation $A$:
+Then we combine this two column vectors to form a **matrix** that represents the linear transformation $A$ (it does not matter whether you use usual or square brackets):
 
 $$
 A = \begin{bmatrix}
@@ -248,7 +259,7 @@ In this construction, $A_{i j}$ means the matrix element at the $i$th row and th
 
 Remember the meaning of each column of the transformation matrix: **the $i$th column is the transformation result of the $i$th basis vector**. 
 
-### Transpose of Matrix
+### Interlude: Transpose of Matrix
 
 The matrix obtained by *exchanging lines and rows* of $A$ is called the **transpose** of $A$, denoted by $A^\top$. By definition
 
@@ -268,14 +279,14 @@ $$
 A column vector can be regarded as a matrix of only one column; so we have
 
 $$
-v^\top = \begin{bmatrix}
-    v_1 & \cdots & v_n
-\end{bmatrix}
+v^\top = (v_1, \cdots, v_n)
 $$
 
 This is called a **row vector**.
 
 ### Examples of Linear Transformations (in 2D)
+
+In all the following examples, we use the standard basis to describe the transformation. 
 
 - **Rotation**
 
@@ -286,7 +297,20 @@ This is called a **row vector**.
 
     </center>
 
-    You can easily determine the representation matrix
+    You can easily determine from the above figure that the standard basis $e_1, e_2$ are transformed to
+
+    $$
+    e'_1 = \begin{bmatrix}
+        \cos \theta \\
+        \sin \theta
+    \end{bmatrix}, \quad
+    e'_2 = \begin{bmatrix}
+        -\sin \theta \\
+        \cos \theta
+    \end{bmatrix}
+    $$
+    
+    You can verify that $\{e'_1, e'_2\}$ is still an orthonormal basis. Therefore, the representation matrix of rotation is
 
     $$
     R(\theta) = \begin{bmatrix}
@@ -297,9 +321,30 @@ This is called a **row vector**.
 
 - **Reflection**
 
+    <center>
+
+    ![image](Figures/reflection_2d.svg)   
+    *Reflection with respect to x-axis*
+
+    </center>
+
 - **Scaling (Dilation)**
 
+    <center>
+
+    ![image](Figures/scale_2d.svg)   
+    *Scaling by $e'_1 = 1.5 e_1$ (stretching) and $e'_2 = 0.8 e_2$ (shortening)*
+
+    </center>
+
 - **Shear**
+
+    <center>
+
+    ![image](Figures/shear_2d.svg)   
+    *Shear along direction of $e_1$ by $e'_2 = e_2 + e_1$*
+
+    </center>
 
 *Remark*: **Translation** ($T: v \to v + t$, where $t$ is the translation vector) is not a linear transformation! You can easily verify, for two vectors $v, w \in V$
 
@@ -324,7 +369,7 @@ Write down the transformation matrices of the 2D linear transformations:
 
 - Reflection with respect to $x$-axis
 - Scaling $e_1$ and $e_2$ by factors $a$ and $b$
-- Shear along direction of $e_1$ by length $t > 0$
+- Shear along direction of $e_1$ by $e'_2 = e_2 + t e_1$
 
 ## Matrix-Vector Multiplication
 
@@ -369,7 +414,7 @@ $$
 <center>
 
 ![image](Figures/Mat_on_vec.png)   
-*(Have you watched the videos now?)*
+*(Have you watched the [videos][LA_3b1b] now?)*
 
 </center>
 
@@ -385,7 +430,8 @@ v = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-Compute the transformation result $A v$. (Can you directly read off the answer from the figure above?)
+- Compute the transformation result $A v$. 
+- Can you directly read off the answer from the figure above?
 
 ## Matrix Product
 

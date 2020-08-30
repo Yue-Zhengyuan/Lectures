@@ -30,7 +30,7 @@ A = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-We can use the two vectors to construct a **parallelogram** $ABCD$ (see figure), whose *area* is given by the formula (see [Appendix]; if we are not using the components along an orthonormal basis, the result will be more complicated):
+We can use the two vectors to construct a **parallelogram** $ABCD$ (see figure), whose *area* is given by the formula (see [Appendix]; try to prove it by yourself):
 
 [Appendix]: #appendix-a-brproof-of-geometrical-meaning-of-determinant
 
@@ -39,7 +39,7 @@ $$
 |a_1 b_2 - a_2 b_1|
 $$
 
-The expression inside the absolute value sign $| \, |$ is defined as the **determinant** of matrix $A$, denoted by
+If we are not using the components along an orthonormal basis, the result will be more complicated. The expression inside the absolute value sign $| \, |$ is defined as the **determinant** of matrix $A$, denoted by
 
 $$
 \det A \equiv a_1 b_2 - a_2 b_1
@@ -101,7 +101,7 @@ When $\det A = 0$, it means that $a, b, c$ are *on the same plane*.
 
 ## Inverse of Linear Transformation and Matrix
 
-For a given linear transformation $A$, *if* we can find another transformation $B$ that can completely cancel the effect of $A$, *and* $A$ can completely cancel the effect of $B$, then we say that $A$ and $B$ are **inverse** of each other. 
+For a given linear transformation $A$, *if we can find* another transformation $B$ that completely cancels the effect of $A$, *and* $A$ completely cancels the effect of $B$, then we say that $A$ and $B$ are **inverse** of each other. 
 
 The matrix representation of $B$ is called the **inverse** of the matrix $A$. We shall use the notation $A^{-1}$ to denote both the inverse transformation and the inverse matrix.
 
@@ -116,7 +116,9 @@ where $1$ is the **identity transformation**, whose effect is no effect at all. 
 *Remark*:
 
 - Do *not* use $1/A$ to denote the inverse of $A$.
+
 - Note that we used the expression "if we can find". This means that some linear transformation does *not* have its inverse.
+
 - We state without proof that if a linear transformation is invertible, then *its inverse is unique*. 
 
 Here we shall not teach you how to calculate the inverse of an arbitrary invertible matrix, which can be done by computers. 
@@ -128,7 +130,7 @@ Consider a linear transformation $A$.
 <center>
 
 ![image](Figures/non_invertible_trans.png)   
-*Non-invertible 2D linear transformation*   
+*A non-invertible 2D linear transformation*   
 *(Screenshot from the linear transformation demo)*
 
 </center>
@@ -202,7 +204,7 @@ $$
 \end{aligned}
 $$
 
-EXERCISE:
+### EXERCISE
 
 - What is the identity matrix in 2D vector space?
 
@@ -223,10 +225,10 @@ EXERCISE:
 
 It is expected that if we change to a new set of basis vectors:
 
-- A vector will be represented by different components 
+- A vector will have different components 
 - A linear transformation will be represented by a different matrix
 
-In this section we shall show how to find the representation of vectors and linear transformations under a new set of basis vectors. 
+In this section we shall show how to find the components of vectors and representation matrices of linear transformations under a new set of basis vectors. 
 
 ### Description of the New Basis
 
@@ -253,7 +255,7 @@ $$
 \end{bmatrix}
 $$
 
-*Remark*: The inverse operation, i.e. change from the new basis to the old basis, is described by the matrix (under the *new* basis) $\mathcal{D}^{-1}$.
+*Remark*: The inverse operation, i.e. change from the new basis to the old basis, is described by the inverse matrix $\mathcal{D}^{-1}$ (**under the new basis**).
 
 ### Components of Vectors along New Basis
 

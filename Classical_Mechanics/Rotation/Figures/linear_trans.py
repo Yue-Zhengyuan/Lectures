@@ -125,7 +125,7 @@ ax.add_artist(auxOld)
 ## components of v after transform
 init_vNew = vecNew(init_vOld, init_e1, init_e2)
 vNew = FancyArrow(0, 0, *init_vNew, **arrow_kw, color='green')
-vNewLabel = ax.text(*(1.05*init_vNew), r'$v^\prime$', **text_kw, color='green')
+vNewLabel = ax.text(*(1.02*init_vNew), r'$v^\prime$', **text_kw, color='green')
 ## auxiliary parallelogram
 vertsNew = [np.array([0,0]), init_vOld[0]*init_e1,
         init_vNew, init_vOld[1]*init_e2]
@@ -133,15 +133,15 @@ polygon_kw = dict(linestyle='--', linewidth=1, edgecolor='black', fill=False)
 auxNew = Polygon(vertsNew, **polygon_kw)
 ax.add_artist(auxNew)
 ## display information
-vInfo = ax2.text(0, 0.65, 
-    'Components of $v$:',
+vInfo = ax2.text(0, 0.6, 
+    'Components of $v$ \nalong old basis:',
     **text_kw2, color='green'
 )
-vOldInfo = ax2.text(0, 0.5, 
+vOldInfo = ax2.text(0, 0.45, 
     'Before transformation: \n({:.3f}, {:.3f})'.format(*init_vOld), 
     **text_kw2, color='green', alpha=0.5
 )
-vNewInfo = ax2.text(0, 0.35, 
+vNewInfo = ax2.text(0, 0.3, 
     'After transformation: \n({:.3f}, {:.3f})'.format(*init_vNew), 
     **text_kw2, color='green'
 )
@@ -234,7 +234,7 @@ def on_motion_notify(event):
         init_vNew = vecNew(init_vOld, init_e1, init_e2)
         vNew = FancyArrow(0, 0, *init_vNew, **arrow_kw, color='green')
         ax.add_artist(vNew)
-        vNewLabel.set_position(1.05 * init_vNew)
+        vNewLabel.set_position(1.02 * init_vNew)
         # redraw parallelograms
         auxOld.remove()
         auxNew.remove()
@@ -256,7 +256,5 @@ def on_motion_notify(event):
 fig.canvas.mpl_connect('button_release_event', on_button_release)
 fig.canvas.mpl_connect('pick_event', on_pick)
 fig.canvas.mpl_connect('motion_notify_event', on_motion_notify)
-
-plt.show()
 
 plt.show()
