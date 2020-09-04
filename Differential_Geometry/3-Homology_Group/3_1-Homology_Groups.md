@@ -1,6 +1,6 @@
-## Homology Groups of Simplicial Complexes <br>Part 1: Definitions and Theorems
+# Homology Groups of Simplicial Complexes <br>Part 1: Definitions and Theorems
 
-### Oriented Simplexes
+## Oriented Simplexes
 
 *Definition*:
 
@@ -36,7 +36,7 @@
         
         Oriented 0-simplex is just a point $p_0$, the same as an unoriented 0-simplex.
 
-### Chain, Cycle, Boundary and Corresponding Groups
+## Chain, Cycle, Boundary and Corresponding Groups
 
 *Definition*: Let
 
@@ -193,7 +193,7 @@ This follows immediately from the fact that "boundaries have no boundary", since
 
 ----
 
-### Homology Groups
+## Homology Groups
 
 *We study homology groups since they are topologically invariant.*
 

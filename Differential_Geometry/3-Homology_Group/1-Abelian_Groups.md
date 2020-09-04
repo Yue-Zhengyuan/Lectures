@@ -1,6 +1,6 @@
-## Abelian Groups
+# Abelian Groups
 
-### Elementary Group Theory
+## Elementary Group Theory
 
 *Notation*:
 
@@ -73,7 +73,7 @@ $$G_1 / \ker{f} \cong \text{im }f$$
 
 <center><i>In the following we consider Abelian groups only.</i></center>
 
-### Finitely Generated Abelian Groups and Free Abelian Groups
+## Finitely Generated Abelian Groups and Free Abelian Groups
 
 *Definition*: 
 

@@ -1,6 +1,6 @@
-## Fundamental Groups
+# Fundamental Groups
 
-### Paths and Loops
+## Paths and Loops
 
 *Definition*:
 
@@ -40,7 +40,7 @@
 
     The initial and the end points are swapped, and the path direction is reversed. 
 
-### Homotopy
+## Homotopy
 
 *Definition*:
 
@@ -71,7 +71,7 @@
 
 ----
 
-### Fundamental Groups
+## Fundamental Groups
 
 The fact that *the homotopic relation is an equivalence relation* motivates the following definitions.
 

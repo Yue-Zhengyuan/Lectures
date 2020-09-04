@@ -1,4 +1,4 @@
-## Central Charge
+# Central Charge
 
 The general form of the OPE is
 
@@ -10,9 +10,9 @@ $$
 
 The model-dependent constant number $c$ is called the **central charge**.
 
-### Transformation of Energy-Momentum Tensor
+## Transformation of Energy-Momentum Tensor
 
-### Physical Meaning of The Central Charge
+## Physical Meaning of The Central Charge
 
 Consider a map from the complex plane to c *cylinder* of circumference $L$:
 

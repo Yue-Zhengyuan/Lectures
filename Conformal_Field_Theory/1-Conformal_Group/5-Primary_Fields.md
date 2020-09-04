@@ -1,4 +1,4 @@
-## Primary Fields
+# Primary Fields
 
 If a field $\phi (z, \bar{z})$ transforms under *any* (global or local) conformal transformations $z\to w(z)$ according to
 
@@ -15,11 +15,11 @@ then it is called a **primary field**. The number $h \, (\bar{h})$ is called the
 
 If this transformation holds only for *global* conformal transformations, then $\phi$ is called a **quasi-primary fields**.
 
-### Chiral Fields
+## Chiral Fields
 
 If $\phi$ only depends on $z$, it is called a **chiral field**; if $\phi$ only depends on $\bar{z}$, it is an called **anti-chiral field**.
 
-### Scaling Dimension and Spin
+## Scaling Dimension and Spin
 
 The conformal dimensions are related to the **scaling dimension** and the **planar spin** of the field by
 
@@ -28,7 +28,7 @@ h=\frac{1}{2}(\Delta +s), \quad
 \bar{h}=\frac{1}{2}(\Delta -s)
 $$
 
-### Variation under Infinitesimal Conformal Transformations
+## Variation under Infinitesimal Conformal Transformations
 
 Consider the infinitesimal transformation
 
@@ -94,12 +94,12 @@ $$
 \end{aligned}
 $$
 
-### Restriction on Correlation Function by Conformal Symmetry
+## Restriction on Correlation Function by Conformal Symmetry
 
 The conformal invariance imposes strong restriction on the possible
 forms of the correlation functions of (quasi-)primary fields.
 
-#### Two-Point Functions
+### Two-Point Functions
 
 $$
 \langle \phi_a(z, \bar{z}) \phi_b(w, \bar{w}) \rangle 
@@ -113,4 +113,4 @@ $$
 
 Otherwise the correlation function vanishes.
 
-#### Three-Point Functions
+### Three-Point Functions

@@ -1,6 +1,6 @@
-## Boson Coherent State
+# Boson Coherent State
 
-### Eigenstate of Annihilation Operator
+## Eigenstate of Annihilation Operator
 
 The boson **coherent state** is *defined* as the eigenstate of the (boson) annihilation operator:
 
@@ -30,9 +30,9 @@ a_n^\dagger \cdots a_2^\dagger a_1^\dagger
 \bar{\alpha}_n \cdots \bar{\alpha}_2 \bar{\alpha}_1
 $$
 
-### Building Coherent State from Vacuum
+## Building Coherent State from Vacuum
 
-#### One Kind of Bosons
+## One Kind of Bosons
 
 Expand the coherent state using the Fock space basis vectors (boson
 number representation):
@@ -102,7 +102,7 @@ $$
 = \langle 0| \exp (a \bar{\alpha})
 $$
 
-#### Many Kinds of Bosons
+## Many Kinds of Bosons
 
 If we have many kinds of bosons, the result is
 
@@ -111,7 +111,7 @@ $$
 = \exp \left(\sum_k \alpha_k a_k^\dagger \right)| 0\rangle
 $$
 
-### Resolution of Identity
+## Resolution of Identity
 
 Suppose $\alpha =x+i y, \bar{\alpha}=x-i y \, (x,y\in \mathbb{R})$. We claim that
 
@@ -233,7 +233,7 @@ $$
 = \mathbf{1}
 $$
 
-### Operators in Coherent State Representation
+## Operators in Coherent State Representation
 
 From the theory of second quantization, a 2-body operator has the form
 
@@ -306,7 +306,7 @@ $$
 = e^{\bar{\beta}\alpha} A(\bar{\beta},\alpha)
 $$
 
-### Coherent State Path Integral for Bosons
+## Coherent State Path Integral for Bosons
 
 Now we consider the propagator from and to some arbitrary states (not
 necessarily labelled by the coordinates), and use the second-quantized,

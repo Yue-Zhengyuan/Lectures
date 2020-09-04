@@ -1,4 +1,4 @@
-## Conformal Invariance
+# Conformal Invariance
 
 *By definition*, a **conformal transformation** of the coordinates is an *invertible* mapping $x\to x'$ which *leaves the metric invariant up to a scale*:
 
@@ -7,7 +7,7 @@ g_{\mu \nu}^{\prime}\left(x'\right)
 = \Lambda(x) g_{\mu \nu}(x)
 $$
 
-### Requirement on Infinitesimal Transformations
+## Requirement on Infinitesimal Transformations
 
 Consider the infinitesimal transformation
 

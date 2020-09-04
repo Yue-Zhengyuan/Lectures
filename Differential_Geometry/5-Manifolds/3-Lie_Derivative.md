@@ -1,6 +1,6 @@
-## Flows and Lie Derivative
+# Flows and Lie Derivative
 
-### Flows
+## Flows
 
 *Definition*: Let $V$ be a vector field defined on an manifold $M$. 
 
@@ -88,7 +88,7 @@ $$
 
 which is a circle around the origin. 
 
-### One-parameter Group of Transformations
+## One-parameter Group of Transformations
 
 *Definition*:
 
@@ -204,9 +204,9 @@ $$
 
 the same as the result obtained from solving differential equations. 
 
-### Lie Derivatives of Vectors
+## Lie Derivatives of Vectors
 
-#### Introduction
+## Introduction
 
 Let $X, Y$ be two vector fields, generating flows $\sigma(t,x), \tau(t,x)$ respectively:
 
@@ -284,7 +284,7 @@ $$
         ]
         $$
     
-#### Component Form of Lie Derivative
+## Component Form of Lie Derivative
 
 Assign a chart $(U, \varphi)$ near $x$. Recall that for infinitesimal $\varepsilon$
 
@@ -353,7 +353,7 @@ X^\mu \partial_\mu Y^\nu
 - Y^\mu \partial_\mu X^\nu
 $$
 
-### Lie Bracket
+## Lie Bracket
 
 *Definition*:
 
@@ -363,7 +363,7 @@ $$
     [X,Y][f] = X[Y[f]] - Y[X[f]]
     $$
 
-#### Component form
+## Component form
 
 By definition
 
@@ -386,7 +386,7 @@ $$
 [X, Y] = \mathcal{L}_X Y
 $$
 
-#### Geometric Meaning
+## Geometric Meaning
 
 <center>
 
@@ -437,7 +437,7 @@ $$
 [X, Y] = 0 \,\Leftrightarrow\, \sigma(s,\tau(t,x)) = \tau(t,\sigma(s,x))
 $$
 
-#### Properties of Lie Bracket
+## Properties of Lie Bracket
 
 For vector fields $X, Y \in \mathfrak{X}(M)$:
 
@@ -524,4 +524,4 @@ For vector fields $X, Y \in \mathfrak{X}(M)$:
     \end{aligned}
     $$
 
-### Lie Derivative of General Tensors
+## Lie Derivative of General Tensors

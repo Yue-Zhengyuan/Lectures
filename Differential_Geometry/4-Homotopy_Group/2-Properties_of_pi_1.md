@@ -1,6 +1,6 @@
-## General Properties of Fundamental Groups
+# General Properties of Fundamental Groups
 
-### Arcwise connectedness
+## Arcwise connectedness
 
 ----
 
@@ -22,7 +22,7 @@ $$
 
 ----
 
-### Homotopic Invariance
+## Homotopic Invariance
 
 *Definition*:
 
@@ -79,7 +79,7 @@ $$
 
 ----
 
-### Retraction
+## Retraction
 
 *Definition*:
 

@@ -1,4 +1,4 @@
-## Holomorphic Form of Ward Identities
+# Holomorphic Form of Ward Identities
 
 We already seen that 
 
@@ -24,7 +24,7 @@ where
 - $s_i, \Delta_i$ are the spin and the scaling dimension of the field $\Phi(x_i)$
 - $s_i \varepsilon_{\mu \nu}$ is the spin generator in 2D
 
-### Math Appendix: Dirac $\delta$-Function on the Complex Plane
+## Math Appendix: Dirac $\delta$-Function on the Complex Plane
 
 $$
 \delta (x,y)

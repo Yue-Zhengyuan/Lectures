@@ -1,6 +1,6 @@
-## Lie Groups and Lie Algebra
+# Lie Groups and Lie Algebra
 
-### Lie Groups
+## Lie Groups
 
 *Definition*:
 
@@ -16,7 +16,7 @@ Every closed subgroup $H$ of a Lie group $G$ is also a Lie group.
 
 ----
 
-### Lie Algebra
+## Lie Algebra
 
 *Definition*:
 

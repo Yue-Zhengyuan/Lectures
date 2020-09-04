@@ -1,6 +1,6 @@
-## Simplexes and Simplicial Complexes
+# Simplexes and Simplicial Complexes
 
-### Simplexes
+## Simplexes
 
 *Definition*:
 
@@ -33,7 +33,7 @@
 - **$q$-Face of a simplex**
     - **Proper face**
 
-### Simplicial Complexes and Polyhedra
+## Simplicial Complexes and Polyhedra
 
 *Definition*:
 

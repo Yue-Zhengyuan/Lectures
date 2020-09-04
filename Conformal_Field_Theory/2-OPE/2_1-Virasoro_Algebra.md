@@ -1,6 +1,6 @@
-## Virasoro Algebra
+# Virasoro Algebra
 
-### Laurent Modes of the Energy-Momentum Tensor 
+## Laurent Modes of the Energy-Momentum Tensor 
 
 The Laurent modes energy momentum tensor are denoted by $L_n$:
 
@@ -57,7 +57,7 @@ $$
 = \frac{1}{n!} \partial^nT(w)
 $$
 
-### Virasoro Algebra
+## Virasoro Algebra
 
 We expand the energy-momentum tensor at the origin $(w = 0)$:
 

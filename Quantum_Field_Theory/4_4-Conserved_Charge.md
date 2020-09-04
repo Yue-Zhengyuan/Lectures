@@ -1,4 +1,4 @@
-## Conserved Charge
+# Conserved Charge
 
 The **conserved charge** associated with the current $j_a$ is defined as
 
@@ -18,7 +18,7 @@ In the second equality we used $\partial_{\mu}j_a^{\mu}=0$.
 
 Gauss' Theorem then converts the integral to a surface integral at infinity, which gives zero provided that the current vanished sufficiently rapidly as $x\to \infty$.
 
-### Conserved Charge as Transformation Generators
+## Conserved Charge as Transformation Generators
 
 Recall the definition of the conserved charge associated with
 $\omega_a$

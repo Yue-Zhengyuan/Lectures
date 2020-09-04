@@ -1,4 +1,4 @@
-## Operator Product Expansion: <br>General Description
+# Operator Product Expansion: <br>General Description
 
 Previously, we have derived that for a quasi-primary field
 
@@ -12,7 +12,7 @@ $$
 )
 $$
 
-### Conserved Charge of Conformal Symmetry 
+## Conserved Charge of Conformal Symmetry 
 
 The conserved charge corresponding to the conformal transformation $x\to x+\epsilon$ on the cylinder is given by
 

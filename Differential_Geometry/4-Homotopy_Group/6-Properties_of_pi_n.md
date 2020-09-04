@@ -1,6 +1,6 @@
-## General Properties of Higher Homotopy Groups
+# General Properties of Higher Homotopy Groups
 
-### Abelian Nature
+## Abelian Nature
 
 ----
 
@@ -8,7 +8,7 @@
 
 ----
 
-### Properties Generalized from Fundamental Group $\pi_1$
+## Properties Generalized from Fundamental Group $\pi_1$
 
 ----
 
@@ -53,7 +53,7 @@ $$
 
 ----
 
-### (Universal) Covering Spaces
+## (Universal) Covering Spaces
 
 *Definition*:
 
@@ -84,7 +84,7 @@ is an *isomorphism* when $n \ge 2$ (*not applicable* to the case $n = 1$).
 
 ----
 
-### (Universal) Covering Groups
+## (Universal) Covering Groups
 
 - **Topological group**: a group which is also a topological space
 

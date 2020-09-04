@@ -1,6 +1,6 @@
-## Fundamental Groups of Polyhedra
+# Fundamental Groups of Polyhedra
 
-### Math Preparation: Free Groups and Relations
+## Math Preparation: Free Groups and Relations
 
 *Definition*:
 
@@ -61,7 +61,7 @@
 
     </center>
 
-### Relation between $H_1(K)$ and $\pi_1(|K|)$
+## Relation between $H_1(K)$ and $\pi_1(|K|)$
 
 *Definition*:
 

@@ -1,4 +1,4 @@
-## Normal Ordering
+# Normal Ordering
 
 From the general form of the OPE (with regular terms) of two operators $A,B$
 
@@ -17,7 +17,7 @@ $$
 
 There are several ways to write this expression more concretely.
 
-### Contraction
+## Contraction
 
 The **contraction** of $A(z)B(w)$ is *defined* as the sum of all *singular* terms of the OPE:
 
@@ -35,7 +35,7 @@ $$
 \right)
 $$
 
-### Contour Integration
+## Contour Integration
 
 $$
 (A B)(w) = 
@@ -66,7 +66,7 @@ $$
 \quad \blacksquare
 $$
 
-### Mode Expansion
+## Mode Expansion
 
 We Laurent expand the normal ordered product around the origin as
 

@@ -1,6 +1,6 @@
-## Stokes' Theorem
+# Stokes' Theorem
 
-### Preliminary: Integration of Differential Forms in $\mathbb{R}^m$
+## Preliminary: Integration of Differential Forms in $\mathbb{R}^m$
 
 *Definition*:
 
@@ -75,7 +75,7 @@
     \right) dy^1 \cdots dy^r
     $$
 
-### Chain, Cycle, Boundary on Manifolds
+## Chain, Cycle, Boundary on Manifolds
 
 *Definition*: 
 
@@ -139,7 +139,7 @@ Let $f: \sigma_r \to M$ be a smooth map ($f$ needs not be invertible).
 
     *Remark*: The *singular* homology group is often isomorphic to another group called the **simplicial homology group**.
 
-### Integration on $r$-Chain
+## Integration on $r$-Chain
 
 For integration of an $r$-form $\omega$ over a general $r$-chain $c = \sum_i a_i s_{r,i}$ in $M$, we define
 
@@ -399,7 +399,7 @@ Now we have finished the proof of Stokes' theorem. $\blacksquare$
 
 ----
 
-### Usual Vector Calculus Theorems
+## Usual Vector Calculus Theorems
 
 Consider differential forms in $\mathbb{R}^3$:
 

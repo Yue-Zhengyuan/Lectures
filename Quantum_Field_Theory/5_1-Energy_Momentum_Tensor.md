@@ -1,6 +1,6 @@
-## Energy-Momentum Tensor
+# Energy-Momentum Tensor
 
-### Equation of Motion for Fields
+## Equation of Motion for Fields
 
 $$
 \partial_{\mu} \left(
@@ -9,7 +9,7 @@ $$
 }=0
 $$
 
-### Energy-Momentum Tensor
+## Energy-Momentum Tensor
 
 Symmetry under *spacetime translation* leads to an important conserved current: the **energy-momentum tensor**.
 
@@ -73,7 +73,7 @@ $$
 
 The integrand is just the usual definition of Hamiltonian (density). 
 
-### Belinfante Energy-Momentum Tensor
+## Belinfante Energy-Momentum Tensor
 
 Since the variation of the action under spacetime translation (even if it is non-uniform, i.e. depend on the coordinates) is
 

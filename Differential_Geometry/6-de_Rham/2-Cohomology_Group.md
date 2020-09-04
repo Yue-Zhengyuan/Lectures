@@ -1,6 +1,6 @@
-## de Rham Cohomology Groups
+# de Rham Cohomology Groups
 
-### Co-cycle and Co-boundary
+## Co-cycle and Co-boundary
 
 *Definition*: Let $M$ be an $m$-dimensional manifold.
 

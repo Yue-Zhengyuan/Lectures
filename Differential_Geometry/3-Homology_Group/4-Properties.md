@@ -1,6 +1,6 @@
-## General Properties of Homology Groups
+# General Properties of Homology Groups
 
-### Connectedness and Homology Groups
+## Connectedness and Homology Groups
 
 ----
 
@@ -27,7 +27,7 @@ $$
 
 ----
 
-### Structure of Homology Groups
+## Structure of Homology Groups
 
 *Definition*:
 
@@ -46,7 +46,7 @@ $$
     H_r(K;\mathbb{R}) = \mathbb{R}^ f
     $$
 
-### Betti Numbers and the Euler-Poincaré Theorem
+## Betti Numbers and the Euler-Poincaré Theorem
 
 *Definition*: Let $K$ be a $n$-dimensional simplicial complex. 
 

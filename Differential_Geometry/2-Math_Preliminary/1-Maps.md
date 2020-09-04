@@ -1,6 +1,6 @@
-## Maps
+# Maps
 
-### Terminology
+## Terminology
 
 *Definition*:
 
@@ -20,7 +20,7 @@
     - **Isomorphism (同构)**
     - **Isomorphic sets**
 
-### Equivalence Relation and Equivalence Class
+## Equivalence Relation and Equivalence Class
 
 *Definition*:
 

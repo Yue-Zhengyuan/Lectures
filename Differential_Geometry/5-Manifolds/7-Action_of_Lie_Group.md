@@ -1,2 +1,2 @@
-## The Action of Lie Groups on Manifolds
+# The Action of Lie Groups on Manifolds
 

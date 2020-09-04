@@ -1,4 +1,4 @@
-## Unitarity and The Kac Determinant
+# Unitarity and The Kac Determinant
 
 Now we construct representations of the Virasoro algebra of the holomorphic part
 
@@ -8,11 +8,11 @@ $$
 + \frac{c}{12} n (n^2 - 1) \delta_{n+m, 0}
 $$
 
-### Unitary Representation of Virasoro Algebra
+## Unitary Representation of Virasoro Algebra
 
 A representation of the Virasoro algebra is said to be **unitary** if it contains *no negative-norm states*.
 
-#### Simple Necessary Conditions
+## Simple Necessary Conditions
 
 Some simple conditions are obtained from the norm of $L_{-n}| h\rangle$:
 
@@ -35,7 +35,7 @@ $$
 
 Thus *all representations with negative central charge or negative conformal dimensions are non-unitary*.
 
-### The Kac Determinant
+## The Kac Determinant
 
 The **Kac determinant** is the determinant of the **Gram matrix** defined as
 

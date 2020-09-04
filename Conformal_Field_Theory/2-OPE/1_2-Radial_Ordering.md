@@ -1,4 +1,4 @@
-## Radial Ordering
+# Radial Ordering
 
 After the mapping from cylinder to complex plane, the time ordering (later time to earlier time) becomes a **radial ordering** (farther to closer to the origin). Explicitly
 

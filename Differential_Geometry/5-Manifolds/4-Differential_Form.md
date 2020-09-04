@@ -1,4 +1,4 @@
-## Differential Forms
+# Differential Forms
 
 *Definition*:
 
@@ -83,7 +83,7 @@
 
     where $S_r$ denotes the **symmetric group** of all $r$-permutations.
 
-#### Properties of Wedge Product
+## Properties of Wedge Product
 
 Let $\omega, \xi, \eta$ be differential forms defined in $M$, and 
 
@@ -116,7 +116,7 @@ Then
   
     $$ (\omega \wedge \xi) \wedge \eta = \omega \wedge (\xi \wedge \eta) $$
 
-#### Wedge Product of Dual Basis Vectors
+## Wedge Product of Dual Basis Vectors
 
 We start from 2 dual basis vectors. In local coordinates, let
 
@@ -202,7 +202,7 @@ dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
 dx^{\mu_{P(1)}} \cdots dx^{\mu_{P(r)}}
 $$
 
-#### General Expression of $r$-Forms
+## General Expression of $r$-Forms
 
 A general $(0,r)$-tensor $\omega$ has the local coordinate expression
 
@@ -300,7 +300,7 @@ $$
 
     is *closed* under the exterior product.
 
-### Exterior Derivatives
+## Exterior Derivatives
 
 *Definition*:
 
@@ -338,7 +338,7 @@ $$
 
     Due to anti-commutativity of 1-forms with respect to wedge product, we see that nonzero terms must have $\mu \ne \mu_1, ..., \mu_r$. 
 
-#### Coordinate-free Expression
+## Coordinate-free Expression
 
 - Action on 1-forms
 
@@ -392,7 +392,7 @@ $$
     $$
 
 
-#### Properties of Exterior Derivative
+## Properties of Exterior Derivative
 
 - Exterior derivative is **nilpotent**:
     
@@ -482,10 +482,10 @@ $$
     f^*(\xi \wedge \omega) = (f^* \xi) \wedge (f^* \omega)
     $$
 
-### Interior Product and Lie Derivative of Forms
+## Interior Product and Lie Derivative of Forms
 
 *Definition*:
 
 - **Interior product**
 
-### Application to Classical Mechanics
+## Application to Classical Mechanics

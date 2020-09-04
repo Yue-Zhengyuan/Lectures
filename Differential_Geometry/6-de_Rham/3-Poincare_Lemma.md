@@ -1,4 +1,4 @@
-## Poincaré's Lemma
+# Poincaré's Lemma
 
 ----
 

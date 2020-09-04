@@ -1,8 +1,8 @@
-## Descendant States and Fields
+# Descendant States and Fields
 
-### Descendants States
+## Descendants States
 
-#### Conformal Operators Acting on the Vacuum State
+## Conformal Operators Acting on the Vacuum State
 
 The energy of the ground state is fixed to zero. This requires that
 
@@ -31,7 +31,7 @@ $$
 = \langle 0 | \bar{T}(\bar{z}) | 0\rangle =0
 $$
 
-#### Conformal Operators Acting on the Asymptotic State
+## Conformal Operators Acting on the Asymptotic State
 
 Consider the $L_n, \bar{L}_n$ operators acting on the *asymptotic state*
 
@@ -107,7 +107,7 @@ $$
 Since $L_0+\bar{L}_0$ is proportional to the system Hamiltonian, we find
 that $|h,\bar{h} \rangle$ *is an energy eigenstate*.
 
-### Ladder Operators
+## Ladder Operators
 
 To find excited states above the asymptotic state, we need the *ladder operators*. It turns out that they can be chosen as the *Laurent modes* $\phi_n$ *of the holomorphic field* $\phi(w)$ *with conformal dimension* $h$.
 
@@ -222,7 +222,7 @@ Finally, we remark that
 
 $$ L_{-n}=L_n^\dagger $$
 
-### Descendant States
+## Descendant States
 
 The state
 
@@ -301,7 +301,7 @@ We call such kind of states **descendant states** (or simply **descendants**) of
 
 
 
-### Descendant Fields
+## Descendant Fields
 
 Each descendant state can be regarded as the result of the application on the vacuum of a **descendant field**. 
 
@@ -376,7 +376,7 @@ $$
 \phi^{(-1,-n)}(w) = \partial \phi^{(-n)}(w)
 $$
 
-### A Representation of the Conformal Generators
+## A Representation of the Conformal Generators
 
 The relations $\phi^{(-1)}(w)=\partial \phi(w)$ and
 $\phi^{(-1,-n)}(w)=\partial \phi^{(-n)}(w)$ give us the first hint that $L_{-1}(w)$ somewhat has the same effect as the differential operator $\partial_w$. 

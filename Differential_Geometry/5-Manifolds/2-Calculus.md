@@ -1,6 +1,6 @@
-## The Calculus on Manifolds
+# The Calculus on Manifolds
 
-### Differentiable Maps
+## Differentiable Maps
 
 <center>
 
@@ -42,9 +42,9 @@ Let $p$ be a point in $M$, which is mapped to $f(p) \in N$.
     - The dimension of two diffeomorphic manifolds must be the same;
     - The diffeomorphic relation is an *equivalence relation*.
 
-### Tangent Vectors and Tangent Space
+## Tangent Vectors and Tangent Space
 
-#### Tangent Vector and Tangent Space in Euclidean Space
+## Tangent Vector and Tangent Space in Euclidean Space
 
 Let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart $(U, \varphi)$ near $p$. A curve $c: (a,b) \subset \mathbb{R} \to M \, (a < 0 < b)$ goes across the point $p = c(0)$. 
 
@@ -114,7 +114,7 @@ $$
 
 The $m$ vectors $\{e_1, ..., e_m\}$ form a **coordinate basis** of the **tangent space** (denoted by $T_p M$) at the point $p$. We see that $\dim{T_p M} = \dim{M}$.
 
-#### Definition without Euclidean Space
+## Definition without Euclidean Space
 
 In the above analysis, we discover some differential operators independent of the embedding function $X^\mu$. They are adopted as the definitions that exist by themselves.
 
@@ -147,7 +147,7 @@ Again, let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart 
         \mu = 1,2,...,m
         $$
 
-#### Change of Basis
+## Change of Basis
 
 Suppose we have two charts $(U_i, \varphi_i), (U_j, \varphi_j)$ that cover a common point $p \in M$. The coordinates of $p$ in the two charts are $x \equiv \varphi_i(p), y \equiv \varphi_j(p)$. The basis vectors in the two charts are 
 
@@ -184,7 +184,7 @@ $$
 
 We notice that the transformation matrices for $V^\mu$ and $e_\mu$ are *inverse* of each other. 
 
-### One-forms and Cotangent Space
+## One-forms and Cotangent Space
 
 *Definition*:
 
@@ -192,13 +192,13 @@ We notice that the transformation matrices for $V^\mu$ and $e_\mu$ are *inverse*
 
 - **Cotangent vectors (one-forms)**: elements in $T_p^* M$ (i.e. *linear* functions $\omega: T_p M \to \mathbb{R}$)
 
-#### General Form of One-forms
+## General Form of One-forms
 
 $$
 \omega = \omega_\mu dx^\mu
 $$
 
-#### Inner Product
+## Inner Product
 
 *Definition*: 
 
@@ -215,9 +215,9 @@ $$
 \end{aligned}
 $$
 
-#### Change of Basis
+## Change of Basis
 
-### Tensors and Tensor Fields
+## Tensors and Tensor Fields
 
 *Definition*:
 
@@ -284,7 +284,7 @@ $$
     
     - **Vector fields**: a vector which is assigned *smoothly* to each point of the manifold $M$
 
-### Induced Maps: Pushforward and Pullback
+## Induced Maps: Pushforward and Pullback
 
 *Definition*: Let $f: M \to N$ be a smooth map. 
 
@@ -458,5 +458,5 @@ $$
     \frac{\partial y^{\nu_r}}{\partial x^{\mu_r}} dx^{\mu_r}
     $$
 
-### Sub-manifolds
+## Sub-manifolds
 

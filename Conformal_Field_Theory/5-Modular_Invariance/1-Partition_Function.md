@@ -1,6 +1,6 @@
-## Conformal Field Theory on Torus
+# Conformal Field Theory on Torus
 
-### Modular Parameter
+## Modular Parameter
 
 A **torus** may be defined by specifying two *linearly independent lattice vectors* on the plane and *identifying points* that differ by an integer combination of these vectors. 
 
@@ -21,7 +21,7 @@ $$
 
 called the **modular parameter**. 
 
-### Partition Function
+## Partition Function
 
 Recall that the *finite* time evolution and spatial translation are done by the operators
 
@@ -101,7 +101,7 @@ $$
 
 It depends on the ratio $\tau$ only, as expected. 
 
-### Modular Invariance
+## Modular Invariance
 
 Let two periods $\omega'_{1,2}$ describe the *same* lattice on torus as $\omega_{1,2}$. Since the points $\omega'_1$ and $\omega'_2$ also belong to the lattice, they must be expressible as integer combinations of $\omega_1$ and $\omega_2$:
 
@@ -138,7 +138,7 @@ $$
 
 i.e. matrices in $SL(2,\mathbb{Z})$ only differing by a sign change are identified. 
 
-### Generators of Modular Group
+## Generators of Modular Group
 
 <center>
 
@@ -191,4 +191,4 @@ $$
 
 However, do not forget that we are restricting the calculation in the group $PSL(2,\mathbb{Z})$, where we identify matrices differing by a sign change. Thus $-1$ is the same as $1$. 
 
-### Fundamental Domain
+## Fundamental Domain

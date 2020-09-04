@@ -1,6 +1,6 @@
-## Higher Homotopy Groups
+# Higher Homotopy Groups
 
-### Higher Dimensional Loops
+## Higher Dimensional Loops
 
 *Definition*：
 

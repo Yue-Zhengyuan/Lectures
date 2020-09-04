@@ -1,6 +1,6 @@
-## Integration of Differential Forms
+# Integration of Differential Forms
 
-### Orientation
+## Orientation
 
 *Definition*:
 
@@ -54,11 +54,11 @@
 
     Since $\omega$ is defined on an orientable manifold, the determinant should either be always positive or always negative. 
 
-### Integration of Forms
+## Integration of Forms
 
 Let $f: M \to \mathbb{R}$ be a function defined on $m$-dimensional manifold $M$; $\omega$ is a volume element. 
 
-#### On One Chart
+## On One Chart
 
 In one chart $(U, \varphi)$ with coordinates $x$, we define the integration in $U$ simply as the ordinary integration in the coordinate space $\varphi(U)$:
 
@@ -70,7 +70,7 @@ $$
 
 Here we used $dx^1 \cdots dx^m = dx^1 \wedge \cdots dx^m$. 
 
-#### On the Whole Manifold
+## On the Whole Manifold
 
 *Definition*: Take an *open* covering $\{U_i\}$ of $M$ such that each point in $M$ is covered with *a finite number of $U_i$* (we assume that this is possible).
 

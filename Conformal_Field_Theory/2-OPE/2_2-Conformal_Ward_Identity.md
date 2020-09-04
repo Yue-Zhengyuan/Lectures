@@ -1,4 +1,4 @@
-## Conformal Ward Identity
+# Conformal Ward Identity
 
 
 The three Ward Identity above can be combined into a single equation.

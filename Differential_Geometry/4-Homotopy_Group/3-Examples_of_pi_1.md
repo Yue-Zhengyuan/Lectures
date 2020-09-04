@@ -1,6 +1,6 @@
-## Examples of Fundamental Groups
+# Examples of Fundamental Groups
 
-### Circle (1-Sphere) $S^1$
+## Circle (1-Sphere) $S^1$
 
 ----
 
@@ -12,7 +12,7 @@ $$ \pi_1(S^1) \cong \mathbb{Z}$$
 
 ----
 
-### Product of Spaces
+## Product of Spaces
 
 ----
 

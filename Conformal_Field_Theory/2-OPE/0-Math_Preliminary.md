@@ -1,6 +1,6 @@
-## Math Preliminary: Complex Analysis 
+# Math Preliminary: Complex Analysis 
 
-### Cauchy Integral Formula
+## Cauchy Integral Formula
 
 For any function defined in a region on the complex plane, we have the **Laurent expansion** around a point $z_0$ in that region:
 
@@ -79,7 +79,7 @@ $$
     \oint_C dz \, \frac{f(z)}{z-z_0}
     $$
 
-### The Residue Theorem
+## The Residue Theorem
 
 Suppose that
 

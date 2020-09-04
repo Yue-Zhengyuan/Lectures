@@ -1,6 +1,6 @@
-## Feynman Path Integral
+# Feynman Path Integral
 
-### Path Integral in Phase Space 
+## Path Integral in Phase Space 
 
 The **path integral** is introduced in the (in position space) by inserting a series of identity at time $t_k=k\epsilon \, (k = 1,2,...,N-1)$ in the **propagator**:
 
@@ -77,4 +77,4 @@ $$
 \end{aligned}
 $$
 
-### Path Integral in Configuration (Coordinate) Space
+## Path Integral in Configuration (Coordinate) Space

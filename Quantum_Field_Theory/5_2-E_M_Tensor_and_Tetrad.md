@@ -1,6 +1,6 @@
-## Energy-Momentum Tensor and Metric
+# Energy-Momentum Tensor and Metric
 
-### Alternative Definition of Energy-Momentum Tensor
+## Alternative Definition of Energy-Momentum Tensor
 
 Since the tensor $T^{\mu \nu}$ can be made symmetric, we can write
 
@@ -38,7 +38,7 @@ $$
 
 which is also applicable to curved spacetime with minor modification:
 
-### Tetrad
+## Tetrad
 
 On a Riemannian manifold, since it is "locally flat" at every point, we can introduce at each point a *local orthogonal frame of basis vectors* of the cotangent space:
 

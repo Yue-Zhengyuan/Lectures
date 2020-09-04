@@ -1,4 +1,4 @@
-## Correlation Functions and Ward Identity
+# Correlation Functions and Ward Identity
 
 The **correlation function** is defined by the "mean value" of a product of the field at different places
 
@@ -129,4 +129,4 @@ $$
 \end{aligned}
 $$
 
-### Ward Identity for Translation
+## Ward Identity for Translation

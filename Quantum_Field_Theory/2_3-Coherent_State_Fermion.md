@@ -1,6 +1,6 @@
-## Fermion Coherent State
+# Fermion Coherent State
 
-### Grassmann Numbers
+## Grassmann Numbers
 
 Analogous to the boson case, we *define* the fermion coherent state as the eigenstate of the fermion annihilation operators $c_i$ (suppose there are $n$ kinds of fermions in the system):
 
@@ -27,7 +27,7 @@ $$
 
 They are called **Grassmann numbers**.
 
-### Grassmann Algebra
+## Grassmann Algebra
 
 For obvious reasons, we also require $\{c_i,\eta_j\}=0$ for
 $i\neq j$.
@@ -56,9 +56,9 @@ $\{c_i,c_j\}=\{c_i,\eta_j\}=\{c_i^\dagger ,c_j^\dagger\}=\{\bar{\eta}_i,\bar{\et
 
 These anti-commutation relations form the **Grassmann algebra**.
 
-### Building Coherent State from Vacuum
+## Building Coherent State from Vacuum
 
-#### One Kind of Fermions
+## One Kind of Fermions
 
 First consider the case of only one kind of fermions. To build the coherent state from vacuum, we again examine the expansion
 
@@ -129,7 +129,7 @@ $$
 
 Note the sign differences from the bosonic case.
 
-#### Many Kinds of Fermions
+## Many Kinds of Fermions
 
 For systems containing multiple kinds of fermions,
 
@@ -145,7 +145,7 @@ $$
 
 This easy generalization is true because $\eta c^\dagger$ as a whole commutes between different kind of fermions.
 
-### Differentiation and Integration of Grassmann Variables
+## Differentiation and Integration of Grassmann Variables
 
 Before we continue to write down the resolution of identity in the fermion case in analogy, we must first define how to differentiate and integrate functions of Grassmann numbers.
 
@@ -173,7 +173,7 @@ $$
 
 Because of the properties above, people *define* that for functions of Grassmann variables, *differentiation and integration are the same*.
 
-### Resolution of Identity
+## Resolution of Identity
 
 $$
 \int \prod_k d\bar{\eta}_k d\eta_k 
@@ -211,7 +211,7 @@ $$
 \end{aligned}
 $$
 
-### Operators in Coherent State Representation
+## Operators in Coherent State Representation
 
 We again want to find the matrix elements of the 2-body operator
 
@@ -250,7 +250,7 @@ Again, we can get the result by a formal replacement
 
 $\left\langle \xi \left|A(c^\dagger ,c)\right|\eta \right\rangle =e^{\bar{\xi} \eta}A(\bar{\xi},\eta)$
 
-### Coherent State Path Integral for Fermions
+## Coherent State Path Integral for Fermions
 
 Similar to the bosonic case, we insert the *over-complete* coherent
 state basis:

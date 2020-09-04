@@ -1,6 +1,6 @@
-## Continuous Symmetry Transformations
+# Continuous Symmetry Transformations
 
-### Continuous Symmetry
+## Continuous Symmetry
 
 Our physical system is described by the following action depending on the fields and the *first-order* derivative of them:
 

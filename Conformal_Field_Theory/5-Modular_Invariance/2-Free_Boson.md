@@ -1,4 +1,4 @@
-## Free Boson on Torus
+# Free Boson on Torus
 
 ----
 

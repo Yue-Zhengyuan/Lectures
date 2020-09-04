@@ -1,4 +1,4 @@
-## Compactified Boson
+# Compactified Boson
 
 Recall that a free boson field $\phi(z,\bar{z})$ compactified on a circle of radius $R$ is identified in the following way:
 
@@ -11,7 +11,7 @@ i.e. $\phi$ is treated as an angular variable.
 
 *Remark*: We emphasize that the circle has no direct relation with the manifold described by the variables $z,\bar{z}$. The latter is the space the theory is defined on, which in our case is the Riemann sphere respectively a torus.
 
-### Partition Function
+## Partition Function
 
 The currents have the mode expansion
 
@@ -114,7 +114,7 @@ Z_{\text{cb.}}(\tau, \bar{\tau})
 \bar{q}^{(m/R - nR/2)^2/2}
 $$
 
-### Invariance of $Z_\text{cb.}$ under *S*-Transformations
+## Invariance of $Z_\text{cb.}$ under *S*-Transformations
 
 To show the invariance of the partition function under the *S*-transformation ($\tau \to -1/\tau$)
 
@@ -136,11 +136,11 @@ $$
 \right]
 $$
 
-### Appendix A: <br>Proof of Poisson Resummation Formula
+## Appendix A: <br>Proof of Poisson Resummation Formula
 
 balabala
 
-### Appendix B: Calculation of Compactification <br>Radius from Partition Function
+## Appendix B: Calculation of Compactification <br>Radius from Partition Function
 
 *Reference: Physical Review B **99**, 115105 (2019)*
 

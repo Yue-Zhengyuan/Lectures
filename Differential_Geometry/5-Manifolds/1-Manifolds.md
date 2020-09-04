@@ -1,4 +1,4 @@
-## Manifolds
+# Manifolds
 
 *Definition*:
 

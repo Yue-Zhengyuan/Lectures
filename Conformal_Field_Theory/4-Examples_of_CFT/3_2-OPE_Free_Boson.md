@@ -1,6 +1,6 @@
-## Operator Product Expansion: Free Boson
+# Operator Product Expansion: Free Boson
 
-### Energy-Momentum Tensor in Complex Coordinates
+## Energy-Momentum Tensor in Complex Coordinates
 
 Euclidean Action:
 
@@ -147,7 +147,7 @@ $$
 - \langle \partial \phi(z) \partial \phi(w) \rangle)
 $$
 
-### OPE of Field with Itself
+## OPE of Field with Itself
 
 Recall that the field correlation function for free boson is
 
@@ -194,7 +194,7 @@ $$
 
 *Remark*: Exchanging the two fields ($z$ and $w$) does not affect the correlation function, es expected for bosons.
 
-### OPE of Field and Energy-Momentum Tensor
+## OPE of Field and Energy-Momentum Tensor
 
 Using a generalized Wick's theorem $(\phi_{23}(w) \equiv \phi_2(w) \phi_3(w))$
 
@@ -217,7 +217,7 @@ $$
 \end{aligned}
 $$
 
-### OPE of Energy-Momentum Tensor with Itself
+## OPE of Energy-Momentum Tensor with Itself
 
 $$
 \begin{aligned}

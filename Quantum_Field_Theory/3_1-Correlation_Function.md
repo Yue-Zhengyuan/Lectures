@@ -1,4 +1,4 @@
-## Correlation Function
+# Correlation Function
 
 For a *single* point particle, the **$n$-point correlation function** is defined as
 
@@ -35,7 +35,7 @@ $$
 
 ----
 
-### Euclidean Formalism
+## Euclidean Formalism
 
 In statistical physics, people usually define all correlation functions in *imaginary time*, and then perform the **Wick rotation**
 

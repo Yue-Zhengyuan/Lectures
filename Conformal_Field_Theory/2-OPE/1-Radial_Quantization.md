@@ -1,6 +1,6 @@
-## Radial Quantization
+# Radial Quantization
 
-### From Cylinder to Complex Plane 
+## From Cylinder to Complex Plane 
 
 A CFT can be compactified on a *cylinder*: the axial direction of the cylinder represents time $t=x^0$. We can map the system to the *complex plane* by:
 
@@ -17,7 +17,7 @@ Then constant $t$ (or $x^0$) points map to a *circle* centered at the origin: th
 
 </center>
 
-### Asymptotic States
+## Asymptotic States
 
 We assume the existence of a vacuum state $|0\rangle$ upon which a Hilbert space is constructed by application of creation
 operators (or their likes).
@@ -29,7 +29,7 @@ For an *interacting* field $\phi$, we assume that *the Hilbert space is
 the same as for a free field*, except that the actual energy eigenstates
 are different.
 
-#### In State
+## In State
 
 Suppose then that the interaction is slowly turned off as
 $t\to \pm \infty$ and that the *asymptotic* field
@@ -48,7 +48,7 @@ $$
 \phi(z, \bar{z}) |0\rangle
 $$
 
-### Hermitian Conjugate of Fields
+## Hermitian Conjugate of Fields
 
 $$
 \phi^\dagger(z, \bar{z})
@@ -61,9 +61,9 @@ $$
 = | \phi_{\text{in}} \rangle^\dagger
 $$
 
-### Laurent Mode Expansion of the Fields
+## Laurent Mode Expansion of the Fields
 
-#### Around the Origin
+## Around the Origin
 
 A field $\phi(z, \bar{z})$ of conformal dimensions
 $(h, \bar{h})$ can be expanded as a Laurent series around the
@@ -114,7 +114,7 @@ $$
 \phi_{-m,-n} = \phi_{m,n}^\dagger
 $$
 
-#### Around Any Point 
+## Around Any Point 
 
 For simplicity, we now focus on holomorphic fields depending only on $z$. It is possible to expand around an arbitrary point $w$, instead of the origin:
 

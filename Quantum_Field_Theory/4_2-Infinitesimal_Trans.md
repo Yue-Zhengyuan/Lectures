@@ -1,6 +1,6 @@
-## Infinitesimal Transformations
+# Infinitesimal Transformations
 
-### Generators of Infinitesimal Transformation
+## Generators of Infinitesimal Transformation
 
 Now consider **infinitesimal transformations**. Assume that the transformation depends on some set of parameters $\left\{\omega_a\right\}$, i.e.
 
@@ -76,7 +76,7 @@ i G_a\phi (x)
 - \frac{\partial F}{\partial \omega_a}(\phi(x),0)
 $$
 
-### Infinitesimal Transformation Generators on Scalar Fields
+## Infinitesimal Transformation Generators on Scalar Fields
 
 For *scalar* fields, the functional $F$ depends on the parameters $\omega$ only through the coordinates $x$. Therefore
 
@@ -92,7 +92,7 @@ $$
 
 Now we give some examples. 
 
-#### Rigid Translation
+## Rigid Translation
 
 The *rigid* translation is
 
@@ -120,7 +120,7 @@ $$
 P_{\mu} = -i \partial_{\mu}
 $$
 
-#### Lorentz Transformation
+## Lorentz Transformation
 
 The Lorentz transformation is also *defined* by its effect on the
 position:
@@ -273,7 +273,7 @@ $$
 \boldsymbol{L} = \boldsymbol{x} \times \boldsymbol{p}
 $$
 
-#### Scaling (Dilation)
+## Scaling (Dilation)
 
 A scaling in the position means
 
@@ -308,7 +308,7 @@ $$
 D = -i x^{\mu} \partial_{\mu}
 $$
 
-#### Special Conformal Transformation (SCT)
+## Special Conformal Transformation (SCT)
 
 The finite SCT is defined as
 

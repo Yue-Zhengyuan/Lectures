@@ -1,4 +1,4 @@
-## Example: Free Boson
+# Example: Free Boson
 
 Usual Action $(c=1,\,x^0=t,\,x^1=x)$
 
@@ -21,7 +21,7 @@ $$
 
 Usually the normalization constant $g$ is set as $1/4\pi$.
 
-### Canonical Quantization on the Cylinder
+## Canonical Quantization on the Cylinder
 
 Let us put the boson field $\phi$ on a cylinder with circumference $L$; this makes the space in which the field lives **compact** (i.e. connected and closed). We also take the periodic boundary condition:
 
@@ -158,7 +158,7 @@ $$
 
 However, *the $n=0$ mode vanishes* (but in SHO we have $\omega_0 = \hbar \omega / 2 \ne 0$): it is a consequence of the absence of a mass term, which, with the boundary conditions chosen, is the same as conformal invariance.
 
-#### Creation and Annihilation Operators
+## Creation and Annihilation Operators
 
 For each mode $n$, we can define the creation and annihilation operators in a way analogous to the simple harmonic oscillator:
 
@@ -288,7 +288,7 @@ $$
 \end{aligned}
 $$
 
-#### Field Operator in Heisenberg Picture
+## Field Operator in Heisenberg Picture
 
 In the Heisenberg picture $(\hbar = 1)$:
 
@@ -390,7 +390,7 @@ $$
 \end{aligned}
 $$
 
-#### The Holomorphic Fields
+## The Holomorphic Fields
 
 Going to the Euclidean spacetime by Wick rotation $(t \to i \tau)$, define
 
@@ -439,7 +439,7 @@ a_0 \equiv \bar{a}_0 \equiv
 \frac{\pi_0}{\sqrt{4\pi g}} 
 $$
 
-### Vertex Operators
+## Vertex Operators
 
 The **vertex operators** for free boson is defined as
 
@@ -477,11 +477,11 @@ $$
 
 ----
 
-### The Fock Space
+## The Fock Space
 
-### Twisted (Anti-Periodic) Boundary Condition
+## Twisted (Anti-Periodic) Boundary Condition
 
-### Compactified Boson
+## Compactified Boson
 
 The free boson Lagrangian is *invariant* under a constant shift of the field:
 

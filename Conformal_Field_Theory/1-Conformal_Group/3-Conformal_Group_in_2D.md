@@ -1,6 +1,6 @@
-## The Conformal Group in 2D
+# The Conformal Group in 2D
 
-### Conformal Mappings
+## Conformal Mappings
 
 Apply the general constraint on conformal transformation
 
@@ -37,7 +37,7 @@ Now we can conclude that:
 
 *A holomorphic function $f(z)=z+\epsilon (z)$ gives an infinitesimal 2D conformal transformation* $z\to f(z)$.
 
-### Differentiation and Integration in Holomorphic Coordinates
+## Differentiation and Integration in Holomorphic Coordinates
 
 The inverse relations are
 
@@ -63,7 +63,7 @@ $$
 \end{aligned}
 $$
 
-#### Jacobian
+### Jacobian
 
 $$
 \begin{aligned}
@@ -89,7 +89,7 @@ $$
 dz \, d\bar{z} = -2i \, dx^0 dx^1
 $$
 
-#### Laplacian
+### Laplacian
 
 In particular, the Laplacian $\partial_{\rho}\partial^{\rho}$
 becomes $\partial \bar{\partial}$, since
@@ -124,7 +124,7 @@ $$
 \end{aligned}
 $$
 
-#### The Metric Tensor
+## The Metric Tensor
 
 The *flat* metric in the holomorphic coordinates becomes
 
@@ -173,7 +173,7 @@ $$
 \end{pmatrix}
 $$
 
-### Global Conformal Transformations
+## Global Conformal Transformations
 
 The set of all *global* conformal transformations (everywhere well-defined) consists of mappings of the form
 
@@ -211,7 +211,7 @@ to the mapping, we can verify that the composition of two projective transformat
 Therefore, the **global conformal group** in 2D is *isomorphic* to the group $SL(2,\mathbb{C})$, the group of *complex invertible $2 \times 2$ matrices with unit determinant*.
 
 
-### Generators of Conformal Transformation
+## Generators of Conformal Transformation
 
 The generators of (global or local) 2D conformal transformation can be found from the Laurent expansion (about the origin) of the mapping $z\to z+\epsilon (z)$: mathematically, we write
 

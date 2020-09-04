@@ -1,10 +1,10 @@
-## Homology Groups of Simplicial Complexes <br>Part 2: Examples of Homology Groups
+# Homology Groups of Simplicial Complexes <br>Part 2: Examples of Homology Groups
 
-### Useful Theorems (Repeated Here)
+## Useful Theorems (Repeated Here)
 
 ----
 
-#### *Theorem 1*: (0th Homology group of connected simplicial complex)
+## *Theorem 1*: (0th Homology group of connected simplicial complex)
 
 Let $K$ be a *connected* simplicial complex. Then
 
@@ -14,7 +14,7 @@ $$
 
 ----
 
-#### *Theorem 2*: (Fundamental theorem of homomorphism)
+## *Theorem 2*: (Fundamental theorem of homomorphism)
 
 Let $f: G_1 \to G_2$ be a group homomorphism. Then
 
@@ -22,7 +22,7 @@ $$G_1 / \ker{f} \cong \text{im }f$$
 
 ----
 
-### Example 1
+## Example 1
 
 <center>
 
@@ -37,7 +37,7 @@ $$
 
 This simplicial complex is *connected*, and contains 0- and 1-simplexes only. Thus we only need to find $H_0(K)$ and $H_1(K)$.
 
-#### The Chain Groups
+## The Chain Groups
 
 $$
 \begin{aligned}
@@ -48,7 +48,7 @@ $$
 \end{aligned}
 $$
 
-#### Homology Group $H_0(K)$
+## Homology Group $H_0(K)$
 
 Since $K$ is connected, by [Theorem 1](#theorem-1-0th-homology-group-of-connected-simplicial-complex), we must have
 
@@ -99,7 +99,7 @@ H_1(K) \equiv Z_1(K) / B_1(K) \cong
 \mathbb{Z}^3 / \mathbb{Z}^2 = \mathbb{Z}
 $$
 
-#### Homology Group $H_1(K)$
+## Homology Group $H_1(K)$
 
 - **Cycle Group $Z_1(K)$**
 
@@ -136,7 +136,7 @@ H_1(K) \equiv Z_1(K) / B_1(K) \cong
 \mathbb{Z}/\{0\} = \mathbb{Z}
 $$
 
-### Example 2
+## Example 2
 
 $$
 K = \{p_0, p_1\}

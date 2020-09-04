@@ -1,6 +1,6 @@
-## Conserved Current and Charge
+# Conserved Current and Charge
 
-### Conserved Current
+## Conserved Current
 
 We first calculate the variation of the action under a symmetry operation. The new action is
 

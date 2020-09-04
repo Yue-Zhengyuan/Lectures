@@ -1,8 +1,8 @@
-## Operator Algebra
+# Operator Algebra
 
 The information needed in order to write down all *correlation functions*, i.e. the complete OPE (*including all regular terms*) of all primary fields with each other, and hence solve the field theory, is called the **operator algebra**.
 
-### Two-Point Function Coefficients $C_{a b}$
+## Two-Point Function Coefficients $C_{a b}$
 
 Recall that the two-point function of two primary fields (they must have the *same* conformal dimension, otherwise the correlation function vanishes) is
 
@@ -17,7 +17,7 @@ $$
 C_{ab} = \delta_{ab}
 $$
 
-### OPE of Two Primary Fields
+## OPE of Two Primary Fields
 
 Invariance under scaling transformations requires the operator algebra to have the following general form
 
@@ -36,7 +36,7 @@ where:
 - $k$ (or $\bar{k}$) collectively represents $\{k_1, k_2, ...\}$ (or $\{\bar{k}_1, \bar{k}_2, ...\}$)
 - $K \equiv \sum_{i} k_i, \, \bar{K} \equiv \sum_{i} \bar{k}_i$
 
-#### Constraint on the Coefficients $C_{12}^{p k \bar{k}}$
+## Constraint on the Coefficients $C_{12}^{p k \bar{k}}$
 
 Introduce a third primary field $\phi_r(w,\bar{w})$, and calculate
 

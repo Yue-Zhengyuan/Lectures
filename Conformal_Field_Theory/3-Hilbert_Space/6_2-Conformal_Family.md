@@ -1,8 +1,8 @@
-## Conformal Families
+# Conformal Families
 
 The set consisting of a *primary field* $\phi$ and *all of its descendants* is called a **conformal family**, sometimes denoted by $[\phi]$. The members of a family *transform amongst themselves under conformal transformations*.
 
-### OPE of $T(z)$ with Descendant Fields
+## OPE of $T(z)$ with Descendant Fields
 
 $$
 \begin{aligned}
@@ -32,7 +32,7 @@ T(z) \partial\phi(w)
 + \frac{\partial^2 \phi(w)}{z-w}
 $$
 
-### The Operator Algebra
+## The Operator Algebra
 
-### Conformal Blocks
+## Conformal Blocks
 

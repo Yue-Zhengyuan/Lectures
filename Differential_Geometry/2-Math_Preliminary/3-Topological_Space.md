@@ -1,4 +1,4 @@
-## Topological Spaces
+# Topological Spaces
 
 *Definition*:
 
@@ -26,13 +26,13 @@ We usually say $X$ is a topological space, without specific reference to the col
     - **Metric topology**
     - **Metric space**
 
-### Continuous Maps
+## Continuous Maps
 
 *Definition*:
 
 - **Continuous map**
 
-### Neighborhoods and Hausdorff Spaces
+## Neighborhoods and Hausdorff Spaces
 
 *Definition*:
 
@@ -41,7 +41,7 @@ We usually say $X$ is a topological space, without specific reference to the col
 
 - **Hausdorff space**
 
-### Closed Set
+## Closed Set
 
 *Definition*:
 
@@ -50,7 +50,7 @@ We usually say $X$ is a topological space, without specific reference to the col
     - **Interior**
     - **Boundary**
 
-### Compactness
+## Compactness
 
 *Definition*:
 
@@ -67,7 +67,7 @@ A subset $X \in \mathbb{R}^n$ is compact *if and only if* it is both *closed and
 
 ----
 
-### Connectedness
+## Connectedness
 
 *Definition*:
 

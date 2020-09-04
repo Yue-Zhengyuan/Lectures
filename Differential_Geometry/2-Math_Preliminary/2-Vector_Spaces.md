@@ -1,8 +1,8 @@
-## Vector Spaces
+# Vector Spaces
 
-### Vectors and Vector Spaces
+## Vectors and Vector Spaces
 
-### Linear Maps, Images and Kernels
+## Linear Maps, Images and Kernels
 
 *Definition*: Let $V, W$ be two vector spaces over the field $K$ (such as $\mathbb{C}, \mathbb{R}$).
 
@@ -32,9 +32,9 @@ $$
 
 ----
 
-### Dual Vector Space
+## Dual Vector Space
 
-### Inner Product and Adjoint
+## Inner Product and Adjoint
 
 *Definition*:
 
@@ -61,7 +61,7 @@ $$
 
 ----
 
-### Tensors
+## Tensors
 
 *Definition*: 
 

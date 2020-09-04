@@ -1,8 +1,8 @@
-## Conformal Group in $d \ge 3$
+# Conformal Group in $d \ge 3$
 
-### The Special Conformal Field Transformation (SCT)
+## The Special Conformal Field Transformation (SCT)
 
-### Finite Conformal Transformations
+## Finite Conformal Transformations
 
 $$
 \begin{aligned}

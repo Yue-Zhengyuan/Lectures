@@ -1,6 +1,6 @@
-## Central Extension of Witt Algebra
+# Central Extension of Witt Algebra
 
-### Central Extension of Lie Groups and Lie Algebra
+## Central Extension of Lie Groups and Lie Algebra
 
 A **central extension** of a group $G$ is a short exact sequence of groups
 
@@ -19,7 +19,7 @@ Obviously, the center of $E$ is an *invariant* subgroup of $E$.
 
 The set of isomorphism classes of central extensions of $G$ by $A$ (where $G$ acts *trivially* on $A$) is in one-to-one correspondence with the cohomology group $H^2(G,A)$.
 
-### Virasoro Algebra as Central Extension of Witt Algebra
+## Virasoro Algebra as Central Extension of Witt Algebra
 
 There is a *unique* central extension of the Witt algebra, called the **Virasoro algebra**.
 
@@ -107,7 +107,7 @@ and the Virasoro algebra is
 
 $\left[L_n,L_m\right]=(n-m)L_{n+m}+\frac{c}{12}n\left(n^2-1\right)\delta_{m+n, 0}$
 
-#### Other Commutation Rules in Virasoro Algebra
+## Other Commutation Rules in Virasoro Algebra
 
 Adding the anti-holomorphic parts into the algebra, we further obtain
 

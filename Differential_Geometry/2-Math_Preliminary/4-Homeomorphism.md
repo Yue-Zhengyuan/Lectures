@@ -1,6 +1,6 @@
-## Homeomorphism and Topological Invariants
+# Homeomorphism and Topological Invariants
 
-### Homeomorphisms
+## Homeomorphisms
 
 *Definition*:
 
@@ -29,4 +29,4 @@
 
 ----
 
-### Topological Invariants
+## Topological Invariants
