@@ -1,15 +1,5 @@
 # Coriolis Force and Centrifugal Force
 
-PHYS1110D Supplementary Material 4   
-by YUE Zhengyuan
-
-----
-
-*Review before Reading*:   
-Matrix Description of Rotations
-
-----
-
 In high school geography, you learned about the **Coriolis effect**: for an observer *rotating together* with the earth, he/she will see an additional force called the **Coriolis force** exerted on all moving objects:
 
 - If the object is moving in the *northern hemisphere*, the Coriolis force is towards the *right* of the object
@@ -19,7 +9,7 @@ A famous example of the Coriolis effect is the spinning of cyclones. In northern
 
 <center>
 
-![image](Figures/Cyclone.png)   
+![](Figures/Cyclone.png)   
 *Spinning direction of cyclones in northern and southern hemisphere*
 
 </center>
@@ -197,7 +187,7 @@ $$
 \end{aligned}
 $$
 
-*Remark*: In Wikipedia and most textbooks, these two results are obtained through some weird "operator" dealing with time derivatives in rotating frames. But if we stick to the *most rigorous* matrix formulation (as we do here), we only need ordinary time derivatives. "Physics should be made as simple as possible, but *not any simpler*." That's the problem of many introductory physics courses.
+*Remark*: In Wikipedia and most textbooks, these two results are obtained through some weird "operator" dealing with time derivatives in rotating frames. But if we stick to the *most rigorous* matrix formulation (as we do here), we only need ordinary time derivatives. 
 
 ## The (Fictitious) Forces Observed by $K'$
 
@@ -254,7 +244,7 @@ You have already encountered the classic "spinning skater" problem when learning
 
 <center>
 
-![image](Figures/Spinning_skater.png)
+![](Figures/Spinning_skater.png)
 
 </center>
 

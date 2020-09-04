@@ -1,8 +1,8 @@
-# Introduction to <br>Linear Algebra (Part 2)
+# Introduction to Linear Algebra (Part 2)
 
 <center>
 
-![image](Figures/LA_3b1b.png)
+![](Figures/LA_3b1b.png)
 
 </center>
 
@@ -10,13 +10,32 @@
 
 [LA_3b1b]: https://youtu.be/fNk_zzaMoSs
 
+### **Contents**
+
+- [Determinant of a Matrix](#determinant-of-a-matrix)
+    - [2D Determinant](#2d-determinant)
+    - [3D Determinant](#3d-determinant)
+- [Inverse of Linear Transformation and Matrix](#inverse-of-linear-transformation-and-matrix)
+    - [Determinant and Matrix Invertibility](#determinant-and-matrix-invertibility)
+    - [Inverse of Product of Matrices](#inverse-of-product-of-matrices)
+    - [EXERCISE](#exercise)
+- [Change of Basis](#change-of-basis)
+    - [Description of the New Basis](#description-of-the-new-basis)
+    - [Components of Vectors along New Basis](#components-of-vectors-along-new-basis)
+    - [Matrix of Linear Transformations under New Basis](#matrix-of-linear-transformations-under-new-basis)
+    - [EXERCISE](#exercise-1)
+- [Appendix A: Geometrical Meaning of Determinant](#appendix-a-geometrical-meaning-of-determinant)
+    - [2D Determinant = Parallelogram Area](#2d-determinant--parallelogram-area)
+    - [3D Determinant = Parallelepiped Volume](#3d-determinant--parallelepiped-volume)
+    - [EXERCISE](#exercise-2)
+
 ## Determinant of a Matrix
 
 ### 2D Determinant
 
 <center>
 
-![image](Figures/2d_det.svg)   
+![](Figures/2d_det.svg)   
 *Geometric meaning of 2D determinant*
 
 </center>
@@ -30,12 +49,10 @@ A = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-We can use the two vectors to construct a **parallelogram** $ABCD$ (see figure), whose *area* is given by the formula (see [Appendix]; try to prove it by yourself):
-
-[Appendix]: #appendix-a-brproof-of-geometrical-meaning-of-determinant
+We can use the two vectors to construct a **parallelogram** $ABCD$ (see figure), whose *area* is given by the formula (see Appendix; try to prove it by yourself):
 
 $$
-\text{Area of } ABCD = 
+\text{Area} = 
 |a_1 b_2 - a_2 b_1|
 $$
 
@@ -56,11 +73,11 @@ is a right-hand basis.
 
 When $\det A = 0$, it means that $a$ and $b$ are *on the same line*.
 
-## 3D Determinant
+### 3D Determinant
 
 <center>
 
-![image](Figures/3d_det.png)   
+![](Figures/3d_det.png)   
 *Geometric meaning of 3D determinant*
 
 </center>
@@ -75,7 +92,7 @@ A = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-We can use the three vectors to construct a **parallelepiped** (see figure), whose *volume* is given by the formula (see [Appendix](#appendix-a-geometrical-meaning-of-determinant)):
+We can use the three vectors to construct a **parallelepiped** (see figure), whose *volume* is given by the formula (see Appendix):
 
 $$
 \begin{aligned}
@@ -85,7 +102,22 @@ $$
 \end{aligned}
 $$
 
-The expression inside the absolute value sign $| \, |$ is defined as the **determinant** of matrix $A$, still denoted by $\det A$. 
+The expression inside the absolute value sign $| \, |$ is defined as the **determinant** of matrix $A$, still denoted by $\det A$. It can be rewritten in terms of 2D determinants:
+
+$$
+\det A = a_1 \det \begin{bmatrix}
+    b_2 & c_2 \\
+    b_3 & c_3 
+\end{bmatrix}
+- a_2 \det \begin{bmatrix}
+    b_1 & c_1 \\
+    b_3 & c_3 
+\end{bmatrix}
++ a_3 \det \begin{bmatrix}
+    b_1 & c_1 \\
+    b_2 & c_2 
+\end{bmatrix}
+$$
 
 When $\det A > 0$, we say that the two vectors $a, b$ form a **right-hand basis** of the 3D vector space. Thus the standard basis itself
 
@@ -129,13 +161,13 @@ Consider a linear transformation $A$.
 
 <center>
 
-![image](Figures/non_invertible_trans.png)   
+![](Figures/non_invertible_trans.png)   
 *A non-invertible 2D linear transformation*   
 *(Screenshot from the linear transformation demo)*
 
 </center>
 
-First suppose $A$ is in 2D, it is not difficult to understand if $A$ transforms the two basis vectors to the *same line* (see figure), then we lost the information in one dimension, since any linear combination of $A e_1, A e_2$ gives vectors on that same line. Thus the transformation will *not* be invertible. 
+First suppose $A$ is in 2D, it is not difficult to understand if $A$ transforms the two basis vectors to the *same line* (see figure), then we *lost the information in one dimension*, since any linear combination of $A e_1, A e_2$ gives vectors on that same line. Thus the transformation will *not* be invertible. 
 
 Similarly, for $A$ in 3D, if $A$ transforms the two basis vectors to the *same plane* (including the case when all basis vectors are transformed to the same line), then we lost the information in one (or even two) dimension(s). Then the transformation will *not* be invertible. 
 
@@ -207,6 +239,8 @@ $$
 ### EXERCISE
 
 - What is the identity matrix in 2D vector space?
+
+- Calculate $\det 1$. What does it mean?
 
 - For a general $2 \times 2$ matrix
     
@@ -387,13 +421,28 @@ $$
 
 we say that $A$ and $B$ are **similar** to each other (the word "similar" is chosen for obvious reasons). The "sandwich" operation $\mathcal{D}^{-1}A \mathcal{D}$ is called a **similarity transformation**.
 
+### EXERCISE
+
+<center>
+
+![]   
+*An example of change of basis*
+
+</center>
+
+From the information of the figure above:
+
+- Find the matrix $\mathcal{D}$ representing the change of basis.
+
+- Calculate the new components of the vector $v$. Check if your result agrees with the figure.
+
 ## Appendix A: Geometrical Meaning of Determinant
 
 ### 2D Determinant = Parallelogram Area
 
 <center>
 
-![image](Figures/2d_det-solution.svg)   
+![](Figures/2d_det-solution.svg)   
 *Calculation of area of parallelogram ABCD*
 
 </center>
@@ -436,12 +485,12 @@ $$
 
 <center>
 
-![image](Figures/3d_det-solution.png)   
+![](Figures/3d_det-solution.png)   
 *Calculation of area of parallelogram ABCD*
 
 </center>
 
-Let CSTU be the cross-section through C of the parallelepiped parallel to the $\text{xy}$-plane. We observe that if we move the part above CSTU to the bottom of the parallelepiped, we will get a new parallelepiped OPQR-CSTU (notice that OPQR is *in the* $\text{xy}$*-plane*), which has the same volume as the original parallelepiped.
+Let CSTU be the cross-section through C of the parallelepiped parallel to the $xy$-plane. We observe that if we move the part above CSTU to the bottom of the parallelepiped, we will get a new parallelepiped OPQR-CSTU (notice that OPQR is *in the* $xy$*-plane*), which has the same volume as the original parallelepiped.
 
 Let the coordinates of P and R be respectively
 
@@ -533,3 +582,7 @@ V = \det \begin{bmatrix}
     a_{z} & b_{z} & c_{z} \\
 \end{bmatrix}
 $$
+
+### EXERCISE
+
+Generalize the above procedure to derive the expression of the 4D determinant. Its absolute value defines the "volume" of a 4D parallelepiped.

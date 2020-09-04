@@ -1,14 +1,33 @@
-# Introduction to <br>Linear Algebra (Part 1)
+# Introduction to Linear Algebra (Part 1)
 
 <center>
 
-![image](Figures/LA_3b1b.png)
+![](Figures/LA_3b1b.png)
 
 </center>
 
 *Credit*: Many ideas of this material comes from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
 
 [LA_3b1b]: https://youtu.be/fNk_zzaMoSs
+
+### **Contents**
+
+- [Vector Spaces and Basis Vectors](#vector-spaces-and-basis-vectors)
+    - [Vector Spaces](#vector-spaces)
+    - [Basis Vectors](#basis-vectors)
+    - [Note on Notations: Einstein Summation Rule](#note-on-notations-einstein-summation-rule)
+    - [Inner Product](#inner-product)
+    - [Orthonormal Basis Vectors](#orthonormal-basis-vectors)
+- [Linear Transformations](#linear-transformations)
+    - [Matrix Representation of Linear Transformations](#matrix-representation-of-linear-transformations)
+    - [Interlude: Transpose of Matrix](#interlude-transpose-of-matrix)
+    - [Examples of 2D Linear Transformations](#examples-of-2d-linear-transformations)
+    - [EXERCISE](#exercise)
+- [Matrix-Vector Multiplication](#matrix-vector-multiplication)
+    - [EXERCISE](#exercise-1)
+- [Composition of Linear Transformation](#composition-of-linear-transformation)
+    - [EXERCISE](#exercise-2)
+
 
 ## Vector Spaces and Basis Vectors
 
@@ -63,7 +82,7 @@ i.e. the zero vector is unique.
 
     <center>
 
-    ![image](Figures/different_basis.svg)   
+    ![](Figures/different_basis.svg)   
     *Two different vectors can have the same components (2, 3) <br>under different basis; the figures are drawn to the same scale*
 
     </center>
@@ -216,7 +235,7 @@ We note that components of $v'$ along the new basis are the same as the componen
 
 <center>
 
-![image](Figures/linear_trans.svg)   
+![](Figures/linear_trans.svg)   
 *An arbitrary linear transformation in 2D. In this figure $v = 2 e_1 + 2 e_2$.*
 
 </center>
@@ -284,7 +303,7 @@ $$
 
 This is called a **row vector**.
 
-### Examples of Linear Transformations (in 2D)
+### Examples of 2D Linear Transformations
 
 In all the following examples, we use the standard basis to describe the transformation. 
 
@@ -292,7 +311,7 @@ In all the following examples, we use the standard basis to describe the transfo
 
     <center>
 
-    ![image](Figures/rotation_2d.svg)   
+    ![](Figures/rotation_2d.svg)   
     *2D counter-clockwise rotation by angle $\theta$*
 
     </center>
@@ -323,7 +342,7 @@ In all the following examples, we use the standard basis to describe the transfo
 
     <center>
 
-    ![image](Figures/reflection_2d.svg)   
+    ![](Figures/reflection_2d.svg)   
     *Reflection with respect to x-axis*
 
     </center>
@@ -332,7 +351,7 @@ In all the following examples, we use the standard basis to describe the transfo
 
     <center>
 
-    ![image](Figures/scale_2d.svg)   
+    ![](Figures/scale_2d.svg)   
     *Scaling by $e'_1 = 1.5 e_1$ (stretching) and $e'_2 = 0.8 e_2$ (shortening)*
 
     </center>
@@ -341,7 +360,7 @@ In all the following examples, we use the standard basis to describe the transfo
 
     <center>
 
-    ![image](Figures/shear_2d.svg)   
+    ![](Figures/shear_2d.svg)   
     *Shear along direction of $e_1$ by $e'_2 = e_2 + e_1$*
 
     </center>
@@ -413,7 +432,7 @@ $$
 
 <center>
 
-![image](Figures/Mat_on_vec.png)   
+![](Figures/Mat_on_vec.png)   
 *(Have you watched the [videos][LA_3b1b] now?)*
 
 </center>
@@ -431,11 +450,14 @@ v = \begin{bmatrix}
 $$
 
 - Compute the transformation result $A v$. 
+
 - Can you directly read off the answer from the figure above?
 
-## Matrix Product
+## Composition of Linear Transformation
 
-Suppose we have two linear transformations $A, B$. We first apply $B$ onto a vector $v$, then apply $A$. The result of the combined transformation is
+Suppose we have two linear transformations $A, B$. We first apply $B$ onto a vector $v$, then apply $A$. The result of the combined transformation is denoted by $A B v$ (the transformations are written from right to left according to the order).
+
+Now let us find its components: using the representation matrices of $A,B$ under the same (original) basis, we have
 
 $$
 \begin{aligned}
@@ -458,7 +480,7 @@ $$
 [A(B v)]_i = C_{ik} v_k
 $$
 
-This means that *$C$ is the representation matrix of the combined transformation $AB$*. Thus we define that the **product** of the matrices $A, B$ is 
+This means that *$C$ is the representation matrix of the composite transformation $AB$* (under the original basis). Thus we define that the **product** of the matrices $A, B$ is 
 
 $$
 (AB)_{i k} \equiv A_{i j} B_{j k}
@@ -484,6 +506,7 @@ $$
 The matrix product defined in this way has the following properties:
 
 - **Associativity**: $(AB)C = A(BC)$
+
 - **Non-commutativity**: In general $AB \ne BA$
 
 Please prove (or verify) them. 

@@ -6,7 +6,8 @@
 # Program results
 results/*/
 !results/*.ipynb
-docs/*/*.html
+*.html
+*.pdf
 *.npy
 
 # Executing scripts

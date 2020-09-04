@@ -1,13 +1,17 @@
-# Matrix Description of Rotations
+# Angular Velocity and Cross Product
 
-PHYS1110D Supplementary Material 2   
+### Contents
 
-----
+- [Matrix Representation of Rotations](#matrix-representation-of-rotations)
+    - [Rotation Around the Coordinate Axes](#rotation-around-the-coordinate-axes)
+    - [Matrix for Arbitrary 3D Rotations](#matrix-for-arbitrary-3d-rotations)
+    - [EXERCISE](#exercise)
+- [Angular Velocity](#angular-velocity)
+- [Cross Product](#cross-product)
+    - [EXERCISE](#exercise-1)
+- [The Angular Velocity is NOT Really a Vector](#the-angular-velocity-is-not-really-a-vector)
+    - [EXERCISE](#exercise-2)
 
-*Review before Reading*:   
-Change of basis
-
-----
 
 In most introductory courses on classical mechanics, the teachers simply tell their students the following "facts":
 
@@ -23,9 +27,9 @@ $$
 \boldsymbol{v}
 = \boldsymbol{\omega} \times \boldsymbol{r}
 =\det \begin{bmatrix}
-    e_x & e_y & e_z \\
-    \omega_1 & \omega_2 & \omega_3 \\
-    r_1 & r_2 & r_3 
+    e_x & \omega_1 & r_1 \\
+    e_y & \omega_2 & r_2 \\
+    e_z & \omega_3 & r_3
 \end{bmatrix} 
 = \begin{bmatrix}
     \omega_2 r_3 - \omega_3 r_2 \\
@@ -34,7 +38,9 @@ $$
 \end{bmatrix}
 $$
 
-To really understand how people "invented" the angular velocity vector and cross product, you must use the correct mathematical language (i.e. matrices) to describe rotations. After going through this material, the *most important* (and maybe surprising to you, or any starters) thing you should remember is that:
+To really understand how people "invented" the angular velocity vector and cross product, you must use the correct mathematical language to describe rotations. You know that rotations are *linear transformations*, so we should speak in terms of matrices and vectors.
+
+After going through this material, the *most important* (and maybe surprising to you, or any starters) thing you should remember is:
 
 <center>
 
@@ -48,41 +54,39 @@ To really understand how people "invented" the angular velocity vector and cross
 
 <center>
 
-![image]   
+![](Figures/rotation_2d.svg)   
 *Rotation around the $z$-axis. Only xy-plane is shown.*
 
 </center>
 
-The matrix of rotation by an angle $\alpha$ ($\alpha >0$ for counter-clockwise rotations) around the $z$-axis is
+The matrix of rotation by an angle $\theta$ ($\theta >0$ for counter-clockwise rotations) around the $z$-axis (under the standard basis) is
 
 $$
-R_z(\alpha)
+R_z(\theta)
 = \begin{bmatrix}
-    \cos  \alpha  & -\sin  \alpha  & 0 \\
-    \sin  \alpha  & \cos  \alpha  & 0 \\
+    \cos  \theta  & -\sin  \theta  & 0 \\
+    \sin  \theta  & \cos  \theta  & 0 \\
     0 & 0 & 1
 \end{bmatrix}
 $$
 
 You can easily derive it by the meaning of the columns of a transformation matrix. 
 
-### EXERCISE
-
-Please show that the rotation matrix around $x$-axis and $y$-axis are, respectively
+Similarly, you can show that the rotation matrix around $x$-axis and $y$-axis (under the standard basis) are, respectively
 
 $$
-R_x(\alpha) 
+R_x(\theta) 
 = \begin{bmatrix}
     1 & 0 & 0 \\
-    0 & \cos  \alpha  & -\sin  \alpha  \\
-    0 & \sin  \alpha  & \cos  \alpha
+    0 & \cos  \theta  & -\sin  \theta  \\
+    0 & \sin  \theta  & \cos  \theta
 \end{bmatrix}
 , \,
-R_y(\alpha)
+R_y(\theta)
 = \begin{bmatrix}
-    \cos  \alpha  & 0 & \sin  \alpha  \\
+    \cos  \theta  & 0 & \sin  \theta  \\
     0 & 1 & 0 \\
-    -\sin  \alpha  & 0 & \cos  \alpha
+    -\sin  \theta  & 0 & \cos  \theta
 \end{bmatrix}
 $$
 
@@ -98,29 +102,43 @@ To obtain the general rotation matrix (denoted by $R(\theta,\varphi, \alpha$), w
 
 1. **Change basis so that the rotation axis *coincides* with the $z$-axis**
 
-    We first rotate the old basis $K = \{e_i\}$ by $\varphi$ around the $z$-axis to get a new basis $K' = \{e'_i\}$, followed by another rotation of $K'$ around the new $y$ by an angle $\theta$ to get another basis $K'' = \{e''_i\}$. 
+    We first rotate the old basis $K = \{e_i\}$ by $\theta$ around the old $y$-axis, then rotate around the old $z$-axis by an angle $\varphi$ to get the new basis $K' = \{e'_i\}$. 
     
     This change of basis is described by the matrix
 
     $$
     \mathcal{D}(\theta ,\varphi)
-    = \mathcal{D}_y(\theta) \mathcal{D}_z(\varphi)
-    = R_y{}^{-1}(\theta) R_z{}^{-1}(\varphi)
+    = R_z(\varphi) R_y(\theta)
     $$
 
-2. **Rotate the object around the $z$-axis in the new system**
+    <center>
 
-    In the new basis $K''$, the rotation is just the rotation around $z$-axis by an angle $\alpha$, simply described by
+    ![]   
+    *Two steps to obtain the new basis*
+
+    </center>
+
+2. **Rotate the object around the new $z$-axis**
+
+    The new basis $K'$ is still an orthonormal basis, so the three basis rotation matrices $R_i(\alpha) \, (i=x,y,z)$ are not changed. The problem is now reduced to the rotation around the new $z$-axis by an angle $\alpha$, described by
 
     $$ R_z(\alpha)$$
 
-Therefore, the matrix for an arbitrary rotation can be expressed as the combination
+From the theory of change of basis, the new representation matrix $R_z(\alpha)$ is related to the old one $R(\theta, \varphi, \alpha)$ by the similar transformation
+
+$$
+R_z(\alpha)
+= \mathcal{D}^{-1}(\theta ,\varphi)
+R(\theta ,\varphi ,\alpha) \mathcal{D}(\theta ,\varphi)
+$$
+
+Therefore, 
 
 $$
 \begin{aligned}
     R(\theta ,\varphi ,\alpha)
-    &= \mathcal{D}^{-1}(\theta ,\varphi)
-    R_z(\alpha) \mathcal{D}(\theta ,\varphi)
+    &= \mathcal{D}(\theta ,\varphi)
+    R_z(\alpha) \mathcal{D}^{-1}(\theta ,\varphi)
     \\
     &= R_z(\varphi) R_y(\theta) R_z(\alpha)
     R_y^{-1}(\theta) R_z^{-1}(\varphi)
@@ -129,22 +147,33 @@ $$
 
 ### EXERCISE
 
-Not all matrices represent a rotation. Recall the following twoproperties of matrices:
+- Derive the matrices $R_x(\theta), R_y(\theta), R_z(\theta)$.
 
-1. The columns of the matrices correspond to the vectors $(e_1, e_2, e_3)$ after the transformation respectively
-2. The determinant of a 3 $\times$ 3 matrix is the (signed) volume of the parallelepiped formed by its three columns}
+- Verify that 
+    
+    $$
+    R_i^{-1}(\theta) = R_i(-\theta) \qquad i = x,y,z
+    $$
 
-Now, please show that, for a matrix representing a rotation:
+    Is this result trivial to you?
 
-1. $R^\top R = 1$ (A real matrix having this property is called an **orthogonal matrix**, since all of its columns are orthogonal to each other)
+- Recall the following two properties of matrices:
 
-2. $\det R=1$ (With both properties, it will be called a **special** orthogonal matrix)
+    - The columns of the matrices correspond to the vectors $e'_1, e'_2, e'_3$ after the transformation;
 
-Then, finding the inverse of a rotation matrix is easy: we only need to exchange its columns and rows:
+    - The determinant of a 3 $\times$ 3 matrix is the (signed) volume of the parallelepiped formed by its three columns.
 
-$$
-R^{-1} = R^\top
-$$
+    Now, please show that, for a rotation matrix $R$:
+
+    - $R^\top R = 1$ (A real matrix having this property is called an **orthogonal matrix**, since all of its columns are orthogonal to each other)
+
+    - $\det R=1$ (With both properties, it will be called a **special** orthogonal matrix)
+
+    Then, calculating the inverse of a rotation matrix is easy: we only need to exchange its columns and rows:
+
+    $$
+    R^{-1} = R^\top
+    $$
 
 ## Angular Velocity
 
@@ -163,18 +192,23 @@ $$
 \boldsymbol{v}(t_0) 
 \equiv 
 \frac{d\boldsymbol{r}(t_0)}{dt}
-= \frac{dR\left(\theta ,\varphi ,\alpha (t_0)\right)}{dt}\boldsymbol{r}(t_0)
+= \frac{dR (\theta ,\varphi ,\alpha (t_0))}{dt}
+\boldsymbol{r}(t_0)
 $$
 
-Now we *define* the time derivative of the matrix $R(\theta ,\varphi ,\alpha (t))$ at time $t_0$ is as $\omega_{i j}$, called the **angular velocity matrix**. Then
+Now we *define* the the **angular velocity matrix** $\omega_{ij}(t_0)$ at time $t_0$ as the derivative
+
+$$
+\omega_{ij}(t_0) = \frac{dR_{ij} (\theta ,\varphi ,\alpha (t_0))}{dt}
+$$
+
+Then (Einstein summation rule is used)
 
 $$
 \boldsymbol{v}(t_0) 
 = \omega(t_0) \boldsymbol{r}(t_0)
 = \omega_{i j}(t_0) r_j(t_0)
 $$
-
-Here the **Einstein summation rule** is used: if any subscript appears *twice*, then sum over it.
 
 Now let us find the matrix $\omega_{i j}(t_0)$: since $R(\theta, \varphi, \alpha(t))$ depends on $t$ only via $\alpha$, we have
 
@@ -225,7 +259,7 @@ $$
 \end{aligned}
 $$
 
-If you are familiar with the spherical polar coordinates, you should immediately recognize that these three elements are exactly the Cartesian components of a *vector* $\boldsymbol{\omega}$. The direction of $\boldsymbol{\omega}$ is *parallel to the rotation axis*. We then define the *combination of this three numbers* as the **angular velocity vector** (Note why I did not say "define the *vector* $\boldsymbol{\omega}$ as ..."). 
+If you are familiar with the spherical polar coordinates, you should immediately recognize that these three elements are exactly the Cartesian components of a *vector* $\boldsymbol{\omega}$. The direction of $\boldsymbol{\omega}$ is *parallel to the rotation axis*. We then define the *combination of this three numbers* as the **angular velocity vector**. 
 
 *Remark*: We see that the angular velocity matrix has one notable property
 
@@ -287,7 +321,7 @@ M = \begin{bmatrix}
 \det M = \boldsymbol{a}\cdot (\boldsymbol{b}\times \boldsymbol{c})
 $$
 
-## The Angular Velocity is NOT a Vector
+## The Angular Velocity is NOT Really a Vector
 
 Now you should know that the angular velocity *matrix* is the more
 natural quantity, and the angular velocity *vector* is just some derived
@@ -394,4 +428,4 @@ This behavior is quite different from that of the position vector. Thus in mathe
 
 ### EXERCISE
 
-Show that the angular velocity vector behaves in the same way as the position vector under rotations.
+Show that the angular velocity vector behaves in the same way as the position vector under rotations. You may need the general rotation matrix we found earlier.
