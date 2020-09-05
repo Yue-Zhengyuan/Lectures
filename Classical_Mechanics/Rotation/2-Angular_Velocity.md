@@ -1,25 +1,29 @@
 # Angular Velocity and Cross Product
 
-### Contents
+### **Contents**
 
 - [Matrix Representation of Rotations](#matrix-representation-of-rotations)
     - [Rotation Around the Coordinate Axes](#rotation-around-the-coordinate-axes)
     - [Matrix for Arbitrary 3D Rotations](#matrix-for-arbitrary-3d-rotations)
     - [EXERCISE](#exercise)
 - [Angular Velocity](#angular-velocity)
+    - [Angular Velocity at Any Time](#angular-velocity-at-any-time)
 - [Cross Product](#cross-product)
     - [EXERCISE](#exercise-1)
 - [The Angular Velocity is NOT Really a Vector](#the-angular-velocity-is-not-really-a-vector)
     - [EXERCISE](#exercise-2)
 
-
 In most introductory courses on classical mechanics, the teachers simply tell their students the following "facts":
 
-> For a point rotating around a fixed axis (rotation angle =
+----
+
+For a point rotating around a *fixed* axis (rotation angle =
 $\alpha (t)$), the **angular velocity** $\boldsymbol{\omega}(t)$ is a *vector* of
->
-> - Magnitude: $\omega(t) = d\alpha (t)/dt$
-> - Direction: Parallel to the axis of rotation, determined by some "**right-hand rule**"
+
+- Magnitude: $\omega(t) = d\alpha (t)/dt$
+- Direction: Parallel to the axis of rotation, determined by some "**right-hand rule**"
+
+*(In this class we shall not consider the more complicated case where the direction of rotation axis changes with time. An example is the [**precession**](https://en.wikipedia.org/wiki/Precession).)*
 
 With the above definition of $\boldsymbol{\omega}$, The linear velocity $\boldsymbol{v}(t)$ of the point can be found by some *mysterious* operation called the **cross product**, defined by
 
@@ -37,6 +41,8 @@ $$
     \omega_1 r_2 - \omega_2 r_1
 \end{bmatrix}
 $$
+
+----
 
 To really understand how people "invented" the angular velocity vector and cross product, you must use the correct mathematical language to describe rotations. You know that rotations are *linear transformations*, so we should speak in terms of matrices and vectors.
 
@@ -94,11 +100,18 @@ $$
 
 Every rotation in 3D space can be determined by 3 quantities:
 
-- **The direction** of the rotation axis, specified by the **polar angle** $\theta$ and the **azimuth angle** $\varphi$
+- **The direction** of the rotation axis, specified by the **polar angle** $\theta$ and the **azimuth angle** $\varphi$ (collectively denoted by $n = (\theta, \varphi)$)
 
 - **The angle of rotation** $\alpha$ around the rotation axis
 
-To obtain the general rotation matrix (denoted by $R(\theta,\varphi, \alpha$), we proceed in the following way:
+<center>
+
+![](Figures/rotation_matrix.svg)   
+*Two steps to obtain the new basis*
+
+</center>
+
+To obtain the general rotation matrix (denoted by $R_n( \alpha)$), we proceed in the following way:
 
 1. **Change basis so that the rotation axis *coincides* with the $z$-axis**
 
@@ -107,16 +120,9 @@ To obtain the general rotation matrix (denoted by $R(\theta,\varphi, \alpha$), w
     This change of basis is described by the matrix
 
     $$
-    \mathcal{D}(\theta ,\varphi)
+    \mathcal{D}_n
     = R_z(\varphi) R_y(\theta)
     $$
-
-    <center>
-
-    ![]   
-    *Two steps to obtain the new basis*
-
-    </center>
 
 2. **Rotate the object around the new $z$-axis**
 
@@ -124,21 +130,20 @@ To obtain the general rotation matrix (denoted by $R(\theta,\varphi, \alpha$), w
 
     $$ R_z(\alpha)$$
 
-From the theory of change of basis, the new representation matrix $R_z(\alpha)$ is related to the old one $R(\theta, \varphi, \alpha)$ by the similar transformation
+From the theory of change of basis, the new representation matrix $R_z(\alpha)$ is related to the old one $R_n(\alpha)$ by the similar transformation
 
 $$
 R_z(\alpha)
-= \mathcal{D}^{-1}(\theta ,\varphi)
-R(\theta ,\varphi ,\alpha) \mathcal{D}(\theta ,\varphi)
+= \mathcal{D}^{-1}_n R_n(\alpha) \mathcal{D}_n
 $$
 
 Therefore, 
 
 $$
 \begin{aligned}
-    R(\theta ,\varphi ,\alpha)
-    &= \mathcal{D}(\theta ,\varphi)
-    R_z(\alpha) \mathcal{D}^{-1}(\theta ,\varphi)
+    R_n(\alpha)
+    &= \mathcal{D}_n
+    R_z(\alpha) \mathcal{D}^{-1}_n
     \\
     &= R_z(\varphi) R_y(\theta) R_z(\alpha)
     R_y^{-1}(\theta) R_z^{-1}(\varphi)
@@ -149,13 +154,19 @@ $$
 
 - Derive the matrices $R_x(\theta), R_y(\theta), R_z(\theta)$.
 
-- Verify that 
+- Using properties of trigonometric functions, verify that 
     
     $$
-    R_i^{-1}(\theta) = R_i(-\theta) \qquad i = x,y,z
+    \begin{aligned}
+        R_i^{-1}(\alpha) &= R_i(-\alpha) \\
+        R_i(\alpha + \beta) &= R_i(\alpha) R_i(\beta)
+        \\
+        &= R_i(\beta) R_i(\alpha) 
+    \end{aligned}
+    \qquad i = x,y,z
     $$
 
-    Is this result trivial to you?
+    Are these results trivial to you?
 
 - Recall the following two properties of matrices:
 
@@ -177,52 +188,140 @@ $$
 
 ## Angular Velocity
 
-To find the linear velocity of the rotating object at $\boldsymbol{r}(t)$, recall that
+To find the linear velocity of the rotating object at $\boldsymbol{r}(t)$, recall that (assume that the rotation starts at time $t = 0$)
 
 $$
 \boldsymbol{r}(t)
-= R(\theta ,\varphi ,\alpha (t))
-\boldsymbol{r}(t_0)
-\qquad \alpha (t_0)=0
+= R_n(\alpha (t))
+\boldsymbol{r}(0)
+\qquad \alpha (0)=0
 $$
 
-The *instantaneous* linear velocity at time $t_0$ is
+The *instantaneous* linear velocity at time 0 is
 
 $$
-\boldsymbol{v}(t_0) 
+\boldsymbol{v}(0) 
 \equiv 
-\frac{d\boldsymbol{r}(t_0)}{dt}
-= \frac{dR (\theta ,\varphi ,\alpha (t_0))}{dt}
-\boldsymbol{r}(t_0)
+\frac{d\boldsymbol{r}(0)}{dt}
+= \frac{dR _n(\alpha (0))}{dt}
+\boldsymbol{r}(0)
 $$
 
-Now we *define* the the **angular velocity matrix** $\omega_{ij}(t_0)$ at time $t_0$ as the derivative
+Now we *define* the the **angular velocity matrix** $\omega_{ij}(0)$ at time 0 as the derivative
 
 $$
-\omega_{ij}(t_0) = \frac{dR_{ij} (\theta ,\varphi ,\alpha (t_0))}{dt}
+\omega(0) 
+= \frac{dR_n(\alpha (0))}{dt}
 $$
 
 Then (Einstein summation rule is used)
 
 $$
-\boldsymbol{v}(t_0) 
-= \omega(t_0) \boldsymbol{r}(t_0)
-= \omega_{i j}(t_0) r_j(t_0)
+\boldsymbol{v}(0) 
+= \omega(0) \boldsymbol{r}(0)
+= \omega_{i j}(0) r_j(0)
 $$
 
-Now let us find the matrix $\omega_{i j}(t_0)$: since $R(\theta, \varphi, \alpha(t))$ depends on $t$ only via $\alpha$, we have
+Now let us find the matrix $\omega_{i j}(0)$: since the direction of rotation axis is fixed, $R(\theta, \varphi, \alpha(t))$ depends on $t$ only via $\alpha$, we have
+
+$$
+\begin{aligned}
+    \omega(0)
+    &= R_z(\varphi) R_y(\theta) 
+    \frac{d R_z(\alpha(0))}{dt}
+    R_y^{-1}(\theta) R_z^{-1}(\varphi)
+    \\
+    &= R_z(\varphi) R_y(\theta) \begin{bmatrix}
+        0 & -\omega(0) & 0 \\
+        \omega(0) & 0 & 0 \\
+        0 & 0 & 0 
+    \end{bmatrix}
+    R_y(-\theta) R_z(-\varphi)
+    \\
+    &= \begin{bmatrix}
+        0 & -\omega _3 & \omega _2 \\
+        \omega _3 & 0 & -\omega _1 \\
+        -\omega _2 & \omega _1 & 0
+    \end{bmatrix}
+\end{aligned}
+$$
+
+We see that there are only 3 independent elements in the matrix $\omega_{i j}$:
+
+$$
+\begin{aligned}
+    \omega_1 = \omega_{32} 
+    & = \omega(0) \sin \theta \cos \varphi 
+    \\
+    \omega_2 = \omega_{13} 
+    & = \omega(0) \sin \theta \sin \varphi 
+    \\
+    \omega_3 = \omega_{21} 
+    & = \omega(0)  \cos \theta
+\end{aligned}
+$$
+
+where $\omega$ here is the **angular speed** $\omega(0)$ at time 0 (do not confuse it with the matrix $\omega$)
+
+$$
+\omega (0)=\frac{d\alpha (0)}{dt}
+$$
+
+If you are familiar with the spherical polar coordinates, you should immediately recognize that these three elements are exactly the Cartesian components of a *vector* $\boldsymbol{\omega}$. The direction of $\boldsymbol{\omega}$ is *parallel to the rotation axis*. We then define the *combination of this three numbers* as the **angular velocity vector**. 
+
+*Remark*: We see that the angular velocity matrix has one notable property
+
+$$
+\omega_{i j}=-\omega_{j i}
+$$
+
+Such matrices are said to be **anti-symmetric**.
+
+### Angular Velocity at Any Time
+
+Let us continue to find the angular velocity matrix at any time (for a moment we shall call this time as $t_0$). 
+
+The instantaneous linear velocity at time $t_0$ is
+
+$$
+\boldsymbol{v}(t_0) 
+\equiv 
+\frac{d\boldsymbol{r}(t_0)}{dt}
+= \frac{dR _n(\alpha (t_0))}{dt}
+\boldsymbol{r}(0)
+$$
+
+However, the angular velocity matrix at time $t_0$ is *not* defined as
+
+$$
+\omega(t_0) = \frac{dR _n(\alpha (t_0))}{dt}
+\quad \text{(wrong)}
+$$
+
+The correct way to define is as follows: we separate the rotation to two steps:
+
+$$
+R_n(\alpha(t))
+= R_n(\alpha(t)-\alpha(t_0))
+R_n(\alpha(t_0))
+$$
+
+Then $[\alpha(t)-\alpha(t_0)]_{t=t_0} = 0$, and we can now define
+
+$$
+\omega(t_0) \equiv \left[
+    \frac{dR_n(\alpha(t)-\alpha(t_0))}{dt}
+\right]_{t=t_0}
+$$
+
+Its matrix elements are
 
 $$
 \begin{aligned}
     \omega(t_0)
-    &= \left[
-        \frac{d R(\theta ,\varphi ,\alpha)}{dt}
-    \right]_{t=t_0}
-    \\
     &= R_z(\varphi) R_y(\theta) \left[
-        \frac{d R_z(\alpha(t))}{dt}
-    \right]_{t=t_0}
-    R_y^{-1}(\theta) R_z^{-1}(\varphi)
+    \frac{d R_z(\alpha(t)-\alpha(t_0))}{dt}
+    \right]_{t=t_0} R_y^{-1}(\theta) R_z^{-1}(\varphi)
     \\
     &= R_z(\varphi) R_y(\theta) \begin{bmatrix}
         0 & -\omega(t_0) & 0 \\
@@ -239,35 +338,40 @@ $$
 \end{aligned}
 $$
 
-Here we used something we already know: the **angular speed** $\omega(t_0)$ at time $t_0$ should be (do not confuse it with the matrix $\omega$)
-
-$$
-\omega (t_0)=\frac{d\alpha (t_0)}{dt}
-$$
-
-We see that there are only 3 independent elements in the matrix $\omega_{i j}$:
+where
 
 $$
 \begin{aligned}
     \omega_1 = \omega_{32} 
-    & = \omega \sin \theta \cos \varphi 
+    & = \omega(t_0) \sin \theta \cos \varphi 
     \\
     \omega_2 = \omega_{13} 
-    & = \omega \sin \theta \sin \varphi 
+    & = \omega(t_0) \sin \theta \sin \varphi 
     \\
-    \omega_3 = \omega_{21} & = \omega  \cos \theta
+    \omega_3 = \omega_{21} 
+    & = \omega(t_0)  \cos \theta
+\end{aligned} \qquad
+\omega(t_0) = \frac{d\alpha(t_0)}{dt}
+$$
+
+So our previous definition of angular velocity vector still applies here. Then the linear velocity $\boldsymbol{v}(t_0)$ is given by
+
+$$
+\begin{aligned}
+    \boldsymbol{v}(t_0)
+    &= \omega(t_0) R_n(\alpha(t_0)) \boldsymbol{r}(0)
+    \\
+    &= \omega(t_0) \boldsymbol{r}(t_0)
 \end{aligned}
 $$
 
-If you are familiar with the spherical polar coordinates, you should immediately recognize that these three elements are exactly the Cartesian components of a *vector* $\boldsymbol{\omega}$. The direction of $\boldsymbol{\omega}$ is *parallel to the rotation axis*. We then define the *combination of this three numbers* as the **angular velocity vector**. 
-
-*Remark*: We see that the angular velocity matrix has one notable property
+Since this holds for any time $t_0$, we can finally remove the subscript 0 and directly write
 
 $$
-\omega_{i j}=-\omega_{j i}
+\boldsymbol{v}(t) = \omega(t) \boldsymbol{r}(t)
 $$
 
-Such matrices are said to be **anti-symmetric**.
+$\omega(t)$ here is the angular velocity *matrix*.
 
 ## Cross Product
 

@@ -1,6 +1,7 @@
 """
     Demostration of change of basis
     ===============================
+    Author: Yue Zhengyuan
 
     Drag the basis vectors to see how the components
     of an arbitrary vector change

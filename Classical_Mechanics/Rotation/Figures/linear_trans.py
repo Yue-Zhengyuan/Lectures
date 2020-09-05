@@ -1,6 +1,7 @@
 """
     Demostration of linear transformation
     =====================================
+    Author: Yue Zhengyuan
 
     Drag the basis vectors to see how an arbitrary vector is transformed
 
@@ -14,7 +15,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backend_bases import MouseButton
 from matplotlib.ticker import MultipleLocator
 from matplotlib.patches import Polygon, FancyArrow
-# from matplotlib.widgets import Slider, Button, RadioButtons, TextBox
+# from matplotlib.widgets import Slider, Button, RadioButtons
+# from matplotlib.widgets import TextBox
 
 def grid_color(n):
     if n == 0:

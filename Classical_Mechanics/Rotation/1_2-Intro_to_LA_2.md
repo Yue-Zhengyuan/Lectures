@@ -425,16 +425,16 @@ we say that $A$ and $B$ are **similar** to each other (the word "similar" is cho
 
 <center>
 
-![]   
+![](Figures/change_of_basis.svg)   
 *An example of change of basis*
 
 </center>
 
 From the information of the figure above:
 
-- Find the matrix $\mathcal{D}$ representing the change of basis.
+- Find the matrix $\mathcal{D}$ representing the change of basis from the standard $e_x, e_y$ to $e_1, e_2$.
 
-- Calculate the new components of the vector $v$. Check if your result agrees with the figure.
+- Calculate the new components of the vector $v$. You can calculate $\mathcal{D}^{-1}$ using computers. Check if your result agrees with the figure.
 
 ## Appendix A: Geometrical Meaning of Determinant
 

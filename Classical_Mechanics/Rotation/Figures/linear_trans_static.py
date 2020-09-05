@@ -26,7 +26,7 @@ rcParams.update({
 })
 
 basis1 = np.array([[1,0], [0,1]])
-basis2 = np.array([[1,0.5], [-0.6, 1]])
+basis2 = np.array([[1,0.5], [-0.8, 1]])
 bases = [basis1, basis2]
 vecComp = np.array([2,2])
 

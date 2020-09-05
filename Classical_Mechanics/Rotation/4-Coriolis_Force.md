@@ -18,112 +18,78 @@ Now, after learning the matrix formulation of rotations, you are capable of expl
 
 ## The Rotating Coordinate System <br>(aka Rotating Reference Frame)
 
-First, we want to make it clear what we mean by "an observer rotating together with the earth". For a moment, we forget the motion of the earth around the sun (i.e. treating the center of the earth as an inertial frame).
+First, we want to make it clear what we mean by "an observer rotating together with the earth". For a moment, we forget the motion of the earth around the sun (i.e. treating the center of the earth as an inertial frame), and assume that the rotation axis is fixed.
 
 Imagine two observers $K$ and $K'$ sitting at the center of the earth. $K$ is sitting *really still*, but $K'$ is *spinning* with the same angular velocity as the earth. Therefore, the earth appears to be static to $K'$, but $K$ will see a spinning earth. Evidently, $K'$ is not an inertial frame.
 
-Mathematically, each observer has his/her own coordinate system, using the earth center as the origin. The basis vectors of $K$ are the good ol' constant $e_x,e_y,e_z$. But those of $K'$ is rotating around the spinning axis of the earth (we call it $n$; you can choose it to be the $z$-axis for simplicity, but we shall not do that until later). Thus, to obtain the coordinates used by $K$, we only need to do a rotation:
+Mathematically, each observer has his/her own coordinate system, using the earth center as the origin. However, they uses different sets of basis vectors to measure the motion: those of $K$ are the good ol' constant $e_x,e_y,e_z$; but those of $K'$ is rotating around the spinning axis of the earth (we call it $n$; you can choose it to be the $z$-axis for simplicity, but we shall not do that until later). 
+
+Thus, to obtain the coordinates used by $K'$ from those of $K$, we only need to do a rotation:
 
 <center>
 
-Rotate the *coordinates* of $K'$ around $n$-axis by an angle
-$-\alpha (t)$.
+Rotate the basis vectors of $K$ around $n$-axis by an angle
+$\alpha (t)$.
 
 </center>
 
-*We emphasize again that we are transforming the coordinate system, not the real position of the moving object*.
+This is described by the rotation matrix $\mathcal{D}_n(t) = R_n(\alpha(t))$. Here $R_n(\alpha)$ is the same as the $R(\theta ,\varphi ,\alpha)$ to save writing.
 
-Therefore, the position of the object observed by $K$ is related to that observed by $K'$ according to the following formula:
+Therefore, from the theory of change of basis, the position of the object observed by $K'$ is related to that observed by $K$ according to the following formula:
 
 $$
-\boldsymbol{r}(t) = \mathcal{D}_n(-\alpha (t)) \boldsymbol{r}'(t)
-= R_n(+\alpha (t)) \boldsymbol{r}'(t)
+\boldsymbol{r}'(t) = \mathcal{D}_n^{-1}(\alpha (t)) \boldsymbol{r}(t)
+= R_n(-\alpha (t)) \boldsymbol{r}(t)
 $$
 
-Here $R_n(\alpha)$ is the same as the $R(\theta ,\varphi ,\alpha)$.
+Inversely, we have
 
-*Remark*: If you forget why $\mathcal{D}_n(-\alpha)$ is the same as $R_n(+\alpha)$ (i.e. action on the *coordinate system* is opposite to the action on the *objects*), you can draw some 2D figures to feel about it.
+$$
+\boldsymbol{r}(t) 
+= R_n(\alpha (t)) \boldsymbol{r}'(t)
+$$
 
 ## The Velocity and Acceleration Observed in $K$
 
-Now we go on with our problem: what are the fictitious forces in frame $K'$? We need to express all the quantities in $K$ again using quantities in $K'$. First, let us find the velocity of the object in the coordinate system of $K$:
+Now we go on with our problem: what are the fictitious forces in frame $K'$? We need to express all the quantities in $K$ again using quantities in $K'$. 
+
+First, let us find the velocity of the object in the coordinate system of $K$ at some time instant $t_0$:
 
 $$
-\boldsymbol{v}(t)
-= \frac{d\boldsymbol{r}(t)}{dt}
-= \frac{dR_n(\alpha (t))}{dt}\boldsymbol{r}'(t)
-+ R_n(\alpha (t))\boldsymbol{v}'(t)
+\boldsymbol{v}(t_0)
+= \frac{d\boldsymbol{r}(t_0)}{dt}
+= \frac{dR_n(\alpha (t_0))}{dt}\boldsymbol{r}'(t_0)
++ R_n(\alpha (t_0))\boldsymbol{v}'(t_0)
 $$
 
-Suppose that $\alpha (t_0)=0$ for some time instant $t_0$.
-According to the definition of the angular velocity vector
-
-$$
-\left[\frac{d\boldsymbol{r}}{dt}\right]_{t=t_0}
-= \left[\frac{dR_n(\alpha (t))}{dt}\right]_{t=t_0}
-\boldsymbol{r}(t_0)
-= \boldsymbol{\omega}(t_0) \times \boldsymbol{r}(t_0)
-$$
-
-The $\alpha(t_0)=0$ requirement is important and necessary.
-Then what is the expression of
-
-$$
-\frac{dR_n(\alpha (t))}{dt}\boldsymbol{r}'(t)
-$$
-
-for *any* value of $t$? Is it possible to express it in terms of the angular velocity vector at time $t$? 
-
-For clarity, suppose that the time we are interested in is $t_1$ (another constant), i.e. we want to find
-
-$$
-\left[\frac{dR_n(\alpha (t))}{dt}\right]_{t=t_1}
-\boldsymbol{r}'(t_1)
-$$
-
-Now we play the trick of *separating the rotation into two successive steps*:
+We know that (in the second step, we used the obvious fact that the order of all rotations along the *same axis* does not matter)
 
 $$
 \begin{aligned}
-    R_n(\alpha (t))
-    &= R_n (\alpha (t)-\alpha(t_1)) 
-    R_n(\alpha (t_1))
+    R_n(\alpha(t))
+    &= R_n(\alpha(t)-\alpha(t_0)) R_n(\alpha(t_0))
     \\
-    &= R_n (\alpha (t_1))
-    R_n (\alpha(t)-\alpha(t_1))
+    &= R_n(\alpha(t_0)) R_n(\alpha(t)-\alpha(t_0))
 \end{aligned}
 $$
 
-Since both of these rotations are around the same axis, the order of them can be changed.
-
-Notice that now $[\alpha (t)-\alpha(t_1)]_{t=t_1}=0$, so we can introduce the angular velocity vector:
+therefore
 
 $$
 \begin{aligned}
-    &\left[\frac{dR_n(\alpha (t))}{dt}\right]_{t=t_1}
-    \boldsymbol{r}'(t_1)
-    \\
-    &= R_n(\alpha (t_1))
     \left[
-        \frac{d(
-            R_n(\alpha(t)-\alpha(t_1)))
-       }{dt}
-    \right]_{t=t_1}
-    \boldsymbol{r}'(t_1)
+        \frac{dR_n(\alpha(t))}{dt}
+    \right]_{t=t_0}
+    &= 
+    R_n(\alpha(t_0))\left[
+        \frac{d R_n(\alpha(t)-\alpha(t_0))}{dt}
+    \right]_{t=t_0}
     \\
-    &= R_n(\alpha (t_1)) \, 
-    [\boldsymbol{\omega}(t_1) \times \boldsymbol{r}'(t_1)]
+    &= R_n(\alpha(t_0)) \omega(t_0) 
 \end{aligned}
 $$
 
-But this is true for any $t_1$, so we can relabel the time and write
-
-$$
-\frac{dR_n(\alpha (t))}{dt} \boldsymbol{r}'(t)
-= R_n(\alpha (t)) \, [\boldsymbol{\omega}(t) \times \boldsymbol{r}'(t)]
-$$
-
-The final expression for the velocity is therefore
+The final expression for the velocity is therefore (renaming all $t_0$ to $t$, and apply $\omega \boldsymbol{r} = \boldsymbol{\omega} \times \boldsymbol{r}$, where the first $\omega$ is the angular velocity *matrix*)
 
 $$
 \begin{aligned}
@@ -133,7 +99,7 @@ $$
     + R_n(\alpha (t)) \boldsymbol{v}'(t)
     \\
     &=R_n(\alpha (t)) \,
-    [\boldsymbol{\omega}(t) \times \boldsymbol{r}'(t) - \boldsymbol{v}'(t)]
+    [\boldsymbol{\omega}(t) \times \boldsymbol{r}'(t) + \boldsymbol{v}'(t)]
 \end{aligned}
 $$
 
@@ -168,7 +134,7 @@ $$
 \end{aligned}
 $$
 
-Usually, after getting this general result, people simply set $t=t_0$, i.e. people are interested in the instant when the two coordinate system *coincides*. Then $R_n \to \boldsymbol{1}$, and the velocity and the acceleration of the object simplify to
+Usually, after getting this general result, people simply set $t=0$, i.e. people are interested in the instant when the two coordinate system *coincides* ($\alpha(0) = 0$). Then $R_n \to 1$, and the velocity and the acceleration of the object simplify to
 
 $$
 \begin{aligned}
@@ -187,7 +153,7 @@ $$
 \end{aligned}
 $$
 
-*Remark*: In Wikipedia and most textbooks, these two results are obtained through some weird "operator" dealing with time derivatives in rotating frames. But if we stick to the *most rigorous* matrix formulation (as we do here), we only need ordinary time derivatives. 
+*Remark*: In Wikipedia and most textbooks, these two results are obtained through some weird "operator" dealing with time derivatives in rotating frames. After going through the derivation above, you may try if you understand how they constructed that operator. 
 
 ## The (Fictitious) Forces Observed by $K'$
 
