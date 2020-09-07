@@ -23,7 +23,7 @@ $\alpha (t)$), the **angular velocity** $\boldsymbol{\omega}(t)$ is a *vector* o
 - Magnitude: $\omega(t) = d\alpha (t)/dt$
 - Direction: Parallel to the axis of rotation, determined by some "**right-hand rule**"
 
-*(In this class we shall not consider the more complicated case where the direction of rotation axis changes with time. An example is the [**precession**](https://en.wikipedia.org/wiki/Precession).)*
+*(In this class we shall not consider the more complicated case where the direction of rotation axis changes with time. An example is [**precession**](https://en.wikipedia.org/wiki/Precession).)*
 
 With the above definition of $\boldsymbol{\omega}$, The linear velocity $\boldsymbol{v}(t)$ of the point can be found by some *mysterious* operation called the **cross product**, defined by
 
@@ -104,13 +104,6 @@ Every rotation in 3D space can be determined by 3 quantities:
 
 - **The angle of rotation** $\alpha$ around the rotation axis
 
-<center>
-
-![](Figures/rotation_matrix.svg)   
-*Two steps to obtain the new basis*
-
-</center>
-
 To obtain the general rotation matrix (denoted by $R_n( \alpha)$), we proceed in the following way:
 
 1. **Change basis so that the rotation axis *coincides* with the $z$-axis**
@@ -130,6 +123,13 @@ To obtain the general rotation matrix (denoted by $R_n( \alpha)$), we proceed in
 
     $$ R_z(\alpha)$$
 
+<center>
+
+![](Figures/rotation_matrix.svg)   
+*Two steps to obtain the new basis*
+
+</center>
+
 From the theory of change of basis, the new representation matrix $R_z(\alpha)$ is related to the old one $R_n(\alpha)$ by the similar transformation
 
 $$
@@ -137,7 +137,7 @@ R_z(\alpha)
 = \mathcal{D}^{-1}_n R_n(\alpha) \mathcal{D}_n
 $$
 
-Therefore, 
+Therefore, the **general 3D rotation matrix** around the axis along direction $(\theta,\varphi)$ by angle $\alpha$ is
 
 $$
 \begin{aligned}
@@ -176,15 +176,15 @@ $$
 
     Now, please show that, for a rotation matrix $R$:
 
-    - $R^\top R = 1$ (A real matrix having this property is called an **orthogonal matrix**, since all of its columns are orthogonal to each other)
+    - $R^\top R = 1$ (thus rotation matrices are **orthogonal matrices**).
 
-    - $\det R=1$ (With both properties, it will be called a **special** orthogonal matrix)
+        *Remark*: Calculating the inverse of a rotation matrix is now easy: we only need to exchange its columns and rows:
 
-    Then, calculating the inverse of a rotation matrix is easy: we only need to exchange its columns and rows:
+        $$
+        R^{-1} = R^\top
+        $$
 
-    $$
-    R^{-1} = R^\top
-    $$
+    - $\det R=1$ (With both properties, it will be called a **special** orthogonal matrix).
 
 ## Angular Velocity
 
@@ -222,7 +222,7 @@ $$
 = \omega_{i j}(0) r_j(0)
 $$
 
-Now let us find the matrix $\omega_{i j}(0)$: since the direction of rotation axis is fixed, $R(\theta, \varphi, \alpha(t))$ depends on $t$ only via $\alpha$, we have
+Now let us find the matrix $\omega_{i j}(0)$: since the direction of rotation axis is fixed, $R_n(\alpha(t))$ depends on $t$ only via $\alpha$, we have
 
 $$
 \begin{aligned}
@@ -449,14 +449,13 @@ $$
 
 You should be able to write it down quickly using the meaning of the three columns of the matrix. Its inverse is itself (please verify this by direct calculation).
 
-In the mirror (reflected world), since $\boldsymbol{v}$ and $\boldsymbol{r}$ are both
-"true" vectors, we have
+In the mirror (reflected world), since $\boldsymbol{v}$ and $\boldsymbol{r}$ are both "true" vectors, we have
 
 $$
 \begin{aligned}
     &\boldsymbol{r}' = P_y\boldsymbol{r}, \quad
     \boldsymbol{v}' = P_y\boldsymbol{v}
-    \\
+    \\ \\
     &\Rightarrow 
     \begin{bmatrix}
         x' \\
@@ -526,9 +525,19 @@ $$
     \omega_2 \\
     -\omega_3
 \end{bmatrix}
+= - P_y \boldsymbol{\omega}
 $$
 
-This behavior is quite different from that of the position vector. Thus in mathematics, objects like the angular velocity vector are called **pseudo-vectors**.
+We find that there is an additional minus sign. You can apply the right-hand rule in a mirror to have a feeling about this minus sign.
+
+<center>
+
+![](Figures/pseudovector.svg)   
+*A rotating disc and its image in the mirror*
+
+</center>
+
+In mathematics, objects like the angular velocity vector are called **pseudo-vectors**. You can read the corresponding [Wikipedia article](https://en.wikipedia.org/wiki/Pseudovector) to learn more about it.
 
 ### EXERCISE
 

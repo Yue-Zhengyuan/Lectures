@@ -1,8 +1,24 @@
-# Virasoro Algebra
+# Operator Product Expansion: <br>Energy-Momentum Tensor
+
+## Result of OPE
+
+- The OPE of the chiral energy-momentum tensor with itself is
+
+    $$
+    T(z)T(w) 
+    = \frac{c/2}{(z-w)^4} + \frac{2T(w)}{(z-w)^2}
+    + \frac{\partial T(w)}{z-w} + \cdots
+    $$
+
+    where $c$ is the central charge and $|z|>|w|$.
+
+- The OPE of $\bar{T}(\bar{z}) \bar{T}(\bar{w})$ has a similar form.
+
+- The OPE of $T(z) \bar{T}(\bar{w})$ contains only regular terms.
 
 ## Laurent Modes of the Energy-Momentum Tensor 
 
-The Laurent modes energy momentum tensor are denoted by $L_n$:
+We Laurent-expand the energy momentum tensor at $w$; the Laurent modes are denoted by $L_n(w)$:
 
 $$
 \begin{aligned}

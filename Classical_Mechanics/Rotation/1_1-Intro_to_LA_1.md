@@ -27,7 +27,9 @@
     - [EXERCISE](#exercise-1)
 - [Composition of Linear Transformation](#composition-of-linear-transformation)
     - [EXERCISE](#exercise-2)
-
+- [Inner Product under Linear Transformation](#inner-product-under-linear-transformation)
+    - [Orthogonal Matrix](#orthogonal-matrix)
+    - [EXERCISE](#exercise-3)
 
 ## Vector Spaces and Basis Vectors
 
@@ -43,7 +45,7 @@ We can perform the following operations on vectors:
 
     (Later in your life you will have to deal with *complex* numbers, but now we restrict ourselves to the real world.)
 
-I will not show the general (more abstract) definition of vector spaces in mathematics, which can be found on [Wikipedia][vec_space] or in any textbook on linear algebra (I personally recommend Chapter 7 and 8 of *Mathematical Methods for Physics and Engineering* by Riley, Hobson and Bence).
+I will not show the general (more abstract) definition of vector spaces in mathematics, which can be found on [Wikipedia][vec_space] or in any textbook on linear algebra (I personally recommend Chapter 7 and 8 of *Mathematical Methods for Physics and Engineering* (3rd Edition) by Riley, Hobson and Bence).
 
 [vec_space]: https://en.wikipedia.org/wiki/Vector_space
 
@@ -78,22 +80,23 @@ i.e. the zero vector is unique.
 
 *Remarks*:
 
-- Two different vectors may have the same components along different sets of basis vectors. 
-
-    <center>
-
-    ![](Figures/different_basis.svg)   
-    *Two different vectors can have the same components (2, 3) <br>under different basis; the figures are drawn to the same scale*
-
-    </center>
-
-- The components of the $i$th basis vector are simply given by
-
+- In the expansion of basis vectors themselves
+    
     $$
-    v_i = 1 , \quad \text{other components} = 0
+    e_i = \sum_{a=1}^n (e_i)_a e_a
     $$
 
-    e.g. for $\dim{V} = 2$, we have
+    The $a$th component of the $i$th basis vector is simply 
+
+    $$
+    (e_i)_a = \delta_{ia}
+    = \begin{cases}
+        0, & a \ne i \\
+        1, & a = i
+    \end{cases}
+    $$
+
+    The notation $\delta_{ia}$ is called the **Kronecker delta**. For example, when $\dim{V} = 2$, we have
 
     $$
     e_1 = \begin{bmatrix}
@@ -106,9 +109,18 @@ i.e. the zero vector is unique.
 
     You must be aware that **this does not mean that they are the traditional unit vectors along the coordinate axes**. 
 
+- Two different vectors may have the same components along different sets of basis vectors. 
+
+    <center>
+
+    ![](Figures/different_basis.svg)   
+    *Two different vectors can have the same components (2, 3) <br>under different basis; the figures are drawn to the same scale*
+
+    </center>
+
 ### Note on Notations: Einstein Summation Rule
 
-People are tired of always writing the summation sign $\sum$. Thus the genius Einstein invented the following rule: 
+People are tired of always writing the summation sign $\sum$ in linear algebra calculations. Thus the genius Einstein invented the following rule: 
 
 <center>
 
@@ -134,7 +146,9 @@ $$
 
 ### Inner Product 
 
-For two vectors $u,v\in V$, we can define an operation called the **inner product** (denoted by $u \cdot v$), which send two vectors *to a real number*: (below is the mathematical description of the same thing)
+*Warning*: If you already know how to compute inner product in the $xy$ or $xyz$ coordinate system, this section want you to forget it.
+
+For two vectors $u,v\in V$, we can define an operation called the **inner product** (denoted by $u \cdot v$), which send two vectors *to a real number*: 
 
 $$
 \_ \cdot \_ : V \times V \to \mathbb{R}
@@ -164,8 +178,8 @@ $$
 
 *Remark*: Some concepts derived from the inner product
 
-- Two vectors are said to be **orthogonal** to each other if their inner product is 0.
-- The **length** of a vector $v$ is defined as $\sqrt{v \cdot v}$. 
+- Two vectors are **orthogonal** to each other if their inner product is 0.
+- The **length** of a vector $v$ is defined as $|v| \equiv \sqrt{v \cdot v}$. 
 
 ### Orthonormal Basis Vectors
 
@@ -201,9 +215,7 @@ $$
 
 We emphasize that **this definition is valid only when we are using the components of $u,v$ under an orthonormal set of basis**.
 
-*Remark*: 
-
-Even the choice of orthonormal basis is *not unique*. For example, you can easily *rotate* the basis to obtain a new one. 
+*Remark*: Even the choice of orthonormal basis is *not unique*. For example, you can easily *rotate* the basis to obtain a new one. This is easy to understand intuitively, but a rigorous mathematical proof of this statement is not very trivial.
 
 ## Linear Transformations
 
@@ -215,7 +227,7 @@ $$
 
 The transformation must satisfy the following two *defining* requirements (called the **linearity conditions**):
 
-- $\forall \, u, v\in V \quad A(u + v)=A u + A v$
+- $\forall \, u, v\in V \qquad \quad A(u + v)=A u + A v$
 
 - $\forall \, v\in V, c\in \mathbb{C} \quad A(c u) = c (A u)$
 
@@ -511,3 +523,62 @@ The matrix product defined in this way has the following properties:
 
 Please prove (or verify) them. 
 
+## Inner Product under Linear Transformation
+
+After the linear transformation $A$, the inner product $u \cdot v$ is transformed to 
+
+$$
+\begin{aligned}
+    (Au) \cdot (Av)
+    &= (Au)_i (Av)_j (e_i \cdot e_j)
+    \\
+    &= (A_{ik} u_k) (A_{jl} v_l) (e_i \cdot e_j)
+\end{aligned}
+$$
+
+If we are using an orthonormal basis, then
+
+$$
+\begin{aligned}
+    (Au) \cdot (Av)
+    &= (A_{ik} u_k) (A_{jl} v_l) \delta_{ij}
+    \\
+    &= A_{ik} u_k A_{il} v_l
+    \\
+    &= u_k (A^\top)_{ki} A_{il} v_l
+    \\
+    &= u_k (A^\top A)_{kl} v_l
+\end{aligned}
+$$
+
+### Orthogonal Matrix
+
+Let us consider a special case: if 
+
+$$
+A^\top A = 1 \quad
+\text{or equivalently $A A^\top$ = 1}
+$$
+
+where $1$ is the **identity matrix** (we will talk more about it later)
+
+$$
+(1)_{ij} = \delta_{ij}
+$$
+
+then
+
+$$
+\begin{aligned}
+    (Au) \cdot (Av)
+    &= u_k \delta_{il} v_l
+    \\
+    &= u_k v_k = u \cdot v
+\end{aligned}
+$$
+
+i.e. the inner product is invariant under $A$. We call such a representation matrix an **orthogonal matrix**. 
+
+### EXERCISE
+
+The name "orthogonal" comes from the fact that *each column of an orthogonal matrix are orthogonal to each other*. Verify this statement.  

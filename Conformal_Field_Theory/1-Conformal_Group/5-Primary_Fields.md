@@ -1,5 +1,13 @@
 # Primary Fields
 
+## Definitions
+
+### Chiral Fields
+
+If $\phi$ only depends on $z$, it is called a **chiral field**; if $\phi$ only depends on $\bar{z}$, it is an called **anti-chiral field**.
+
+### Primary Field
+
 If a field $\phi (z, \bar{z})$ transforms under *any* (global or local) conformal transformations $z\to w(z)$ according to
 
 $$
@@ -13,13 +21,9 @@ $$
 
 then it is called a **primary field**. The number $h \, (\bar{h})$ is called the **holomorphic (anti-holomorphic) conformal dimension**. 
 
-If this transformation holds only for *global* conformal transformations, then $\phi$ is called a **quasi-primary fields**.
+If this transformation holds only for *global* conformal transformations, i.e. $w(z) \in SL(2,\mathbb{C} / \mathbb{Z}_2)$, then $\phi$ is called a **quasi-primary field**.
 
-## Chiral Fields
-
-If $\phi$ only depends on $z$, it is called a **chiral field**; if $\phi$ only depends on $\bar{z}$, it is an called **anti-chiral field**.
-
-## Scaling Dimension and Spin
+### Scaling Dimension and Spin
 
 The conformal dimensions are related to the **scaling dimension** and the **planar spin** of the field by
 

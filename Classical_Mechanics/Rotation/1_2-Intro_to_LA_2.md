@@ -19,10 +19,13 @@
     - [Determinant and Matrix Invertibility](#determinant-and-matrix-invertibility)
     - [Inverse of Product of Matrices](#inverse-of-product-of-matrices)
     - [EXERCISE](#exercise)
+- [Inner Product under Linear Transformation](#inner-product-under-linear-transformation)
+    - [Orthogonal Matrix](#orthogonal-matrix)
 - [Change of Basis](#change-of-basis)
     - [Description of the New Basis](#description-of-the-new-basis)
     - [Components of Vectors along New Basis](#components-of-vectors-along-new-basis)
     - [Matrix of Linear Transformations under New Basis](#matrix-of-linear-transformations-under-new-basis)
+    - [Inner Product under Change of Basis](#inner-product-under-change-of-basis)
     - [EXERCISE](#exercise-1)
 - [Appendix A: Geometrical Meaning of Determinant](#appendix-a-geometrical-meaning-of-determinant)
     - [2D Determinant = Parallelogram Area](#2d-determinant--parallelogram-area)
@@ -143,7 +146,11 @@ $$
 A A^{-1} = A^{-1} A = 1
 $$
 
-where $1$ is the **identity transformation**, whose effect is no effect at all. Its matrix representation is called the **identity matrix**.
+where $1$ is the **identity transformation**, whose effect is no effect at all. Its matrix representation is called the **identity matrix**:
+
+$$
+(1)_{ij} = \delta_{ij}
+$$
 
 *Remark*:
 
@@ -237,8 +244,6 @@ $$
 $$
 
 ### EXERCISE
-
-- What is the identity matrix in 2D vector space?
 
 - Calculate $\det 1$. What does it mean?
 
@@ -421,6 +426,88 @@ $$
 
 we say that $A$ and $B$ are **similar** to each other (the word "similar" is chosen for obvious reasons). The "sandwich" operation $\mathcal{D}^{-1}A \mathcal{D}$ is called a **similarity transformation**.
 
+### Inner Product under Change of Basis
+
+Geometrically, the inner product $u, v$ depends only on the length of $u, v$ and the angle $\theta$ between them:
+
+$$
+u \cdot v = |u| |v| \cos \theta
+$$
+
+Thus intuitively, inner product should be *invariant* under change of basis, which does not change the vectors at all. Now let us verify it (as a good exercise of matrix multiplication and Einstein summation rule).
+
+Under the old basis:
+
+$$
+u \cdot v = u_i v_j (e_i \cdot e_j)
+$$
+
+Under the new basis:
+
+$$
+\begin{aligned}
+    u \cdot v 
+    &= u'_i v'_j (e'_i \cdot e'_j)
+    \\
+    &= (\mathcal{D}^{-1} u)_i (\mathcal{D}^{-1} v)_j
+    \times
+    ((\mathcal{D} e_i) \cdot (\mathcal{D} e_j))
+    \\
+    &= (\mathcal{D}^{-1})_{ik} u_k
+    (\mathcal{D}^{-1})_{jl} v_l
+    \times
+    (\mathcal{D} e_i)_m (\mathcal{D} e_j)_n
+    (e_m \cdot e_n)
+    \\
+    &= (\mathcal{D}^{-1})_{ik} u_k
+    (\mathcal{D}^{-1})_{jl} v_l
+    \times
+    \mathcal{D}_{ma} (e_i)_a
+    \mathcal{D}_{nb} (e_j)_b
+    (e_m \cdot e_n)
+\end{aligned}
+$$
+
+However, we know that the $a$th component of $e_i$ along the basis itself is
+
+$$
+(e_i)_a = \delta_{i a}
+$$
+
+Similarly $(e_j)_b = \delta_{jb}$. Therefore
+
+$$
+\begin{aligned}
+    u \cdot v 
+    &= (\mathcal{D}^{-1})_{ik} u_k
+    (\mathcal{D}^{-1})_{jl} v_l
+    \times
+    \mathcal{D}_{ma} \delta_{ia}
+    \mathcal{D}_{nb} \delta_{jb}
+    (e_m \cdot e_n)
+    \\
+    &= (\mathcal{D}^{-1})_{ik} u_k
+    (\mathcal{D}^{-1})_{jl} v_l
+    \times
+    \mathcal{D}_{mi} \mathcal{D}_{nj} 
+    (e_m \cdot e_n)
+    \\
+    &= [\mathcal{D}_{mi} (\mathcal{D}^{-1})_{ik}]
+    [\mathcal{D}_{nj} (\mathcal{D}^{-1})_{jl}]
+    u_k v_l (e_m \cdot e_n)
+    \\
+    &= (\mathcal{D}\mathcal{D}^{-1})_{mk}
+    (\mathcal{D}\mathcal{D}^{-1})_{nl}
+    u_k v_l (e_m \cdot e_n)
+    \\
+    &= \delta_{mk} \delta_{nl} u_k v_l (e_m \cdot e_n)
+    \\
+    &= u_m v_n (e_m \cdot e_n)
+\end{aligned}
+$$
+
+Renaming $(m,n)$ to $(i,j)$, we have verified that $u \cdot v$ is invariant under change of basis.
+
 ### EXERCISE
 
 <center>
@@ -486,7 +573,7 @@ $$
 <center>
 
 ![](Figures/3d_det-solution.png)   
-*Calculation of area of parallelogram ABCD*
+*Calculation of volume of parallelepiped*
 
 </center>
 

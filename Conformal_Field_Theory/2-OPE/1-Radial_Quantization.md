@@ -29,7 +29,7 @@ For an *interacting* field $\phi$, we assume that *the Hilbert space is
 the same as for a free field*, except that the actual energy eigenstates
 are different.
 
-## In State
+### In-State
 
 Suppose then that the interaction is slowly turned off as
 $t\to \pm \infty$ and that the *asymptotic* field
