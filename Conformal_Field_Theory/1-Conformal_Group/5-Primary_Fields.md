@@ -6,7 +6,7 @@
 
 If $\phi$ only depends on $z$, it is called a **chiral field**; if $\phi$ only depends on $\bar{z}$, it is an called **anti-chiral field**.
 
-### Primary Field
+### Primary and Quasi-Primary Field
 
 If a field $\phi (z, \bar{z})$ transforms under *any* (global or local) conformal transformations $z\to w(z)$ according to
 
@@ -98,23 +98,3 @@ $$
 \end{aligned}
 $$
 
-## Restriction on Correlation Function by Conformal Symmetry
-
-The conformal invariance imposes strong restriction on the possible
-forms of the correlation functions of (quasi-)primary fields.
-
-### Two-Point Functions
-
-$$
-\langle \phi_a(z, \bar{z}) \phi_b(w, \bar{w}) \rangle 
-= \frac{C_{a b}}{(z-w)^{2h} (\bar{z}-\bar{w})^{2\bar{h}}} 
-\quad \text{if }
-\begin{cases}
-    h_a = h_b = h \\
-    \bar{h}_a = \bar{h}_b = \bar{h}
-\end{cases}
-$$
-
-Otherwise the correlation function vanishes.
-
-### Three-Point Functions

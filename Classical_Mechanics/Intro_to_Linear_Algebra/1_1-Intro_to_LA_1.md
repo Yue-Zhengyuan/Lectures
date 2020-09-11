@@ -213,13 +213,13 @@ $$
 u \cdot v = u_i v_j \delta_{ij} = u_i v_i
 $$
 
-We emphasize that **this definition is valid only when we are using the components of $u,v$ under an orthonormal set of basis**.
+We emphasize that **this formula is valid only when we are using the components of $u,v$ along an orthonormal basis**.
 
 *Remark*: Even the choice of orthonormal basis is *not unique*. For example, you can easily *rotate* the basis to obtain a new one. This is easy to understand intuitively, but a rigorous mathematical proof of this statement is not very trivial.
 
 ## Linear Transformations
 
-A **linear transformation** (denoted by $A$) on a $V$ maps a vector $u \in V$ to another vector $v = Au \in V$:
+A **linear transformation** (denoted by $A$) on a vector space $V$ maps a vector $u \in V$ to another vector $v = Au \in V$:
 
 $$
 A: V \to V

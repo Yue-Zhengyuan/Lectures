@@ -19,15 +19,13 @@
     - [Determinant and Matrix Invertibility](#determinant-and-matrix-invertibility)
     - [Inverse of Product of Matrices](#inverse-of-product-of-matrices)
     - [EXERCISE](#exercise)
-- [Inner Product under Linear Transformation](#inner-product-under-linear-transformation)
-    - [Orthogonal Matrix](#orthogonal-matrix)
 - [Change of Basis](#change-of-basis)
     - [Description of the New Basis](#description-of-the-new-basis)
-    - [Components of Vectors along New Basis](#components-of-vectors-along-new-basis)
-    - [Matrix of Linear Transformations under New Basis](#matrix-of-linear-transformations-under-new-basis)
-    - [Inner Product under Change of Basis](#inner-product-under-change-of-basis)
+    - [Components of Vectors along the New Basis](#components-of-vectors-along-the-new-basis)
+    - [Matrix of Linear Transformation under the New Basis](#matrix-of-linear-transformation-under-the-new-basis)
+    - [Inner Product under the New Basis](#inner-product-under-the-new-basis)
     - [EXERCISE](#exercise-1)
-- [Appendix A: Geometrical Meaning of Determinant](#appendix-a-geometrical-meaning-of-determinant)
+- [Appendix: Geometrical Meaning of Determinant](#appendix-geometrical-meaning-of-determinant)
     - [2D Determinant = Parallelogram Area](#2d-determinant--parallelogram-area)
     - [3D Determinant = Parallelepiped Volume](#3d-determinant--parallelepiped-volume)
     - [EXERCISE](#exercise-2)
@@ -136,7 +134,7 @@ When $\det A = 0$, it means that $a, b, c$ are *on the same plane*.
 
 ## Inverse of Linear Transformation and Matrix
 
-For a given linear transformation $A$, *if we can find* another transformation $B$ that completely cancels the effect of $A$, *and* $A$ completely cancels the effect of $B$, then we say that $A$ and $B$ are **inverse** of each other. 
+For a given linear transformation $A$, *if we can find* another transformation $B$ that completely *cancels* the effect of $A$, *and* $A$ completely cancels the effect of $B$, then we say that $A$ and $B$ are the **inverse of each other**. 
 
 The matrix representation of $B$ is called the **inverse** of the matrix $A$. We shall use the notation $A^{-1}$ to denote both the inverse transformation and the inverse matrix.
 
@@ -267,7 +265,7 @@ It is expected that if we change to a new set of basis vectors:
 - A vector will have different components 
 - A linear transformation will be represented by a different matrix
 
-In this section we shall show how to find the components of vectors and representation matrices of linear transformations under a new set of basis vectors. 
+In this section we shall show, in two dimensions, how to find the components of vectors and representation matrices of linear transformations under a new set of basis vectors. The generalization to higher dimensions is straightforward.
 
 ### Description of the New Basis
 
@@ -296,7 +294,7 @@ $$
 
 *Remark*: The inverse operation, i.e. change from the new basis to the old basis, is described by the inverse matrix $\mathcal{D}^{-1}$ (**under the new basis**).
 
-### Components of Vectors along New Basis
+### Components of Vectors along the New Basis
 
 For an arbitrary vector, its components along the new and the old basis vectors are related by
 
@@ -342,7 +340,7 @@ $$
 
 where $v' \equiv v'_1 e_1 + v'_2 e_2$ is the vector constructed using the *new* components and the *old* basis vectors.
 
-### Matrix of Linear Transformations under New Basis
+### Matrix of Linear Transformation under the New Basis
 
 In the *basis-free* language, for an arbitrary vector $v \in V$, a linear transformation $A$ sends it to another vector $w \in V$:
 
@@ -426,7 +424,7 @@ $$
 
 we say that $A$ and $B$ are **similar** to each other (the word "similar" is chosen for obvious reasons). The "sandwich" operation $\mathcal{D}^{-1}A \mathcal{D}$ is called a **similarity transformation**.
 
-### Inner Product under Change of Basis
+### Inner Product under the New Basis
 
 Geometrically, the inner product $u, v$ depends only on the length of $u, v$ and the angle $\theta$ between them:
 
@@ -434,7 +432,7 @@ $$
 u \cdot v = |u| |v| \cos \theta
 $$
 
-Thus intuitively, inner product should be *invariant* under change of basis, which does not change the vectors at all. Now let us verify it (as a good exercise of matrix multiplication and Einstein summation rule).
+Thus intuitively, inner product should be *invariant* under change of basis, which does not change the vectors at all. Now let us verify it (this is a good exercise of matrix multiplication and Einstein summation rule).
 
 Under the old basis:
 
@@ -523,7 +521,7 @@ From the information of the figure above:
 
 - Calculate the new components of the vector $v$. You can calculate $\mathcal{D}^{-1}$ using computers. Check if your result agrees with the figure.
 
-## Appendix A: Geometrical Meaning of Determinant
+## Appendix: Geometrical Meaning of Determinant
 
 ### 2D Determinant = Parallelogram Area
 
