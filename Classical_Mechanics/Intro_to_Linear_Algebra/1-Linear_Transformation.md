@@ -1,4 +1,6 @@
-# Introduction to Linear Algebra (Part 1)
+# Introduction to Linear Algebra
+
+### **Part 1: Linear Transformation and Matrix**
 
 <center>
 

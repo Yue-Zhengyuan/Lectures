@@ -1,4 +1,6 @@
-# Introduction to Linear Algebra (Part 2)
+# Introduction to Linear Algebra
+
+### **Part 2: Determinant, Inverse and Change of Basis**
 
 <center>
 
