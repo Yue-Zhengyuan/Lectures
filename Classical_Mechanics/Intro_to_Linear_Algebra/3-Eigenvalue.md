@@ -15,25 +15,31 @@
 ### **Contents**
 
 - [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors)
-    - [Definitions and Basic Theorems](#definitions-and-basic-theorems)
+    - [Definitions](#definitions)
+    - [The Number $i$ and Rotation](#the-number-i-and-rotation)
+    - [Eigen-Decomposition](#eigen-decomposition)
     - [Application: An Collision Problem](#application-an-collision-problem)
 - [Things Omitted in This Introduction](#things-omitted-in-this-introduction)
 
 ## Eigenvalues and Eigenvectors
 
-### Definitions and Basic Theorems
+### Definitions
+
+### The Number $i$ and Rotation
+
+### Eigen-Decomposition
 
 ### Application: An Collision Problem
 
 (This problem is borrowed from the 3b1b video [*The most unexpected answer to a counting puzzle*](https://youtu.be/HEfHFsfGXjs).)
-
-There is a [more geometrical solution](https://youtu.be/jsYwFizhncE) to this problem. But nevertheless, I will make use of eigen-decomposition of matrices (which is more tedious) to lead to the same geometric picture, and show the power of algebra. 
 
 <center>
 
 ![](Figures/3b1b_collision.jpg)
 
 </center>
+
+There is a [more geometrical solution](https://youtu.be/jsYwFizhncE) to this problem. But nevertheless, I will make use of eigen-decomposition of matrices (which is more tedious) to lead to the same geometric picture, and show the power of algebra. 
 
 Let us call the big block 1, and the small block 2, and take right as the positive direction of velocity. Let $v_1^{(n)}, v_2^{(n)}$ be the velocities of 1,2 after the $n$th collision. The initial state is
 
@@ -174,7 +180,8 @@ $$
     D = \begin{bmatrix}
         i/\sqrt{a} & -i/\sqrt{a} \\
         1 & 1
-    \end{bmatrix} \qquad
+    \end{bmatrix} 
+    \, \Rightarrow \,
     D^{-1} = \frac{1}{2} \begin{bmatrix}
         -i\sqrt{a} & 1 \\
         i\sqrt{a} & 1
@@ -218,10 +225,10 @@ $$
 To further simplify the expression, we make use of the exponential notation of complex numbers: let
 
 $$
-\lambda = r e^{i \theta} = r (\cos \theta + i \sin \theta)
+\lambda = r e^{-i \theta} = r (\cos \theta - i \sin \theta)
 $$
 
-Obviously $r = |\lambda| = 1$; to determine $\theta$, we rewrite $\lambda$ as
+We add a minus sign before $\theta$ for convenience later. Obviously $r = |\lambda| = 1$; to determine $\theta$, we rewrite $\lambda$ as
 
 $$
 \begin{aligned}
@@ -236,27 +243,22 @@ Thus
 
 $$
 \tan \theta 
-= - \frac{2 \sqrt{a}}{a - 1} < 0
+= \frac{2 \sqrt{a}}{a - 1}
 $$
 
-i.e. $\theta$ is an angle between $-\pi/2$ and $0$. Then (recall that $v_1^{(0)} < 0$)
+i.e. $\theta$ is an angle between $0$ and $\pi/2$. Then (recall that $v_1^{(0)} < 0$)
 
 $$
 \begin{aligned}
     v^{(2k)} &= \frac{v_0}{2}
     \begin{bmatrix}
-        - (e^{ik\theta} + e^{-ik\theta}) \\
-        i \sqrt{a} (e^{ik\theta} - e^{-ik\theta})
+        - (e^{-ik\theta} + e^{ik\theta}) \\
+        i \sqrt{a} (e^{-ik\theta} - e^{ik\theta})
     \end{bmatrix}
     \\
     &= v_0 \begin{bmatrix}
         - \cos k\theta \\
-        - \sqrt{a} \sin k\theta
-    \end{bmatrix}
-    \\
-    &= v_0 \begin{bmatrix}
-        -\cos k |\theta| \\
-        \sqrt{a} \sin k |\theta|
+        \sqrt{a} \sin k\theta
     \end{bmatrix}
 \end{aligned}
 $$
@@ -266,8 +268,8 @@ And, if the collision already stops at $n = 2k-1 \, (k = 1,2,...)$, we simply re
 $$
 v^{(2k-1)} = P^{-1} v^{(2k)}
 = v_0 \begin{bmatrix}
-    -\cos k |\theta| \\
-    - \sqrt{a} \sin k |\theta|
+    -\cos k \theta \\
+    - \sqrt{a} \sin k \theta
 \end{bmatrix}
 $$
 
@@ -285,11 +287,11 @@ Then
 $$
 \begin{aligned}
     V^{(2k)} &= \begin{bmatrix}
-        -\cos k|\theta| \\ \sin k|\theta|
+        -\cos k\theta \\ \sin k\theta
     \end{bmatrix} &\quad &k = 0,2,4,...
     \\
     V^{(2k-1)} &= \begin{bmatrix}
-        -\cos k|\theta| \\ -\sin k|\theta|
+        -\cos k\theta \\ -\sin k\theta
     \end{bmatrix} &\quad &k = 1,3,5...
 \end{aligned} 
 $$
