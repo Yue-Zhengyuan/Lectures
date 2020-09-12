@@ -2,13 +2,14 @@
 
 Lecture Notes on Physics/Mathematics Courses
 
-## Will Include (Hope so)
+## Structure Plan
 
 - Classical Mechanics
 - Electrodynamics
 - Statistical Physics
 - Quantum Physics
     - Non-relativistic Quantum Mechanics
+    - Quantum Information & Computation
     - Quantum Field Theory
     - Conformal Field Theory
 - Differential Geometry and Gravity

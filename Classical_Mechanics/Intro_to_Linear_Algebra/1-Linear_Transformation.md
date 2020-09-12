@@ -4,7 +4,7 @@
 
 <center>
 
-![](Figures/LA_3b1b.png)
+![](Figures/3b1b_LA.png)
 
 </center>
 
@@ -446,7 +446,7 @@ $$
 
 <center>
 
-![](Figures/Mat_on_vec.png)   
+![](Figures/3b1b_Mat_on_vec.png)   
 *(Have you watched the [videos][LA_3b1b] now?)*
 
 </center>

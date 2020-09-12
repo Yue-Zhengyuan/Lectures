@@ -4,7 +4,7 @@
 
 <center>
 
-![](Figures/LA_3b1b.png)
+![](Figures/3b1b_LA.png)
 
 </center>
 

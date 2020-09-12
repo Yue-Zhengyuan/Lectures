@@ -2,9 +2,11 @@
 
 ### **Part 3: Eigenvalues and Eigenvectors**
 
+This part is mostly covered by [Episode 14](https://youtu.be/PFDu9oVAE-g) of the *Essence of Linear Algebra*. 
+
 <center>
 
-![](Figures/LA_3b1b.png)
+![](Figures/3b1b_LA.png)
 
 </center>
 
@@ -14,32 +16,337 @@
 
 ### **Contents**
 
-- [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors)
-    - [Definitions](#definitions)
-    - [The Number $i$ and Rotation](#the-number-i-and-rotation)
-    - [Eigen-Decomposition](#eigen-decomposition)
+- [Finding Eigenvalues and Eigenvectors](#finding-eigenvalues-and-eigenvectors)
+    - [The Characteristic Polynomial](#the-characteristic-polynomial)
+    - [Examples in Two Dimensions](#examples-in-two-dimensions)
+- [Eigen-Decomposition](#eigen-decomposition)
+    - [Eigenspace](#eigenspace)
+    - [Diagonalization of Matrix](#diagonalization-of-matrix)
     - [Application: An Collision Problem](#application-an-collision-problem)
-- [Things Omitted in This Introduction](#things-omitted-in-this-introduction)
 
-## Eigenvalues and Eigenvectors
+Let $V$ be a vector space. Given a linear transformation $A: V \to V$, a (nonzero) vector $v \in V$ is called an **eigenvector** of $A$ with **eigenvalue** $\lambda$ if
 
-### Definitions
+$$
+A v = \lambda v
+$$
 
-### The Number $i$ and Rotation
+i.e. the action of $A$ on $v$ is simply *scale* it by a factor of $\lambda$. This definition can be easily generalized to the representation matrix of $A$. 
 
-### Eigen-Decomposition
+Obviously, for any *(complex) number* $a$
+
+$$
+A (av) = \lambda (av)
+$$
+
+i.e. the length of the eigenvector is arbitrarily. Conventionally, we shall take $|v| = 1$ (normalized).
+
+An obvious but important theorem on the eigenvectors is
+
+<center>
+
+**Eigenvectors associated with different eigenvalues <br>must be linearly independent**.
+
+</center>
+
+## Finding Eigenvalues and Eigenvectors
+
+Now we describe how to find the eigenvalues and eigenvectors for a 2D transformation matrix. We rewrite the definition as
+
+$$
+Av = \lambda 1 v \Rightarrow (A - \lambda 1) v = 0
+$$
+
+where 1 is the identity matrix. 
+
+Now consider $A - \lambda 1$ as a new transformation. We know that *any invertible linear transformation cannot send a nonzero vector to zero* (prove it by yourself!). Therefore, if the equation $(A - \lambda 1) v = 0$ have nonzero solutions of $v$, $A - \lambda 1$ cannot be invertible, which is equivalent to saying that its determinant vanishes. Thus, a *sufficient* condition for $\lambda$ to be an eigenvalue of $A$ is
+
+$$
+\det (A-\lambda 1) = 0
+$$
+
+It turns out that this is also a *necessary* condition. Thus, the equation above gives all the eigenvalues of $A$. 
+
+Finally, we return to the equation $(A - \lambda 1) v = 0$ to determine the eigenvectors. 
+
+### The Characteristic Polynomial
+
+The expression $\det (A - \lambda 1)$ is called the **characteristic polynomial** of the linear transformation (matrix) $A$, because it is indeed a polynomial of the eigenvalue $\lambda$, and is of degree $n = \dim{V}$. 
+
+Some consequences immediately follow:
+
+- A linear transformation in $n$-dimensions (an $n \times n$ matrix) will have $n$ eigenvalues (in the *complex plane*), which are the roots of the characteristic polynomial (due to the [**fundamental theorem of algebra**](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra)).
+
+    - Even if the matrix of $A$ is real, *its eigenvalues can still be complex*. 
+
+- Some eigenvalues may *repeat* in the roots of the characteristic polynomial. The number of times $k_i$ that one eigenvalue $\lambda_i$ repeats is called **algebraic multiplicity** of $\lambda_i$.
+
+### Examples in Two Dimensions
+
+- **An Ordinary Transformation Without Name**
+    
+    $$
+    A = \begin{bmatrix}
+        3 & 1 \\
+        0 & 2
+    \end{bmatrix}
+    $$
+
+    <center>
+
+    ![](Figures/3b1b_eigenvector.png)   
+    *Eigenvalues and eigenvectors of the transformation (matrix) $A$*
+
+    </center>
+
+    Let us solve
+
+    $$
+    \begin{aligned}
+        \det (A - \lambda 1)
+        &= \det \begin{bmatrix}
+            3 - \lambda & 1 \\
+            0 & 2 - \lambda
+        \end{bmatrix}
+        \\
+        &= (3-\lambda)(2-\lambda) = 0
+    \end{aligned}
+    $$
+
+    The results are
+
+    $$
+    \lambda_1 = 3,
+    \quad
+    \lambda_2 = 2
+    $$
+
+    Finally, let us find the eigenvectors (up to a scaling factor):
+
+    $$
+    \begin{aligned}
+        (R - \lambda_1 1) v_1
+        &= \begin{bmatrix}
+            0 & 1 \\
+            0 & -1
+        \end{bmatrix} v_1
+        = \begin{bmatrix}
+            0 \\ 0
+        \end{bmatrix}
+        &\, \Rightarrow \, &
+        v_1 = \begin{bmatrix}
+            1 \\ 0
+        \end{bmatrix}
+        \\ \\
+        (R - \lambda_2 1) v_2
+        &= \begin{bmatrix}
+            1 & 1 \\
+            0 & 0
+        \end{bmatrix} v_2
+        = \begin{bmatrix}
+            0 \\ 0
+        \end{bmatrix}
+        &\, \Rightarrow \, &
+        v_2 = \begin{bmatrix}
+            -1 \\ 1
+        \end{bmatrix}
+    \end{aligned}
+    $$
+
+- **Isotropic Scaling**
+    
+    $$
+    S = \begin{bmatrix}
+        2 & 0 \\
+        0 & 2
+    \end{bmatrix}
+    $$
+
+    The eigenvalues are
+
+    $$
+    \lambda_1 = \lambda_2 = 2
+    $$
+
+    You can verify that *all* vectors in the 2D vector space are eigenvectors of $S$. Usually we shall only write down the two orthonormal ones to represent all of them:
+
+    $$
+    v_1 = \begin{bmatrix}
+        1 \\ 0
+    \end{bmatrix}, \quad
+    v_2 = \begin{bmatrix}
+        0 \\ 1
+    \end{bmatrix}
+    $$
+
+- **Shear**
+    
+    $$
+    S = \begin{bmatrix}
+        1 & 1 \\
+        0 & 1
+    \end{bmatrix}
+    $$
+
+    This shear transformation moves the end of $e_2$ by length 1 along $e_1$. Solving $\det S - \lambda 1 = 0$, we find the eigenvalues are
+
+    $$
+    \lambda_1 = \lambda_2 = 1
+    $$
+
+    To find eigenvectors, we write
+
+    $$
+    (S - \lambda 1)v
+    = \begin{bmatrix}
+        0 & 1 \\
+        0 & 0 
+    \end{bmatrix} \begin{bmatrix}
+        v_x \\ v_y
+    \end{bmatrix} = \begin{bmatrix}
+        0 \\ 0
+    \end{bmatrix}
+    $$
+
+    The only nonzero solutions are scalar multiple of
+
+    $$
+    v = \begin{bmatrix}
+        1 \\ 0
+    \end{bmatrix}
+    $$
+
+    Thus we see that although the eigenvalue 1 repeats twice, it only have one linearly-independent eigenvector. 
+
+- **Rotation**
+
+    $$
+    R(\theta) = \begin{bmatrix}
+        \cos \theta & -\sin \theta\\
+        \sin \theta & \cos \theta
+    \end{bmatrix}
+    $$
+
+    Let us solve
+
+    $$
+    \begin{aligned}
+        \det (R - \lambda 1)
+        &= \det \begin{bmatrix}
+            \cos \theta - \lambda & -\sin \theta\\
+            \sin \theta & \cos \theta - \lambda
+        \end{bmatrix}
+        \\
+        &= \lambda^2 - 2\lambda \cos \theta + 1 = 0
+    \end{aligned}
+    $$
+
+    The results are *just amazing*:
+
+    $$
+    \begin{aligned}
+        \lambda_1 &= e^{-i\theta} = \cos \theta - i \sin \theta
+        \\
+        \lambda_2 &= e^{+i\theta} = \cos \theta + i \sin \theta
+    \end{aligned}
+    $$
+
+    Now you have seen an example where the matrix is real, but the eigenvalues are complex. Is it obvious to you that 2D rotation matrix cannot have real eigenvalues?
+
+    Next, let us find the eigenvectors of $\lambda_1$:
+
+    $$
+    \begin{aligned}
+        (R - \lambda_1 1) v
+        &= \begin{bmatrix}
+            i \sin \theta & -\sin \theta \\
+            \sin \theta & i \sin \theta
+        \end{bmatrix} v
+        \\
+        &= \sin \theta \begin{bmatrix}
+            i & -1 \\
+            1 & i
+        \end{bmatrix} \begin{bmatrix}
+            v_x \\ v_y
+        \end{bmatrix} = \begin{bmatrix}
+            0 \\ 0
+        \end{bmatrix}
+    \end{aligned}
+    $$
+
+    Then, the eigenvectors of $R(\theta)$ are
+
+    $$
+    \begin{aligned}
+        v_1 &= \begin{bmatrix}
+            1 \\ i
+        \end{bmatrix} 
+        &\quad 
+        &\text{(corresponding to $\lambda_1 = e^{-i\theta}$)}
+        \\
+        v_2 &= \begin{bmatrix}
+            1 \\ -i
+        \end{bmatrix} 
+        &\quad 
+        &\text{(corresponding to $\lambda_2 = e^{+i\theta}$)}
+    \end{aligned}
+    $$
+
+## Eigen-Decomposition
+
+### Eigenspace
+
+For an eigenvalue $\lambda$ of linear transformation (matrix) $A$, the vector space formed by the linear combination (**span**) of all eigenvectors corresponding to $\lambda$ is called the **eigenspace** of $A$ associated with $\lambda$. 
+
+The dimension of the eigenspace $m_i$ is called the **geometric multiplicity** of the eigenvalue $\lambda_i$. Equivalently, $m_i$ is the number of *linearly-independent* eigenvectors associated with $\lambda_i$.
+
+We state without proof that
+
+$$
+1 \le m_i \le k_i
+$$
+
+For example, if $\lambda$ occurs *only once* ($k = 1$) in the list of eigenvalues, and have one eigenvector $v$, then all possible eigenvectors associated with $\lambda$ can only be $c \lambda \, (c \in \mathbb{C})$. Thus the eigenspace is one-dimensional ($m = 1$).
+
+Besides, as we have seen in the example of shear matrix, the eigenvalue $\lambda = 1$ has algebraic multiplicity $k = 2$, but its eigenspace is only one-dimensional ($m = 1 < 2$). 
+
+### Diagonalization of Matrix
+
+When the algebraic multiplicity and geometric multiplicity are equal for all eigenvalues of a matrix $A$, we can directly use the eigenvectors as a set of basis vectors of the vector space $V$. 
+
+Since the action of a linear transformation $A$ on its eigenvectors is simply scaling, the representation matrix (denoted by $\Lambda$) is very simple: it is just a diagonal matrix, whose diagonal elements are just its eigenvalues:
+
+$$
+\Lambda = \text{diag } (\lambda_1, ..., \lambda_n)
+= \mathcal{D}^{-1} A \mathcal{D}
+$$
+
+where $\mathcal{D}$ is the change-of-basis matrix, whose columns are eigenvectors of $A$: 
+
+$$
+\mathcal{D} = (v_1, v_2, ..., v_n)
+$$
+
+Such a process is called **diagonalization**, and $A$ is said to be **diagonalizable**. We may also write
+
+$$
+A = \mathcal{D} \Lambda \mathcal{D}^{-1}
+$$
+
+This is called the **eigen-decomposition** of $A$. This is especially useful when we want to calculate the matrix power $AA \cdots A$, as can be seen in the following interesting example. 
+
+*Remark*: 
+
+If the geometric multiplicity of some eigenvalue is smaller than its algebraic multiplicity, the span of its eigenvectors have a smaller dimension than $V$, and hence cannot serve as a set of basis vectors. Such matrices (e.g. the 2D shear matrix) are said to be **not diagonalizable**. 
 
 ### Application: An Collision Problem
 
-(This problem is borrowed from the 3b1b video [*The most unexpected answer to a counting puzzle*](https://youtu.be/HEfHFsfGXjs).)
+This problem is borrowed from the Grant Sanderson's video [*The most unexpected answer to a counting puzzle*](https://youtu.be/HEfHFsfGXjs). He posted a [more geometrical solution](https://youtu.be/jsYwFizhncE) to this problem, which I strongly suggest you to watch. But nevertheless, I will make use of eigen-decomposition of matrices (which is more tedious) to lead to the same geometrical picture, and show the power of algebra. Some manipulation of complex numbers is involved. 
 
 <center>
 
 ![](Figures/3b1b_collision.jpg)
 
 </center>
-
-There is a [more geometrical solution](https://youtu.be/jsYwFizhncE) to this problem. But nevertheless, I will make use of eigen-decomposition of matrices (which is more tedious) to lead to the same geometric picture, and show the power of algebra. 
 
 Let us call the big block 1, and the small block 2, and take right as the positive direction of velocity. Let $v_1^{(n)}, v_2^{(n)}$ be the velocities of 1,2 after the $n$th collision. The initial state is
 
@@ -48,7 +355,7 @@ v_1^{(0)} = -v_0 < 0, \quad
 v_2^{(0)} = 0
 $$
 
-The sequence of collision events is
+i.e. the big block 1 moves towards the small block 2. There will be series of collisions (all of which are assumed to be perfectly elastic) following:
 
 $$
 \begin{aligned}
@@ -62,15 +369,27 @@ $$
 \end{aligned}
 $$
 
-We see that there are two possible endings. When the collision ends, we must have
+We see that there are two possible endings. People discover that when $m_1 / m_2 = 10^{2d}$, the number of collisions is the *first $d + 1$ digits of $\pi$*! Now we shall prove why this is true. 
+
+<center>
+
+|        $m_1 / m_2$ | Number of Collisions |
+| -----------------: | :------------------- |
+|       $10^2 = 100$ | 31                   |
+|    $10^4 = 10,000$ | 314                  |
+| $10^6 = 1,000,000$ | 31415                |
+
+</center>
+
+When the collision ends, we must have
 
 $$
-v_1^{(n)} \ge v_2^{(n)} \ge 0
+0 \le v_2^{(n)} \le v_1^{(n)}
 $$
 
 Now let us find the relation between $v_{1,2}^{(n)}$ and $v_{1,2}^{(n+1)}$. 
 
-- When $n = 0,2,4,...$ (even), the next collision happens between $A$ and $B$. Using conservation of linear momentum and energy, we obtain
+- When $n = 0,2,4,...$ (even), the next collision happens between 1 and 2. Using conservation of linear momentum and energy, we obtain
     
     $$
     \begin{aligned}
@@ -246,7 +565,7 @@ $$
 = \frac{2 \sqrt{a}}{a - 1}
 $$
 
-i.e. $\theta$ is an angle between $0$ and $\pi/2$. Then (recall that $v_1^{(0)} < 0$)
+i.e. $\theta$ is an angle between $0$ and $\pi/2$. Then
 
 $$
 \begin{aligned}
@@ -282,32 +601,62 @@ V^{(n)} \equiv \frac{1}{v_0}
 \end{bmatrix}
 $$
 
-Then
+Then we make $V^{(n)}$ always *on the unit circle*:
 
 $$
 \begin{aligned}
     V^{(2k)} &= \begin{bmatrix}
         -\cos k\theta \\ \sin k\theta
-    \end{bmatrix} &\quad &k = 0,2,4,...
+    \end{bmatrix} &\quad &k = 0,1,2,...
     \\
     V^{(2k-1)} &= \begin{bmatrix}
         -\cos k\theta \\ -\sin k\theta
-    \end{bmatrix} &\quad &k = 1,3,5...
+    \end{bmatrix} &\quad &k = 1,2,3...
 \end{aligned} 
 $$
 
-Do you notice that $V^{(n)}$ is always on the *unit circle*? The collision stops at $v_1^{(n)} \ge v_2^{(n)} \ge 0$. In terms of the components of $V^{(n)}$, this condition reads
+The collision stops at $0 \le v_2 \le v_1$. In terms of the components of $V^{(n)}$, this condition reads
 
 $$
 0 \le V_2 \le \frac{V_1}{\sqrt{a}}
 $$
 
-Here comes Grant Sanderson's geometric picture. 
+Here comes Grant Sanderson's geometric picture. Let us draw the column vectors $V^{(n)}$ after each collision on the unit circle. The result is shown below: when $V^{(n)}$ falls in the red-shaded region labelled "end zone", the collision stops. 
 
-## Things Omitted in This Introduction
+When a collision happens, we shall add a disk sector with angle $\theta$. For example, when $a = 16$, we read from the figure that there can be 12 collisions. 
 
-Here I list some topics that are important but will not be needed in this course, some of which are covered in the *Essence of Linear Algebra* series:
+<center>
 
-- **Cramer's rule** of solving linear equations ([Episode 12](https://youtu.be/jBsC34PxzoM) of *Essence of Linear Algebra* gives a *very beautiful* proof of it, using the geometric meaning of determinants) 
+![](Figures/3b1b_collision-sol.svg)   
+*Visualization of $V^{(n)}$ after each collision when $a = 16$*
 
-- **Singular value decomposition** of matrices
+</center>
+
+Now we set $a = 10^{2d}$ and see what will happen. Such an $a$ is large enough so that we can approximately treat (recall that $\arctan x \approx x$ when $x$ is small enough)
+
+$$
+\theta = \arctan \frac{2 \sqrt{a}}{a - 1}
+\approx \frac{2 \sqrt{a}}{a - 1}
+\approx \frac{2}{\sqrt{a}} = 2 \times 10^{-d}
+$$
+
+And the angle in the "end zone" is approximately $\theta / 2$:
+
+$$
+\arctan \frac{1}{\sqrt{a}} 
+\approx \frac{1}{\alpha} = 1 \times 10^{-d}
+$$
+
+For comparison, we give the numerical values of $\theta$ up to 10 digits:
+
+<center>
+
+|  $d$  |   $\theta$   |
+| :---: | :----------: |
+|   1   | 0.1993373050 |
+|   2   | 0.0199993334 |
+|   3   | 0.0019999993 |
+|   4   | 0.0002000000 |
+|   5   | 0.0000200000 |
+
+</center>

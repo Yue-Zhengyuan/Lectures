@@ -168,15 +168,9 @@ $$
 
     Are these results trivial to you?
 
-- Recall the following two properties of matrices:
+- Using geometrical properties of rotation, show that for the general rotation matrix $R_n(\alpha)$:
 
-    - The columns of the matrices correspond to the vectors $e'_1, e'_2, e'_3$ after the transformation;
-
-    - The determinant of a 3 $\times$ 3 matrix is the (signed) volume of the parallelepiped formed by its three columns.
-
-    Now, please show that, for a rotation matrix $R$:
-
-    - $R^\top R = 1$ (thus rotation matrices are **orthogonal matrices**).
+    - $R_n^\top(\alpha) R_n(\alpha) = 1$ (thus rotation matrices are **orthogonal matrices**).
 
         *Remark*: Calculating the inverse of a rotation matrix is now easy: we only need to exchange its columns and rows:
 
@@ -185,6 +179,12 @@ $$
         $$
 
     - $\det R=1$ (With both properties, it will be called a **special** orthogonal matrix).
+    
+    - $R_n(\alpha)$ only has one real eigenvalue 1, corresponding to the eigenvector 
+
+        $$
+        v = (\sin \theta \cos \varphi, \, \sin \theta \sin \varphi, \, \cos \theta)^\top
+        $$
 
 ## Angular Velocity
 
@@ -542,3 +542,4 @@ In mathematics, objects like the angular velocity vector are called **pseudo-vec
 ### EXERCISE
 
 Show that the angular velocity vector behaves in the same way as the position vector under rotations. You may need the general rotation matrix we found earlier.
+
