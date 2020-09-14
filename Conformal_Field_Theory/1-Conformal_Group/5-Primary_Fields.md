@@ -19,17 +19,38 @@ $$
 \phi(z, \bar{z})
 $$
 
-then it is called a **primary field**. The number $h \, (\bar{h})$ is called the **holomorphic (anti-holomorphic) conformal dimension**. 
+then it is called a **primary field**. 
+
+The number $h \, (\bar{h})$ is called the **holomorphic (anti-holomorphic) conformal dimension**. In connection with condensed matter physics (where a bar is used to denote left-moving operators), they are also called the **right-** and the **left-conformal dimensions**. 
 
 If this transformation holds only for *global* conformal transformations, i.e. $w(z) \in SL(2,\mathbb{C} / \mathbb{Z}_2)$, then $\phi$ is called a **quasi-primary field**.
 
-### Scaling Dimension and Spin
+### Scaling Dimension
 
-The conformal dimensions are related to the **scaling dimension** and the **planar spin** of the field by
+A scaling transformation in the complex plane means
 
 $$
-h=\frac{1}{2}(\Delta +s), \quad
-\bar{h}=\frac{1}{2}(\Delta -s)
+w(z) = \alpha z, \quad \alpha \in \mathbb{R}
+$$
+
+**scaling dimension**
+
+$$
+\Delta = h + \bar{h}
+$$
+
+### Conformal Spin
+
+A rotation in the complex plane is done by the mapping
+
+$$
+w(z) = e^{i \theta}, \quad \theta \in \mathbb{R}
+$$
+
+**conformal spin**
+
+$$
+s = h - \bar{h}
 $$
 
 ## Variation under Infinitesimal Conformal Transformations

@@ -170,20 +170,20 @@ $$
 
 - Using geometrical properties of rotation, show that for the general rotation matrix $R_n(\alpha)$:
 
-    - $R_n^\top(\alpha) R_n(\alpha) = 1$ (thus rotation matrices are **orthogonal matrices**).
+    - $R_n^\mathsf{T}(\alpha) R_n(\alpha) = 1$ (thus rotation matrices are **orthogonal matrices**).
 
         *Remark*: Calculating the inverse of a rotation matrix is now easy: we only need to exchange its columns and rows:
 
         $$
-        R^{-1} = R^\top
+        R^{-1} = R^\mathsf{T}
         $$
 
     - $\det R=1$ (With both properties, it will be called a **special** orthogonal matrix).
     
-    - $R_n(\alpha)$ only has one real eigenvalue 1, corresponding to the eigenvector 
+    - $R_n(\alpha)$ only has one real eigenvalue 1, corresponding to the eigenvector (normalized)
 
         $$
-        v = (\sin \theta \cos \varphi, \, \sin \theta \sin \varphi, \, \cos \theta)^\top
+        v = (\sin \theta \cos \varphi, \, \sin \theta \sin \varphi, \, \cos \theta)^\mathsf{T}
         $$
 
 ## Angular Velocity

@@ -294,16 +294,16 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
 
 ### Interlude: Transpose of Matrix
 
-The matrix obtained by *exchanging lines and rows* of $A$ is called the **transpose** of $A$, denoted by $A^\top$. By definition
+The matrix obtained by *exchanging lines and rows* of $A$ is called the **transpose** of $A$, denoted by $A^\mathsf{T}$. By definition
 
 $$
-(A^\top)_{i j} \equiv A_{j i}
+(A^\mathsf{T})_{i j} \equiv A_{j i}
 $$
 
 For example
 
 $$
-A^\top = \begin{bmatrix}
+A^\mathsf{T} = \begin{bmatrix}
     A_{11} & A_{21} \\
     A_{12} & A_{22}
 \end{bmatrix}
@@ -312,7 +312,7 @@ $$
 A column vector can be regarded as a matrix of only one column; so we have
 
 $$
-v^\top = (v_1, \cdots, v_n)
+v^\mathsf{T} = (v_1, \cdots, v_n)
 $$
 
 This is called a **row vector**.
@@ -547,9 +547,9 @@ $$
     \\
     &= A_{ik} u_k A_{il} v_l
     \\
-    &= u_k (A^\top)_{ki} A_{il} v_l
+    &= u_k (A^\mathsf{T})_{ki} A_{il} v_l
     \\
-    &= u_k (A^\top A)_{kl} v_l
+    &= u_k (A^\mathsf{T} A)_{kl} v_l
 \end{aligned}
 $$
 
@@ -558,8 +558,8 @@ $$
 Let us consider a special case: if 
 
 $$
-A^\top A = 1 \quad
-\text{or equivalently $A A^\top$ = 1}
+A^\mathsf{T} A = 1 \quad
+\text{or equivalently $A A^\mathsf{T}$ = 1}
 $$
 
 where $1$ is the **identity matrix** (we will talk more about it later)

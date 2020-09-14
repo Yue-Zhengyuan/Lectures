@@ -2,8 +2,6 @@
 
 ### **Part 3: Eigenvalues and Eigenvectors**
 
-This part is mostly covered by [Episode 14](https://youtu.be/PFDu9oVAE-g) of the *Essence of Linear Algebra*. 
-
 <center>
 
 ![](Figures/3b1b_LA.png)
@@ -295,7 +293,7 @@ Some consequences immediately follow:
 
 ### Eigenspace
 
-For an eigenvalue $\lambda$ of linear transformation (matrix) $A$, the vector space formed by the linear combination (**span**) of all eigenvectors corresponding to $\lambda$ is called the **eigenspace** of $A$ associated with $\lambda$. 
+For a linear transformation (matrix) $A$, the vector space formed by the linear combination of all eigenvectors (called the **span** of these vectors) corresponding to the eigenvalue $\lambda$ is called the **eigenspace** of $A$ associated with $\lambda$. 
 
 The dimension of the eigenspace $m_i$ is called the **geometric multiplicity** of the eigenvalue $\lambda_i$. Equivalently, $m_i$ is the number of *linearly-independent* eigenvectors associated with $\lambda_i$.
 
@@ -582,7 +580,7 @@ $$
 \end{aligned}
 $$
 
-And, if the collision already stops at $n = 2k-1 \, (k = 1,2,...)$, we simply reverse the direction of $v_2$ and write
+For the odd collisions $n = 2k-1 \, (k = 1,2,...)$, we simply reverse the direction of $v_2$ to obtain
 
 $$
 v^{(2k-1)} = P^{-1} v^{(2k)}
@@ -621,7 +619,7 @@ $$
 0 \le V_2 \le \frac{V_1}{\sqrt{a}}
 $$
 
-Here comes Grant Sanderson's geometric picture. Let us draw the column vectors $V^{(n)}$ after each collision on the unit circle. The result is shown below: when $V^{(n)}$ falls in the red-shaded region labelled "end zone", the collision stops. 
+Here comes Grant Sanderson's geometric picture. Let us draw the column vectors $V^{(n)}$ after each collision on the unit circle. The result is shown below: when $V^{(n)}$ falls in the green-shaded region labelled "end zone", the collision stops. 
 
 When a collision happens, we shall add a disk sector with angle $\theta$. For example, when $a = 16$, we read from the figure that there can be 12 collisions. 
 

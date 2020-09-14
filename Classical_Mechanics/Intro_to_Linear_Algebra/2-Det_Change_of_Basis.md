@@ -68,8 +68,8 @@ $$
 The determinant can be a negative number. When $\det A > 0$, we say that the two vectors $a, b$ form a **right-hand basis** of the 2D vector space. Thus the standard basis itself 
 
 $$
-e_1 = (1,0)^\top, \quad
-e_2 = (0,1)^\top
+e_1 = (1,0)^\mathsf{T}, \quad
+e_2 = (0,1)^\mathsf{T}
 $$ 
 
 is a right-hand basis.
@@ -125,9 +125,9 @@ $$
 When $\det A > 0$, we say that the two vectors $a, b$ form a **right-hand basis** of the 3D vector space. Thus the standard basis itself
 
 $$
-e_1 = (1,0,0)^\top, \quad 
-e_2 = (0,1,0)^\top, \quad
-e_3 = (0,0,1)^\top
+e_1 = (1,0,0)^\mathsf{T}, \quad 
+e_2 = (0,1,0)^\mathsf{T}, \quad
+e_3 = (0,0,1)^\mathsf{T}
 $$ 
 
 is a right-hand basis.
