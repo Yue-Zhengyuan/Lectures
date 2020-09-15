@@ -14,15 +14,162 @@
 
 ### **Contents**
 
-- [Finding Eigenvalues and Eigenvectors](#finding-eigenvalues-and-eigenvectors)
+- [Invitation: An Collision Problem](#invitation-an-collision-problem)
+- [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors)
+    - [Finding Eigenvalues and Eigenvectors](#finding-eigenvalues-and-eigenvectors)
     - [The Characteristic Polynomial](#the-characteristic-polynomial)
     - [Examples in Two Dimensions](#examples-in-two-dimensions)
 - [Eigen-Decomposition](#eigen-decomposition)
     - [Eigenspace](#eigenspace)
     - [Diagonalization of Matrix](#diagonalization-of-matrix)
-    - [Application: An Collision Problem](#application-an-collision-problem)
+    - [Return to the Collision Problem](#return-to-the-collision-problem)
 
-Let $V$ be a vector space. Given a linear transformation $A: V \to V$, a (nonzero) vector $v \in V$ is called an **eigenvector** of $A$ with **eigenvalue** $\lambda$ if
+## Invitation: An Collision Problem
+
+This problem is borrowed from the Grant Sanderson's video [*The most unexpected answer to a counting puzzle*](https://youtu.be/HEfHFsfGXjs). He posted a [more geometrical solution](https://youtu.be/jsYwFizhncE) to this problem, which I strongly suggest you to watch. But nevertheless, I will make use a more algebraic approach to lead to the same geometrical picture. Some manipulation of complex numbers is involved. 
+
+<center>
+
+![](Figures/3b1b_collision.jpg)
+
+</center>
+
+Let us call the big block 1, and the small block 2, and take right as the positive direction of velocity. Let $v_1^{(n)}, v_2^{(n)}$ be the velocities of 1,2 after the $n$th collision. The initial state is
+
+$$
+v_1^{(0)} = -v_0 < 0, \quad
+v_2^{(0)} = 0
+$$
+
+i.e. the big block 1 moves towards the small block 2. There will be series of collisions (all of which are assumed to be perfectly elastic) following:
+
+$$
+\begin{aligned}
+    &\text{1 and 2 $\to$ 2 and Wall $\to$ 1 and 2 $\to \cdots$}
+    \\
+    &\cdots \to
+    \begin{cases}
+        \text{2 and Wall (end)} \\
+        \text{2 and Wall $\to$ 1 and 2 (end)}
+    \end{cases}
+\end{aligned}
+$$
+
+We see that there are two possible endings. People discover that when $m_1 / m_2 = 10^{2d}$, the number of collisions is the *first $\mathcal{D} + 1$ digits of $\pi$*! Now we shall prove why this is true. 
+
+<center>
+
+|        $m_1 / m_2$ | Number of Collisions |
+| -----------------: | :------------------- |
+|       $10^2 = 100$ | 31                   |
+|    $10^4 = 10,000$ | 314                  |
+| $10^6 = 1,000,000$ | 31415                |
+
+</center>
+
+When the collision ends, we must have
+
+$$
+0 \le v_2^{(n)} \le v_1^{(n)}
+$$
+
+Now let us find the relation between $v_{1,2}^{(n)}$ and $v_{1,2}^{(n+1)}$. 
+
+- When $n = 0,2,4,...$ (even), the next collision happens between 1 and 2. Using conservation of linear momentum and energy, we obtain
+    
+    $$
+    \begin{aligned}
+        m_1 v_1^{(n)} + m_2 v_2^{(n)}
+        &= m_1 v_1^{(n+1)} + m_2 v_2^{(n+1)}
+        \\
+        \frac{1}{2} m_1 v_1^{(n)2}
+        + \frac{1}{2} m_2 v_2^{(n)2}
+        &= \frac{1}{2} m_1 v_1^{(n+1)2}
+        + \frac{1}{2} m_2 v_2^{(n+1)2}
+    \end{aligned}
+    $$
+
+    Solving this set of equations, we obtain the familiar result ($a \equiv m_1 / m_2$)
+
+    $$
+    \begin{aligned}
+        v_1^{(n+1)} &= \frac{a-1}{a+1} v_1^{(n)}
+        + \frac{2}{a+1} v_2^{(n)}
+        \\
+        v_2^{(n+1)} &= \frac{2a}{a+1} v_1^{(n)}
+        + \frac{-a+1}{a+1} v_2^{(n)}
+    \end{aligned}
+    $$
+
+    This set of linear equations can be written as matrix-vector product: define
+
+    $$
+    v^{(n)} \equiv \begin{bmatrix}
+        v_2^{(n)} \\ v_1^{(n)}
+    \end{bmatrix}, \quad
+    P = \frac{1}{a+1} \begin{bmatrix}
+        a-1 & 2 \\
+        2a & -a+1
+    \end{bmatrix}
+    $$
+
+    Then we can elegantly write
+
+    $$
+    v^{(n+1)} = P v^{(n)} \qquad n = 0,2,4,...
+    $$
+
+- When $n = 1,3,5,...$ (odd), the next collision happens between 2 and the wall. Things are easy in this case:
+    
+    $$
+    v_1^{(n+1)} = v_1^{(n)}
+    \qquad
+    v_2^{(n+1)} = - v_2^{(n)}
+    $$
+
+    Defining the matrix 
+
+    $$
+    Q = \begin{bmatrix}
+        1 & 0 \\
+        0 & -1
+    \end{bmatrix}
+    $$
+
+    We obtain
+
+    $$
+    v^{(n+1)} = Q v^{(n)} \qquad n = 1,3,5,...
+    $$
+
+Now we can use the $P,Q$ matrices to calculate the velocities after $n$ collisions:
+
+$$
+v^{(n)} = \underbrace{\cdots Q P Q P}_{n \text{ matrices}} 
+\, v^{(0)}
+$$
+
+First, consider the simpler case when there will be $n = 2k \, (k = 0,1,2,...)$ collisions. Then we combine $QP = S$, and
+
+$$
+v^{(2k)} = \underbrace{S \cdots S}_{k \text{ matrices}} v^{(0)} = S^k v^{(0)}
+$$
+
+The matrix elements of $S$ are
+
+$$
+S = \frac{1}{a+1}
+\begin{bmatrix}
+    a-1 & 2 \\
+    -2a & a-1
+\end{bmatrix}
+$$
+
+How can we calculate $S^k$? Although you may be tempted to directly calculate by hand, things will be quite a mess if $k$ is a very large number. Here we introduce one method to overcome this difficulty: the **eigen-decomposition** (a.k.a. **spectral decomposition**).
+
+## Eigenvalues and Eigenvectors
+
+First let us go through some formal math. Let $V$ be a vector space. Given a linear transformation $A: V \to V$, a (nonzero) vector $v \in V$ is called an **eigenvector** of $A$ with **eigenvalue** $\lambda$ if
 
 $$
 A v = \lambda v
@@ -42,11 +189,13 @@ An obvious but important theorem on the eigenvectors is
 
 <center>
 
-**Eigenvectors associated with different eigenvalues <br>must be linearly independent**.
+**Eigenvectors associated with different eigenvalues <br>are linearly independent**.
 
 </center>
 
-## Finding Eigenvalues and Eigenvectors
+The proof is simple; you can try to figure it out by yourself. 
+
+### Finding Eigenvalues and Eigenvectors
 
 Now we describe how to find the eigenvalues and eigenvectors for a 2D transformation matrix. We rewrite the definition as
 
@@ -336,150 +485,18 @@ This is called the **eigen-decomposition** of $A$. This is especially useful whe
 
 If the geometric multiplicity of some eigenvalue is smaller than its algebraic multiplicity, the span of its eigenvectors have a smaller dimension than $V$, and hence cannot serve as a set of basis vectors. Such matrices (e.g. the 2D shear matrix) are said to be **not diagonalizable**. 
 
-### Application: An Collision Problem
+### Return to the Collision Problem
 
-This problem is borrowed from the Grant Sanderson's video [*The most unexpected answer to a counting puzzle*](https://youtu.be/HEfHFsfGXjs). He posted a [more geometrical solution](https://youtu.be/jsYwFizhncE) to this problem, which I strongly suggest you to watch. But nevertheless, I will make use of eigen-decomposition of matrices (which is more tedious) to lead to the same geometrical picture, and show the power of algebra. Some manipulation of complex numbers is involved. 
-
-<center>
-
-![](Figures/3b1b_collision.jpg)
-
-</center>
-
-Let us call the big block 1, and the small block 2, and take right as the positive direction of velocity. Let $v_1^{(n)}, v_2^{(n)}$ be the velocities of 1,2 after the $n$th collision. The initial state is
+Let the eigen-decomposition of the matrix $S = QP$ be 
 
 $$
-v_1^{(0)} = -v_0 < 0, \quad
-v_2^{(0)} = 0
-$$
-
-i.e. the big block 1 moves towards the small block 2. There will be series of collisions (all of which are assumed to be perfectly elastic) following:
-
-$$
-\begin{aligned}
-    &\text{1 and 2 $\to$ 2 and Wall $\to$ 1 and 2 $\to \cdots$}
-    \\
-    &\cdots \to
-    \begin{cases}
-        \text{2 and Wall (end)} \\
-        \text{2 and Wall $\to$ 1 and 2 (end)}
-    \end{cases}
-\end{aligned}
-$$
-
-We see that there are two possible endings. People discover that when $m_1 / m_2 = 10^{2d}$, the number of collisions is the *first $d + 1$ digits of $\pi$*! Now we shall prove why this is true. 
-
-<center>
-
-|        $m_1 / m_2$ | Number of Collisions |
-| -----------------: | :------------------- |
-|       $10^2 = 100$ | 31                   |
-|    $10^4 = 10,000$ | 314                  |
-| $10^6 = 1,000,000$ | 31415                |
-
-</center>
-
-When the collision ends, we must have
-
-$$
-0 \le v_2^{(n)} \le v_1^{(n)}
-$$
-
-Now let us find the relation between $v_{1,2}^{(n)}$ and $v_{1,2}^{(n+1)}$. 
-
-- When $n = 0,2,4,...$ (even), the next collision happens between 1 and 2. Using conservation of linear momentum and energy, we obtain
-    
-    $$
-    \begin{aligned}
-        m_1 v_1^{(n)} + m_2 v_2^{(n)}
-        &= m_1 v_1^{(n+1)} + m_2 v_2^{(n+1)}
-        \\
-        \frac{1}{2} m_1 v_1^{(n)2}
-        + \frac{1}{2} m_2 v_2^{(n)2}
-        &= \frac{1}{2} m_1 v_1^{(n+1)2}
-        + \frac{1}{2} m_2 v_2^{(n+1)2}
-    \end{aligned}
-    $$
-
-    Solving this set of equations, we obtain the familiar result ($a \equiv m_1 / m_2$)
-
-    $$
-    \begin{aligned}
-        v_1^{(n+1)} &= \frac{a-1}{a+1} v_1^{(n)}
-        + \frac{2}{a+1} v_2^{(n)}
-        \\
-        v_2^{(n+1)} &= \frac{2a}{a+1} v_1^{(n)}
-        + \frac{-a+1}{a+1} v_2^{(n)}
-    \end{aligned}
-    $$
-
-    Let us put it *in matrix form*: define
-
-    $$
-    v^{(n)} \equiv \begin{bmatrix}
-        v_2^{(n)} \\ v_1^{(n)}
-    \end{bmatrix}, \quad
-    P = \frac{1}{a+1} \begin{bmatrix}
-        a-1 & 2 \\
-        2a & -a+1
-    \end{bmatrix}
-    $$
-
-    Then we can elegantly write
-
-    $$
-    v^{(n+1)} = P v^{(n)} \qquad n = 0,2,4,...
-    $$
-
-- When $n = 1,3,5,...$ (odd), the next collision happens between 2 and the wall. Things are easy in this case:
-    
-    $$
-    v_1^{(n+1)} = v_1^{(n)}
-    \qquad
-    v_2^{(n+1)} = - v_2^{(n)}
-    $$
-
-    Defining the matrix 
-
-    $$
-    Q = \begin{bmatrix}
-        1 & 0 \\
-        0 & -1
-    \end{bmatrix}
-    $$
-
-    We obtain
-
-    $$
-    v^{(n+1)} = Q v^{(n)} \qquad n = 1,3,5,...
-    $$
-
-Now we can use the $P,Q$ matrices to calculate the velocities after $n$ collisions:
-
-$$
-v^{(n)} = ... Q P Q P v^{(0)}
-$$
-
-First, consider the simpler case when there will be $n = 2k \, (k = 0,1,2,...)$ collisions. Then we combine $QP = S$, and
-
-$$
-v^{(2k)} = \underbrace{S \cdots S}_{k} v^{(0)} = S^k v^{(0)}
-$$
-
-The matrix elements of $S$ are
-
-$$
-S = \frac{1}{a+1}
+S =
+\frac{1}{a+1}
 \begin{bmatrix}
     a-1 & 2 \\
     -2a & a-1
 \end{bmatrix}
-$$
-
-How can we calculate $S^k$? Now comes the trick of eigen-decomposition: luckily, the matrix $S$ can be diagonalized
-
-$$
-S = D \Lambda D^{-1}
+= \mathcal{D} \Lambda \mathcal{D}^{-1}
 $$
 
 The eigenvalues (diagonal elements of $\Lambda$) are
@@ -490,16 +507,16 @@ $$
 \lambda_2 = \bar{\lambda} \equiv \frac{\sqrt{a}+i}{\sqrt{a}-i}
 $$
 
-We notice that $\lambda_2$ is the *complex conjugate* of $\lambda_1$. The eigenvectors (columns of the $D$ matrix) are 
+We notice that $\lambda_2$ is the *complex conjugate* of $\lambda_1$. The eigenvectors (columns of the $\mathcal{D}$ matrix) are 
 
 $$
 \begin{aligned}
-    D = \begin{bmatrix}
+    \mathcal{D} = \begin{bmatrix}
         i/\sqrt{a} & -i/\sqrt{a} \\
         1 & 1
     \end{bmatrix} 
     \, \Rightarrow \,
-    D^{-1} = \frac{1}{2} \begin{bmatrix}
+    \mathcal{D}^{-1} = \frac{1}{2} \begin{bmatrix}
         -i\sqrt{a} & 1 \\
         i\sqrt{a} & 1
     \end{bmatrix}
@@ -510,11 +527,11 @@ Then
 
 $$
 \begin{aligned}
-    S^k &= (D \Lambda D^{-1})^k
+    S^k &= (\mathcal{D} \Lambda \mathcal{D}^{-1})^k
     \\
-    &= D \Lambda D^{-1} D \Lambda D^{-1} \cdots D \Lambda D^{-1}
+    &= \mathcal{D} \Lambda \mathcal{D}^{-1} \mathcal{D} \Lambda \mathcal{D}^{-1} \cdots \mathcal{D} \Lambda \mathcal{D}^{-1}
     \\
-    &= D \Lambda^k D^{-1}
+    &= \mathcal{D} \Lambda^k \mathcal{D}^{-1}
 \end{aligned}
 $$
 
@@ -635,21 +652,21 @@ Now we set $a = 10^{2d}$ and see what will happen. Such an $a$ is large enough s
 $$
 \theta = \arctan \frac{2 \sqrt{a}}{a - 1}
 \approx \frac{2 \sqrt{a}}{a - 1}
-\approx \frac{2}{\sqrt{a}} = 2 \times 10^{-d}
+\approx \frac{2}{\sqrt{a}} = 2 \times 10^{-\mathcal{D}}
 $$
 
 And the angle in the "end zone" is approximately $\theta / 2$:
 
 $$
 \arctan \frac{1}{\sqrt{a}} 
-\approx \frac{1}{\alpha} = 1 \times 10^{-d}
+\approx \frac{1}{\alpha} = 1 \times 10^{-\mathcal{D}}
 $$
 
 For comparison, we give the numerical values of $\theta$ up to 10 digits:
 
 <center>
 
-|  $d$  |   $\theta$   |
+|  $\mathcal{D}$  |   $\theta$   |
 | :---: | :----------: |
 |   1   | 0.1993373050 |
 |   2   | 0.0199993334 |

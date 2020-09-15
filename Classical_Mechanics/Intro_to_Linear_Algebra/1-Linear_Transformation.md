@@ -16,6 +16,7 @@
 
 - [Vector Spaces and Basis Vectors](#vector-spaces-and-basis-vectors)
     - [Vector Spaces](#vector-spaces)
+    - [Linear Independence](#linear-independence)
     - [Basis Vectors](#basis-vectors)
     - [Note on Notations: Einstein Summation Rule](#note-on-notations-einstein-summation-rule)
     - [Inner Product](#inner-product)
@@ -51,16 +52,35 @@ I will not show the general (more abstract) definition of vector spaces in mathe
 
 [vec_space]: https://en.wikipedia.org/wiki/Vector_space
 
+### Linear Independence
+
+Consider a set of vectors $e_1, e_2, ..., e_n \in V$. Since we have vector addition and scalar multiplication in the vector space $V$, we can construct a *linear combination* of them, with (real) coefficients $v_1, ..., v_n$: 
+
+$$
+v = v_1 e_1 + \cdots + v_n e_n
+= \sum_{i=1}^n v_i e_i \in V
+$$
+
+Then the vectors $e_1, ..., e_n$ are said to be **linearly independent** if
+
+$$
+v = \sum_{i=1}^n v_i e_i = 0 
+\, \Leftrightarrow \,
+v_1 = \cdots = v_n = 0
+$$
+
+i.e. the zero vector is unique. 
+
 ### Basis Vectors
 
-Each "**finite-dimensional**" vector space have a set of **basis vectors** $\{e_1,...,e_n\}$, so that any vector $v\in V$ can be *uniquely* represented as
+Given a set of *linearly independent* vectors $\{e_1,...,e_n\}$, if *any* vector $v\in V$ can be *uniquely* represented as a linear combination of $e_1, ..., e_n$
 
 $$
 v = \sum_{i=1}^{n} v_i e_i
 \qquad v_1,...,v_n\in \mathbb{R}
 $$
 
-The number of basis vectors $n$ is called the **dimension** of $V$ (denoted by $\dim V$). 
+Then the vectors $e_1, ..., e_n$ are called **basis vectors** of $V$. The number of these vectors $n$ is called the **dimension** of $V$ (denoted by $\dim V$). 
 
 The number $v_i$ is called the **components** of the vector $v$ along the basis vector $e_i$. Then the vector $v$ can be also written as a **column vector** (without explicit reference to the basis we are using)
 
@@ -70,15 +90,12 @@ v = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-The choice of basis vectors is *not unique*: any set of **linearly-independent** $\dim{V}$ vectors can be used as basis vectors. By "linearly-independent", we mean that 
+The choice of basis vectors is *not unique*, since there are *infinitely many* sets of $n$ linearly-independent vectors in the vector space $V$. For example (say $n = 2$), if $e_1, e_2$ are basis vectors of $V$, then we can also use
 
 $$
-\sum_{i=1}^n v_i e_i = 0 
-\, \Leftrightarrow \,
-v_1 = \cdots = v_n = 0
+e'_1 = e_1 + 3e_2, \quad
+e'_2 = 2e_1 - e_2
 $$
-
-i.e. the zero vector is unique. 
 
 *Remarks*:
 

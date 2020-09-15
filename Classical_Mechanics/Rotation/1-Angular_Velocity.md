@@ -13,36 +13,34 @@
 - [The Angular Velocity is NOT Really a Vector](#the-angular-velocity-is-not-really-a-vector)
     - [EXERCISE](#exercise-2)
 
-In most introductory courses on classical mechanics, the teachers simply tell their students the following "facts":
+*(We shall not consider the complicated case where the direction of rotation axis changes with time. An example is [**precession**](https://en.wikipedia.org/wiki/Precession).)*
 
-----
+In most introductory courses on classical mechanics, the teachers simply tell students the following "facts":
 
-For a point rotating around a *fixed* axis (rotation angle =
+- For a point rotating around a *fixed* axis (rotation angle =
 $\alpha (t)$), the **angular velocity** $\boldsymbol{\omega}(t)$ is a *vector* of
 
-- Magnitude: $\omega(t) = d\alpha (t)/dt$
-- Direction: Parallel to the axis of rotation, determined by some "**right-hand rule**"
+    - Magnitude: $\omega(t) = d\alpha (t)/dt$
+    
+    - Direction: Parallel to the axis of rotation, determined by some "**right-hand rule**"
 
-*(In this class we shall not consider the more complicated case where the direction of rotation axis changes with time. An example is [**precession**](https://en.wikipedia.org/wiki/Precession).)*
+- With the above definition of $\boldsymbol{\omega}$, The linear velocity $\boldsymbol{v}(t)$ of the point can be found by some *mysterious* operation called the **cross product**, defined by
 
-With the above definition of $\boldsymbol{\omega}$, The linear velocity $\boldsymbol{v}(t)$ of the point can be found by some *mysterious* operation called the **cross product**, defined by
+    $$
+    \boldsymbol{v}
+    = \boldsymbol{\omega} \times \boldsymbol{r}
+    =\det \begin{bmatrix}
+        e_x & \omega_1 & r_1 \\
+        e_y & \omega_2 & r_2 \\
+        e_z & \omega_3 & r_3
+    \end{bmatrix} 
+    = \begin{bmatrix}
+        \omega_2 r_3 - \omega_3 r_2 \\
+        \omega_3 r_1 - \omega_1 r_3 \\
+        \omega_1 r_2 - \omega_2 r_1
+    \end{bmatrix}
+    $$
 
-$$
-\boldsymbol{v}
-= \boldsymbol{\omega} \times \boldsymbol{r}
-=\det \begin{bmatrix}
-    e_x & \omega_1 & r_1 \\
-    e_y & \omega_2 & r_2 \\
-    e_z & \omega_3 & r_3
-\end{bmatrix} 
-= \begin{bmatrix}
-    \omega_2 r_3 - \omega_3 r_2 \\
-    \omega_3 r_1 - \omega_1 r_3 \\
-    \omega_1 r_2 - \omega_2 r_1
-\end{bmatrix}
-$$
-
-----
 
 To really understand how people "invented" the angular velocity vector and cross product, you must use the correct mathematical language to describe rotations. You know that rotations are *linear transformations*, so we should speak in terms of matrices and vectors.
 
@@ -60,18 +58,18 @@ After going through this material, the *most important* (and maybe surprising to
 
 <center>
 
-![](Figures/rotation_2d.svg)   
-*Rotation around the $z$-axis. Only xy-plane is shown.*
+![](Figures/z_rotation.svg)   
+*Rotation around the $z$-axis by angle $\alpha$*
 
 </center>
 
-The matrix of rotation by an angle $\theta$ ($\theta >0$ for counter-clockwise rotations) around the $z$-axis (under the standard basis) is
+The matrix of rotation by an angle $\alpha$ ($\alpha >0$ for counter-clockwise rotations) around the $z$-axis (under the standard basis) is
 
 $$
-R_z(\theta)
+R_z(\alpha)
 = \begin{bmatrix}
-    \cos  \theta  & -\sin  \theta  & 0 \\
-    \sin  \theta  & \cos  \theta  & 0 \\
+    \cos  \alpha  & -\sin  \alpha  & 0 \\
+    \sin  \alpha  & \cos  \alpha  & 0 \\
     0 & 0 & 1
 \end{bmatrix}
 $$
@@ -81,18 +79,18 @@ You can easily derive it by the meaning of the columns of a transformation matri
 Similarly, you can show that the rotation matrix around $x$-axis and $y$-axis (under the standard basis) are, respectively
 
 $$
-R_x(\theta) 
+R_x(\alpha) 
 = \begin{bmatrix}
     1 & 0 & 0 \\
-    0 & \cos  \theta  & -\sin  \theta  \\
-    0 & \sin  \theta  & \cos  \theta
+    0 & \cos  \alpha  & -\sin  \alpha  \\
+    0 & \sin  \alpha  & \cos  \alpha
 \end{bmatrix}
 , \,
-R_y(\theta)
+R_y(\alpha)
 = \begin{bmatrix}
-    \cos  \theta  & 0 & \sin  \theta  \\
+    \cos  \alpha  & 0 & \sin  \alpha  \\
     0 & 1 & 0 \\
-    -\sin  \theta  & 0 & \cos  \theta
+    -\sin  \alpha  & 0 & \cos  \alpha
 \end{bmatrix}
 $$
 
@@ -137,7 +135,7 @@ R_z(\alpha)
 = \mathcal{D}^{-1}_n R_n(\alpha) \mathcal{D}_n
 $$
 
-Therefore, the **general 3D rotation matrix** around the axis along direction $(\theta,\varphi)$ by angle $\alpha$ is
+Therefore, the **general 3D rotation matrix** around the axis along direction $n = (\theta,\varphi)$ by angle $\alpha$ is
 
 $$
 \begin{aligned}
@@ -170,7 +168,7 @@ $$
 
 - Using geometrical properties of rotation, show that for the general rotation matrix $R_n(\alpha)$:
 
-    - $R_n^\mathsf{T}(\alpha) R_n(\alpha) = 1$ (thus rotation matrices are **orthogonal matrices**).
+    - $R_n^\mathsf{T}(\alpha) R_n(\alpha) = 1$ (rotation matrices are **orthogonal matrices**).
 
         *Remark*: Calculating the inverse of a rotation matrix is now easy: we only need to exchange its columns and rows:
 
@@ -180,11 +178,7 @@ $$
 
     - $\det R=1$ (With both properties, it will be called a **special** orthogonal matrix).
     
-    - $R_n(\alpha)$ only has one real eigenvalue 1, corresponding to the eigenvector (normalized)
-
-        $$
-        v = (\sin \theta \cos \varphi, \, \sin \theta \sin \varphi, \, \cos \theta)^\mathsf{T}
-        $$
+    - $R_n(\alpha)$ only has one real eigenvalue 1 (*Question: what is the corresponding eigenvector?*)
 
 ## Angular Velocity
 
