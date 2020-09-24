@@ -8,7 +8,7 @@
 
 </center>
 
-*Credit*: Many ideas of this material comes from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
+*Credit*: Many ideas of this material come from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
 
 [LA_3b1b]: https://youtu.be/fNk_zzaMoSs
 
@@ -19,8 +19,6 @@
     - [Linear Independence](#linear-independence)
     - [Basis Vectors](#basis-vectors)
     - [Note on Notations: Einstein Summation Rule](#note-on-notations-einstein-summation-rule)
-    - [Inner Product](#inner-product)
-    - [Orthonormal Basis Vectors](#orthonormal-basis-vectors)
 - [Linear Transformations](#linear-transformations)
     - [Matrix Representation of Linear Transformations](#matrix-representation-of-linear-transformations)
     - [Interlude: Transpose of Matrix](#interlude-transpose-of-matrix)
@@ -30,7 +28,10 @@
     - [EXERCISE](#exercise-1)
 - [Composition of Linear Transformation](#composition-of-linear-transformation)
     - [EXERCISE](#exercise-2)
-- [Inner Product under Linear Transformation](#inner-product-under-linear-transformation)
+- [Appendix: Inner Product](#appendix-inner-product)
+    - [Defining Properties](#defining-properties)
+    - [Orthonormal Basis Vectors](#orthonormal-basis-vectors)
+    - [Inner Product under Linear Transformation](#inner-product-under-linear-transformation)
     - [Orthogonal Matrix](#orthogonal-matrix)
     - [EXERCISE](#exercise-3)
 
@@ -38,9 +39,9 @@
 
 ### Vector Spaces
 
-For the purpose of an introductory physics course, a **vector space** (denoted by $V$) can be regarded as the usual plane (2D) or space (3D), and **vectors** are regarded as arrows in the plane or the space. 
+For the purpose of an introductory physics course, **vectors** can be imagined as arrows in the plane (2D), the space (3D) or in higher dimensional spaces, and a **vector space** (denoted by $V$) is the collection (set) of all vectors in that space. 
 
-We can perform the following operations on vectors:
+We can perform the following operations on vectors in the vector space:
 
 - **Addition** of vectors
 
@@ -48,13 +49,12 @@ We can perform the following operations on vectors:
 
     (Later in your life you will have to deal with *complex* numbers, but now we restrict ourselves to the real world.)
 
-I will not show the general (more abstract) definition of vector spaces in mathematics, which can be found on [Wikipedia][vec_space] or in any textbook on linear algebra (I personally recommend Chapter 7 and 8 of *Mathematical Methods for Physics and Engineering* (3rd Edition) by Riley, Hobson and Bence).
 
 [vec_space]: https://en.wikipedia.org/wiki/Vector_space
 
 ### Linear Independence
 
-Consider a set of vectors $e_1, e_2, ..., e_n \in V$. Since we have vector addition and scalar multiplication in the vector space $V$, we can construct a *linear combination* of them, with (real) coefficients $v_1, ..., v_n$: 
+First we introduce an commonly encountered concept in linear algebra. Consider a set of vectors $e_1, e_2, ..., e_n \in V$. Since we have vector addition and scalar multiplication in the vector space $V$, we can construct a *linear combination* of them, with (real) coefficients $v_1, ..., v_n$: 
 
 $$
 v = v_1 e_1 + \cdots + v_n e_n
@@ -69,7 +69,7 @@ v = \sum_{i=1}^n v_i e_i = 0
 v_1 = \cdots = v_n = 0
 $$
 
-i.e. the zero vector is unique. 
+i.e. the zero vector can *only* be obtained by setting *all* combination coefficients to zero. 
 
 ### Basis Vectors
 
@@ -90,14 +90,18 @@ v = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-The choice of basis vectors is *not unique*, since there are *infinitely many* sets of $n$ linearly-independent vectors in the vector space $V$. For example (say $n = 2$), if $e_1, e_2$ are basis vectors of $V$, then we can also use
-
-$$
-e'_1 = e_1 + 3e_2, \quad
-e'_2 = 2e_1 - e_2
-$$
-
 *Remarks*:
+
+- Usually we choose an **orthonormal basis**, i.e. each basis vector is of length 1, and is orthogonal to other basis vectors (i.e. **inner product** is zero). 
+    
+    An example is the usual $x, y, ...$ unit vectors (let us call them the **standard basis**). In this case, the components of a vector *coincides* with the coordinates of the end point of the vector. 
+
+- The choice of basis vectors is *not unique*, since there are *infinitely many* sets of $n$ linearly-independent vectors in the vector space $V$. For example (say $n = 2$), if $e_1, e_2$ are basis vectors of $V$, then we can also use
+
+    $$
+    e'_1 = e_1 + 3e_2, \quad
+    e'_2 = 2e_1 - e_2
+    $$
 
 - In the expansion of basis vectors themselves
     
@@ -126,7 +130,7 @@ $$
     \end{bmatrix}
     $$
 
-    You must be aware that **this does not mean that they are the traditional unit vectors along the coordinate axes**. 
+    You must be aware that **this does not mean that they are the standard basis**. 
 
 - Two different vectors may have the same components along different sets of basis vectors. 
 
@@ -162,79 +166,6 @@ $$
 \, \Rightarrow \,
 v_i e_i = v_j e_j = \cdots
 $$
-
-### Inner Product 
-
-*Warning*: If you already know how to compute inner product in the $xy$ or $xyz$ coordinate system, this section want you to forget it.
-
-For two vectors $u,v\in V$, we can define an operation called the **inner product** (denoted by $u \cdot v$), which send two vectors *to a real number*: 
-
-$$
-\_ \cdot \_ : V \times V \to \mathbb{R}
-$$
-
-Inner product is *defined to have* the following properties:
-
-- **Symmetry**: $\forall \, u,v \in V$
-
-    $$
-    u \cdot v = v \cdot u
-    $$
-
-- **Linearity in the second argument**: $\forall \, u,v,w \in V ;\, \alpha,\beta \in \mathbb{R}$
-    
-    $$
-    u \cdot (\alpha v + \beta w) 
-    = \alpha (u \cdot v) + \beta(u \cdot w)
-    $$
-
-The two properties combined gives linearity in the first argument, too (show this by yourself; thus we say that the inner product is a **bi-linear** function):
-
-$$
-(\alpha v + \beta w) \cdot u
-= \alpha (v \cdot u) + \beta(w \cdot u)
-$$
-
-*Remark*: Some concepts derived from the inner product
-
-- Two vectors are **orthogonal** to each other if their inner product is 0.
-- The **length** of a vector $v$ is defined as $|v| \equiv \sqrt{v \cdot v}$. 
-
-### Orthonormal Basis Vectors
-
-Until now we have not described how to really calculate the inner product. For two vectors $u,v \in V$
-
-$$
-u = u_i e_i, \quad v = v_i e_i
-$$
-
-Due to bi-linearity of inner product, $u \cdot v$ can be reduced to the linear combination of the inner product of basis vectors:
-
-$$
-u \cdot v = u_i v_j (e_i \cdot e_j)
-$$
-
-The numbers $e_i \cdot e_j$ are still undetermined, and depends on both the choice of basis vectors, which is *not unique*. Now we pick a *special* choice of basis vectors such that
-
-$$
-e_i \cdot e_j = \delta_{ij} 
-= \begin{cases}
-    1 & i = j \\
-    0 & i \ne j
-\end{cases}
-$$
-
-i.e. each basis vector has length 1, and is orthogonal to all other basis vectors. You can just imagine them as the familiar unit vectors along the coordinate axes. Such a set of basis vectors is called an **orthonormal basis** (orthogonal and normalized).
-
-The **standard basis** (unit vectors along each coordinate axes) you are familiar with is just an orthonormal basis. Then we recover something you already know:
-
-$$
-u \cdot v = u_i v_j \delta_{ij} = u_i v_i
-$$
-
-We emphasize that **this formula is valid only when we are using the components of $u,v$ along an orthonormal basis**.
-
-*Remark*: Even the choice of orthonormal basis is *not unique*. For example, you can easily *rotate* the basis to obtain a new one. This is easy to understand intuitively, but a rigorous mathematical proof of this statement is not very trivial.
 
 ## Linear Transformations
 
@@ -542,7 +473,84 @@ The matrix product defined in this way has the following properties:
 
 Please prove (or verify) them. 
 
-## Inner Product under Linear Transformation
+## Appendix: Inner Product
+
+*If you already know how to compute inner product in the $xy$ or $xyz$ coordinate system, in this appendix, we want you to forget it.*
+
+### Defining Properties
+
+For two vectors $u,v\in V$, we can define an operation called the **inner product** (denoted by $u \cdot v$), which send two vectors *to a real number*: 
+
+$$
+\_ \cdot \_ : V \times V \to \mathbb{R}
+$$
+
+Inner product is *defined to have* the following properties:
+
+- **Symmetry**: $\forall \, u,v \in V$
+
+    $$
+    u \cdot v = v \cdot u
+    $$
+
+- **Linearity in the second argument**: $\forall \, u,v,w \in V ;\, \alpha,\beta \in \mathbb{R}$
+    
+    $$
+    u \cdot (\alpha v + \beta w) 
+    = \alpha (u \cdot v) + \beta(u \cdot w)
+    $$
+
+The two properties combined gives linearity in the first argument, too (show this by yourself; thus we say that the inner product is a **bi-linear** function):
+
+$$
+(\alpha v + \beta w) \cdot u
+= \alpha (v \cdot u) + \beta(w \cdot u)
+$$
+
+Up to now we have not really define how to *calculate* the inner product. It turns out that there are many ways to define the calculation that satisfy the two properties above. We can then also generalize the concept of inner product to more abstract vector spaces.
+
+*Remark*: Some concepts derived from the inner product
+
+- Two vectors are **orthogonal** to each other if their inner product is 0.
+- The **length** of a vector $v$ is defined as $|v| \equiv \sqrt{v \cdot v}$. 
+
+### Orthonormal Basis Vectors
+
+Until now we have not described how to really calculate the inner product. For two vectors $u,v \in V$
+
+$$
+u = u_i e_i, \quad v = v_i e_i
+$$
+
+Due to bi-linearity of inner product, $u \cdot v$ can be reduced to the linear combination of the inner product of basis vectors:
+
+$$
+u \cdot v = u_i v_j (e_i \cdot e_j)
+$$
+
+The numbers $e_i \cdot e_j$ are still not determined, and depend on both the choice of basis vectors, which is *not unique*. Now we pick a *special* choice of basis vectors such that
+
+$$
+e_i \cdot e_j = \delta_{ij} 
+= \begin{cases}
+    1 & i = j \\
+    0 & i \ne j
+\end{cases}
+$$
+
+i.e. each basis vector has length 1, and is orthogonal to all other basis vectors. You can just imagine them as the familiar unit vectors along the coordinate axes. Such a set of basis vectors is called an **orthonormal basis** (orthogonal and normalized).
+
+Then we recover something you already know:
+
+$$
+u \cdot v = u_i v_j \delta_{ij} = u_i v_i
+$$
+
+We emphasize that **this formula is valid only when we are using the components of $u,v$ along an orthonormal basis**.
+
+*Remark*: Even the choice of orthonormal basis is *not unique*. For example, you can easily *rotate* the basis to obtain a new one. This is easy to understand intuitively, but a rigorous mathematical proof of this statement is not very trivial.
+
+### Inner Product under Linear Transformation
 
 After the linear transformation $A$, the inner product $u \cdot v$ is transformed to 
 

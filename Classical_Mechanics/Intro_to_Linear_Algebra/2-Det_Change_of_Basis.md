@@ -8,7 +8,7 @@
 
 </center>
 
-*Credit*: Many ideas of this material comes from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
+*Credit*: Many ideas of this material come from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
 
 [LA_3b1b]: https://youtu.be/fNk_zzaMoSs
 
@@ -25,12 +25,12 @@
     - [Description of the New Basis](#description-of-the-new-basis)
     - [Components of Vectors along the New Basis](#components-of-vectors-along-the-new-basis)
     - [Matrix of Linear Transformation under the New Basis](#matrix-of-linear-transformation-under-the-new-basis)
-    - [Inner Product under the New Basis](#inner-product-under-the-new-basis)
     - [EXERCISE](#exercise-1)
-- [Appendix: Geometrical Meaning of Determinant](#appendix-geometrical-meaning-of-determinant)
+- [Appendix A: Geometrical Meaning of Determinant](#appendix-a-geometrical-meaning-of-determinant)
     - [2D Determinant = Parallelogram Area](#2d-determinant--parallelogram-area)
     - [3D Determinant = Parallelepiped Volume](#3d-determinant--parallelepiped-volume)
     - [EXERCISE](#exercise-2)
+- [Appendix B: Inner Product under the New Basis](#appendix-b-inner-product-under-the-new-basis)
 
 ## Determinant of a Matrix
 
@@ -262,7 +262,7 @@ $$
 
 ## Change of Basis
 
-It is expected that if we change to a new set of basis vectors:
+Sometimes the standard basis may not be very convenient. Thus we naturally face the question of how to describe things using another set of basis vectors. It is expected that if we change to a new set of basis vectors:
 
 - A vector will have different components 
 - A linear transformation will be represented by a different matrix
@@ -271,7 +271,7 @@ In this section we shall show, in two dimensions, how to find the components of 
 
 ### Description of the New Basis
 
-The new basis $e'_1, e'_2$ can always be described by their components along the old basis $e_1, e_2$. In other words, the new basis is related to the old basis by a linear transformation $\mathcal{D}$:
+The new basis $e'_1, e'_2$ can always be described by their components along the old basis $e_1, e_2$ (which need not be the standard basis). In other words, the new basis is related to the old basis by a linear transformation $\mathcal{D}$:
 
 $$
 e'_1 = \mathcal{D} e_1 
@@ -426,88 +426,6 @@ $$
 
 we say that $A$ and $B$ are **similar** to each other (the word "similar" is chosen for obvious reasons). The "sandwich" operation $\mathcal{D}^{-1}A \mathcal{D}$ is called a **similarity transformation**.
 
-### Inner Product under the New Basis
-
-Geometrically, the inner product $u, v$ depends only on the length of $u, v$ and the angle $\theta$ between them:
-
-$$
-u \cdot v = |u| |v| \cos \theta
-$$
-
-Thus intuitively, inner product should be *invariant* under change of basis, which does not change the vectors at all. Now let us verify it (this is a good exercise of matrix multiplication and Einstein summation rule).
-
-Under the old basis:
-
-$$
-u \cdot v = u_i v_j (e_i \cdot e_j)
-$$
-
-Under the new basis:
-
-$$
-\begin{aligned}
-    u \cdot v 
-    &= u'_i v'_j (e'_i \cdot e'_j)
-    \\
-    &= (\mathcal{D}^{-1} u)_i (\mathcal{D}^{-1} v)_j
-    \times
-    ((\mathcal{D} e_i) \cdot (\mathcal{D} e_j))
-    \\
-    &= (\mathcal{D}^{-1})_{ik} u_k
-    (\mathcal{D}^{-1})_{jl} v_l
-    \times
-    (\mathcal{D} e_i)_m (\mathcal{D} e_j)_n
-    (e_m \cdot e_n)
-    \\
-    &= (\mathcal{D}^{-1})_{ik} u_k
-    (\mathcal{D}^{-1})_{jl} v_l
-    \times
-    \mathcal{D}_{ma} (e_i)_a
-    \mathcal{D}_{nb} (e_j)_b
-    (e_m \cdot e_n)
-\end{aligned}
-$$
-
-However, we know that the $a$th component of $e_i$ along the basis itself is
-
-$$
-(e_i)_a = \delta_{i a}
-$$
-
-Similarly $(e_j)_b = \delta_{jb}$. Therefore
-
-$$
-\begin{aligned}
-    u \cdot v 
-    &= (\mathcal{D}^{-1})_{ik} u_k
-    (\mathcal{D}^{-1})_{jl} v_l
-    \times
-    \mathcal{D}_{ma} \delta_{ia}
-    \mathcal{D}_{nb} \delta_{jb}
-    (e_m \cdot e_n)
-    \\
-    &= (\mathcal{D}^{-1})_{ik} u_k
-    (\mathcal{D}^{-1})_{jl} v_l
-    \times
-    \mathcal{D}_{mi} \mathcal{D}_{nj} 
-    (e_m \cdot e_n)
-    \\
-    &= [\mathcal{D}_{mi} (\mathcal{D}^{-1})_{ik}]
-    [\mathcal{D}_{nj} (\mathcal{D}^{-1})_{jl}]
-    u_k v_l (e_m \cdot e_n)
-    \\
-    &= (\mathcal{D}\mathcal{D}^{-1})_{mk}
-    (\mathcal{D}\mathcal{D}^{-1})_{nl}
-    u_k v_l (e_m \cdot e_n)
-    \\
-    &= \delta_{mk} \delta_{nl} u_k v_l (e_m \cdot e_n)
-    \\
-    &= u_m v_n (e_m \cdot e_n)
-\end{aligned}
-$$
-
-Renaming $(m,n)$ to $(i,j)$, we have verified that $u \cdot v$ is invariant under change of basis.
-
 ### EXERCISE
 
 <center>
@@ -523,7 +441,7 @@ From the information of the figure above:
 
 - Calculate the new components of the vector $v$. You can calculate $\mathcal{D}^{-1}$ using computers. Check if your result agrees with the figure.
 
-## Appendix: Geometrical Meaning of Determinant
+## Appendix A: Geometrical Meaning of Determinant
 
 ### 2D Determinant = Parallelogram Area
 
@@ -673,3 +591,85 @@ $$
 ### EXERCISE
 
 Generalize the above procedure to derive the expression of the 4D determinant. Its absolute value defines the "volume" of a 4D parallelepiped.
+
+## Appendix B: Inner Product under the New Basis
+
+Geometrically, the inner product $u, v$ depends only on the length of $u, v$ and the angle $\theta$ between them:
+
+$$
+u \cdot v = |u| |v| \cos \theta
+$$
+
+Thus intuitively, inner product should be *invariant* under change of basis, which does not change the vectors at all. Now let us verify it (this is a good exercise of matrix multiplication and Einstein summation rule; do it by yourself before looking at the answer below).
+
+Under the old basis:
+
+$$
+u \cdot v = u_i v_j (e_i \cdot e_j)
+$$
+
+Under the new basis:
+
+$$
+\begin{aligned}
+    u \cdot v 
+    &= u'_i v'_j (e'_i \cdot e'_j)
+    \\
+    &= (\mathcal{D}^{-1} u)_i (\mathcal{D}^{-1} v)_j
+    \times
+    ((\mathcal{D} e_i) \cdot (\mathcal{D} e_j))
+    \\
+    &= (\mathcal{D}^{-1})_{ik} u_k
+    (\mathcal{D}^{-1})_{jl} v_l
+    \times
+    (\mathcal{D} e_i)_m (\mathcal{D} e_j)_n
+    (e_m \cdot e_n)
+    \\
+    &= (\mathcal{D}^{-1})_{ik} u_k
+    (\mathcal{D}^{-1})_{jl} v_l
+    \times
+    \mathcal{D}_{ma} (e_i)_a
+    \mathcal{D}_{nb} (e_j)_b
+    (e_m \cdot e_n)
+\end{aligned}
+$$
+
+However, we know that the $a$th component of $e_i$ along the basis itself is
+
+$$
+(e_i)_a = \delta_{i a}
+$$
+
+Similarly $(e_j)_b = \delta_{jb}$. Therefore
+
+$$
+\begin{aligned}
+    u \cdot v 
+    &= (\mathcal{D}^{-1})_{ik} u_k
+    (\mathcal{D}^{-1})_{jl} v_l
+    \times
+    \mathcal{D}_{ma} \delta_{ia}
+    \mathcal{D}_{nb} \delta_{jb}
+    (e_m \cdot e_n)
+    \\
+    &= (\mathcal{D}^{-1})_{ik} u_k
+    (\mathcal{D}^{-1})_{jl} v_l
+    \times
+    \mathcal{D}_{mi} \mathcal{D}_{nj} 
+    (e_m \cdot e_n)
+    \\
+    &= [\mathcal{D}_{mi} (\mathcal{D}^{-1})_{ik}]
+    [\mathcal{D}_{nj} (\mathcal{D}^{-1})_{jl}]
+    u_k v_l (e_m \cdot e_n)
+    \\
+    &= (\mathcal{D}\mathcal{D}^{-1})_{mk}
+    (\mathcal{D}\mathcal{D}^{-1})_{nl}
+    u_k v_l (e_m \cdot e_n)
+    \\
+    &= \delta_{mk} \delta_{nl} u_k v_l (e_m \cdot e_n)
+    \\
+    &= u_m v_n (e_m \cdot e_n)
+\end{aligned}
+$$
+
+Renaming $(m,n)$ to $(i,j)$, we have verified that $u \cdot v$ is invariant under change of basis.

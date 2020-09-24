@@ -8,13 +8,13 @@
 
 </center>
 
-*Credit*: Many ideas of this material comes from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
+*Credit*: Many ideas of this material come from the [*Essence of Linear Algebra*][LA_3b1b] video series (by Grant Sanderson, a.k.a. 3Blue1Brown).
 
 [LA_3b1b]: https://youtu.be/fNk_zzaMoSs
 
 ### **Contents**
 
-- [Invitation: An Collision Problem](#invitation-an-collision-problem)
+- [Invitation: A Collision Problem](#invitation-a-collision-problem)
 - [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors)
     - [Finding Eigenvalues and Eigenvectors](#finding-eigenvalues-and-eigenvectors)
     - [The Characteristic Polynomial](#the-characteristic-polynomial)
@@ -24,7 +24,7 @@
     - [Diagonalization of Matrix](#diagonalization-of-matrix)
     - [Return to the Collision Problem](#return-to-the-collision-problem)
 
-## Invitation: An Collision Problem
+## Invitation: A Collision Problem
 
 This problem is borrowed from the Grant Sanderson's video [*The most unexpected answer to a counting puzzle*](https://youtu.be/HEfHFsfGXjs). He posted a [more geometrical solution](https://youtu.be/jsYwFizhncE) to this problem, which I strongly suggest you to watch. But nevertheless, I will make use a more algebraic approach to lead to the same geometrical picture. Some manipulation of complex numbers is involved. 
 

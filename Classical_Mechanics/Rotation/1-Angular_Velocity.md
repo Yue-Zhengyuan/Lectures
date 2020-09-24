@@ -7,7 +7,6 @@
     - [Matrix for Arbitrary 3D Rotations](#matrix-for-arbitrary-3d-rotations)
     - [EXERCISE](#exercise)
 - [Angular Velocity](#angular-velocity)
-    - [Angular Velocity at Any Time](#angular-velocity-at-any-time)
 - [Cross Product](#cross-product)
     - [EXERCISE](#exercise-1)
 - [The Angular Velocity is NOT Really a Vector](#the-angular-velocity-is-not-really-a-vector)
@@ -191,91 +190,7 @@ $$
 \qquad \alpha (0)=0
 $$
 
-The *instantaneous* linear velocity at time 0 is
-
-$$
-\boldsymbol{v}(0) 
-\equiv 
-\frac{d\boldsymbol{r}(0)}{dt}
-= \frac{dR _n(\alpha (0))}{dt}
-\boldsymbol{r}(0)
-$$
-
-Now we *define* the the **angular velocity matrix** $\omega_{ij}(0)$ at time 0 as the derivative
-
-$$
-\omega(0) 
-= \frac{dR_n(\alpha (0))}{dt}
-$$
-
-Then (Einstein summation rule is used)
-
-$$
-\boldsymbol{v}(0) 
-= \omega(0) \boldsymbol{r}(0)
-= \omega_{i j}(0) r_j(0)
-$$
-
-Now let us find the matrix $\omega_{i j}(0)$: since the direction of rotation axis is fixed, $R_n(\alpha(t))$ depends on $t$ only via $\alpha$, we have
-
-$$
-\begin{aligned}
-    \omega(0)
-    &= R_z(\varphi) R_y(\theta) 
-    \frac{d R_z(\alpha(0))}{dt}
-    R_y^{-1}(\theta) R_z^{-1}(\varphi)
-    \\
-    &= R_z(\varphi) R_y(\theta) \begin{bmatrix}
-        0 & -\omega(0) & 0 \\
-        \omega(0) & 0 & 0 \\
-        0 & 0 & 0 
-    \end{bmatrix}
-    R_y(-\theta) R_z(-\varphi)
-    \\
-    &= \begin{bmatrix}
-        0 & -\omega _3 & \omega _2 \\
-        \omega _3 & 0 & -\omega _1 \\
-        -\omega _2 & \omega _1 & 0
-    \end{bmatrix}
-\end{aligned}
-$$
-
-We see that there are only 3 independent elements in the matrix $\omega_{i j}$:
-
-$$
-\begin{aligned}
-    \omega_1 = \omega_{32} 
-    & = \omega(0) \sin \theta \cos \varphi 
-    \\
-    \omega_2 = \omega_{13} 
-    & = \omega(0) \sin \theta \sin \varphi 
-    \\
-    \omega_3 = \omega_{21} 
-    & = \omega(0)  \cos \theta
-\end{aligned}
-$$
-
-where $\omega$ here is the **angular speed** $\omega(0)$ at time 0 (do not confuse it with the matrix $\omega$)
-
-$$
-\omega (0)=\frac{d\alpha (0)}{dt}
-$$
-
-If you are familiar with the spherical polar coordinates, you should immediately recognize that these three elements are exactly the Cartesian components of a *vector* $\boldsymbol{\omega}$. The direction of $\boldsymbol{\omega}$ is *parallel to the rotation axis*. We then define the *combination of this three numbers* as the **angular velocity vector**. 
-
-*Remark*: We see that the angular velocity matrix has one notable property
-
-$$
-\omega_{i j}=-\omega_{j i}
-$$
-
-Such matrices are said to be **anti-symmetric**.
-
-### Angular Velocity at Any Time
-
-Let us continue to find the angular velocity matrix at any time (for a moment we shall call this time as $t_0$). 
-
-The instantaneous linear velocity at time $t_0$ is
+Now we want to calculate the *instantaneous* linear velocity at time $t_0$:
 
 $$
 \boldsymbol{v}(t_0) 
@@ -285,14 +200,7 @@ $$
 \boldsymbol{r}(0)
 $$
 
-However, the angular velocity matrix at time $t_0$ is *not* defined as
-
-$$
-\omega(t_0) = \frac{dR _n(\alpha (t_0))}{dt}
-\quad \text{(wrong)}
-$$
-
-The correct way to define is as follows: we separate the rotation to two steps:
+We separate the rotation to two steps:
 
 $$
 R_n(\alpha(t))
@@ -300,7 +208,7 @@ R_n(\alpha(t))
 R_n(\alpha(t_0))
 $$
 
-Then $[\alpha(t)-\alpha(t_0)]_{t=t_0} = 0$, and we can now define
+Then $[\alpha(t)-\alpha(t_0)]_{t=t_0} = 0$, and we now define the **angular velocity matrix**:
 
 $$
 \omega(t_0) \equiv \left[
@@ -348,7 +256,9 @@ $$
 \omega(t_0) = \frac{d\alpha(t_0)}{dt}
 $$
 
-So our previous definition of angular velocity vector still applies here. Then the linear velocity $\boldsymbol{v}(t_0)$ is given by
+If you are familiar with the spherical polar coordinates, you should immediately recognize that these three elements are exactly the Cartesian components of a *vector* $\boldsymbol{\omega}$. The direction of $\boldsymbol{\omega}$ is *parallel to the rotation axis*. We then define the *combination of this three numbers* as the **angular velocity vector**. 
+
+Then the linear velocity $\boldsymbol{v}(t_0)$ is given by
 
 $$
 \begin{aligned}
@@ -366,6 +276,15 @@ $$
 $$
 
 $\omega(t)$ here is the angular velocity *matrix*.
+
+*Remark*: We see that the angular velocity matrix has one notable property
+
+$$
+\omega_{i j}=-\omega_{j i}
+$$
+
+Such matrices are said to be **anti-symmetric**.
+
 
 ## Cross Product
 

@@ -2,19 +2,17 @@
 
 ## Result of OPE
 
-- The OPE of the chiral energy-momentum tensor with itself is
+The OPE of the chiral energy-momentum tensor with itself is
 
-    $$
-    T(z)T(w) 
-    = \frac{c/2}{(z-w)^4} + \frac{2T(w)}{(z-w)^2}
-    + \frac{\partial T(w)}{z-w} + \cdots
-    $$
+$$
+T(z)T(w) 
+= \frac{c/2}{(z-w)^4} + \frac{2T(w)}{(z-w)^2}
++ \frac{\partial T(w)}{z-w} + \cdots
+$$
 
-    where $c$ is the central charge and $|z|>|w|$.
+where $c$ is the central charge and $|z|>|w|$.
 
-- The OPE of $\bar{T}(\bar{z}) \bar{T}(\bar{w})$ has a similar form.
-
-- The OPE of $T(z) \bar{T}(\bar{w})$ contains only regular terms.
+The OPE of $\bar{T}(\bar{z}) \bar{T}(\bar{w})$ has a similar form, but the OPE of $T(z) \bar{T}(\bar{w})$ contains only regular terms.
 
 ## Laurent Modes of the Energy-Momentum Tensor 
 
@@ -143,7 +141,7 @@ $$
 
 *Proof*:
 
-Using
+Recall that
 
 $$
 [A,B] = \oint_0 dw \oint_w dz \, a(z)b(w)
@@ -210,12 +208,10 @@ Then complete the integration over $w$
 
 $$
 \begin{aligned}
-    [L_n, L_m]
-    &= \frac{1}{2 \pi i} \oint_0 dw \left(
+    &[L_n, L_m]
+    = \frac{1}{2 \pi i} \oint_0 dw \\
+    & \times\left(
         \frac{c}{12} n (n^2 - 1) w^{m+n-1}
-        \right. 
-        \\ &\qquad \qquad \qquad
-        \left.
         + 2(n+1)w^{m+n+1}T(w)
         + \underbrace{w^{m+n+2} \partial_w T(w)}_{\text{integrate by parts}} 
     \right)
