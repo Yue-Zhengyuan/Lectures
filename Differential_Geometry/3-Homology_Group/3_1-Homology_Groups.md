@@ -2,42 +2,6 @@
 
 ### **Part 1: Definitions and Theorems**
 
-## Oriented Simplexes
-
-*Definition*:
-
-- **Oriented $r$-simplex**: An $r$-simplex $\langle p_0 p_1 ... p_r \rangle$ with an assigned orientation, denoted by $(p_0 p_1 ... p_r)$.
-
-- **Convention of orientation choice**:
-
-    - $r > 0$
-
-        Let $P$ be a permutation of numbers 0 to $r$:
-
-        $$
-        P = 
-        \begin{pmatrix}
-            0 & 1 & \cdots & r \\
-            i_0 & i_1 & \cdots & i_r
-        \end{pmatrix}
-        $$
-
-        Then
-
-        $$
-        (p_{i_0} p_{i_1} ... ) = \text{sgn}(P) (p_0 p_1 ... p_r)
-        $$
-
-        where $\text{sgn}(P) = \pm 1$ is the parity of the permutation $P$. In particular, we note that
-
-        $$
-        (p_1 p_2 ... p_r p_0) = (-1)^r (p_0 p_1 ... p_r)
-        $$
-
-    - $r = 0$
-        
-        Oriented 0-simplex is just a point $p_0$, the same as an unoriented 0-simplex.
-
 ## Chain, Cycle, Boundary and Corresponding Groups
 
 *Definition*: Let

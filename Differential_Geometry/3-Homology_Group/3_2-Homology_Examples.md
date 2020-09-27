@@ -2,7 +2,7 @@
 
 ### **Part 2: Examples of Homology Groups**
 
-## Some Useful Theorems (Repeated Here)
+### Some Useful Theorems (Repeated from Part 1)
 
 ----
 
@@ -39,7 +39,7 @@ $$
 
 This simplicial complex is *connected*, and contains 0- and 1-simplexes only. Thus we only need to find $H_0(K)$ and $H_1(K)$.
 
-## The Chain Groups
+### The Chain Groups
 
 $$
 \begin{aligned}
@@ -50,7 +50,7 @@ $$
 \end{aligned}
 $$
 
-## Homology Group $H_0(K)$
+### Homology Group $H_0(K)$
 
 Since $K$ is connected, by [Theorem 1](#theorem-1-0th-homology-group-of-connected-simplicial-complex), we must have
 
@@ -101,7 +101,7 @@ H_1(K) \equiv Z_1(K) / B_1(K) \cong
 \mathbb{Z}^3 / \mathbb{Z}^2 = \mathbb{Z}
 $$
 
-## Homology Group $H_1(K)$
+### Homology Group $H_1(K)$
 
 - **Cycle Group $Z_1(K)$**
 
@@ -140,11 +140,18 @@ $$
 
 ## Example 2
 
+<center>
+
+![](Fig-3_2-eg2.png)   
+*The simplicial complex in Example 2*
+
+</center>
+
 $$
 K = \{p_0, p_1\}
 $$
 
-This is a *disconnected* simplicial complex (so that [Theorem 1](#theorem-1-0th-homology-group-of-connected-simplicial-complex) is not applicable) containing 0-simplexes only. Thus we only calculate $H_0$.
+This is a *disconnected* simplicial complex (so that Theorem 1 is not applicable) containing 0-simplexes only. Thus we only calculate $H_0$.
 
 The 0-chain group (which is also the 0-cycle group)  is
 
