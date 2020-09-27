@@ -27,38 +27,38 @@
 
     - **Equivalent volume elements**: two volume elements related by a *positive-definite* function $h \in \mathcal{F}(M)$ such that $\omega' = h \omega$
 
-    *Change of Basis (Coordinates)*
+### Change of Basis (Coordinates)
 
-    Take an $m$-form from $m$-dimensional manifold $M$
+Take an $m$-form from $m$-dimensional manifold $M$
 
-    $$
-    \omega = h(p) \, dx^1 \wedge \cdots \wedge dx^m
-    $$
+$$
+\omega = h(p) \, dx^1 \wedge \cdots \wedge dx^m
+$$
 
-    If we change the coordinates from $x$ to $y$, the volume element transforms to
+If we change the coordinates from $x$ to $y$, the volume element transforms to
 
-    $$
-    \begin{aligned}
-        \omega &= h(p) \,
-        \frac{\partial x^1}{\partial y^{\mu_1}} dy^{\mu_1}
-        \wedge \cdots \wedge
-        \frac{\partial x^m}{\partial y^{\mu_m}} dy^{\mu_m}
-        \\
-        &= h(p) \, 
-        \det \left(\frac{\partial x}{\partial y} \right)
-        dy^1 \wedge \cdots \wedge dy^m
-    \end{aligned}
-    $$
+$$
+\begin{aligned}
+    \omega &= h(p) \,
+    \frac{\partial x^1}{\partial y^{\mu_1}} dy^{\mu_1}
+    \wedge \cdots \wedge
+    \frac{\partial x^m}{\partial y^{\mu_m}} dy^{\mu_m}
+    \\
+    &= h(p) \, 
+    \det \left(\frac{\partial x}{\partial y} \right)
+    dy^1 \wedge \cdots \wedge dy^m
+\end{aligned}
+$$
 
-    Here we used the definition of the matrix determinant.
+Here we used the definition of the matrix determinant.
 
-    Since $\omega$ is defined on an orientable manifold, the determinant should either be always positive or always negative. 
+Since $\omega$ is defined on an orientable manifold, the determinant should either be always positive or always negative. 
 
 ## Integration of Forms
 
 Let $f: M \to \mathbb{R}$ be a function defined on $m$-dimensional manifold $M$; $\omega$ is a volume element. 
 
-## On One Chart
+### On One Chart
 
 In one chart $(U, \varphi)$ with coordinates $x$, we define the integration in $U$ simply as the ordinary integration in the coordinate space $\varphi(U)$:
 
@@ -70,7 +70,7 @@ $$
 
 Here we used $dx^1 \cdots dx^m = dx^1 \wedge \cdots dx^m$. 
 
-## On the Whole Manifold
+### On the Whole Manifold
 
 *Definition*: Take an *open* covering $\{U_i\}$ of $M$ such that each point in $M$ is covered with *a finite number of $U_i$* (we assume that this is possible).
 

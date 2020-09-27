@@ -132,7 +132,7 @@ $$
 
     You must be aware that **this does not mean that they are the standard basis**. 
 
-- Two different vectors may have the same components along different sets of basis vectors. 
+- Two vectors of the same components will be different if the sets of basis vectors used to construct them are not the same. 
 
     <center>
 
@@ -187,10 +187,28 @@ In other words, it does not matter whether you perform linear transformations be
 
 The above definition is somewhat abstract. Let us represent it by something more concrete: the **matrix**. 
 
-Due to the linearity, a linear transformation $A$ can be *fully* described by specifying its action $e_i \to e'_i \equiv A e_i$ on *each* basis vector ($i = 1, ..., n$). Then for any vector $v$, we have
+Due to the linearity, a linear transformation $A$ can be *fully* described by specifying its action on *each* basis vector ($i = 1, ..., n$):
 
 $$
-v' \equiv A v = A (v_i e_i) = v_i (A e_i) = v_i e'_i
+e_i \to e'_i \equiv A e_i
+$$
+
+Then for any vector $v$, we have
+
+$$
+\begin{aligned}
+    v' 
+    &\equiv A v 
+    \\
+    &= A (v_i e_i) 
+    &\quad &\text{(Expand $v$ using $\{e_i\}$)}
+    \\
+    &= v_i (A e_i) 
+    &\quad &\text{(Use linearity of $A$)}
+    \\
+    &= v_i e'_i
+    &\quad &(e'_i = A e_i)
+\end{aligned}
 $$
 
 We note that components of $v'$ along the new basis are the same as the components of $v$ along the old basis.
@@ -202,7 +220,7 @@ We note that components of $v'$ along the new basis are the same as the componen
 
 </center>
 
-Nothing prevents us to express $e'_i$ as linear combination of the basis vectors: 
+Nothing prevents us to expand $e'_i$ as linear combination of the basis vectors: 
 
 $$
 e'_i = A e_i = e_j A_{j i} \qquad (i = 1, ..., n)
@@ -346,11 +364,7 @@ You can read [this Wikipedia article][affine_trans] to see how to use matrices *
 
 ### EXERCISE
 
-Write down the transformation matrices of the 2D linear transformations:
-
-- Reflection with respect to $x$-axis
-- Scaling $e_1$ and $e_2$ by factors $a$ and $b$
-- Shear along direction of $e_1$ by $e'_2 = e_2 + t e_1$
+Write down the transformation matrices of the reflection, the scaling, and the shear transformations shown above. 
 
 ## Matrix-Vector Multiplication
 
@@ -358,10 +372,20 @@ Using the linearity $A$, we can find the new vector $A v$ to which the vector $v
 
 $$
 \begin{aligned}
-    v' &= Av = A(v_j e_j) = v_j (A e_j)
+    v' &= v_j e'_j
     \\
-    &= v_j (e_i A_{i j}) = (A_{i j} v_j) e_i
+    &= v_j (e_i A_{i j}) 
+    &\quad &\text{(Expand $e'_j$ using $\{e_i\}$)}
+    \\
+    &= (A_{i j} v_j) e_i
+    &\quad &\text{(Rearrange)}
 \end{aligned}
+$$
+
+Meanwhile, under the old basis $\{e_i\}$
+
+$$
+v' = Av = (Av)_i e_i
 $$
 
 Therefore, the components of $A v$ are given by

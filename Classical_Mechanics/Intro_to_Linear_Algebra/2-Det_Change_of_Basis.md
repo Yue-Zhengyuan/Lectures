@@ -146,10 +146,16 @@ $$
 A A^{-1} = A^{-1} A = 1
 $$
 
-where $1$ is the **identity transformation**, whose effect is no effect at all. Its matrix representation is called the **identity matrix**:
+where $1$ is the **identity transformation**, whose effect is no effect at all. Its matrix representation is called the **identity matrix**, the same under any choice of basis vectors:
 
 $$
 (1)_{ij} = \delta_{ij}
+= \begin{bmatrix}
+    1 & & \\
+    & \ddots & \\
+    & & 1
+\end{bmatrix}
+= \operatorname{diag}(1,...,1)
 $$
 
 *Remark*:
@@ -437,9 +443,9 @@ we say that $A$ and $B$ are **similar** to each other (the word "similar" is cho
 
 From the information of the figure above:
 
-- Find the matrix $\mathcal{D}$ representing the change of basis from the standard $e_x, e_y$ to $e_1, e_2$.
+- Write down the matrix $\mathcal{D}$ representing the change of basis from the standard $e_x, e_y$ to $e_1, e_2$.
 
-- Calculate the new components of the vector $v$. You can calculate $\mathcal{D}^{-1}$ using computers. Check if your result agrees with the figure.
+- Calculate the new components of the vector $v$. You may find $\mathcal{D}^{-1}$ using a computer. Check if your result agrees with the figure.
 
 ## Appendix A: Geometrical Meaning of Determinant
 
@@ -672,4 +678,4 @@ $$
 \end{aligned}
 $$
 
-Renaming $(m,n)$ to $(i,j)$, we have verified that $u \cdot v$ is invariant under change of basis.
+Renaming $m,n$ to $i,j$, we have verified the result of $u \cdot v$ is unchanged if we calculate using the components along the new basis.

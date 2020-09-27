@@ -1,10 +1,12 @@
-# Homology Groups of Simplicial Complexes <br>Part 2: Examples of Homology Groups
+# Homology Groups of Simplicial Complexes 
 
-## Useful Theorems (Repeated Here)
+### **Part 2: Examples of Homology Groups**
+
+## Some Useful Theorems (Repeated Here)
 
 ----
 
-## *Theorem 1*: (0th Homology group of connected simplicial complex)
+*Theorem 1*: (**0th Homology group of connected simplicial complex**)
 
 Let $K$ be a *connected* simplicial complex. Then
 
@@ -14,7 +16,7 @@ $$
 
 ----
 
-## *Theorem 2*: (Fundamental theorem of homomorphism)
+*Theorem 2*: (**Fundamental theorem of homomorphism**)
 
 Let $f: G_1 \to G_2$ be a group homomorphism. Then
 
@@ -27,7 +29,7 @@ $$G_1 / \ker{f} \cong \text{im }f$$
 <center>
 
 ![](Fig-3_7b.png)   
-*Triangulation of $S_1$*
+*The simplicial complex in Example 1*
 
 </center>
 

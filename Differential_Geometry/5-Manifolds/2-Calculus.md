@@ -44,7 +44,7 @@ Let $p$ be a point in $M$, which is mapped to $f(p) \in N$.
 
 ## Tangent Vectors and Tangent Space
 
-## Tangent Vector and Tangent Space in Euclidean Space
+### In Euclidean Space
 
 Let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart $(U, \varphi)$ near $p$. A curve $c: (a,b) \subset \mathbb{R} \to M \, (a < 0 < b)$ goes across the point $p = c(0)$. 
 
@@ -75,46 +75,46 @@ $$
 
 - **Tangent vector**
 
-Let us find the tangent vector at $p$, whose coordinates are $\varphi(p) = (x^1_0, ..., x^m_0)$, along some general curve $c: (a,b) \to M$. The coordinate representation is
+    Let us find the tangent vector at $p$, whose coordinates are $\varphi(p) = (x^1_0, ..., x^m_0)$, along some general curve $c: (a,b) \to M$. The coordinate representation is
 
-$$
-\varphi \circ c(t) \equiv (x^1(t), ..., x^m(t))
-$$
+    $$
+    \varphi \circ c(t) \equiv (x^1(t), ..., x^m(t))
+    $$
 
-The curve is then embedded in $\mathbb{R}^n$ by
+    The curve is then embedded in $\mathbb{R}^n$ by
 
-$$
-X^\mu = X^\mu(x^1(t), ..., x^m(t)) \qquad
-i = 1,2,...,n
-$$
+    $$
+    X^\mu = X^\mu(x^1(t), ..., x^m(t)) \qquad
+    i = 1,2,...,n
+    $$
 
-The $i$th component of the **tangent vector** at $p$ along $c$ (expressed in $\mathbb{R}^n$) is then easily found to be
+    The $i$th component of the **tangent vector** at $p$ along $c$ (expressed in $\mathbb{R}^n$) is then easily found to be
 
-$$
-v^\mu = \frac{d X^\mu}{dt}(0)
-=
-\frac{\partial X^\mu}{\partial x^\nu}(x_0)
-\frac{d x^\nu}{dt}(0)
-$$
+    $$
+    v^\mu = \frac{d X^\mu}{dt}(0)
+    =
+    \frac{\partial X^\mu}{\partial x^\nu}(x_0)
+    \frac{d x^\nu}{dt}(0)
+    $$
 
 - **Tangent space and its basis vectors**
 
-There are $m$ special curves passing the point $p$:
+    There are $m$ special curves passing the point $p$:
 
-$$
-\varphi \circ c_i(t) = (x^1_0, ..., \underbrace{t}_{i\text{th slot}}, ..., x^m_0), 
-\quad i = 1,2,...,m
-$$
+    $$
+    \varphi \circ c_i(t) = (x^1_0, ..., \underbrace{t}_{i\text{th slot}}, ..., x^m_0), 
+    \quad i = 1,2,...,m
+    $$
 
-i.e. except the $i$th coordinate (set to $t$), the others are all fixed. Then the tangent vector along $c_\mu$ is
+    i.e. except the $i$th coordinate (set to $t$), the others are all fixed. Then the tangent vector along $c_\mu$ is
 
-$$
-e_\mu = (0, ..., 0, \underbrace{\frac{\partial X^\mu}{\partial x^\mu}(x_0)}_{\mu \text{th slot}}, 0, ..., 0)
-$$
+    $$
+    e_\mu = (0, ..., 0, \underbrace{\frac{\partial X^\mu}{\partial x^\mu}(x_0)}_{\mu \text{th slot}}, 0, ..., 0)
+    $$
 
-The $m$ vectors $\{e_1, ..., e_m\}$ form a **coordinate basis** of the **tangent space** (denoted by $T_p M$) at the point $p$. We see that $\dim{T_p M} = \dim{M}$.
+    The $m$ vectors $\{e_1, ..., e_m\}$ form a **coordinate basis** of the **tangent space** (denoted by $T_p M$) at the point $p$. We see that $\dim{T_p M} = \dim{M}$.
 
-## Definition without Euclidean Space
+### Definition without Euclidean Space
 
 In the above analysis, we discover some differential operators independent of the embedding function $X^\mu$. They are adopted as the definitions that exist by themselves.
 
@@ -147,7 +147,7 @@ Again, let $p$ be a point in an $m$-dimensional manifold $M$. We assign a chart 
         \mu = 1,2,...,m
         $$
 
-## Change of Basis
+### Change of Basis
 
 Suppose we have two charts $(U_i, \varphi_i), (U_j, \varphi_j)$ that cover a common point $p \in M$. The coordinates of $p$ in the two charts are $x \equiv \varphi_i(p), y \equiv \varphi_j(p)$. The basis vectors in the two charts are 
 
@@ -192,13 +192,13 @@ We notice that the transformation matrices for $V^\mu$ and $e_\mu$ are *inverse*
 
 - **Cotangent vectors (one-forms)**: elements in $T_p^* M$ (i.e. *linear* functions $\omega: T_p M \to \mathbb{R}$)
 
-## General Form of One-forms
+### General Form of One-forms
 
 $$
 \omega = \omega_\mu dx^\mu
 $$
 
-## Inner Product
+### Inner Product
 
 *Definition*: 
 
@@ -215,7 +215,9 @@ $$
 \end{aligned}
 $$
 
-## Change of Basis
+### Change of Basis
+
+Instead of $dx^\mu$, we may change to another basis of the one-forms.
 
 ## Tensors and Tensor Fields
 

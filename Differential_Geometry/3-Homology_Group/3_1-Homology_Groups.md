@@ -1,4 +1,6 @@
-# Homology Groups of Simplicial Complexes <br>Part 1: Definitions and Theorems
+# Homology Groups of Simplicial Complexes 
+
+### **Part 1: Definitions and Theorems**
 
 ## Oriented Simplexes
 

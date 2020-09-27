@@ -16,13 +16,13 @@ A famous example of the Coriolis effect is the spinning of cyclones. In northern
 
 Now, after learning the matrix formulation of rotations, you are capable of explaining the origin of such a force. It is an example of **fictitious force**, which people introduce in in order to get the correct motion.
 
-## The Rotating Coordinate System <br>(aka Rotating Reference Frame)
+## The Rotating Reference Frame
 
-First, we want to make it clear what we mean by "an observer rotating together with the earth". For a moment, we forget the motion of the earth around the sun (i.e. treating the center of the earth as an inertial frame), and assume that the rotation axis is fixed.
+First, we want to make it clear what we mean by "an observer rotating together with the earth". Let us forget the motion of the earth around the sun, and assume that the rotation axis is fixed.
 
-Imagine two observers $K$ and $K'$ sitting at the center of the earth. $K$ is sitting *really still*, but $K'$ is *spinning* with the same angular velocity as the earth. Therefore, the earth appears to be static to $K'$, but $K$ will see a spinning earth. Evidently, $K'$ is not an inertial frame.
+Imagine two observers $K$ and $K'$ sitting at the center of the earth. $K$ is sitting *really still*, but $K'$ is *spinning* with the same angular velocity as the earth. Therefore, the earth appears to be static to $K'$, but $K$ will see a spinning earth. Evidently, $K'$ is not an inertial frame. It is called a **rotating reference frame**. 
 
-Mathematically, each observer has his/her own coordinate system, using the earth center as the origin. However, they uses different sets of basis vectors to measure the motion: those of $K$ are the good ol' constant $e_x,e_y,e_z$; but those of $K'$ is rotating around the spinning axis of the earth (we call it $n$; you can choose it to be the $z$-axis for simplicity, but we shall not do that until later). 
+Mathematically, the two observers both use the earth center as the origin. However, they uses different sets of basis vectors to measure the motion: those of $K$ are the good ol' constant $e_x,e_y,e_z$; but those of $K'$ is rotating around the spinning axis of the earth (we call this axis $n$). 
 
 Thus, to obtain the coordinates used by $K'$ from those of $K$, we only need to do a rotation:
 
@@ -33,9 +33,7 @@ $\alpha (t)$.
 
 </center>
 
-This is described by the rotation matrix $\mathcal{D}_n(t) = R_n(\alpha(t))$. Here $R_n(\alpha)$ is the same as the $R(\theta ,\varphi ,\alpha)$ to save writing.
-
-Therefore, from the theory of change of basis, the position of the object observed by $K'$ is related to that observed by $K$ according to the following formula:
+This is described by the rotation matrix $\mathcal{D}_n(t) = R_n(\alpha(t))$. From the theory of change of basis, the position of the object observed by $K'$ is related to that observed by $K$ according to the following formula:
 
 $$
 \boldsymbol{r}'(t) = \mathcal{D}_n^{-1}(\alpha (t)) \boldsymbol{r}(t)
@@ -89,7 +87,7 @@ $$
 \end{aligned}
 $$
 
-The final expression for the velocity is therefore (renaming all $t_0$ to $t$, and apply $\omega \boldsymbol{r} = \boldsymbol{\omega} \times \boldsymbol{r}$, where the first $\omega$ is the angular velocity *matrix*)
+Here comes the angular velocity matrix $\omega(t_0)$! The final expression for the velocity is therefore (renaming all $t_0$ to $t$, and applying $\omega \boldsymbol{r} = \boldsymbol{\omega} \times \boldsymbol{r}$, where the first $\omega$ is the angular velocity *matrix*)
 
 $$
 \begin{aligned}
@@ -123,7 +121,21 @@ $$
     ]
     + \frac{dR_n(\alpha (t))}{dt} \boldsymbol{v}'(t)
     + R_n(\alpha (t))\boldsymbol{a}'(t)
-    \\
+\end{aligned}
+$$
+
+Using the result derived earlier
+
+$$
+\frac{dR_n(\alpha(t))}{dt}
+= R_n(\alpha(t)) \omega(t) 
+$$
+
+We obtain
+
+$$
+\begin{aligned}
+    \boldsymbol{a}(t)
     &= R_n(\alpha (t)) \, [
         \dot{\boldsymbol{\omega}}(t) \times \boldsymbol{r}'(t)
         + \boldsymbol{\omega}(t)\times \left(\boldsymbol{\omega}(t)\times \boldsymbol{r}'(t)\right)
@@ -138,18 +150,18 @@ Usually, after getting this general result, people simply set $t=0$, i.e. people
 
 $$
 \begin{aligned}
-    \boldsymbol{v}(t_0)
-    &= \boldsymbol{\omega}(t_0)\times \boldsymbol{r}'(t_0)
-    + \boldsymbol{v}'(t_0)
+    \boldsymbol{v}
+    &= \boldsymbol{\omega}\times \boldsymbol{r}'
+    + \boldsymbol{v}'
     \\
-    \boldsymbol{a}(t_0)
+    \boldsymbol{a}
     &= 
-    \dot{\boldsymbol{\omega}}(t_0) \times \boldsymbol{r}'(t_0)
-    + \boldsymbol{\omega}(t_0)\times \left(\boldsymbol{\omega}(t_0)\times
-    \boldsymbol{r}'(t_0)\right)
+    \dot{\boldsymbol{\omega}} \times \boldsymbol{r}'
+    + \boldsymbol{\omega}\times \left(\boldsymbol{\omega}\times
+    \boldsymbol{r}'\right)
     \\ &\quad
-    + 2\boldsymbol{\omega}(t_0)\times \boldsymbol{v}'(t_0)
-    + \boldsymbol{a}'(t_0)
+    + 2\boldsymbol{\omega}\times \boldsymbol{v}'
+    + \boldsymbol{a}'
 \end{aligned}
 $$
 
@@ -157,30 +169,30 @@ $$
 
 ## The (Fictitious) Forces Observed by $K'$
 
-Now we choose the rotation axis to be the $z$-axis. The force observed by $K'$ is (omitting the 0 subscript of $t$)
+Now we choose the rotation axis to be the $z$-axis. The force observed by $K'$ (when $K$ and $K'$ coincide) is
 
 $$
 \begin{aligned}
-    \boldsymbol{F}'(t)
-    &= m \boldsymbol{a}'(t)
+    \boldsymbol{F}'
+    &= m \boldsymbol{a}'
     \\
-    &= m \boldsymbol{a}(t)
-    - m \dot{\boldsymbol{\omega}}(t) \times \boldsymbol{r}'(t)
+    &= m \boldsymbol{a}
+    - m \dot{\boldsymbol{\omega}} \times \boldsymbol{r}'
     \\
     & \qquad
-    - m \boldsymbol{\omega}(t) \times 
-    (\boldsymbol{\omega}(t) \times \boldsymbol{r}'(t))
-    - 2m \boldsymbol{\omega}(t) \times \boldsymbol{v}'(t)
+    - m \boldsymbol{\omega} \times 
+    (\boldsymbol{\omega} \times \boldsymbol{r}')
+    - 2m \boldsymbol{\omega} \times \boldsymbol{v}'
 \end{aligned}
 $$
 
-The $\boldsymbol{F}(t)=m \boldsymbol{a}(t)$ term is the "real" force. Since the earth
+The $\boldsymbol{F}=m \boldsymbol{a}$ term is the "real" force. Since the earth
 is rotating at a constant angular velocity, there are two extra terms:
 
 - **The Centrifugal Force**
 
     $$
-    \boldsymbol{F}_{\text{cf}}=-m \boldsymbol{\omega}\times \left(\boldsymbol{\omega}\times \boldsymbol{r}'(t)\right)
+    \boldsymbol{F}_{\text{cf}}=-m \boldsymbol{\omega}\times \left(\boldsymbol{\omega}\times \boldsymbol{r}'\right)
     $$
 
     It is just the negative of the **centripetal force** (that's how it get its name).
@@ -188,7 +200,7 @@ is rotating at a constant angular velocity, there are two extra terms:
 - **The Coriolis Force**
 
     $$
-    \boldsymbol{F}_{\text{cor}}=-2m \boldsymbol{\omega}\times \boldsymbol{v}'(t)
+    \boldsymbol{F}_{\text{cor}}=-2m \boldsymbol{\omega}\times \boldsymbol{v}'
     $$
 
     This is the force that causes the effects you learned in high school

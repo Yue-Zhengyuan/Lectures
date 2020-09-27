@@ -4,7 +4,7 @@
 
 ----
 
-*Theorem*: (**Higher homotopy groups are always Abelian**)
+*Theorem*: **Higher homotopy groups are always Abelian**.
 
 ----
 
@@ -17,12 +17,12 @@
 If a topological space $X$ is arcwise connected, then
 
 $$ 
-\forall x_0, x_1 \in X \quad \pi_n(X, x0) \cong \pi_n(X, x1)
+\forall x_0, x_1 \in X \quad \pi_n(X, x_0) \cong \pi_n(X, x_1)
 $$
 
 ----
 
-*Theorem*: (**Homotopy groups are a topological invariants**)
+*Theorem*: (**Homotopy groups are topological invariants**)
 
 Let $X, Y$ be topological spaces of the same homotopy type, with $f: X \to Y$ being the homotopic equivalence. Then
 
