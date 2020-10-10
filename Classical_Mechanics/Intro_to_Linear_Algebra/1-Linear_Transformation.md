@@ -71,6 +71,16 @@ $$
 
 i.e. the zero vector can *only* be obtained by setting *all* combination coefficients to zero. 
 
+*Remark*: The set of all vectors obtained from linear combinations is called the **span** of the vectors $e_1, ..., e_n$, denoted by
+
+$$
+\operatorname{span} (e_1, ..., e_n)
+= \left\{
+    \sum_{i=1}^n v_i e_i \mid
+    v_1, ..., v_n \in \mathbb{R}
+\right\}
+$$
+
 ### Basis Vectors
 
 Given a set of *linearly independent* vectors $\{e_1,...,e_n\}$, if *any* vector $v\in V$ can be *uniquely* represented as a linear combination of $e_1, ..., e_n$

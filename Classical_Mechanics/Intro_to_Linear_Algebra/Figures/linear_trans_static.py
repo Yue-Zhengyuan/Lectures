@@ -26,18 +26,18 @@ rcParams.update({
 })
 
 basis1 = np.array([[1,0], [0,1]])
-basis2 = np.array([[1,0.5], [-0.8, 1]])
+basis2 = np.array([[2,1], [-1,1]])
 bases = [basis1, basis2]
-vecComp = np.array([2,2])
+vecComp = np.array([1,1])
 
 arrow_kw = {'head_width': 0.15, 'head_length': 0.3, 'width': 0.02, 'length_includes_head': True}
 text_kw = dict(fontsize=14)
 
 # set up a figure twice as wide as it is tall
-fig, ax = plt.subplots(1, 1, figsize=(4,4))
+fig, ax = plt.subplots(1, 1, figsize=(3,3))
 plt.subplots_adjust(left=0.04, right=0.96, bottom=0.05, top=0.95)
-rangeX = (-3, 3)
-rangeY = (-2, 4)
+rangeX = (-2, 3)
+rangeY = (-2, 3)
 for i, (basis, alpha) in enumerate(zip(bases, [0.3, 1])):
     ax.set_xlim(*rangeX)
     ax.set_ylim(*rangeY)
@@ -83,7 +83,7 @@ for i, (basis, alpha) in enumerate(zip(bases, [0.3, 1])):
             # y tick
             pos = n * basis[1]
             if rangeY[0] < pos[1] < rangeY[1]:
-                ax.text(*(pos - 0.4*basis[0]), str(n), **text_kw)
+                ax.text(*(pos + 0.1*np.array([0,1])), str(n), **text_kw)
 
 plt.show()
-fig.savefig(dir_path + '/linear_trans.svg')
+fig.savefig(dir_path + '/linear_trans2.svg')

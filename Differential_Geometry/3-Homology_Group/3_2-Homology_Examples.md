@@ -128,7 +128,7 @@ $$
     Since there is no 2-simplexes in $K$, we have
 
     $$
-    B_1(K) = \{0\}
+    B_1(K) = \{0\} \quad \text{(The trivial group)}
     $$
 
 Finally
