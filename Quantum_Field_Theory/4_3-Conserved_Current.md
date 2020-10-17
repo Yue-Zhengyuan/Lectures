@@ -179,15 +179,6 @@ $$
 
 The quantity $j_a^\mu$ goes by a special name, called the **current** associated with the infinitesimal transformation.
 
-*Remark*: The expression of $f_a$ can be further simplified using the **equation of motion**
-
-$$
-\frac{\partial \mathcal{L}}{\partial \phi}
-= \partial_\mu \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}
-$$
-
-Then
-
 *Example*:
 
 - **Scaling**

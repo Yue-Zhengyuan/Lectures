@@ -25,12 +25,12 @@ $$
 \{\eta_i,\eta_j\} = 0 \quad (i\neq j)
 $$
 
-They are called **Grassmann numbers**.
+They are called **Grassmann numbers**. For obvious reasons, we require 
 
-## Grassmann Algebra
-
-For obvious reasons, we also require $\{c_i,\eta_j\}=0$ for
-$i\neq j$.
+$$
+\{c_i,\eta_j\}=0 \quad
+(i \neq j)
+$$ 
 
 The Hermitian conjugate of the definition is
 
@@ -41,24 +41,16 @@ c_n^\dagger \cdots c_2^\dagger c_1^\dagger
 \bar{\eta}_n \cdots \bar{\eta}_2 \bar{\eta}_1
 $$
 
-The Grassmann number $\bar{\eta}_i$ is the "conjugate" of $\eta_i$. They also anti-commute with each other, and
-$\{c_i^{\dagger},\bar{\eta}_j\}=0$ for $i\neq j$.
+The Grassmann number $\bar{\eta}_i$ is the "conjugate" of $\eta_i$. Since $\{c_i^\dagger, c_j^\dagger\}=0$, we also impose
+the relation $\{\bar{\eta}_i, \bar{\eta}_j\}=0$. 
 
-In analogy with $\{c_i,c_i^\dagger\}=1$, we require
-
-$\{\eta_i,c_i^\dagger\}=1, \{c_i,\bar{\eta}_i\}=1$
-
-Finally, since $\{c_i, c_j^\dagger\}=0$, we also impose
-the relation $\{\eta_i, \bar{\eta}_j\}=0$. To summarize:
-
-$\{c_i,c_j\}=\{c_i,\eta_j\}=\{c_i^\dagger ,c_j^\dagger\}=\{\bar{\eta}_i,\bar{\eta}_j\}=\{c_i,c_j^{\dagger
-}\}=\{\eta_i,\bar{\eta}_j\}=0\text{    }(i \neq j)$
+We also require that the Grassmann numbers *always anti-commute* with the annihilation / creation operators. 
 
 These anti-commutation relations form the **Grassmann algebra**.
 
 ## Building Coherent State from Vacuum
 
-## One Kind of Fermions
+### One Kind of Fermions
 
 First consider the case of only one kind of fermions. To build the coherent state from vacuum, we again examine the expansion
 
@@ -93,7 +85,7 @@ $$
 \eta^n=0 \quad n\geq 2
 $$
 
-Then $\eta c_1| 1\rangle =-\eta^2| 1\rangle =0$. Therefore
+Then $\eta c_1| 1\rangle =-\eta^2| 1\rangle =0$. Therefore the **fermion coherent state** is given by
 
 $$
 | \eta \rangle 
@@ -129,7 +121,7 @@ $$
 
 Note the sign differences from the bosonic case.
 
-## Many Kinds of Fermions
+### Many Kinds of Fermions
 
 For systems containing multiple kinds of fermions,
 
@@ -160,6 +152,8 @@ f(\eta ,\bar{\eta})
 \quad a_0,a_1,a_1^{\prime},a_{12}\in \mathbb{C}
 $$
 
+### Differentiation
+
 The differentiation is almost the same as ordinary differentiation. However, the *order* is important: we must differentiate the *innermost* variable first, then going outside one after another. For example,
 
 $$
@@ -171,7 +165,9 @@ $$
 = -1
 $$
 
-Because of the properties above, people *define* that for functions of Grassmann variables, *differentiation and integration are the same*.
+### Integration
+
+Integration over Grassmann variables is *defined to be the same* as differentiation.
 
 ## Resolution of Identity
 
@@ -215,75 +211,160 @@ $$
 
 We again want to find the matrix elements of the 2-body operator
 
-$A(c^\dagger ,c)=\sum_{n,m} A_{n m} (c^\dagger)^nc^m$
+$$
+A(c^\dagger ,c)=\sum_{n,m} A_{n m} (c^\dagger)^nc^m
+$$
 
 Obviously, now the indices $m,n$ can only take two values 0 and 1. Then
 
-$\langle \xi |A|\eta \rangle =\sum_{n,m} A_{n m}\left\langle \xi \left|(c^\dagger)^nc^m\right|\eta \right\rangle =\sum_{n,m} A_{n
-m}\bar{\xi}^n\eta^m\langle \xi |\eta \rangle =\sum_{n,m} A_{n m}\langle \xi |\eta \rangle \bar{\xi}^n\eta^m$
+$$
+\begin{aligned}
+    \langle \xi |A|\eta \rangle 
+    &= \sum_{n,m} A_{n m} 
+    \langle \xi |(c^\dagger)^n c^m|\eta \rangle 
+    \\
+    &=\sum_{n,m} A_{n m} \bar{\xi}^n\eta^m\langle \xi |\eta \rangle 
+    \\
+    &=\sum_{n,m} A_{n m}\langle \xi |\eta \rangle \bar{\xi}^n\eta^m
+\end{aligned}
+$$
 
 The overlap $\langle \xi |\eta \rangle$ is evaluated to be
 
-$\langle \xi |\eta \rangle =\left\langle 0\left|\exp ( \bar{\xi} c)\exp (-\eta c^\dagger)\right|0\right\rangle =\left\langle
-0\left|(1+\bar{\xi} c)(1-\eta c^\dagger)\right|0\right\rangle$
-
-$=\left\langle 0\left|1-\eta c^\dagger +\bar{\xi} c-\bar{\xi} c \eta c^\dagger \right|0\right\rangle$
+$$
+\begin{aligned}
+    \langle \xi |\eta \rangle 
+    &= \langle 0 |\exp ( \bar{\xi} c)\exp (-\eta c^\dagger)|0\rangle 
+    \\
+    &= \langle 0|(1+\bar{\xi} c)(1-\eta c^\dagger)|0\rangle
+    \\
+    &= \langle 0|1-\eta c^\dagger +\bar{\xi} c-\bar{\xi} c \eta c^\dagger |0\rangle
+\end{aligned}
+$$
 
 The middle two terms vanish obviously. The last term gives
 
-$\left\langle 0\left|-\bar{\xi} c \eta c^\dagger \right|0\right\rangle =\left\langle 0\left|\bar{\xi} \eta c c^\dagger \right|0\right\rangle
-=\bar{\xi} \eta \left\langle 0\left|c c^\dagger \right|0\right\rangle =\bar{\xi} \eta$
+$$
+\langle 0|-\bar{\xi} c \eta c^\dagger |0\rangle 
+= \langle 0|\bar{\xi} \eta c c^\dagger |0\rangle
+=\bar{\xi} \eta \langle 0|c c^\dagger |0\rangle 
+=\bar{\xi} \eta
+$$
 
 Hence
 
-$\langle \xi |\eta \rangle =1+\bar{\xi} \eta =e^{\bar{\xi} \eta}$
+$$
+\langle \xi |\eta \rangle 
+= 1+\bar{\xi} \eta = e^{\bar{\xi} \eta}
+$$
 
 similar to the boson result. Finally
 
-$\langle \xi |A|\eta \rangle =\sum_{n,m} A_{n m}\bar{\xi}^n\eta^me^{\bar{\xi} \eta}=\sum_{n,m} A_{n m}e^{\bar{\xi} \eta}\bar{\xi}^n\eta
-^m$
+$$
+\langle \xi |A|\eta \rangle 
+= \sum_{n,m} A_{n m}\bar{\xi}^n\eta^me^{\bar{\xi} \eta}
+= \sum_{n,m} A_{n m}e^{\bar{\xi} \eta}\bar{\xi}^n\eta^m
+$$
 
 The last equality is due to the fact that $e^{\bar{\xi} \eta}$
 commutes with $\bar{\xi}^n\eta^m$.
 
-Again, we can get the result by a formal replacement
+Now we see that we can get the result by a formal replacement
 
-$\left\langle \xi \left|A(c^\dagger ,c)\right|\eta \right\rangle =e^{\bar{\xi} \eta}A(\bar{\xi},\eta)$
+$$
+\langle \xi |A(c^\dagger ,c)|\eta \rangle 
+= e^{\bar{\xi} \eta}A(\bar{\xi},\eta)
+$$
 
 ## Coherent State Path Integral for Fermions
 
-Similar to the bosonic case, we insert the *over-complete* coherent
-state basis:
+Similar to the bosonic case, we insert the *over-complete* coherent state basis:
 
-$\left\langle f\left|e^{-i H (c^\dagger ,c)T}\right|i\right\rangle =\int (\prod_{k=1}^{N-1} d\bar{\eta}_kd\eta_ke^{-\bar{\eta
-}_k\eta_k})\left\langle f\left|e^{-i H (c^\dagger ,c)\epsilon}\right|\eta_{N-1}\right\rangle (\prod_{k=1}^{N-2} \left\langle
-\eta_{k+1}\left|e^{-i H (c^\dagger ,c)\epsilon}\right|c_k\right\rangle)\left\langle \eta_1\left|e^{-i H (c^\dagger ,c)\epsilon
-}\right|i\right\rangle \\
-=\int (\prod_{k=1}^{N-1} d\bar{\eta}_kd\eta_ke^{-\bar{\eta}_k\eta_k})\left\langle f\left|1-i H(c^\dagger ,c)\epsilon
-\right|\eta_{N-1}\right\rangle (\prod_{k=1}^{N-2} \left\langle \eta_{k+1}\left|1-i H(c^\dagger ,c)\epsilon \right|c_k\right\rangle
-)\left\langle \eta_1\left|1-i H(c^\dagger ,c)\epsilon \right|i\right\rangle$
+$$
+\begin{aligned}
+    &\left\langle f\left|e^{-i H (c^\dagger ,c)T}\right|i\right\rangle 
+    \\
+    &=\int \left(
+        \prod_{k=1}^{N-1} 
+        d\bar{\eta}_k d\eta_k
+        e^{-\bar{\eta}_k\eta_k}
+    \right)
+    \left\langle f\left|e^{-i H (c^\dagger ,c)\epsilon}\right|\eta_{N-1}\right\rangle 
+    \\ &\qquad \times
+    \left(
+        \prod_{k=1}^{N-2} \left\langle
+        \eta_{k+1}\left|e^{-i H (c^\dagger ,c)\epsilon}\right|c_k\right\rangle
+    \right)
+    \left\langle \eta_1\left|e^{-i H (c^\dagger ,c)\epsilon}\right|i\right\rangle 
+    \\
+    &=\int \left(
+        \prod_{k=1}^{N-1} d\bar{\eta}_kd\eta_ke^{-\bar{\eta}_k\eta_k}
+    \right)
+    \left\langle f\left|1-i H(c^\dagger ,c)\epsilon \right|\eta_{N-1}\right\rangle 
+    \\ &\qquad \times
+    \left(
+        \prod_{k=1}^{N-2} \left\langle \eta_{k+1}\left|1-i H(c^\dagger ,c)\epsilon \right|c_k\right\rangle
+    \right)
+    \left\langle \eta_1\left|1-i H(c^\dagger ,c)\epsilon \right|i\right\rangle
+\end{aligned}
+$$
 
 After a calculation the same as the boson case, we arrive at
 
-$\left\langle f\left|e^{-i H (c^\dagger ,c)T}\right|i\right\rangle =\int (\prod_{k=0}^N d\bar{\eta}_kd\eta_k) \exp
-(-\frac{1}{2}(\bar{\eta}_0\eta_0+\bar{\eta}_N\eta_N))(\prod_{k=0}^{N-1} \exp \left[\frac{1}{2} (\partial_t\bar{\eta
-}_k)\eta_k\epsilon -\frac{1}{2}\bar{\eta}_{k+1} (\partial_t\eta_{k+1})\epsilon -i H(\bar{\eta}_{k+1},\eta_k)\epsilon
-\right])\left\langle f\left| \eta_N\right.\right\rangle \left\langle \left.\eta_0\right| i\right\rangle \\
-=\int \left[d\bar{\eta}\right][d\eta ]\exp (i\int_0^Tdt \left[\frac{1}{2i}((\partial_t\bar{\eta})\eta -\bar{\eta}\partial
-_t\eta)-H(\bar{\eta},\eta)\right])\underbrace{\exp (-\frac{1}{2}(\bar{\eta}_i\eta_i+\bar{\eta}_f\eta_f))\left\langle
-f\left| \eta_f\right.\right\rangle \left\langle \left.\eta_i\right| i\right\rangle}_{\text{the} \text{projection operator}}$
+$$
+\begin{aligned}
+    &\left\langle f\left|e^{-i H (c^\dagger ,c)T}\right|i\right\rangle 
+    \\
+    &=\int \left(
+        \prod_{k=0}^N d\bar{\eta}_kd\eta_k
+    \right) \exp \left(
+        -\frac{1}{2}(\bar{\eta}_0\eta_0+\bar{\eta}_N\eta_N)
+    \right) 
+    \\ &\qquad \times \left(
+        \prod_{k=0}^{N-1} \exp \left[
+            \frac{1}{2} (\partial_t\bar{\eta}_k)\eta_k\epsilon 
+            -\frac{1}{2}\bar{\eta}_{k+1} (\partial_t\eta_{k+1})\epsilon 
+            -i H(\bar{\eta}_{k+1},\eta_k)\epsilon
+        \right]
+    \right)
+    \\ &\qquad \times
+    \langle f| \eta_N \rangle 
+    \langle \eta_0| i  \rangle 
+    \\
+    &=\int \left[d\bar{\eta}\right][d\eta ]
+    \exp \left(
+        i\int_0^Tdt \left[\frac{1}{2i}((\partial_t\bar{\eta})\eta -\bar{\eta}\partial
+    _t\eta)-H(\bar{\eta},\eta)\right]
+    \right)
+    \\ &\qquad \times
+    \underbrace{
+        \exp \left(
+            -\frac{1}{2}(\bar{\eta}_i\eta_i+\bar{\eta}_f\eta_f)
+        \right)
+        \langle f| \eta_f \rangle 
+        \langle \eta_i | i \rangle
+    }_{\text{the projection operator}}
+\end{aligned}
+$$
 
-Because of the anti-commutativity of Grassmann numbers, we can combine
-the two terms with time derivative:
+Because of the anti-commutativity of Grassmann numbers, we can combine the two terms with time derivative:
 
-$\int dt \left[(\partial_t\bar{\eta})\eta -\bar{\eta}\partial_t\eta \right]=\int dt \left[\partial_t(\bar{\eta}\eta)-2\bar{\eta
-}\partial_t\eta \right]=\int dt \left[-2\bar{\eta}\partial_t\eta \right]$
+$$
+\int dt \left[(\partial_t\bar{\eta})\eta -\bar{\eta}\partial_t\eta \right]=\int dt \left[\partial_t(\bar{\eta}\eta)-2\bar{\eta
+}\partial_t\eta \right]=\int dt \left[-2\bar{\eta}\partial_t\eta \right]
+$$
 
 Finally
 
-$\left\langle f\left|e^{-i H (c^\dagger ,c)T}\right|i\right\rangle =\int \left[d\bar{\eta}\right][d\eta ]\exp (i\int_0^Tdt \left[i
-\bar{\eta}\partial_t\eta -H(\bar{\eta},\eta)\right]) \times \text{projection} \text{operator}$
+$$
+\left\langle f\left|e^{-i H (c^\dagger ,c)T}\right|i\right\rangle =\int [d\bar{\eta}][d\eta ]
+\exp \left(i\int_0^Tdt \left[i
+\bar{\eta}\partial_t\eta -H(\bar{\eta},\eta)\right] \right) \\
+\times \text{projection operator}
+$$
 
-This is the for fermions. The action functional is
+This is the **coherent state path integral** for fermions. The action functional is
 
-$S=\int_0^Tdt \left[i \bar{\eta}\partial_t\eta -H(\bar{\eta},\eta)\right]$
+$$
+S=\int_0^Tdt \left[i \bar{\eta}\partial_t\eta -H(\bar{\eta},\eta)\right]
+$$
