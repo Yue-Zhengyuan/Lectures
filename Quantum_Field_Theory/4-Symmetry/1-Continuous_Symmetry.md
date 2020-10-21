@@ -28,7 +28,7 @@ $$
 
 <center>
 
-![image](Fig-2_1.png)   
+![image](field_trans.png)   
 *Transformation of field and coordinates*
 
 </center>

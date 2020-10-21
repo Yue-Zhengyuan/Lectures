@@ -1,16 +1,5 @@
 # Energy-Momentum Tensor
 
-## Equation of Motion for Fields
-
-$$
-\partial_{\mu} \left(
-    \frac{\partial \mathcal{L}}{\partial \left(\partial_{\mu} \phi \right)}
-\right) - \frac{\partial \mathcal{L}}{\partial \phi
-}=0
-$$
-
-## Energy-Momentum Tensor
-
 Symmetry under *spacetime translation* leads to an important conserved current: the **energy-momentum tensor**.
 
 $$
@@ -46,7 +35,7 @@ $$
 \end{aligned}
 $$
 
-This conserved current is called the **(canonical) energy-momentum tensor**, denoted by ${(T_c)^\mu}_\alpha$. Using superscripts only, we obtain
+The $\alpha$ labels the transformation, and $\mu$ refers to the components of the current $j_\alpha$. This conserved current is called the **(canonical) energy-momentum tensor**, denoted by ${(T_c)^\mu}_\alpha$. Using superscripts only, and rename $\alpha$ to $\nu$, we obtain
 
 $$
 T_c^{\mu \nu} = -g^{\mu \nu} \mathcal{L}
@@ -72,6 +61,49 @@ P^0 = \int d^{d-1}x \, T_c^{0 0}
 $$
 
 The integrand is just the usual definition of Hamiltonian (density). 
+
+## Conservation Law for $T^{\mu \nu}$
+
+The conservation equation $\partial_\mu j^\mu = 0$ applied to the energy-momentum tensor takes the form
+
+$$
+\partial_\mu T^{\mu \nu} = 0
+$$
+
+*Proof*: To show the conservation law, the equation of motion must be used.
+
+$$
+\begin{aligned}
+    \partial_\mu T^{\mu \nu}
+    &= \partial_\mu \left\{
+        \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \partial^\nu \phi
+        - g^{\mu\nu} \mathcal{L}
+    \right\}
+    \\
+    &= \underbrace{\partial_\mu \left(
+        \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}
+    \right)}_\text{apply EOM} \partial^\nu \phi
+    + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \partial_\mu \partial^\nu \phi
+    - \partial^\nu \mathcal{L}
+    \\
+    &= \frac{\partial \mathcal{L}}{\partial \phi} 
+    \partial^\nu \phi
+    + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \partial_\mu \partial^\nu \phi
+    - \partial^\nu \mathcal{L}
+\end{aligned}
+$$
+
+Notice that $\mathcal{L} = \mathcal{L}(\phi(x), \partial_\mu \phi(x))$, we can expand $\partial^\nu \mathcal{L}$ to
+
+$$
+\partial^\nu \mathcal{L}
+= \frac{\partial \mathcal{L}}{\partial \phi} 
+\partial^\nu \phi
++ \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} 
+\partial^\nu \partial_\mu \phi
+$$
+
+In flat space $\partial^\nu \partial_\mu = \partial_\mu \partial^\nu$. Thus all terms cancel out and we obtain $\partial_\mu T^{\mu \nu} = 0$. $\blacksquare$
 
 ## Belinfante Energy-Momentum Tensor
 
