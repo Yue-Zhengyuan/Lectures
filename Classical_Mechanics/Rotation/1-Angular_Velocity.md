@@ -6,10 +6,10 @@
     - [Rotation Around the Coordinate Axes](#rotation-around-the-coordinate-axes)
     - [Matrix for Arbitrary 3D Rotations](#matrix-for-arbitrary-3d-rotations)
     - [EXERCISE](#exercise)
-- [Angular Velocity](#angular-velocity)
+- [Angular Velocity Matrix and Vector](#angular-velocity-matrix-and-vector)
 - [Cross Product](#cross-product)
     - [EXERCISE](#exercise-1)
-- [The Angular Velocity is NOT Really a Vector](#the-angular-velocity-is-not-really-a-vector)
+- [Angular Velocity under Reflections](#angular-velocity-under-reflections)
     - [EXERCISE](#exercise-2)
 
 *(We shall not consider the complicated case where the direction of rotation axis changes with time. An example is [**precession**](https://en.wikipedia.org/wiki/Precession).)*
@@ -179,7 +179,7 @@ $$
     
     - $R_n(\alpha)$ only has one real eigenvalue 1 (*Question: what is the corresponding eigenvector?*)
 
-## Angular Velocity
+## Angular Velocity Matrix and Vector
 
 To find the linear velocity of the rotating object at $\boldsymbol{r}(t)$, recall that (assume that the rotation starts at time $t = 0$)
 
@@ -338,19 +338,22 @@ M = \begin{bmatrix}
 \det M = \boldsymbol{a}\cdot (\boldsymbol{b}\times \boldsymbol{c})
 $$
 
-## The Angular Velocity is NOT Really a Vector
+## Angular Velocity under Reflections
 
-Now you should know that the angular velocity *matrix* is the more
-natural quantity, and the angular velocity *vector* is just some derived
-object. But there must be some reason why people treat it as a vector
-under most cases.
+Now you should know that the angular velocity *matrix* is the more natural quantity, and the angular velocity *vector* is just some derived object. But there must be some reason why people treat it as a vector under most cases.
 
-In fact, under *rotations* of the object, the angular velocity vector
-behaves exactly the same as the position vector (which is, *by
-definition*, a *true* vector). However, it will betray itself under
-*reflections*. Let us see what happens in the latter case.
+In fact, under *rotations* of the object, the angular velocity vector behaves exactly the same as the position vector (which is, *by definition*, a *true* vector). However, it will betray itself under *reflections*. 
 
-Consider for simplicity the reflection about the $x z$-plane. The transformation matrix of the position vector is
+Consider for simplicity the reflection about the $xz$-plane. You can apply the right-hand rule in a mirror to have a feeling about this minus sign.
+
+<center>
+
+![](Figures/pseudovector.svg)   
+*A rotating disc and its image in the mirror*
+
+</center>
+
+Let us see whether we can mathematically derive it using the angular velocity *matrix*. The transformation matrix of the $xz$-reflection is
 
 $$
 P_y = \begin{bmatrix}
@@ -360,7 +363,7 @@ P_y = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-You should be able to write it down quickly using the meaning of the three columns of the matrix. Its inverse is itself (please verify this by direct calculation).
+You should be able to write it down quickly using the meaning of the three columns of the matrix. Its inverse is obviously itself.
 
 In the mirror (reflected world), since $\boldsymbol{v}$ and $\boldsymbol{r}$ are both "true" vectors, we have
 
@@ -441,16 +444,7 @@ $$
 = - P_y \boldsymbol{\omega}
 $$
 
-We find that there is an additional minus sign. You can apply the right-hand rule in a mirror to have a feeling about this minus sign.
-
-<center>
-
-![](Figures/pseudovector.svg)   
-*A rotating disc and its image in the mirror*
-
-</center>
-
-In mathematics, objects like the angular velocity vector are called **pseudo-vectors**. You can read the corresponding [Wikipedia article](https://en.wikipedia.org/wiki/Pseudovector) to learn more about it.
+We find that there is an additional minus sign. In mathematics, objects like the angular velocity vector are called **pseudo-vectors**. You can read the corresponding [Wikipedia article](https://en.wikipedia.org/wiki/Pseudovector) to learn more about it.
 
 ### EXERCISE
 
