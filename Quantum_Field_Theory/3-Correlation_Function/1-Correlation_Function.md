@@ -1,82 +1,53 @@
-# Correlation Function
+# Correlation Function (Canonical Quantization)
 
-For a *single* point particle, the **$n$-point correlation function** is defined as
-
-$$
-\langle x(t_1) \cdots x(t_n) \rangle
-= \langle 0| \mathcal{T} (x(t_1) \cdots x(t_n)) |0 \rangle
-$$
-
-where $\mathcal{T}$ is the **time ordering operator**.
-
-----
-
-*Proposition*: (**Correlation function as path integral**)
+The **$n$-point correlation function** is defined as
 
 $$
-\langle x(t_1) \cdots x(t_n) \rangle
-= \lim_{\epsilon \to 0} \frac{
-    \int [dx] \, x(t_1) \cdots x(t_n)
-    \exp(i S_\epsilon[x(t)])
-}{
-    \int [dx] \, \exp(i S_\epsilon[x(t)])
-}
+\langle \phi(x_1) \cdots \phi(x_n) \rangle
+= \langle \Omega| T [\phi(x_1) \cdots \phi(x_n)] |\Omega \rangle
 $$
 
-where $S_\epsilon[x(t)]$ is the action obtained by replacing $t$ by $t(1-i\epsilon)$.
+where $T$ is the **time ordering operator**, and $|\Omega\rangle$ is the ground state of the interacting theory.
 
-*Proof*: (Consider time-independent $H$ for simplicity)
+## Two-Point Correlation Function
 
-In the Heisenberg picture, 
+### Free Theory
 
-$$
-x(t) = e^{iHt} x e^{-iHt}
-$$
-
-----
-
-## Euclidean Formalism
-
-In statistical physics, people usually define all correlation functions in *imaginary time*, and then perform the **Wick rotation**
-
-$$
-\tau = it \in \mathbb{R}
-$$
-
-We define the **Euclidean Lagrangian** as
+The two-point correlation function in the free (Klein-Gordon) theory is just the Feynman propagator:
 
 $$
 \begin{aligned}
-    L_E \left(x, \frac{dx}{d\tau}, \tau\right)
-    &= - \left.
-    L \left(x, \frac{dx}{dt}, t \right)
-    \right|_{t \to -i\tau}
+    \langle 0 | T[\phi(x) \phi(y)] | 0\rangle_\text{free}
+    &= D_F(x - y)
     \\
-    &= - L \left(x, i \, \frac{dx}{d\tau}, -i\tau \right)
+    &= \int \frac{d^4 p}{(2\pi)^4}
+    \frac{i e^{-i p(x-y)}}{p^2 - m^2 + i\epsilon}
 \end{aligned}
 $$
 
-and the **Euclidean action** as
+### The Interaction Picture
+
+To obtain the two-point function for interacting theory, we need to use the **interaction picture** of the fields. 
+
+### Interacting Theory
 
 $$
-S_E[x(\tau)] = \int d\tau \, L_E
-$$
-
-Then the usual action $S$ is related to $S_E$ by
-
-$$
-S = \int dt \, L
-= -i \int d\tau \, (-L_E) = i S_E
-$$
-
-Therefore, the imaginary time correlation function is
-
-$$
-\langle x(\tau_1) \cdots x(\tau_n) \rangle
-= \frac{
-    \int [dx] \, x(\tau_1) \cdots x(\tau_n)
-    \exp(- S_E[x(\tau)])
-}{
-    \int [dx] \, \exp(- S_E[x(\tau)])
-}
+\begin{aligned}
+    &\langle \Omega | T[\phi(x) \phi(y)] | \Omega\rangle
+    \\
+    &= \lim_{T \to \infty(1-i\epsilon)}
+    \frac{
+        \left\langle 0 \left| T \left[
+            \phi_I(x) \phi_I(y) \exp \left(
+                -i \int_{-T}^{+T} dt H_I(t)
+            \right)
+        \right] \right| 0 \right\rangle
+    }{
+        \left\langle 0 \left| T \left[
+            \exp \left(
+                -i \int_{-T}^{+T} dt H_I(t)
+            \right)
+        \right] \right| 0 \right\rangle
+    }
+\end{aligned}
 $$

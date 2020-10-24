@@ -1,8 +1,8 @@
-# Equation of Motion for Field Theory
+# Description of Quantum Field Theory
 
-## Principle of Least Action
+## Lagrangian Field Theory
 
-System action
+The Lagrangian description has the advantage that all expressions are explicitly *Lorentz invariant*. The theory is described by the action
 
 $$
 S = \int d^d x \, \mathcal{L}(\phi(x), \partial_\mu \phi(x))
@@ -47,7 +47,7 @@ $$
 = 0
 $$
 
-which is the **equation of motion**. If there are multiple components of the field, the equation can be easily generalized to 
+which is the **equation of motion (EOM)**. If there are multiple components of the field, the equation can be easily generalized to 
 
 $$
 \partial_{\mu} \left(
@@ -57,7 +57,7 @@ $$
 = 0
 $$
 
-## Ambiguity in Lagrangian
+### Ambiguity in Lagrangian
 
 The equation of motion is unaffected if we add a *total derivative* term to $\mathcal{L}$:
 
@@ -66,3 +66,36 @@ $$
 $$
 
 since the variation of the additional total derivative term can be converted to integration over the boundary and vanishes.
+
+## Hamiltonian Field Theory
+
+Recall that for a discrete system, the Hamiltonian in classical mechanics is defined as
+
+$$
+H = \sum_a p_a \dot{q}_a - L, \quad
+p_a = \frac{\partial L}{\partial \dot{q}_a}
+$$
+
+In field theory we deal with Lagrangian and Hamiltonian *densities*:
+
+$$
+L = \int d^3 x \, \mathcal{L}, 
+\quad 
+H = \int d^3 x \, \mathcal{H}
+$$
+
+In analogy, we define for QFT the **momentum density** conjugate to the field $\phi(\bold{x})$ as
+
+$$
+\pi(\bold{x}) \equiv
+\frac{\partial \mathcal{L}}{\partial \dot{\phi}(\bold{x})}
+,\quad
+L = \int d^3 x \, \mathcal{L}
+$$
+
+and the relation between the Lagrangian density and the Hamiltonian density
+
+$$
+\mathcal{H} = \pi(\bold{x}) \dot{\phi}(\bold{x}) - \mathcal{L}
+$$
+
