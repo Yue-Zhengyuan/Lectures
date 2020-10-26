@@ -1,6 +1,6 @@
 # Description of Quantum Field Theory
 
-## Lagrangian Field Theory
+## Lagrangian Description
 
 The Lagrangian description has the advantage that all expressions are explicitly *Lorentz invariant*. The theory is described by the action
 
@@ -67,7 +67,7 @@ $$
 
 since the variation of the additional total derivative term can be converted to integration over the boundary and vanishes.
 
-## Hamiltonian Field Theory
+## Hamiltonian Description
 
 Recall that for a discrete system, the Hamiltonian in classical mechanics is defined as
 

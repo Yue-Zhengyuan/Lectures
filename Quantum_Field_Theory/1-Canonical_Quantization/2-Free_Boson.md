@@ -1,4 +1,4 @@
-# Canonical Quantization of Klein-Gordon Field (Free Boson)
+# Canonical Quantization: Free Boson
 
 The Lagrangian of the **Klein-Gordon field theory** is
 
@@ -291,7 +291,7 @@ $$
 \end{aligned}
 $$
 
-## The Momentum Eigenstates
+## Normalization of Momentum Eigenstates
 
 ## Action of the $\phi(\bold{x})$ Operator
 

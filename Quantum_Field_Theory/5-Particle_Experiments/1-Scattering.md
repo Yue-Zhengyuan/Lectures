@@ -1,10 +1,53 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-</style>
-
 # Cross Section
+
+## The Cross Section
+
+Consider a target, at rest, of particles of type $A$, with density $\rho_A$ (particles per unit volume). We then shoot at it a bunch of particles of type $B$, with number density $\rho_B$ and velocity $v$.
+
+<center>
+
+![](cross_sec.png)
+
+</center>
+
+Let $l_A$ and $l_B$ be the lengths of the bunches of particles. Then we expect the total number of scattering events (or scattering events of any particular desired type) to be proportional to $\rho_A, \rho_B, l_A, l_B$ and the cross-sectional area $A$ common to the two bunches. We also assume that the particle beams have constant density across the cross section $A$. 
+
+The **cross section $\sigma$** is just defined as the total number of scattering events divided by all of these quantities:
+
+$$
+\sigma \equiv \frac{
+    \text{Number of events}
+}{
+    \rho_A \rho_B l_A l_B A
+}
+$$
+
+How to calculate the number of events? The numbers of particles of $A$ and $B$ involved are
+
+$$
+N_A = \rho_A l_A A, \quad
+N_B = \rho_B l_B A
+$$
+
+Then
+
+$$
+\text{Number of events} = \frac{\sigma N_A N_B}{A}
+$$
+
+### Differential Cross Section
+
+If we only consider events that results in a certain differential elements in the space of final events (e.g. given final momentum), the number of events will be infinitesimal:
+
+$$
+\text{Number of events} \propto d^3 p_1 \cdots d^3 p_n
+$$
+
+Then we need to use the **differential cross section**
+
+$$
+\frac{d\sigma}{d^3 p_1 \cdots d^3 p_n}
+$$
 
 ## The $S$-Matrix
 
@@ -32,7 +75,7 @@ T = (2\pi)^4 \delta^4(\textstyle{\sum p}) \mathcal{M}
 \textstyle{\sum p} \equiv \textstyle{\sum p_f - \sum p_i}
 $$
 
-Now we can extract the "non-trivial" part of the $S$-matrix:
+where $\mathcal{M}$ is called the **invariant matrix element**. Now we can extract the "non-trivial" part of the $S$-matrix:
 
 $$
 \langle f|i T|i \rangle
@@ -40,31 +83,6 @@ $$
 \langle f|\mathcal{M}|i \rangle
 $$
 
-## The Cross Section
+### Calculation of $\sigma$ from $\mathcal{M}$
 
-<center>
 
-![](diff_cross_sec.jpg)
-
-</center>
-
-Let 
-
-- $dN$ be the number of particles scattered per unit time through the solid angle element $\Omega$ to $\Omega + d\Omega$;
-- $\Phi$ be the number of incoming particles per unit time per unit area of the beam cross section (the beam is assumed *uniform*). This quantity is like the flux of particles.
-
-The we use the **cross section** (which has dimensions of *area*) to describe the scattering process:
-
-$$
-d \sigma = \frac{dN}{\Phi}
-$$
-
-Now let us consider $2 \to n$ scattering:
-
-$$
-p_1 + p_2 \to \{p_j\}
-$$
-
-in the *center-of-mass frame*. In this frame, 1 and 2 are heading towards each other with velocity $v_1 > 0$ and $v_2 < 0$ (parallel). Within unit time, 
-
-The number $dN$ can be related to the *probability* $dP$ of scattering:
