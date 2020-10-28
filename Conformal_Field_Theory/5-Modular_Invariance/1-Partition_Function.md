@@ -8,7 +8,7 @@ On the complex plane, these lattice vectors may be represented by two *complex* 
 
 <center>
 
-![image](modular_param.png)   
+![modular_parameter](modular_param.png)   
 *The periods of the lattice*
 
 </center>
@@ -72,23 +72,25 @@ Then
 
 $$
 \begin{aligned}
-    Z &= \text{Tr}\, \exp 2\pi \left[
+    Z &= \text{Tr}\, \exp 
+    \left\{ 2\pi \left[
         - \left( L_0 + \bar{L}_0 - \frac{c}{12} \right) \text{Im} \, \tau
         + i \, (L_0 - \bar{L}_0) \, \text{Re} \, \tau
-    \right]
+    \right] \right\}
     \\
-    &= \text{Tr}\, \exp 2\pi i \left[
+    &= \text{Tr}\, \exp 
+    \left\{ 2\pi i \left[
         \tau (L_0 - c/24)
         - \bar{\tau} (\bar{L}_0 - c/24)
-    \right]
+    \right] \right\}
 \end{aligned}
 $$
 
 Here $\bar{\tau}$ is the complex conjugate of $\tau$. To simplify writing, we define
 
 $$
-q \equiv \exp 2\pi i \tau \quad
-(\bar{q} = \exp -2 \pi i \bar{\tau})
+q \equiv \exp(2\pi i \tau), \quad
+\bar{q} = \exp(-2 \pi i \bar{\tau})
 $$
 
 Finally
@@ -142,7 +144,7 @@ i.e. matrices in $SL(2,\mathbb{Z})$ only differing by a sign change are identifi
 
 <center>
 
-![image](Fig-10_1.png)   
+![modular_transformation](Fig-10_1.png)   
 *Basic modular transformations*
 
 </center>

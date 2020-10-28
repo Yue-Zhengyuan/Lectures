@@ -285,11 +285,13 @@ $$
     ] \\
     &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
     \frac{1}{\sqrt{2 \omega_\bold{p}}} [
-        a_\bold{p} e^{i p_\mu x^\mu} 
-        + a^\dagger_\bold{p} e^{-i p_\mu x^\mu}
+        a_\bold{p} e^{ipx} 
+        + a^\dagger_\bold{p} e^{-ipx}
     ]
 \end{aligned}
 $$
+
+where $p^0 = \omega_\bold{p} = \sqrt{m^2 + \bold{p}^2}$. 
 
 ## Normalization of Momentum Eigenstates
 

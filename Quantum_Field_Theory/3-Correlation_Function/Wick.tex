@@ -9,16 +9,13 @@
 \usepackage[utf8]{inputenc} %useful to type directly diacritic characters
 \usepackage[all,cmtip]{xy}  %commutative diagram
 \begin{document}
-\begin{align*}\contraction{}{a}{{}^{\dagger}_i(t_1)a^{\dagger}_j(t_1)}{a} 
-\contraction[2ex]{a^{\dagger}_i(t_1)}{a}{
-{}^{\dagger}_j(t_1)a_j(t_1)a_i(t_1)
-a^{\dagger}_i(t_2)a^{\dagger}_j(t_2)a_j(t_2)}{a}
-\contraction[3ex]{a^{\dagger}_i(t_1)
-a^{\dagger}_j(t_1)a_j(t_1)}{a}{{}_i(t_1)
-a^{\dagger}_i(t_2)}{a}
-\bcontraction{a^{\dagger}_i(t_1)
-a^{\dagger}_j(t_1)a_j(t_1)a_i(t_1)}
-{a}{{}^{\dagger}_i(t_2)a^{\dagger}_j(t_2)}{a}
-a^{\dagger}_i(t_1)a^{\dagger}_j(t_1)a_j(t_1)a_i(t_1) 
-a^{\dagger}_i(t_2)a^{\dagger}_j(t_2)a_j(t_2)a_i(t_2)\,.\end{align*}
+\begin{align*}
+N(
+\contraction[1ex]{\phi_1}{\phi_2}{\phi_3}{\phi_4}
+\phi_1 \phi_2 \phi_3 \phi_4
+)
+= 
+N(\phi_1 \phi_3) \langle \phi_2 \phi_4 \rangle
+\end{align*}
+
 \end{document}
