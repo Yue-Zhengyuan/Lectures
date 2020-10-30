@@ -84,7 +84,7 @@ $$
 (2\pi)^4 \delta^4(\sum p_f - \sum p_i)
 $$
 
-### Calculation of $\sigma$ from $\mathcal{M}$
+## Calculation of Cross Section from $\mathcal{M}$
 
 Due to the new relativistic normalization of the momentum eigenstates, a wave packet representing some desired state $|\phi\rangle$ is expressed as
 
@@ -367,7 +367,7 @@ $$
 \end{aligned}
 $$
 
-To simplify further, we exploit the properties of a wave packet that it is sharply peaked as some "average" momentum $\bold{p}_A, \bold{p}_B$, and other things in the integral are *smooth* functions of $\bold{k}_A, \bold{k}_B$. Thus we can approximate the integral as
+To simplify further, we exploit the properties of a wave packet that it is *sharply* peaked as some "average" momentum $\bold{p}_A, \bold{p}_B$, and other things in the integral are *smooth* functions (i.e. they does not change much) of $\bold{k}_A, \bold{k}_B$. Thus we can approximate the integral as
 
 $$
 \begin{aligned}
@@ -383,10 +383,85 @@ $$
     (2\pi)^4 \delta^4(\textstyle{k_A + k_B - \sum p_f}) 
     |\phi_A(\bold{k}_A)|^2
     |\phi_B(\bold{k}_B)|^2
+    \\[0.2em]
+    & \quad 
+    \left( \begin{aligned}
+        &\text{This step uses the smoothness}
+        \\
+        &\text{Note that $E_{A,B}, v_{A,B}$ now does not depend on $p_f$}
+    \end{aligned} \right)
+    \\[1em]
+    &= \frac{1}{2E_A 2E_B|v_A - v_B|}
+    \left[
+        \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
+    \right] 
+    \\ &\qquad \times
+    |\mathcal{M}(p_A,p_B \to \{p_f\})|^2
+    (2\pi)^4 \delta^4(\textstyle{p_A + p_B - \sum p_f}) 
+    \\[0.2em]
+    & \quad \left( \begin{aligned}
+        &\text{This step uses the sharpness of $\phi(\bold{k_A})$ and $\phi(\bold{k_B}$)}
+        \\
+        &\text{i.e. treat them similarly to the delta function}
+    \end{aligned} \right)
     \\[1em]
     &\text{where} \quad
     E_{A,B} = p_{A,B}^0 = \sqrt{m^2 + \bold{p}_{A,B}^2}
 \end{aligned}
 $$
 
+### The Lorentz-Invariant Phase Space
+
+In the result of $d\sigma$ above, we pick out the Lorentz invariant structure
+
+$$
+\int d\Pi_n 
+\equiv
+\left[
+    \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
+\right] 
+(2\pi)^4 \delta^4(\textstyle{\sum p_i - \sum p_f}) 
+$$
+
+It is called the **Lorentz invariant $n$-body phase space**.
+
 ## Differential Cross Section in CM Frame
+
+We consider the special case of $2 \to 2$ scattering in the center-of-mass reference frame. 
+
+$$
+\left( \frac{d\sigma}{d\Omega} \right)_\text{CM}
+= \frac{1}{2E_A 2E_B|v_A - v_B|}
+\frac{|\bold{p}_1|}{(2\pi)^2 4E_{\text{CM}}}
+|\mathcal{M}(p_A,p_B \to p_1,p_2)|^2
+$$
+
+If all the four particles are *identical*, the formula further simplifies to
+
+$$
+\left( \frac{d\sigma}{d\Omega} \right)_\text{CM}
+= \frac{|\mathcal{M}|^2}{64 \pi^2 E_\text{CM}^2}
+$$
+
+## The Decay Rate
+
+The **decay rate** $\Gamma$ of an unstable particle $A$ (assumed to be *at rest*) is defined as
+
+$$
+\Gamma = \frac{
+    \text{Number of decays per unit time}
+}{
+    \text{Number of remaining $A$ particles}
+}
+$$
+
+This can be formally regarded as $1 \to n$ scattering. 
+
+$$
+d\Gamma = \frac{1}{2m_A}
+\left[
+    \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
+\right] 
+    |\mathcal{M}(m_A \to \{p_f\})|^2
+    (2\pi)^4 \delta^4(\textstyle{p_A - \sum p_f}) 
+$$
