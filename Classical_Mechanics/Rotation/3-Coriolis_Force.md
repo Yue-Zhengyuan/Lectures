@@ -240,6 +240,7 @@ Let's see how it works with a toy model: two mass-points of mass $m$ connected b
 
 <center>
 
+![rotating connected balls](Figures/rotating_connected_balls.png)   
 *Two mass-points connected by a rod of adjustable length*
 
 </center>
