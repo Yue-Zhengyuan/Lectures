@@ -4,7 +4,7 @@
 
 A **torus** may be defined by specifying two *linearly independent lattice vectors* on the plane and *identifying points* that differ by an integer combination of these vectors. 
 
-On the complex plane, these lattice vectors may be represented by two *complex* numbers $\omega_1$ and $\omega_2$, called the **periods** of the lattice. Usually we take the space and time directions to run along the real and imaginary axes, respectively. Then $\omega_1$ is always a positive real number.
+On the complex plane, these lattice vectors may be represented by two *complex* numbers $w_1$ and $w_2$, called the **periods** of the lattice. Usually we take the space and time directions to run along the real and imaginary axes, respectively. Then $w_1$ is always a positive real number.
 
 <center>
 
@@ -16,7 +16,7 @@ On the complex plane, these lattice vectors may be represented by two *complex* 
 The properties of CFT on the torus should be independent of the *scale* of the lattice. Thus the relevant parameter should be 
 
 $$
-\tau = \omega_2 / \omega_1
+\tau = w_2 / w_1
 $$
 
 called the **modular parameter**. 
@@ -37,12 +37,12 @@ $$
 \end{aligned}
 $$
 
-Therefore, the operator that translates the system parallel to the period $\omega_2$ over a distance $a$ in *Euclidean* spacetime is
+Therefore, the operator that translates the system parallel to the period $w_2$ over a distance $a$ in *Euclidean* spacetime is
 
 $$
 \exp \left[
-    - H \frac{a \, \text{Im} \, \omega_2}{|\omega_2|}
-    + P \frac{a \, \text{Re} \, \omega_2}{|\omega_2|}
+    - H \frac{a \, \text{Im} \, w_2}{|w_2|}
+    + P \frac{a \, \text{Re} \, w_2}{|w_2|}
 \right]
 $$
 
@@ -50,22 +50,22 @@ where $H, P$ are the Hamiltonian and the total momentum of the theory.
 
 If we regard $a$ as the lattice spacing, then the above translation takes us from one row in the lattice to the next. 
 
-If the lattice contains $m$ rows in one period along $\omega_2$ (i.e. $|\omega_2| = m a$), then the partition function should be the translation operator along the full period $\omega_2$:
+If the lattice contains $m$ rows in one period along $w_2$ (i.e. $|w_2| = m a$), then the partition function should be the translation operator along the full period $w_2$:
 
 $$
-Z(\omega_1, \omega_2) = \text{Tr} \, 
+Z(w_1, w_2) = \text{Tr} \, 
 \exp \left[
-    - H \, \text{Im} \, \omega_2
-    + P \, \text{Re} \, \omega_2
+    - H \, \text{Im} \, w_2
+    + P \, \text{Re} \, w_2
 \right]
 $$
 
-By regarding the torus as a *cylinder of infinite length* (with circumference $L = \omega_1$), we can express $H, P$ in terms of the Virasoro generators:
+By regarding the torus as a *cylinder of infinite length* (with circumference $L = w_1$), we can express $H, P$ in terms of the Virasoro generators:
 
 $$
-H = \frac{2\pi}{\omega_1} \left( L_0 + \bar{L}_0 - \frac{c}{12} \right), 
+H = \frac{2\pi}{w_1} \left( L_0 + \bar{L}_0 - \frac{c}{12} \right), 
 \quad
-P = \frac{2\pi i}{\omega_1} (L_0 - \bar{L}_0)
+P = \frac{2\pi i}{w_1} (L_0 - \bar{L}_0)
 $$
 
 Then
@@ -105,18 +105,18 @@ It depends on the ratio $\tau$ only, as expected.
 
 ## Modular Invariance
 
-Let two periods $\omega'_{1,2}$ describe the *same* lattice on torus as $\omega_{1,2}$. Since the points $\omega'_1$ and $\omega'_2$ also belong to the lattice, they must be expressible as integer combinations of $\omega_1$ and $\omega_2$:
+Let two periods $w'_{1,2}$ describe the *same* lattice on torus as $w_{1,2}$. Since the points $w'_1$ and $w'_2$ also belong to the lattice, they must be expressible as integer combinations of $w_1$ and $w_2$:
 
 $$
 \begin{pmatrix}
-    \omega'_1 \\ \omega'_2
+    w'_1 \\ w'_2
 \end{pmatrix}
 = \begin{pmatrix}
     a & b \\
     c & d
 \end{pmatrix}
 \begin{pmatrix}
-    \omega_1 \\ \omega_2
+    w_1 \\ w_2
 \end{pmatrix} \quad
 \begin{array}{c}
     a,b,c,d \in \mathbb{Z}\\

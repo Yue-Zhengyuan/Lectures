@@ -293,6 +293,16 @@ $$
 
 where $p^0 = \omega_\bold{p} = \sqrt{m^2 + \bold{p}^2}$. 
 
+We also obtain the expansion of the momentum $\pi(x)$:
+
+
+
+## Heisenberg Equation for the Fields
+
+$$
+i \frac{\partial}{\partial t} \phi(x) = [\phi, H]
+$$
+
 ## Normalization of Momentum Eigenstates
 
 ## Action of the $\phi(\bold{x})$ Operator

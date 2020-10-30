@@ -42,7 +42,7 @@ $$
 = e^{iH(t-t_0)} \phi(\bold{x},t_0) e^{-iH(t-t_0)}
 $$
 
-We expand $\phi(\bold{x},t_0)$ using the ladder operators
+We expand $\phi(\bold{x},t_0)$ ($t_0$ is some reference time) using the ladder operators
 
 $$
 \phi(\bold{x},t_0)
@@ -137,7 +137,7 @@ $$
 
 ### Properties of the Time-Evolution Operator
 
-The general time-evolution operator from $t'$ (no longer constraint to the reference time $t_0$) to $t$ as
+The general time-evolution operator from $t'$ (no longer constrained to start from the reference time $t_0$) to $t$ as
 
 $$
 U(t,t_0) = T\left[
