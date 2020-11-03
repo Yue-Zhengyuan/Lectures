@@ -20,7 +20,8 @@ w_spin = 10
 ## square edge length
 edge = 2
 ## distance of XY origin to square center
-a = edge / 4
+# a = edge / 4
+a = 0
 
 def sq_center(t):
     """square center position"""
@@ -117,4 +118,4 @@ plt.show()
 # your system: for more information, see
 # http://matplotlib.sourceforge.net/api/animation_api.html
 # anim.save(dir_path + '/rot_ref_frame.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
-# anim.save(dir_path + '/rot_ref_frame.gif', writer='imagemagick', fps=30)
+anim.save(dir_path + '/rot_ref_frame.gif', writer='imagemagick', fps=30)

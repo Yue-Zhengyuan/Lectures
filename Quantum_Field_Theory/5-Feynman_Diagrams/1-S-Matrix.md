@@ -458,10 +458,15 @@ $$
 This can be formally regarded as $1 \to n$ scattering. 
 
 $$
-d\Gamma = \frac{1}{2m_A}
-\left[
-    \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
-\right] 
-    |\mathcal{M}(m_A \to \{p_f\})|^2
+\begin{aligned}
+    d\Gamma &= \frac{1}{2m_A}
+    \left[
+        \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
+    \right] 
+    |\mathcal{M}(p_A \to \{p_f\})|^2
     (2\pi)^4 \delta^4(\textstyle{p_A - \sum p_f}) 
+    \\[1em]
+    &\text{with} \quad
+    p_A = (E_A, \bold{p}_A) = (m_A, 0)
+\end{aligned}
 $$

@@ -34,8 +34,9 @@ $$
 \begin{aligned}
     D(x-y) &= \langle 0 | \phi(x) \phi(y) | 0 \rangle
     \\
-    &= \int \frac{d^3 p}{(2\pi)^3} \frac{1}{2E_\bold{p}}
-    e^{-ip(x-y)}
+    &= \int \frac{d^3 p}{(2\pi)^3} \left.
+    \frac{1}{2E_\bold{p}} e^{-ip(x-y)}
+    \right|_{p^0 = E_\bold{p}}
 \end{aligned}
 $$
 
@@ -83,15 +84,17 @@ $$
 \end{aligned}
 $$
 
-## The Klein-Gordon Propagators
+We see that the commutator $[\phi(x), \phi(y)]$ is a *c*-number, so it is equal to $\langle 0 | [\phi(x),\phi(y)] | 0 \rangle$. 
 
-### The Retarded Green's Function
+## The Retarded Propagator
 
-The commutator $[\phi(x), \phi(y)]$ is a *c*-number, so it is equal to $\langle 0 | [\phi(x),\phi(y)] | 0 \rangle$. Assume that $x^0 > y^0$, we obtain
+Assume that $x^0 > y^0$, we obtain
 
 $$
 \begin{aligned}
     &\langle 0 | [\phi(x),\phi(y)] | 0 \rangle
+    \\
+    &= D(x - y) - D(y - x)
     \\
     &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_\bold{p}}
     \left. [e^{-ip(x-y)} - e^{ip(x-y)}]
@@ -128,7 +131,7 @@ $$
 
 However, how the contour passes by the poles should be carefully chosen. First, the factor $e^{-ip^0(x^0-y^0)}$ will determine how the contour closes:
 
-- When $x^0 - y^0 < 0$ (so that when $p^0 \to i\infty$ the factor vanishes), the contour closes in the **upper** half plane
+- When $x^0 - y^0 < 0$ (so that when $p^0 \to i\infty$ the factor vanishes), the contour closes in the **upper** half plane (to ensure that the integration over the large circle vanishes, and thus does not affect the true integration of $p^0$ over $(-\infty, +\infty)$)
 - When $x^0 - y^0 > 0$, the contour closes in the **lower** half plane
 
 Now that we assumed that $x^0 - y^0 > 0$. In order for the contour to enclose both poles, we make the shift
@@ -168,18 +171,115 @@ $$
 = -i \delta^4 (x-y)
 $$
 
-### Feynman Propagator
+## The Feynman Propagator
+
+We calculate the time-ordered product
+
+$$
+\begin{aligned}
+    &\langle 0 | T[\phi(x) \phi(y)] | 0 \rangle
+    \\
+    &= \langle 0 | \phi(x) \phi(y) | 0 \rangle \theta(x^0 - y^0)
+    + \langle 0 | \phi(x) \phi(y) | 0 \rangle \theta(y^0 - x^0)
+    \\
+    &= D(x - y) \theta(x^0 - y^0)
+    + D(y - x) \theta(y^0 - x^0)
+    \\
+    &= \int \frac{d^3 p}{(2\pi)^3} \left[
+        \frac{e^{-ip(x-y)}}{2E_\bold{p}} \theta(x^0 - y^0)
+        + \frac{e^{ip(x-y)}}{2E_\bold{p}} \theta(y^0 - x^0)
+    \right]_{p^0 = E_\bold{p}}
+    \\
+    &= \int \frac{d^3 p}{(2\pi)^3} \left[
+        \left.
+        \frac{e^{-ip(x-y)}}{2E_\bold{p}} \theta(x^0 - y^0)
+        \right|_{p^0 = E_\bold{p}}
+        \right. \\ & \qquad \qquad \qquad \left.
+        + \left.
+        \frac{e^{-ip(x-y)}}{2E_\bold{p}} \theta(y^0 - x^0)
+        \right|_{p^0 = -E_\bold{p}}
+    \right]
+\end{aligned}
+$$
 
 <center>
 
-![](p0-int-DR.png)
+![](p0-int-DF.png)
 
 </center>
 
+Again, in the second term we change $p \to -p$. These two terms can be expressed as the residue of the following $p^0$ integration along the path shown above:
+
 $$
-E_\bold{p} \to E_\bold{p} - i \epsilon, \quad
--E_\bold{p} \to -E_\bold{p} - i \epsilon, \quad
+\begin{aligned}
+    &\lim_{\epsilon \to 0+} \int \frac{dp^0}{2\pi}
+    \frac{i e^{-ip(x-y)}}{2 E_\bold{p}} \left(
+        \frac{1}{p^0 - (E_\bold{p} - i \epsilon)} 
+        - \frac{1}{p^0 + (E_\bold{p} - i \epsilon)}
+    \right)
+    \\
+    &\sim \lim_{\epsilon \to 0+} \int \frac{dp^0}{2\pi}
+    \frac{
+        i e^{-ip(x-y)}
+    }{
+        p^2 - m^2 + i\epsilon
+    }
+\end{aligned}
 $$
+
+The second line is to be understood as
+
+$$
+\begin{aligned}
+    &\frac{1}{p^2 - m^2 + i\epsilon}
+    = \frac{1}{(p^0)^2 - (E_\bold{p}^2 - i\epsilon)}
+    \\
+    &= \frac{1}{2E_\bold{p}} \left[
+        \frac{1}{p^0 - \sqrt{E_\bold{p}^2 - i\epsilon}}
+        - \frac{1}{p^0 + \sqrt{E_\bold{p}^2 - i\epsilon}}
+    \right]
+    \\
+    &\sim \frac{1}{2E_\bold{p}} \left[
+        \frac{1}{p^0 - E_\bold{p}(1-i\epsilon/2E_\bold{p}^2)}
+        - \frac{1}{p^0 + E_\bold{p}(1-i\epsilon/2E_\bold{p}^2)}
+    \right]
+\end{aligned}
+$$
+
+which indicates the same pole structure as the first line. 
+
+
+- When $x^0 < y^0$, the contour closes in the **upper** half plane, enclosing only the pole $-E_\bold{p} + i \epsilon$ in **counter-clockwise** direction.
+
+    $$
+    \begin{aligned}
+        &\int \frac{dp^0}{2\pi}
+        \frac{i e^{-ip(x-y)}}{2 E_\bold{p}} \left(
+            \cancel{\frac{1}{p^0 - E_\bold{p}} }
+            - \frac{1}{p^0 + E_\bold{p}}
+        \right)
+        \\
+        &= \left. \frac{e^{-ip(x-y)}}{2 E_\bold{p}} 
+        \right|_{p^0 = -E_\bold{p}}
+    \end{aligned}
+    $$
+
+- When $x^0 > y^0$, the contour closes in the **lower** half plane, enclosing only the pole $E_\bold{p} - i \epsilon$ in **clockwise** direction (producing an additional minus sign).
+
+    $$
+    \begin{aligned}
+        &\int \frac{dp^0}{2\pi}
+        \frac{i e^{-ip(x-y)}}{2 E_\bold{p}} \left(
+            \frac{1}{p^0 - E_\bold{p}} 
+            - \cancel{\frac{1}{p^0 + E_\bold{p}}}
+        \right)
+        \\
+        &= \left. \frac{e^{-ip(x-y)}}{2 E_\bold{p}} 
+        \right|_{p^0 = E_\bold{p}}
+    \end{aligned}
+    $$
+
+Therefore, we finally obtain
 
 $$
 \begin{aligned}
