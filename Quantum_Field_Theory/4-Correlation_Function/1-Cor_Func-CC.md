@@ -35,7 +35,7 @@ $$
 H = H_0 + H_\text{int}
 $$
 
-Here the (Schrödinger picture) Hamiltonian is independent of time, so that the time evolution operator is simply $e^{-iH \Delta t}$. The field $\phi(x)$ evolves with time according to (from some given time $t_0$ to $t$)
+Here we assume that the (Schrödinger picture) Hamiltonian is independent of time, so that the time evolution operator is simply $e^{-iH \Delta t}$. The field $\phi(x)$ evolves with time according to (from some given time $t_0$ to $t$)
 
 $$
 \phi(\bold{x},t)
@@ -84,28 +84,31 @@ $$
 \end{aligned}
 $$
 
-where we defined the **time-evolution operator in interaction picture**
+where we defined the **time-evolution operator in interaction picture** from $t_0$ to $t$
 
 $$
 U(t,t_0) = e^{i H_0(t-t_0)}
-    e^{-iH(t-t_0)}
+e^{-iH(t-t_0)} \qquad
+(t \ge t_0)
 $$
 
-which satisfies the differential equation
+### An Differential Equation for $U(t,t_0)$
+
+We can verify that
 
 $$
 i \frac{\partial}{\partial t} U(t,t_0)
 = H_I(t) U(t,t_0)
 $$
 
-where $H_I$ is the interaction Hamiltonian evolved using the free Hamiltonian $H_0$:
+where $H_I$ is the interaction Hamiltonian evolved (in the Heisenberg sense) using the free Hamiltonian $H_0$:
 
 $$
 H_I(t) \equiv
 e^{i H_0(t-t_0)} H_\text{int} e^{-i H_0(t-t_0)}
 $$
 
-Solving this equation of $U(t,t_0)$, we obtain
+Solving this equation of $U(t,t_0)$, we obtain an alternative form of the time-evolution operator
 
 $$
 \begin{aligned}
@@ -128,7 +131,7 @@ where
 $$
 \begin{aligned}
     &\frac{1}{n!} \int_{t_0}^t dt_1 \cdots \int_{t_0}^t dt_n
-    T[H_I(t_1) \cdots H_I(t_n)]
+    \, T[H_I(t_1) \cdots H_I(t_n)]
     \\
     &= \int_{t_0}^t dt_1 \int_{t_0}^{t_1} dt_2 \cdots
     \int_{t_0}^{t_{n-1}} dt_n \, H_I(t_1) \cdots H_I(t_n)
@@ -140,7 +143,7 @@ $$
 The general time-evolution operator from $t'$ (no longer constrained to start from the reference time $t_0$) to $t$ as
 
 $$
-U(t,t_0) = T\left[
+U(t,t') = T\left[
     \exp \left(
         -i \int_{t'}^t dt'' H_I(t'')
     \right)
@@ -253,6 +256,13 @@ $$
     \langle 0 | 
     U(T, x^0) \phi_I(x) U(x^0, y^0) \phi_I(y) U(y^0, -T) 
     |0 \rangle
+    \\
+    &= \lim_{T \to \infty(1-i\epsilon)}
+    \frac{e^{i E_0 (2T)}}{|\langle 0 | \Omega\rangle|^2}
+    \left\langle 0 \left| T[
+        \phi_I(x) \phi_I(y) U(T, -T) 
+    ]
+    \right| 0 \right\rangle
 \end{aligned}
 $$
 
@@ -268,50 +278,20 @@ $$
     \frac{e^{+iE_0 (T-t_0)}}{\langle 0|\Omega \rangle}
     \frac{e^{+i E_0 (t_0 + T)}}{\langle \Omega |0 \rangle}
     U(t_0, -T) |0\rangle
-    \\
+    \\[0.5em]
     &= \lim_{T\to \infty(1-i\epsilon)}
     \frac{e^{i E_0 (2T)}}{|\langle 0 | \Omega\rangle|^2}
     \langle 0| U(T, -T) |0\rangle
 \end{aligned}
 $$
 
-we can eliminate the common factor in front:
-
-$$
-\begin{aligned}
-    &\langle \Omega | \phi(x) \phi(y) | \Omega\rangle
-    \\
-    &= \lim_{T \to \infty(1-i\epsilon)}
-    \frac{
-        \left\langle 0 \left| 
-        U(T, x^0) \phi_I(x) U(x^0, y^0) \phi_I(y) U(y^0, -T) 
-        \right| 0 \right\rangle
-    }{
-        \left\langle 0 \left| 
-        U(T, -T)
-        \right| 0 \right\rangle
-    }
-    \\
-    &= \lim_{T \to \infty(1-i\epsilon)}
-    \frac{
-        \left\langle 0 \left| T[
-            \phi_I(x) \phi_I(y) U(T, -T) 
-        ]
-        \right| 0 \right\rangle
-    }{
-        \left\langle 0 \left| 
-        U(T, -T)
-        \right| 0 \right\rangle
-    }
-\end{aligned}
-$$
-
-If we assumed $x^0 < y^0$ instead, the time ordering on the RHS still holds. Finally
+we can eliminate the common factor in front (and write $\phi(x)\phi(y)$ as $T[\phi(x)\phi(y)]$ since we assumed $x^0 > y^0$):
 
 $$
 \begin{aligned}
     &\langle \Omega | T[\phi(x) \phi(y)] | \Omega\rangle
     \\
+    
     &= \lim_{T \to \infty(1-i\epsilon)}
     \frac{
         \left\langle 0 \left| T[
@@ -323,14 +303,17 @@ $$
         U(T, -T)
         \right| 0 \right\rangle
     }
-    \\ \\
+    \\[1em]
     &\text{with} \quad 
-    U(T, -T) = 
-    \exp \left(
-        -i \int_{-T}^{+T} dt \, H_I(t)
-    \right)
+    U(T, -T) = T\left[
+        \exp \left(
+            -i \int_{-T}^{+T} dt \, H_I(t)
+        \right)
+    \right]
 \end{aligned}
 $$
+
+If we assumed $x^0 < y^0$ instead, this result of time ordering still holds. 
 
 ## General $n$-Point Correlation Function
 
@@ -351,11 +334,14 @@ $$
         U(T, -T)
         \right| 0 \right\rangle
     }
-    \\ \\
+    \\[1em]
     &\text{with} \quad 
-    U(T, -T) = 
-    \exp \left(
-        -i \int_{-T}^{+T} dt \, H_I(t)
-    \right)
+    U(T, -T) = T\left[
+        \exp \left(
+            -i \int_{-T}^{+T} dt \, H_I(t)
+        \right)
+    \right]
 \end{aligned}
 $$
+
+While the denominator can sometimes be evaluated exactly, it is usually impossible for the nominator. 

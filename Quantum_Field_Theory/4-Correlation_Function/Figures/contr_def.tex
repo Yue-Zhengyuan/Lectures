@@ -1,0 +1,20 @@
+%!TEX program = pdflatex
+\documentclass[margin=3pt]{standalone}
+\usepackage{amsmath}
+\usepackage{simplewick}
+
+\begin{document}
+
+\fontsize{14}{16}
+$\displaystyle
+\contraction[1ex]{}{\phi_x}{}{\phi_y}
+\phi_x \phi_y
+\equiv
+\begin{cases}
+    [\phi_x^+, \phi_y^-] & \text{for } x^0 > y^0
+    \\[1em]
+    [\phi_y^+, \phi_x^-] & \text{for } x^0 < y^0
+\end{cases}
+$
+    
+\end{document}

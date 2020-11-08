@@ -1,0 +1,25 @@
+%!TEX program = pdflatex
+\documentclass[margin=3pt]{standalone}
+\usepackage{amsmath}
+\usepackage{simplewick}
+
+\begin{document}
+
+\fontsize{14}{16}
+$\displaystyle
+\begin{aligned}
+    T[\phi_x \phi_y]
+    &= \phi_x^+ \phi_y^+ + \phi_x^- \phi_y^+
+    + \phi_y^- \phi_x^+ + \phi_x^- \phi_y^-
+    + \contraction[1ex]{}{\phi_x}{}{\phi_y}
+    \phi_x \phi_y
+    \\
+    &= N[
+        \phi_x \phi_y + 
+        \contraction[1ex]{}{\phi_x}{}{\phi_y}
+        \phi_x \phi_y
+    ]
+\end{aligned}
+$
+    
+\end{document}

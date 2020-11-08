@@ -201,13 +201,13 @@ $$
     &= \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} \phi_k(t) e^{+2\pi ikn/N}
     \\
     &= \sum_{k=0}^{N-1} \frac{2}{\sqrt{N a \omega_k}} \left[
-        a_k(0) e^{i(2\pi kn/N - \omega_k t)}
-        + a_k^\dagger(0) e^{i(-2\pi kn/N + \omega_k t)}
+        a_k(0) e^{i(- \omega_k t + 2\pi kn/N)}
+        + a_k^\dagger(0) e^{i(\omega_k t -2\pi kn/N)}
     \right]
     \\
     &= \sum_{k=0}^{N-1} \frac{2}{\sqrt{N a \omega_k}} \left[
-        a_k(0) e^{i(p_k x_n - \omega_k t)}
-        + a_k^\dagger(0) e^{i(-p_k x_n + \omega_k t)}
+        a_k(0) e^{i(- \omega_k t + p_k x_n)}
+        + a_k^\dagger(0) e^{i(\omega_k t -p_k x_n)}
     \right]
 \end{aligned}
 $$
@@ -270,7 +270,7 @@ The commutation relations between the ladder operators are
 $$
 a_\bold{p} = \sqrt{V} a_k \, \Rightarrow \,
 [a_\bold{p}, a_{\bold{p}'}^\dagger] 
-= (2\pi)^{d-1} \delta(\bold{p}-\bold{p}')
+= (2\pi)^{d-1} \delta^{d-1}(\bold{p}-\bold{p}')
 $$
 
 where $d$ is the spacetime dimension. Finally, the field $\phi(x)$ can be expanded as
@@ -280,13 +280,13 @@ $$
     \phi(x) 
     &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
     \frac{1}{\sqrt{2 \omega_\bold{p}}} [
-        a_\bold{p} e^{i (\bold{p}\cdot\bold{x} - \omega t)} 
-        + a^\dagger_\bold{p} e^{i (-\bold{p}\cdot\bold{x} + \omega t)}
+        a_\bold{p} e^{i (- \omega t + \bold{p}\cdot\bold{x})} 
+        + a^\dagger_\bold{p} e^{i (\omega t - \bold{p}\cdot\bold{x})}
     ] \\
     &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
     \frac{1}{\sqrt{2 \omega_\bold{p}}} [
-        a_\bold{p} e^{ipx} 
-        + a^\dagger_\bold{p} e^{-ipx}
+        a_\bold{p} e^{-ipx} 
+        + a^\dagger_\bold{p} e^{ipx}
     ]
 \end{aligned}
 $$
@@ -305,11 +305,47 @@ $$
 
 ## Normalization of Momentum Eigenstates
 
+The Lorentz invariant definition of the one-particle momentum eigenstate is
+
+$$
+|\bold{p}\rangle 
+= \sqrt{2E_\bold{p}} a_\bold{p}^\dagger |0\rangle
+$$
+
+Therefore, the orthogonality relation is
+
+$$
+\begin{aligned}
+    \langle \bold{p}|\bold{q} \rangle
+    &= 2 \sqrt{E_\bold{p} E_\bold{q}}
+    \langle 0 |a_\bold{p} a_\bold{q}^\dagger| 0\rangle
+    \\
+    &= 2 \sqrt{E_\bold{p} E_\bold{q}}
+    \langle 0 | 
+    \cancel{a_\bold{q}^\dagger a_\bold{p}}
+    + [a_\bold{p}, a_\bold{q}^\dagger] 
+    |0\rangle
+    \\
+    &= 2 E_\bold{p} (2\pi)^3
+    \delta^3(\bold{p} - \bold{q})
+\end{aligned}
+$$
+
+and the completeness relation is
+
+$$
+(1)_\text{1-particle}
+= \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_\bold{p}}
+|\bold{p}\rangle \langle \bold{p}|
+$$
+
 ## Action of the $\phi(\bold{x})$ Operator
 
-The field operator $\phi(\bold{x})$, acting on the vacuum $|0\rangle$, **creates a particle at position $\bold{x}$**. This can be seen by calculating
+Let us calculate the action of the field operator $\phi(\bold{x})$ on the vacuum $|0\rangle$:
 
 $$
-\langle \bold{p} | \phi(\bold{x}) | 0 \rangle
+\phi(\bold{x}) | 0 \rangle
 = e^{-i \bold{p}\cdot \bold{x}}
 $$
+
+Thus **$\phi(\bold{x})$ creates a particle at position $\bold{x}$**
