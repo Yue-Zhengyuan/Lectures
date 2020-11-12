@@ -1,1 +1,0 @@
-# The *S*-Matrix: Another Approach
