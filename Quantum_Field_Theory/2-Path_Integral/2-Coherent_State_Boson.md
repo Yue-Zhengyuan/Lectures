@@ -34,8 +34,7 @@ $$
 
 ## One Kind of Bosons
 
-Expand the coherent state using the Fock space basis vectors (boson
-number representation):
+Expand the coherent state using the Fock space basis vectors (boson number representation):
 
 $$
 \begin{aligned}
@@ -313,34 +312,85 @@ necessarily labelled by the coordinates), and use the second-quantized,
 normal-ordered Hamiltonian. Instead of inserting a complete set of
 basis, we insert the *over-complete* coherent state basis:
 
-$\left\langle f\left|e^{-i H \left(a^\dagger,a\right)T}\right|i\right\rangle =\int \left(\prod_{k=1}^{N-1} \frac{d\bar{\alpha}_kd\alpha_k}{2\pi
- i}e^{-\bar{\alpha}_k\alpha_k}\right)\left\langle f\left|1-i H\left(a^\dagger,a\right)\epsilon \right|\alpha_{N-1}\right\rangle \left(\prod
-_{k=1}^{N-2} \left\langle \alpha_{k+1}\left|1-i H\left(a^\dagger,a\right)\epsilon \right|\alpha_k\right\rangle \right)\left\langle \alpha_1\left|1-i
-H\left(a^\dagger,a\right)\epsilon \right|i\right\rangle$
+$$
+\begin{aligned}
+    &\langle f|e^{-i H (a^\dagger,a)T}|i\rangle 
+    \\
+    &= \int \left[
+        \prod_{k=1}^{N-1} 
+        \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
+        e^{-\bar{\alpha}_k\alpha_k}
+    \right]
+    \langle 
+        f |1-i H(a^\dagger,a)\epsilon |\alpha_{N-1}
+    \rangle 
+    \\
+    & \qquad \left[
+        \prod_{k=1}^{N-2} 
+        \langle 
+            \alpha_{k+1} |1-i H(a^\dagger,a)\epsilon |\alpha_k
+        \rangle 
+    \right]
+    \langle \alpha_1|1-iH(a^\dagger,a)\epsilon |i\rangle
+\end{aligned}
+$$
 
 Here the subscript $k$ in $\alpha_k$ denotes time, not species of
 bosons. For the inserted terms, using the replacement derived in the
 last section
 
-$\left\langle \alpha_{k+1}\left|1-i H\left(a^\dagger,a\right)\epsilon \right|\alpha_k\right\rangle =e^{\bar{\alpha}_{k+1}\alpha_k}\left(1-i
-H\left(\bar{\alpha}_{k+1},\alpha_k\right)\epsilon \right)$
+$$
+\langle \alpha_{k+1}|1-i H(a^\dagger,a)\epsilon |\alpha_k\rangle 
+= e^{\bar{\alpha}_{k+1}\alpha_k}
+(1-iH(\bar{\alpha}_{k+1},\alpha_k)\epsilon )
+$$
 
 Now we have
 
-$\left\langle f\left|e^{-i H \left(a^\dagger,a\right)T}\right|i\right\rangle =\int \left(\prod_{k=1}^{N-1} \frac{d\bar{\alpha}_kd\alpha_k}{2\pi
- i}e^{-\bar{\alpha}_k\alpha_k}\right)\left\langle f\left|1-i H\left(a^\dagger,a\right)\epsilon \right|\alpha_{N-1}\right\rangle \left(\prod
-_{k=1}^{N-2} e^{\bar{\alpha}_{k+1}\alpha_k}\left(1-i H\left(\bar{\alpha}_{k+1},\alpha_k\right)\epsilon \right)\right)\left\langle \alpha_1\left|1-i
-H\left(a^\dagger,a\right)\epsilon \right|i\right\rangle$
+$$
+\begin{aligned}
+    &\langle f|e^{-i H (a^\dagger,a)T}|i\rangle 
+    \\
+    &= \int \left[
+        \prod_{k=1}^{N-1} 
+        \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
+        e^{-\bar{\alpha}_k\alpha_k}
+    \right] 
+    \langle 
+        f|1-i H(a^\dagger,a)\epsilon |\alpha_{N-1}
+    \rangle 
+    \\ & \qquad
+    \left[
+        \prod_{k=1}^{N-2} e^{\bar{\alpha}_{k+1}\alpha_k}
+        (1-i H(\bar{\alpha}_{k+1},\alpha_k)\epsilon)
+    \right]
+    \langle \alpha_1|1-iH(a^\dagger,a)\epsilon |i\rangle
+\end{aligned}
+$$
 
 To deal with the initial and final state, we also expand them using the
 coherent state basis
 
-$| i\rangle =\int \frac{d\bar{\alpha}_0d\alpha_0}{2\pi i}e^{-\bar{\alpha}_0\alpha_0}| \alpha_0\rangle \left\langle \left.\alpha_0\right|
-i\right\rangle$
-
-$\langle f|=\int \frac{d\alpha_Nd\bar{\alpha}_N}{-2\pi (-i)}e^{-\bar{\alpha}_N\alpha_N}\left\langle f\left| \alpha_N\right.\right\rangle \langle
-\alpha_N|=\int \frac{d\alpha_Nd\bar{\alpha}_N}{2\pi i}e^{-\bar{\alpha}_N\alpha_N}\left\langle f\left| \alpha_N\right.\right\rangle \langle
-\alpha_N|$
+$$
+\begin{aligned}
+    | i\rangle 
+    &= \int \frac{d\bar{\alpha}_0d\alpha_0}{2\pi i}
+    e^{-\bar{\alpha}_0\alpha_0}
+    | \alpha_0\rangle 
+    \langle \alpha_0|i \rangle
+    \\[1.5em]
+    \langle f|
+    &= \int \frac{d\alpha_Nd\bar{\alpha}_N}{-2\pi (-i)}
+    e^{-\bar{\alpha}_N\alpha_N}
+    \langle f| \alpha_N\rangle \langle
+    \alpha_N|
+    \\
+    &= \int \frac{d\alpha_Nd\bar{\alpha}_N}{2\pi i}
+    e^{-\bar{\alpha}_N\alpha_N}
+    \langle f| \alpha_N\rangle \langle
+    \alpha_N|
+\end{aligned}
+$$
 
 Then
 
@@ -382,7 +432,7 @@ _k\right)\epsilon \right]\right)\left\langle f\left| \alpha_N\right.\right\rangl
 
 $=\int \left[d\bar{\alpha}\right][d\alpha ]\exp \left(i\int_0^Tdt \left[\frac{1}{2i}\left(\alpha \partial_t\bar{\alpha}-\bar{\alpha}\partial
 _t\alpha \right)-H\left(\bar{\alpha},\alpha \right)\right]\right)\underbrace{\exp \left(-\frac{1}{2}\left(\bar{\alpha}_i\alpha_i+\bar{\alpha}_f\alpha
-_f\right)\right)\left\langle f\left| \alpha_f\right.\right\rangle \left\langle \left.\alpha_i\right| i\right\rangle}_{\text{the} \text{projection
+_f\right)\right)\left\langle f\left| \alpha_f\right.\right\rangle \left\langle \left.\alpha_i\right| i\right\rangle}_{\text{the projection
 operator}}$
 
 This is the for bosons. The action functional appears here is

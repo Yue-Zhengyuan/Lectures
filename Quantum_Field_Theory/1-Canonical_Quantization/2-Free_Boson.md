@@ -247,30 +247,30 @@ Summation over the Fourier index $k$ is changed to integration over the momentum
 $$
 \frac{1}{V}\sum_{k=0}^{N-1} \to \frac{d^{d-1} p}{(2\pi)^{d-1}}
 \qquad
-\delta_{k k'} \to \frac{2\pi}{V} \delta(\bold{p} - \bold{p}')
+\delta_{k k'} \to \frac{2\pi}{V} \delta(\mathbf{p} - \mathbf{p}')
 $$
 
 The frequency takes the limit
 
 $$
 \begin{aligned}
-    \omega_\bold{p}
-    &= m^2 + \frac{2}{a^2} (1 - \cos \bold{p} a)
+    \omega_\mathbf{p}
+    &= m^2 + \frac{2}{a^2} (1 - \cos \mathbf{p} a)
     \\
     &= m^2 + \frac{2}{a^2} \left[
-        \frac{1}{2} (\bold{p}a)^2 + O(a^2)
+        \frac{1}{2} (\mathbf{p}a)^2 + O(a^2)
     \right]
     \\
-    &\sim m^2 + \bold{p}^2
+    &\sim m^2 + \mathbf{p}^2
 \end{aligned}
 $$
 
 The commutation relations between the ladder operators are
 
 $$
-a_\bold{p} = \sqrt{V} a_k \, \Rightarrow \,
-[a_\bold{p}, a_{\bold{p}'}^\dagger] 
-= (2\pi)^{d-1} \delta^{d-1}(\bold{p}-\bold{p}')
+a_\mathbf{p} = \sqrt{V} a_k \, \Rightarrow \,
+[a_\mathbf{p}, a_{\mathbf{p}'}^\dagger] 
+= (2\pi)^{d-1} \delta^{d-1}(\mathbf{p}-\mathbf{p}')
 $$
 
 where $d$ is the spacetime dimension. Finally, the field $\phi(x)$ can be expanded as
@@ -279,19 +279,19 @@ $$
 \begin{aligned}
     \phi(x) 
     &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
-    \frac{1}{\sqrt{2 \omega_\bold{p}}} [
-        a_\bold{p} e^{i (- \omega t + \bold{p}\cdot\bold{x})} 
-        + a^\dagger_\bold{p} e^{i (\omega t - \bold{p}\cdot\bold{x})}
+    \frac{1}{\sqrt{2 \omega_\mathbf{p}}} [
+        a_\mathbf{p} e^{i (- \omega t + \mathbf{p}\cdot\mathbf{x})} 
+        + a^\dagger_\mathbf{p} e^{i (\omega t - \mathbf{p}\cdot\mathbf{x})}
     ] \\
     &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
-    \frac{1}{\sqrt{2 \omega_\bold{p}}} [
-        a_\bold{p} e^{-ipx} 
-        + a^\dagger_\bold{p} e^{ipx}
+    \frac{1}{\sqrt{2 \omega_\mathbf{p}}} [
+        a_\mathbf{p} e^{-ipx} 
+        + a^\dagger_\mathbf{p} e^{ipx}
     ]
 \end{aligned}
 $$
 
-where $p^0 = \omega_\bold{p} = \sqrt{m^2 + \bold{p}^2}$. 
+where $p^0 = \omega_\mathbf{p} = \sqrt{m^2 + \mathbf{p}^2}$. 
 
 We also obtain the expansion of the momentum $\pi(x)$:
 
@@ -308,26 +308,26 @@ $$
 The Lorentz invariant definition of the one-particle momentum eigenstate is
 
 $$
-|\bold{p}\rangle 
-= \sqrt{2E_\bold{p}} a_\bold{p}^\dagger |0\rangle
+|\mathbf{p}\rangle 
+= \sqrt{2E_\mathbf{p}} a_\mathbf{p}^\dagger |0\rangle
 $$
 
 Therefore, the orthogonality relation is
 
 $$
 \begin{aligned}
-    \langle \bold{p}|\bold{q} \rangle
-    &= 2 \sqrt{E_\bold{p} E_\bold{q}}
-    \langle 0 |a_\bold{p} a_\bold{q}^\dagger| 0\rangle
+    \langle \mathbf{p}|\mathbf{q} \rangle
+    &= 2 \sqrt{E_\mathbf{p} E_\mathbf{q}}
+    \langle 0 |a_\mathbf{p} a_\mathbf{q}^\dagger| 0\rangle
     \\
-    &= 2 \sqrt{E_\bold{p} E_\bold{q}}
+    &= 2 \sqrt{E_\mathbf{p} E_\mathbf{q}}
     \langle 0 | 
-    \cancel{a_\bold{q}^\dagger a_\bold{p}}
-    + [a_\bold{p}, a_\bold{q}^\dagger] 
+    \cancel{a_\mathbf{q}^\dagger a_\mathbf{p}}
+    + [a_\mathbf{p}, a_\mathbf{q}^\dagger] 
     |0\rangle
     \\
-    &= 2 E_\bold{p} (2\pi)^3
-    \delta^3(\bold{p} - \bold{q})
+    &= 2 E_\mathbf{p} (2\pi)^3
+    \delta^3(\mathbf{p} - \mathbf{q})
 \end{aligned}
 $$
 
@@ -335,17 +335,17 @@ and the completeness relation is
 
 $$
 (1)_\text{1-particle}
-= \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_\bold{p}}
-|\bold{p}\rangle \langle \bold{p}|
+= \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_\mathbf{p}}
+|\mathbf{p}\rangle \langle \mathbf{p}|
 $$
 
-## Action of the $\phi(\bold{x})$ Operator
+## Action of the $\phi(\mathbf{x})$ Operator
 
-Let us calculate the action of the field operator $\phi(\bold{x})$ on the vacuum $|0\rangle$:
+Let us calculate the action of the field operator $\phi(\mathbf{x})$ on the vacuum $|0\rangle$:
 
 $$
-\phi(\bold{x}) | 0 \rangle
-= e^{-i \bold{p}\cdot \bold{x}}
+\phi(\mathbf{x}) | 0 \rangle
+= e^{-i \mathbf{p}\cdot \mathbf{x}}
 $$
 
-Thus **$\phi(\bold{x})$ creates a particle at position $\bold{x}$**
+Thus **$\phi(\mathbf{x})$ creates a particle at position $\mathbf{x}$**

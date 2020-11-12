@@ -84,11 +84,11 @@ L = \int d^3 x \, \mathcal{L},
 H = \int d^3 x \, \mathcal{H}
 $$
 
-In analogy, we define for QFT the **momentum density** conjugate to the field $\phi(\bold{x})$ as
+In analogy, we define for QFT the **momentum density** conjugate to the field $\phi(\mathbf{x})$ as
 
 $$
-\pi(\bold{x}) \equiv
-\frac{\partial \mathcal{L}}{\partial \dot{\phi}(\bold{x})}
+\pi(\mathbf{x}) \equiv
+\frac{\partial \mathcal{L}}{\partial \dot{\phi}(\mathbf{x})}
 ,\quad
 L = \int d^3 x \, \mathcal{L}
 $$
@@ -96,6 +96,6 @@ $$
 and the relation between the Lagrangian density and the Hamiltonian density
 
 $$
-\mathcal{H} = \pi(\bold{x}) \dot{\phi}(\bold{x}) - \mathcal{L}
+\mathcal{H} = \pi(\mathbf{x}) \dot{\phi}(\mathbf{x}) - \mathcal{L}
 $$
 

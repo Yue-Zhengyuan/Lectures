@@ -2,18 +2,18 @@
 
 ## Normal Ordering
 
-The **normal ordering** of a product of $a_\bold{p}, a_\bold{p}^\dagger$ (free field annihilation/creation operators) put all the $a_\bold{p}$'s to the right of $a^\dagger_\bold{p}$. For example,
+The **normal ordering** of a product of $a_\mathbf{p}, a_\mathbf{p}^\dagger$ (free field annihilation/creation operators) put all the $a_\mathbf{p}$'s to the right of $a^\dagger_\mathbf{p}$. For example,
 
 $$
-N[a_\bold{p} a^\dagger_\bold{k} a_\bold{q}]
-= a^\dagger_\bold{k} a_\bold{p} a_\bold{q}
+N[a_\mathbf{p} a^\dagger_\mathbf{k} a_\mathbf{q}]
+= a^\dagger_\mathbf{k} a_\mathbf{p} a_\mathbf{q}
 $$
 
-The order within the $a_\bold{p}$'s (or the $a^\dagger_\bold{p}$) is irrelevant, since they *commute*:
+The order within the $a_\mathbf{p}$'s (or the $a^\dagger_\mathbf{p}$) is irrelevant, since they *commute*:
 
 $$
-[a_\bold{p}, a_\bold{q}] 
-= [a_\bold{p}^\dagger, a_\bold{q}^\dagger] = 0
+[a_\mathbf{p}, a_\mathbf{q}] 
+= [a_\mathbf{p}^\dagger, a_\mathbf{q}^\dagger] = 0
 $$
 
 One notable property of normal ordered products is that *their vacuum expectation values vanish*, since there is either nothing to be annihilated first, or there is nothing is the final vacuum state to be created. 
@@ -35,12 +35,12 @@ $$
     \\[1em]
     \text{with} \quad
     \phi^+(x) &= \int \frac{d^3 p}{(2\pi)^3} 
-    \frac{1}{\sqrt{2 E_\bold{p}}}
-    a_\bold{p} e^{-ipx} 
+    \frac{1}{\sqrt{2 E_\mathbf{p}}}
+    a_\mathbf{p} e^{-ipx} 
     \\
     \phi^-(x) &= \int \frac{d^3 p}{(2\pi)^3} 
-    \frac{1}{\sqrt{2 E_\bold{p}}}
-    a_\bold{p}^\dagger e^{+ipx} 
+    \frac{1}{\sqrt{2 E_\mathbf{p}}}
+    a_\mathbf{p}^\dagger e^{+ipx} 
 \end{aligned}
 $$
 
@@ -101,8 +101,8 @@ We try expressing $T[\phi(x) \phi(y)]$ using the normal-ordered product in order
     This change of order is again guaranteed by the commutators
 
     $$
-    [a_\bold{p}, a_\bold{q}] 
-    = [a_\bold{p}^\dagger, a_\bold{q}^\dagger] = 0
+    [a_\mathbf{p}, a_\mathbf{q}] 
+    = [a_\mathbf{p}^\dagger, a_\mathbf{q}^\dagger] = 0
     $$
 
 To summarize, we have
@@ -123,7 +123,7 @@ By taking the vacuum expectation value of both sides, we discover that the contr
 <img src="Figures/contr_feyn_prop.svg" style="background-color:white">
 </center>
 
-## Wick's Theorem
+## Wick's Theorem for Real Field
 
 **Wick's theorem** states that the time-ordered product is equal to the normal-ordered product, plus **all possible ways** of contracting pairs of fields within it:
 

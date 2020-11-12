@@ -7,7 +7,7 @@ The **propagator** $D(x-y)$ is defined as the amplitude for a particle to propag
 $$
 \begin{aligned}
     D(x-y) &\equiv 
-    \langle \bold{x}|e^{-i H(x^0 - y^0)}|\bold{y} \rangle
+    \langle \mathbf{x}|e^{-i H(x^0 - y^0)}|\mathbf{y} \rangle
     \\
     &= \langle 0 | \phi(x) \phi(y) | 0 \rangle
 \end{aligned}
@@ -19,24 +19,24 @@ $$
 \begin{aligned}
     \phi(x) 
     &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
-    \frac{1}{\sqrt{2 E_\bold{p}}} [
-        a_\bold{p} e^{ipx} 
-        + a^\dagger_\bold{p} e^{-ipx}
+    \frac{1}{\sqrt{2 E_\mathbf{p}}} [
+        a_\mathbf{p} e^{ipx} 
+        + a^\dagger_\mathbf{p} e^{-ipx}
     ]
     \\[1em] \text{with} \quad
-    p^0 &= \sqrt{m^2 + \bold{p}^2} = E_\bold{p}
+    p^0 &= \sqrt{m^2 + \mathbf{p}^2} = E_\mathbf{p}
 \end{aligned}
 $$
 
-and noting that only the terms $\langle 0 | a_\bold{p} a_\bold{q}^\dagger |0\rangle = (2\pi)^3 \delta^3 (\bold{p-q})$ survives, we are left with
+and noting that only the terms $\langle 0 | a_\mathbf{p} a_\mathbf{q}^\dagger |0\rangle = (2\pi)^3 \delta^3 (\mathbf{p-q})$ survives, we are left with
 
 $$
 \begin{aligned}
     D(x-y) &= \langle 0 | \phi(x) \phi(y) | 0 \rangle
     \\
     &= \int \frac{d^3 p}{(2\pi)^3} \left.
-    \frac{1}{2E_\bold{p}} e^{-ip(x-y)}
-    \right|_{p^0 = E_\bold{p}}
+    \frac{1}{2E_\mathbf{p}} e^{-ip(x-y)}
+    \right|_{p^0 = E_\mathbf{p}}
 \end{aligned}
 $$
 
@@ -48,13 +48,13 @@ $$
 \begin{aligned}
     [\phi(x), \phi(y)]
     &= \int \frac{d^3p}{(2\pi)^3} \frac{d^3 q}{(2\pi)^3}
-    \frac{1}{\sqrt{2E_\bold{p} \cdot 2 E_\bold{q}}}
+    \frac{1}{\sqrt{2E_\mathbf{p} \cdot 2 E_\mathbf{q}}}
     \\ &\qquad \times
     [
-        a_\bold{p} e^{ipx} 
-        + a^\dagger_\bold{p} e^{-ipx}, 
-        a_\bold{q} e^{iqx} 
-        + a^\dagger_\bold{q} e^{-iqx}
+        a_\mathbf{p} e^{ipx} 
+        + a^\dagger_\mathbf{p} e^{-ipx}, 
+        a_\mathbf{q} e^{iqx} 
+        + a^\dagger_\mathbf{q} e^{-iqx}
     ]
 \end{aligned}
 $$
@@ -63,11 +63,11 @@ Using the commutators
 
 $$
 \begin{aligned}
-    [a_\bold{p}, a^\dagger_{\bold{p}'}]
-    &= (2\pi)^3 \delta^3(\bold{p} - \bold{p}')
+    [a_\mathbf{p}, a^\dagger_{\mathbf{p}'}]
+    &= (2\pi)^3 \delta^3(\mathbf{p} - \mathbf{p}')
     \\
-    [a_\bold{p}, a_{\bold{p}'}]
-    &= [a^\dagger_\bold{p}, a^\dagger_{\bold{p}'}]
+    [a_\mathbf{p}, a_{\mathbf{p}'}]
+    &= [a^\dagger_\mathbf{p}, a^\dagger_{\mathbf{p}'}]
     = 0
 \end{aligned}
 $$
@@ -77,7 +77,7 @@ we obtain
 $$
 \begin{aligned}
     [\phi(x), \phi(y)]
-    &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_\bold{q}}
+    &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_\mathbf{q}}
     (e^{-ip(x-y)} - e^{ip(x-y)})
     \\
     &= D(x - y) - D(y - x)
@@ -96,35 +96,35 @@ $$
     \\
     &= D(x - y) - D(y - x)
     \\
-    &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_\bold{p}}
+    &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_\mathbf{p}}
     \left. [e^{-ip(x-y)} - e^{ip(x-y)}]
-    \right|_{p^0 = E_\bold{p}}
+    \right|_{p^0 = E_\mathbf{p}}
     \\
     &= \int \frac{d^3p}{(2\pi)^3} \left[
-        \left. \frac{e^{-ip(x-y)}}{2E_\bold{p}}
-        \right|_{p^0 = E_\bold{p}}
-        - \left. \frac{e^{-ip(x-y)}}{2E_\bold{p}} 
-        \right|_{p^0 = -E_\bold{p}}
+        \left. \frac{e^{-ip(x-y)}}{2E_\mathbf{p}}
+        \right|_{p^0 = E_\mathbf{p}}
+        - \left. \frac{e^{-ip(x-y)}}{2E_\mathbf{p}} 
+        \right|_{p^0 = -E_\mathbf{p}}
     \right]
 \end{aligned}
 $$
 
 In the second term, we have make the change of variable $p \to -p$, which does not cause additional minus signs since the the integration range is even.
 
-The two terms in the square bracket can be regarded as *the residue of the complex contour integration over $p^0$*, of the following integrand with poles at $p^0 = \pm E_\bold{p}$: (the spatial part $e^{-i \bold{p} \cdot \bold{x-y}}$ is just a irrelevant constant factor in this integration)
+The two terms in the square bracket can be regarded as *the residue of the complex contour integration over $p^0$*, of the following integrand with poles at $p^0 = \pm E_\mathbf{p}$: (the spatial part $e^{-i \mathbf{p} \cdot \mathbf{x-y}}$ is just a irrelevant constant factor in this integration)
 
 $$
 \begin{aligned}
     &\int \frac{dp^0}{2\pi i}
     \frac{e^{-ip(x-y)}}{p^2 - m^2}
     \qquad \left( \,
-        p^2 - m^2 = (p^0)^2 - E_\bold{p}^2
+        p^2 - m^2 = (p^0)^2 - E_\mathbf{p}^2
     \, \right)
     \\[1.2em]
     &= \int \frac{dp^0}{2\pi i}
-    \frac{e^{-ip(x-y)}}{2 E_\bold{p}} \left(
-        \frac{1}{p^0 - E_\bold{p}} 
-        - \frac{1}{p^0 + E_\bold{p}}
+    \frac{e^{-ip(x-y)}}{2 E_\mathbf{p}} \left(
+        \frac{1}{p^0 - E_\mathbf{p}} 
+        - \frac{1}{p^0 + E_\mathbf{p}}
     \right)
 \end{aligned}
 $$
@@ -143,8 +143,8 @@ Now that we assumed that $x^0 - y^0 > 0$. In order for the contour to enclose bo
 </center>
 
 $$
-E_\bold{p} \to E_\bold{p} - i \epsilon, \quad
--E_\bold{p} \to -E_\bold{p} - i \epsilon, \quad
+E_\mathbf{p} \to E_\mathbf{p} - i \epsilon, \quad
+-E_\mathbf{p} \to -E_\mathbf{p} - i \epsilon, \quad
 $$
 
 Therefore
@@ -186,18 +186,18 @@ $$
     + D(y - x) \theta(y^0 - x^0)
     \\
     &= \int \frac{d^3 p}{(2\pi)^3} \left[
-        \frac{e^{-ip(x-y)}}{2E_\bold{p}} \theta(x^0 - y^0)
-        + \frac{e^{ip(x-y)}}{2E_\bold{p}} \theta(y^0 - x^0)
-    \right]_{p^0 = E_\bold{p}}
+        \frac{e^{-ip(x-y)}}{2E_\mathbf{p}} \theta(x^0 - y^0)
+        + \frac{e^{ip(x-y)}}{2E_\mathbf{p}} \theta(y^0 - x^0)
+    \right]_{p^0 = E_\mathbf{p}}
     \\
     &= \int \frac{d^3 p}{(2\pi)^3} \left[
         \left.
-        \frac{e^{-ip(x-y)}}{2E_\bold{p}} \theta(x^0 - y^0)
-        \right|_{p^0 = E_\bold{p}}
+        \frac{e^{-ip(x-y)}}{2E_\mathbf{p}} \theta(x^0 - y^0)
+        \right|_{p^0 = E_\mathbf{p}}
         \right. \\ & \qquad \qquad \qquad \left.
         + \left.
-        \frac{e^{-ip(x-y)}}{2E_\bold{p}} \theta(y^0 - x^0)
-        \right|_{p^0 = -E_\bold{p}}
+        \frac{e^{-ip(x-y)}}{2E_\mathbf{p}} \theta(y^0 - x^0)
+        \right|_{p^0 = -E_\mathbf{p}}
     \right]
 \end{aligned}
 $$
@@ -213,9 +213,9 @@ Again, in the second term we change $p \to -p$. These two terms can be expressed
 $$
 \begin{aligned}
     &\lim_{\epsilon \to 0+} \int \frac{dp^0}{2\pi}
-    \frac{i e^{-ip(x-y)}}{2 E_\bold{p}} \left(
-        \frac{1}{p^0 - (E_\bold{p} - i \epsilon)} 
-        - \frac{1}{p^0 + (E_\bold{p} - i \epsilon)}
+    \frac{i e^{-ip(x-y)}}{2 E_\mathbf{p}} \left(
+        \frac{1}{p^0 - (E_\mathbf{p} - i \epsilon)} 
+        - \frac{1}{p^0 + (E_\mathbf{p} - i \epsilon)}
     \right)
     \\
     &\sim \lim_{\epsilon \to 0+} \int \frac{dp^0}{2\pi}
@@ -232,16 +232,16 @@ The second line is to be understood as
 $$
 \begin{aligned}
     &\frac{1}{p^2 - m^2 + i\epsilon}
-    = \frac{1}{(p^0)^2 - (E_\bold{p}^2 - i\epsilon)}
+    = \frac{1}{(p^0)^2 - (E_\mathbf{p}^2 - i\epsilon)}
     \\
-    &= \frac{1}{2E_\bold{p}} \left[
-        \frac{1}{p^0 - \sqrt{E_\bold{p}^2 - i\epsilon}}
-        - \frac{1}{p^0 + \sqrt{E_\bold{p}^2 - i\epsilon}}
+    &= \frac{1}{2E_\mathbf{p}} \left[
+        \frac{1}{p^0 - \sqrt{E_\mathbf{p}^2 - i\epsilon}}
+        - \frac{1}{p^0 + \sqrt{E_\mathbf{p}^2 - i\epsilon}}
     \right]
     \\
-    &\sim \frac{1}{2E_\bold{p}} \left[
-        \frac{1}{p^0 - E_\bold{p}(1-i\epsilon/2E_\bold{p}^2)}
-        - \frac{1}{p^0 + E_\bold{p}(1-i\epsilon/2E_\bold{p}^2)}
+    &\sim \frac{1}{2E_\mathbf{p}} \left[
+        \frac{1}{p^0 - E_\mathbf{p}(1-i\epsilon/2E_\mathbf{p}^2)}
+        - \frac{1}{p^0 + E_\mathbf{p}(1-i\epsilon/2E_\mathbf{p}^2)}
     \right]
 \end{aligned}
 $$
@@ -249,33 +249,33 @@ $$
 which indicates the same pole structure as the first line. 
 
 
-- When $x^0 < y^0$, the contour closes in the **upper** half plane, enclosing only the pole $-E_\bold{p} + i \epsilon$ in **counter-clockwise** direction.
+- When $x^0 < y^0$, the contour closes in the **upper** half plane, enclosing only the pole $-E_\mathbf{p} + i \epsilon$ in **counter-clockwise** direction.
 
     $$
     \begin{aligned}
         &\int \frac{dp^0}{2\pi}
-        \frac{i e^{-ip(x-y)}}{2 E_\bold{p}} \left(
-            \cancel{\frac{1}{p^0 - E_\bold{p}} }
-            - \frac{1}{p^0 + E_\bold{p}}
+        \frac{i e^{-ip(x-y)}}{2 E_\mathbf{p}} \left(
+            \cancel{\frac{1}{p^0 - E_\mathbf{p}} }
+            - \frac{1}{p^0 + E_\mathbf{p}}
         \right)
         \\
-        &= \left. \frac{e^{-ip(x-y)}}{2 E_\bold{p}} 
-        \right|_{p^0 = -E_\bold{p}}
+        &= \left. \frac{e^{-ip(x-y)}}{2 E_\mathbf{p}} 
+        \right|_{p^0 = -E_\mathbf{p}}
     \end{aligned}
     $$
 
-- When $x^0 > y^0$, the contour closes in the **lower** half plane, enclosing only the pole $E_\bold{p} - i \epsilon$ in **clockwise** direction (producing an additional minus sign).
+- When $x^0 > y^0$, the contour closes in the **lower** half plane, enclosing only the pole $E_\mathbf{p} - i \epsilon$ in **clockwise** direction (producing an additional minus sign).
 
     $$
     \begin{aligned}
         &\int \frac{dp^0}{2\pi}
-        \frac{i e^{-ip(x-y)}}{2 E_\bold{p}} \left(
-            \frac{1}{p^0 - E_\bold{p}} 
-            - \cancel{\frac{1}{p^0 + E_\bold{p}}}
+        \frac{i e^{-ip(x-y)}}{2 E_\mathbf{p}} \left(
+            \frac{1}{p^0 - E_\mathbf{p}} 
+            - \cancel{\frac{1}{p^0 + E_\mathbf{p}}}
         \right)
         \\
-        &= \left. \frac{e^{-ip(x-y)}}{2 E_\bold{p}} 
-        \right|_{p^0 = E_\bold{p}}
+        &= \left. \frac{e^{-ip(x-y)}}{2 E_\mathbf{p}} 
+        \right|_{p^0 = E_\mathbf{p}}
     \end{aligned}
     $$
 

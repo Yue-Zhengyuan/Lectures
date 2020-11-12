@@ -49,7 +49,7 @@ $$
 \frac{d\sigma}{d^3 p_1 \cdots d^3 p_n}
 $$
 
-## The $S$-Matrix
+## The *S*-Matrix
 
 Let $|\psi,t\rangle$ be the Schrödinger picture state at time $t$; its Heisenberg picture counterpart is simply denoted by $|\psi\rangle$.
 
@@ -84,24 +84,24 @@ $$
 (2\pi)^4 \delta^4(\sum p_f - \sum p_i)
 $$
 
-## Calculation of Cross Section from $\mathcal{M}$
+## Calculation of Cross Section
 
 Due to the new relativistic normalization of the momentum eigenstates, a wave packet representing some desired state $|\phi\rangle$ is expressed as
 
 $$
 |\phi\rangle = \int \frac{d^3k}{(2\pi)^3} 
-\frac{1}{\sqrt{2 E_\bold{k}}} \phi(\bold{k}) |\bold{k}\rangle
+\frac{1}{\sqrt{2 E_\mathbf{k}}} \phi(\mathbf{k}) |\mathbf{k}\rangle
 $$
 
-where $|\bold{k}\rangle$ is the one-particle momentum eigenstates in the *interacting* theory. Since in free theory $\langle \bold{k} | \bold{k} \rangle = 2E_\bold{k}$, we have
+where $|\mathbf{k}\rangle$ is the one-particle momentum eigenstates in the *interacting* theory. Since in free theory $\langle \mathbf{k} | \mathbf{k} \rangle = 2E_\mathbf{k}$, we have
 
 $$
 \langle \phi | \phi \rangle = 1 
 \, \Leftrightarrow \,
-\int \frac{d^3k}{(2\pi)^3} |\phi(\bold{k})|^2 = 1
+\int \frac{d^3k}{(2\pi)^3} |\phi(\mathbf{k})|^2 = 1
 $$
 
-Let us now consider the scattering between the target $|\phi_A\rangle$ and an incoming wave packet $|\phi_B(\bold{b})\rangle$ with **impact parameter** $\bold{b}$. 
+Let us now consider the scattering between the target $|\phi_A\rangle$ and an incoming wave packet $|\phi_B(\mathbf{b})\rangle$ with **impact parameter** $\mathbf{b}$. 
 
 <center>
 
@@ -109,47 +109,47 @@ Let us now consider the scattering between the target $|\phi_A\rangle$ and an in
 
 </center>
 
-The probability that packets $B$ coming from the small area $d^2b$ near $\bold{b}$ are scattered to $n$ particles whose momenta are in a small region $d^3 p_1 \cdots d^3 p_n$ is (the factor of $1/2E_f$ is due to normalization)
+The probability that packets $B$ coming from the small area $d^2b$ near $\mathbf{b}$ are scattered to $n$ particles whose momenta are in a small region $d^3 p_1 \cdots d^3 p_n$ is (the factor of $1/2E_f$ is due to normalization)
 
 $$
-\mathcal{P}(\bold{b}) \, d^2 b
+\mathcal{P}(\mathbf{b}) \, d^2 b
 = \left[
     \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
 \right] 
-|\langle \bold{p}_1 ... \bold{p}_n|
-\phi_A \phi_B(\bold{b}) \rangle|^2
+|\langle \mathbf{p}_1 ... \mathbf{p}_n|
+\phi_A \phi_B(\mathbf{b}) \rangle|^2
 $$
 
-The in-state $|\phi_A \phi_B(\bold{b}) \rangle$ can be expressed in terms of the input momenta as
+The in-state $|\phi_A \phi_B(\mathbf{b}) \rangle$ can be expressed in terms of the input momenta as
 
 $$
 \begin{aligned}
-    |\phi_A \phi_B(\bold{b}) \rangle
+    |\phi_A \phi_B(\mathbf{b}) \rangle
     &= \int \frac{d^3 k_A}{(2\pi)^3} \frac{d^3 k_B}{(2\pi)^3} 
     \frac{
-        \phi_A(\bold{k}_A) \cdot
-        \phi_B(\bold{k}_B) e^{-i \bold{k}_B \cdot \bold{b}}
+        \phi_A(\mathbf{k}_A) \cdot
+        \phi_B(\mathbf{k}_B) e^{-i \mathbf{k}_B \cdot \mathbf{b}}
     }{
         \sqrt{(2E_A) (2E_B)}
-    } |\bold{k}_A \bold{k}_B \rangle
+    } |\mathbf{k}_A \mathbf{k}_B \rangle
     \\
     &= \left[
         \prod_{i=A,B} \int \frac{d^3 k_i}{(2\pi)^3}
-        \frac{\phi_i(\bold{k}_i)}{\sqrt{2E_i}}
+        \frac{\phi_i(\mathbf{k}_i)}{\sqrt{2E_i}}
     \right]
-    e^{-i \bold{k}_B \cdot \bold{b}}
-    |\{ \bold{k}_i \} \rangle
+    e^{-i \mathbf{k}_B \cdot \mathbf{b}}
+    |\{ \mathbf{k}_i \} \rangle
     \\[2em]
     \text{with} \quad
-    E_i &= \sqrt{m_i^2 + \bold{k}_i^2} \qquad
+    E_i &= \sqrt{m_i^2 + \mathbf{k}_i^2} \qquad
     (i = A, B)
 \end{aligned}
 $$
 
-The $e^{-i \bold{k}_B \cdot \bold{b}}$ factor accounts for the spatial translation. We integrate over $\bold{b}$ to obtain the total number of scattering events that results in $d^3 p_1 \cdots d^3 p_n$
+The $e^{-i \mathbf{k}_B \cdot \mathbf{b}}$ factor accounts for the spatial translation. We integrate over $\mathbf{b}$ to obtain the total number of scattering events that results in $d^3 p_1 \cdots d^3 p_n$
 
 $$
-dN = n_B \int d^2 b \, \mathcal{P}(\bold{b})
+dN = n_B \int d^2 b \, \mathcal{P}(\mathbf{b})
 $$
 
 where $n_B$ is the area density of $B$ beam (assumed to be constant). The cross section is thus
@@ -157,7 +157,7 @@ where $n_B$ is the area density of $B$ beam (assumed to be constant). The cross 
 $$
 \begin{aligned}
     d\sigma &= \frac{dN}{n_B N_A} \xrightarrow{N_A = 1}
-    \int d^2 b \, \mathcal{P}(\bold{b})
+    \int d^2 b \, \mathcal{P}(\mathbf{b})
     \\
     &= \left[
         \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
@@ -165,29 +165,29 @@ $$
     \\ & \qquad \times
     \int d^2 b \left[
         \prod_{i=A,B} \int \frac{d^3 k_i}{(2\pi)^3} 
-        \frac{\phi_i(\bold{k}_i)}{\sqrt{2E_i}}
+        \frac{\phi_i(\mathbf{k}_i)}{\sqrt{2E_i}}
         \int \frac{d^3 k'_i}{(2\pi)^3} 
-        \frac{\phi^*_i(\bold{k}'_i)}{\sqrt{2E'_i}}
+        \frac{\phi^*_i(\mathbf{k}'_i)}{\sqrt{2E'_i}}
     \right]
     \\ &\qquad \times
-    e^{i (\bold{k}'_B - \bold{k}_B) \cdot \bold{b}}
-    \langle \{\bold{p}_f\} |\{\bold{k}_i\} \rangle
-    \langle \{\bold{p}_f\} |\{\bold{k}'_i\} \rangle^*
+    e^{i (\mathbf{k}'_B - \mathbf{k}_B) \cdot \mathbf{b}}
+    \langle \{\mathbf{p}_f\} |\{\mathbf{k}_i\} \rangle
+    \langle \{\mathbf{p}_f\} |\{\mathbf{k}'_i\} \rangle^*
 \end{aligned}
 $$
 
-First integrate over $\bold{b}$: denote the component of $\bold{k}$ within the plane of $\bold{b}$ as $k^{xy}$ (since it is *perpendicular* to $v$), then
+First integrate over $\mathbf{b}$: denote the component of $\mathbf{k}$ within the plane of $\mathbf{b}$ as $k^{xy}$ (since it is *perpendicular* to $v$), then
 
 $$
 \begin{aligned}
-    \int d^2b \, e^{i (\bold{k}'_B - \bold{k}_B) \cdot \bold{b}}
+    \int d^2b \, e^{i (\mathbf{k}'_B - \mathbf{k}_B) \cdot \mathbf{b}}
     &= \int d^2b \, e^{i (k'^{xy}_B - k^{xy}_B) \cdot b}
     \\
     &= (2\pi)^2 \delta^2(k'^{xy}_B - k^{xy}_B)
 \end{aligned}
 $$
 
-Here we choose $\bold{b}$ to be in the $xy$-plane, and $v$ to be along $z$. This delta function then knocks out the integration over $k'^x_i, k'^y_i \, (i = A,B)$ by requiring
+Here we choose $\mathbf{b}$ to be in the $xy$-plane, and $v$ to be along $z$. This delta function then knocks out the integration over $k'^x_i, k'^y_i \, (i = A,B)$ by requiring
 
 $$
 k'^x_i = k^x_i, \quad
@@ -198,25 +198,25 @@ If we only want non-trivial events, the final two amplitudes can be expressed in
 
 $$
 \begin{aligned}
-    \langle \{\bold{p}_f\} |\{\bold{k}_i\} \rangle
+    \langle \{\mathbf{p}_f\} |\{\mathbf{k}_i\} \rangle
     &= i 
     \mathcal{M}(\{k_i\} \to \{p_f\})
     (2\pi)^4 \delta^4(\textstyle{\sum p_f - \sum k_i})
     \\
-    \langle \{\bold{p}_f\} |\{\bold{k}'_i\} \rangle^*
+    \langle \{\mathbf{p}_f\} |\{\mathbf{k}'_i\} \rangle^*
     &= -i 
     \mathcal{M}^*(\{k'_i\} \to \{p_f\})
     (2\pi)^4 \delta^4(\textstyle{\sum p_f - \sum k'_i})
 \end{aligned}
 $$
 
-We then knock out integrations over $\bold{k}'_i$:
+We then knock out integrations over $\mathbf{k}'_i$:
 
 $$
 \begin{aligned}
     I = &\left[
         \prod_{i=A,B} \int \frac{d^3 k'_i}{(2\pi)^3} 
-        \frac{\phi^*_i(\bold{k}'_i)}{\sqrt{2E'_i}}
+        \frac{\phi^*_i(\mathbf{k}'_i)}{\sqrt{2E'_i}}
     \right]
     (2\pi)^2 \delta^2(k'^{xy}_B - k^{xy}_B)
     \\ &\quad
@@ -226,12 +226,12 @@ $$
 \end{aligned}
 $$
 
-To simplify writing, we use $f(\bold{k}')$ to represents things besides the $\delta$ functions that depend on $\bold{k}'_A, \bold{k}'_B$: 
+To simplify writing, we use $f(\mathbf{k}')$ to represents things besides the $\delta$ functions that depend on $\mathbf{k}'_A, \mathbf{k}'_B$: 
 
 $$
-f(\bold{k}') \equiv
+f(\mathbf{k}') \equiv
 (-i) \mathcal{M}^*(\{k'_i\} \to \{p_f\})
-\prod_{i=A,B} \frac{\phi^*_i(\bold{k}'_i)}{\sqrt{2E'_i}}
+\prod_{i=A,B} \frac{\phi^*_i(\mathbf{k}'_i)}{\sqrt{2E'_i}}
 $$
 
 Cancel the $2\pi$ factors and $k'^{x,y}_B$ integrals:
@@ -239,7 +239,7 @@ Cancel the $2\pi$ factors and $k'^{x,y}_B$ integrals:
 $$
 I = \int d^3 k'_A d k'^z_B
 \left[
-    f(\bold{k}') \,
+    f(\mathbf{k}') \,
     \delta^4(\textstyle{\sum p_f - \sum k'_i})
 \right]_{k'^{xy}_B = k^{xy}_B}
 $$
@@ -250,7 +250,7 @@ $$
 \begin{aligned}
     I &= \int d^3 k'_A \,
     [
-        f(\bold{k}') \,
+        f(\mathbf{k}') \,
         \delta(\textstyle{\sum E_f - \sum E'_i})
         \\ &\qquad \times
         \delta^2(\textstyle{\sum p^{xy}_f - \sum k'^{xy}_i})
@@ -261,10 +261,10 @@ $$
     \\
     &= \int d^3 k'_A \,
     [
-        f(\bold{k}') \,
+        f(\mathbf{k}') \,
         \delta(
-            \sqrt{m_A^2 + \bold{k}'^2_A}
-            + \sqrt{m_B^2 + \bold{k}'^2_B}
+            \sqrt{m_A^2 + \mathbf{k}'^2_A}
+            + \sqrt{m_B^2 + \mathbf{k}'^2_B}
             - \textstyle{\sum E_f}
         )
         \\ &\qquad \times
@@ -276,11 +276,11 @@ $$
     \\
     &= \int d k'^z_A \,
     [
-        f(\bold{k}') \,
+        f(\mathbf{k}') \,
         \delta(
-            \sqrt{m_A^2 + \bold{k}'^2_A}
+            \sqrt{m_A^2 + \mathbf{k}'^2_A}
             \\ &\qquad 
-            + \sqrt{m_B^2 + \bold{k}'^2_B}
+            + \sqrt{m_B^2 + \mathbf{k}'^2_B}
             - \textstyle{\sum E_f}
         )
     ]_{
@@ -295,13 +295,13 @@ Focus on the last delta function:
 
 $$
 \delta(
-    \sqrt{m_A^2 + \bold{k}'^2_A}
-    + \sqrt{m_B^2 + \bold{k}'^2_B}
+    \sqrt{m_A^2 + \mathbf{k}'^2_A}
+    + \sqrt{m_B^2 + \mathbf{k}'^2_B}
     - \textstyle{\sum E_f}
 )
 $$
 
-Now we have expressed $k'^{xy}_A$ and the whole $\bold{k}'_B$ as functions of $k'^z_A$: 
+Now we have expressed $k'^{xy}_A$ and the whole $\mathbf{k}'_B$ as functions of $k'^z_A$: 
 
 $$
 \begin{aligned}
@@ -338,13 +338,13 @@ $$
 Finally, we knock out the integration over $k'^z_A$ and obtain
 
 $$
-I = \frac{f(\bold{k})}{|v_A - v_B|}
+I = \frac{f(\mathbf{k})}{|v_A - v_B|}
 = \frac{(-i)}{|v_A - v_B|} 
 \mathcal{M}^*(\{k_i\} \to \{p_f\})
-\prod_{i=A,B} \frac{\phi^*_i(\bold{k}_i)}{\sqrt{2E_i}}
+\prod_{i=A,B} \frac{\phi^*_i(\mathbf{k}_i)}{\sqrt{2E_i}}
 $$
 
-evaluated at $\bold{k}'_i = \bold{k}_i$. Now we are only left with the integrals over $\bold{k}_i$:
+evaluated at $\mathbf{k}'_i = \mathbf{k}_i$. Now we are only left with the integrals over $\mathbf{k}_i$:
 
 $$
 \begin{aligned}
@@ -359,15 +359,15 @@ $$
     \frac{
         |\mathcal{M}(\{k_i\} \to \{p_f\})|^2
     }{|v_A - v_B|}
-    \frac{|\phi_A(\bold{k}_A)|^2}{2E_A}
-    \frac{|\phi_B(\bold{k}_B)|^2}{2E_B}
+    \frac{|\phi_A(\mathbf{k}_A)|^2}{2E_A}
+    \frac{|\phi_B(\mathbf{k}_B)|^2}{2E_B}
     \\[1em]
     &\text{where} \quad
-    E_{A,B} = k_{A,B}^0 = \sqrt{m^2 + \bold{k}_{A,B}^2}
+    E_{A,B} = k_{A,B}^0 = \sqrt{m^2 + \mathbf{k}_{A,B}^2}
 \end{aligned}
 $$
 
-To simplify further, we exploit the properties of a wave packet that it is *sharply* peaked as some "average" momentum $\bold{p}_A, \bold{p}_B$, and other things in the integral are *smooth* functions (i.e. they does not change much) of $\bold{k}_A, \bold{k}_B$. Thus we can approximate the integral as
+To simplify further, we exploit the properties of a wave packet that it is *sharply* peaked as some "average" momentum $\mathbf{p}_A, \mathbf{p}_B$, and other things in the integral are *smooth* functions (i.e. they does not change much) of $\mathbf{k}_A, \mathbf{k}_B$. Thus we can approximate the integral as
 
 $$
 \begin{aligned}
@@ -381,8 +381,8 @@ $$
     \int \frac{d^3 k_A}{(2\pi)^3} \frac{d^3 k_B}{(2\pi)^3}
     \\ & \qquad \times
     (2\pi)^4 \delta^4(\textstyle{k_A + k_B - \sum p_f}) 
-    |\phi_A(\bold{k}_A)|^2
-    |\phi_B(\bold{k}_B)|^2
+    |\phi_A(\mathbf{k}_A)|^2
+    |\phi_B(\mathbf{k}_B)|^2
     \\[0.2em]
     & \quad 
     \left( \begin{aligned}
@@ -400,13 +400,13 @@ $$
     (2\pi)^4 \delta^4(\textstyle{p_A + p_B - \sum p_f}) 
     \\[0.2em]
     & \quad \left( \begin{aligned}
-        &\text{This step uses the sharpness of $\phi(\bold{k_A})$ and $\phi(\bold{k_B}$)}
+        &\text{This step uses the sharpness of $\phi(\mathbf{k_A})$ and $\phi(\mathbf{k_B}$)}
         \\
         &\text{i.e. treat them similarly to the delta function}
     \end{aligned} \right)
     \\[1em]
     &\text{where} \quad
-    E_{A,B} = p_{A,B}^0 = \sqrt{m^2 + \bold{p}_{A,B}^2}
+    E_{A,B} = p_{A,B}^0 = \sqrt{m^2 + \mathbf{p}_{A,B}^2}
 \end{aligned}
 $$
 
@@ -415,7 +415,7 @@ $$
 In the result of $d\sigma$ above, we pick out the Lorentz invariant structure
 
 $$
-\int d\Pi_n 
+d\Pi_n 
 \equiv
 \left[
     \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
@@ -427,12 +427,22 @@ It is called the **Lorentz invariant $n$-body phase space**.
 
 ## Differential Cross Section in CM Frame
 
-We consider the special case of $2 \to 2$ scattering in the center-of-mass reference frame. 
+We consider the special case of $2 \to 2$ scattering in the center-of-mass reference frame, in which
+
+$$
+\begin{aligned}
+    \mathbf{p}_A + \mathbf{p}_B 
+    &= \mathbf{p}_1 + \mathbf{p}_2 = 0
+    \\
+    E_A + E_B 
+    &= E_1 + E_2 = E_\text{CM}
+\end{aligned}
+$$
 
 $$
 \left( \frac{d\sigma}{d\Omega} \right)_\text{CM}
 = \frac{1}{2E_A 2E_B|v_A - v_B|}
-\frac{|\bold{p}_1|}{(2\pi)^2 4E_{\text{CM}}}
+\frac{|\mathbf{p}_1|}{(2\pi)^2 4E_{\text{CM}}}
 |\mathcal{M}(p_A,p_B \to p_1,p_2)|^2
 $$
 
@@ -455,7 +465,7 @@ $$
 }
 $$
 
-This can be formally regarded as $1 \to n$ scattering. 
+This can be formally regarded as $1 \to n$ scattering. Removing from the expression of $d\sigma$ the factors that do not make sense when the initial state only has one particle, the result turns out to be
 
 $$
 \begin{aligned}
@@ -467,6 +477,6 @@ $$
     (2\pi)^4 \delta^4(\textstyle{p_A - \sum p_f}) 
     \\[1em]
     &\text{with} \quad
-    p_A = (E_A, \bold{p}_A) = (m_A, 0)
+    p_A = (E_A, \mathbf{p}_A) = (m_A, 0)
 \end{aligned}
 $$

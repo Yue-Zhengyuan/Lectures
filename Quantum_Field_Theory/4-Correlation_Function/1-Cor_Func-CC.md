@@ -38,49 +38,49 @@ $$
 Here we assume that the (Schrödinger picture) Hamiltonian is independent of time, so that the time evolution operator is simply $e^{-iH \Delta t}$. The field $\phi(x)$ evolves with time according to (from some given time $t_0$ to $t$)
 
 $$
-\phi(\bold{x},t)
-= e^{iH(t-t_0)} \phi(\bold{x},t_0) e^{-iH(t-t_0)}
+\phi(\mathbf{x},t)
+= e^{iH(t-t_0)} \phi(\mathbf{x},t_0) e^{-iH(t-t_0)}
 $$
 
-We expand $\phi(\bold{x},t_0)$ ($t_0$ is some reference time) using the ladder operators
+We expand $\phi(\mathbf{x},t_0)$ ($t_0$ is some reference time) using the ladder operators
 
 $$
-\phi(\bold{x},t_0)
-= \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E_\bold{p}}} (
-    a_\bold{p} e^{i \bold{p} \cdot \bold{x}}
-    + a_\bold{p}^\dagger e^{-i \bold{p} \cdot \bold{x}}
+\phi(\mathbf{x},t_0)
+= \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E_\mathbf{p}}} (
+    a_\mathbf{p} e^{i \mathbf{p} \cdot \mathbf{x}}
+    + a_\mathbf{p}^\dagger e^{-i \mathbf{p} \cdot \mathbf{x}}
 )
 $$
 
-Then we define the **interaction picture field** at $t$ as the field obtained by time evolving $\phi(\bold{x},t_0)$ using the free Hamiltonian $H_0$:
+Then we define the **interaction picture field** at $t$ as the field obtained by time evolving $\phi(\mathbf{x},t_0)$ using the free Hamiltonian $H_0$:
 
 $$
-\phi_I(\bold{x},t)
-= \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E_\bold{p}}} 
+\phi_I(\mathbf{x},t)
+= \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E_\mathbf{p}}} 
 \left. \left(
-    a_\bold{p} e^{ipx}
-    + a_\bold{p}^\dagger e^{-ipx}
+    a_\mathbf{p} e^{ipx}
+    + a_\mathbf{p}^\dagger e^{-ipx}
 \right) \right|_{x^0 = t - t_0}
 $$
 
 $$
 \text{evolution: } \quad
-\phi_I(\bold{x},t) 
-= e^{i H_0(t-t_0)} \phi(\bold{x},t_0) e^{-i H_0(t-t_0)}
+\phi_I(\mathbf{x},t) 
+= e^{i H_0(t-t_0)} \phi(\mathbf{x},t_0) e^{-i H_0(t-t_0)}
 $$
 
 Then we can express the evolution of $\phi$ itself as
 
 $$
 \begin{aligned}
-    \phi(\bold{x},t)
-    &= e^{iH(t-t_0)} \phi(\bold{x},t_0) e^{-iH(t-t_0)}
+    \phi(\mathbf{x},t)
+    &= e^{iH(t-t_0)} \phi(\mathbf{x},t_0) e^{-iH(t-t_0)}
     \\
     &= e^{iH(t-t_0)} 
-    e^{-i H_0(t-t_0)} \phi_I(\bold{x},t) e^{i H_0(t-t_0)}
+    e^{-i H_0(t-t_0)} \phi_I(\mathbf{x},t) e^{i H_0(t-t_0)}
     e^{-iH(t-t_0)}
     \\
-    &= U^\dagger(t,t_0) \phi_I(\bold{x},t) U(t,t_0)
+    &= U^\dagger(t,t_0) \phi_I(\mathbf{x},t) U(t,t_0)
 \end{aligned}
 $$
 
