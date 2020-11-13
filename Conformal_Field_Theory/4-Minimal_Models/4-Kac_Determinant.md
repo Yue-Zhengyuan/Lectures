@@ -12,7 +12,7 @@ $$
 
 A representation of the Virasoro algebra is said to be **unitary** if it contains *no negative-norm states*.
 
-## Simple Necessary Conditions
+### Simple Necessary Conditions
 
 Some simple conditions are obtained from the norm of $L_{-n}| h\rangle$:
 

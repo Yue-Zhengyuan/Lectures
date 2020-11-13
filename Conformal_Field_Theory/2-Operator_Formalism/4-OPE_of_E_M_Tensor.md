@@ -12,7 +12,9 @@ $$
 
 where $c$ is the central charge and $|z|>|w|$.
 
-The OPE of $\bar{T}(\bar{z}) \bar{T}(\bar{w})$ has a similar form, but the OPE of $T(z) \bar{T}(\bar{w})$ contains only regular terms.
+The OPE of $\bar{T}(\bar{z}) \bar{T}(\bar{w})$ has a similar form, but the OPE of $T(z) \bar{T}(\bar{w})$ contains only regular terms. 
+
+The central charge term indicates that $T(z)$ and $\bar{T}(\bar{z})$ are not primary fields. 
 
 ## Laurent Modes of the Energy-Momentum Tensor 
 
@@ -139,6 +141,8 @@ $$
 \end{aligned}
 $$
 
+----
+
 *Proof*:
 
 Recall that
@@ -209,28 +213,27 @@ Then complete the integration over $w$
 $$
 \begin{aligned}
     &[L_n, L_m]
-    = \frac{1}{2 \pi i} \oint_0 dw \\
-    & \times\left(
+    = \frac{1}{2 \pi i} \oint_0 dw
+    \Bigg[
         \frac{c}{12} n (n^2 - 1) w^{m+n-1}
+        \\ & \qquad \qquad
         + 2(n+1)w^{m+n+1}T(w)
         + \underbrace{w^{m+n+2} \partial_w T(w)}_{\text{integrate by parts}} 
-    \right)
+    \Bigg]
     \\
-    &= \frac{1}{2 \pi i} \oint_0 \, dw \left(
+    &= \frac{1}{2 \pi i} \oint_0 \, dw \Bigg[
         \frac{c}{12}n(n^2 - 1) w^{m+n-1}
-        \right.
         \\ &\qquad \qquad 
-        \left.
         + 2 (n + 1) w^{m+n+1} T(w)
         - (m+n+2) w^{m+n+1} T(w)
-    \right)
-    \\
+    \Bigg]
+    \\[1em]
     &= \frac{c}{12}n(n^2 - 1) \frac{1}{1!} 
     \left[\frac{d}{dw} \left(w^{m+n} \right)\right]_{w=0}
     \\ &\qquad \qquad
     + 2(n+1) L_{m+n}
     - (m+n+2) L_{m+n} 
-    \\
+    \\[1em]
     &= \frac{c}{12} n (n^2 - 1) \delta_{m+n, 0}
     + (n-m) L_{m+n}
 \end{aligned}
@@ -239,3 +242,5 @@ $$
 $[\bar{L}_n, \bar{L}_m]$ can be found in the same way using the OPE of $\bar{T} (\bar{z})$ with itself.
 
 Finally, from $T(z)\bar{T} \left(\bar{w} \right)\sim 0$, we have $[L_n, \bar{L}_m]=0$. $\blacksquare$
+
+----

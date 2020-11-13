@@ -1,17 +1,5 @@
 # Operator Product Expansion: <br>General Description
 
-Previously, we have derived that for a quasi-primary field
-
-$$
-\delta_{\epsilon ,\bar{\epsilon}} \phi 
-=
-- (h \phi  \partial \epsilon + \epsilon \partial \phi)
-- (
-    \bar{h} \phi \bar{\partial} \bar{\epsilon}
-    + \bar{\epsilon} \bar{\partial} \phi
-)
-$$
-
 ## Conserved Charge of Conformal Symmetry 
 
 The conserved charge corresponding to the conformal transformation $x\to x+\epsilon$ on the cylinder is given by
@@ -113,6 +101,18 @@ $$
 + \text{anti-holomorphic}
 $$
 
+Previously, we have derived that for a quasi-primary field
+
+$$
+\delta_{\epsilon ,\bar{\epsilon}} \phi 
+=
+- (h \phi  \partial \epsilon + \epsilon \partial \phi)
+- (
+    \bar{h} \phi \bar{\partial} \bar{\epsilon}
+    + \bar{\epsilon} \bar{\partial} \phi
+)
+$$
+
 We identify that
 
 $$
@@ -124,7 +124,7 @@ $$
 \end{aligned}
 $$
 
-and similarly for the anti-holomorphic part. But we can write the LHS as integral around the point $w$ using Cauchy integral formula (acting on the coordinate change $\epsilon$ only:
+and similarly for the anti-holomorphic part. But we can write the LHS as integral around the point $w$ using Cauchy integral formula (acting on the coordinate change $\epsilon(z)$ only:
 
 $$
 \begin{aligned}
@@ -151,3 +151,5 @@ $$
     +\text{reg.}
 \end{aligned}
 $$
+
+These can be taken as the *alternative definition* of **primary fields**. 

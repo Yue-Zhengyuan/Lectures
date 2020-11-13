@@ -12,33 +12,17 @@ $$
 we *define* the **normal ordered product** of $A(w),B(w)$ as
 
 $$
-(A B)(w)=\{A B\}_0(w)
+N[A B](w)=\{A B\}_0(w)
 $$
 
 There are several ways to write this expression more concretely.
 
-## Contraction
 
-The **contraction** of $A(z)B(w)$ is *defined* as the sum of all *singular* terms of the OPE:
-
-$$
-A(z)B(w) \equiv 
-\sum_{n=1}^N \frac{\{A B\}_n(w)}{(z-w)^n}
-$$
-
-Then
-
-$$
-(A B)(w)
-= \lim_{z\to w} \left(
-    A(z) B(w) - A(z) B(w)
-\right)
-$$
 
 ## Contour Integration
 
 $$
-(A B)(w) = 
+N[AB](w) = 
 \frac{1}{2 \pi i} \oint_w \frac{dz}{z-w} A(z) B(w)
 $$
 
@@ -58,11 +42,11 @@ $$
 \end{aligned}
 $$
 
-Only the $n=0$ term survives:
+Only the $n=0$ term survives, since the expression to be taken the derivative to $z$ is dependent of $w$ only. Then
 
 $$
 \text{RHS} = \{A B\}_0(w)
-\equiv (A B)(w)
+\equiv N[AB](w)
 \quad \blacksquare
 $$
 
@@ -71,29 +55,29 @@ $$
 We Laurent expand the normal ordered product around the origin as
 
 $$
-(A B)(w)=\sum_n  w^{-n-h_A-h_B} (A B)_n
+N[AB](w)=\sum_n  w^{-n-h_A-h_B} N[AB]_n
 $$
 
-Then the modes $(A B)_n$ are found to be
+Then the modes $N[AB]_n$ are found to be
 
 $$
-(A B)_n
+N[AB]_n
 = \sum_{m \le -h_A} A_m B_{n-m}
-+ \sum_{m \ge -h_A} B_{n-m} A_m
++ \sum_{m > -h_A} B_{n-m} A_m
 $$
 
 *Proof*:
 
 <center>
 
-![image](Fig-6_2.png)   
+![integration path](Figures/norm_ord_int_path.png)   
 *Deformation of integration path*
 
 </center>
 
 $$
 \begin{aligned}
-    &(A B)(w)
+    &N[AB](w)
     =\frac{1}{2 \pi i} \oint_w\frac{dz}{z-w}A(z)B(w)
     \\
     &
@@ -145,7 +129,9 @@ $$
     \end{aligned}
     $$
 
-    In this integral, the only singular point in the integration path is $x$. By the Residue Theorem, only the term with $m+h_A+l+1=1$ contributes. Since $l\ge 0$, the summation range of $m$ is now $m\le -h_A$:
+    In this integral, the only singular point in the integration path is $x$. By the Residue Theorem, only the term with $m+h_A+l+1=1$ contributes. 
+    
+    Since $l\ge 0$, the summation range of $m$ is now $m\le -h_A$:
 
     $$
     \text{1st term}
@@ -192,7 +178,7 @@ Collect the two terms:
 
 $$
 \begin{aligned}
-    (A B)(w)
+    N[AB](w)
     &= \sum_{p} \sum_{m\le -h_A} (w-x)^{-m-p-h_A-h_B}A_m(x)B_p(x)
     \\ &\qquad
     + \sum_{p} \sum_{m>-h_A} (w-x)^{-m-p-h_A-h_B}B_p(x)A_m(x)
@@ -203,7 +189,7 @@ Define $n=m+p$, and change summation over $p$ to over $n$, then
 
 $$
 \begin{aligned}
-    &(A B)(w)
+    &N[AB](w)
     = \sum_{n} \sum_{m\le -h_A} (w-x)^{-n-h_A-h_B} A_m(x) B_{n-m}(x)
     \\ &\qquad
     + \sum_{n} \sum_{m>-h_A} (w-x)^{-n-h_A-h_B} B_{n-m}(x) A_m(x)
@@ -215,5 +201,48 @@ $$
         + \sum_{m>-h_A} B_{n-m}(x) A_m(x)
     \right) 
     \quad \blacksquare
+\end{aligned}
+$$
+
+## Useful Corollaries
+
+The *derivative* of a field $\partial \phi$ has the following Laurent expansion
+
+$$
+\begin{aligned}
+    \partial \phi(z)
+    &= \partial \sum_n z^{-n-h} \phi_n
+    \\
+    &= \sum_n (-n-h) z^{-n-(h+1)} \phi_n
+\end{aligned}
+$$
+
+This means $\partial \phi$ has conformal dimension $h+1$, with Laurent modes related to those of $\phi$ by
+
+$$
+(\partial \phi)_n = (-n-h) \phi_n
+$$
+
+Therefore
+
+$$
+\begin{aligned}
+    &N[A (\partial B)]_n
+    \\
+    &= \sum_{m \le -h_A} A_m (\partial B)_{n-m}
+    + \sum_{m > -h_A} (\partial B)_{n-m} A_m
+    \\
+    &= \sum_{m \le -h_A} (-n+m-h_B) A_m B_{n-m}
+    \\ &\qquad
+    + \sum_{m > -h_A} (-n+m-h_B)B_{n-m} A_m
+    \\[2em]
+    &N[(\partial A) B]_n
+    \\
+    &= \sum_{m \le -h_{\partial A}} (\partial A)_m B_{n-m}
+    + \sum_{m > -h_{\partial A}} B_{n-m} (\partial A)_m
+    \\
+    &= \sum_{m \le -h_A - 1} (-m-h_A)A_m B_{n-m}
+    \\ &\qquad
+    + \sum_{m > -h_A - 1} (-m-h_A) B_{n-m} A_m
 \end{aligned}
 $$

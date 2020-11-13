@@ -68,7 +68,7 @@ $$
     $$
     f^{(n)}(z_0)
     = \frac{n!}{2\pi i}
-    \oint_C dz \frac{f(z)}{(z-z_0)^n}
+    \oint_C dz \frac{f(z)}{(z-z_0)^{n+1}}
     $$
 
 2. for $n=0$

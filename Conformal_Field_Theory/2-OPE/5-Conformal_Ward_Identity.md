@@ -1,2 +1,0 @@
-# Conformal Ward Identity
-

@@ -41,7 +41,7 @@ We first evaluate the integral over $z$.
 
 <center>
 
-![image](Fig-6_2.png)   
+![image](Figures/norm_ord_int_path.png)   
 *Deformation of integration path*
 
 </center>
