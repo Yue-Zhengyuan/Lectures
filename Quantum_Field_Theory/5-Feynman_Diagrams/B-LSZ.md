@@ -1,6 +1,4 @@
-# *S*-Matrix from Feynman Diagrams
-
-## LSZ Reduction Formula
+# Appendix B:<br>Proof of LSZ Reduction Formula
 
 For a general $m \to n$ scattering
 
@@ -30,5 +28,3 @@ $$
 $$
 
 where $\square_i \equiv (\partial/\partial x_i)^2, \square'_i \equiv (\partial/\partial x'_i)^2$. Note that the sign on the exponential factor is $-$ for incoming particles $p_1,...,p_m$, and $+$ for outgoing particles $p'_1,...,p'_n$. 
-
-## Feynman Rules for Calculation of $\mathcal{M}$

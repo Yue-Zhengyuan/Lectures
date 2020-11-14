@@ -1,1 +1,0 @@
-# Feynman Rules for Bosons

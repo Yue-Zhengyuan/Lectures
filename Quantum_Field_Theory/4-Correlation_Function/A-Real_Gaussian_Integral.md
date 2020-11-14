@@ -1,4 +1,4 @@
-# Appendix A: Gaussian Integral
+# Appendix A: <br>Gaussian Integral
 
 ## Integral of Real Variables
 

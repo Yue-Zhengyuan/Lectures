@@ -5,8 +5,8 @@ The Lagrangian of the **Klein-Gordon field theory** is
 $$
 \begin{aligned}
     \mathcal{L} 
-    &= \frac{1}{2} (\partial \phi)^2 
-    - \frac{1}{2} m^2 \phi^2
+    &= \frac{1}{2} [(\partial \phi)^2 
+    -  m^2 \phi^2]
     \\
     &= \frac{1}{2} (
         \dot{\phi}^2 - (\nabla \phi)^2 - m^2 \phi^2

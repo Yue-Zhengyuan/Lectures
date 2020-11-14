@@ -1,4 +1,4 @@
-# Appendix B: Grassmann Gaussian Integral
+# Appendix B: <br>Grassmann Gaussian Integral
 
 For Grassmann numbers, *integration is the same as differentiation.* This leads to many different properties of Gaussian integrals for Grassmann variables.
 

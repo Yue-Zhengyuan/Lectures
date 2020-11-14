@@ -1,13 +1,13 @@
 # Correlation Function (Canonical Quantization)
 
-The **$n$-point correlation function** is defined as
+The **$n$-point (correlation) function** is defined as
 
 $$
 \langle \phi(x_1) \cdots \phi(x_n) \rangle
 = \langle \Omega| T [\phi(x_1) \cdots \phi(x_n)] |\Omega \rangle
 $$
 
-where $T$ is the **time ordering operator**, and $|\Omega\rangle$ is the ground state of the interacting theory.
+where $T$ is the **time ordering operator**, and $|\Omega\rangle$ is the ground state of the interacting theory. Its calculation is of importance because its relation to the scattering amplitude, and significance in statistical physics.  
 
 ## Two-Point Correlation Function
 
@@ -343,5 +343,3 @@ $$
     \right]
 \end{aligned}
 $$
-
-While the denominator can sometimes be evaluated exactly, it is usually impossible for the nominator. 

@@ -1,22 +1,4 @@
-# Schwinger-Dyson Equation
-
-*Note: In this section we restore $\hbar$ to see where quantum effect comes in.*
-
-Let $|\Omega\rangle$ be the ground state of the *interacting theory* based on the Klein-Gordon theory:
-
-$$
-\begin{aligned}
-    \text{Lagrangian:} &\quad
-    \mathcal{L} = \frac{1}{2} (\partial \phi)^2 
-    - \frac{1}{2} m^2 \phi^2
-    + \mathcal{L}_\text{int}[\phi]
-    \\[1em]
-    \text{EOM:} &\quad 
-    (\partial^2 + m^2)\phi 
-    - \frac{\delta \mathcal{L}_\text{int}[\phi]}{\delta \phi}
-    = 0
-\end{aligned}
-$$
+# Appendix A: <br>Proof of Schwinger-Dyson Equation
 
 ## Lemma 1
 
@@ -74,6 +56,25 @@ $$
 
 ## Schwinger-Dyson Equation
 
+For the interacting theory
+
+$$
+\mathcal{L} = \mathcal{L}_0 + \mathcal{L}_\text{int}[\phi], 
+\quad
+\mathcal{L}_0 = \frac{1}{2}[(\partial \phi)^2 - m^2 \phi^2]
+$$
+
+Its equation of motion is
+
+$$
+(\partial^2 + m^2)\phi 
+- \frac{\delta \mathcal{L}_\text{int}[\phi]}{\delta \phi}
+= 0
+$$
+
+
+The **Schwinger-Dyson equation** states that
+
 $$
 \begin{aligned}
     &(\partial_x^2 + m^2) 
@@ -83,7 +84,6 @@ $$
         \frac{\delta \mathcal{L}_\text{int}[\phi_x]}{\delta \phi_x}
         \phi_1 ... \phi_n
     \right\rangle
-    
     - i \hbar \sum_{j=1}^n \delta^4(x-x_j)
     \langle \phi_1 ... \cancel{\phi_j} ... \phi_n \rangle
     \\[1em]
@@ -93,4 +93,6 @@ $$
     \partial_x^2 = (\partial/\partial x)^2
 \end{aligned}
 $$
+
+*Proof*: 
 
