@@ -1,6 +1,6 @@
 # Canonical Quantization: Free Boson
 
-The Lagrangian of the **Klein-Gordon field theory** is
+The Lagrangian of the **Klein-Gordon (real scalar) field theory** is
 
 $$
 \begin{aligned}
@@ -93,7 +93,7 @@ $$
 \end{aligned}
 $$
 
-The **canonical quantization** means that we *impose* the following *equal-time* commutation relations (ETC):
+The **canonical quantization** means that we *impose* the following **equal-time commutation relations (ETC)**:
 
 $$
 \begin{aligned}
@@ -247,7 +247,7 @@ Summation over the Fourier index $k$ is changed to integration over the momentum
 $$
 \frac{1}{V}\sum_{k=0}^{N-1} \to \frac{d^{d-1} p}{(2\pi)^{d-1}}
 \qquad
-\delta_{k k'} \to \frac{2\pi}{V} \delta(\mathbf{p} - \mathbf{p}')
+\delta_{k k'} \to \frac{(2\pi)^{d-1}}{V} \delta(\mathbf{p} - \mathbf{p}')
 $$
 
 The frequency takes the limit
@@ -284,10 +284,10 @@ $$
         + a^\dagger_\mathbf{p} e^{i (\omega t - \mathbf{p}\cdot\mathbf{x})}
     ] \\
     &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
-    \frac{1}{\sqrt{2 \omega_\mathbf{p}}} [
+    \frac{1}{\sqrt{2 \omega_\mathbf{p}}} (
         a_\mathbf{p} e^{-ipx} 
         + a^\dagger_\mathbf{p} e^{ipx}
-    ]
+    )
 \end{aligned}
 $$
 
@@ -295,7 +295,14 @@ where $p^0 = \omega_\mathbf{p} = \sqrt{m^2 + \mathbf{p}^2}$.
 
 We also obtain the expansion of the momentum $\pi(x)$:
 
-
+$$
+\pi(x) = \partial_t \phi(x)
+= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
+\sqrt{\frac{\omega_\mathbf{p}}{2}} (
+    a_\mathbf{p} e^{-ipx} 
+    + a^\dagger_\mathbf{p} e^{ipx}
+)
+$$
 
 ## Heisenberg Equation for the Fields
 

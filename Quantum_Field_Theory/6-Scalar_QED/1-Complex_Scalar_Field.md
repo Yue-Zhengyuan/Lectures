@@ -226,15 +226,14 @@ The first two brackets vanish, since (e.g. for the first one)
 
 $$
 \begin{aligned}
-    \int \frac{d^3p}{(2\pi)^3} 
+    &\int \frac{d^3p}{(2\pi)^3} 
     (b_\mathbf{p}a_\mathbf{-p} - a_\mathbf{p} b_\mathbf{-p}) 
-    &= \int \frac{d^3p}{(2\pi)^3} 
+    = \int \frac{d^3p}{(2\pi)^3} 
     (b_\mathbf{p}a_\mathbf{-p} - b_\mathbf{-p} a_\mathbf{p}) 
     \\
     &=\int \frac{d^3p}{(2\pi)^3} 
     (b_\mathbf{p}a_\mathbf{-p} - b_\mathbf{p} a_\mathbf{-p})
-    \\
-    &= 0 
+    = 0 
 \end{aligned}
 $$
 

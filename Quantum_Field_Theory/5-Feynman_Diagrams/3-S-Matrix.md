@@ -6,23 +6,45 @@ Consider a target of particles of type $A$ moving with velocity $v_A$, with dens
 <img src="Figures/scattering.png" width=400pt>
 </center>
 
-Particles $B$ will be scattered by particles $A$. Let $N_B$ be the number of incoming $B$ particles per unit area of the beam cross section, and $N$ be the number of scattered $B$ particles per unit area. The **cross section** of scattering is defined as
+Particles $B$ will be scattered by particles $A$. Let: 
+
+- $n$ be the number of incoming $B$ particles *per unit area* of the beam cross section that will go into the beam of $A$;
+- $N$ be the *total* number of scattered $B$ particles.
+
+The **cross section** of scattering is defined as
 
 $$
-\sigma = \frac{N}{N_B} = \frac{N}{\Phi T}
+\sigma = \frac{N}{n} = \frac{N}{\Phi_B T}
 $$
 
-where $\Phi$ is the flux (number of incoming particles per unit cross-section area per unit time) of $B$, and $T$ is the experiment time. 
+- $\Phi_B = \rho_B|v_A - v_B|$ is the flux of $B$ *relative to $A$*; the volume density $\rho_B$ is assumed to be uniform everywhere in the $B$ beam;
+- $T$ is the experiment time, which is assumed to be large but finite. 
 
-If we are only interested in the particles $B$ (with number $dN$) that falls in a small region of (say) the phase space $d\Pi$, we also use the **differential cross section**
+We see that $\sigma$ has the dimension of area, hence its name. 
+
+If we are only interested in the particles $B$ (with number $dN$) that falls in a differential region of parameters (say the phase space $d\Pi$), we also use the **differential cross section**
 
 $$
-d\sigma = \frac{dN}{N_B} = \frac{dN}{\Phi T}
+d\sigma = \frac{dN}{n} 
+= \frac{dN}{\rho_B|v_A - v_B| T}
 $$
 
-Practically, we shall focus on $2 \to n$ scattering.  
+We can reexpress $d\sigma$ using the **scattering probability**. Let $dP$ be the probability that one particle $B$ will be scattered to the desired differential region of parameters. Then the (differential) number of scattered $B$ particles is just
+
+$$
+dN = \rho_B V \, dP
+$$
+
+For convenience, we assume that our scattering experiment is confined in a finite volume $V$. Then $\rho_B V$ is simply the *total* number of particles $B$ *all over the experiment space*. Therefore
+
+$$
+d\sigma = \frac{\rho_B V dP}{\rho_B|v_A - v_B| T}
+= \frac{V}{|v_A - v_B| T} dP
+$$
 
 ## *S*-Matrix and Scattering Probability
+
+The scattering probability $dP$ can be related to the so-called ***S*-matrix**. 
 
 Let $|\psi,t\rangle$ be the Schrödinger picture state at time $t$; its Heisenberg picture counterpart is simply denoted by $|\psi\rangle$.
 
@@ -56,7 +78,7 @@ i T_{fi}
 \delta^4(\textstyle{\sum p_f - \sum p_i})
 $$
 
-With $S$-matrix, the probability $dP$ that a particle $B$ will be scattered into $|f\rangle$ *and* fall in the momentum phase space $d\Pi$ (momentum states are uniformly distributed) is given by the product
+With $S$-matrix, the probability $dP$ that one particle $B$ will be scattered into $|f\rangle$ *and* fall in the momentum phase space $d\Pi$ (momentum states are uniformly distributed) is given by the product
 
 $$
 dP = \frac{|S_{fi}|^2}{
@@ -65,41 +87,84 @@ dP = \frac{|S_{fi}|^2}{
 } d\Pi
 $$
 
-The denominator simply normalizes the states and $S$-matrix elements. The phase space element is integrated all over the space:
+We now investigate the two parts of this $dP$:
 
-$$
-d\Pi = \int_\text{space} 
-\prod_{j=1}^n \frac{d^3x \, d^3p}{(2\pi)^3}
-= \prod_{j=1}^n \left[
-    \frac{V}{(2\pi)^3} d^3 p
-\right]
-$$
+- The normalization of the states should be treated carefully. Usually, the initial and final states will be chosen as the momentum eigenstates. For example, we write for $2 \to n$ scattering
+    
+    $$
+    \begin{aligned}
+        |i\rangle &= |\mathbf{p}_1, \mathbf{p}_2\rangle
+        = |\mathbf{p}_1\rangle \otimes |\mathbf{p}_2\rangle
+        \\
+        |f\rangle &= |\mathbf{p}'_1, ..., \mathbf{p}'_n \rangle
+        = |\mathbf{p}'_1\rangle \otimes \cdots \otimes |\mathbf{p}'_n\rangle
+    \end{aligned}
+    $$
 
-where $V$ is the space volume in which the experiment is performed. 
+    Recall that we defined the momentum eigenstates differently from non-relativistic theory
 
-With the finite volume (and the experiment time $T$), using
+    $$
+    |\mathbf{p}\rangle = \sqrt{2E_\mathbf{p}} a_\mathbf{p}^\dagger |0\rangle
+    $$
 
-$$
-\int \frac{d^3p}{(2\pi)^3} f(\mathbf{p})
-\to \frac{1}{V} \sum_\mathbf{p} f(\mathbf{p})
-$$
+    Therefore, its norm is
 
-the space delta functions can be regulated to
+    $$
+    \begin{aligned}
+        \langle \mathbf{p} | \mathbf{p} \rangle
+        &= 2E_\mathbf{p} 
+        \langle 0| a_\mathbf{p} a_\mathbf{p}^\dagger |0\rangle
+        \\
+        &= 2E_\mathbf{p} 
+        \langle 0| [a_\mathbf{p} a_\mathbf{p}^\dagger] + a_\mathbf{p}^\dagger a_\mathbf{p} |0\rangle
+        \\
+        &= 2E_\mathbf{p} (2\pi)^3 \delta^3(0)
+    \end{aligned}
+    $$
 
-$$
-\delta^3(\mathbf{p} - \mathbf{p}') 
-\to \frac{V}{(2\pi)^3} \delta_{\mathbf{p} \mathbf{p}'}
-$$
+    which seems to be unphysical. However, with the finite volume (and the experiment time $T$), using
 
-and therefore
+    $$
+    \int \frac{d^3p}{(2\pi)^3} f(\mathbf{p})
+    \to \frac{1}{V} \sum_\mathbf{p} f(\mathbf{p})
+    $$
 
-$$
-\delta^3(0) \to \frac{V}{(2\pi)^3}, \quad
-\delta^4(0) \to \frac{TV}{(2\pi)^4}
-$$
+    the space delta functions can be regulated to
 
-With $dP$, the differential cross section can be expressed as
+    $$
+    \delta^3(\mathbf{p} - \mathbf{p}') 
+    \to \frac{V}{(2\pi)^3} \delta_{\mathbf{p} \mathbf{p}'}
+    $$
 
-$$
-d\sigma = 
-$$
+    and therefore
+
+    $$
+    \delta^3(0) \to \frac{V}{(2\pi)^3}, \quad
+    \delta^4(0) \to \frac{TV}{(2\pi)^4}
+    $$
+
+    We now can write
+
+    $$
+    \begin{aligned}
+        \langle i | i \rangle
+        &= (2E_1 V) (2E_2 V) 
+        \\
+        \langle f | f \rangle
+        &= (2E'_1 V) \cdots (2E'_n V)
+    \end{aligned}
+    $$
+
+    We shall see that the $V$ factors will eventually cancel each other
+
+- The phase space element is integrated all over the experimental space:
+
+    $$
+    d\Pi = \int_V
+    \prod_{j=1}^n \frac{d^3x \, d^3p}{(2\pi)^3}
+    = \prod_{j=1}^n \left[
+        \frac{V}{(2\pi)^3} d^3 p
+    \right]
+    $$
+
+    where $V$ is the volume of the experiment space. 
