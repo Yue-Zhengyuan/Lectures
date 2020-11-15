@@ -20,11 +20,11 @@ We can easily verify that $f_\alpha = 0$. The current ${j^\mu}_\alpha$ correspon
 $$
 \begin{aligned}
     {j^\mu}_\alpha &=
-    \left\{
+    \left[
         \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} 
         \partial_\nu \phi
         - \delta_\nu^\mu \mathcal{L}
-    \right\}
+    \right]
     \frac{\partial x'^\nu}{\partial \epsilon^\alpha} 
     - \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}
     \frac{\partial F}{\partial \epsilon^\alpha}
@@ -75,10 +75,10 @@ $$
 $$
 \begin{aligned}
     \partial_\mu T^{\mu \nu}
-    &= \partial_\mu \left\{
+    &= \partial_\mu \left[
         \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \partial^\nu \phi
         - g^{\mu\nu} \mathcal{L}
-    \right\}
+    \right]
     \\
     &= \underbrace{\partial_\mu \left(
         \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}

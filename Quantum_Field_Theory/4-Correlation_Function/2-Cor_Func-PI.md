@@ -1,13 +1,11 @@
 # Correlation Function (Path Integral)
 
-For a *single* point particle, the **$n$-point correlation function** is defined as
+Here we use the path integral formalism to calculate the **$n$-point correlation function**
 
 $$
 \langle \phi(x_1) \cdots \phi(x_n) \rangle
 = \langle \Omega| T [\phi(x_1) \cdots \phi(x_n)] |\Omega \rangle
 $$
-
-where $T$ is the **time ordering operator**, and $|\Omega\rangle$ is the ground state.
 
 ----
 

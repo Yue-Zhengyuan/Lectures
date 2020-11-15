@@ -127,12 +127,7 @@ $$
         \mathcal{L}(\phi(x), \partial_\mu \phi(x))
     }_S 
     + \int d^dx \, \omega_a f_a 
-    - \underbrace{
-        \int d^dx \, (\partial_\mu \omega_a) j_a^\mu
-    }_{\text{integrate by parts}}
-    \\
-    &= S + \int d^d x \,
-    \omega_a (f_a + \partial_\mu j_a^\mu)
+    - \int d^dx \, (\partial_\mu \omega_a) j_a^\mu
 \end{aligned}
 $$
 
@@ -154,7 +149,7 @@ $$
         \partial_\mu 
         \frac{\partial x'^{\nu}}{\partial \omega_a}
     \right]
-    \\ \\
+    \\[2em]
     j_a^\mu &\equiv
     \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} 
     \frac{\partial x'^\nu}{\partial \omega_a} 
@@ -164,52 +159,59 @@ $$
     \frac{\partial F}{\partial \omega_a}
     \\
     &=
-    \left\{
+    \left[
         \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} 
         \partial_\nu \phi
         - \delta_\nu^\mu \mathcal{L}
-    \right\}
+    \right]
     \frac{\partial x'^\nu}{\partial \omega_a} 
     - \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}
     \frac{\partial F}{\partial \omega_a}
 \end{aligned}
 $$
 
-The quantity $j_a^\mu$ goes by a special name, called the **current** associated with the infinitesimal transformation.
+The quantity $j_a^\mu$ goes by a special name, called the **current** associated with the infinitesimal transformation. 
 
-*Example*:
+Any physical theory should be symmetric under **rigid transformations**, i.e. those with parameters $\omega_a$ *independent on $x$*. In this case
 
-- **Scaling**
+$$
+\delta S = \int d^dx \, \omega_a f_a 
+$$
 
-    $$
-    x' = (1 + \omega) x
-    \qquad
-    \phi'(x') = \phi(x) = F(\phi(x),\omega)
-    $$
+and we conclude that **$f_a$ must be zero identically**. This is true even for $x$-dependent $\omega_a$. 
 
-    Obviously
+With $f_a = 0$, we are left with
 
-    $$
-    \frac{\partial x'^\nu}{\partial \omega} = x^\nu
-    \qquad
-    \frac{\partial F}{\partial \omega} = 0 
-    $$
+$$
+\delta S = - \int d^dx \, (\partial_\mu \omega_a) j_a^\mu
+$$
 
-    Then
+which can be integrated by parts to yield
 
-    $$
-    \begin{aligned}
-        f_a &\equiv
-        \mathcal{L} \, \partial_\mu x^\mu
-        + 
-        \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} 
-        \left[
-            - (\partial_\nu \phi) \, 
-            \partial_\mu x^\nu
-        \right]
-        \\
-        &= \mathcal{L} \times d
-        - \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \partial_\mu \phi
-    \end{aligned}
-    $$
+$$
+\delta S = \int d^dx \, \omega_a (\partial_\mu j_a^\mu)
+$$
 
+## Conservation of Current
+
+Requiring $\delta S = 0$ (which is equivalent to applying the equation of motion), and because of the arbitrariness of $\omega_a$, we obtain the **conservation of current**:
+
+$$
+\partial_\mu j_a^\mu = 0
+$$
+
+*Remark*: The expression of the current can be easily generalized to theories with more than one field:
+
+$$
+j_a^\mu
+= \sum_i \left[
+    \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_i)} 
+    \partial_\nu \phi_i
+    - \delta_\nu^\mu \mathcal{L}
+\right]
+\frac{\partial x'^\nu}{\partial \omega_a} 
+- \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_i)}
+\frac{\partial F_i}{\partial \omega_a}
+$$
+
+where $F_i$ is the map from $\phi_i(x)$ to $\phi'_i(x')$. Note that all the $\omega_a$ derivatives are evaluated at $\omega_a = 0$.

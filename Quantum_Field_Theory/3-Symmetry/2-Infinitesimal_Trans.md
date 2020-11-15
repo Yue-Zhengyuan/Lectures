@@ -92,7 +92,7 @@ $$
 
 Now we give some examples. 
 
-## Rigid Translation
+### Rigid Translation
 
 The *rigid* translation is
 
@@ -120,7 +120,7 @@ $$
 P_{\mu} = -i \partial_{\mu}
 $$
 
-## Lorentz Transformation
+### Lorentz Transformation
 
 The Lorentz transformation is also *defined* by its effect on the
 position:
@@ -273,7 +273,7 @@ $$
 \boldsymbol{L} = \boldsymbol{x} \times \boldsymbol{p}
 $$
 
-## Scaling (Dilation)
+### Scaling (Dilation)
 
 A scaling in the position means
 
