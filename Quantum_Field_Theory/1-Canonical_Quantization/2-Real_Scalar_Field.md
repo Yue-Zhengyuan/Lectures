@@ -1,6 +1,6 @@
-# Canonical Quantization: Free Boson
+# Real Scalar Field Theory
 
-The Lagrangian of the **Klein-Gordon (real scalar) field theory** is
+The Lagrangian of the **real scalar (Klein-Gordon) field theory** is
 
 $$
 \begin{aligned}

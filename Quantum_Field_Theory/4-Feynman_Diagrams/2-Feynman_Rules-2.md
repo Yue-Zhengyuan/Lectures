@@ -4,15 +4,22 @@
 
 The position space Feynman rules can be derived via another approach, using the **Schwinger-Dyson equation**. 
 
-## Schwinger-Dyson Equation
-
-For the interacting theory
+Recall that for the interacting theory
 
 $$
 \mathcal{L} = \mathcal{L}_0 + \mathcal{L}_\text{int}[\phi], 
 \quad
 \mathcal{L}_0 = \frac{1}{2}[(\partial \phi)^2 - m^2 \phi^2]
 $$
+
+Its equation of motion is
+
+$$
+(\partial^2 + m^2)\phi 
+- \frac{\delta \mathcal{L}_\text{int}[\phi]}{\delta \phi}
+= 0
+$$
+
 
 The **Schwinger-Dyson equation** states that
 
@@ -34,5 +41,7 @@ $$
     \partial_x^2 = (\partial/\partial x)^2
 \end{aligned}
 $$
+
+*Proof*: 
 
 ## Perturbation Expansion of Correlation Functions
