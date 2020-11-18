@@ -18,7 +18,7 @@ Using the expansion
 $$
 \begin{aligned}
     \phi(x) 
-    &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
+    &= \int \frac{d^3 p}{(2\pi)^3} 
     \frac{1}{\sqrt{2 E_\mathbf{p}}} [
         a_\mathbf{p} e^{ipx} 
         + a^\dagger_\mathbf{p} e^{-ipx}
@@ -28,7 +28,36 @@ $$
 \end{aligned}
 $$
 
-and noting that only the terms $\langle 0 | a_\mathbf{p} a_\mathbf{q}^\dagger |0\rangle = (2\pi)^3 \delta^3 (\mathbf{p-q})$ survives, we are left with
+We obtain
+
+$$
+\begin{aligned}
+    \phi(x) \phi(y)
+    &= \int \frac{d^3 p}{(2\pi)^3} 
+    \frac{d^3 q}{(2\pi)^3} 
+    \frac{1}{\sqrt{2 E_\mathbf{p} 2 E_\mathbf{q}}} 
+    \\ &\qquad \quad [
+        a_\mathbf{p} e^{ipx} 
+        + a^\dagger_\mathbf{p} e^{-ipx}
+    ][
+        a_\mathbf{q} e^{iqy} 
+        + a^\dagger_\mathbf{q} e^{-iqy}
+    ]
+    \\
+    &= \int \frac{d^3 p}{(2\pi)^3} 
+    \frac{d^3 q}{(2\pi)^3} 
+    \frac{1}{\sqrt{2 E_\mathbf{p} 2 E_\mathbf{q}}} 
+    \\ &\qquad \quad [
+        a_\mathbf{p} a_\mathbf{q} e^{i(px+qy)}
+        + a_\mathbf{p} a^\dagger_\mathbf{q} e^{i(px-qy)}
+        \\ &\qquad \quad
+        + a^\dagger_\mathbf{p} a_\mathbf{q} e^{i(-px+qy)}
+        + a^\dagger_\mathbf{p} a^\dagger_\mathbf{q} e^{i(-px-qy)}
+    ]
+\end{aligned}
+$$
+
+Noting that only the terms $\langle 0 | a_\mathbf{p} a_\mathbf{q}^\dagger |0\rangle = (2\pi)^3 \delta^3 (\mathbf{p-q})$ survives, we are left with
 
 $$
 \begin{aligned}
@@ -138,7 +167,7 @@ Now that we assumed that $x^0 - y^0 > 0$. In order for the contour to enclose bo
 
 <center>
 
-![](p0-int-DR.png)
+![](Figures/p0-int-DR.png)
 
 </center>
 
@@ -204,7 +233,7 @@ $$
 
 <center>
 
-![](p0-int-DF.png)
+![](Figures/p0-int-DF.png)
 
 </center>
 

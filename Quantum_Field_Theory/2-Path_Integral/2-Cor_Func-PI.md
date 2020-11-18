@@ -13,22 +13,30 @@ $$
 
 $$
 \langle \phi(x_1) \cdots \phi(x_n) \rangle
-= \lim_{\epsilon \to 0} \frac{
-    \int [dx] \, \phi(x_1) \cdots \phi(x_n)
-    \exp(i S_\epsilon[\phi(x)])
+= \lim_{T \to \infty(1-i\epsilon)} \frac{
+    \int [d\phi] \, \phi(x_1) \cdots \phi(x_n)
+    e^{i S[\phi(x)]}
 }{
-    \int [dx] \, \exp(i S_\epsilon[\phi(x)])
+    \int [d\phi] \, e^{i S[\phi(x)]}
 }
 $$
 
-where $S_\epsilon[\phi(t)]$ is the action obtained by replacing $t$ by $t(1-i\epsilon)$.
-
-*Proof*: (Consider time-independent $H$ for simplicity)
-
-In the Heisenberg picture, 
+where $T$ appears in the action:
 
 $$
-\phi(t) = e^{iHt} \phi e^{-iHt}
+\begin{aligned}
+    S &\equiv \int_{-T}^T dx^4 \, \mathcal{L}[\phi(x)]
+    \\
+    &= \int_{-T}^T dx^0 \int dx^3 \, \mathcal{L}[\phi(x)]
+\end{aligned}
+$$
+
+*Proof*: 
+
+Consider time-independent $H$ for simplicity, so that the time evolution operator is simply $e^{iHt}$. In the Heisenberg picture, 
+
+$$
+\phi(t,\mathbf{x}) = e^{iHt} \phi(0, \mathbf{x}) e^{-iHt}
 $$
 
 ----

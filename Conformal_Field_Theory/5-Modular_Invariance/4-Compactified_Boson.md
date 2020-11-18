@@ -25,7 +25,7 @@ $$
 \end{aligned}
 $$
 
-After integration over $z, \bar{z}$, we obtain
+After integration over $z, \bar{z}$, we obtain (here we take the $g = 1/4\pi$ normalization)
 
 $$
 \phi(z,\bar{z}) 
@@ -59,12 +59,12 @@ $$
 
 where $Q$ is the $j_0$ charge to be determined later. 
 
-The partition function of the compactified boson (denoted by $\text{cb.}$) is related to the free boson (denoted by $\text{fb.}$) by
+The partition function of the compactified boson (cb) is related to the free boson (fb) by
 
 $$
 \begin{aligned}
-    Z_{\text{cb.}} (\tau,\bar{\tau})
-    &= Z_{\text{fb.}}(\tau, \bar{\tau}) 
+    Z_{\text{cb}} (\tau,\bar{\tau})
+    &= Z_{\text{fb}}(\tau, \bar{\tau}) 
     \sum_{Q, n} \langle Q,n | q^{j_0^2/2} \bar{q}^{\bar{j}_0^2/2} | Q,n \rangle
     \\
     &= \frac{1}{|\eta(\tau)|^2}
@@ -75,7 +75,7 @@ $$
 The partition function should be invariant under modular transformations. We can use the *T*-transformation ($\tau \to \tau + 1$) only to determine the form of $Q$: recall that $q \equiv e^{2\pi i \tau}$, then
 
 $$
-Z_{\text{cb.}} (\tau+1, \bar{\tau}+1)
+Z_{\text{cb}} (\tau+1, \bar{\tau}+1)
 = \frac{1}{|\eta(\tau)|^2}
 \sum_{Q, n} q^{Q^2/2} \bar{q}^{(Q-nR)^2/2}
 e^{2\pi i n (QR - nR^2/2)}
@@ -108,20 +108,84 @@ $$
 and
 
 $$
-Z_{\text{cb.}}(\tau, \bar{\tau}) 
+Z_{\text{cb}}(\tau, \bar{\tau}) 
 = \frac{1}{|\eta(\tau)|^2}
 \sum_{m, n} q^{(m/R + nR/2)^2/2} 
 \bar{q}^{(m/R - nR/2)^2/2}
 $$
 
-## Invariance of $Z_\text{cb.}$ under *S*-Transformations
+## Operators in Mode Expansion
+
+With the expression of $j_0, \bar{j}_0$ above, the mode expansions of $\phi$ and its derivatives are
+
+$$
+\begin{aligned}
+    \phi(z,\bar{z})
+    &= \phi_0
+    - i \left(
+        \frac{m}{R} + \frac{nR}{2}
+    \right) \ln z
+    + i \sum_{n \ne 0}
+    \frac{1}{n} a_n z^{-n}
+    \\ &\qquad
+    - i \left(
+        \frac{m}{R} - \frac{nR}{2}
+    \right) \ln \bar{z}
+    + \frac{i}{\sqrt{4\pi g}} \sum_{n \ne 0}
+    \frac{1}{n} \bar{a}_n \bar{z}^{-n}
+    \\
+    i \partial \phi(z)
+    &= \left(
+        \frac{m}{R} + \frac{nR}{2}
+    \right) \frac{1}{z}
+    + \sum_{n \ne 0} a_n z^{-n-1}
+    \\
+    i \bar{\partial} \phi(\bar{z})
+    &= \left(
+        \frac{m}{R} - \frac{nR}{2}
+    \right) \frac{1}{\bar{z}}
+    + \sum_{n \ne 0} \bar{a}_n \bar{z}^{-n-1}
+\end{aligned}
+$$
+
+Here we see that $a_0, \bar{a}_0$ should be redefined to
+
+$$
+\begin{aligned}
+    a_0 
+    &= \frac{m}{R} + \frac{nR}{2}
+    \\
+    \bar{a}_0 
+    &= \frac{m}{R} - \frac{nR}{2}
+\end{aligned}
+$$
+
+Then the generators $L_0, \bar{L}_0$ are found to be
+
+$$
+\begin{aligned}
+    L_0 
+    &= \sum_{n>0} a_{-n} a_n 
+    + \frac{1}{2} \left(
+        \frac{m}{R} + \frac{nR}{2}
+    \right)^2
+    \\
+    \bar{L}_0 
+    &= \sum_{n>0} \bar{a}_{-n} {a}_n 
+    + \frac{1}{2} \left(
+        \frac{m}{R} - \frac{nR}{2}
+    \right)^2
+\end{aligned}
+$$
+
+## Invariance of $Z_\text{cb}$ under *S*-Transformations
 
 To show the invariance of the partition function under the *S*-transformation ($\tau \to -1/\tau$)
 
 $$
-Z_\text{cb.} \left(
+Z_\text{cb} \left(
     -\frac{1}{\tau}, -\frac{1}{\bar{\tau}}
-\right) = Z_{\text{cb.}}(\tau, \bar{\tau}) 
+\right) = Z_{\text{cb}}(\tau, \bar{\tau}) 
 $$
 
 we need to use the **Poisson Resummation Formula**
@@ -140,7 +204,7 @@ $$
 
 balabala
 
-## Appendix B: Calculation of Compactification <br>Radius from Partition Function
+## Appendix B: <br>Compactification Radius from Partition Function
 
 *Reference: Physical Review B **99**, 115105 (2019)*
 
