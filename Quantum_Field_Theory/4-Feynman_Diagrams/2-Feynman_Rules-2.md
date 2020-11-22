@@ -16,12 +16,18 @@ Its equation of motion is
 
 $$
 (\partial^2 + m^2)\phi 
-- \frac{\delta \mathcal{L}_\text{int}[\phi]}{\delta \phi}
+- \frac{\partial \mathcal{L}_\text{int}[\phi]}{\partial \phi}
 = 0
 $$
 
+For example, if $\mathcal{L}_\text{int}[\phi] = (\lambda/4!)\phi^4$, then
 
-The **Schwinger-Dyson equation** states that
+$$
+\frac{\partial \mathcal{L}_\text{int}[\phi]}{\partial \phi}
+= \frac{\lambda}{3!} \phi
+$$
+
+For this particular type of theory, the Schwinger-Dyson equation states that
 
 $$
 \begin{aligned}
@@ -29,7 +35,7 @@ $$
     \langle \phi_x \phi_1 ... \phi_n \rangle
     \\
     &= \left\langle 
-        \frac{\delta \mathcal{L}_\text{int}[\phi_x]}{\delta \phi_x}
+        \frac{\partial \mathcal{L}_\text{int}[\phi_x]}{\partial \phi_x}
         \phi_1 ... \phi_n
     \right\rangle
     - i \hbar \sum_{j=1}^n \delta^4(x-x_j)
@@ -41,7 +47,5 @@ $$
     \partial_x^2 = (\partial/\partial x)^2
 \end{aligned}
 $$
-
-*Proof*: 
 
 ## Perturbation Expansion of Correlation Functions

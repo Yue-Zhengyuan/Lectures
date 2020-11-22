@@ -21,7 +21,7 @@ $$
     &= D_F(x - y)
     \\
     &= \int \frac{d^4 p}{(2\pi)^4}
-    \frac{i e^{-i p(x-y)}}{p^2 - m^2 + i\epsilon}
+    \frac{i e^{i p(x-y)}}{p^2 - m^2 + i\epsilon}
 \end{aligned}
 $$
 

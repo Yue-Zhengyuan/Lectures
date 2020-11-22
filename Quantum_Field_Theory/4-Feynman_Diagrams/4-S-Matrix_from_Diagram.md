@@ -2,7 +2,7 @@
 
 ## LSZ Reduction Formula
 
-For a general $m \to n$ scattering
+For a general $m \to n$ scattering of real scalar (interacting) particles
 
 $$
 |\mathbf{p}_1,...,\mathbf{p}_m \rangle \to |\mathbf{p}'_1,...,\mathbf{p}'_n \rangle
@@ -29,6 +29,12 @@ $$
 \end{aligned}
 $$
 
-where $\square_i \equiv (\partial/\partial x_i)^2, \square'_i \equiv (\partial/\partial x'_i)^2$. Note that the sign on the exponential factor is $-$ for incoming particles $p_1,...,p_m$, and $+$ for outgoing particles $p'_1,...,p'_n$. 
+where $\square_i \equiv (\partial/\partial x_i)^2, \square'_i \equiv (\partial/\partial x'_i)^2$. Note that the sign on the exponential factor is $-$ for incoming particles $p_1,...,p_m$, and $+$ for outgoing particles $p'_1,...,p'_n$. If we are dealing with complex scalar particles or even photons, the formula will be accordingly modified. 
 
-## Feynman Rules for Calculation of $\mathcal{M}$
+----
+
+*Proof*:
+
+----
+
+## Feynman Rules for Scattering Amplitude

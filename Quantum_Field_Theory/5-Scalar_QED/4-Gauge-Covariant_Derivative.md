@@ -1,6 +1,6 @@
 # Gauge-Covariant Derivative
 
-Consider a generic (possibly non-Abelian) Gauge transformation, defined by a symmetry operator $U(x)= e^{i\alpha(x)}$, acting on a field $\phi(x)$, such that
+Consider a generic (possibly non-Abelian) Gauge transformation, defined by a *unitary* symmetry operator $U(x)= e^{i\alpha(x)}$, acting on a field $\phi(x)$, such that
 
 $$ 
 \phi(x) \rightarrow \phi'(x) = U(x) \phi(x) \equiv e^{i\alpha(x)} \phi(x)

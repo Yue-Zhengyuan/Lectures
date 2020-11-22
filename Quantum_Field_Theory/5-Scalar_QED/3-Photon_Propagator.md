@@ -106,7 +106,7 @@ $$
     \langle 0 |T[\phi^*(x) \phi(y)] | 0\rangle
     = \int \frac{d^4 p}{(2\pi)^4}
     \frac{
-        i e^{-i p(x - y)}
+        i e^{i p(x - y)}
     }{
         p^2 - m^2 + i \epsilon
     }
@@ -115,12 +115,12 @@ $$
 
 ## Propagator of the Photons
 
-The vector field $A_\mu$ represents the **photon**. Its propagator $\Pi_{\mu\nu}$ is calculated from
+The vector field $A_\mu$ represents the **photon**. Its propagator $\Pi_{\mu\nu}$ is calculated from the Fourier transform:
 
 $$
 \langle 0 |T[A_\mu(x) A_\nu(y)] | 0\rangle
 = \int \frac{d^4 p}{(2\pi)^4}
-i e^{-i p(x - y)}
+i e^{i p(x - y)}
 \Pi_{\mu\nu}(p)
 $$
 

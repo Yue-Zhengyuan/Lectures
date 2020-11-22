@@ -284,7 +284,7 @@ $$
 = \langle 0 | T[\phi(y) \phi^*(x)] | 0 \rangle
 $$
 
-Let us evaluate it explicitly:
+Let us evaluate this propagator explicitly:
 
 $$
 \begin{aligned}
@@ -379,7 +379,12 @@ $$
 \end{aligned}
 $$
 
-These is the same as the results from real scalar field theory. Thus the Feynman propagator is
+We see that
+
+- When $x^0 > y^0$, it is the $b$ particle that is propagating;
+- When $x^0 < y^0$, it is the $a$ particle that is propagating.
+
+These is the very similar to the results from real scalar field theory. Thus the Feynman propagator is
 
 $$
 \begin{aligned}
@@ -388,7 +393,7 @@ $$
     \\[0.5em]
     &= \int \frac{d^4 p}{(2\pi)^4}
     \frac{
-        i e^{-i p(x - y)}
+        i e^{\pm i p(x - y)}
     }{
         p^2 - m^2 + i \epsilon
     }
