@@ -35,9 +35,13 @@ The two variables in a pair are to be regarded as *independent of each other*.
 
 Now we can conclude that:
 
-*A holomorphic function $f(z)=z+\epsilon (z)$ gives an infinitesimal 2D conformal transformation* $z\to f(z)$.
+<center>
 
-## Differentiation and Integration in Holomorphic Coordinates
+**A holomorphic function $f(z)=z+\epsilon (z)$ gives an<br>infinitesimal 2D conformal transformation $z\to f(z)$.**
+
+</center>
+
+## Differentiation and Integration in $z, \bar{z}$
 
 The inverse relations are
 
@@ -124,7 +128,7 @@ $$
 \end{aligned}
 $$
 
-## The Metric Tensor
+### The Metric Tensor
 
 The *flat* metric in the holomorphic coordinates becomes
 

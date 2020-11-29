@@ -1,1 +1,0 @@
-# Transverse Field Ising Model

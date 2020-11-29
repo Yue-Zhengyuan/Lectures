@@ -27,5 +27,5 @@ n_i = \sum_\sigma n_{i,\sigma}
 = \sum_\sigma c_{i,\sigma}^\dagger c_{i,\sigma}
 $$
 
-## The Hole (Schwinger Boson) Representation
+## The Hole Representation
 
