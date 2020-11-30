@@ -1,0 +1,811 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27154,        803]
+NotebookOptionsPosition[     23287,        746]
+NotebookOutlinePosition[     23738,        763]
+CellTagsIndexPosition[     23695,        760]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[
+CounterBox["BookChapterNumber"]], "BookChapterNumber",ExpressionUUID->"4eecd5ef-f542-4795-bcb8-4e94523a39cd"],
+
+Cell["Energy Band", "BookChapterTitle",
+ CellChangeTimes->{{3.787181435454549*^9, 3.787181444183712*^9}, {
+  3.790721799020535*^9, 
+  3.790721800822093*^9}},ExpressionUUID->"83666aea-518b-4722-b3b0-\
+aeb39ac00de9"],
+
+Cell[CellGroupData[{
+
+Cell["The Central Equation", "Section",
+ CellChangeTimes->{{3.7907219066657352`*^9, 
+  3.790721910541822*^9}},ExpressionUUID->"374d6e69-aad5-4835-913f-\
+d55be0766975"],
+
+Cell[TextData[{
+ "Let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"U", "(", "x", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ca1426a6-fa89-4334-b500-aea081ba913c"],
+ " be the potential energy in a ",
+ StyleBox["periodic",
+  FontSlant->"Italic"],
+ " lattice. Then we can write it as a Fourier series:"
+}], "Text",
+ CellChangeTimes->{{3.7907220836251163`*^9, 3.790722100551943*^9}, {
+  3.790722298902309*^9, 3.790722317508861*^9}, {3.790722350263217*^9, 
+  3.790722365186762*^9}},ExpressionUUID->"a00a4392-28ce-45b4-a2bd-\
+8e0d1f8509ee"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"U", "(", "x", ")"}], "=", 
+   RowBox[{
+    UnderscriptBox["\[Sum]", "G"], " ", 
+    RowBox[{
+     SubscriptBox["U", "G"], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"\[ImaginaryI]", " ", "G", " ", "x"}]]}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.790722413691421*^9, 
+  3.790722442265257*^9}},ExpressionUUID->"6252633c-0500-4025-a864-\
+291347237f8c"],
+
+Cell[TextData[{
+ "By properly choosing the reference level of energy, we can set ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["U", "0"], "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5e93193d-ff2b-463f-91f1-3c1403eaf1ba"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.790722487015151*^9, 3.7907225207186813`*^9}, {
+  3.7907225959493723`*^9, 
+  3.790722630064456*^9}},ExpressionUUID->"bbad8dce-4b92-46f3-8b1b-\
+e5d85c650a32"],
+
+Cell[TextData[{
+ "Since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"U", "(", "x", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c6d65df1-95c9-4c13-813a-82b7c59fa4ee"],
+ " is a ",
+ StyleBox["real",
+  FontSlant->"Italic"],
+ " function, we obtain"
+}], "Text",
+ CellChangeTimes->{{3.790722487015151*^9, 3.7907225207186813`*^9}, {
+  3.7907225959493723`*^9, 
+  3.790722642599736*^9}},ExpressionUUID->"f2e126ab-28d4-4058-9e24-\
+d2fb2ee437d3"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    UnderscriptBox["\[Sum]", "G"], " ", 
+    RowBox[{
+     SubscriptBox["U", "G"], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"\[ImaginaryI]", " ", "G", " ", "x"}]]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     UnderscriptBox["\[Sum]", "G"], " ", 
+     RowBox[{
+      SubsuperscriptBox["U", "G", "*"], 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "G", " ", "x"}]]}]}], "=", 
+    RowBox[{
+     UnderscriptBox["\[Sum]", "G"], " ", 
+     RowBox[{
+      SubscriptBox["U", 
+       RowBox[{"-", "G"}]], 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "G", " ", "x"}]]}]}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.790722487015151*^9, 
+  3.790722549286166*^9}},ExpressionUUID->"42367110-1178-48f7-9560-\
+c311e2c7751b"],
+
+Cell["hence", "Text",
+ CellChangeTimes->{{3.7907225535138702`*^9, 
+  3.790722554364244*^9}},ExpressionUUID->"6c78d820-175a-4ed5-8949-\
+43271ae9d104"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["U", 
+    RowBox[{"-", "G"}]], "=", 
+   SubsuperscriptBox["U", "G", "*"]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.7907225535138702`*^9, 
+  3.790722565995771*^9}},ExpressionUUID->"4e0aea0a-6c87-45d7-9e6c-\
+c911e548bcc4"],
+
+Cell[TextData[{
+ "If the potential also has ",
+ StyleBox["inversion symmetry",
+  FontSlant->"Italic"],
+ ", i.e. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"U", "(", "x", ")"}], "=", 
+    RowBox[{"U", "(", 
+     RowBox[{"-", "x"}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c739cfa0-b259-4060-bc77-3366b6320230"],
+ ", then"
+}], "Text",
+ CellChangeTimes->{{3.791417569283545*^9, 
+  3.791417602261001*^9}},ExpressionUUID->"99401552-9d05-435c-9cbe-\
+2d9fe0feb81d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["U", 
+    RowBox[{"-", "G"}]], "=", 
+   SubscriptBox["U", "G"]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.791417569283545*^9, 
+  3.791417612835196*^9}},ExpressionUUID->"b96d943e-81c6-47e1-8dea-\
+c986a2be1bea"],
+
+Cell[TextData[{
+ "For any wave function, we can always expand it in terms of plane waves with \
+wave vector ",
+ Cell[BoxData[
+  FormBox["q", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b3af428f-6ed3-467e-ad25-01aa403fe26b"],
+ " satisfying the boundary conditions"
+}], "Text",
+ CellChangeTimes->{{3.79072258148575*^9, 3.790722587332922*^9}, {
+  3.790722653488626*^9, 3.790722691481587*^9}, {3.792144749038412*^9, 
+  3.7921447854510593`*^9}, {3.7921448367748337`*^9, 
+  3.792144840441057*^9}},ExpressionUUID->"efbdfcba-a163-4832-b8af-\
+e342d3fd407e"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Psi]", "(", "x", ")"}], "=", 
+   RowBox[{
+    UnderscriptBox["\[Sum]", "q"], 
+    RowBox[{
+     RowBox[{"C", "(", "q", ")"}], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"i", " ", "q", " ", "x"}]]}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.79072258148575*^9, 3.790722587332922*^9}, {
+  3.790722653488626*^9, 3.790722709146954*^9}, {3.792144845574534*^9, 
+  3.792144848474956*^9}},ExpressionUUID->"595a4f7b-13a8-4701-b79e-\
+e7316e867152"],
+
+Cell[TextData[{
+ "We emphasize that ",
+ Cell[BoxData[
+  FormBox["q", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "83744aec-25df-4d51-9a77-da387e44df99"],
+ " ",
+ StyleBox["need not be in the Brillouin zone",
+  FontSlant->"Italic"],
+ ". Now we examine the (time-independent) Schr\[ODoubleDot]dinger equation"
+}], "Text",
+ CellChangeTimes->{{3.7907228132119427`*^9, 3.7907228630668983`*^9}, {
+  3.792144850256907*^9, 
+  3.792144869687633*^9}},ExpressionUUID->"63cce6fb-6650-451f-845c-\
+47d5da4b451f"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{"2", "m"}]], 
+       SuperscriptBox["p", "2"]}], "+", 
+      RowBox[{"U", "(", "x", ")"}]}], ")"}], 
+    RowBox[{"\[Psi]", "(", "x", ")"}]}], "=", 
+   RowBox[{"\[Epsilon]", " ", 
+    RowBox[{"\[Psi]", "(", "x", ")"}]}]}], 
+  TraditionalForm], "\[LineSeparator]", 
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     OverscriptBox["\[DoubleLongRightArrow]", 
+      RowBox[{"each", " ", "q"}]], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"2", "m"}]], 
+        SuperscriptBox["p", "2"]}], "+", 
+       RowBox[{
+        UnderscriptBox["\[Sum]", "G"], " ", 
+        RowBox[{
+         SubscriptBox["U", "G"], 
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "G", " ", "x"}]]}]}]}], ")"}]}], 
+    RowBox[{"C", "(", "q", ")"}], 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"i", " ", "q", " ", "x"}]]}], "=", 
+   RowBox[{"\[Epsilon]", " ", 
+    RowBox[{"C", "(", "q", ")"}], 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"i", " ", "q", " ", "x"}]]}]}], 
+  TraditionalForm], "\[LineSeparator]", 
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[DoubleLongRightArrow]", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[HBar]", "2"], 
+        SuperscriptBox["q", "2"]}], 
+       RowBox[{"2", "m"}]]}], 
+     RowBox[{"C", "(", "q", ")"}], 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"i", " ", "q", " ", "x"}]]}], "+", 
+    RowBox[{
+     UnderscriptBox["\[Sum]", "G"], " ", 
+     RowBox[{
+      SubscriptBox["U", "G"], 
+      RowBox[{"C", "(", "q", ")"}], 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[ImaginaryI]", " ", 
+        RowBox[{"(", 
+         RowBox[{"G", "+", "q"}], ")"}], " ", "x"}]]}]}]}], "=", 
+   RowBox[{"\[Epsilon]", " ", 
+    RowBox[{"C", "(", "k", ")"}], 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"i", " ", "q", " ", "x"}]]}]}], TraditionalForm]}], "Equation",
+ CellChangeTimes->{{3.7907228132119427`*^9, 3.79072285143845*^9}, {
+  3.790722896168179*^9, 3.790723039036005*^9}, {3.792144874926427*^9, 
+  3.792144893667962*^9}},ExpressionUUID->"5b22dc48-b464-4f6a-a6aa-\
+74580949393b"],
+
+Cell[TextData[{
+ "Then, for each Fourier component (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Epsilon]", "(", "q", ")"}], "\[Congruent]", 
+    RowBox[{
+     SuperscriptBox["\[HBar]", "2"], 
+     RowBox[{
+      SuperscriptBox["q", "2"], "/", "2"}], "m"}]}], TraditionalForm]],
+  ExpressionUUID->"074d2057-052a-4023-abc7-24b3076d11c6"],
+ ")"
+}], "Text",
+ CellChangeTimes->{{3.790723040886147*^9, 3.790723106032496*^9}, {
+  3.790723172676293*^9, 3.79072319025739*^9}, {3.792144895308979*^9, 
+  3.792144896920464*^9}, {3.792146308579648*^9, 
+  3.792146309810937*^9}},ExpressionUUID->"db069b27-024e-44b2-b7a8-\
+92aa90617edf"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Epsilon]", "(", "q", ")"}], "-", "\[Epsilon]"}], ")"}], 
+     RowBox[{"C", "(", "q", ")"}]}], "+", 
+    RowBox[{
+     UnderscriptBox["\[Sum]", "G"], " ", 
+     RowBox[{
+      SubscriptBox["U", "G"], 
+      RowBox[{"C", "(", 
+       RowBox[{"q", "-", "G"}], ")"}]}]}]}], "=", "0"}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.790723040886147*^9, 3.79072313421465*^9}, {
+  3.790723192886112*^9, 3.7907231955986977`*^9}, {3.7921448995893173`*^9, 
+  3.792144902603324*^9}, {3.7921463119855947`*^9, 
+  3.7921463130440702`*^9}},ExpressionUUID->"5dd7dc07-f35b-4b95-a2df-\
+fbf9b71bd506"],
+
+Cell[TextData[{
+ "This is called the ",
+ StyleBox["central equation",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.790723135889338*^9, 
+  3.790723143955435*^9}},ExpressionUUID->"157d3b27-e996-48a7-a39a-\
+7feb9a2e02ee"],
+
+Cell[TextData[{
+ "Suppose that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"q", "=", 
+    RowBox[{"k", "-", "K"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f35bb4f8-ac6a-45e5-a247-48118327150f"],
+ ", where ",
+ Cell[BoxData[
+  FormBox["K", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b058d5c5-17b7-4ebb-bb08-a03542c491c8"],
+ " is a reciprocal lattice vector chosen so that ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3332ca96-94f3-48be-a6e7-b1e9f6a4c5ba"],
+ " ",
+ StyleBox["is in the Brillouin zone",
+  FontSlant->"Italic"],
+ ". Then"
+}], "Text",
+ CellChangeTimes->{{3.7921449504232893`*^9, 
+  3.792145024877453*^9}},ExpressionUUID->"c8a073d4-897a-4c35-867b-\
+59b801a1f72b"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Epsilon]", "(", 
+        RowBox[{"k", "-", "K"}], ")"}], "-", "\[Epsilon]"}], ")"}], 
+     RowBox[{"C", "(", 
+      RowBox[{"k", "-", "K"}], ")"}]}], "+", 
+    RowBox[{
+     UnderscriptBox["\[Sum]", "G"], " ", 
+     RowBox[{
+      SubscriptBox["U", "G"], 
+      RowBox[{"C", "(", 
+       RowBox[{"k", "-", "K", "-", "G"}], ")"}]}]}]}], "=", "0"}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.7921449504232893`*^9, 3.792145046038364*^9}, {
+  3.792146316650016*^9, 
+  3.7921463198823757`*^9}},ExpressionUUID->"1b639a88-c7ef-4d9c-85dd-\
+349096ed88e4"],
+
+Cell[TextData[{
+ "If we make the change of variables ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"G", "\[Rule]", 
+    RowBox[{"G", "-", "K"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "547749c8-e7eb-441d-bcc0-9e79ec3ac1ef"],
+ ", we obtain another form of the central equation:"
+}], "Text",
+ CellChangeTimes->{{3.792145054138309*^9, 
+  3.792145124001768*^9}},ExpressionUUID->"6fc000e9-201e-4f0e-af7b-\
+cb2b7c6c81fa"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Epsilon]", "(", 
+        RowBox[{"k", "-", "K"}], ")"}], "-", "\[Epsilon]"}], ")"}], 
+     RowBox[{"C", "(", 
+      RowBox[{"k", "-", "K"}], ")"}]}], "+", 
+    RowBox[{
+     UnderscriptBox["\[Sum]", "G"], " ", 
+     RowBox[{
+      SubscriptBox["U", 
+       RowBox[{"G", "-", "K"}]], 
+      RowBox[{"C", "(", 
+       RowBox[{"k", "-", "G"}], ")"}]}]}]}], "=", "0"}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.792145110593603*^9, 3.7921451288932543`*^9}, {
+  3.792146321776907*^9, 
+  3.792146324645425*^9}},ExpressionUUID->"db79f47a-d249-4c13-87af-\
+abf73ddb2431"],
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Bloch Theorem"
+}], "Subsection",
+ CellChangeTimes->{{3.79049259407761*^9, 3.790492608464281*^9}, {
+  3.790494142136599*^9, 3.7904941450502872`*^9}, {3.7907233315200253`*^9, 
+  3.790723389394022*^9}, {3.7921449602693377`*^9, 3.7921449608972197`*^9}, {
+  3.792145435134286*^9, 
+  3.79214543843731*^9}},ExpressionUUID->"c0bf0e4d-6598-4d76-bd77-\
+68f90d0138ce"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Weak Potential Approximation"
+}], "Subsection",
+ CellChangeTimes->{{3.79049259407761*^9, 3.790492608464281*^9}, {
+  3.790494142136599*^9, 3.7904941450502872`*^9}, {3.7907233315200253`*^9, 
+  3.790723389394022*^9}, {3.7921449602693377`*^9, 3.7921449608972197`*^9}, {
+  3.7921460524401283`*^9, 
+  3.7921460658881197`*^9}},ExpressionUUID->"d9f8f64c-b721-4655-908b-\
+8d36f682f7ba"],
+
+Cell["Case 1", "Subsubsection",
+ CellChangeTimes->{{3.792146169263155*^9, 
+  3.7921461913999977`*^9}},ExpressionUUID->"e0d23cbb-d3b5-491e-9994-\
+d23fb35af538"],
+
+Cell[CellGroupData[{
+
+Cell["Case 2", "Subsubsection",
+ CellChangeTimes->{{3.792146169263155*^9, 3.7921462625036592`*^9}, {
+  3.792148967012547*^9, 
+  3.79214896717377*^9}},ExpressionUUID->"7ba57ce4-8347-4f5f-a11a-\
+afc8f5ed1c1b"],
+
+Cell[TextData[{
+ "For the given ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c41e3cd1-f231-478b-964d-3ddc599584ed"],
+ ", there are reciprocal lattice vectors ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["K", "1"], ",", "...", ",", 
+    SubscriptBox["K", "m"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "11b883f1-9ab4-4c6d-ba57-4e9b7f9a7e10"],
+ " such that the free electron energies ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Epsilon]", "(", 
+     RowBox[{"k", "-", 
+      SubscriptBox["K", "1"]}], ")"}], ",", 
+    RowBox[{"...", 
+     RowBox[{"\[Epsilon]", "(", 
+      RowBox[{"k", "-", 
+       SubscriptBox["K", "m"]}], ")"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0f01f365-eae9-4391-9cea-fd05175560d0"],
+ " are all equal or very close to each other (within order ",
+ Cell[BoxData[
+  FormBox["U", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "972c5dad-aedd-49f8-a594-f22e13ef1552"],
+ "), but far apart from other ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Epsilon]", "(", 
+    RowBox[{"k", "-", "K"}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8f82f6ca-fda1-46be-8d0d-59eac99d054f"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.7921462130129633`*^9, 3.792146213500732*^9}, {
+  3.792146263621369*^9, 3.792146298341332*^9}, {3.792146334430952*^9, 
+  3.792146397131386*^9}, {3.792146465339636*^9, 3.7921464653400784`*^9}, {
+  3.792149125921873*^9, 
+  3.792149145885524*^9}},ExpressionUUID->"06573b4b-533d-4cb6-a2ba-\
+a273e2df5aca"],
+
+Cell[TextData[{
+ "From the central equation, we shall split such two kinds of terms in the \
+sum over ",
+ Cell[BoxData[
+  FormBox["G", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "35c48295-f45a-4cfd-b97c-08bfea16bf27"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.7921462130129633`*^9, 3.792146213500732*^9}, {
+   3.792146263621369*^9, 3.792146298341332*^9}, {3.792146334430952*^9, 
+   3.792146397131386*^9}, {3.7921464655537043`*^9, 3.79214649886828*^9}, {
+   3.7921466772422667`*^9, 3.792146686156959*^9}, 
+   3.792148996405366*^9},ExpressionUUID->"02cd88d4-fb2f-4c41-b199-\
+a1ebe5e09d20"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{"\[Epsilon]", "-", 
+      RowBox[{"\[Epsilon]", "(", 
+       RowBox[{"k", "-", "K"}], ")"}]}], "]"}], 
+    RowBox[{"C", "(", 
+     RowBox[{"k", "-", "K"}], ")"}]}], "=", 
+   RowBox[{
+    RowBox[{
+     UnderscriptBox["\[Sum]", 
+      RowBox[{"G", "\[Element]", 
+       RowBox[{"{", 
+        SubscriptBox["K", "i"], "}"}]}]], " ", 
+     RowBox[{
+      SubscriptBox["U", 
+       RowBox[{"G", "-", "K"}]], 
+      RowBox[{"C", "(", 
+       RowBox[{"k", "-", "G"}], ")"}]}]}], "+", 
+    RowBox[{
+     UnderscriptBox["\[Sum]", 
+      RowBox[{"G", "\[NotElement]", 
+       RowBox[{"{", 
+        SubscriptBox["K", "i"], "}"}]}]], " ", 
+     RowBox[{
+      SubscriptBox["U", 
+       RowBox[{"G", "-", "K"}]], 
+      RowBox[{"C", "(", 
+       RowBox[{"k", "-", "G"}], ")"}]}]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.7921490141303377`*^9, 
+  3.792149027377962*^9}},ExpressionUUID->"4b4e207b-ae28-4275-b8a9-\
+0b52dfcb08c9"],
+
+Cell[TextData[{
+ "For ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"G", "\[NotEqual]", 
+     SubscriptBox["K", "1"]}], ",", 
+    RowBox[{"...", 
+     SubscriptBox["K", "m"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e5e0a84a-24fa-4533-b099-81783794d0ed"],
+ ", the corresponding coefficients ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"C", "(", 
+    RowBox[{"k", "-", "G"}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a989c86a-cac3-4fc8-9946-1aadbd6a9e1e"],
+ " will be small (of order ",
+ Cell[BoxData[
+  FormBox["U", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f6945006-05c0-4110-95bb-2a0e1a0c63ac"],
+ "). Setting ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"K", "=", 
+    SubscriptBox["K", "i"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7049a220-05ec-480c-8597-2b98da929b71"],
+ ", then"
+}], "Text",
+ CellChangeTimes->{{3.7921467141178093`*^9, 3.7921467198072157`*^9}, {
+  3.7921467898287983`*^9, 3.7921468159821663`*^9}, {3.7921468723269157`*^9, 
+  3.7921468835120993`*^9}, {3.792149029561026*^9, 
+  3.792149060592503*^9}},ExpressionUUID->"033e6f04-fd43-427f-9963-\
+26de4763ca74"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"[", 
+      RowBox[{"\[Epsilon]", "-", 
+       RowBox[{"\[Epsilon]", "(", 
+        RowBox[{"k", "-", 
+         SubscriptBox["K", "i"]}], ")"}]}], "]"}], 
+     RowBox[{"C", "(", 
+      RowBox[{"k", "-", 
+       SubscriptBox["K", "i"]}], ")"}]}], "=", 
+    RowBox[{
+     RowBox[{
+      UnderoverscriptBox["\[Sum]", 
+       RowBox[{"j", "=", "1"}], "m"], " ", 
+      RowBox[{
+       SubscriptBox["U", 
+        RowBox[{
+         SubscriptBox["K", "j"], "-", 
+         SubscriptBox["K", "i"]}]], 
+       RowBox[{"C", "(", 
+        RowBox[{"k", "-", 
+         SubscriptBox["K", "j"]}], ")"}]}]}], "+", 
+     RowBox[{"O", "(", 
+      SuperscriptBox["U", "2"], ")"}]}]}], ",", "  ", 
+   RowBox[{"i", "=", "1"}], ",", "2", ",", "...", ",", "m"}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.792146506573279*^9, 3.792146618063282*^9}, {
+  3.792146919220155*^9, 3.79214694287148*^9}, {3.792147019958782*^9, 
+  3.792147026846554*^9}, {3.79214907020195*^9, 
+  3.7921491067887697`*^9}},ExpressionUUID->"dd540131-31b4-490a-be60-\
+4e3c6aa8ba5d"],
+
+Cell[TextData[{
+ "Thus we find a set of eigenvalue equations that can determine the corrected \
+energies ",
+ Cell[BoxData[
+  FormBox["\[Epsilon]", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "37007c5f-3b97-43f9-8842-c748014bba2e"],
+ " and the coefficients ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"C", "(", 
+    RowBox[{"k", "-", 
+     SubscriptBox["K", "i"]}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "17085ba1-e911-4384-b171-43a7e1ce0f18"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.792146990551853*^9, 3.792147062410833*^9}, {
+  3.792147100712399*^9, 3.792147106825405*^9}, {3.792149078754332*^9, 
+  3.7921490855409327`*^9}, {3.792149199190631*^9, 3.792149216975518*^9}, {
+  3.792149260403064*^9, 
+  3.7921492604033823`*^9}},ExpressionUUID->"68ba1b87-1892-4793-9844-\
+44169d0ae86a"],
+
+Cell[TextData[{
+ "The other coefficients ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"C", "(", 
+    RowBox[{"k", "-", "K"}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5f58a76e-bcd5-4ce1-8f58-48f14e5a593e"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"K", "\[NotEqual]", 
+     SubscriptBox["K", "1"]}], ",", "...", ",", 
+    SubscriptBox["K", "m"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "dcc55c36-571d-4d17-8fa1-c78109e98cb7"],
+ " are"
+}], "Text",
+ CellChangeTimes->{{3.792146990551853*^9, 3.792147062410833*^9}, {
+  3.792147100712399*^9, 3.792147106825405*^9}, {3.792149078754332*^9, 
+  3.7921490855409327`*^9}, {3.792149199190631*^9, 3.792149216975518*^9}, {
+  3.792149261609611*^9, 
+  3.792149284360281*^9}},ExpressionUUID->"78affaa1-2cc6-4295-9889-\
+225398a3c6de"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"C", "(", 
+    RowBox[{"k", "-", "K"}], ")"}], "=", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"\[Epsilon]", "-", 
+      RowBox[{"\[Epsilon]", "(", 
+       RowBox[{"k", "-", "K"}], ")"}]}]], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       UnderscriptBox["\[Sum]", 
+        RowBox[{"G", "\[Element]", 
+         RowBox[{"{", 
+          SubscriptBox["K", "i"], "}"}]}]], " ", 
+       RowBox[{
+        SubscriptBox["U", 
+         RowBox[{"G", "-", "K"}]], 
+        RowBox[{"C", "(", 
+         RowBox[{"k", "-", "G"}], ")"}]}]}], "+", 
+      RowBox[{"O", "(", 
+       SuperscriptBox["U", "2"], ")"}]}], ")"}]}]}], 
+  TraditionalForm], "\[LineSeparator]", 
+ FormBox[
+  RowBox[{"\[TildeEqual]", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"\[Epsilon]", "-", 
+      RowBox[{"\[Epsilon]", "(", 
+       RowBox[{"k", "-", "K"}], ")"}]}]], 
+    RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"j", "=", "1"}], "m"], " ", 
+     RowBox[{
+      SubscriptBox["U", 
+       RowBox[{
+        SubscriptBox["K", "j"], "-", "K"}]], 
+      RowBox[{"C", "(", 
+       RowBox[{"k", "-", 
+        SubscriptBox["K", "j"]}], ")"}]}]}]}]}], 
+  TraditionalForm]}], "EquationNumbered",
+ CellChangeTimes->{{3.792149291684325*^9, 
+  3.7921493559365873`*^9}},ExpressionUUID->"c8f70cc2-8133-414c-802a-\
+a2971647c9b6"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 808},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"NotebookAuthor" -> ""}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 257, "BookChapterNumber",ExpressionUUID->"4eecd5ef-f542-4795-bcb8-4e94523a39cd"],
+Cell[707, 25, 214, 4, 220, "BookChapterTitle",ExpressionUUID->"83666aea-518b-4722-b3b0-aeb39ac00de9"],
+Cell[CellGroupData[{
+Cell[946, 33, 167, 3, 96, "Section",ExpressionUUID->"374d6e69-aad5-4835-913f-d55be0766975"],
+Cell[1116, 38, 565, 15, 36, "Text",ExpressionUUID->"a00a4392-28ce-45b4-a2bd-8e0d1f8509ee"],
+Cell[1684, 55, 429, 13, 74, "Equation",ExpressionUUID->"6252633c-0500-4025-a864-291347237f8c"],
+Cell[2116, 70, 468, 13, 36, "Text",ExpressionUUID->"bbad8dce-4b92-46f3-8b1b-e5d85c650a32"],
+Cell[2587, 85, 464, 15, 36, "Text",ExpressionUUID->"f2e126ab-28d4-4058-9e24-d2fb2ee437d3"],
+Cell[3054, 102, 897, 28, 74, "Equation",ExpressionUUID->"42367110-1178-48f7-9560-c311e2c7751b"],
+Cell[3954, 132, 149, 3, 36, "Text",ExpressionUUID->"6c78d820-175a-4ed5-8949-43271ae9d104"],
+Cell[4106, 137, 293, 8, 49, "EquationNumbered",ExpressionUUID->"4e0aea0a-6c87-45d7-9e6c-c911e548bcc4"],
+Cell[4402, 147, 508, 17, 36, "Text",ExpressionUUID->"99401552-9d05-435c-9cbe-2d9fe0feb81d"],
+Cell[4913, 166, 281, 8, 46, "EquationNumbered",ExpressionUUID->"b96d943e-81c6-47e1-8dea-c986a2be1bea"],
+Cell[5197, 176, 575, 13, 36, "Text",ExpressionUUID->"efbdfcba-a163-4832-b8af-e342d3fd407e"],
+Cell[5775, 191, 525, 14, 77, "EquationNumbered",ExpressionUUID->"595a4f7b-13a8-4701-b79e-e7316e867152"],
+Cell[6303, 207, 523, 14, 36, "Text",ExpressionUUID->"63cce6fb-6650-451f-845c-47d5da4b451f"],
+Cell[6829, 223, 2287, 70, 226, "Equation",ExpressionUUID->"5b22dc48-b464-4f6a-a6aa-74580949393b"],
+Cell[9119, 295, 634, 17, 43, "Text",ExpressionUUID->"db069b27-024e-44b2-b7a8-92aa90617edf"],
+Cell[9756, 314, 712, 20, 74, "EquationNumbered",ExpressionUUID->"5dd7dc07-f35b-4b95-a2df-fbf9b71bd506"],
+Cell[10471, 336, 235, 8, 36, "Text",ExpressionUUID->"157d3b27-e996-48a7-a39a-7feb9a2e02ee"],
+Cell[10709, 346, 788, 25, 36, "Text",ExpressionUUID->"c8a073d4-897a-4c35-867b-59b801a1f72b"],
+Cell[11500, 373, 672, 21, 74, "Equation",ExpressionUUID->"1b639a88-c7ef-4d9c-85dd-349096ed88e4"],
+Cell[12175, 396, 442, 12, 36, "Text",ExpressionUUID->"6fc000e9-201e-4f0e-af7b-cb2b7c6c81fa"],
+Cell[12620, 410, 696, 22, 74, "EquationNumbered",ExpressionUUID->"db79f47a-d249-4c13-87af-abf73ddb2431"],
+Cell[13319, 434, 406, 10, 56, "Subsection",ExpressionUUID->"c0bf0e4d-6598-4d76-bd77-68f90d0138ce"],
+Cell[CellGroupData[{
+Cell[13750, 448, 426, 10, 36, "Subsection",ExpressionUUID->"d9f8f64c-b721-4655-908b-8d36f682f7ba"],
+Cell[14179, 460, 159, 3, 31, "Subsubsection",ExpressionUUID->"e0d23cbb-d3b5-491e-9994-d23fb35af538"],
+Cell[CellGroupData[{
+Cell[14363, 467, 207, 4, 31, "Subsubsection",ExpressionUUID->"7ba57ce4-8347-4f5f-a11a-afc8f5ed1c1b"],
+Cell[14573, 473, 1640, 46, 64, "Text",ExpressionUUID->"06573b4b-533d-4cb6-a2ba-a273e2df5aca"],
+Cell[16216, 521, 613, 14, 36, "Text",ExpressionUUID->"02cd88d4-fb2f-4c41-b199-a1ebe5e09d20"],
+Cell[16832, 537, 1008, 33, 82, "Equation",ExpressionUUID->"4b4e207b-ae28-4275-b8a9-0b52dfcb08c9"],
+Cell[17843, 572, 1209, 36, 36, "Text",ExpressionUUID->"033e6f04-fd43-427f-9963-26de4763ca74"],
+Cell[19055, 610, 1122, 33, 91, "EquationNumbered",ExpressionUUID->"dd540131-31b4-490a-be60-4e3c6aa8ba5d"],
+Cell[20180, 645, 844, 22, 36, "Text",ExpressionUUID->"68ba1b87-1892-4793-9844-44169d0ae86a"],
+Cell[21027, 669, 851, 24, 36, "Text",ExpressionUUID->"78affaa1-2cc6-4295-9889-225398a3c6de"],
+Cell[21881, 695, 1354, 45, 188, "EquationNumbered",ExpressionUUID->"c8f70cc2-8133-414c-802a-a2971647c9b6"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
