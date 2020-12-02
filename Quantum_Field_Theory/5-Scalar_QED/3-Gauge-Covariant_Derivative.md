@@ -28,7 +28,7 @@ $$
 \begin{aligned}
     \phi(x) \rightarrow \phi'(x) 
     &= U(x) \phi(x) \equiv e^{i\alpha(x)} \phi(x)
-    \\
+    \\[0.5em]
     \phi^\dagger(x) \rightarrow \phi'^{\dagger}(x) 
     &= \phi^\dagger(x) U^\dagger (x) \equiv \phi^\dagger(x) e^{-i\alpha(x)}
 \end{aligned}

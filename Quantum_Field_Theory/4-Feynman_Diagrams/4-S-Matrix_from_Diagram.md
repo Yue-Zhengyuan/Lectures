@@ -29,7 +29,7 @@ $$
 \end{aligned}
 $$
 
-where $\square_i \equiv (\partial/\partial x_i)^2, \square'_i \equiv (\partial/\partial x'_i)^2$. Note that the sign on the exponential factor is $-$ for incoming particles $p_1,...,p_m$, and $+$ for outgoing particles $p'_1,...,p'_n$. If we are dealing with complex scalar particles or even photons, the formula will be accordingly modified. 
+where $\square_i \equiv (\partial/\partial x_i)^2, \square'_i \equiv (\partial/\partial x'_i)^2$. Note that the sign on the exponential factor is $-$ for incoming particles $p_1,...,p_m$, and $+$ for outgoing particles $p'_1,...,p'_n$. If we are dealing with other kinds of particles, the formula will be accordingly modified. 
 
 ----
 

@@ -76,14 +76,14 @@ i G_a\phi (x)
 - \frac{\partial F}{\partial \omega_a}(\phi(x),0)
 $$
 
-## Infinitesimal Transformation Generators on Scalar Fields
+## Transformation Generators on Scalar Fields
 
 For *scalar* fields, the functional $F$ depends on the parameters $\omega$ only through the coordinates $x$. Therefore
 
 $$
 \begin{aligned}
-    \frac{\partial F}{\partial \omega_a} \overset{!}{=} 0
-    \quad \Rightarrow \quad
+    \frac{\partial F}{\partial \omega_a} = 0
+    \, \Rightarrow \,
     i G_a\phi (x)
     = \frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)
     \, \partial_{\mu} \phi (x)
@@ -193,11 +193,11 @@ $$
 \begin{aligned}
     \frac{\partial x'^{\mu}}{\partial \omega_{\rho \sigma}}(x,0)
     &= \frac{\partial}{\partial \omega_{\rho \sigma}} 
-    \left(
+    \bigg(
         x^{\mu}
         + \frac{1}{2} \eta^{\mu \rho} \omega_{\rho \sigma}x^{\sigma}
         + \underbrace{\frac{1}{2} \eta^{\mu \sigma} \omega_{\sigma \rho}x^{\rho}}_{\text{rename } \sigma \text{ and } \rho} 
-    \right)
+    \bigg)
     \\
     &= \frac{\partial}{\partial \omega_{\rho \sigma}} 
     \left(
@@ -252,26 +252,46 @@ $$
 
 It is also anti-symmetric, as expected.
 
-*Remark*: The spatial part of the generator $L$
+*Remark*: 
 
-$$
-\begin{aligned}
-    L_1 &\equiv L^{32} 
-    = -i(x^2 \partial^3 - x^3 \partial^2)
-    \\
-    L_2 &\equiv L^{13} 
-    = -i(x^3 \partial^2 - x^2 \partial^3)
-    \\
-    L_3 &\equiv L^{21} 
-    = -i(x^1 \partial^2 - x^2 \partial^1)
-\end{aligned}
-$$
+- The space part of $L$
 
-are called the **orbital angular momentum operators**. They can be collectively written using vector notation
+    $$
+    \begin{aligned}
+        L_1 &\equiv L^{32} 
+        = -i(x^2 \partial^3 - x^3 \partial^2)
+        \\
+        L_2 &\equiv L^{13} 
+        = -i(x^3 \partial^2 - x^2 \partial^3)
+        \\
+        L_3 &\equiv L^{21} 
+        = -i(x^1 \partial^2 - x^2 \partial^1)
+    \end{aligned}
+    $$
 
-$$
-\boldsymbol{L} = \boldsymbol{x} \times \boldsymbol{p}
-$$
+    generate *rotations*, and are called the **orbital angular momentum operators**. They can be collectively written using vector notation
+
+    $$
+    \mathbf{L} = \mathbf{x} \times \mathbf{p} 
+    \qquad (\mathbf{p} = -i \nabla)
+    $$
+
+- The time part of $L$
+    
+    $$
+    \begin{aligned}
+        K_1 &\equiv L^{01} 
+        = -i(x^0 \partial^1 - x^1 \partial^0)
+        \\
+        K_2 &\equiv L^{02} 
+        = -i(x^0 \partial^2 - x^2 \partial^0)
+        \\
+        K_3 &\equiv L^{03} 
+        = -i(x^0 \partial^3 - x^3 \partial^0)
+    \end{aligned}
+    $$
+
+    generate *boosts*. 
 
 ### Scaling (Dilation)
 

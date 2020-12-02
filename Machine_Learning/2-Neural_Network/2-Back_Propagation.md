@@ -1,6 +1,6 @@
 # Back Propagation
 
-**Back propagation** refers to an efficient method of calculating the gradient of the cost function of a neural network. 
+**Back propagation** (or shortly **backprop**) is an efficient method of calculating the gradient of the cost function of a neural network. 
 
 Consider the network for multi-class classification, where the activation functions of all units are the sigmoid function:
 

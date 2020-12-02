@@ -332,13 +332,19 @@ $$
     \frac{|\mathbf{p}_1|}{16\pi^2 E_{\text{CM}}}
     |\mathcal{M}_{fi}|^2
     \\
-    &= \frac{1}{64 \pi^2 E_\text{CM}} 
-    \frac{|\mathbf{p}_1|}{|\mathbf{p}_A|}
+    &= \frac{1}{64 \pi^2 E_\text{CM}^2} 
+    \frac{|\mathbf{p}_f|}{|\mathbf{p}_i|}
     |\mathcal{M}_{fi}|^2
 \end{aligned}
 $$
 
-where $p_A + p_B = p_1 + p_2 = (E_\text{CM}, 0)$.
+with (remember that we are in the CM frame)
+
+$$
+|\mathbf{p}_f| = |\mathbf{p}_1| = |\mathbf{p}_2|
+\qquad
+|\mathbf{p}_i| = |\mathbf{p}_A| = |\mathbf{p}_B|
+$$
 
 ### Identical Particle $2\to 2$ Scattering
 
