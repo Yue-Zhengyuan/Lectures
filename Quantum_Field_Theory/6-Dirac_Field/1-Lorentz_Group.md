@@ -60,9 +60,9 @@ $$
 
 
 
-## Generator of Proper Lorentz Transformation 
+## Generator of Lorentz Transformation 
 
-Now consider a *proper* infinitesimal Lorentz transformation, which is **connected** to the identity. Its generator $L_{\mu \nu}$ (the factor $-i$ is somewhat artificial) is defined by:
+Now consider a *proper and orthochronous* infinitesimal Lorentz transformation, which is **connected** to the identity. Its generator $L_{\mu \nu}$ (the factor $-i$ is somewhat artificial) is defined by:
 
 $$
 {\Lambda^\mu}_\nu = \delta^\mu_\nu - i {L^\mu}_\nu
@@ -144,24 +144,21 @@ $$
 (n = \text{spacetime dimension})
 $$
 
-linearly independent such basic generators, as can be seen by requiring $\alpha < \beta$. Thus a general infinitesimal Lorentz transformation can be represented as
+linearly independent such basic generators, as can be seen by requiring $\alpha < \beta$. Thus a general infinitesimal Lorentz transformation (or more rigorously, a *proper* Lorentz transformation **connected with identity**) can be represented as
 
 $$
-L_{\mu \nu} 
-= \sum_{\alpha < \beta} 
-\omega_{\alpha \beta} L^{\alpha \beta}_{\mu \nu}
-= \frac{1}{2} \omega_{\alpha \beta} L^{\alpha \beta}_{\mu \nu}
+\begin{aligned}
+    \Lambda_{\mu \nu} 
+    &= \eta_{\mu \nu} 
+    - i \sum_{\alpha < \beta} 
+    \omega_{\alpha \beta} L^{\alpha \beta}_{\mu \nu}
+    \\
+    &= \eta_{\mu \nu} 
+    - \frac{1}{2} i \omega_{\alpha \beta} L^{\alpha \beta}_{\mu \nu}
+\end{aligned}
 $$
 
 where we have shown explicitly the infinitesimal parameters $\omega_{\alpha \beta} \ll 1$. In the last line we release the constraint $\alpha < \beta$ by setting $\omega_{\alpha \beta}$ to be also an antisymmetric matrix, and introducing the factor $1/2$ to cancel the repeated counting. 
-
-Finally, a general infinitesimal Lorentz transformation (or more rigorously, a *proper* Lorentz transformation **connected with identity**) can be written as
-
-$$
-\Lambda_{\mu \nu} 
-= \eta_{\mu \nu} 
-- \frac{1}{2} i \omega_{\alpha \beta} L^{\alpha \beta}_{\mu \nu}
-$$
 
 ## The Lorentz Algebra
 
@@ -277,7 +274,7 @@ L^{\alpha \beta}_{\mu \nu}
 0 \le \alpha < \beta \le 3
 $$
 
-It turns out that these generators $L^{\alpha \beta}$ are no other than the 3 **rotation** generators $J_a$ and 3 **boost** generators $K_a$ ($a = 1,2,3$ or $x,y,z$). 
+It turns out that these generators $L^{\alpha \beta}$ are no other than the 3 **rotation** generators $J^a$ and 3 **boost** generators $K^a$ ($a = 1,2,3$ or $x,y,z$). 
 
 ### Rotation
 
@@ -285,7 +282,7 @@ The 3D rotation matrices around $x, y, z$ axes are, respectively (promoted as $4
 
 $$
 \begin{aligned}
-    R_x(\alpha) 
+    R^x(\alpha) 
     &= \begin{bmatrix}
         1 & 0 & 0 & 0 \\
         0 & 1 & 0 & 0 \\
@@ -299,7 +296,7 @@ $$
         0 & 0 & \alpha  & 1
     \end{bmatrix}
     \\[3em]
-    R_y(\alpha)
+    R^y(\alpha)
     &= \begin{bmatrix}
         1 & 0 & 0 & 0 \\
         0 & \cos  \alpha  & 0 & \sin  \alpha  \\
@@ -313,7 +310,7 @@ $$
         0 & -\alpha  & 0 & 1
     \end{bmatrix}
     \\[3em]
-    R_z(\alpha)
+    R^z(\alpha)
     &= \begin{bmatrix}
         1 & 0 & 0 & 0 \\
         0 & \cos  \alpha  & -\sin  \alpha  & 0 \\
@@ -329,32 +326,71 @@ $$
 \end{aligned}
 $$
 
-Using $R_a = 1 - i \alpha J_a \, (a = x,y,z)$, we obtain
+Using $R^a = 1 - i \alpha J^a \, (a = x,y,z)$, we obtain
+
+$$
+J^1 = \begin{bmatrix}
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & -i \\
+    0 & 0 & i & 0
+\end{bmatrix}, 
+J^2 = \begin{bmatrix}
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & i \\
+    0 & 0 & 0 & 0 \\
+    0 & -i & 0 & 0
+\end{bmatrix}, 
+J^3 = \begin{bmatrix}
+    0 & 0 & 0 & 0 \\
+    0 & 0 & -i & 0 \\
+    0 & i & 0 & 0 \\
+    0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+However, we should be aware that these matrices are ${(J^a)^\mu}_{\nu}$ (one upper index and one lower index). To compare with $L^{\alpha \beta}_{\mu \nu}$, we need to lower the first index:
+
+$$
+(J^a)_{\mu \nu} = \eta_{\mu \rho} {(J^a)^\rho}_\nu
+$$
+
+Then
 
 $$
 \begin{aligned}
-    J_1 &= \begin{bmatrix}
+    J^1 &= \begin{bmatrix}
         0 & 0 & 0 & 0 \\
-        0 & 0 & 0 & 0 \\
-        0 & 0 & 0 & -i \\
-        0 & 0 & i & 0
-    \end{bmatrix} = L^{32} = -L^{23}
-    \\[3em]
-    J_2 &= \begin{bmatrix}
         0 & 0 & 0 & 0 \\
         0 & 0 & 0 & i \\
-        0 & 0 & 0 & 0 \\
-        0 & -i & 0 & 0
-    \end{bmatrix} = L^{13} = -L^{31}
+        0 & 0 & -i & 0
+    \end{bmatrix} = L^{23} = -L^{32}
     \\[3em]
-    J_3 &= \begin{bmatrix}
+    J^2 &= \begin{bmatrix}
         0 & 0 & 0 & 0 \\
-        0 & 0 & -i & 0 \\
-        0 & i & 0 & 0 \\
+        0 & 0 & 0 & -i \\
+        0 & 0 & 0 & 0 \\
+        0 & i & 0 & 0
+    \end{bmatrix} = L^{31} = -L^{13}
+    \\[3em]
+    J^3 &= \begin{bmatrix}
+        0 & 0 & 0 & 0 \\
+        0 & 0 & i & 0 \\
+        0 & -i & 0 & 0 \\
         0 & 0 & 0 & 0
-    \end{bmatrix} = L^{21} = -L^{12}
+    \end{bmatrix} = L^{12} = -L^{21}
 \end{aligned}
 $$
+
+These three relations can be summarized as
+
+$$
+J^a = \frac{1}{2} \epsilon^{abc} L^{bc} 
+\quad \text{or} \quad
+L^{ab} = \epsilon^{abc} J^c
+$$
+
+Here $a,b,c$ are all space indices.
 
 ### Boost
 
@@ -362,7 +398,7 @@ The 3+1D boost matrices along $x, y, z$ axes are, respectively
 
 $$
 \begin{aligned}
-    B_x(\beta) &= \begin{bmatrix}
+    B^x(\beta) &= \begin{bmatrix}
         \cosh \beta & \sinh \beta & 0 & 0 \\
         \sinh \beta & \cosh \beta & 0 & 0 \\
         0 & 0 & 1 & 0 \\
@@ -375,7 +411,7 @@ $$
         0 & 0 & 0 & 1
     \end{bmatrix}
     \\[3em]
-    B_y(\beta) &= \begin{bmatrix}
+    B^y(\beta) &= \begin{bmatrix}
         \cosh \beta & 0 & \sinh \beta & 0 \\
         0 & 1 & 0 & 0 \\
         \sinh \beta & 0 & \cosh \beta & 0 \\
@@ -388,7 +424,7 @@ $$
         0 & 0 & 0 & 1
     \end{bmatrix}
     \\[3em]
-    B_z(\beta) &= \begin{bmatrix}
+    B^z(\beta) &= \begin{bmatrix}
         \cosh \beta & 0 & 0 & \sinh \beta \\
         0 & 1 & 0 & 0 \\
         0 & 0 & 1 & 0 \\
@@ -403,22 +439,22 @@ $$
 \end{aligned}
 $$
 
-Using $B_a = 1 - i\beta K_a \, (a = x,y,z)$, we obtain
+The parameter $\beta$ is called the **rapidity** of the boost. Using $B^a = 1 - i\beta K^a \, (a = x,y,z)$, we obtain
 
 $$
-K_1 = \begin{bmatrix}
+K^1 = \begin{bmatrix}
     0 & i & 0 & 0 \\
     i & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0
 \end{bmatrix}, 
-K_2 = \begin{bmatrix}
+K^2 = \begin{bmatrix}
     0 & 0 & i & 0 \\
     0 & 0 & 0 & 0 \\
     i & 0 & 0 & 0 \\
     0 & 0 & 0 & 0
 \end{bmatrix}, 
-K_3 = \begin{bmatrix}
+K^3 = \begin{bmatrix}
     0 & 0 & 0 & i \\
     0 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 \\
@@ -426,31 +462,31 @@ K_3 = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-At first sight, the $K_a$ matrices appear to be *symmetric*, which is troublesome. But in fact the matrices above refers to ${(K_a)^\mu}_\nu$ (one upper index and one lower index), while explicit anti-symmetry requires all lower index (or all upper index). Bringing down the first index using
+At first sight, the $K^a$ matrices appear to be *symmetric*, which is troublesome. But again, the matrices above refers to ${(K^a)^\mu}_\nu$; the anti-symmetry only applies for all upper (or all lower) indices. Bringing down the first index using
 
 $$
-(K_a)_{\mu \nu} = \eta_{\mu \rho} {(K_a)^\rho}_\nu
+(K^a)_{\mu \nu} = \eta_{\mu \rho} {(K^a)^\rho}_\nu
 $$
 
 we see that
 
 $$
 \begin{aligned}
-    K_1 &= \begin{bmatrix}
+    K^1 &= \begin{bmatrix}
         0 & i & 0 & 0 \\
         -i & 0 & 0 & 0 \\
         0 & 0 & 0 & 0 \\
         0 & 0 & 0 & 0
     \end{bmatrix} = L^{01} = -L^{10}
     \\[3em]
-    K_2 &= \begin{bmatrix}
+    K^2 &= \begin{bmatrix}
         0 & 0 & i & 0 \\
         0 & 0 & 0 & 0 \\
         -i & 0 & 0 & 0 \\
         0 & 0 & 0 & 0
     \end{bmatrix} = L^{02} = -L^{20}
     \\[3em]
-    K_3 &= \begin{bmatrix}
+    K^3 &= \begin{bmatrix}
         0 & 0 & 0 & i \\
         0 & 0 & 0 & 0 \\
         0 & 0 & 0 & 0 \\
@@ -459,28 +495,34 @@ $$
 \end{aligned}
 $$
 
+which are summarized as
+
+$$
+K^a = L^{0a}
+$$
+
 This problem does not exist for the rotation generators, since they do not involve the transformation of time. 
 
 Now we can formally write $L^{\alpha \beta}$ as a $4\times 4$ matrix:
 
 $$
 L^{\alpha \beta} =\begin{bmatrix}
-    0 & K_1 & K_2 & K_3 \\[0.3em]
-    -K_1 & 0 & -J_3 & J_2 \\[0.3em]
-    -K_2 & J_3 & 0 & -J_1 \\[0.3em]
-    -K_3 & -J_2 & J_1 & 0
+    0 & K^1 & K^2 & K^3 \\[0.3em]
+    -K^1 & 0 & J^3 & -J^2 \\[0.3em]
+    -K^2 & -J^3 & 0 & J^1 \\[0.3em]
+    -K^3 & J^2 & -J^1 & 0
 \end{bmatrix}
 $$
 
 ### Finite Transformations
 
-A general infinitesimal *proper* Lorentz transformation can be written using $J_a, K_a$ as (summation over $a$ is assumed)
+A general infinitesimal *proper* Lorentz transformation can be written using $J^a, K^a$ as (summation over $a$ is assumed)
 
 $$
 \begin{aligned}
     \Lambda_{\mu \nu} 
     &= \eta_{\mu \nu} 
-    - i \theta_a J_a - i \beta_a K_a
+    - i \theta^a J^a - i \beta^a K^a
     \\
     &= \eta_{\mu \nu} 
     - i \theta \cdot \mathbf{J} - i \beta \cdot \mathbf{K}
@@ -490,7 +532,7 @@ $$
 The finite transformation is then obtained by exponentiation:
 
 $$
-\Lambda = \exp(- i \theta_a J_a - i \beta_a K_a)
+\Lambda = \exp(- i \theta^a J^a - i \beta^a K^a)
 $$
 
 ## Representations of the Lorentz Group
@@ -499,11 +541,11 @@ From direct calculation, the commutation relations of the six generators (the Lo
 
 $$
 \begin{aligned}
-    [J_a, J_b] &= i \epsilon_{abc} J_c
+    [J^a, J^b] &= i \epsilon^{abc} J^c
     \\
-    [K_a, K_b] &= -i \epsilon_{abc} K_c
+    [K^a, K^b] &= -i \epsilon^{abc} K^c
     \\
-    [J_a, K_b] &= i \epsilon_{abc} K_c
+    [J^a, K^b] &= i \epsilon^{abc} K^c
 \end{aligned} \qquad
 a,b,c = 1,2,3
 $$
@@ -511,7 +553,7 @@ $$
 If we define
 
 $$
-J_a^\pm \equiv \frac{1}{2}(J_a \pm iK_a) \qquad
+J^a_\pm \equiv \frac{1}{2}(J^a \pm iK^a) \qquad
 a = 1,2,3
 $$
 
@@ -519,11 +561,11 @@ we can separate the Lorentz algebra into two commuting sub-algebras ("independen
 
 $$
 \begin{aligned}
-    [J_a^+, J_b^+] &= i\epsilon_{abc} J_c^+
+    [J^a_+, J^b_+] &= i\epsilon^{abc} J^c_+
     \\
-    [J_a^-, J_b^-] &= i\epsilon_{abc} J_c^-
+    [J^a_-, J^b_-] &= i\epsilon^{abc} J^c_-
     \\
-    [J_a^+, J_b^-] &= 0
+    [J^a_+, J^b_-] &= 0
 \end{aligned} \qquad
 a,b,c = 1,2,3
 $$
