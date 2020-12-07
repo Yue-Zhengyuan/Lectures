@@ -10,7 +10,7 @@ $$
 D^\dagger(g) = D^{-1}(g)
 $$
 
-The Poincaré group does *not* have *finite*-dimensional unitary irreducible representation. But **Wigner's classification** states that:
+It turns out that the Poincaré group does *not* have *finite*-dimensional unitary irreducible representation. But **Wigner's classification** states that:
 
 - The unitary irreps of Poincaré group are *infinite*-dimensional;
 
@@ -191,14 +191,14 @@ which is the same as the scalar field. But now we have $\partial^\mu A_\mu = 0$ 
 
 ### Polarization Vectors
 
-Since the equations of motion is linear in $A_\mu$, the 3 degrees of freedom can be linearly introduced to the mode expansion of $A_\mu$ as the (complex) **polarization vectors** $\epsilon_\mu^j(\mathbf{p})$: 
+Since the equations of motion is linear in $A_\mu$, the 3 degrees of freedom can be linearly introduced to the mode expansion of $A_\mu$ as the (complex) **polarization vectors** $\epsilon_\mu^j(p)$: 
 
 $$
 \begin{aligned}
     A_\mu(x) &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E_\mathbf{p}}}
     \sum_{j=1}^3 (
-        \epsilon^j_\mu(\mathbf{p}) a_{\mathbf{p},j} e^{-ipx}
-        + \epsilon^{j*}_\mu(\mathbf{p}) a_{\mathbf{p},j}^\dagger e^{+ipx}
+        \epsilon^j_\mu(p) a_{\mathbf{p},j} e^{-ipx}
+        + \epsilon^{j*}_\mu(p) a_{\mathbf{p},j}^\dagger e^{+ipx}
     )
 \end{aligned}
 $$
@@ -213,8 +213,8 @@ $$
     &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E_\mathbf{p}}} \times
     \\ &\quad
     \sum_{j=1}^3 (
-        -ip^\mu \epsilon^j_\mu(\mathbf{p}) a_{\mathbf{p},j} e^{-ipx}
-        + ip_\mu \epsilon^{j*}_\mu(\mathbf{p}) a_{\mathbf{p},j}^\dagger e^{+ipx}
+        -ip^\mu \epsilon^j_\mu(p) a_{\mathbf{p},j} e^{-ipx}
+        + ip_\mu \epsilon^{j*}_\mu(p) a_{\mathbf{p},j}^\dagger e^{+ipx}
     )
     \\
     &= 0
@@ -224,8 +224,8 @@ $$
 The only way to achieve this is
 
 $$
-p^\mu \epsilon_\mu^j(\mathbf{p}) = 0 \qquad
-\text{for each } j
+p^\mu \epsilon_\mu^j(p) = 0 \qquad
+\text{for each polarization } j
 $$
 
 This can be regarded as a linear equation system
@@ -239,7 +239,7 @@ $$
 \end{bmatrix} = 0
 $$
 
-When $p^2 = m^2 > 0$, the matrix $[p^0, -p^1, -p^2, -p^3]$ must be of rank 1. Thus this equation can only give 3 linearly independent solutions of $\epsilon^j$, as expected. 
+When $p^2 = m^2 > 0$, the matrix $[p^0, -p^1, -p^2, -p^3]$ must be of rank 1. Thus this equation can give, and only give 3 linearly independent solutions of $\epsilon^j$, as expected. 
 
 The polarization vectors are usually normalized by
 

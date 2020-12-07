@@ -144,15 +144,7 @@ $$
 \end{aligned}
 $$
 
-### Side Note: Ward Identity
-
-The Ward identity implies that if we impose the constraints
-
-$$
-
-$$
-
-### Polarization Averaged Amplitude
+### Polarization Sum and Ward Identity
 
 What goes into the differential cross section is the *sum* of the squared norm $|\mathcal{M}|^2$ for *each* configuration of polarization $\epsilon, \epsilon'$, but *averaged* over the *incoming* polarization $\epsilon$ (*two* linearly independent choices). Mathematically, this refers to (note that $T^{\mu \nu}$ is real)
 
@@ -163,6 +155,11 @@ $$
     &= \frac{(eQ)^4}{2} \sum_{\epsilon, \epsilon'} 
     (\epsilon_\mu \epsilon'^*_\nu T^{\mu \nu})
     (\epsilon^*_\rho \epsilon'_\sigma T^{\rho \sigma})
+    \\
+    &= \frac{(eQ)^4}{2} 
+    \sum_{\epsilon} \epsilon_\mu \epsilon^*_\rho
+    \sum_{\epsilon'} \epsilon'_\sigma \epsilon'^*_\nu \,
+    T^{\mu \nu} T^{\rho \sigma}
 \end{aligned}
 $$
 
@@ -224,7 +221,8 @@ Let us now tackle the terms one by one:
 
 $$
 \begin{aligned}
-    bala
+    A^{\mu \nu} 
+    &= \frac{(2p+q)^\mu (2p'+q')^\nu}{2p\cdot q}
 \end{aligned}
 $$
 
@@ -346,14 +344,17 @@ $$
     (2\pi) \frac{E'_\phi}{\omega' - \omega \cos \theta + E'_\phi}
     \bigg|_{E'_\phi = m + \omega - \omega'}
     \\
-    &= \frac{1}{16 \pi^2} \int d\Omega
+    &= \frac{1}{16 \pi^2} \int d\Omega \,
     \frac{\omega'}{m + \omega(1-\cos \theta)}
     \\
-    &= \frac{1}{16 \pi^2} \int d\Omega \frac{\omega'^2}{m \omega}
+    &= \frac{1}{16 \pi^2} \int d\Omega \,
+    \frac{\omega'^2}{m \omega}
 \end{aligned}
 $$
 
 ### Differential Cross Section
+
+
 
 ### Low Energy Limit: Thompson Scattering
 

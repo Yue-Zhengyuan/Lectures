@@ -137,17 +137,13 @@ u(p_0) = \sqrt{m} \begin{bmatrix}
     \xi \\ \xi
 \end{bmatrix}, \quad
 v(p_0) = \sqrt{m} \begin{bmatrix}
-    \zeta \\ -\zeta
+    \eta \\ -\eta
 \end{bmatrix}
 $$
 
-where $\xi, \zeta$ are 2-component objects (and we know that they are Weyl spinors), usually normalized by $\xi^\dagger \xi = 1$ and $\zeta^\dagger \zeta = 1$; the coefficient $\sqrt{m}$ in added for later convenience. 
+where $\xi, \eta$ are 2-component objects (and we know that they are Weyl spinors), usually normalized by $\xi^\dagger \xi = 1$ and $\eta^\dagger \eta = 1$; the coefficient $\sqrt{m}$ in added for later convenience. 
 
-<div class="remark">
-
-*Remark*: We discover that we are only able to choose two components out of the four in the Dirac spinor $\psi$. This two remaining degrees of freedom is expected for spin-1/2 particles. 
-
-</div><br>
+Obviously there will be two linearly independent $\xi$ (or $\eta$). They will be labelled by $\xi^s, \eta^s$ with $s = 1,2$. 
 
 ### Solution in a General Frame
 
@@ -254,40 +250,24 @@ $$
 \end{aligned}
 $$
 
-we finally obtain
+We finally obtain (here we put back the label $s$ to represent two linearly independent solutions)
 
 $$
-u(p) = \begin{bmatrix}
-    \sqrt{p_\mu \sigma^\mu} \xi
+u^s(p) = \begin{bmatrix}
+    \sqrt{p_\mu \sigma^\mu} \xi^s
     \\[0.5em]
-    \sqrt{p_\mu \bar{\sigma}^\mu} \xi
+    \sqrt{p_\mu \bar{\sigma}^\mu} \xi^s
 \end{bmatrix}
 $$
 
 Similarly, for the negative-frequency solution
 
 $$
-v(p) = \begin{bmatrix}
-    \sqrt{p_\mu \sigma^\mu} \zeta
+v^s(p) = \begin{bmatrix}
+    \sqrt{p_\mu \sigma^\mu} \eta^s
     \\[0.5em]
-    -\sqrt{p_\mu \bar{\sigma}^\mu} \zeta
+    -\sqrt{p_\mu \bar{\sigma}^\mu} \eta^s
 \end{bmatrix}
-$$
-
-### Spin-up and Spin-down Solutions and Helicity
-
-It will later turn out that the spinor $\xi$ determines the *spin* of the particle:
-
-$$
-\begin{aligned}
-    \xi &= \begin{bmatrix}
-        1 \\ 0
-    \end{bmatrix}: \text{spin up along } \mathbf{p}
-    \\[1em]
-    \xi &= \begin{bmatrix}
-        0 \\ 1
-    \end{bmatrix}: \text{spin down along } \mathbf{p}
-\end{aligned}
 $$
 
 ### Spinor Normalization
@@ -316,9 +296,20 @@ $$
 =
 $$
 
+To make a Lorentz scalar, we define
+
+$$
+\bar{u}(p) \equiv u^\dagger(p) \gamma^0
+$$
+
+(and similarly for $v(p)$). Then
+
+
+
 Using the identity
 
 $$
 (p_\mu \sigma^\mu)(p_\nu \bar{\sigma}^\nu)
 = p^2 (= m^2)
 $$
+
