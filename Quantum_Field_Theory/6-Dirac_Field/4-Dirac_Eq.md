@@ -95,23 +95,39 @@ $$
 \end{aligned} \quad (p^2 = m^2)
 $$
 
-Here $u(p), v(p)$ are both 4-component objects. Next let us find the constraints on them. 
+Here $u(p), v(p)$ are both 4-component objects. Next let us find the constraints on them. Plugging the solution into the Dirac equation:
+
+$$
+(\gamma^\mu p_\mu - m) u(p) = 0, \quad
+(\gamma^\mu p_\mu + m) v(p) = 0, \quad
+$$
+
+More explicitly:
+
+$$
+\begin{bmatrix}
+    -m & p_\mu \sigma^\mu
+    \\
+    p_\mu \bar{\sigma}^\mu & -m
+\end{bmatrix} u(p) = 0, \quad
+\begin{bmatrix}
+    m & p_\mu \sigma^\mu
+    \\
+    p_\mu \bar{\sigma}^\mu & m
+\end{bmatrix} v(p) = 0
+$$
 
 ### Solution in the Rest Frame
-
-Consider $u(p)$ first. Plugging the solution into the Dirac equation:
-
-$$
-(\gamma^\mu p_\mu - m) u(p) = 0
-$$
 
 It is convenient to go into the rest frame of the particle (by a boost), where $p = p_0 \equiv (m,0)$. Then
 
 $$
-(m \gamma^0 - m) u(p_0)
-= m \begin{bmatrix}
+\begin{bmatrix}
     -1 & 1 \\ 1 & -1
-\end{bmatrix} u(p_0) = 0
+\end{bmatrix} u(p) = 0, \quad
+\begin{bmatrix}
+    1 & 1 \\ 1 & 1
+\end{bmatrix} v(p) = 0
 $$
 
 The solution is
@@ -119,10 +135,13 @@ The solution is
 $$
 u(p_0) = \sqrt{m} \begin{bmatrix}
     \xi \\ \xi
+\end{bmatrix}, \quad
+v(p_0) = \sqrt{m} \begin{bmatrix}
+    \zeta \\ -\zeta
 \end{bmatrix}
 $$
 
-where $\xi$ is a 2-component object (and we know that it should be a Weyl spinor), usually normalized by $\xi^\dagger \xi = 1$; the coefficient $\sqrt{m}$ in added for later convenience. 
+where $\xi, \zeta$ are 2-component objects (and we know that they are Weyl spinors), usually normalized by $\xi^\dagger \xi = 1$ and $\zeta^\dagger \zeta = 1$; the coefficient $\sqrt{m}$ in added for later convenience. 
 
 <div class="remark">
 
@@ -135,8 +154,8 @@ where $\xi$ is a 2-component object (and we know that it should be a Weyl spinor
 Now let us return to the "lab" frame by boost. Suppose that the particle is moving in the $z$-direction. The finite boost operator along the $z$-direction in the Weyl representation is given by
 
 $$
-S^{03} = -\frac{i}{2} \begin{bmatrix}
-    \sigma^3 & 0 \\ 0 & -\sigma^3
+S^{03} = \frac{i}{2} \begin{bmatrix}
+    -\sigma^3 & 0 \\ 0 & \sigma^3
 \end{bmatrix}
 $$
 
@@ -146,21 +165,96 @@ $$
 \begin{aligned}
     u(p) &= \exp (-i \beta S^{03}) \, u(p_0)
     \\
-    &= \begin{bmatrix}
-        \bigg(
-            \sqrt{E + p^3} \dfrac{1 - \sigma^3}{2}
-            + \sqrt{E - p^3} \dfrac{1 + \sigma^3}{2}
-        \bigg) \xi
+    &= \sqrt{m} \begin{bmatrix}
+        e^{-\beta/2} & 0 & 0 & 0 \\
+        0 & e^{\beta/2} & 0 & 0 \\
+        0 & 0 & e^{\beta/2} & 0 \\
+        0 & 0 & 0 & e^{-\beta/2}
+    \end{bmatrix} u(p_0)
+    \\
+    &= \sqrt{m} \begin{bmatrix}
+        \begin{bmatrix}
+            e^{-\beta/2} & 0 \\
+            0 & e^{\beta/2}
+        \end{bmatrix} \xi
         \\[1em]
-        \bigg(
-            \sqrt{E + p^3} \dfrac{1 + \sigma^3}{2}
-            + \sqrt{E - p^3} \dfrac{1 - \sigma^3}{2}
-        \bigg) \xi
+        \begin{bmatrix}
+            e^{\beta/2} & 0 \\
+            0 & e^{-\beta/2}
+        \end{bmatrix} \xi
     \end{bmatrix}
 \end{aligned}
 $$
 
-which can be put into the vector form (and thus applicable to particles moving in any direction)
+Now we can eliminate $m$ using the boost to the momentum to $p^\mu = (E,0,0,p^3)$ (below we omit the $x,y$ components)
+
+$$
+\begin{aligned}
+    \begin{bmatrix}
+        E \\ p^3
+    \end{bmatrix} &= \exp \left\{
+        -i\beta \begin{bmatrix}
+            0 & i \\ i & 0
+        \end{bmatrix}
+    \right\} \begin{bmatrix}
+        m \\ 0
+    \end{bmatrix}
+    \\
+    &= \begin{bmatrix}
+        \cosh \beta & \sinh \beta \\ 
+        \sinh \beta & \cosh \beta
+    \end{bmatrix} \begin{bmatrix}
+        m \\ 0
+    \end{bmatrix}
+    \\
+    &= \begin{bmatrix}
+        m \cosh \beta \\ m \sinh \beta
+    \end{bmatrix}
+    \\[1em]
+    \Rightarrow
+    e^\beta &= \frac{E + p^3}{m}, \quad
+    e^{-\beta} = \frac{E - p^3}{m}, \quad
+\end{aligned}
+$$
+
+Then
+
+$$
+u(p) = \begin{bmatrix}
+    \begin{bmatrix}
+        \sqrt{E-p^3} & 0 \\
+        0 & \sqrt{E+p^3}
+    \end{bmatrix} \xi \\[1em]
+    \begin{bmatrix}
+        \sqrt{E+p^3} & 0 \\
+        0 & \sqrt{E-p^3}
+    \end{bmatrix} \xi \\
+\end{bmatrix}
+$$
+
+This can be put into the vector form (and thus applicable to particles moving in any direction): be careful that  
+
+$$
+p_\mu = \eta_{\mu \nu} p^\nu = (E,0,0,-p^3)
+$$
+
+By direct calculation 
+
+$$
+\begin{aligned}
+    p_\mu \sigma^\mu &= \begin{bmatrix}
+        E - p^3 & 0 \\
+        0 & E + p^3
+    \end{bmatrix}
+    \\
+    p_\mu \bar{\sigma}^\mu &= \begin{bmatrix}
+        E + p^3 & 0 \\
+        0 & E - p^3
+    \end{bmatrix}
+\end{aligned}
+$$
+
+we finally obtain
 
 $$
 u(p) = \begin{bmatrix}
@@ -170,24 +264,14 @@ u(p) = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-Note that we have eliminated $m$ using the boost to the momentum (omitting the $x,y$ components)
+Similarly, for the negative-frequency solution
 
 $$
-\begin{aligned}
-    \begin{bmatrix}
-        E \\ p^3
-    \end{bmatrix} &= \exp \left\{
-        -i\beta \begin{bmatrix}
-            i & 0 \\ 0 & i
-        \end{bmatrix}
-    \right\} \begin{bmatrix}
-        m \\ 0
-    \end{bmatrix}
-    \\
-    &= \begin{bmatrix}
-        m \cosh \beta \\ m \sinh \beta
-    \end{bmatrix}
-\end{aligned}
+v(p) = \begin{bmatrix}
+    \sqrt{p_\mu \sigma^\mu} \zeta
+    \\[0.5em]
+    -\sqrt{p_\mu \bar{\sigma}^\mu} \zeta
+\end{bmatrix}
 $$
 
 ### Spin-up and Spin-down Solutions and Helicity
@@ -206,7 +290,7 @@ $$
 \end{aligned}
 $$
 
-### Normalization of $u(p)$
+### Spinor Normalization
 
 The object $u^\dagger u$ is *not* Lorentz invariant:
 

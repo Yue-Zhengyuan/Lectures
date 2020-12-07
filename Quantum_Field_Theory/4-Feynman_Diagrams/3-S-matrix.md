@@ -50,7 +50,7 @@ The scattering probability $dP$ can be related to the so-called ***S*-matrix**.
 
 Let $|\psi,t\rangle$ be the Schrödinger picture state at time $t$; its Heisenberg picture counterpart is simply denoted by $|\psi\rangle$.
 
-The *free* states at $t = \pm \infty$ are called **asymptotic states**. The **$S$-matrix** describes the amplitude to go from $t = -\infty$ to $t = +\infty$:
+The *free* states at $t = \pm \infty$ are called **asymptotic states**. The ***S*-matrix** describes the amplitude to go from $t = -\infty$ to $t = +\infty$:
 
 $$
 S_{fi} 
@@ -73,7 +73,7 @@ $$
 
 where $\mathcal{M}$ is called the **invariant matrix element**, which is the one that actually encodes useful information. 
 
-With $S$-matrix, the probability $dP$ that one particle $B$ will be scattered into $|f\rangle$ *and* fall in the momentum phase space $d\Pi$ (momentum states are uniformly distributed) is given by the product
+With *S*-matrix, the probability $dP$ that one particle $B$ will be scattered into $|f\rangle$ *and* fall in the momentum phase space $d\Pi$ (momentum states are uniformly distributed) is given by the product
 
 $$
 dP = \frac{|S_{fi}|^2}{
