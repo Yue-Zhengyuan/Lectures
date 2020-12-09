@@ -12,7 +12,8 @@
 Starting from the Dirac Lagrangian (expressed in terms of the Dirac spinor)
 
 $$
-\mathcal{L} = \bar{\psi} (i \gamma^\mu \partial_\mu - m) \psi
+\mathcal{L} = \bar{\psi} (i \gamma^\mu \partial_\mu - m) \psi 
+\qquad (\bar{\psi} \equiv \psi \gamma^0)
 $$
 
 the equation of motion with respect to $\psi$ is
@@ -130,20 +131,19 @@ $$
 \end{bmatrix} v(p) = 0
 $$
 
-The solution is
+There are 2 linearly independent solutions for each:
 
 $$
-u(p_0) = \sqrt{m} \begin{bmatrix}
-    \xi \\ \xi
+u^s(p_0) = \sqrt{m} \begin{bmatrix}
+    \xi^s \\ \xi^s
 \end{bmatrix}, \quad
-v(p_0) = \sqrt{m} \begin{bmatrix}
-    \eta \\ -\eta
-\end{bmatrix}
+v^s(p_0) = \sqrt{m} \begin{bmatrix}
+    \eta^s \\ -\eta^s
+\end{bmatrix} \quad
+(s = 1,2)
 $$
 
-where $\xi, \eta$ are 2-component objects (and we know that they are Weyl spinors), usually normalized by $\xi^\dagger \xi = 1$ and $\eta^\dagger \eta = 1$; the coefficient $\sqrt{m}$ in added for later convenience. 
-
-Obviously there will be two linearly independent $\xi$ (or $\eta$). They will be labelled by $\xi^s, \eta^s$ with $s = 1,2$. 
+Here $\xi, \eta$ are 2-component objects (and we know that they are Weyl spinors), usually normalized by $\xi^\dagger \xi = 1$ and $\eta^\dagger \eta = 1$; the coefficient $\sqrt{m}$ in added for later convenience. 
 
 ### Solution in a General Frame
 
@@ -272,7 +272,7 @@ $$
 
 ### Spinor Normalization
 
-The object $u^\dagger u$ is *not* Lorentz invariant:
+Naively, we may think that the object $u^\dagger u$ can be normalized by $u^\dagger u$. However, this object is *not* Lorentz invariant:
 
 $$
 \begin{aligned}
@@ -281,19 +281,27 @@ $$
         \xi^\dagger \sqrt{p_\mu \sigma^\mu} &
         \xi^\dagger \sqrt{p_\mu \bar{\sigma}^\mu}
     \end{bmatrix} \begin{bmatrix}
-        \sqrt{p_\nu \sigma^\nu} \xi
+        \sqrt{p_\mu \sigma^\mu} \xi
         \\[0.5em]
-        \sqrt{p_\nu \bar{\sigma}^\nu} \xi
+        \sqrt{p_\mu \bar{\sigma}^\mu} \xi
     \end{bmatrix}
+    \\
+    &= \xi^\dagger (
+        p_\mu \sigma^\mu + p_\mu \bar{\sigma}^\mu
+    ) \xi
+    \\
+    &= \xi^\dagger \left\{
+        \begin{bmatrix}
+            E - p^3 & 0 \\
+            0 & E + p^3
+        \end{bmatrix} + \begin{bmatrix}
+            E + p^3 & 0 \\
+            0 & E - p^3
+        \end{bmatrix}
+    \right\} \xi
+    \\
+    &= 2E \xi^\dagger \xi
 \end{aligned}
-$$
-
-Note that
-
-$$
-(p_\mu \sigma^\mu) (p_\nu \sigma^\nu)
-= (p_\mu \bar{\sigma}^\mu) (p_\nu \bar{\sigma}^\nu)
-=
 $$
 
 To make a Lorentz scalar, we define

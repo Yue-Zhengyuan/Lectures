@@ -45,7 +45,7 @@ $$
 \end{aligned}
 $$
 
-Here $h^i \equiv h(x^i)$. In the last line, the number 1 stands for the $m$-dimensional vector
+Here $h^i \equiv h(x^i)$. In the last line, the number 1 in the second line stands for the $m$-dimensional vector
 
 $$
 1 = (1, 1, ..., 1)^\mathsf{T}

@@ -1,3 +1,18 @@
+<style>
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: FireBrick;
+        color: White;
+    }
+</style>
+
 # The *S*-Matrix
 
 ## Cross Section
@@ -228,11 +243,17 @@ It is called the **Lorentz invariant $n$-body phase space element**.
 
 Finally, plugging it into $d\sigma$, the factors $T,V$ cancel out, and we arrive at
 
+<div class="result">
+
+**$2\to n$ Scattering Differential Cross Section (Any Frame):**
+
 $$
 d\sigma 
 = \frac{|\mathcal{M}_{fi}|^2}{2E_A 2E_B|v_A - v_B|}
 d\Pi_n
 $$
+
+</div><br>
 
 ### Effect of Identical Particles
 
@@ -242,7 +263,7 @@ $$
 
 ### $2\to 2$ Scattering in CM Frame
 
-We consider the special case of $2 \to 2$ scattering in the center-of-mass reference frame, in which
+We consider the special case of $2 \to 2$ scattering (of massive particles) in the center-of-mass reference frame, in which
 
 $$
 \begin{aligned}
@@ -252,6 +273,14 @@ $$
     E_A + E_B 
     &= E_1 + E_2 = E_\text{CM}
 \end{aligned}
+$$
+
+Thus we can set the final and the initial momenta as
+
+$$
+p_f \equiv |\mathbf{p}_1| = |\mathbf{p}_2|
+\qquad
+p_i \equiv |\mathbf{p}_A| = |\mathbf{p}_B|
 $$
 
 Now we calculate the final 2-body phase space
@@ -268,45 +297,64 @@ $$
     
     $$
     \int d\Pi_2
-    = \int \frac{d^3 p_1}{(2\pi)^3} \left[
+    = \int \frac{d^3 p_f}{(2\pi)^3} \left[
         \frac{1}{2E_1 2E_2} 
         (2\pi) \delta(E_\text{CM} - E_1 - E_2)
     \right]
     $$
 
-    where $E_1 = \sqrt{m_1 + \mathbf{p}_1^2},\, E_2 = \sqrt{m_2 + \mathbf{p}_1^2}$. 
-
 - The rest of the integral is evaluated using the spherical polar coordinate:
     
     $$
     \int d\Pi_2
-    = \int \frac{d\Omega \, dp_1}{(2\pi)^3}
-    \frac{p_1^2}{2E_1 2E_2} 
+    = \int \frac{d\Omega \, dp_f}{(2\pi)^3}
+    \frac{p_f^2}{2E_1 2E_2} 
     (2\pi) \delta(E_1 + E_2 - E_\text{CM})
     $$
 
-    Again, using the theorem
+    Express $E_1, E_2$ as functions of $p_f$:
 
     $$
-    \delta(f(x)) = \sum_a \frac{\delta(x - x_a)}{|f'(x_a)|}
+    E_1 = \sqrt{m_1 + p_f^2}, \quad E_2 = \sqrt{m_2 + p_f^2}
     $$
 
-    we obtain
+    Then
 
     $$
     \begin{aligned}
-        \int d\Pi_2
-        &= \int \frac{d\Omega}{(2\pi)^2} \left[
-            \frac{p_1^2}{2E_1 2E_2} 
-            \left(
-                \frac{p_1}{E_1} + \frac{p_1}{E_2}
-            \right)^{-1}
-        \right]_{E_1+E_2=E_\text{CM}}
-        \\
-        &= \int d\Omega \, 
-        \frac{|\mathbf{p}_1|}{16\pi^2 E_\text{CM}}
+        &\int dp_f \delta(E_1 + E_2 - E_\text{CM})
+        \\ &\to \left|
+            \frac{\partial}{\partial p_f}
+            (E_1 + E_2 - E_\text{CM})
+        \right|^{-1}_{E_1+E_2=E_\text{CM}}
+        \\ &= \left(
+            \frac{p_f}{E_1} + \frac{p_f}{E_2}
+        \right)^{-1}_{E_1+E_2=E_\text{CM}}
     \end{aligned}
     $$
+
+Putting these together:
+
+<div class="result">
+
+**2-Particle Phase Space $d\Pi_2$ in CM Frame:**
+
+$$
+\begin{aligned}
+    \int d\Pi_2
+    &= \int \frac{d\Omega}{(2\pi)^2} \left[
+        \frac{p_f^2}{2E_1 2E_2} 
+        \left(
+            \frac{p_f}{E_1} + \frac{p_f}{E_2}
+        \right)^{-1}
+    \right]_{E_1+E_2=E_\text{CM}}
+    \\
+    &= \int d\Omega \, 
+    \frac{p_f}{16\pi^2 E_\text{CM}}
+\end{aligned}
+$$
+
+</div><br>
 
 Besides, the relative velocity factor can also be simplified to
 
@@ -317,34 +365,27 @@ $$
         + \frac{|\mathbf{p}_B|}{E_B}
     \right|
     \\
-    &= \frac{|\mathbf{p}_A|(E_A + E_B)}{E_A E_B}
+    &= \frac{p_i}{E_A} + \frac{p_i}{E_B}
+    = \frac{p_i (E_A + E_B)}{E_A E_B}
     \\
-    &=|\mathbf{p}_A| \frac{E_\text{CM}}{E_A E_B}
+    &= \frac{p_i E_\text{CM}}{E_A E_B}
 \end{aligned}
 $$
 
 Finally, the cross section is
 
-$$
-\begin{aligned}
-    \left( \frac{d\sigma}{d\Omega} \right)_\text{CM}
-    &= \frac{1}{2E_A 2E_B|v_A - v_B|}
-    \frac{|\mathbf{p}_1|}{16\pi^2 E_{\text{CM}}}
-    |\mathcal{M}_{fi}|^2
-    \\
-    &= \frac{1}{64 \pi^2 E_\text{CM}^2} 
-    \frac{|\mathbf{p}_f|}{|\mathbf{p}_i|}
-    |\mathcal{M}_{fi}|^2
-\end{aligned}
-$$
+<div class="result">
 
-with (remember that we are in the CM frame)
+**Two Massive Particles to Another Two in CM Frame:**
 
 $$
-|\mathbf{p}_f| = |\mathbf{p}_1| = |\mathbf{p}_2|
-\qquad
-|\mathbf{p}_i| = |\mathbf{p}_A| = |\mathbf{p}_B|
+\left( \frac{d\sigma}{d\Omega} \right)_\text{CM}
+= \frac{1}{64 \pi^2 E_\text{CM}^2} 
+\frac{p_f}{p_i}
+|\mathcal{M}_{fi}|^2
 $$
+
+</div><br>
 
 ### Identical Particle $2\to 2$ Scattering
 
@@ -401,11 +442,17 @@ $$
 
 The differential decay rate is then
 
+<div class="result">
+
+**Differential Decay Rate in CM Frame:**
+
 $$
 d\Gamma = \frac{dP}{T}
 = \frac{1}{2m_A}
 |\mathcal{M}_{fi}|^2 d\Pi_n
 $$
+
+</div><br>
 
 ### Special Case: $1 \to 2$ Decay
 
