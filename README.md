@@ -23,20 +23,20 @@ None of the following is now complete or has reached my standard.
 - **Classical Mechanics**. Based on
     - *Essence of Linear Algebra* by Grant Sanderson (3Blue1Brown)
     - *Mechanics* by Lev Landau and Evgeny Lifshitz
-    - Course *PHYS1110 (Engineering Physics: Mechanics)* at The Chinese University of Hong Kong (CUHK)
+    - Course *Engineering Physics: Mechanics* (PHYS1110, Fall 2020) at The Chinese University of Hong Kong (CUHK)
 
 - **Statistical Physics and Condensed Matter Physics**. Based on
     - *Statistical Physics (Part 1)* by Lev Landau and Evgeny Lifshitz
-    - Course *PHYS5430 (Solid State Physics)* at CUHK
-    - Course *PHYS5510 (Advanced Statistical Physics)* at CUHK
-    - Course *PHYS5520 (Many-Body Theory)* at CUHK
-    - Course *Thermodynamics and Statistical Physics II* at Fudan University (FDU)
+    - Course *Advanced Statistical Physics* (PHYS5510, Spring 2020) at CUHK
+    - Course *Many-Body Theory* (PHYS5520, Spring 2021) at CUHK
+    - Course *Thermodynamics and Statistical Physics II* (Fall 2018) at Fudan University (FDU)
 
 - **Quantum Field Theory**. Based on
     - *An Introduction to Quantum Field Theory* by Michael E. Peskin and Daniel V. Schroeder
     - *Quantum Field Theory and the Standard Model* by Matthew D. Schwartz
+    - *Quantum Field Theory in a Nutshell* by Anthony Zee
     - *Conformal Field Theory* by Philippe di Francesco, Pierre Mathieu and David Sénéchal
-    - Course *Physics 215a (Particles and Fields)* at The University of California, San Diego (UCSD)
+    - Course *Particles and Fields* (PHYS 215A, 2020 Fall) at The University of California, San Diego (UCSD)
 
 - **Conformal Field Theory**. Based on
     - *Conformal Field Theory* by Philippe di Francesco, Pierre Mathieu and David Sénéchal
@@ -45,6 +45,9 @@ None of the following is now complete or has reached my standard.
 - **Differential Geometry and Gravity**. Based on 
     - *Geometry, Topology and Physics* by Mikio Nakahara
     - *Einstein Gravity in a Nutshell* by Anthony Zee
+
+- **Group Theory**. Based on
+    - *Group Theory in a Nutshell for Physicists* by Anthony Zee
 
 - **Machine Learning**. Based on
     - Course *Machine Learning (Coursera)* by Andrew Ng

@@ -25,7 +25,7 @@ $$
     \right) 
     - \frac{\partial \mathcal{L}}{\partial \psi}
     \\
-    &= i (\partial_\mu \bar{\psi}) \gamma^\mu - m \bar{\psi}
+    &= i (\partial_\mu \bar{\psi}) \gamma^\mu + m \bar{\psi}
 \end{aligned}
 $$
 
