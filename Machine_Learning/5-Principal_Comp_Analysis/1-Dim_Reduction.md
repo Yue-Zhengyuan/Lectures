@@ -243,7 +243,9 @@ Notice that the matrix $C$ has two nice properties:
     This means that its eigenvalues are all *real*, and the corresponding eigenvectors form an $N$-dimensional *orthonormal basis*. Then $C$ can be diagonalized by an *orthogonal matrix* $U \in \mathbb{R}^{N\times N}$; the columns of $U$ are exactly those eigenvectors:
 
     $$
-    U^\mathsf{T} C U = \Lambda
+    U^\mathsf{T} C U = \Lambda 
+    \quad \text{or} \quad
+    C = U \Lambda U^\mathsf{T}
     $$
 
     The matrix $\Lambda \in \mathbb{R}^{N \times N}$ is diagonal, with the eigenvalues of $C$ as its diagonal elements. 
@@ -279,13 +281,13 @@ $$
 
 <div class="remark">
 
-*Remark*: Since $C$ is symmetric and positive-definite, the orthogonal matrix $U$ and the eigenvalue spectrum $\lambda$ can also be found using **singular value decomposition** (which is more numerically stable)
+*Remark*: Since $C$ is symmetric and positive-definite, the orthogonal matrix $U$ and the eigenvalue spectrum $\lambda$ can also be found using **singular value decomposition** (which is preferred in practice):
 
 $$
 C = U S V^\mathsf{T}
 $$
 
-(Since $C$ is real, we write $V^\mathsf{T}$ instead of $V^\dagger$) 
+(Since $C$ is real, both $U$ and $V$ are real matrices; we then write $V^\mathsf{T}$ instead of $V^\dagger$.) 
 
 The singular value spectrum $S$ will be same as the eigenvalue spectrum $\Lambda$, and $V$ will turn out to be the same as $U$. We then keep only the first $K$ columns of $U$, and the first $K$ singular values in $S$. 
 
@@ -320,6 +322,12 @@ The singular value spectrum $S$ will be same as the eigenvalue spectrum $\Lambda
     C = U S V^\mathsf{T}
     $$
 
+    Alternatively, $U$ can also be obtained from the eigenvalue decomposition
+
+    $$
+    C = U \Lambda U^\mathsf{T}
+    $$
+
 - Keep the first $K$ columns of $U$ only.
 
     $$
@@ -342,7 +350,9 @@ The singular value spectrum $S$ will be same as the eigenvalue spectrum $\Lambda
 
 </div><br>
 
-## Appendix: Lagrange Multiplier Method
+## Appendix 
+
+### A. Lagrange Multiplier Method
 
 The standard calculus way to minimize $J$ is to introduce the Lagrange multiplier to incorporate the orthonormal condition $U^\mathsf{T} U = 1$ into the extremum problem. A new cost function is defined as
 
@@ -389,7 +399,7 @@ $$
 \end{aligned}
 $$
 
-The $\lambda$ derivatives simply restate $U^\mathsf{T} U = 1$. New things come from the $u$ derivatives:
+The $\lambda$ derivatives simply restate $U^\mathsf{T} U = 1$. New things come from the $u$ derivatives: using $\partial u_{ij} / \partial u_{mn} = \delta_{im} \delta_{jn}$, we obtain
 
 $$
 \begin{aligned}
@@ -425,3 +435,7 @@ U^\mathsf{T} C U = \Lambda
 $$
 
 Thus we see that the Lagrange multipliers $\Lambda$ is the same as the matrix $\Lambda$ defined earlier.
+
+### B. Details on Maximization of $U^\mathsf{T} C U$
+
+
