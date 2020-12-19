@@ -21,9 +21,7 @@
 </center>
 </div><br>
 
-**Back propagation** (or shortly **backprop**) is an efficient method of calculating the gradient of the cost function of a neural network. 
-
-Consider the network for multi-class classification, where the activation functions of all units are the sigmoid function:
+**Back propagation** (or shortly **backprop**) is the standard method of calculating the gradient of the cost function of a neural network in which the activation functions of all units are the sigmoid function:
 
 $$
 g(z) = \frac{1}{1 + e^{-z}}
@@ -291,9 +289,9 @@ $$
 
 <div class="result">
 
-**Back Propagation Algorithm (without Regularization)**
+**Back Propagation Algorithm (with Regularization)**
 
-*Below we treat vectors in columns.*
+*Below we treat vectors as columns.*
 
 - From *one* example feature $a^0 \equiv x$ (with the bias term), Use forward propagation to obtain the activations (output) of each neuron
     
@@ -357,7 +355,7 @@ $$
     \in \mathbb{R}^{N_l\times (N_{l-1}+1)}
     $$
 
-- After getting the derivatives, use gradient descent or call external optimization library functions to update $\Theta$ until we reached the optimal values. 
+- After getting the derivatives, use optimization algorithms (e.g. gradient descent) to update $\Theta$ until we reached the optimal values. 
 
 </div><br>
 

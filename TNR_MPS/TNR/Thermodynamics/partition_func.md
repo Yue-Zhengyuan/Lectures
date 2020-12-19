@@ -1,9 +1,9 @@
 # Calculation of Partition Function
 
-The tensor network represents the partition function as the full contract of tensors $T_A$ and $T_B$, formally denoted as
+The tensor network represents the partition function as the full conTract of tensors $T_A$ and $T_B$, formally denoted as
 
 $$
-Z = \operatorname{tr} (T_A T_B)^N
+Z = \operatorname{Tr} (T_A T_B)^N
 $$
 
 where $N$ is the number of $T_A$ (or $T_B$) contained in the tensor network. Here we are considering a tensor network on a bipartite square lattice.
@@ -19,11 +19,11 @@ $$
 RG does not change the partition function, therefore
 
 $$
-Z = \operatorname{tr} (T_A^{(i)} T_B^{(i)})^{N_i}
-= \operatorname{tr} (T_A^{(i+1)} T_B^{(i+1)})^{N_{i+1}}
+Z = \operatorname{Tr} (T_A^{(i)} T_B^{(i)})^{N_i}
+= \operatorname{Tr} (T_A^{(i+1)} T_B^{(i+1)})^{N_{i+1}}
 $$
 
-However, to avoid the tensor elements becoming too large, we need to normalize the tensors after each RG step using some appropriate number $f_i$, which is usually chosen as the *absolute value* of the *quadratic root* of the full trace of the $2\times 2$ transfer matrix constructed from $T_A^{(i)}$ and $T_B^{(i)}$:
+However, to avoid the tensor elements becoming too large, we need to normalize the tensors after each RG step using some appropriate number $f_i$, which is usually chosen as the *absolute value* of the *quartic root* of the full Trace of the $2\times 2$ Transfer matrix consTructed from $T_A^{(i)}$ and $T_B^{(i)}$ (trace is denoted by `..` below):
 
 ```
         :   :
@@ -54,21 +54,21 @@ Let us then write the partition function in terms of the normalized tensors.
 
 $$
 \begin{aligned}
-    Z &= \operatorname{tr} (T_A^{(0)} T_B^{(0)})^{N_0}
+    Z &= \operatorname{Tr} (T_A^{(0)} T_B^{(0)})^{N_0}
     \\
     &= f_0^{2N_0} 
-    \operatorname{tr} (\mathcal{T}_A^{(0)} \mathcal{T}_B^{(0)})^{N_0}
+    \operatorname{Tr} (\mathcal{T}_A^{(0)} \mathcal{T}_B^{(0)})^{N_0}
     \\
     &= f_0^{2N_0}
-    \operatorname{tr} (f_1 \mathcal{T}_A^{(1)} f_1 \mathcal{T}_B^{(1)})^{N_1}
+    \operatorname{Tr} (f_1 \mathcal{T}_A^{(1)} f_1 \mathcal{T}_B^{(1)})^{N_1}
     \\
     &= f_0^{2N_0} f_1^{2N_1}
-    \operatorname{tr} (\mathcal{T}_A^{(1)} \mathcal{T}_B^{(1)})^{N_1}
+    \operatorname{Tr} (\mathcal{T}_A^{(1)} \mathcal{T}_B^{(1)})^{N_1}
     \\
     & \cdots \quad \text{(after } a \text{ RG steps)}
     \\
     &= f_0^{2N_0} f_1^{2N_1} \cdots f_a^{2N_a}
-    \operatorname{tr} (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
+    \operatorname{Tr} (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
 \end{aligned}
 $$
 
@@ -76,7 +76,7 @@ Take the logarithm:
 
 $$
 \ln Z = \sum_{i=0}^a 2N_i \ln f_i
-+ \ln \operatorname{tr} (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
++ \ln \operatorname{Tr} (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
 $$
 
 Usually the *density* of the free energy $F = -T \ln Z$ (per particle) is more important. 
@@ -86,7 +86,7 @@ Usually the *density* of the free energy $F = -T \ln Z$ (per particle) is more i
     $$
     - \frac{1}{2N_0} \frac{1}{\beta} \ln Z
     = -\sum_{i=0}^a \frac{N_i}{\beta N_0} \ln f_i
-    - \frac{1}{2 \beta N_0}\ln \operatorname{tr} (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
+    - \frac{1}{2 \beta N_0}\ln \operatorname{Tr} (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
     $$
 
     But $N_0$ is supposed to be a large number, so the second term can be neglected. On the square lattice, the RG step gives
