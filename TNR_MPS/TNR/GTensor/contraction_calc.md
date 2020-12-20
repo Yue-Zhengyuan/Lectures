@@ -1,3 +1,18 @@
+<style>
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: FireBrick;
+        color: White;
+    }
+</style>
+
 # Contraction of Grassmann Tensors: <br>Calculation Method
 
 *Program implementation: `gtensor.tensordot`*
@@ -41,7 +56,7 @@ $$
 \begin{aligned}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
     \\
-    &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(p(a,b) | \{m, n\})}
+    &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(p(a,b) | m,n)}
     \int g_{\theta_a \eta_b} \theta_a^{m_a} \eta_b^{n_b}
     \\
     &\quad \times \delta_{i_a j_b}
@@ -52,15 +67,17 @@ $$
 \end{aligned}
 $$
 
-----
+<div class="remark">
 
-**Meaning of $P(p(a,b) | \{m, n\})$:**
+**Meaning of $P(p(a,b) | m,n)$:**
 
 - $p(a,b)$ denotes the permutation required to bring $\theta_a, \eta_b$ to the front of the sequence of Grassmann variables (in order to be integrated out with $g_{\theta_a \eta_b}$);
-- During this process, only exchange with non-vanishing Grassmann variable (i.e. the corresponding Grassmann index = 1) will produce a minus sign; thus we only consider *the permutation restricted to nonzero Grassmann indices* (a **sub-permutation**, denoted by $p(a,b)|\{m,n\}$)
-- The number $P(p(a,b) | \{m,n\})$ stands for the parity of this **sub-permutation**.
 
-----
+- During this process, only exchange with non-vanishing Grassmann variable (i.e. the corresponding Grassmann index = 1) will produce a minus sign; thus we only consider *the permutation restricted to nonzero Grassmann indices* (a **sub-permutation**, denoted by $p(a,b)|m,n$)
+
+- The number $P(p(a,b) | m,n)$ stands for the parity of this **sub-permutation**.
+
+</div><br>
 
 ### Perform Grassmann Integration
 
@@ -117,7 +134,7 @@ $$
 \begin{aligned}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
     \\
-    &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(p(a,b) |\{m, n\})} (-1)^{m_a}
+    &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(p(a,b) |m,n)} (-1)^{m_a}
     \delta_{m_a n_b} \delta_{i_a j_b}
     \\ &\quad \times
     A_{i_1 ... i_r}^{m_1 ... m_r} 
@@ -138,33 +155,34 @@ $$
 
 without the $(-1)^m$ factor. We can then summarize the two cases as
 
+<div class="result">
+
 $$
 \begin{aligned}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
-    \\
-    &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(a,b; \{m, n\})} g_{ab}^{m_a}
+    \\[0.5em]
+    &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(a,b; m,n)} g_{ab}^{m_a}
     \delta_{m_a n_b} \delta_{i_a j_b}
-    \\ &\quad \times
+    \\[1.2em] &\quad \times
     A_{i_1 ... i_r}^{m_1 ... m_r} 
     B_{j_1 ... j_s}^{n_1 ... n_s} 
     \theta_1^{m_1} ... \cancel{\theta_a^{m_a}} ...\theta_r^{m_r} 
     \eta_1^{n_1} ... \cancel{\eta_b^{n_b}} ...\eta_s^{n_s}
+    \\[1em]
+    &\text{with} \quad
+    g_{ab} = 
+    \begin{cases}
+        -1, &\text{using } g_{\theta_a \eta_b}\\
+        +1, &\text{using } g_{\eta_b \theta_a}
+    \end{cases}
 \end{aligned}
 $$
 
-with
-
-$$
-g_{ab} = 
-\begin{cases}
-    -1, &\text{using } g_{\theta_a \eta_b}\\
-    +1, &\text{using } g_{\eta_b \theta_a}
-\end{cases}
-$$
+</div><br>
 
 ### Special Case: $a = r, b = 1$
 
-The Kronecker delta in the formula of contraction enforces that $m_a = n_b$. Then we notice that $P(p(r,1) | \{m,n\}) = 1$ always holds when $m_r = n_1$, which makes it convenient to calculate the special case when the last axis of $A$ is contracted with the first axis of $B$:
+The Kronecker delta in the formula of contraction enforces that $m_a = n_b$. Then we notice that $P(p(r,1) | m,n) = 1$ always holds when $m_r = n_1$, which makes it convenient to calculate the special case when the last axis of $A$ is contracted with the first axis of $B$:
 
 $$
 \begin{aligned}
@@ -206,7 +224,7 @@ The generalization to contraction of multiple pairs of axes is straightforward. 
 $$
 \begin{aligned}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
-    \\
+    \\[1em]
     & \equiv
     \sum_{m_a,n_b} \sum_{m_c,n_d} \cdots 
     \sum_{i_a,j_b} \sum_{i_c,j_d} \cdots
@@ -215,10 +233,10 @@ $$
     \int g_{\theta_c \eta_d} \delta_{i_c j_d}\cdots
     \mathbf{A}(\theta)_{i_1 ... i_r}^{m_1 ... m_r} 
     \mathbf{B}(\eta)_{j_1 ... j_s}^{n_1 ... n_s} 
-    \\
+    \\[1em]
     &= \sum_{m_a,n_b} \sum_{m_c,n_d} \cdots 
     \sum_{i_a,j_b} \sum_{i_c,j_d} \cdots
-    (-1)^{P(p(a,b,c,d,...) | \{m, n\})}
+    (-1)^{P(p(a,b,c,d,...) | m,n)}
     \\ &\quad \times
     \int g_{...} \theta_a^{m_a} \eta_b^{n_b}
     \int g_{...} \theta_c^{m_c} \eta_d^{n_d} \cdots
@@ -228,12 +246,22 @@ $$
     \\ &\quad \times
     \theta_1^{m_1} \cdots \cancel{\theta_a^{m_a}} \cdots \cancel{\theta_c^{m_c}} \cdots \theta_r^{m_r} 
     \eta_1^{n_1} \cdots \cancel{\eta_b^{n_b}} \cdots \cancel{\eta_d^{m_d}} \cdots \eta_s^{n_s}
-    \\
+\end{aligned}
+$$
+
+The result is then
+
+<div class="result">
+
+$$
+\begin{aligned}
+    &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
+    \\[0.5em]
     &= \sum_{m_a,n_b} \sum_{m_c,n_d} \cdots \sum_{i_a,j_b} \sum_{i_c,j_d} \cdots
-    (-1)^{P(p(a,b,c,d,...) | \{m, n\})} 
+    (-1)^{P(p(a,b,c,d,...) | m,n)} 
     \\ &\quad \times
-    g_{ab}^{m_a} g_{cd}^{m_c} \cdots
-    \delta_{m_a n_b} \delta_{m_c n_d} \cdots
+    (g_{ab}^{m_a} \delta_{m_a n_b})
+    (g_{cd}^{m_c} \delta_{m_c n_d}) \cdots
     \delta_{i_a j_b} \delta_{i_c j_d} \cdots
     A_{i_1 ... i_r}^{m_1 ... m_r} 
     B_{j_1 ... j_s}^{n_1 ... n_s} 
@@ -243,10 +271,16 @@ $$
 \end{aligned}
 $$
 
-Notes about notation: 
+</div><br>
 
-- In the Grassmann integrals, the metric $g_{...}$ is either $g_{\theta \eta}$ or $g_{\eta \theta}$; after integration, they become $g_{ab}, g_{cd}, ... = \pm 1$;
-- $p(a,b,c,d,...)$ is the permutation to bring $\theta_a^{m_a} \eta_b^{n_b} \theta_c^{m_c} \eta_d^{n_d} \cdots$ to the front of the sequence $\theta_1^{m_1} \cdots \theta_r^{m_r} \eta_1^{n_1} \cdots \eta_s^{n_s}$. Again, we only consider the parity of $p$ restricted to Grassmann numbers with nonzero Grassmann index (denoted $p(a,b,c,d,...)|\{m,n\}$). 
+<div class="remark">
+
+*Notes about notation*: 
+
+- In the Grassmann integrals, the metric $g_{...}$ is either $g_{\eta \theta}$ or $g_{\theta \eta}$; after integration, they become $g_{ab}, g_{cd}, ... = \pm 1$;
+- $p(a,b,c,d,...)$ is the permutation to bring $\theta_a^{m_a}, \eta_b^{n_b}, \theta_c^{m_c}, \eta_d^{n_d} \cdots$ to the front of the sequence $\theta_1^{m_1} \cdots \theta_r^{m_r} \eta_1^{n_1} \cdots \eta_s^{n_s}$. Again, we only need the parity of $p$ *restricted* to nonzero Grassmann indices (denoted $p(a,b,c,d,...)|m,n$). 
+
+</div><br>
 
 Since the Grassmann metric only contains the product *two* Grassmann variables, they commute with each other. Thus, the contraction order (i.e. which pair is to be contracted first, second, etc.) does not affect the result. 
 
@@ -257,9 +291,9 @@ Let the parity of $A, B$ be $P(A), P(B)$ respectively, then
 $$
 \begin{aligned}
     &P(A B) 
-    \equiv \left[ 
+    \equiv \bigg[ 
         \sum_{k \ne a,c,...} m_k + \sum_{l \ne b,d,...} n_l
-    \right] \pmod{2} \\
+    \bigg] \pmod{2} \\
     &= [P(A) + P(B) - (m_a+n_b) - (m_c+n_d) - \cdots] \pmod{2}
 \end{aligned}
 $$
@@ -274,46 +308,10 @@ regardless of the choice of the Grassmann metric.
 
 In order to get rid of the $(-1)^P$ factor in the contraction formula, we can first **transpose** both tensors, so that the pairs of axes to be contracted will be put at a more convenient position. 
 
-----
-
-#### **Transposition of Grassmann Tensors**
-
-*Program implementation: `gtensor.transpose`*
-
-Let $p \equiv (a,b,...)$ be a permutation of axes of a tensor $\mathbf{T}(\theta)$. The transposed tensor $\mathbf{T}^\prime$ are related to the old tensor $\mathbf{T}$ by
+The various Kronecker deltas enforce that $m_a = n_b, m_c = n_d, ...$ (suppose there are $q$ such pairs). Under this constrain, the condition (recall that $A$ has $r$ axes, and $B$ has $s$ axes)
 
 $$
-\mathbf{T}^\prime (\theta)_{i_a i_b ...}^{n_a n_b ...}
-=
-\mathbf{T}(\theta)_{i_1 i_2 ...}^{n_1 n_2 ...}
-$$
-
-i.e.
-
-$$
-{(T^\prime)}_{i_a i_b ...}^{n_a n_b ...} \theta_a^{n_a} \theta_b^{n_b} \cdots
-=
-T_{i_1 i_2 ...}^{n_1 n_2 ...} \theta_1^{n_1} \theta_2^{n_2} \cdots
-$$
-
-Note that due to the anti-commutativity of Grassmann numbers, the tensor elements $T$ may acquire sign changes:
-
-$$
-{(T^\prime)}_{i_a i_b ...}^{n_a n_b ...} 
-=
-(-1)^{P(p | \{n\})} T_{i_1 i_2 ...}^{n_1 n_2 ...}
-$$
-
-where $P(p | \{n\})$ is the parity of the sub-permutation of nonzero Grassmann indices $\{n\}$. 
-
-To improve program efficiency, the $(-1)^P$ signs are stored in the member `_gSign` of the class `GTensor`, which can be absorbed into the `_blocks` using the method `absorb_sign` if needed.
-
-----
-
-The various Kronecker deltas enforce that $m_a = n_b, m_c = n_d, ...$ (suppose there are $q$ such pairs). Under this constrain, we can show that (recall that $A$ has $r$ axes, and $B$ has $s$ axes)
-
-$$
-P(p(r,1; r-1,2; ...; r-q+1, q) \mid \{m, n\}) = 1
+P(p(r,1; r-1,2; ...; r-q+1, q) | m,n) = 1
 $$
 
 always holds. Thus we can:
@@ -369,12 +367,12 @@ However, the last $q$ axes to be contracted in $A$ are in *reversed order* compa
 
 *Program Implementation: `gtensor.flip_gSign`*
 
-If the Grassmann metrics are not the same for all pairs of axes to be contracted (e.g. the situation shown below), we cannot merge these axes directly: we should first modify the tensors so that the metrics can then be the same. 
+If the Grassmann metrics are not the same for all pairs of axes to be contracted (e.g. the situation shown below), we cannot merge these axes directly: we should first modify the tensors so that the metrics are then the same for these pairs. 
 
 ```
-
-
-
+    |_A_|           |_A_|
+     ↑ ↓  --Merge-->  ？
+    |-B-|           |-B-|
 ```
 
 In the contraction
@@ -384,7 +382,7 @@ $$
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
     \\
     &= \sum_{m_a,n_b} \cdots \sum_{i_a,j_b} \cdots
-    (-1)^{P(p(a,b,c,d,...) | \{m, n\})} 
+    (-1)^{P(p(a,b,c,d,...) | m,n)} 
     \\ &\quad \times
     g_{ab}^{m_a} g_{cd}^{m_c} \cdots
     \delta_{m_a n_b} \cdots
@@ -412,7 +410,7 @@ $$
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
     \\
     &= \sum_{m_a,n_b} \cdots \sum_{i_a,j_b} \cdots
-    (-1)^{P(p(a,b,c,d,...) | \{m, n\})} 
+    (-1)^{P(p(a,b,c,d,...) | m,n)} 
     \\ &\quad \times
     (-g_{ab})^{m_a} g_{cd}^{m_c} \cdots
     \delta_{m_a n_b} \cdots
@@ -433,12 +431,6 @@ $$
 \mathbf{T}_{i_1 ... i_r}^{n_1 ... n_r}
 $$
 
-----
-
-#### **Technical details**
-
-To improve efficiency, we do not directly change the whole `_blocks`, but storing the $(-1)$ factors in the class member `_gSign`; the minus sign is absorbed into the `_blocks` only when needed.
-
 By definition, the following lines of code (contraction of the `i`th axis of tensor `A` and the `j`th axis of tensor `B`) are equivalent:
 
 ```python    
@@ -448,6 +440,14 @@ C = gt.tensordot(A.flip_gSign(i), B, (i, j, -g))
 C = gt.tensordot(A, B.flip_gSign(j), (i, j, -g))
 C = gt.tensordot(A.flip_gSign(i), B.flip_gSign(j), (i, j, g))
 ```
+
+<div class="remark">
+
+**Technical details**
+
+To improve efficiency, we do not directly change the whole `_blocks`, but storing the $(-1)$ factors in the class member `_gSign`; the minus sign is absorbed into the `_blocks` only when needed.
+
+</div><br>
 
 #### Default Choice of Grassmann Metric
 

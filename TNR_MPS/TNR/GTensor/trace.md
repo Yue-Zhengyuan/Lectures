@@ -1,3 +1,18 @@
+<style>
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: FireBrick;
+        color: White;
+    }
+</style>
+
 # Trace of Grassmann Tensors
 
 *Program implementation: `gtensor.trace`*
@@ -35,7 +50,7 @@ Notes about notation:
 - in indices such as $i_1 ... \cancel{i_a} \cancel{i_b} \cancel{i_c} \cancel{i_d} ... i_r$, we do *not* mean that the axes $a,b,c,d,...$ are consecutive; it just means that that these axes are *removed* in the result;
 - $P(a,c,...; b,d,...; \{n\})$ is the parity of the *sub*-permutation derived from the permutation required to bring $\theta_a^{n_a} \theta_b^{n_b} \theta_c^{n_c} \theta_d^{n_d} \cdots$ to the front of the sequence $\theta_1^{n_1} \cdots \theta_r^{n_r}$.
 
-----
+<div class="remark">
 
 *Program usage*: 
 
@@ -56,11 +71,11 @@ By default, `gtensor.trace` assumes that the Grassmann metric goes from `axis1` 
 """
 a = gt.random(((3,5,3,5), (4,3,4,3)))
 # the following two lines are equivalent
-tr1 = gt.trace(a, (0,1), (2,3), [1,1])
-tr2 = gt.trace(a, (0,3), (2,1), [1,-1])
+tr1 = gt.trace(a, (0,1), (2,3), (1,1))
+tr2 = gt.trace(a, (0,3), (2,1), (1,-1))
 ```
 
-----
+</div><br>
 
 ## Parity of Trace
 

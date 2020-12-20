@@ -37,9 +37,8 @@ Grassmann tensors are represented by blocks (or circles, etc); its axes are *dou
 ### Case 1: Spinless Fermion Systems
 
 <center>
-
-![](gate_network_part.png)   
-*A portion of the Trotter gate network*
+<img src="gate_network_part.png" width="300px">
+<br><i>A portion of the Trotter gate network</i>
 
 </center>
 

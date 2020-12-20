@@ -1,3 +1,18 @@
+<style>
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: FireBrick;
+        color: White;
+    }
+</style>
+
 # Calculation of Partition Function
 
 The tensor network represents the partition function as the full conTract of tensors $T_A$ and $T_B$, formally denoted as
@@ -99,18 +114,28 @@ Usually the *density* of the free energy $F = -T \ln Z$ (per particle) is more i
 
     Thus we finally obtain
 
+    <div class="result">
+
+    **Free Energy Density (2D Classical Models)**
+
     $$
     - \frac{1}{2N_0} \frac{1}{\beta} \ln Z 
     = -\frac{1}{\beta} \sum_{i=0}^a \frac{1}{2^i} \ln f_i
     $$
 
-- For (1+1)D quantum models, the system size is half of the *square root* of the tensor number. Suppose that in the initial network, each row of tensors represents reciprocal temperature $\beta$. Then for the whole network
+    </div><br>
+
+- For (1+1)D quantum models, the system size is *twice* (due to construction of tensors from Trotter gates) of the *square root* of the tensor number. Suppose that in the initial network, each row of tensors represents reciprocal temperature $\beta$. Then for the whole network
     
     $$
     \frac{1}{T} = \sqrt{2N_0}\beta
     $$
 
     Thus the free energy density is
+
+    <div class="result">
+
+    **Free Energy Density (1+1D Quantum Models)**
 
     $$
     \begin{aligned}
@@ -120,6 +145,8 @@ Usually the *density* of the free energy $F = -T \ln Z$ (per particle) is more i
         &= -\frac{1}{\beta} \sum_{i=0}^a \frac{1}{2^{i+1}} \ln f_i
     \end{aligned}
     $$
+
+    </div><br>
     
     which is similar to the classical case. 
     

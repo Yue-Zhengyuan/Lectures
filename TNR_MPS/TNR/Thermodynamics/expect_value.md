@@ -1,3 +1,18 @@
+<style>
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: FireBrick;
+        color: White;
+    }
+</style>
+
 # Expectation Value on 2D Network
 
 The expectation value of an operator $\mathcal{O}$ in a state $|\psi\rangle$ is
@@ -10,95 +25,204 @@ $$
 
 When the denominator and the numerator can be expressed as a tensor network (by expressing $|\psi\rangle$ as a **tensor product state (TPS)**, and $\mathcal{O}$ as a circuit gate), we can use the TNR method to calculate them. 
 
-In the following, we consider the special case where $\mathcal{O}$ is a two-site gate on neighboring tensors. 
-
-- The denominator is just the ordinary uniform tensor network:
-    
-
-    
-    Recall that in each RG step, we will get a normalization factor $f_i \, (i = 0,1,...)$:
-    
-    $$
-    (\mathcal{T}_A^{(i)}, \mathcal{T}_B^{(i)})
-    =\frac{1}{f_i} (T_A^{(i)}, T_B^{(i)})
-    $$
-
-    Suppose that there are $N_0$ tensors $A$ and $B$ respectively. After $a$ RG steps, we are left with the following network (i.e. $N_a = 2$):
-    
-    ```
-            :   :
-            |   |     
-        ..- B - A -..
-            |   |
-        ..- A - B -..
-            |   |
-            :   :
-    ```
-
-    Then the state norm can be expressed as
-    
-    $$
-    \begin{aligned}
-        \langle \psi |\psi \rangle 
-        &= \operatorname{Tr} (T_A^{(0)} T_B^{(0)})^{N_0}
-        \\
-        &= f_0^{2N_0} 
-        \operatorname{Tr} (\mathcal{T}_A^{(0)} \mathcal{T}_B^{(0)})^{N_0}
-        \\
-        &= f_0^{2N_0}
-        \operatorname{Tr} (f_1 \mathcal{T}_A^{(1)} f_1 \mathcal{T}_B^{(1)})^{N_1}
-        \\
-        &= f_0^{2N_0} f_1^{2N_1}
-        \operatorname{Tr} (\mathcal{T}_A^{(1)} \mathcal{T}_B^{(1)})^{N_1}
-        \\
-        & \cdots \quad \text{(after } a \text{ RG steps)}
-        \\
-        &= f_0^{2N_0} f_1^{2N_1} \cdots f_a^{2N_a}
-        \underbrace{
-            \operatorname{Tr} 
-            (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
-        }_{\text{normalized to 1}}
-        \\
-        &= f_0^{2N_0} f_1^{2N_1} \cdots f_a^{2N_a}
-    \end{aligned}
-    $$
-
-- The numerator network is with impurity tensors. Suppose that in the $i$th RG step, we obtain normalization factor $f'_i \, (i = 1,2,...)$. After $a$ RG steps, the network will be reduced into four tensors
+- The numerator network is with impurity tensors. In the following, we consider the special case where $\mathcal{O}$ is a two-site gate on nearest neighbors, or a four-site gate on a small square of neighboring sites. Then that the numerator is the following network with an impurity central plaquette:
 
     ```
-            :   :
-            |   |     
-        ..- D - C -..
-            |   |
-        ..- A'- B'-..
-            |   |
-            :   :
+          |   |   |   |  
+        - B - A - B - A -
+          |   |   |   |
+        - A - D - C - B -
+          |   |   |   |  
+        - B - A'- B'- A -
+          |   |   |   |
+        - A - B - A - B -
+          |   |   |   |  
     ```
 
-    Then the un-normalized expectation value is then
+In the two-site gate case, $A', B' = A, B$ before RG, hence their notation. 
 
-    $$
-    \begin{aligned}
-        \langle \psi |\mathcal{O}| \psi \rangle 
-        &= \operatorname{Tr} (T_A^{(0)} T_B^{(0)})^{N_0}
-        \\
-        &= f_0^{2N_0} 
-        \operatorname{Tr} (\mathcal{T}_A^{(0)} \mathcal{T}_B^{(0)})^{N_0}
-        \\
-        &= f_0^{2N_0}
-        \operatorname{Tr} (f_1 \mathcal{T}_A^{(1)} f_1 \mathcal{T}_B^{(1)})^{N_1}
-        \\
-        &= f_0^{2N_0} f_1^{2N_1}
-        \operatorname{Tr} (\mathcal{T}_A^{(1)} \mathcal{T}_B^{(1)})^{N_1}
-        \\
-        & \cdots \quad \text{(after } a \text{ RG steps)}
-        \\
-        &= f_0^{2N_0} f_1^{2N_1} \cdots f_a^{2N_a}
-        \underbrace{
-            \operatorname{Tr} 
-            (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
-        }_{\text{normalized to 1}}
-        \\
-        &= f_0^{2N_0} f_1^{2N_1} \cdots f_a^{2N_a}
-    \end{aligned}
-    $$
+- The denominator is the usual uniform network:
+    
+    ```
+          |   |   |   |  
+        - B - A - B - A -
+          |   |   |   |
+        - A - B - A - B -
+          |   |   |   |  
+        - B - A - B - A -
+          |   |   |   |
+        - A - B - A - B -
+          |   |   |   |  
+    ```
+
+Before RG, the numbers of the 6 types of tensors in the numerator network are:
+
+$$
+\begin{aligned}
+    A + A' + C: &\quad (N_0 - 2) + 1 + 1 \\
+    B + B' + D: &\quad (N_0 - 2) + 1 + 1 \\
+\end{aligned}
+$$
+
+It turns out that in each RG step, the DCA'B' impurity center will not affect the flow of the uniform tensors A and B (their flow is the same as the flow in the denominator network):
+
+$$
+\begin{aligned}
+    (A'^{(i)}, B'^{(i)}, C^{(i)}, D^{(i)})
+    &\xrightarrow{\text{RG}}
+    (A'^{(i+1)}, B'^{(i+1)}, C^{(i+1)}, D^{(i+1)})
+    \\
+    (A^{(i)}, B^{(i)})
+    &\xrightarrow{\text{RG}}
+    (A^{(i+1)}, B^{(i+1)})
+\end{aligned}
+$$
+
+The numbers of tensors after the $i$th RG step are
+
+$$
+\begin{aligned}
+    A + A' + C: &\quad (N_i - 2) + 1 + 1 \\
+    B + B' + D: &\quad (N_i - 2) + 1 + 1 \\
+\end{aligned} \quad \text{with} \quad
+N_i = \frac{N_{i-1}}{2}
+$$
+
+The two RG flows are normalized by the *quartic root* of following two factors (denoted by $g_i$ and $f_i$), respectively:
+
+```
+    A'B'CD flow         AB flow
+
+    g^4 =               f^4 = 
+        :   :               :   :
+        |   |               |   |
+    ..- D - C -..       ..- B - A -..
+        |   |               |   |
+    ..- A'- B'-..       ..- A - B -..
+        |   |               |   |
+        :   :               :   :
+```
+
+The normalized tensors (denoted by script letters) are
+
+$$
+\begin{aligned}
+    (\mathcal{A}'^{(i)}, \mathcal{B}'^{(i)}, 
+    \mathcal{C}^{(i)}, \mathcal{D}^{(i)})
+    &= \frac{1}{g_i} (A'^{(i)}, B'^{(i)}, C^{(i)}, D^{(i)})
+    \\
+    (\mathcal{A}^{(i)}, \mathcal{B}^{(i)})
+    &= \frac{1}{f_i} (A^{(i)}, B^{(i)})
+\end{aligned}
+$$
+
+Therefore, the flow of the normalized tensors is then
+
+$$
+\begin{aligned}
+    (\mathcal{A}'^{(i)}, \mathcal{B}'^{(i)}, 
+    \mathcal{C}^{(i)}, \mathcal{D}^{(i)})
+    &\xrightarrow{\text{RG}} g_{i+1}
+    (\mathcal{A}'^{(i)}, \mathcal{B}'^{(i)}, 
+    \mathcal{C}^{(i)}, \mathcal{D}^{(i)})
+    \\
+    (\mathcal{A}^{(i)}, \mathcal{B}^{(i)})
+    &\xrightarrow{\text{RG}} f_{i+1}
+    (\mathcal{A}^{(i)}, \mathcal{B}^{(i)})
+\end{aligned}
+$$
+
+Then the un-normalized expectation value is then
+
+$$
+\begin{aligned}
+    \langle \psi |\mathcal{O}| \psi \rangle 
+    &= \operatorname{Tr} [(A^{(0)})^{N_0-2} (B^{(0)})^{N_0-2}
+    A'^{(0)} B'^{(0)} C^{(0)} D^{(0)}]
+    \\
+    &= f_0^{2N_0} \left(\frac{g_0}{f_0}\right)^4 
+    \\ & \quad \times
+    \operatorname{Tr}[
+        (\mathcal{A}^{(0)})^{N_0-2} (\mathcal{B}^{(0)})^{N_0-2}
+        \mathcal{A}'^{(0)} \mathcal{B}'^{(0)} 
+        \mathcal{C}^{(0)} \mathcal{D}^{(0)}
+    ]
+    \\
+    &= f_0^{2N_0} f_1^{2N_1} \left(\frac{g_0 g_1}{f_0 f_1}\right)^4 
+    \\ & \quad \times
+    \operatorname{Tr}[
+        (\mathcal{A}^{(1)})^{N_1-2} (\mathcal{B}^{(1)})^{N_1-2}
+        \mathcal{A}'^{(1)} \mathcal{B}'^{(1)} 
+        \mathcal{C}^{(1)} \mathcal{D}^{(1)}
+    ]
+    \\ &= \cdots
+\end{aligned}
+$$
+
+Finally we will reach the $a$th RG step, where $N_a = 2$, i.e. the network is reduced to the four tensors A', B', C, D. Then
+
+$$
+\begin{aligned}
+    \langle \psi |\mathcal{O}| \psi \rangle 
+    &= f_0^{2N_0} \cdots f_a^{2N_a} 
+    \left(\frac{g_0 \cdots g_a}{f_0 \cdots f_a}\right)^4 
+    \\ & \quad \times
+    \underbrace{
+        \operatorname{Tr}[
+            \mathcal{A}'^{(a)} \mathcal{B}'^{(a)} 
+            \mathcal{C}^{(a)} \mathcal{D}^{(a)}
+        ]
+    }_{\text{normalized to 1}}
+    \\ 
+    &= f_0^{2N_0} \cdots f_a^{2N_a} 
+    \left(\frac{g_0 \cdots g_a}{f_0 \cdots f_a}\right)^4 
+\end{aligned}
+$$
+
+The series of $f_i$ factors in the front can be eliminated by the denominator:
+
+$$
+\begin{aligned}
+    \langle \psi|\psi \rangle 
+    &= \operatorname{Tr} (A^{(0)} B^{(0)})^{N_0}
+    \\
+    &= f_0^{2N_0} 
+    \operatorname{Tr} (\mathcal{A}^{(0)} \mathcal{B}^{(0)})^{N_0}
+    \\
+    &= f_0^{2N_0}
+    \operatorname{Tr} (f_1 \mathcal{A}^{(1)} f_1 \mathcal{B}^{(1)})^{N_1}
+    \\
+    &= f_0^{2N_0} f_1^{2N_1}
+    \operatorname{Tr} (\mathcal{A}^{(1)} \mathcal{B}^{(1)})^{N_1}
+    \\
+    & \cdots \quad \text{(after } a \text{ RG steps)}
+    \\
+    &= f_0^{2N_0} \cdots f_a^{2N_a}
+    \underbrace{
+        \operatorname{Tr} 
+        (\mathcal{A}^{(a)} \mathcal{B}^{(a)})^{N_a}
+    }_{\text{normalized to 1}}
+    \\
+    &= f_0^{2N_0} \cdots f_a^{2N_a}
+\end{aligned}
+$$
+
+Finally, we obtain
+
+<div class="result">
+
+**Expectation Value on 2D Tensor Product State**
+
+$$
+\frac{\langle \psi | \mathcal{O} |\psi \rangle}
+{\langle \psi |\psi \rangle}
+= \left(\frac{g_0 \cdots g_a}{f_0 \cdots f_a}\right)^4 
+$$
+
+</div><br>
+
+<div class="remark">
+
+*Remark*: From this expression we see that the ratio $g_a / f_a$ must converge to 1 if the TNR algorithm works correctly. 
+
+</div><br>
