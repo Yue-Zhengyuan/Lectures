@@ -24,12 +24,12 @@ The coefficients $J_x, J_y$ will control whether we have ferromagnetic $(J > 0)$
 We first express $S_j^x, S_j^y$ using the raising and lowering operators $S_j^\pm$:
 
 $$
-S_j^{\pm} = S_j^x \pm j S_j^y 
+S_j^{\pm} = S_j^x \pm i S_j^y 
 \, \Rightarrow \, \left\{
 \begin{aligned}
     S_j^x &= \frac{1}{2}(S_j^- + S_j^+)
     \\
-    S_j^y &= \frac{j}{2}(S_j^- - S_j^+)
+    S_j^y &= \frac{i}{2}(S_j^- - S_j^+)
 \end{aligned}
 \right.
 $$

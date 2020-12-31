@@ -44,6 +44,7 @@ None of the following is now complete or has reached my standard.
 
 - **Differential Geometry and Gravity**. Based on 
     - *Geometry, Topology and Physics* by Mikio Nakahara
+    - Course *Geometric Anatomy of Theoretical Physics* (2013 Fall) at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) by Frederic Schuller
     - *Einstein Gravity in a Nutshell* by Anthony Zee
 
 - **Group Theory**. Based on

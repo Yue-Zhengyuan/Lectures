@@ -57,7 +57,7 @@ $$
 \end{aligned}
 $$
 
-which is implemented as `GTensor.T`.
+This is implemented as `GTensor.T`.
 
 <div class="remark">
 

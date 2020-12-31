@@ -51,7 +51,7 @@ T.gconj().T
 T.gT
 ```
 
-We shall use $\mathbf{T}^\Dagger$ to denote the combination of these two operations. Then
+We shall use $\mathbf{T}^\Dagger$ to denote the combination of these two operations:
 
 $$
 \begin{aligned}
@@ -97,7 +97,7 @@ Graphically, $\mathbf{T}, \mathbf{T}^\dagger$ and $\mathbf{T}^\Dagger$ are repre
 
                         0   1   2   3
                    -->  |___|___|___|
-                         T.gconj().T
+                            T.gT
 ```
 
 ### Effect on Contraction
@@ -135,7 +135,14 @@ By definition of Grassmann conjugation:
 
 ### Effect on Trace
 
+To summarize:
 
+<div class="result">
+
+- Grassmann conjugation reverses all metrics in the Grassmann tensor network.
+- On the free ends, ???
+
+</div><br>
 
 ## Norm
 

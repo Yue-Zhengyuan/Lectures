@@ -24,11 +24,11 @@
 
 *Definition*:
 
-- **Relation**: defined in a set X specifying the relation (in the usual sense) between two elements (say $a, b$) in $X$; denoted $aRb$
+- **Relation**: defined in a set $X$ specifying the relation (in the usual sense) between two elements (say $a, b$) in $X$; denoted $aRb$
     
     *Example*:
 
-    - $X = \mathbb{R}, \quad R = >$
+    - $X = \mathbb{R}, \quad R = \text{>}$
 
 - **Equivalence relation**: a special kind of relation (denoted by $\sim$) satisfying the following 3 requirements
     
