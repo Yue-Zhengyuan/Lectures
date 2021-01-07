@@ -36,8 +36,11 @@ $$
 Here we sum over the new normal index $j$ only. From the properties of the matrix decomposition, $j$ will have dimension
 
 $$
-\dim j[n] = \min{(\dim{I[n]}, \dim{J[n]})}, \quad
-n = 0, 1
+\begin{aligned}
+    \dim j[0] &= \min{(\dim{I[0]}, \dim{J[0]})}
+    \\
+    \dim j[1] &= \min{(\dim{I[1]}, \dim{J[1]})}
+\end{aligned}
 $$
 
 which also depends on the corresponding Grassmann index $n$. 
@@ -64,6 +67,56 @@ T_{i_1 ... i_q,  i_{q+1} ... i_r}^{n_1 ... n_q,  n_{q+1} ... n_r}
 $$
 
 Here summation over $n,j$ is implied. 
+
+## Decomposition of Odd-Parity Tensors
+
+- *Case 1*: A is even, B is odd (used in SVD and LQ)
+
+    $$
+    T_{I J}^{M N} = A_{I j}^{M N} B_{j J}^{M N} 
+    \xrightarrow{\text{nonzero}}
+    \begin{cases}
+        T_{I J}^{0 1} = A_{I j}^{0 0} B_{j J}^{0 1} \\
+        T_{I J}^{1 0} = A_{I j}^{1 1} B_{j J}^{1 0}
+    \end{cases}
+    $$
+
+    The new index $j$ will have the dimension
+
+    $$
+    \begin{aligned}
+        \dim j[0] &= \min{(\dim{I[0]}, \dim{J[1]})}
+        \\
+        \dim j[1] &= \min{(\dim{I[1]}, \dim{J[0]})}
+    \end{aligned}
+    $$
+
+- *Case 2*: A is odd, B is even (used in QR)
+
+    $$
+    T_{I J}^{M N} = A_{I j}^{M N} B_{j J}^{M N} 
+    \xrightarrow{\text{nonzero}}
+    \begin{cases}
+        T_{I J}^{0 1} = A_{I j}^{0 1} B_{j J}^{1 1} \\
+        T_{I J}^{1 0} = A_{I j}^{1 0} B_{j J}^{0 0}
+    \end{cases}
+    $$
+
+    The new index $j$ will have the dimension
+
+    $$
+    \begin{aligned}
+        \dim j[0] &= \min{(\dim{I[1]}, \dim{J[0]})}
+        \\
+        \dim j[1] &= \min{(\dim{I[0]}, \dim{J[1]})}
+    \end{aligned}
+    $$
+
+In both cases, we can still write the decomposition as (similar to the decomposition of even-parity Grassmann tensors)
+
+$$
+T_{I J}^{M N} = \sum_{n,j} A_{I j}^{M n} B_{j J}^{n N}
+$$
 
 ## Appendix: Matrix Decompositions
 
