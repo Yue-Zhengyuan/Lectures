@@ -40,39 +40,27 @@ $$
 [d\phi'] = [d\phi]
 $$
 
-The new correlation is
+The new correlation is (up to first order terms)
 
 $$
 \begin{aligned}
     \left\langle X'\right\rangle 
     &= \frac{1}{Z} \int \left[d\phi' \right] 
-    X'\exp\left(-S'\left[\phi' \right]\right)
-    \\
-    &= \frac{1}{Z} \int [d\phi] \,
-    X'\exp\left(-S'\left[\phi
-    '\right]\right)
+    X' e^{-S'[\phi']}
+    = \frac{1}{Z} \int [d\phi] \,
+    X' e^{-S'[\phi']}
     \\
     &= \frac{1}{Z} \int [d\phi]
-    (X+\delta  X)
-    \exp\left(
-        -S[\phi]-\int d^dx \,
-        \omega_a(x)\partial_{\mu}j_a^{\mu} 
-    \right)
+    (X + \delta X) e^{-S[\phi]}
+    e^{-\delta S}
     \\
-    &\simeq \frac{1}{Z} \int [d\phi](X+\delta  X)
-    \exp(-S[\phi]) \left(
-        1 - \int d^dx \,
-        \omega_a(x)\partial_{\mu}j_a^{\mu} 
-    \right)
+    &\simeq \frac{1}{Z} \int [d\phi](X + \delta X)
+    e^{-S[\phi]} (1 - \delta S)
     \\
     &\simeq \langle X \rangle 
     + \langle \delta X \rangle 
-    \\ &\qquad
     - \frac{1}{Z} \int [d\phi] \, X 
-    \exp(-S[\phi]) \left(
-        \int d^dx \,
-        \omega_a(x)\partial_{\mu}j_a^{\mu} 
-    \right)
+    e^{-S[\phi]} \delta S
 \end{aligned}
 $$
 
@@ -80,14 +68,13 @@ Then, because $\left\langle X'\right\rangle =\langle X\rangle$
 
 $$
 \begin{aligned}
-    \langle \delta  X\rangle 
-    &=\frac{1}{Z} \int [d\phi] \,
-    X \exp(-S[\phi]) \left(
-        \int d^dx \, \omega_a(x)\partial_{\mu}j_a^{\mu}
-    \right)
+    \langle \delta X\rangle 
+    &= \frac{1}{Z} \int [d\phi] \, X 
+    e^{-S[\phi]} \delta S
     \\
-    &=\frac{1}{Z} \int d^dx \,
-    \omega_a(x) \int [d\phi]\, X \partial_{\mu}j_a^{\mu} \exp(-S[\phi])
+    &= \frac{1}{Z} \int [d\phi] \,
+    X e^{-S[\phi]}
+    \int d^dx \, \omega_a(x)\partial_{\mu}j_a^{\mu}
     \\
     &=\int d^dx \, \omega_a(x) \,
     \partial_{\mu} \left(
@@ -99,19 +86,19 @@ $$
 \end{aligned}
 $$
 
-Meanwhile, we can directly write down the $\langle \delta  X\rangle$ using the generators
+Meanwhile, we can directly write down $\delta X$ using the generators
 
 $$
 \begin{aligned}
-    &\delta  X
-    =\sum_{k=1}^n \phi \left(x_1\right) \cdots  
-    \left(-i G_a\omega_a\left(x_k\right)\phi \left(x_k\right)\right) 
-    \cdots \phi \left(x_n\right)
+    &\delta X
+    =\sum_{k=1}^n \phi (x_1) \cdots  
+    \left(-i G_a\omega_a(x_k)\phi (x_k)\right) 
+    \cdots \phi (x_n)
     \\
     &= -i\int d^dx \, 
     \delta^{(d)} (x - x_k)\,
     \omega_a(x)
-    \sum_{k=1}^n \left[\phi \left(x_1\right) \cdots  \left(G_a\phi \left(x_k\right)\right) \cdots  \phi \left(x_n\right)\right]
+    \sum_{k=1}^n \left[\phi (x_1) \cdots  \left(G_a\phi (x_k)\right) \cdots  \phi (x_n)\right]
 \end{aligned}
 $$
 
@@ -119,13 +106,15 @@ Now we obtain the **Ward identity**
 
 $$
 \begin{aligned}
-    &\partial_{\mu} \left\langle j_a^{\mu} \phi \left(x_1\right) \cdots  \phi \left(x_n\right)\right\rangle 
+    &\partial_{\mu} \left\langle 
+    j_a^{\mu} \phi (x_1) \cdots \phi (x_n)
+    \right\rangle 
     \\
-    &= -i\int d^dx \sum_{k=1}^n 
-    \delta^{(d)} \left(x-x_k\right)\left\langle
-    \phi \left(x_1\right) \cdots 
-    \left(G_a\phi \left(x_k\right)\right) 
-    \cdots \phi \left(x_n\right)\right\rangle
+    &= -i \sum_{k=1}^n 
+    \delta^{(d)} (x-x_k)\left\langle
+    \phi (x_1) \cdots 
+    \left(G_a\phi (x_k)\right) 
+    \cdots \phi (x_n)\right\rangle
 \end{aligned}
 $$
 

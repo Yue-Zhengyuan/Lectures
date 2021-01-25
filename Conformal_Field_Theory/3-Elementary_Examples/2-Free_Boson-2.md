@@ -130,18 +130,18 @@ $$
 \begin{aligned}
     T(z) &\equiv -2\pi T_{zz} 
     = -2\pi g \,
-    \mathcal{N}[\partial\phi \, \partial\phi]
+    \normord{\partial\phi \, \partial\phi}
     \\
     \bar{T}(\bar{z}) &\equiv -2\pi T_{\bar{z}\bar{z}}
     = -2\pi g \,
-    \mathcal{N}[\bar{\partial}\phi \, \bar{\partial}\phi]
+    \normord{\bar{\partial}\phi \, \bar{\partial}\phi}
 \end{aligned}
 $$
 
 Here we imposed *normal ordering*, which means that (e.g. for $T(z)$):
 
 $$
-\mathcal{N}[\partial\phi(z) \partial\phi(z)]
+\normord{\partial\phi(z) \partial\phi(z)}
 = \lim_{w \to z}
 (\partial \phi(z) \partial \phi(w)
 - \langle \partial \phi(z) \partial \phi(w) \rangle)
@@ -199,9 +199,9 @@ $$
 Using a generalized Wick's theorem $(\phi_{23}(w) \equiv \phi_2(w) \phi_3(w))$
 
 $$
-\overgroup{\phi_1(z) \, \mathcal{N}(\phi_{23}(w))} 
-= \overgroup{\phi_1(z) \phi_2(w)} \mathcal{N}\phi_3(w)
-+ \overgroup{\phi_1(z) \phi_3(w)} \mathcal{N}\phi_2(w)
+\overgroup{\phi_1(z) \, \normord{\phi_{23}(w)}} 
+= \overgroup{\phi_1(z) \phi_2(w)} \normord{\phi_3(w)}
++ \overgroup{\phi_1(z) \phi_3(w)} \normord{\phi_2(w)}
 $$
 
 we obtain
@@ -210,8 +210,8 @@ $$
 \begin{aligned}
     T(z) \partial \phi(w)
     &= -2\pi g \,
-    \mathcal{N}[\partial\phi(z) \partial\phi(z)] \,
-    \partial\phi(w)
+    \normord{\partial\phi(z) \partial\phi(z)}
+    \, \partial\phi(w)
     \\
     &=  
 \end{aligned}
@@ -223,8 +223,8 @@ $$
 \begin{aligned}
     T(z) T(w) 
     &= (-2\pi g)^2 \,
-    \mathcal{N}[\partial\phi(z) \partial\phi(z)] \,
-    \mathcal{N}[\partial\phi(w) \partial\phi(w)]
+    \normord{\partial\phi(z) \partial\phi(z)} \,
+    \normord{\partial\phi(w) \partial\phi(w)}
     \\
     &= \frac{1/2}{(z-w)^4}
     + \frac{2T(w)}{(z-w)^2}

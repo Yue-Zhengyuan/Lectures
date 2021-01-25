@@ -1,6 +1,6 @@
 # Conformal Invariance
 
-*By definition*, a **conformal transformation** of the coordinates is an *invertible* mapping $x\to x'$ which *leaves the metric invariant up to a scale*:
+*By definition*, a **conformal transformation** of the coordinates is an *invertible* mapping $x\to x'$ which *leaves the metric invariant up to a (local) scale*:
 
 $$
 g_{\mu \nu}^{\prime}\left(x'\right)

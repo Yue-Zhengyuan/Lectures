@@ -382,6 +382,7 @@ $$
     &= \sum_n e^{2 \pi i n x / L} \phi_n(t)
     \\
     &= \phi_0 + \frac{1}{gL} \pi_0 t
+    \\ & \quad
     + \frac{i}{\sqrt{4\pi g}} \sum_{n \ne 0} 
         \frac{1}{n} (
         a_n e^{2\pi in(x - t)/L}
