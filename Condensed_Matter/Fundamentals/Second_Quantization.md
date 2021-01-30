@@ -54,7 +54,7 @@ $$
 \end{aligned}
 $$
 
-### Particle Relabelling
+### Particle Relabelling (Exchange)
 
 If the $N$ particles are identical, we have
 
