@@ -1,191 +1,158 @@
+<style>
+    .katex {
+        font-size: 1.1em;
+    }
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: DarkSlateBlue;
+        color: White;
+    }
+</style>
+
 # Radial Quantization
 
-## From Cylinder to Complex Plane 
-
-A CFT can be compactified on a *cylinder*: the axial direction of the cylinder represents time $t=x^0$. We can map the system to the *complex plane* by:
+In practice, one often introduce periodic boundary condition (PBC) on $x^1$, i.e. put the system onto a cylinder with circumference (period) $L$ (which is usually chosen as $2\pi$):
 
 $$
-z = e^{x^0 + ix^1} = e^{t + ix}
+\phi(x^0, x^1) = \phi(x^0, x^1 + N L), \quad
+N \in \Z
 $$
 
-Then constant $t$ (or $x^0$) points map to a *circle* centered at the origin, and the *radial direction* represent the time. The fields $\phi(t,x)$ are thus mapped to $\phi(z, \bar{z})$.
+Of course, one can still use the old complex variables
+
+$$
+z = x^0 + ix^1, \quad
+\bar{z} = x^0 - ix^1
+$$
+
+But due to the PBC, such a complexification has lots of redundancy. However, one can "explode" one period of the cylinder to the whole complex plane by introducing another conformal transformation:
+
+<div class="result">
+
+**Mapping from cylinder to plane:**
+
+$$
+\begin{aligned}
+    z \mapsto w = e^{\omega z} \\
+    \bar{z} \mapsto \bar{w} = e^{\omega \bar{z}}
+\end{aligned} \quad
+(\omega \equiv 2\pi/L)
+$$
+
+</div><br>
 
 <center>
-
-![radial quantization](Figures/rad_quant.png)   
-*Radial quantization*
-
+<img src="Figures/radial_quant.png" width="500pt">
 </center>
 
-## Laurent Mode Expansion of the Fields
+The time direction $x^0$ now becomes the *radial direction* on $\C$, hence the name **radial quantization**. In particular:
 
-### Around the Origin
+- $x^0 = -\infty$ is mapped to $w = 0$
+- $x^0 = +\infty$ is mapped to $w = \infty$
+- Circles centered at $w = 0$ represent constant $x^0$
 
-A field $\phi(z, \bar{z})$ of conformal dimensions $(h, \bar{h})$ can be expanded as a Laurent series around the origin 0:
+Translations on the cylinder are mapped to
 
-$$
-\phi(z, \bar{z})
-= \sum_{m,n}
-z^{-m-h} \bar{z}^{-n-\bar{h}} \phi_{m,n}
-$$
+- Time translation $x^0 \mapsto x^0 + a$ 
+    becomes *scaling* $w \mapsto e^{\omega a} w$
+- Space translation $x^1 \mapsto x^1 + b$ 
+    becomes *rotation* $w \mapsto e^{i \omega b} w$
 
-Using the Cauchy Integral Formula, the modes are
+<div class="remark">
 
-$$
-\phi_{m,n} = 
-\frac{1}{2 \pi i} \oint dz \, z^{m+h-1} 
-\frac{1}{2 \pi i} \oint d\bar{z} \, \bar{z}^{n+\bar{h}-1} \phi(z, \bar{z})
-$$
-
-### Around Any Point 
-
-For simplicity, we now focus on holomorphic fields depending only on $z$. It is possible to expand around an arbitrary point $w$, instead of the origin:
+*Notation Notes*: After the mapping to the complex plane, we can define another set of real variables
 
 $$
-\begin{aligned}
-    \phi(z) 
-    &= \sum_n (z-w)^{-n-h} \phi_n(w), 
-    \\
-    \phi_n(w)
-    &=\frac{1}{2 \pi i} \oint_w dz \, z^{n+h-1} \phi(z)
-\end{aligned}
+w = y^0 + iy^1, \quad
+\bar{w} = y^0 - iy^1
 $$
 
-### Hermitian Conjugate of Fields
+The mapping $(x^0,x^1) \mapsto (y^0,y^1)$ is just the description of the conformal transformation $z\mapsto w$ in real coordinates. One can then temporarily forget that we start from the cylinder and just focus on the theory defined on the plane. 
 
-The Hermitian conjugate of $\phi$ is *defined* as
+In the derivations below, we shall add a superscript $\text{cyl}$ for fields defined on the cylinder depending on $z, \bar{z} = x^0 \pm ix^1$.
 
-$$
-\phi^\dagger(z, \bar{z})
-= \bar{z}^{-2h}z^{-2\bar{h}} 
-\phi \left(\frac{1}{\bar{z}}, \, \frac{1}{z} \right)
-$$
+</div><br>
 
-Using the Laurent expansion of $\phi(\bar{z}^{-1}, z^{-1})$, we obtain
+## Radial Ordering
+
+After the mapping from cylinder to complex plane, the time ordering (later time to earlier time) becomes a **radial ordering** (farther to closer to the origin). Explicitly (here $z,w$ are plane coordinates)
 
 $$
-\begin{aligned}
-    \phi^\dagger(z, \bar{z})
-    &=\bar{z}^{-2h}z^{-2\bar{h}} 
-    \sum_{m,n}
-    \bar{z}^{m+h} z^{n+\bar{h}} \phi_{m,n} 
-    \\
-    &= \sum_{m,n}
-    \bar{z}^{m-h} z^{n-\bar{h}} \phi_{m,n}
-\end{aligned}
+R [\phi_1(z)\phi_2(w)] =
+\begin{cases}
+    \phi_1(z)\phi_2(w), & |z|>|w| \\
+    \pm \phi_2(w)\phi_1(z), & |z|<|w| \\
+\end{cases}
 $$
 
-Meanwhile, direct Hermitian conjugation of the Laurent expansion of the field $\phi(z,\bar{z})$ givens
+Here the $+$ sign is for bosons, and the $-$ sign is for fermions.
+
+Below we derive a theorem relating commutators and radial-ordered products. 
+
+<div class="result">
+
+**Theorem:** Let $a(z), b(z)$ be two chiral fields; $w$ is an arbitrary point on the complex plane. Then
 
 $$
-\phi^\dagger(z, \bar{z})
-= \sum_{m,n}
-\bar{z}^{-m-h} z^{-n-\bar{h}} \phi_{m,n}^\dagger
+\oint_0 dz [a(z),b(w)]
+= \oint_w dz \,R [a(z) b(w)]
 $$
 
-Therefore, we must have
+The subscript $0,w$ means paths enclosing $0,w$ respectively.
 
-$$
-\phi_{-m,-n} = \phi_{m,n}^\dagger
-$$
+</div><br>
 
-## Asymptotic States
+*Proof*: With the following deformation of the integration path:
 
-We assume the existence of a vacuum state $|0\rangle$ upon which a Hilbert space is constructed by application of creation
-operators (or their likes).
-
-In free-field theories, the *vacuum* may be defined as the state
-annihilated by the *positive frequency part* of the field.
-
-For an *interacting* field $\phi$, we assume that *the Hilbert space is
-the same as for a free field*, except that the actual energy eigenstates
-are different.
-
-### In-State
-
-Suppose then that the interaction is slowly turned off as
-$t\to \pm \infty$ and that the *asymptotic* field
-
-$$
-\phi_{\text{in}} \propto \lim_{t\to -\infty} \phi(t,x)
-$$
-
-is *free*. The **asymptotic in-state** is defined as its action result on vacuum:
-
-$$
-|\phi_\text{in}\rangle
-= \lim_{t\to -\infty} \phi(t,x) |0\rangle
-$$
-
-Within radial quantization, $t\to -\infty$ is mapped to $z, \bar{z} = 0$. Therefore
+<center>
+<img src="Figures/norm_ord_int_path.png" width="600pt">
+</center>
 
 $$
 \begin{aligned}
-    |\phi_{\text{in}} \rangle 
-    &= \lim_{z,\bar{z} \to 0} 
-    \phi(z, \bar{z}) |0\rangle
+    \text{RHS}
+    &=\oint_{|z|>|w|} dz \, a(z) b(w)
+    - \oint_{|z|<|w|} dz \, b(w) a(z)
     \\
-    &= \lim_{z,\bar{z} \to 0} 
-    \sum_{m,n} z^{-m-h} \bar{z}^{-n-\bar{h}} 
-    \phi_{m,n} | 0\rangle
+    &=\oint_0 dz \, [a(z),b(w)]
+    \qquad \blacksquare
 \end{aligned}
 $$
 
-In order for this to be well defined, we impose the requirement that all the singular terms are made to zero by
+<div class="result">
+
+**Corollary:** Define two operators
 
 $$
-\phi_{m,n} |0\rangle = 0 \qquad
-m > -h, \, n > -\bar{h}
+A=\oint dz \, a(z), \quad
+B=\oint dz \, b(z)
 $$
 
-then we are left with only one term, namely
+Then 
 
 $$
-|\phi_\text{in}\rangle = \phi_{-h, -\bar{h}} |0\rangle
+[A,B] = \oint_0 dw \oint_w dz \, R [a(z) b(w)]
 $$
 
-### Out-State
+</div><br>
 
-The **asymptotic out-state** is defined as the Hermitian conjugate state of the in-state
+*Proof*:
 
 $$
 \begin{aligned}
-    \langle \phi_{\text{out}} |
-    &= \lim_{z,\bar{z} \to 0} \langle 0| 
-    \phi^\dagger(z, \bar{z})
+    \text{RHS}
+    &= \oint_0 dw \oint_0 dz \, [a(z),b(w)]
     \\
-    &= \lim_{z,\bar{z} \to 0}
-    \bar{z}^{-2h}z^{-2\bar{h}} \langle 0 |
-    \phi (\bar{z}^{-1}, z^{-1})
-\end{aligned}
-$$
-
-Now we change $z^{-1}, \bar{z}^{-1}$ to $\bar{w}, w$. Then
-
-$$
-\begin{aligned}
-    \langle \phi_{\text{out}} |
-    &= \lim_{w, \bar{w} \to \infty}
-    w^{2h} \bar{w}^{2\bar{h}} \langle 0 |
-    \phi (w, \bar{w})
+    &= \left[\oint_0 dz \, a(z), \oint_0 dw \, b(w)\right]
     \\
-    &= \lim_{w, \bar{w} \to \infty}
-    \sum_{m,n} w^{-m+h} \bar{w}^{-n+\bar{h}} 
-    \langle 0 | \phi_{m,n}
+    & = [A,B] 
+    \qquad \blacksquare
 \end{aligned}
-$$
-
-Again, we need to impose the requirement that
-
-$$
-\langle 0 | \phi_{m,n} = 0 \qquad
-m < h, \, n < \bar{h}
-$$
-
-then
-
-$$
-\langle \phi_{\text{out}} | 
-= \langle 0 | \phi_{h, \bar{h}}
-= \langle 0 | \phi_{-h, -\bar{h}}^\dagger
 $$

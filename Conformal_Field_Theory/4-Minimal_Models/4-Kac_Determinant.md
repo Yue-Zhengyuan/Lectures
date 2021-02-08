@@ -150,10 +150,10 @@ $$
 \det M^{(l)} 
 = \alpha_l \prod_{
     \scriptsize
-    \begin{matrix}
+    \begin{gathered}
         r,s\ge 1 \\
         r s\le l
-    \end{matrix}
+    \end{gathered}
 } 
 [h - h_{r,s}(c)]^{p(l - rs)}
 $$
@@ -166,10 +166,10 @@ $$
     \\
     \alpha_l &=\prod_{
         \scriptsize
-        \begin{matrix}
+        \begin{gathered}
             r,s\ge 1 \\
             r s\le l
-        \end{matrix}
+        \end{gathered}
     } \left[(2r)^ss!\right]^{m(r, s)}
     \\
     m(r,s) &= p(l-r s) - p(l-r(s+1))

@@ -1,55 +1,73 @@
-# Free Boson on Cylinder
+<style>
+    .katex {
+        font-size: 1.1em;
+    }
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: DarkSlateBlue;
+        color: White;
+    }
+</style>
 
-Usual Action $(c=1,\,x^0=t,\,x^1=x)$
+# Canonical Quantization on Cylinder
 
-$$
-\begin{aligned}
-    S &= \frac{g}{2} \int dx^2 
-    \partial_\mu \phi \partial^\mu \phi
-    \\
-    &= \frac{g}{2} \int dx \, dt \,
-    [(\partial_t \phi)^2 - (\partial_x \phi)^2]
-\end{aligned}
-$$
+*Additional Reference: Coleman, P. (2015). **Introduction to many-body physics**. Cambridge University Press. Section 2.4.*
 
-Lagrangian $(S = \int dt \, \mathcal{L}$)
-
-$$
-\mathcal{L} = \frac{g}{2} \int dx \,
-[(\partial_t \phi)^2 - (\partial_x \phi)^2]
-$$
-
-Usually the normalization constant $g$ is set as $1/4\pi$.
-
-## Canonical Quantization on the Cylinder
-
-Let us put the boson field $\phi$ on a cylinder with circumference $L$; this makes the space in which the field lives **compact** (i.e. connected and closed). We also take the periodic boundary condition:
-
-$$
-\phi(t,x+L) = \phi(t,x)
-$$
-
-Due to the spatial periodicity, we expand the field as a Fourier series:
+Let us quantize the massless free boson defined on a cylinder. We first work in the Minkowski space, and write $(x^0, x^1) = (t,x)$. The Lagrangian in real coordinates is
 
 $$
 \begin{aligned}
-    \phi(t,x) 
-    &= \sum_n e^{2 \pi i n x / L}
-    \phi_n(t)
-    \\
-    \phi_n(t) &= \frac{1}{L} 
-    \int dx \, e^{-2 \pi i n x / L}
-    \phi(t,x)
+    \mathcal{L} &= \frac{g}{2} \int dx \,
+    \p_\mu \phi \,\p^\mu \phi \\
+    &= \frac{g}{2} \int dx \,(
+        (\partial_t \phi)^2
+        - (\partial_x \phi)^2
+    )
 \end{aligned}
 $$
 
-Since the field is real, we get
+The normalization constant $g$ is usually chosen to be $1/4\pi$. 
+
+## Step 1: Fourier Mode Expansion
+
+Since $\phi$ satisfy periodic boundary condition (for a moment we choose a general cylinder circumference $L$)
+
+$$
+\phi(t,x) = \phi(t, x + L)
+$$
+
+we expand it as a Fourier series
+
+$$
+\begin{aligned}
+    \phi(t,x) &= \sum_{n\in \Z} e^{2\pi inx/L} \phi_n(t)
+    \\
+    \text{Inverse: }\quad
+    \phi_n(t) &= \frac{1}{L} \int_0^L dx \,
+    e^{-2\pi inx/L} \phi(t,x)
+\end{aligned}
+$$
+
+<div class="remark">
+
+*Remark*: Classically the field $\phi$ is real. Thus 
 
 $$ 
+\phi(t,x) = [\phi(t,x)]^\dagger
+\,\Rightarrow\,
 \phi_{-n}=\phi_n^\dagger
 $$
 
-Now we recast the Lagrangian using the Fourier modes (in the process of canonical quantization, we always use the Minkowski space)
+</div><br>
+
+Now we recast the Lagrangian using the Fourier modes 
 
 $$
 \begin{aligned}
@@ -69,28 +87,25 @@ $$
         e^{2\pi i n x/L} e^{2\pi i m x/L}
         \phi_n(t) \phi_m(t)
     \right]
+    \\
+    &= \frac{1}{2} gL
+    \sum_n \left[
+        \dot{\phi}_n \dot{\phi}_{-n}
+        - \left( \frac{2\pi n}{L} \right)^2 \phi_n \phi_{-n}
+    \right]
 \end{aligned}
 $$
 
-First, we integrate over $x$ and make use of the completeness relation
+Here we used the orthogonal relation
 
 $$
 \int_0^Ldx \, e^{2\pi i (n - m) x/L}
 = L \delta_{n m}
 $$
 
-Then
+## Step 2: Commutation Rules and Hamiltonian
 
-$$
-\mathcal{L}
-= \frac{1}{2} gL
-\sum_n \left[
-    \dot{\phi}_n \dot{\phi}_{-n}
-    - \left( \frac{2\pi n}{L} \right)^2 \phi_n \phi_{-n}
-\right]
-$$
-
-We can now construct the Hamiltonian: the momentum conjugate to $\phi_n$ is
+We can now construct the Hamiltonian, in the hope that the final expression will be *a collection of harmonic oscillators*. First, the momentum conjugate to $\phi_n$ is
 
 $$
 \pi_n
@@ -98,19 +113,31 @@ $$
 = g L \dot{\phi}_{-n}
 $$
 
-(the sum over all $n$ cancels the factor $1/2$) and we impose the commutation relation 
+which allow us to eliminate the time derivative $\dot{\phi}_n$. We then impose the commutation relation 
 
 $$
-[\phi_n, \pi_m] = i \delta_{n m}
+[\phi_n, \pi_{-m}] = i \delta_{n m}
 $$
 
-Because $\phi_{-n}=\phi_n^\dagger$, we also have the reality condition for the momentum
+The $\phi_n$ modes will commute with each other, and so do the $\pi_n$ modes.
+
+<div class="remark">
+
+*Remark*: Because $\phi_{-n}=\phi_n^\dagger$, we also have the reality condition for the momentum
 
 $$
 \pi_{-n}=\pi_n^\dagger
 $$
 
-Then
+The the above commutation rule can also be written as $[\phi_n, \pi^\dagger_m] = i\delta_{mn}$. The dagger choice will make the original position space $\phi(x), \pi(x)$ satisfy the equal-time commutation rule 
+
+$$
+[\phi(t,x), \pi(t,y)] = i\delta(x - y)
+$$
+
+</div><br>
+
+Then the Hamiltonian is
 
 $$
 \begin{aligned}
@@ -127,82 +154,82 @@ $$
 \end{aligned}
 $$
 
-Now we change $n\to -n$:
+This indeed is a sum of *decoupled harmonic oscillators*: each summand can be rewritten as
 
 $$
+H_n = \frac{1}{2m} \pi_n\pi_{-n}
++ \frac{1}{2}m \omega_n^2 \phi_n \phi_{-n} 
+\quad \text{with} \quad \left\{
 \begin{aligned}
-    H 
-    &=\frac{1}{2 g L} \sum_n \left[
-        \pi_{-n} \pi_n
-        + (2\pi  n g)^2\phi_{-n} \phi_n
-    \right]
-    \\
-    &=\sum_n \left[
-        \frac{1}{2 g L} \pi_n^\dagger \pi_n
-        + \frac{1}{2} g L \left(\frac{2\pi n}{L} \right)^2 \phi_n^\dagger \phi_n
-    \right]
+    m &= gL \\
+    \omega_n &= \frac{2\pi |n|}{L}
 \end{aligned}
+\right.
 $$
 
-This represents a sum of *decoupled harmonic oscillators* of frequencies: by setting $m = gL$ in the SHO Hamiltonian
+However, *the $n=0$ mode has zero frequency* (but in SHO we have $\omega_0 = \hbar \omega / 2 \ne 0$). Thus we shall treat this "zero mode" separately below. 
 
-$$
-H = \frac{1}{2m} p^2 + \frac{1}{2}m \omega^2 x^2
-$$
+## Step 3: Construct Creation and Annihilation Operators
 
-we can easily recognize that
-
-$$
-\omega_n=\frac{2\pi |n|}{L}
-$$
-
-However, *the $n=0$ mode vanishes* (but in SHO we have $\omega_0 = \hbar \omega / 2 \ne 0$): it is a consequence of the absence of a mass term, which, with the boundary conditions chosen, is the same as conformal invariance.
-
-## Creation and Annihilation Operators
-
-For each mode $n$, we can define the creation and annihilation operators in a way analogous to the simple harmonic oscillator:
-
-SHO:
-
-$$
-H=\frac{1}{2}m \omega^2x^2+\frac{1}{2m}p^2 
-\Rightarrow
-a=\sqrt{\frac{m \omega}{2}} \left(x+\frac{i}{m \omega}p\right)
-$$
-
-Free boson CFT (we use $\tilde{a}$, since we shall modify the definition later):
+For each mode $n$, we can define the creation and annihilation operators in a way analogous to the simple harmonic oscillator: 
 
 $$
 \begin{aligned}
-    \tilde{a}_n 
-    &=\sqrt{\frac{1}{2}g L \frac{2\pi |n|}{L}} \left(\phi_n+\frac{i}{g L \, 2\pi |n|/L} \pi_n^\dagger \right)
+    b_n 
+    &= \sqrt{\frac{m \omega_n}{2}} 
+    \left(
+        \phi_n 
+        + \frac{i}{m \omega_n} \pi_{n} 
+    \right)
     \\
-    &=\frac{1}{\sqrt{4\pi|n| g}} (
-        2\pi|n| g \phi_n + i \pi_n^\dagger
-    )
+    b_n^\dagger
+    &= \sqrt{\frac{m \omega_n}{2}} 
+    \left(
+        \phi_{-n} 
+        - \frac{i}{m \omega_n} \pi_{-n} 
+    \right)
 \end{aligned}
 $$
 
 Obviously this definition does not apply to the $n=0$ mode. 
 
-Using the commutator $[\phi_n, \pi_m] = i \delta_{n m}$ and the reality condition for $\phi$ and $\pi$, we can verify that
+Using the commutator $[\phi_n, \pi_{-m}] = i \delta_{n m}$ and the reality condition for $\phi$ and $\pi$, we can verify that
 
 $$
-[\tilde{a}_n, \tilde{a}_m]=0, \quad 
-[\tilde{a}_n^\dagger, \tilde{a}_m^\dagger]=0, \quad 
-[\tilde{a}_n, \tilde{a}_m^\dagger]=\delta_{n m}
+[b_n, b_m]=0, \quad 
+[b_n^\dagger, b_m^\dagger]=0, \quad 
+[b_n, b_m^\dagger]=\delta_{n m}
 $$
 
-The inverse expressions of $\phi, \pi$ in terms of $\tilde{a}, \tilde{a}^\dagger$ are
+The inverse expressions of $\phi, \pi$ in terms of $a, a^\dagger$ are
 
 $$
 \begin{aligned}
-    \phi_n 
-    &= \frac{1}{\sqrt{4 \pi |n| g}}
-    (\tilde{a}_n + \tilde{a}_{-n}^\dagger)
+    \phi_n &= \frac{1}{\sqrt{2m\omega_n}} (b_n + b_{-n}^\dagger)
     \\
-    \pi_n
-    &= i \sqrt{\pi |n| g} (\tilde{a}_n^\dagger - \tilde{a}_{-n})
+    \pi_n &= -i \sqrt{\frac{m \omega_n}{2}}(b_n - b_{-n}^\dagger)
+\end{aligned}
+$$
+
+It follows that (no commutation rules are used here)
+
+$$
+\begin{aligned}
+    \pi_n \pi_{-n}
+    &= \frac{m \omega_n}{2} (
+        b_{-n}^\dagger b_{-n}
+        + b_n b_n^\dagger
+        - b_{-n}^\dagger b_n^\dagger
+        - b_n b_{-n}
+    )
+    \\[1em]
+    \phi_n \phi_{-n} 
+    &= \frac{1}{2m \omega_n} (
+        b_{-n}^\dagger b_{-n}
+        + b_n b_n^\dagger
+        + b_{-n}^\dagger b_n^\dagger
+        + b_n b_{-n}
+    )
 \end{aligned}
 $$
 
@@ -211,44 +238,51 @@ Then the Hamiltonian can be written as
 $$
 \begin{aligned}
     H 
-    &=\sum_n \left[
-        \frac{1}{2 g L} \pi_n^\dagger \pi_n
-        + \frac{1}{2} g L \left(\frac{2\pi n}{L} \right)^2 \phi_n^\dagger \phi_n
-    \right]
+    &= \frac{1}{2m} \pi_0^2 + \sum_{n \ne 0} H_n
     \\
-    &= \frac{1}{2gL} \pi_0^\dagger \pi_0
-    \\ &\qquad
-    + \sum_{n \ne 0} \left[
-        \frac{\pi |n|}{L} (
-            \tilde{a}_n^\dagger \tilde{a}_n 
-            + \tilde{a}_n \tilde{a}_n^\dagger
-            + \tilde{a}_{-n}^\dagger \tilde{a}_{-n} 
-            + \tilde{a}_{-n} \tilde{a}_{-n}^\dagger
+    &= \frac{1}{2m} \pi_0^2 + \sum_{n \ne 0} 
+    \frac{\omega_n}{4} \bigg[
+        (
+            b_{-n}^\dagger b_{-n}
+            + b_n b_n^\dagger
+            - b_{-n}^\dagger b_n^\dagger
+            - b_n b_{-n}
         )
-    \right]
+        \\ &\qquad \qquad \qquad + (
+            b_{-n}^\dagger b_{-n}
+            + b_n b_n^\dagger
+            + b_{-n}^\dagger b_n^\dagger
+            + b_n b_{-n}
+        )
+    \bigg]
     \\
-    &= \frac{1}{2gL} \pi_0^2
-    + \frac{2\pi}{L} \sum_{n \ne 0}
-        |n| (
-            \tilde{a}_n^\dagger \tilde{a}_n 
-            + \tilde{a}_n \tilde{a}_n^\dagger
-        )
+    &= \frac{1}{2m} \pi_0^2 + \sum_{n \ne 0} 
+    \frac{\omega_n}{2} (
+        b_{-n}^\dagger b_{-n}
+        + b_n b_n^\dagger
+    )
+    \\
+    &= \frac{1}{2gL} \pi_0^2 
+    + \frac{\pi}{L} \sum_{n \ne 0} |n| (
+        b_n^\dagger b_n
+        + b_n b_n^\dagger
+    )
 \end{aligned}
 $$
 
-We may absorb the $\sqrt{|n|}$ factor into the operators: define
+We may absorb the $|n|$ factor into the operators: define
 
 $$
 a_n = 
 \begin{cases}
-    -i \sqrt{|n|} \tilde{a}_n & n > 0 \\
-    i \sqrt{|n|} \tilde{a}_{-n}^\dagger & n < 0
+    -i \sqrt{|n|} b_n & n > 0 \\
+    i \sqrt{|n|} b_{-n}^\dagger & n < 0
 \end{cases}
 \quad
 \bar{a}_n = 
 \begin{cases}
-    -i \sqrt{|n|} \tilde{a}_{-n} & n > 0 \\
-    i \sqrt{|n|} \tilde{a}_n^\dagger & n < 0
+    -i \sqrt{|n|} b_{-n} & n > 0 \\
+    i \sqrt{|n|} b_n^\dagger & n < 0
 \end{cases}
 $$
 
@@ -288,13 +322,14 @@ $$
 \end{aligned}
 $$
 
-## Field Operator in Heisenberg Picture
+## Step 4: Determine Time Dependence of Operators
 
-In the Heisenberg picture $(\hbar = 1)$:
+In the Heisenberg picture, since the Hamiltonian is time-independent, we have the following equation of motion for an operator $A$:
 
 $$
 \frac{d}{dt} A(t) 
-= i\, [H, A(t)]
+= i\, [H, A(t)] \quad
+(\hbar = 1)
 $$
 
 - $n = 0$
@@ -391,7 +426,7 @@ $$
 \end{aligned}
 $$
 
-## The Holomorphic Fields
+## Step 5: Map to Complex Plane
 
 Going to the Euclidean spacetime by Wick rotation $(t \to i \tau)$, define
 
@@ -410,6 +445,10 @@ $$
 
 We can rewrite $\phi(x,t)$ as
 
+<div class="result">
+
+**Mode expansion of free boson field on cylinder:**
+
 $$
 \phi(z, \bar{z})
 = \phi_0 - \frac{i}{4\pi g}\ln (z \bar{z})
@@ -418,6 +457,8 @@ $$
     a_n z^{-n} + \bar{a}_n \bar{z}^{-n}
 )
 $$
+
+</div><br>
 
 Its derivatives are primary fields: e.g. the holomorphic field $\partial \phi$ is
 
@@ -439,46 +480,3 @@ $$
 a_0 \equiv \bar{a}_0 \equiv 
 \frac{\pi_0}{\sqrt{4\pi g}} 
 $$
-
-## Vertex Operators
-
-The **vertex operators** for free boson is defined as
-
-$$
-\begin{aligned}
-    \mathcal{V}_\alpha(z,\bar{z}) 
-    &\equiv \, :e^{i \alpha \phi(z,\bar{z})}:
-    \\
-    &= \exp \left\{
-        i \alpha \phi_0
-        + \frac{\alpha}{\sqrt{4\pi g}}
-        \sum_{n>0} \frac{1}{n} (
-            a_{-n} z^n + \bar{a}_{-n} \bar{z}^n
-        )
-    \right\}
-    \\ &\quad \times
-    \exp \left\{
-        \frac{\alpha}{4\pi g} \pi_0
-        - \frac{\alpha}{\sqrt{4\pi g}}
-        \sum_{n>0} \frac{1}{n} (
-            a_{n} z^{-n} + \bar{a}_{n} \bar{z}^{-n}
-        )
-    \right\}
-\end{aligned}
-$$
-
-----
-
-*Proposition*: The vertex operators are **primary fields**, with dimensions
-
-$$
-h(\alpha) = \bar{h}(\alpha) 
-= \frac{\alpha^2}{8\pi g}
-$$
-
-----
-
-## The Fock Space
-
-## Twisted (Anti-Periodic) Boundary Condition
-

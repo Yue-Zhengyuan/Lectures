@@ -1,264 +1,211 @@
+<style>
+    .katex {
+        font-size: 1.1em;
+    }
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: DarkSlateBlue;
+        color: White;
+    }
+</style>
+
 # The Conformal Group in 2D
 
-## Conformal Mappings
+## Conformal Transformations in 2D and Complexification
 
-Apply the general constraint on conformal transformation
-
-$$
-\partial_{\mu}\epsilon_{\nu}(x) 
-+ \partial_{\nu}\epsilon_{\mu}(x)
-= \frac{2}{d} 
-(\partial_{\rho} \epsilon^{\rho}(x))
-\eta_{\mu \nu}
-$$
-
-to the $d=2$ case, we find
+The case $d = 2$ is so special that we can directly find what the *finite* conformal transformations look like. Consider a map $(x^0,x^1) \mapsto (w^0,w^1)$. The metric transforms according to
 
 $$
-\partial_0\epsilon_0 = \partial_1\epsilon_1, \quad
-\partial_0\epsilon_1 = -\partial_1\epsilon_0
+\begin{aligned}
+    \eta_{\alpha \beta}
+    &= \frac{\partial w^\alpha}{\partial x^\mu}
+    \frac{\partial w^\beta}{\partial x^\nu}
+    g'_{\mu \nu}(w)
+    \\
+    &= \frac{\partial w^\alpha}{\partial x^\mu}
+    \frac{\partial w^\beta}{\partial x^\nu}
+    \Lambda(w) \eta_{\mu \nu}
+\end{aligned}
 $$
 
-which is the same as the **Cauchy-Riemann relations** between the real and the imaginary parts of a *holomorphic function* in complex analysis. Then it is useful to construct the **holomorphic coordinates** from the Euclidean coordinates $x^0,x^1$:
+Writing down each component explicitly (in Euclidean space $\R^{2,0}$), we obtain:
 
 $$
-z=x^0+i x^1, \quad \bar{z}=x^0-i x^1
+\begin{aligned}
+    \frac{\partial w^0}{\partial x^0}
+    \frac{\partial w^1}{\partial x^0}
+    + \frac{\partial w^0}{\partial x^1}
+    \frac{\partial w^1}{\partial x^1} &= 0
+    \\
+    \left( \frac{\partial w^0}{\partial x^0} \right)^2
+    + \left( \frac{\partial w^0}{\partial x^1} \right)^2
+    &= \Lambda(w)
+    \\
+    \left( \frac{\partial w^1}{\partial x^0} \right)^2
+    + \left( \frac{\partial w^1}{\partial x^1} \right)^2
+    &= \Lambda(w)
+\end{aligned}
 $$
 
+These conditions are equivalent to either ($\partial_\alpha$ means $\partial/\partial x^\alpha$)
+
 $$
-\epsilon =\epsilon^0+i \epsilon^1, 
-\quad
-\bar{\epsilon}=\epsilon^0-i \epsilon^1
+\partial_0 w^0 = \partial_1 w^1, \quad
+\partial_0 w^1 = -\partial_1 w^0
+\tag{Holo.}
 $$
 
-The two variables in a pair are to be regarded as *independent of each other*.
+or
 
-Now we can conclude that:
+$$
+\partial_0 w^0 = -\partial_1 w^1, \quad
+\partial_0 w^1 = \partial_1 w^0
+\tag{Anti-holo.}
+$$
 
+The first set is the same as the **Cauchy-Riemann relations**, which implies that $w^0$ and $w^1$ are the real and the imaginary parts of a differentiable complex function (**holomorphic function**)
+
+$$
+w(z) = w^0(x^0, x^1) + i w^1(x^0, x^1), \quad
+z \equiv x^0 + ix^1
+$$
+
+The second set is the Cauchy-Riemann relations for **anti-holomorphic functions**, which means that we can combine $w^0, w^1$ into
+
+$$
+\bar{w}(\bar{z}) = w^0(x^0, x^1) - i w^1(x^0, x^1), \quad
+z \equiv x^0 - ix^1
+$$
+
+Now we have arrived at the conclusion:
+
+<div class="result">
 <center>
 
-**A holomorphic function $f(z)=z+\epsilon (z)$ gives an<br>infinitesimal 2D conformal transformation $z\to f(z)$.**
+**The conformal group in 2D is the set of all analytic maps, <br>with map composition as group multiplication.**
 
 </center>
+</div><br>
 
-## Differentiation and Integration in $z, \bar{z}$
+<div class="remark">
 
-The inverse relations are
+*Remark*: For Minkowski space $\R^{1,1}$ things are slightly more complicated. We need to first perform the **Wick rotation** to change the metric back to that of $\R^{2,0}$:
 
 $$
-x^0 = \frac{1}{2}\left(z+\bar{z}\right),
+x^0 \mapsto \tilde{x}^0 = ix^0
+$$
+
+This choice makes the time evolution $e^{-iHx^0}$ become a decaying exponential $e^{-H \tilde{x}^0}$. Then after solving the problem in Euclidean space, we perform *analytical continuation* of the results, and set $x^0$ to be an imaginary number to recover physics in $R^{1,1}$. 
+
+In the following, we always use the Euclidean space unless otherwise stated.
+
+</div><br>
+
+We also introduce the derivatives with respect to $z, \bar{z}$: using the inverse relations
+
+$$
+x^0 = \frac{1}{2}(z+\bar{z}),
 \quad
-x^1 = -\frac{i}{2}\left(z-\bar{z}\right)
+x^1 = -\frac{i}{2}(z-\bar{z})
 $$
 
-We also define the derivatives
+we obtain
 
 $$
 \begin{aligned}
     \partial \equiv \partial_z
     &= \frac{\partial x^{\rho}}{\partial z}
     \frac{\partial}{\partial x^{\rho}}
-    =\frac{1}{2} (\partial_0 - i\partial_1 ),
+    = \frac{1}{2} (\partial_0 - i\partial_1 ),
     \\
     \bar{\partial} \equiv \partial_{\bar{z}}
     &= \frac{\partial x^{\rho}}{\partial \bar{z}}
     \frac{\partial}{\partial x^{\rho}}
-    =\frac{1}{2} (\partial_0 + i \partial_1 )
+    = \frac{1}{2} (\partial_0 + i \partial_1 )
 \end{aligned}
 $$
 
-### Jacobian
+which can also be inverted to give
+
+$$
+\partial_0 = \partial_z + \partial_{\bar{z}}, \quad
+\partial_1 = i(\partial_z - \partial_{\bar{z}})
+$$
+
+Then one can verify that
+
+$$
+\partial \bar{w} = 0, \quad
+\bar{\partial} w = 0
+$$
+
+i.e. $\bar{w}$ only depend on $\bar{z}$, and $w$ only depend on $z$.
+
+<div class="remark">
+
+*Remark*: The two variables $z, \bar{z}$ (and the two transformations $w, \bar{w}$) are usually regarded as *independent of each other*. This means that we even *treat $x^0, x^1$ as complex variables* (by analytic continuation); then the above definition is merely a change of complex variables. To go back to the physical space, simply impose the reality condition at the last stage. 
+
+</div><br>
+
+## Transformation Generators and Witt Algebra
+
+The infinitesimal version of 2D conformal transformations must have the form
+
+$$
+w(z) = z + \epsilon(z), \quad
+\bar{w}(\bar{z}) = \bar{z} + \bar{\epsilon}(\bar{z})
+$$
+
+The generators of 2D infinitesimal conformal transformation are found from the *Laurent expansion* (about the $z, \bar{z} = 0$) of $\epsilon (z)$ and $\bar{\epsilon}(\bar{z})$:
 
 $$
 \begin{aligned}
-    \frac{D(z,\bar{z})}{D(x^0,x^1)}
-    &= \det 
-    \begin{pmatrix}
-        \partial z / \partial x^0 & \partial z / \partial x^1 \\
-        \partial \bar{z}/\partial x^0 & \partial \bar{z}/\partial x^1
-    \end{pmatrix}
+    \epsilon (z) &= \sum_n z^{n+1} \epsilon_n
     \\
-    &= \det 
-    \begin{pmatrix}
-        1 & i \\
-        1 & -i \\
-    \end{pmatrix}
-    = -2i
+    \bar{\epsilon}(\bar{z}) &= \sum_n \bar{z}^{n+1} \bar{\epsilon}_n
 \end{aligned}
 $$
 
-Therefore
+We define the differential operators
 
-$$ 
-dz \, d\bar{z} = -2i \, dx^0 dx^1
-$$
+<div class="result">
 
-### Laplacian
-
-In particular, the Laplacian $\partial_{\rho}\partial^{\rho}$
-becomes $\partial \bar{\partial}$, since
+**Conformal transformation generators in the complex plane:**
 
 $$
-\begin{aligned}
-    \partial \bar{\partial}\phi 
-    &= \frac{\partial x^{\rho}}{\partial z}
-    \frac{\partial}{\partial x^{\rho}} \left(
-        \frac{\partial x^{\sigma}}{\partial\bar{z}}
-        \frac{\partial \phi}{\partial x^{\sigma}}
-    \right)
-    \\
-    &= \frac{\partial x^{\rho}}{\partial z}
-    \left(
-        \frac{\partial}{\partial x^{\rho}}
-        \frac{\partial x^{\sigma}}{\partial \bar{z}}
-    \right)
-    \frac{\partial \phi}{\partial x^{\sigma}}
-    +
-    \frac{\partial x^{\rho}}{\partial z}
-    \frac{\partial x^{\sigma}}{\partial\bar{z}}
-    \left(
-        \frac{\partial}{\partial x^{\rho}}
-        \frac{\partial \phi}{\partial x^{\sigma}}
-    \right)
-    \\
-    &=\frac{\partial x^{\rho}}{\partial z}
-    \underbrace{\frac{\partial \delta_{\rho}^{\sigma}}{\partial \bar{z}}}_0
-    \frac{\partial \phi}{\partial x^{\sigma}}
-    +
-\end{aligned}
-$$
-
-### The Metric Tensor
-
-The *flat* metric in the holomorphic coordinates becomes
-
-$$
-\begin{aligned}
-    \eta'_{\mu \nu} 
-    &= \begin{pmatrix}
-        \eta_{z z} & \eta_{z \bar{z}} \\
-        \eta_{\bar{z} z} & \eta_{\bar{z} \bar{z}}
-    \end{pmatrix}
-    \\
-    &= \eta_{\rho \sigma} 
-    \frac{\partial x^\rho}{\partial z^\mu}
-    \frac{\partial x^\sigma}{\partial z^\nu}
-    = \begin{pmatrix}
-        0 & 1/2 \\
-        1/2 & 0
-    \end{pmatrix}
-\end{aligned}
-$$
-
-Here $z^0=z, z^1=\bar{z}$. For example:
-
-$$
-\begin{aligned}
-    \eta_{z \bar{z}}
-    &= \eta_{\rho \sigma}
-    \frac{\partial x^\rho}{\partial z}
-    \frac{\partial x^\sigma}{\partial \bar{z}}
-    \\
-    &= \frac{\partial x^0}{\partial z}\frac{\partial x^0}{\partial
-    \bar{z}}+\frac{\partial x^1}{\partial z}\frac{\partial x^1}{\partial \bar{z}}
-    \\
-    &=\frac{1}{2}\times \frac{1}{2}+\frac{-i}{2}\times \frac{i}{2}=\frac{1}{2}
-\end{aligned}
-$$
-
-The inverse of the metric is then
-
-$$
-\eta'^{\mu \nu}
-= (\eta'_{\mu \nu})^{-1}
-= \begin{pmatrix}
-    0 & 2 \\
-    2 & 0
-\end{pmatrix}
-$$
-
-## Global Conformal Transformations
-
-The set of all *global* conformal transformations (everywhere well-defined) consists of mappings of the form
-
-$$
-f(z)=\frac{a z+b}{c z+d} 
-\quad \left(
-    a,b,c,d \in \mathbb{C} \, ;
-    \,
-    \det \begin{pmatrix}
-        a & b \\
-        c & d 
-    \end{pmatrix} =1
-\right)
-$$
-
-They are called **projective transformations**. The requirement $ad - bc = 1$ is just a normalization. 
-
-----
-
-*Proof of the form*:
-
-----
-
-Assigning the matrix 
-
-$$
-A = \begin{pmatrix}
-    a & b \\
-    c & d
-\end{pmatrix}
-$$
-
-to the mapping, we can verify that the composition of two projective transformations $f_2 \circ f_1$ corresponds to the matrix $A_2 A_1$. 
-
-Therefore, the **global conformal group** in 2D is *isomorphic* to the group $SL(2,\mathbb{C})$, the group of *complex invertible $2 \times 2$ matrices with unit determinant*.
-
-
-## Generators of Conformal Transformation
-
-The generators of (global or local) 2D conformal transformation can be found from the Laurent expansion (about the origin) of the mapping $z\to z+\epsilon (z)$: mathematically, we write
-
-$$
-z'= z + \sum_n \epsilon_n z^n
-$$
-
-However, in CFT, people adopt the convention
-
-$$
-z'=z+\sum_n  z^{n+1} \epsilon_n
-$$
-
-Then, for the transformation of a particular $n$, we have
-
-$$
-z' = z + z^{n+1} \epsilon_n
-\equiv \left(1-l_n\right)z
-$$
-
-where $l_n$ is defined as the differential operator
-
-$$
-l_n \equiv -z^{n+1} \partial_z
-$$
-
-so that a finite transformation is the exponentiation $e^{-l_n}$. Thus $l_n$ is interpreted as a transformation **generator**.
-
-Similarly, for the anti-holomorphic part, people write
-
-$$
-\bar{z}'
-= \bar{z}+\sum_n  \bar{z}^{n+1} \bar{\epsilon}_n
-= \left(1 - \sum_n \bar{l}_n\right) \bar{z}
-$$
-
-with
-
-$$
+l_n \equiv -z^{n+1} \partial_z, \quad
 \bar{l}_n=-\bar{z}^{n+1}\partial_{\bar{z}}
 $$
 
-The commutation rules of the generators $l_n,\bar{l}_n$ are
+</div><br>
+
+Then for the transformation of a particular $n$, we have
+
+$$
+\begin{aligned}
+    z' &= z + z^{n+1} \epsilon_n
+    \equiv \left(1-l_n\right)z
+    \\
+    \bar{z}'
+    &= \bar{z} + \bar{z}^{n+1} \bar{\epsilon}_n
+    = (1 - \bar{l}_n) \bar{z}
+\end{aligned}
+$$
+
+so that a finite transformation is the exponentiation $e^{-l_n}, e^{-\bar{l}_n}$.
+
+The commutation rules of the generators $l_n,\bar{l}_n$ are collectively known as
+
+<div class="result">
+
+**The Witt algebra:**
 
 $$
 \begin{aligned}
@@ -271,4 +218,275 @@ $$
 \end{aligned}
 $$
 
-called the **Witt algebra**.
+</div><br>
+
+<div class="remark">
+
+*Remark*: 
+
+- The algebra of $l_n$ and $\bar{l}_n$ are completely separated. 
+
+- The number of independent infinitesimal conformal transformations is *infinite*. This is *special to 2D*.
+
+</div><br>
+
+## The Global Subgroup
+
+We notice that the generators $l_n, \bar{l}_n$ are not everywhere well-defined; things will go wrong at $z = 0$ and $z = \infty$. One usually goes to the *Riemann sphere* $\C \cup \{\infty\}$ to include the point of infinity. 
+
+Let us first examine $l_n$:
+
+$$
+z \to 0: \quad
+l_n = -z^{n+1} \partial_z \quad
+\text{non-singular for} \, n \ge -1
+$$
+
+At $z=\infty$, we introduce $w = 1/z$ (then $\partial_z = -w^2 \partial_w$) and let $w\to 0$:
+
+$$
+w \to 0: \quad
+l_n = w^{-n+1} \partial_w \quad
+\text{non-singular for} \, n \le 1
+$$
+
+Thus only $l_{-1}, l_0, l_1$ (and similarly $\bar{l}_{-1}, \bar{l}_0, \bar{l}_1$) are *globally* defined generators. Let us examine what kind of transformations they generate (in the complex plane).
+
+- $l_{-1}$ generates the **translation**
+    
+    $$
+    z' = z + \epsilon_{-1}
+    \xrightarrow{\text{finite}}
+    z' = z + b
+    $$
+
+- $l_0$ generates the following transformation
+
+    $$
+    z' = z + \epsilon_0 z
+    \xrightarrow{\text{finite}}
+    z' = az \quad (a \in \C)
+    $$
+
+    which is a combination of scaling (by $|a|$) and rotation (by $\operatorname{Arg} a$). To separate the two, we go to the polar coordinates 
+
+    $$
+    \left.
+    \begin{aligned}
+        z &= re^{i\phi} \\
+        \bar{z} &= re^{-i\phi}
+    \end{aligned} \right\}
+    \Rightarrow \left\{
+    \begin{aligned}
+        r &= \sqrt{z \bar{z}}\\
+        \phi &= \frac{1}{2i} \ln \frac{z}{\bar{z}}
+    \end{aligned}
+    \right.
+    $$
+
+    Then the $l_0$ generator can be expressed as
+
+    $$
+    \begin{aligned}
+        l_0 &= -z \partial_z
+        \\
+        &= - z \left(
+            \frac{\partial r}{\partial z} \partial_r
+            + \frac{\partial \phi}{\partial z} \partial_\phi
+        \right)
+        \\
+        &= -\frac{1}{2} r \partial_r + \frac{i}{2} \partial_\phi 
+    \end{aligned}
+    $$
+
+    Similarly
+
+    $$
+    \bar{l}_0 = -\frac{1}{2} r \partial_r 
+    - \frac{i}{2} \partial_\phi
+    $$
+
+    Then we recognize that
+
+    $$
+    \begin{aligned}
+        \text{Scaling: } &\quad &
+        l_0 + \bar{l}_0 &= -r \partial_r
+        \\
+        \text{Rotation: } &\quad &
+            i(l_0 - \bar{l}_0) &= - \partial_\phi
+        \end{aligned}
+    $$
+
+- $l_1$ generates the following transformation
+
+    $$
+    z' = z + \epsilon_1 z^2
+    \xrightarrow{\text{finite}}
+    z' = \frac{z}{cz + 1}
+    $$
+
+    which is a special case of the **SCT**. 
+
+The combination of the above transformations has the general form
+
+<div class="result">
+
+**Global conformal transformations in 2D**:
+
+$$
+f(z)=\frac{a z+b}{c z+d} 
+\quad \left(
+    a,b,c,d \in \mathbb{C} \, ;
+    \,
+    ad - bc \ne 0
+\right)
+$$
+
+(There is another similar one for $\bar{z}$.)
+
+</div><br>
+
+Usually we require $ad - bc = 1$, which is just a normalization. We observe that
+
+- If we compose two such transformations $f_2 \circ f_1$, the new coefficients $A,B,C,D$ for the composition are obtained via matrix multiplication
+    
+    $$
+    \begin{pmatrix}
+        A & B \\
+        C & D
+    \end{pmatrix} = \begin{pmatrix}
+        a_2 & b_2 \\ c_2 & d_2
+    \end{pmatrix} \begin{pmatrix}
+        a_1 & b_1 \\ c_1 & d_1
+    \end{pmatrix}
+    $$
+
+- The mapping $f$ is invariant under $(a,b,c,d) \mapsto (-a,-b,-c,-d)$
+
+Therefore
+
+<div class="result">
+<center>
+
+**The global conformal group in 2D is <br> isomorphic to $SL(2,\C) / \Z_2$.**
+
+</center>
+</div><br>
+
+## Conformal Generators in 2D
+
+Here we re-express the conformal generators $P_\mu, D, L_{\mu \nu}, K_\mu$ using the $l_n, \bar{l}_n \, (n = -1,0,1)$ operators in 2D (Euclidean $\R^{2,0}$). To do this, we shall use the conversion
+
+$$
+\begin{aligned}
+    x_0 &= \frac{1}{2} (z+\bar{z}),
+    &\quad
+    x_1 &= -\frac{i}{2} (z-\bar{z})
+    \\[1em]
+    \partial_0 &= \partial + \bar{\partial}, 
+    &\quad
+    \partial_1 &= i(\partial - \bar{\partial})
+\end{aligned}
+$$
+
+Note that in Euclidean space, the variables with upper indices are the same as those with lower indices.
+
+- Translation
+    
+    $$
+    \begin{aligned}
+        P_0 &= -i \partial_0
+        = -i (\partial + \bar{\partial})
+        \\ &= i (l_{-1} + \bar{l}_{-1})
+        \\
+        P_1 &= -i \partial_1
+        = \partial - \bar{\partial}
+        \\ &= -l_{-1} + \bar{l}_{-1}
+    \end{aligned}
+    $$
+
+- Scaling (dilation)
+    
+    $$
+    \begin{aligned}
+        D &= -i (x_0 \partial_0 + x_1 \partial_1)
+        \\
+        &= -\frac{i}{2} [
+            (z + \bar{z})(\partial + \bar{\partial})
+            + (z - \bar{z})(\partial - \bar{\partial})
+        ]
+        \\
+        &= -i (z\partial + \bar{z} \bar{\partial})
+        = i(l_0 + \bar{l}_0)
+    \end{aligned}
+    $$
+
+- Rotation
+    
+    $$
+    \begin{aligned}
+        L_{10} &= i (x_1 \partial_0 - x_0 \partial_1)
+        \\
+        &= \frac{1}{2} (
+            (z - \bar{z})(\partial + \bar{\partial})
+            + (z + \bar{z})(\partial - \bar{\partial})
+        )
+        \\
+        &= z\partial - \bar{z} \bar{\partial}
+        = -l_0 + \bar{l}_0
+    \end{aligned}
+    $$
+
+- SCT
+    
+    Let us first calculate:
+
+    $$
+    \begin{aligned}
+        x^{\nu}\partial_{\nu}
+        &= x_0 \partial_0 + x_1 \partial_1
+        \\
+        &= \frac{1}{2} (z+\bar{z})(\partial + \bar{\partial})
+        + \frac{1}{2} (z-\bar{z})(\partial - \bar{\partial})
+        \\
+        &= z\partial + \bar{z} \bar{\partial}
+        \\
+        x^2 &\equiv x^{\nu} x_{\nu}
+        \\
+        &= (x_0)^2 + (x_1)^2
+        \\
+        &= \frac{1}{4} (z+\bar{z})^2
+        - \frac{1}{4} (z-\bar{z})^2
+        \\
+        &= z \bar{z}
+    \end{aligned}
+    $$
+
+    Then
+    
+    $$
+    \begin{aligned}
+        K_0 &= -i (
+            2x_0 x^{\nu}\partial_{\nu}
+            - x^2 \partial_0
+        ) \\
+        &= -i[
+            (z + \bar{z})(z\partial + \bar{z} \bar{\partial})
+            - z \bar{z} (\partial + \bar{\partial})
+        ]
+        \\
+        &= -i(z^2\partial + \bar{z}^2 \bar{\partial})
+        = i (l_1 + \bar{l}_1)
+        \\
+        K_1 &= -i (
+            2x_1 x^{\nu}\partial_{\nu}
+            - x^2 \partial_1
+        ) \\
+        &= - (z - \bar{z})(z\partial + \bar{z} \bar{\partial})
+        - z \bar{z} (\partial - \bar{\partial})
+        \\
+        &= -z^2 \partial + \bar{z}^2 \bar{\partial}
+        = l_1 - \bar{l}_1
+    \end{aligned}
+    $$

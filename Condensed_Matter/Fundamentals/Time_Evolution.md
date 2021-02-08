@@ -133,12 +133,99 @@ $$
     \int_{t_0}^{t_{n-1}} dt_n 
     \, H(t_1) \cdots H(t_n)
     \\ &\quad + \cdots 
-    \\[1em] & \quad
-    (t > t_1 > \cdots > t_n > \cdots)
 \end{aligned}
 $$
 
-This expansion is called the **Dyson series**. Below we consider some special cases:
+This expansion is called the **Dyson series**. 
+
+### Time-Ordered Exponential
+
+To put the Dyson series into a nicer form, we introduce the **time-ordering operator** $T$:
+
+$$
+\begin{aligned}
+    T[H(t_1) \cdots H(t_n)]
+    &\equiv \sum_{\sigma \in S_n}
+    H(t_{\sigma(1)}) \cdots H(t_{\sigma(n)}) 
+    \\ &\qquad \quad \times
+    \theta(t_{\sigma(1)} - t_{\sigma(2)}) \cdots
+    \theta(t_{\sigma(n-1)} - t_{\sigma(n)})
+\end{aligned}
+$$
+
+Only one term with $t_{\sigma(1)} > \cdots > t_{\sigma(n)}$ will survive. For example, when $n = 2$
+
+$$
+\begin{aligned}
+    &T[H(t_1) H(t_2)]
+    \\
+    &= H(t_1) H(t_2) \theta(t_1 - t_2)
+    + H(t_2) H(t_1) \theta(t_2 - t_1)
+    \\
+    &= \begin{cases}
+        H(t_1) H(t_2), & t_1 > t_2 \\
+        H(t_2) H(t_1), & t_2 > t_1
+    \end{cases}
+\end{aligned}
+$$
+
+For the $n$th-order ($n = 2,3,...$) term in the Dyson series (call it $D_n$), we can make the integration range of $t_1,...,t_n$ all equal to $[t_0,t]$ by introducing step functions:
+
+$$
+\begin{aligned}
+    D_n &\equiv
+    \int_{t_0}^t dt_1 \int_{t_0}^{t_1} dt_2 \cdots
+    \int_{t_0}^{t_{n-1}} dt_n 
+    \, H(t_1) \cdots H(t_n)
+    \\
+    &= \int_{t_0}^t dt_1 
+    \int_{t_0}^t dt_2 \, \theta(t_1 - t_2) \cdots
+    \\ &\qquad
+    \int_{t_0}^t dt_n \, \theta(t_{n-1} - t_n)
+    \, H(t_1) \cdots H(t_n)
+\end{aligned}
+$$
+
+Then we can permute the names of the integration variables using permutations $\sigma \in S_n$, and sum all of them with equal weight $1/n!$ (since there are $n!$ permutations):
+
+$$
+\begin{aligned}
+    D_n 
+    &= \frac{1}{n!} \sum_{\sigma \in S_n}
+    \int_{t_0}^t dt_{\sigma(1)}  
+    \int_{t_0}^t dt_{\sigma(2)} \cdots
+    \int_{t_0}^t dt_{\sigma(n)} \, \\ &\qquad
+    \theta(t_{\sigma(1)} - t_{\sigma(2)}) \cdots
+    \theta(t_{\sigma(n-1)} - t_{\sigma(n)})
+    \, H(t_{\sigma(1)}) \cdots H(t_{\sigma(n)})
+\end{aligned}
+$$
+
+But we recognize the integrand as the time-ordered product of all the $H$'s. Therefore
+
+$$
+D_n = \frac{1}{n!} \int_{t_0}^t dt_1 \int_{t_0}^t dt_2 
+\cdots \int_{t_0}^t dt_n \, T[H(t_1) \cdots H(t_n)]
+$$
+
+We can then write the Dyson series as a **time-ordered exponential**:
+
+$$
+\begin{aligned}
+    U(t,t_0) &= T{\left[ \exp{
+        \left(
+            -i \int_{t_0}^t dt' H(t')
+        \right)
+    } \right]}
+    \\ &\equiv
+    \sum_{n=0}^\infty \frac{(-i)^n}{n!} 
+    \int_{t_0}^t dt_1 \cdots 
+    \int_{t_0}^t dt_n \,
+    T[H(t_1) \cdots H(t_n)]
+\end{aligned}
+$$
+
+Below we consider two special cases:
 
 - *Case 1*: $H(t)$ at different time commutes with each other
 
@@ -149,6 +236,9 @@ This expansion is called the **Dyson series**. Below we consider some special ca
     $$
     U(t, t_0) = e^{-i H (t - t_0)}
     $$
+
+### Time Ordering as Path Ordering
+
 
 ## Heisenberg Picture
 
@@ -247,6 +337,12 @@ Let us now determine the time evolution of $\ket{\psi_I}$, i.e. the time evoluti
 $$
 \ket{\psi_I(t)} = U_I(t,t_0) \ket{\psi_I(t_0)}
 $$
+
+<div class="remark">
+
+*Remark*: The time evolution operator in the interaction picture is sometimes denoted by $S(t,t_0)$ because its connection with the ***S*-matrix** in particle scattering theory.
+
+</div><br>
 
 We rewrite the definition of $\ket{\psi_I}$ as
 
