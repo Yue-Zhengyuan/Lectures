@@ -44,7 +44,7 @@ $$
 \end{aligned}
 $$
 
-The $+, -$ notation might be not quite match the $a, a^\dagger$ operators, but it is the standard choice. From properties of the $a, a^\dagger$ operators, we know that
+The $+, -$ notation might not quite match the $a, a^\dagger$ operators, but it is the standard choice. From properties of the $a, a^\dagger$ operators, we know that
 
 $$
 \phi^+(x) |0\rangle = 0, \qquad

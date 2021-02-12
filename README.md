@@ -13,7 +13,7 @@ This repository is a collection of lecture notes on physics and related mathemat
 - Assumes no prior knowledge on the part of the readers
 - Jokes and anecdotes are strictly forbidden to avoid distraction and reduce file size
 - New concepts should be introduced with good motivations
-- Key ingredients in a complex derivation should never be omitted to save labor of new generations of learners, unless the derivation is much less important compared to the result itself
+- Key ingredients in a complex derivation should never be omitted, in order to save labor of new generations of learners, unless the derivation is much less important compared to the result itself
 - Avoid cross-references that breaks the smoothness and continuity of the reading experience
 
 ## Current Contents
@@ -27,6 +27,7 @@ None of the following is now complete or has reached my standard.
 
 - **Statistical Physics and Condensed Matter Physics**. Based on
     - *Statistical Physics (Part 1)* by Lev Landau and Evgeny Lifshitz
+    - *Introduction to Many-Body Physics* by Piers Coleman
     - Course *Advanced Statistical Physics* (PHYS5510, Spring 2020) at CUHK
     - Course *Many-Body Theory* (PHYS5520, Spring 2021) at CUHK
     - Course *Thermodynamics and Statistical Physics II* (Fall 2018) at Fudan University (FDU)

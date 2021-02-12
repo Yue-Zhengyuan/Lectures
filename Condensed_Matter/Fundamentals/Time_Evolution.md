@@ -22,80 +22,185 @@
 
 ## Schrödinger Picture
 
-Consider a system in state $\ket{\psi}$, with Hamiltonian $H(t)$ (which in general depends on time). In the **Schrödinger picture** (denoted by subscript $S$), the time evolution is entirely due to the evolution of the state, described by the **Schrödinger's equation**:
+Consider a system in state $\ket{\psi}$, with Hamiltonian $H(t)$ (which in general depends on time). In the **Schrödinger picture** (denoted by subscript $S$), the time evolution is entirely due to the evolution of the state, described by:
+
+<div class="result">
+
+**The Schrödinger's equation for state:**
 
 $$
 \frac{\partial}{\partial t} \ket{\psi_S(t)}
 = -i H(t) \ket{\psi_S(t)}
 $$
 
+</div><br>
+
 To find a formal solution $\ket{\psi_S(t)}$, we introduce the **time evolution operator** $U(t,t_0)$ (with $t_0$ some reference instant providing the initial condition) so that
+
+<div class="result">
+
+**State evolution operator in Schrödinger picture:**
 
 $$
 \ket{\psi_S(t)} = U(t,t_0) \ket{\psi_S(t_0)}
 $$
 
-### Properties of Time Evolution Operator
+</div><br>
 
-- $U(t,t_0)$ is a *unitary* operator:
-    
-    $$
-    U^\dagger(t,t_0) U(t,t_0) = 1
-    $$
+If we allow the second argument of $U$ to vary, then we get a more general operator $U(t,s)$, but we still require that $t \ge s$.
 
-    *Proof*: This property follows from the requirement that the state norm is unchanged by time evolution.
+### Properties of the Time Evolution Operator
 
-    $$
-    \begin{aligned}
-        \braket{\psi_S(t_0)}{\psi_S(t_0)} 
-        &= \braket{\psi_S(t)}{\psi_S(t)}
-        \\
-        &= \amp{\psi_S(t_0)}{U^\dagger(t,t_0) U(t,t_0)}{\psi_S(t_0)}
-        \quad \blacksquare
-    \end{aligned}
-    $$
+<div class="result">
 
-- Composition property:
-    
-    $$
-    U(t_2,t_0) = U(t_2,t_1) U(t_1,t_0) \quad
-    (t_2 > t_1 > t_0)
-    $$
+**$U(t,s)$ is unitary:**
 
-- Schrödinger equation for $U$:
+$$
+U^\dagger(t,s) U(t,s) = 1
+$$
 
-    $$
-    \frac{\partial}{\partial t} U(t, t_0)
-    = -i H(t) U(t, t_0)
-    $$
+</div><br>
 
-    *Proof*: This follows from the Schrödinger equation for the states due to the arbitrariness of the state. $\blacksquare$
+*Proof*: This property follows from the requirement that the state norm is unchanged by time evolution.
 
-- Infinitesimal time evolution
-    
-    $$
-    U(t, t + \delta t) = 1 - i H(t) \, \delta t
-    $$
+$$
+\begin{aligned}
+    \braket{\psi_S(s)}{\psi_S(s)} 
+    &= \braket{\psi_S(t)}{\psi_S(t)}
+    \\
+    &= \amp{\psi_S(s)}{U^\dagger(t,s) U(t,s)}{\psi_S(s)}
+    \quad \blacksquare
+\end{aligned}
+$$
 
-    *Proof*: From the Schrödinger equation
+<div class="result">
 
-    $$
-    \begin{aligned}
-        \delta \ket{\psi_S(t)} 
-        &= - i \delta t \, H(t) \ket{\psi_S(t)} 
-        \\
-        &\overset{!}{=} \ket{\psi_S(t + \delta t)} 
-        - \ket{\psi_S(t)} 
-        \\
-        &= (U(t,t+\delta t) - 1) \ket{\psi_S(t)} 
-    \end{aligned}
-    $$
+**Composition property:**
 
-    Due to the arbitrariness of $\ket{\psi_S(t)}$, we get the desired result. $\blacksquare$
+$$
+U(t_2,t_0) = U(t_2,t_1) U(t_1,t_0) \quad
+(t_2 > t_1 > t_0)
+$$
+
+</div><br>
+
+*Proof*: This result is quite intuitive.
+
+<div class="remark">
+
+*Remark*: Using this property, we may define
+
+$$
+U(s,t) = U^\dagger(t,s) \quad (s < t)
+$$
+
+Then the two arguments of $U$ can take any value independently. We can verify that this definition is quite natural: for $t_2 > t_1 > t_0$
+
+$$
+\begin{aligned}
+    U(t_1, t_0) &= U^\dagger(t_2, t_1) U(t_2, t_0) \\
+    &= U(t_1, t_2) U(t_2, t_0)
+\end{aligned}
+$$
+
+</div><br>
+
+<div class="result">
+
+**Infinitesimal time evolution:**
+
+$$
+U(t + \delta t, t) = 1 - i H(t) \, \delta t
+$$
+
+</div><br>
+
+*Proof*: From the Schrödinger equation
+
+$$
+\begin{aligned}
+    \delta \ket{\psi_S(t)} 
+    &= - i \delta t \, H(t) \ket{\psi_S(t)} 
+    \\
+    &\overset{!}{=} \ket{\psi_S(t + \delta t)} 
+    - \ket{\psi_S(t)} 
+    \\
+    &= (U(t+\delta t, t) - 1) \ket{\psi_S(t)} 
+\end{aligned}
+$$
+
+Due to the arbitrariness of $\ket{\psi_S(t)}$, we get the desired result. $\blacksquare$
+
+<div class="result">
+
+**Derivative in the 1st slot (Schrödinger equation for $U(t,s)$):**
+
+$$
+\partial_1 U(t, s) = -i H(t) U(t, s)
+$$
+
+</div><br>
+
+*Proof*: This follows from the Schrödinger equation for the states due to the arbitrariness of the state. But nevertheless let us verify it again by definition:
+
+$$
+\begin{aligned}
+    \partial_1 U(t, s)
+    &= \frac{1}{\delta t} (U(t+\delta t,s) - U(t,s))
+    \\
+    &= \frac{1}{\delta t} (
+        U(t+\delta t, t) - 1
+    ) U(t,s) 
+    \\
+    &\simeq \frac{1}{\delta t} [-i H(t) \delta t] \, U(t,s)
+    \\
+    &= -i H(t) U(t,s) \qquad \blacksquare
+\end{aligned}
+$$
+
+<div class="result">
+
+**Derivative in the 2nd slot (adjoint of Schrödinger equation):**
+
+$$
+\partial_2 U(t,s) = i U(t,s) H(s)
+$$
+
+</div><br>
+
+*Proof*: We calculate by definition
+
+$$
+\begin{aligned}
+    \partial_2 U(t,s) 
+    &= \frac{1}{\delta s} (U(t, s+\delta s) - U(t,s))
+    \\
+    &= \frac{1}{\delta s} U(t, s+\delta s)(
+        1 - U(s+\delta s,s)
+    )
+    \\
+    &= \frac{1}{\delta s} U(t, s+\delta s) \,
+    [i H(s) \delta s]
+    \\
+    &\simeq i U(t,s) H(s)
+\end{aligned}
+$$
+
+Alternatively, we can also directly take the Hermitian conjugate (adjoint). But notice that $U^\dagger(t,s) = U(s,t)$, so the original $\partial_1$ becomes $\partial_2$:
+
+$$
+\begin{aligned}
+    \partial_1 U^\dagger(t,s) &= i U^\dagger(t,s) H(t)
+    \\ &\Downarrow \\
+    \partial_2 U(s,t) &= i U(s,t) H(t)
+\end{aligned}
+$$
+
+Renaming $t,s$ to $s,t$ gives the equation to be proved. $\blacksquare$
 
 ### Finite Time Evolution
 
-Let us now build the finite time evolution operator. We start from the Schrödinger equation for the time evolution operator:
+Let us now build the finite time evolution operator. We start from differential equation for $U$ proved earlier
 
 $$
 \frac{\partial}{\partial t} U(t, t_0)
@@ -140,7 +245,11 @@ This expansion is called the **Dyson series**.
 
 ### Time-Ordered Exponential
 
-To put the Dyson series into a nicer form, we introduce the **time-ordering operator** $T$:
+To put the Dyson series into a nicer form, we introduce the 
+
+<div class="result">
+
+**time-ordering operator $T$:**
 
 $$
 \begin{aligned}
@@ -152,6 +261,8 @@ $$
     \theta(t_{\sigma(n-1)} - t_{\sigma(n)})
 \end{aligned}
 $$
+
+</div><br>
 
 Only one term with $t_{\sigma(1)} > \cdots > t_{\sigma(n)}$ will survive. For example, when $n = 2$
 
@@ -208,7 +319,11 @@ D_n = \frac{1}{n!} \int_{t_0}^t dt_1 \int_{t_0}^t dt_2
 \cdots \int_{t_0}^t dt_n \, T[H(t_1) \cdots H(t_n)]
 $$
 
-We can then write the Dyson series as a **time-ordered exponential**:
+We can then write 
+
+<div class="result">
+
+**The Dyson series as a time-ordered exponential:**
 
 $$
 \begin{aligned}
@@ -224,6 +339,8 @@ $$
     T[H(t_1) \cdots H(t_n)]
 \end{aligned}
 $$
+
+</div><br>
 
 Below we consider two special cases:
 
@@ -254,6 +371,10 @@ $$
 
 The reference time is usually chosen to be the infinite past $t_0 = -\infty$ or $t = 0$. In the **Heisenberg picture**, the time evolution is fully absorbed into the observable operators by defining
 
+<div class="result">
+
+**Heisenberg picture:**
+
 $$
 \begin{aligned}
     O_H(t) &= U^\dagger(t,t_0) O_S U(t,t_0) 
@@ -261,6 +382,8 @@ $$
     \ket{\psi_H} &= \ket{\psi_S(t_0)}
 \end{aligned}
 $$
+
+</div><br>
 
 In particular, when $H$ is time-independent:
 
@@ -302,9 +425,15 @@ $$
 
 Thus
 
+<div class="result">
+
+**Heisenberg equation of motion (for time-independent $H$):**
+
 $$
 \frac{\partial O_H}{\partial t} = -i [O_H, H]
 $$
+
+</div><br>
 
 ## Interaction Picture
 
@@ -316,6 +445,10 @@ $$
 
 The first part $H_0$ is time-*independent*, usually the no-interaction (free) part of $H$. The second part $V(t)$ is usually the interaction terms, which can either be time dependent or not. A common practice is to add a time dependence in order to turn on or off these terms. Then we define the **interaction picture** state $\ket{\psi_I(t)}$ and observable $O_I$ as
 
+<div class="result">
+
+**Interaction picture:**
+
 $$
 \begin{aligned}
     \ket{\psi_I(t)} &= e^{iH_0 (t-t_0)} \ket{\psi_S(t)}
@@ -324,27 +457,21 @@ $$
 \end{aligned}
 $$
 
-In other words, the interaction picture operators are evolved by the *free* Hamiltonian $H_0$, which immediately leads to the equation of motion
+</div><br>
+
+<div class="remark">
+
+*Remark*: The interaction picture operators are evolved by the *free* Hamiltonian $H_0$, which immediately leads to the equation of motion
 
 $$
 \frac{\partial O_I}{\partial t} = -i [O_I, H_0]
 $$
 
-### Time Evolution Operator
-
-Let us now determine the time evolution of $\ket{\psi_I}$, i.e. the time evolution operator $U_I$ appearing in
-
-$$
-\ket{\psi_I(t)} = U_I(t,t_0) \ket{\psi_I(t_0)}
-$$
-
-<div class="remark">
-
-*Remark*: The time evolution operator in the interaction picture is sometimes denoted by $S(t,t_0)$ because its connection with the ***S*-matrix** in particle scattering theory.
-
 </div><br>
 
-We rewrite the definition of $\ket{\psi_I}$ as
+### Time Evolution Operator
+
+Let us now determine the time evolution of $\ket{\psi_I}$. We rewrite the definition of $\ket{\psi_I}$ as
 
 $$
 \begin{aligned}
@@ -356,11 +483,27 @@ $$
 \end{aligned}
 $$
 
-Thus
+Then we can introduce, similarly to the $U$ in Schrödinger picture, 
+
+<div class="result">
+
+**The evolution operator $U_I$ in interaction picture:**
 
 $$
-U_I(t,t_0) = e^{iH_0 (t-t_0)} U(t, t_0)
+\begin{aligned}
+    \ket{\psi_I(t)} &= U_I(t,t_0) \ket{\psi_I(t_0)} 
+    \\[0.5em]
+    U_I(t,t_0) &= e^{iH_0 (t-t_0)} U(t, t_0)
+\end{aligned}
 $$
+
+</div><br>
+
+<div class="remark">
+
+*Remark*: The time evolution operator in the interaction picture is also denoted by $S(t,t_0)$ because its connection with the ***S*-matrix** in particle scattering theory.
+
+</div><br>
 
 To determine the differential equation governing $U_I$, we calculate
 
@@ -385,18 +528,25 @@ $$
 \end{aligned}
 $$
 
-We get a Schrödinger-like equation, with $H$ replaced by $V_I$:
+We get a Schrödinger-like equation, with $H$ replaced by $V_I$ for both the evolution operator and therefore the state:
+
+<div class="result">
+
+**Schrödinger equation in interaction picture:**
 
 $$
-\frac{\partial U_I}{\partial t} = -i V_I(t) U_I(t,t_0)
+\begin{aligned}
+    \text{Evol. operator:} &\quad &
+    \frac{\partial}{\partial t}  U_I(t,t_0) 
+    &= -i V_I(t) U_I(t,t_0)
+    \\
+    \text{State:} &\quad &
+    \frac{\partial}{\partial t} \ket{\psi_I(t)}
+    &= -i V_I(t) \ket{\psi_I(t)}
+\end{aligned}
 $$
 
-For the state evolution, we have a similar result:
-
-$$
-\frac{\partial}{\partial t} \ket{\psi_I(t)}
-= -i V_I(t) \ket{\psi_I(t)}
-$$
+</div><br>
 
 These means that the interaction picture states are evolved by $V_I$. As a special case, when $H$ is independent of time, and $[H_0, V] = 0$, we obtain
 
@@ -410,7 +560,9 @@ $$
 
 which is time evolution solely by $V_I = V$. 
 
-## Summary
+<div class="result">
+
+**Summary: the three pictures of time evolution**
 
 $$
 \def \arraystretch{1.5}
@@ -430,3 +582,5 @@ $$
     \partial_t O_I(t) = -i [O_I(t), H_0]
 \end{array}
 $$
+
+</div><br>

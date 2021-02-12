@@ -1,0 +1,257 @@
+<style>
+    .katex {
+        font-size: 1.1em;
+    }
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: DarkSlateBlue;
+        color: White;
+    }
+</style>
+
+# The Gell-Mann and Low Theorem
+
+*Reference: arXiv math-ph/0612030*
+
+Consider a Hamiltonian that can be split into a free part (which is assumed solvable) and an interaction part
+
+$$
+H = H_0 + gV
+$$
+
+where $g$ is some coupling constant separated from $V$ for later convenience. We now add an auxiliary time dependence to $V$ to slowly (**adiabatically**) turn it on or off off:
+
+$$
+H_\epsilon(t) = H_0 + V_\epsilon(t), \quad V_\epsilon(t) = e^{-\epsilon|t|} g V(0)
+\quad (0 < \epsilon \ll 1)
+$$
+
+In this construction, 
+
+$$
+H_\epsilon(\pm \infty) = H_0, \quad
+H_\epsilon(0) = H
+$$
+
+## A Lemma
+
+Before proceed to the main theorem, one lemma is needed:
+
+<div class="result">
+
+**Lemma:** Let $U_\epsilon(t,s) \ (t \ge s)$ be the Schrödinger picture (full) evolution operator. Then for *all* $\epsilon > 0$ (not limited to infinitesimal ones)
+
+$$
+i\epsilon g \partial_g U_\epsilon(t,s)
+= \begin{cases}
+    + H_\epsilon(t) U_\epsilon(t,s) - U_\epsilon(t,s) H_\epsilon(s),
+    & 0 \ge t \ge s \\
+    - H_\epsilon(t) U_\epsilon(t,s) + U_\epsilon(t,s) H_\epsilon(s),
+    & t \ge s \ge 0
+\end{cases}
+$$
+
+</div><br>
+
+*Proof*: Let us absorb $g$ into the exponential factor by defining $g = e^{\epsilon \theta}$; then
+
+$$
+H_\epsilon(t) = H_0 + e^{\epsilon(\theta - |t|)} gV
+$$
+
+Recall that we have the following integral equation derived from the Schrödinger equation
+
+$$
+\begin{aligned}
+    U_\epsilon(t, s) &= 1 - i \int_{s}^{t} dt' \, 
+    H_\epsilon(t') U_\epsilon(t', s)
+    \\
+    &= 1 - i \int_{s}^{t} dt' \, 
+    (H_0 + e^{\epsilon(\theta - |t'|)} V) U_\epsilon(t', s)
+\end{aligned}
+$$
+
+We also construct two further Hamiltonians with the following artificial time dependence
+
+$$
+H_\pm(t) = H_0 + e^{\pm \epsilon t}
+$$
+
+and let the corresponding full evolution operators be $U_\pm(t,s)$, satisfying the integral equations
+
+$$
+\begin{aligned}
+    U_\pm(t, s) &= 1 - i \int_{s}^{t} dt' \, 
+    H_\pm(t') U_\pm(t', s)
+    \\
+    &= 1 - i \int_{s}^{t} dt' \, 
+    (H_0 + e^{\pm \epsilon t'}V) U_\epsilon(t', s)
+\end{aligned}
+$$
+
+However, we shall see that with proper shift of arguments, $U_\pm$ will yield the same integral equation as $U_\epsilon$, so they are closely related. 
+
+- For $0 \ge t \ge s$:
+    
+    $$
+    \begin{aligned}
+        U_\epsilon(t, s) &= 1 - i \int_{s}^{t} dt' \, 
+        (H_0 + e^{\epsilon(\theta + t')} V) U_\epsilon(t', s)
+        \\
+        U_+(t+\theta, s+\theta) 
+        &= 1 - i \int_{s+\theta}^{t+\theta} dt' \, 
+        (H_0 + e^{\epsilon t'}V) U_\epsilon(t', s+\theta)
+        \\
+        &= 1 - i \int_{s}^{t} dt' \, 
+        (H_0 + e^{\epsilon (\theta+t')}V) U_\epsilon(t', s+\theta)
+    \end{aligned}
+    $$
+
+    The uniqueness of the solution implies that
+
+    $$
+    U_\epsilon(t, s) = U_+(t+\theta, s+\theta) 
+    \qquad (0 \ge t \ge s)
+    $$
+
+- For $t \ge s \ge 0$,
+
+    $$
+    \begin{aligned}
+        U_\epsilon(t, s) &= 1 - i \int_{s}^{t} dt' \, 
+        (H_0 + e^{\epsilon(\theta - t')} V) U_\epsilon(t', s)
+        \\
+        U_-(t-\theta, s-\theta) 
+        &= 1 - i \int_{s-\theta}^{t-\theta} dt' \, 
+        (H_0 + e^{-\epsilon t'}V) U_\epsilon(t', s-\theta)
+        \\
+        &= 1 - i \int_{s}^{t} dt' \, 
+        (H_0 + e^{-\epsilon (t'-\theta)}V) U_\epsilon(t', s-\theta)
+    \end{aligned}
+    $$
+
+    This implies
+
+    $$
+    U_\epsilon(t, s) = U_-(t-\theta, s-\theta) 
+    \qquad (t \ge s \ge 0)
+    $$
+
+These relations make the $\theta$ (or $g$) dependence of $U_\epsilon$ very simple. Then we can apply the chain rule to obtain ($\partial_i$ means the derivative in the $i$th slot)
+
+$$
+\begin{aligned}
+    \partial_\theta U_\epsilon(t,s)
+    &= \partial_1 U_\pm(t \pm \theta, s \pm \theta) 
+    + \partial_2 U_\pm(t \pm \theta, s \pm \theta)
+    \\
+    &= \pm (\partial_1 U_\epsilon(t,s) + \partial_2 U_\epsilon(t,s))
+    \\
+    &= -i (\pm H_\epsilon(t) U_\epsilon(t,s)
+    \mp U_\epsilon(t,s) H_\epsilon(s))
+\end{aligned}
+$$
+
+In the last line we used the Schrödinger equations
+
+$$
+\begin{aligned}
+    \partial_1 U_\epsilon(t,s) 
+    &= - i H_\epsilon(t) U_\epsilon(t,s) \\
+    \partial_2 U_\epsilon(t,s)
+    &= + i U_\epsilon(t,s) H_\epsilon(s)
+\end{aligned}
+$$
+
+But do not forget that $\theta$ is related to $g$, then
+
+$$
+\partial_\theta
+= (\partial_\theta g) \partial_g
+= \epsilon g \partial_g
+$$
+
+Finally we get the desired result. $\blacksquare$
+
+## Gell-Mann and Low Theorem
+
+The introduction of the auxiliary time independence is to slowly evolve one eigenstate of $H_\epsilon(-\infty) = H_0$, in the hope that it will become a eigenstate of the *full Hamiltonian* $H = H_\epsilon(0)$, at least in the $\epsilon \to 0_+$ limit. Luckily this is confirmed by the following theorem.
+
+<div class="result">
+
+**The Gell-Mann and Low theorem:** 
+
+In the following we use states in the interaction picture with $H_\epsilon(t) = H_0 + e^{-\epsilon|t|} g V$. Let:
+
+- $\ket{\phi_0} \equiv \ket{\phi_\epsilon(-\infty)}$ be an eigenstate of the $H_\epsilon(-\infty) = H_0$;
+- $U_{\epsilon I}(t, s)$ be the time evolution operator in the interaction picture. 
+
+Define the state 
+
+$$
+\begin{aligned}
+    \ket{\psi_\epsilon} 
+    &\equiv \frac{U_{\epsilon I}(0, -\infty) \ket{\phi_0}}
+    {\amp{\phi_0}{U_{\epsilon I}(0, -\infty)}{\phi_0}}
+    = \frac{\ket{\phi_\epsilon(0)}}
+    {\braket{\phi_0}{\phi_\epsilon(0)}}
+\end{aligned}
+$$
+
+(the denominator is used to cancel a singular phase factor due to the time evolution) 
+
+Then the limit state (if it exists)
+
+$$
+\ket{\psi_0} \equiv \lim_{\epsilon \to 0_+} 
+\ket{\psi_\epsilon}
+$$
+
+is an eigenstate of the *full* Hamiltonian $H = H_0 + gV$ in Heisenberg picture.
+
+</div><br>
+
+*Proof*: Since in the proof of the lemma we only used the Schrödinger equations, we can directly replace $U_\epsilon, H_\epsilon$ there by the corresponding operators in the interaction picture, we obtain for *all* $\epsilon > 0$ 
+
+$$
+i\epsilon g \partial_g U_{\epsilon I}(t,s)
+= \begin{cases}
+    + H_{\epsilon I}(t) U_{\epsilon I}(t,s) - U_{\epsilon I}(t,s) H_{\epsilon I}(s),
+    & 0 \ge t \ge s \\
+    - H_{\epsilon I}(t) U_{\epsilon I}(t,s) + U_{\epsilon I}(t,s) H_{\epsilon I}(s),
+    & t \ge s \ge 0
+\end{cases}
+$$
+
+where $H_{\epsilon I}(t) = e^{iH_0(t-t_0)} H_\epsilon(t) e^{-iH_0(t-t_0)}$. Now let us apply this to the eigenstate (interaction picture) $\ket{\phi_\epsilon(s)}$. 
+
+- Case 1: choose
+
+    $$
+    t = 0, \quad s = t_0 = -\infty
+    $$
+
+    then
+
+    $$
+    \begin{aligned}
+        \text{LHS} \ket{\phi_0(-\infty)}
+        &= i\epsilon g \partial_g \ket{\phi_0(0)}
+        \\
+        \text{RHS} \ket{\phi_0(-\infty)}
+        &= H_{\epsilon I}(0) \ket{\phi_0(0)}
+        \\ &\quad
+        - U_{\epsilon I}(0,-\infty) \underbrace{
+            H_{\epsilon I}(-\infty) \ket{\phi_0(-\infty)}
+        }_{E_0 \ket{\phi_0(-\infty)}}
+        
+    \end{aligned}
+    $$
+

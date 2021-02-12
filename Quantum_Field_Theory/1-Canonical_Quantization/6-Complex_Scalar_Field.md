@@ -3,15 +3,15 @@
 The Lagrangian of the **complex scalar field** theory is
 
 $$
-\mathcal{L} = (\partial_\mu \phi^*)(\partial^\mu \phi)
-- m^2 \phi^* \phi
+\mathcal{L} = (\partial_\mu \phi^\dagger)(\partial^\mu \phi)
+- m^2 \phi^\dagger \phi
 $$
 
-The complex fields $\phi, \phi^*$ are treated as *independent variables*. Usually we shall make a substitution
+The complex fields $\phi, \phi^\dagger$ are treated as *independent variables*. Usually we shall make a substitution
 
 $$
 \phi = \frac{1}{\sqrt{2}}(\phi_1 + i\phi_2), \quad
-\phi^* = \frac{1}{\sqrt{2}}(\phi_1 - i\phi_2)
+\phi^\dagger = \frac{1}{\sqrt{2}}(\phi_1 - i\phi_2)
 $$
 
 so that the Lagrangian is converted to a free theory of *two real scalar fields* $\phi_1, \phi_2$:
@@ -71,7 +71,7 @@ $$
         a_{\mathbf{p}} e^{-ipx} 
         + b^\dagger_{\mathbf{p}} e^{ipx}
     ] \\
-    \phi^*(x) 
+    \phi^\dagger(x) 
     &= \int \frac{d^3 p}{(2\pi)^3} 
     \frac{1}{\sqrt{2 E_\mathbf{p}}} [
         b_{\mathbf{p}} e^{-ipx} 
@@ -88,7 +88,7 @@ The complex scalar field theory has a global $U(1)$ symmetry: the Lagrangian is 
 
 $$
 \phi(x) \to e^{i\alpha} \phi(x), \quad
-\phi^*(x) \to e^{-i\alpha} \phi^*(x)
+\phi^\dagger(x) \to e^{-i\alpha} \phi^\dagger(x)
 $$
 
 This symmetry does not involve coordinate transformation, thus the current associated with this symmetry is
@@ -98,16 +98,16 @@ $$
     j^\mu &= \left[
         - \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}
         \frac{\partial F[\phi(x)]}{\partial \alpha}
-        - \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi^*)}
-        \frac{\partial F^*[\phi^*(x)]}{\partial \alpha}
+        - \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi^\dagger)}
+        \frac{\partial F^*[\phi^\dagger(x)]}{\partial \alpha}
     \right]_{\alpha = 0}
     \\
     &= \left[
-        -\partial^\mu \phi^* \times ie^{i\alpha} \phi
-        - \partial^\mu \phi (-ie^{-i\alpha} \phi^*)
+        -\partial^\mu \phi^\dagger \times ie^{i\alpha} \phi
+        - \partial^\mu \phi (-ie^{-i\alpha} \phi^\dagger)
     \right]_{\alpha = 0}
     \\
-    &= i (\phi^* \partial^\mu \phi - \phi \partial^\mu \phi^*)
+    &= i (\phi^\dagger \partial^\mu \phi - \phi \partial^\mu \phi^\dagger)
 \end{aligned}
 $$
 
@@ -128,12 +128,12 @@ $$
     \right]_{\alpha = 0}
     \\
     &= \left[
-        i e^{i\alpha} \phi \times (-m^2 \phi^*)
-        + \partial^\mu \phi^*\times \partial_\mu(i e^{i\alpha} \phi)
+        i e^{i\alpha} \phi \times (-m^2 \phi^\dagger)
+        + \partial^\mu \phi^\dagger\times \partial_\mu(i e^{i\alpha} \phi)
         + c.c.
     \right]_{\alpha = 0}
     \\
-    &= -im^2 \phi \phi^* + i (\partial^\mu \phi^*)(\partial_\mu\phi)
+    &= -im^2 \phi \phi^\dagger + i (\partial^\mu \phi^\dagger)(\partial_\mu\phi)
     + c.c
     \\
     &= 0
@@ -148,7 +148,7 @@ $$
 \begin{aligned}
     Q &= \int d^3x \, j_0
     \\
-    &= i \int d^3x (\phi^* \partial_0 \phi - \phi \partial_0 \phi^*)
+    &= i \int d^3x (\phi^\dagger \partial_0 \phi - \phi \partial_0 \phi^\dagger)
 \end{aligned}
 $$
 
@@ -162,7 +162,7 @@ $$
         - a_{\mathbf{p}} e^{-ipx} 
         + b^\dagger_{\mathbf{p}} e^{ipx}
     ] \\
-    \partial_0 \phi^*
+    \partial_0 \phi^\dagger
     &= i \int \frac{d^3 p}{(2\pi)^3}
     \sqrt{\frac{E_\mathbf{p}}{2}} [
         - b_{\mathbf{p}} e^{-ipx} 
@@ -273,33 +273,33 @@ $$
 \begin{aligned}
     \langle 0 | T[\phi(x) \phi(y)] | 0 \rangle &= 0
     \\[0.5em]
-    \langle 0 | T[\phi^*(x) \phi^*(y)] | 0 \rangle &= 0
+    \langle 0 | T[\phi^\dagger(x) \phi^\dagger(y)] | 0 \rangle &= 0
 \end{aligned}
 $$
 
 Thus the only meaningful 2-point function is
 
 $$
-\langle 0 | T[\phi^*(x) \phi(y)] | 0 \rangle
-= \langle 0 | T[\phi(y) \phi^*(x)] | 0 \rangle
+\langle 0 | T[\phi^\dagger(x) \phi(y)] | 0 \rangle
+= \langle 0 | T[\phi(y) \phi^\dagger(x)] | 0 \rangle
 $$
 
 Let us evaluate this propagator explicitly:
 
 $$
 \begin{aligned}
-    &\langle 0 | T[\phi^*(x) \phi(y)] | 0 \rangle
+    &\langle 0 | T[\phi^\dagger(x) \phi(y)] | 0 \rangle
     \\
-    &= \langle 0 |\phi^*(x) \phi(y)| 0 \rangle \theta(x^0 - y^0)
-    + \langle 0 |\phi(y) \phi^*(x)| 0 \rangle \theta(y^0 - x^0)
+    &= \langle 0 |\phi^\dagger(x) \phi(y)| 0 \rangle \theta(x^0 - y^0)
+    + \langle 0 |\phi(y) \phi^\dagger(x)| 0 \rangle \theta(y^0 - x^0)
 \end{aligned}
 $$
 
-Let us express $\phi^*(x) \phi(y)$ using normal-ordered operators:
+Let us express $\phi^\dagger(x) \phi(y)$ using normal-ordered operators:
 
 $$
 \begin{aligned}
-    \phi^*(x) \phi(y)
+    \phi^\dagger(x) \phi(y)
     &= \int \frac{d^3 p}{(2\pi)^3} 
     \frac{1}{\sqrt{2 E_\mathbf{p}}} [
         b_{\mathbf{p}} e^{-ipx} 
@@ -334,7 +334,7 @@ Similarly, for
 
 $$
 \begin{aligned}
-    \phi(y) \phi^*(x)
+    \phi(y) \phi^\dagger(x)
     &= \int \frac{d^3 q}{(2\pi)^3} 
     \frac{1}{\sqrt{2 E_\mathbf{q}}} [
         a_{\mathbf{q}} e^{-iqy} 
@@ -358,21 +358,21 @@ Therefore
 
 $$
 \begin{aligned}
-    \langle 0 |\phi^*(x) \phi(y)| 0 \rangle
+    \langle 0 |\phi^\dagger(x) \phi(y)| 0 \rangle
     &= \int \frac{d^3 p}{(2\pi)^3} \left.
     \frac{1}{2E_\mathbf{p}} e^{-ip(x-y)}
     \right|_{p^0 = E_\mathbf{p}} 
     \\
     &= D(x - y)
     \\[1em]
-    \langle 0 |\phi(y) \phi^*(x)| 0 \rangle
+    \langle 0 |\phi(y) \phi^\dagger(x)| 0 \rangle
     &= \int \frac{d^3 p}{(2\pi)^3} \left.
     \frac{1}{2E_\mathbf{p}} e^{-ip(y-x)}
     \right|_{p^0 = E_\mathbf{p}} 
     \\
     &= D(y - x)
     \\[1em]
-    \langle 0 | T[\phi^*(x) \phi(y)] | 0 \rangle
+    \langle 0 | T[\phi^\dagger(x) \phi(y)] | 0 \rangle
     &= D(x - y) \theta(x^0 - y^0)
     \\ &\quad
     + D(y - x) \theta(y^0 - x^0)
@@ -389,7 +389,7 @@ These is the very similar to the results from real scalar field theory. Thus the
 $$
 \begin{aligned}
     D_F(x - y) 
-    &= \langle 0 | T[\phi^*(x) \phi(y)] | 0 \rangle
+    &= \langle 0 | T[\phi^\dagger(x) \phi(y)] | 0 \rangle
     \\[0.5em]
     &= \int \frac{d^4 p}{(2\pi)^4}
     \frac{
