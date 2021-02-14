@@ -18,7 +18,7 @@
 
 # Many-Body State for Identical Particles
 
-Consider a (non-relativistic) system of $N$ particles (not necessarily indistinguishable). Suppose each particle has one-body Hilbert space $\mathcal{H}_k$ ($k = 1, ..., N$), and the interaction between the particles does not destroy it. Then the full Hilbert space for the system is
+Consider a system of $N$ particles (not necessarily indistinguishable). Suppose each particle has one-body Hilbert space $\mathcal{H}_k$ ($k = 1, ..., N$), and the interaction between the particles does not destroy it. Then the full Hilbert space for the system is
 
 $$
 \mathcal{H}(N) = \mathcal{H}_1 \otimes \cdots

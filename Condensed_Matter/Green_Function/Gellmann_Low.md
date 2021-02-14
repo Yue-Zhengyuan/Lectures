@@ -201,7 +201,7 @@ $$
     &\equiv \frac{U_{\epsilon I}(0, -\infty) \ket{\phi_0}}
     {\amp{\phi_0}{U_{\epsilon I}(0, -\infty)}{\phi_0}}
     = \frac{\ket{\phi_\epsilon(0)}}
-    {\braket{\phi_0}{\phi_\epsilon(0)}}
+    {\braket{\phi_\epsilon(-\infty)}{\phi_\epsilon(0)}}
 \end{aligned}
 $$
 
@@ -214,7 +214,7 @@ $$
 \ket{\psi_\epsilon}
 $$
 
-is an eigenstate of the *full* Hamiltonian $H = H_0 + gV$ in Heisenberg picture.
+is an eigenstate of the *full* Hamiltonian $H = H_0 + gV$.
 
 </div><br>
 
@@ -230,28 +230,47 @@ i\epsilon g \partial_g U_{\epsilon I}(t,s)
 \end{cases}
 $$
 
-where $H_{\epsilon I}(t) = e^{iH_0(t-t_0)} H_\epsilon(t) e^{-iH_0(t-t_0)}$. Now let us apply this to the eigenstate (interaction picture) $\ket{\phi_\epsilon(s)}$. 
+where $H_{\epsilon I}(t) = e^{iH_0(t-t_0)} H_\epsilon(t) e^{-iH_0(t-t_0)}$. Now let us apply this to the eigenstate (interaction picture) $\ket{\phi_\epsilon(s)}$ and choose
 
-- Case 1: choose
+$$
+t = 0, \quad s = t_0 = -\infty
+$$
 
-    $$
-    t = 0, \quad s = t_0 = -\infty
-    $$
+then
 
-    then
+$$
+\begin{aligned}
+    \text{LHS} \ket{\phi_0(-\infty)}
+    &= i\epsilon g \partial_g 
+    U_{\epsilon I}(0,-\infty) \ket{\phi_\epsilon(-\infty)}
+    \\
+    &= i\epsilon g \partial_g \ket{\phi_\epsilon(0)}
+    
+    \\[1em]
 
-    $$
-    \begin{aligned}
-        \text{LHS} \ket{\phi_0(-\infty)}
-        &= i\epsilon g \partial_g \ket{\phi_0(0)}
-        \\
-        \text{RHS} \ket{\phi_0(-\infty)}
-        &= H_{\epsilon I}(0) \ket{\phi_0(0)}
-        \\ &\quad
-        - U_{\epsilon I}(0,-\infty) \underbrace{
-            H_{\epsilon I}(-\infty) \ket{\phi_0(-\infty)}
-        }_{E_0 \ket{\phi_0(-\infty)}}
-        
-    \end{aligned}
-    $$
+    \text{RHS} \ket{\phi_0(-\infty)}
+    &= H_{\epsilon I}(0) U_{\epsilon I}(0,-\infty) 
+    \ket{\phi_\epsilon(-\infty)}
+    \\ &\quad
+    - U_{\epsilon I}(0,-\infty) \underbrace{
+        H_{\epsilon I}(-\infty) \ket{\phi_0(-\infty)}
+    }_{E_0 \ket{\phi_0(-\infty)}}
+    \\
+    &= (H_{\epsilon I}(0) - E_0) \ket{\psi_\epsilon(0)}
+\end{aligned}
+$$
 
+However, this $H_{\epsilon I}(0)$ is just the original full Hamiltonian $H$ in its own interaction picture
+
+$$
+H_{\epsilon I}(0) = e^{iH_0(0-t_0)} 
+\underbrace{H_\epsilon(0)}_{= H} e^{-iH_0(0-t_0)}
+= H_I(0)
+$$
+
+Thus we obtain
+
+$$
+(H - E_0) \ket{\phi_\epsilon(0)}
+= i\epsilon g \partial_g \ket{\phi_\epsilon(0)}
+$$

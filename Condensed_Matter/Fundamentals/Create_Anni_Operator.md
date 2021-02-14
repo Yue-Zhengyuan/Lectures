@@ -116,7 +116,7 @@ $$
 
 </div><br>
 
-## The Algebra of Creation/Annihilation Operators
+## The Algebra of Creation / Annihilation Operators
 
 ## Action on the Fock Basis
 
@@ -141,3 +141,21 @@ If we use the Fock basis, and let $\ket{u}$ be the $r$th basis state, then:
 ## Change of Basis
 
 ### The Field Operators
+
+A special case of change of basis is to go to the *continuous position eigenstates*. The creation and annihilation operators in the position basis are called the **field operators**:
+
+<div class="result">
+
+**The field operators:**
+
+$$
+\begin{aligned}
+    \phi(x) &= \sum_r \braket{x}{r} a_r
+    = \sum_r \phi_r(x) a_r
+    \\
+    \phi^\dagger(x) &= \sum_r a_r^\dagger \braket{r}{x} 
+    = \sum_r \phi_r^*(x) a_r^\dagger
+\end{aligned}
+$$
+
+</div><br>
