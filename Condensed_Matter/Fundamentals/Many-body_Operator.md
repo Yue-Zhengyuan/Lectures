@@ -28,15 +28,17 @@ $$
 
 Here the summation is over the particle labels. 
 
-----
-
 <div class="result">
 
 **Lemma for one-body operators:**
 
 </div><br>
 
+----
+
 *Proof*:
+
+<div align="right">QED.</div>
 
 ----
 
@@ -57,8 +59,6 @@ $$
 V = \frac{1}{2} \sum_{i \ne j} V(i,j)
 $$
 
-----
-
 <div class="result">
 
 **Lemma for two-body operators:**
@@ -75,6 +75,7 @@ $$
 
 </div><br>
 
+----
 
 *Proof*: First, act $a_{r'}$ on the symmetrized state:
 
@@ -143,8 +144,9 @@ Thus in both cases the parity factor are canceled, and we obtain the desired res
 $$
 \text{LHS} = \sum_{i\ne j} \delta_{r',r_i} \delta_{s',r_j}
 S_\pm(N) \ket{...,r,...,s,...}
-\tag*{$\blacksquare$}
 $$
+
+<div align="right">QED.</div>
 
 ----
 

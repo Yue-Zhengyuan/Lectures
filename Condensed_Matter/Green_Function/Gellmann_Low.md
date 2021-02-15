@@ -20,16 +20,17 @@
 
 *Reference: arXiv math-ph/0612030*
 
-Consider a Hamiltonian that can be split into a free part (which is assumed solvable) and an interaction part
+Consider a time-independent Hamiltonian that can be split into a free (solvable) part and an interaction part
 
 $$
 H = H_0 + gV
 $$
 
-where $g$ is some coupling constant separated from $V$ for later convenience. We now add an auxiliary time dependence to $V$ to slowly (**adiabatically**) turn it on or off off:
+where $g$ is some coupling constant separated from $V$ for later convenience. One can add an auxiliary time dependence to the interaction $V$ to slowly (**adiabatically**) turn it on or off off:
 
 $$
-H_\epsilon(t) = H_0 + V_\epsilon(t), \quad V_\epsilon(t) = e^{-\epsilon|t|} g V(0)
+H_\epsilon(t) = H_0 + V_\epsilon(t), \quad 
+V_\epsilon(t) = e^{-\epsilon|t|} g V
 \quad (0 < \epsilon \ll 1)
 $$
 
@@ -39,6 +40,8 @@ $$
 H_\epsilon(\pm \infty) = H_0, \quad
 H_\epsilon(0) = H
 $$
+
+The introduction of the auxiliary time independence is to slowly evolve one eigenstate of $H_\epsilon(-\infty) = H_0$, in the hope that it will become a eigenstate of the *full Hamiltonian* $H = H_\epsilon(0)$, at least in the $\epsilon \to 0_+$ limit. Luckily this is confirmed by the **Gell-Mann and Low theorem**.
 
 ## A Lemma
 
@@ -180,57 +183,62 @@ $$
 
 Finally we get the desired result. $\blacksquare$
 
-## Gell-Mann and Low Theorem
+## The Gell-Mann and Low Theorem
 
-The introduction of the auxiliary time independence is to slowly evolve one eigenstate of $H_\epsilon(-\infty) = H_0$, in the hope that it will become a eigenstate of the *full Hamiltonian* $H = H_\epsilon(0)$, at least in the $\epsilon \to 0_+$ limit. Luckily this is confirmed by the following theorem.
+We now state and prove the main theorem. 
 
 <div class="result">
 
 **The Gell-Mann and Low theorem:** 
 
-In the following we use states in the interaction picture with $H_\epsilon(t) = H_0 + e^{-\epsilon|t|} g V$. Let:
+Suppose the full Hamiltonian can be separated into $H = H_0 + gV$. Let:
 
-- $\ket{\phi_0} \equiv \ket{\phi_\epsilon(-\infty)}$ be an eigenstate of the $H_\epsilon(-\infty) = H_0$;
-- $U_{\epsilon I}(t, s)$ be the time evolution operator in the interaction picture. 
+- $\ket{\Phi_0}$ be an eigenstate of $H_0$ (in the free Heisenberg picture);
+- $U_{\epsilon I}(t, s)$ be the time evolution operator in the interaction picture with the auxiliary Hamiltonian
+    
+    $$
+    H_\epsilon(t) = H_0 + e^{-\epsilon|t|} g V
+    $$
 
 Define the state 
 
 $$
 \begin{aligned}
-    \ket{\psi_\epsilon} 
-    &\equiv \frac{U_{\epsilon I}(0, -\infty) \ket{\phi_0}}
-    {\amp{\phi_0}{U_{\epsilon I}(0, -\infty)}{\phi_0}}
-    = \frac{\ket{\phi_\epsilon(0)}}
-    {\braket{\phi_\epsilon(-\infty)}{\phi_\epsilon(0)}}
+    \ket{\Psi_\epsilon} 
+    &\equiv \frac{U_{\epsilon I}(0, -\infty) \ket{\Phi_0}}
+    {\amp{\Phi_0}{U_{\epsilon I}(0, -\infty)}{\Phi_0}}
 \end{aligned}
 $$
 
-(the denominator is used to cancel a singular phase factor due to the time evolution) 
-
-Then the limit state (if it exists)
+Then the following limit (if it exists) is still an eigenstate of the full Hamiltonian $H$:
 
 $$
-\ket{\psi_0} \equiv \lim_{\epsilon \to 0_+} 
-\ket{\psi_\epsilon}
+\ket{\Psi_0} \equiv \lim_{\epsilon \to 0_+} 
+\ket{\Psi_\epsilon}
 $$
-
-is an eigenstate of the *full* Hamiltonian $H = H_0 + gV$.
 
 </div><br>
 
 *Proof*: Since in the proof of the lemma we only used the Schrödinger equations, we can directly replace $U_\epsilon, H_\epsilon$ there by the corresponding operators in the interaction picture, we obtain for *all* $\epsilon > 0$ 
 
 $$
-i\epsilon g \partial_g U_{\epsilon I}(t,s)
-= \begin{cases}
-    + H_{\epsilon I}(t) U_{\epsilon I}(t,s) - U_{\epsilon I}(t,s) H_{\epsilon I}(s),
-    & 0 \ge t \ge s \\
-    - H_{\epsilon I}(t) U_{\epsilon I}(t,s) + U_{\epsilon I}(t,s) H_{\epsilon I}(s),
-    & t \ge s \ge 0
-\end{cases}
+\begin{aligned}
+    i\epsilon g \partial_g U_{\epsilon I}(t,s)
+    &= \begin{cases}
+        + H_{\epsilon I}(t) U_{\epsilon I}(t,s) - U_{\epsilon I}(t,s) H_{\epsilon I}(s),
+        & 0 \ge t \ge s \\
+        - H_{\epsilon I}(t) U_{\epsilon I}(t,s) + U_{\epsilon I}(t,s) H_{\epsilon I}(s),
+        & t \ge s \ge 0
+    \end{cases}
+    \\[1.5em]
+    H_{\epsilon I}(t) 
+    &= e^{iH_0(t-t_0)} H_\epsilon(t) e^{-iH_0(t-t_0)}
+\end{aligned}
 $$
 
-where $H_{\epsilon I}(t) = e^{iH_0(t-t_0)} H_\epsilon(t) e^{-iH_0(t-t_0)}$. Now let us apply this to the eigenstate (interaction picture) $\ket{\phi_\epsilon(s)}$ and choose
+Now let us apply this to the Heisenberg picture eigenstate $\ket{\Phi_0}$ (time-independent) of $H_0$. Note that this state can be interpreted as
+
+Then we choose
 
 $$
 t = 0, \quad s = t_0 = -\infty
@@ -240,23 +248,23 @@ then
 
 $$
 \begin{aligned}
-    \text{LHS} \ket{\phi_0(-\infty)}
+    \text{LHS} \ket{\Phi_0(-\infty)}
     &= i\epsilon g \partial_g 
-    U_{\epsilon I}(0,-\infty) \ket{\phi_\epsilon(-\infty)}
+    U_{\epsilon I}(0,-\infty) \ket{\Phi_\epsilon(-\infty)}
     \\
-    &= i\epsilon g \partial_g \ket{\phi_\epsilon(0)}
+    &= i\epsilon g \partial_g \ket{\Phi_\epsilon(0)}
     
     \\[1em]
 
-    \text{RHS} \ket{\phi_0(-\infty)}
+    \text{RHS} \ket{\Phi_0(-\infty)}
     &= H_{\epsilon I}(0) U_{\epsilon I}(0,-\infty) 
-    \ket{\phi_\epsilon(-\infty)}
+    \ket{\Phi_\epsilon(-\infty)}
     \\ &\quad
     - U_{\epsilon I}(0,-\infty) \underbrace{
-        H_{\epsilon I}(-\infty) \ket{\phi_0(-\infty)}
-    }_{E_0 \ket{\phi_0(-\infty)}}
+        H_{\epsilon I}(-\infty) \ket{\Phi_0(-\infty)}
+    }_{E_0 \ket{\Phi_0(-\infty)}}
     \\
-    &= (H_{\epsilon I}(0) - E_0) \ket{\psi_\epsilon(0)}
+    &= (H_{\epsilon I}(0) - E_0) \ket{\Phi_\epsilon(0)}
 \end{aligned}
 $$
 
@@ -268,9 +276,9 @@ H_{\epsilon I}(0) = e^{iH_0(0-t_0)}
 = H_I(0)
 $$
 
-Thus we obtain
+Thus we obtain (by further dividing both sides by the factor $\braket{\Phi_\epsilon(-\infty)}{\Phi_\epsilon(0)}$)
 
 $$
-(H - E_0) \ket{\phi_\epsilon(0)}
-= i\epsilon g \partial_g \ket{\phi_\epsilon(0)}
+(H - E_0) \ket{\Psi_\epsilon}
+= i\epsilon g \partial_g \ket{\Psi_\epsilon}
 $$

@@ -249,7 +249,7 @@ To put the Dyson series into a nicer form, we introduce the
 
 <div class="result">
 
-**time-ordering operator $T$:**
+**Time-ordering operator $T$:**
 
 $$
 \begin{aligned}
@@ -279,6 +279,21 @@ $$
     \end{cases}
 \end{aligned}
 $$
+
+<div class="remark">
+
+*Remark*: Later we will also put boson/fermion operators into time-ordering. Then people further require that
+
+$$
+T[A_1 A_2 \cdots]
+= (\pm 1)^\sigma T[A_{\sigma(1)} A_{\sigma(2)} \cdots]
+\qquad \begin{aligned}
+    \text{boson} &: + \\
+    \text{fermion} &: -
+\end{aligned}
+$$
+
+</div><br>
 
 For the $n$th-order ($n = 2,3,...$) term in the Dyson series (call it $D_n$), we can make the integration range of $t_1,...,t_n$ all equal to $[t_0,t]$ by introducing step functions:
 
@@ -329,7 +344,7 @@ $$
 \begin{aligned}
     U(t,t_0) &= T{\left[ \exp{
         \left(
-            -i \int_{t_0}^t dt' H(t')
+            -i \int_{t_0}^t dt' \, H(t')
         \right)
     } \right]}
     \\ &\equiv
@@ -342,17 +357,15 @@ $$
 
 </div><br>
 
-Below we consider two special cases:
+<div class="remark">
 
-- *Case 1*: $H(t)$ at different time commutes with each other
+*Remark*: When $H$ is independent of time, the result reduces to an ordinary exponential
 
-- *Case 2*: $H$ is independent of time
+$$
+U(t, t_0) = e^{-i H (t - t_0)}
+$$
 
-    Then the time ordering becomes useless, and the result simply reduces to
-
-    $$
-    U(t, t_0) = e^{-i H (t - t_0)}
-    $$
+</div><br>
 
 ### Time Ordering as Path Ordering
 
@@ -501,7 +514,15 @@ $$
 
 <div class="remark">
 
-*Remark*: The time evolution operator in the interaction picture is also denoted by $S(t,t_0)$ because its connection with the ***S*-matrix** in particle scattering theory.
+*Remark*: 
+
+- The time evolution operator in the interaction picture is also denoted by $S(t,t_0)$ because its connection with the ***S*-matrix** in particle scattering theory.
+
+- We now obtain the relation between $O_I(t)$ and $O_H(t)$:
+    
+    $$
+    O_H(t) = U_I^\dagger(t,t_0) O_I(t) U_I(t,t_0)
+    $$
 
 </div><br>
 
