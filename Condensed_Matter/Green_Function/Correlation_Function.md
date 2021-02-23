@@ -211,17 +211,20 @@ $$
 
 ## Perturbative Expansion
 
+*In this section we restore $\hbar$.*
+
 Recall that the time-evolution operator $S$ can be expanded as the Dyson series
 
 $$
 \begin{aligned}
     S(t,t_0) &= T{\left[ \exp{
         \left(
-            -i \int_{t_0}^t dt' \, V(t')
+            \frac{-i}{\hbar} \int_{t_0}^t dt' \, V(t')
         \right)
     } \right]}
     \\ &\equiv
-    \sum_{k=0}^\infty \frac{(-i)^k}{k!} 
+    \sum_{k=0}^\infty \frac{1}{k!} 
+    \left(\frac{-i}{\hbar}\right)^k
     \int_{t_0}^t dt'_1 \cdots 
     \int_{t_0}^t dt'_k \,
     T[V(t'_1) \cdots V(t'_k)]
@@ -232,9 +235,9 @@ we can then also expand the correlation function; the $k$th order term (of the n
 
 $$
 \begin{aligned}
-    &\amp{0}{T[O_{1I}(t_1) \cdots O_{nI}(t_n) S^{(k)}(T, -T)]}{0}
+    &\amp{0}{T[O_{1}(t_1) \cdots O_{n}(t_n) S^{(k)}(T, -T)]}{0}
     \\
-    &= \frac{(-i)^k}{k!} 
+    &= \frac{1}{k!} \left(\frac{-i}{\hbar}\right)^k
     \int_{-T}^T dt'_1 \cdots 
     \int_{-T}^T dt'_k \,
     \amp{0}{T[

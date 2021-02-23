@@ -61,10 +61,7 @@ $$
 **Wick's theorem:**
 
 $$
-T[ABCD \cdots] = N[
-    ABCD \cdots
-    + \text{all possible contractions}
-]
+T[AB...] = N[AB ... + \text{sum of all possible contractions}]
 $$
 
 </div><br>
