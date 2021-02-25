@@ -232,34 +232,3 @@ V = \frac{1}{2} \int dx \, dy \,
 $$
 
 </div><br>
-
-## Density Matrix and Expectation Values
-
-### One-body Expectation Value
-
-Construct the one-body density matrix
-
-$$
-\rho_{\alpha \beta}
-\equiv \amp{\Psi_0}{c_\beta^\dagger c_\alpha}{\Psi_0}
-= \pm i \lim_{t'\to t+} G_{\alpha \beta}(t,t')
-\quad \left\{ \begin{aligned}
-    + &: \, \text{boson} \\
-    - &: \, \text{fermion}
-\end{aligned} \right.
-$$
-
-Then the expectation values of the kinetic energy is
-
-$$
-\begin{aligned}
-    \expect{\mathcal{T}} 
-    &= \sum_{\alpha \beta} T_{\alpha \beta}
-    \amp{\Psi_0}{c_\alpha^\dagger c_\beta}{\Psi_0}
-    \\
-    &= \pm i \lim_{t'\to t+} \sum_{\alpha \beta} T_{\alpha \beta}
-    G_{\beta \alpha}(t,t')
-    \\
-    &= \pm i \lim_{t'\to t+} \operatorname{tr} [T G(t,t')]
-\end{aligned}
-$$

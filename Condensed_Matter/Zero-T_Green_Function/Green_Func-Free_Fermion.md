@@ -18,40 +18,6 @@
 
 # Green's Function for Free Fermion Gas
 
-<div class="result">
-
-**Single-particle Green's function (propagator):**
-
-$$
-i \hbar \, G_{\alpha \beta}(t,t')
-= \amp{\Psi_0^N}{T[a_{\alpha H}(t) a^\dagger_{\beta H}(t')]}{\Psi_0^N}
-$$
-
-*Notation notes*:
-
-- $\ket{\Psi_0^N}$: $N$-particle ground state
-    
-    For non-interacting systems (such as free boson), it is also denoted by $\ket{0}$.
-
-- $a_{\alpha H}^{(\dagger)}$: Annihilation (creation) operator of state $\alpha$ in Heisenberg picture
-    
-    For non-interacting systems, this is the same as $a_{\alpha I}^{(\dagger)}$ in interaction picture.
-
-- $T$: The time-ordering operator, defined as
-    
-    $$
-    \begin{aligned}
-        T[a_{\alpha H}(t) a^\dagger_{\beta H}(t')]
-        &= a_{\alpha H}(t) a^\dagger_{\beta H}(t') \theta(t - t')
-        \\ & \quad
-        \pm a^\dagger_{\beta H}(t') a_{\alpha H}(t) \theta(t' - t)
-    \end{aligned}
-    $$
-
-    with $+$ for bosons, and $-$ for fermions.
-
-</div><br>
-
 For free fermion, the interaction picture coincides with the Heisenberg picture. We shall then omit the picture label $I$ or $H$ for the fields. The Hamiltonian is given by
 
 $$
