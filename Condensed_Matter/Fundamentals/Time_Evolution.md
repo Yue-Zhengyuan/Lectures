@@ -569,7 +569,17 @@ $$
 
 </div><br>
 
-These means that the interaction picture states are evolved by $V_I$. As a special case, when $H$ is independent of time, and $[H_0, V] = 0$, we obtain
+These means that the interaction picture states are evolved by $V_I$. The interaction picture evolution operator can then also be expressed as a time-ordered exponential:
+
+$$
+U_I(t,t_0) = T{\left[ \exp{
+    \left(
+        -i \int_{t_0}^t dt' \, V_I(t')
+    \right)
+} \right]}
+$$
+
+As a special case, when $H$ is independent of time, and $[H_0, V] = 0$, we obtain
 
 $$
 \begin{aligned}

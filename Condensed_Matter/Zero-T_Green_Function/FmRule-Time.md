@@ -25,7 +25,7 @@
 
 <font size=5>
 
-**Example: Two-Body Interactions**
+**Part 1: Green's Function in Time Formulation**
 
 </font>
 
@@ -234,12 +234,6 @@ $$
 
 </div><br>
 
-### Equivalent Diagrams
-
-### Fermion Loops and Minus Signs
-
-### Normalization and Cancellation of Disconnected Diagrams
-
 ### In the Position Space
 
 Let us focus on figure a) above, and change to the position space:
@@ -349,9 +343,10 @@ $$
 
 </div><br>
 
-### In the Momentum Space
+### Equivalent Diagrams
 
-For translation-invariant systems, another useful choice of basis states is the momentum eigenstates. For diagram a) above:
+### Fermion Loops and Minus Signs
 
+### Normalization and Cancellation of Disconnected Diagrams
 
 ## Summary: The Feynman Rules

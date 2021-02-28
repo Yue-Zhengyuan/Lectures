@@ -16,7 +16,7 @@
     }
 </style>
 
-# Green's Function for Free Fermion Gas
+# Example of Free Green's Function: <br>Free Fermion
 
 For free fermion, the interaction picture coincides with the Heisenberg picture. We shall then omit the picture label $I$ or $H$ for the fields. The Hamiltonian is given by
 

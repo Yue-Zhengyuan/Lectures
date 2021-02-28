@@ -16,7 +16,7 @@
     }
 </style>
 
-# Green's Function for 1D Phonon Modes
+# Example of Free Green's Function: <br>1D Phonon Modes
 
 Consider a system of $N$ atoms (with mass $m$) along a one-dimensional chain, connected by springs of stiffness $m \omega^2$. The Lagrangian is 
 
@@ -343,7 +343,7 @@ $$
         \\
         &= i \omega_q a_q^\dagger [a_q, a_q^\dagger]
         \\
-        &= i \omega_q a_q
+        &= i \omega_q a_q^\dagger
     \end{aligned}
     $$
 
