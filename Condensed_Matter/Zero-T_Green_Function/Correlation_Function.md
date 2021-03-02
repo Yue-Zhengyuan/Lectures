@@ -18,9 +18,37 @@
 
 # Correlation Function
 
+The concept of Green's function can be generalized to interacting systems. 
+
 <div class="result">
 
-**The $n$-point (correlation) function:**
+**Single-particle Green's function with interaction:**
+
+$$
+i\hbar \, G_{\alpha \beta}(t,t')
+= \amp{\Psi_0^N}{
+    T[a_{\alpha H}(t) a^\dagger_{\beta H}(t')]
+}{\Psi_0^N}
+$$
+
+*Notation notes*:
+
+- $\ket{\Psi_0^N}$: $N$-particle ground state (of full Hamiltonian)
+    
+    For non-interacting systems (such as free boson), it reduces to the vacuum state $\ket{0}$.
+
+- $a_{\alpha H}^{(\dagger)}$: Annihilation (creation) operator of state $\alpha$ in Heisenberg picture
+    
+    For non-interacting systems, this is the same as $a_{\alpha}^{(\dagger)}$ in interaction picture, since the two pictures coincide.
+
+
+</div><br>
+
+A closely related concept is the
+
+<div class="result">
+
+**$n$-point (correlation) function:**
 
 $$
 \expect{O_1(t_1) \cdots O_n(t_n)}
@@ -28,23 +56,11 @@ $$
 {\braket{\Psi_0}{\Psi_0}}
 $$
 
-*Notation notes*:
-
-- Operators and states on the RHS are in the Heisenberg picture
-- $T$ is the time ordering operator
-- $\ket{\Psi_0}$ is the ground state with interaction
-
 </div><br>
 
 ## Ground State with Interaction
 
-Let the full Hamiltonian (assumed to be time-independent) with interaction be 
-
-$$
-H = H_0 + V
-$$
-
-Now we need to find the state $\ket{\Psi_0}$ with interaction. One way to do so is to apply the Gell-Mann and Low theorem, but there is a more straightforward approach. 
+To find the interacting ground state $\ket{\Psi_0}$, one can apply the Gell-Mann and Low theorem, but there is a more straightforward approach. 
 
 We express the time evolution (in the Schrödinger picture) of the *free* ground state $\ket{0}$ as the superposition of the evolution of energy eigenstates $\ket{\Psi_n}$ (the ground state is $\ket{\Psi_0}$)
 
@@ -54,7 +70,7 @@ e^{-iHT} \ket{0}
 + \sum_{n \ge 1} e^{-iE_n T} \ket{\Psi_n} \braket{\Psi_n}{0}
 $$
 
-Note that the Hamiltonian is time-independent, thus the time evolution operator takes the simple exponential form. Taking the limit $T \to \infty(1-i\epsilon)$, all the higher excited states will die out compared to the ground state; thus
+Note that the Hamiltonian is time-independent, thus the time evolution operator takes the simple exponential form. Taking the limit $T \to \infty(1-i\epsilon)$, all the higher excited states will die out compared to the ground state (here an **energy gap** between the ground state and the first excited state is assumed); thus
 
 $$
 \ket{\Psi_0} = \lim_{T \to \infty(1-i\epsilon)}
@@ -62,7 +78,7 @@ $$
 e^{-iHT} \ket{0}
 $$
 
-Since $T$ is now very large, we shift the time evolution by a small constant time $t_0$, which is the reference time in interaction picture:
+Since $T$ is now very large, we shift the time evolution by a small constant time $t_0$, i.e. the reference time in interaction picture:
 
 $$
 \ket{\Psi_0} = \lim_{T \to \infty(1-i\epsilon)}
@@ -70,7 +86,7 @@ $$
 e^{-iH(t_0 + T)} \ket{0}
 $$
 
-The time evolution duration $t_0 + T$ is interpreted as $t_0 - (-T)$, i.e. from infinitely past $-T$ to the reference time $t_0$. We try to put the time-evolution operator into the expression:
+The time evolution duration $t_0 + T$ is interpreted as $t_0 - (-T)$. We try to put the time-evolution operator into the expression:
 
 $$
 \begin{aligned}

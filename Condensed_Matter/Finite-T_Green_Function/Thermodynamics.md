@@ -16,6 +16,5 @@
     }
 </style>
 
-# Self-Energy
-
+# Thermodynamic Quantities
 

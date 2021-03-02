@@ -25,7 +25,7 @@
 
 <font size=5>
 
-**Part 1: Green's Function in Time Formulation**
+**Part 1: Time-Dependent Formulation**
 
 </font>
 
@@ -81,7 +81,7 @@ $$
     &= \frac{1}{2} \left(\frac{-i}{\hbar} \right)^2 
     \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
-    \\ &\qquad \qquad \times
+    \\ &\qquad \times
     \amp{0}{T[
         a_\gamma^\dagger(t_1^+) a_\delta^\dagger(t_1^+)
         a_\theta(t_1) a_\epsilon(t_1) 
@@ -167,6 +167,7 @@ Note that extra minus signs may occur when moving the pairs in a contraction tog
 
 $$
 \quad \begin{aligned}
+    &\text{Term} \ (a) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 2}_\theta a^{\bullet 1}_\epsilon 
     a^{\bullet 3}_\alpha a^{\dagger \bullet 3}_\beta
@@ -177,7 +178,7 @@ $$
     & \Rightarrow 
     \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
-    \\ &\qquad \qquad \times
+    \\ &\quad \times
     G^{(0)}_{\epsilon \gamma}(t_1 - t_1^+) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\alpha \beta}(t - t')
@@ -191,6 +192,7 @@ $$
 
 $$
 \quad \begin{aligned}
+    &\text{Term} \ (b) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 1}_\theta a^{\bullet 2}_\epsilon 
     a^{\bullet 3}_\alpha a^{\dagger \bullet 3}_\beta
@@ -201,7 +203,7 @@ $$
     & \Rightarrow 
     - \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
-    \\ &\qquad \qquad \times
+    \\ &\quad \times
     G^{(0)}_{\theta \gamma}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\alpha \beta}(t - t')
@@ -215,6 +217,7 @@ $$
 
 $$
 \quad \begin{aligned}
+    &\text{Term} \ (c) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 2}_\theta a^{\bullet 3}_\epsilon 
     a^{\bullet 1}_\alpha a^{\dagger \bullet 3}_\beta
@@ -225,7 +228,7 @@ $$
     & \Rightarrow 
     - \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
-    \\ &\qquad \qquad \times
+    \\ &\quad \times
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \beta}(t_1 - t')
@@ -234,18 +237,199 @@ $$
 
 </div><br>
 
-### In the Position Space
+<div class="imgtext">
+<img src="Figures/2BodyV_1st-4.png" width="150pt">
 
-Let us focus on figure a) above, and change to the position space:
+$$
+\quad \begin{aligned}
+    &\text{Term} \ (d) \\
+    &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
+    a^{\bullet 3}_\theta a^{\bullet 2}_\epsilon 
+    a^{\bullet 1}_\alpha a^{\dagger \bullet 3}_\beta
+    = a^{\bullet 1}_\alpha a^{\dagger \bullet 1}_\gamma 
+    a^{\bullet 2}_\epsilon a^{\dagger \bullet 2}_\delta 
+    a^{\bullet 3}_\theta a^{\dagger \bullet 3}_\beta
+    \\[1em]
+    & \Rightarrow 
+    \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
+    \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
+    \\ &\quad \times
+    G^{(0)}_{\alpha \gamma}(t - t_1) \,
+    G^{(0)}_{\epsilon \delta}(t_1 - t_1^+) \,
+    G^{(0)}_{\theta \beta}(t_1 - t')
+\end{aligned}
+$$
+
+</div><br>
+
+<div class="imgtext">
+<img src="Figures/2BodyV_1st-5.png" width="150pt">
+
+$$
+\quad \begin{aligned}
+    &\text{Term} \ (e) \\
+    &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
+    a^{\bullet 3}_\theta a^{\bullet 1}_\epsilon 
+    a^{\bullet 2}_\alpha a^{\dagger \bullet 3}_\beta
+    = - a^{\bullet 1}_\epsilon a^{\dagger \bullet 1}_\gamma 
+    a^{\bullet 2}_\alpha a^{\dagger \bullet 2}_\delta 
+    a^{\bullet 3}_\theta a^{\dagger \bullet 3}_\beta
+    \\[1em]
+    & \Rightarrow 
+    - \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
+    \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
+    \\ &\quad \times
+    G^{(0)}_{\epsilon \gamma}(t_1 - t_1^+) \,
+    G^{(0)}_{\alpha \delta}(t - t_1) \,
+    G^{(0)}_{\theta \beta}(t_1 - t')
+\end{aligned}
+$$
+
+</div><br>
+
+<div class="imgtext">
+<img src="Figures/2BodyV_1st-6.png" width="150pt">
+
+$$
+\quad \begin{aligned}
+    &\text{Term} \ (f) \\
+    &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
+    a^{\bullet 1}_\theta a^{\bullet 3}_\epsilon 
+    a^{\bullet 2}_\alpha a^{\dagger \bullet 3}_\beta
+    = a^{\bullet 1}_\theta a^{\dagger \bullet 1}_\gamma 
+    a^{\bullet 2}_\alpha a^{\dagger \bullet 2}_\delta 
+    a^{\bullet 3}_\epsilon a^{\dagger \bullet 3}_\beta
+    \\[1em]
+    & \Rightarrow 
+    \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
+    \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
+    \\ &\quad \times
+    G^{(0)}_{\theta \gamma}(t_1 - t_1^+) \,
+    G^{(0)}_{\alpha \delta}(t - t_1) \,
+    G^{(0)}_{\epsilon \beta}(t_1 - t')
+\end{aligned}
+$$
+
+</div><br>
+
+### Fermion Loops and Minus Signs
+
+From the figures we see that if the arrowed lines representing Green's function form a closed loop, then the expression will get a minus sign. This is in general true: the expression will get $(-1)^n$, where $n$ is the number of such loops. Of course, these signs are absent for boson systems. 
+
+### Normalization and Cancellation of Disconnected Diagrams
+
+It turns out that the normalization of $\ket{\Psi_0}$ will cancel the terms with *disconnected diagrams* (a) and (b). Therefore, the true $k$th order term of the Green's function with normalized $\ket{\Psi_0}$ is
 
 $$
 \begin{aligned}
-    \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
+    \frac{1}{k!} \left(\frac{-i}{\hbar}\right)^{k+1}
+    &\int dt_1 \cdots dt_k \,
+    \\ &\quad
+    \amp{0}{T[
+        V(t_1) \cdots V(t_k)
+        a_\alpha(t) a_\beta^\dagger(t')
+    ]}{0}_\text{connected}
+\end{aligned}
+$$
+
+### Equivalent Diagrams
+
+Among the remaining four diagrams, we can see that (c)(e), if without the labels, are (topologically) equivalent diagrams. Looking at the expressions they represent: 
+
+$$
+\begin{aligned}
+    (c) &= - \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
-    % \\ &\qquad \qquad \times
-    G^{(0)}_{\epsilon \gamma}(t_1 - t_1^+) \,
+    \\ &\qquad \times
+    G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
-    G^{(0)}_{\alpha \beta}(t - t')
+    G^{(0)}_{\epsilon \beta}(t_1 - t')
+    \\
+    (e) &= - \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
+    \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
+    \\ &\qquad \times
+    G^{(0)}_{\alpha \delta}(t - t_1) \,
+    G^{(0)}_{\epsilon \gamma}(t_1 - t_1^+) \,
+    G^{(0)}_{\theta \beta}(t_1 - t')
+    \\
+    &= - \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
+    \int dt_1 \, \amp{\delta \gamma}{V}{\theta \epsilon}
+    \\ &\qquad \times
+    G^{(0)}_{\alpha \gamma}(t - t_1) \,
+    G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
+    G^{(0)}_{\epsilon \beta}(t_1 - t')
+\end{aligned}
+$$
+
+But we know that $V$ has the symmetry property $V(i,j) = V(j,i)$, i.e.
+
+$$
+\amp{\gamma \delta}{V}{\epsilon \theta}
+= \amp{\delta \gamma}{V}{\theta \epsilon}
+$$
+
+Thus (c) and (e) are in fact equal. The same argument applies to (d) and (f). Thus we can only draw diagrams (c),(d) and add an additional factor of 2, which exactly cancel the 1/2 from Taylor expansion. Such cancellation of the $1/n!$ factor holds at all orders. 
+
+To summarize, the true first order terms are
+
+<div class="result">
+
+**First order terms of Green's function:**
+
+<div class="imgtext">
+<img src="Figures/2BodyV_1st-3.png" width="150pt">
+
+$$
+\quad \begin{aligned}
+    &\text{Direct term}
+    \\
+    &
+    - i\hbar \sum_{\gamma \delta \epsilon \theta} 
+    \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
+    \\ & \times
+    G^{(0)}_{\alpha \gamma}(t - t_1) \,
+    G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
+    G^{(0)}_{\epsilon \beta}(t_1 - t')
+\end{aligned}
+$$
+
+</div><br>
+
+<div class="imgtext">
+<img src="Figures/2BodyV_1st-4.png" width="150pt">
+
+$$
+\quad \begin{aligned}
+    &\text{Exchange term}
+    \\[1em]
+    &
+    i\hbar \sum_{\gamma \delta \epsilon \theta} 
+    \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
+    \\ & \times
+    G^{(0)}_{\alpha \gamma}(t - t_1) \,
+    G^{(0)}_{\epsilon \delta}(t_1 - t_1^+) \,
+    G^{(0)}_{\theta \beta}(t_1 - t')
+\end{aligned}
+$$
+
+</div><br>
+
+</div><br>
+
+### Summary: Feynman Rules in Time
+
+## In Position-Time Space
+
+Now we demonstrate how to change to the position basis using the direct term:
+
+$$
+\begin{aligned}
+    - i\hbar \sum_{\gamma \delta \epsilon \theta} 
+    \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
+    % \\ & \times
+    G^{(0)}_{\alpha \gamma}(t - t_1) \,
+    G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
+    G^{(0)}_{\epsilon \beta}(t_1 - t')
 \end{aligned}
 $$
 
@@ -276,7 +460,7 @@ $$
 
     The two spatial delta functions are immediately removed when summing over the $V$ amplitudes. 
     
-- **Conversion of Green's functions (propagators)**
+- **Conversion of Green's function**
     
     We introduce a further integration over the time component of $x'_1 \equiv (t'_1, \mathbf{x}'_1)$, which allows us to write
 
@@ -328,7 +512,7 @@ $$
 \quad \begin{aligned}
     &\frac{i\hbar}{2} \int d^4 x_1 \, d^4 x'_1 \, 
     U_{\gamma \delta, \epsilon \theta}(x_1, x'_1)
-    \\ &\qquad \qquad \times
+    \\ &\qquad \times
     G^{(0)}_{\epsilon \gamma}(x_1, x_1) \,
     G^{(0)}_{\theta \delta}(x'_1, x'_1) \,
     G^{(0)}_{\alpha \beta}(x, x')
@@ -342,11 +526,3 @@ $$
 $$
 
 </div><br>
-
-### Equivalent Diagrams
-
-### Fermion Loops and Minus Signs
-
-### Normalization and Cancellation of Disconnected Diagrams
-
-## Summary: The Feynman Rules

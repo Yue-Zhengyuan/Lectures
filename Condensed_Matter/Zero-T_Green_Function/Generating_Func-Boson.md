@@ -199,7 +199,7 @@ $$
     e^{-\sum_r [A_r,A^\dagger_r] / 2} \\
     &= \exp \bigg[
         - \sum_{r \ge s} [A_r, A_s^\dagger] \left(
-            1 - \frac{1}{2} \delta_{\a \b}
+            1 - \frac{1}{2} \delta_{\alpha \beta}
         \right)
     \bigg]
     \\ &\quad (\text{note the change from} \, r > s \, \text{to} \, r \ge s) \\
@@ -207,7 +207,7 @@ $$
         - (\delta t/\hbar)^2 \sum_{r \ge s} 
         \bar{z}(t_r) z(t_s) 
         e^{-i\omega(t_r - t_s)} \left(
-            1 - \frac{1}{2} \delta_{\a \b}
+            1 - \frac{1}{2} \delta_{\alpha \beta}
         \right)
     \bigg]
 \end{aligned}
@@ -222,7 +222,7 @@ $$
     \\
     &= \int_{t_i}^{t_f} dt \, dt' \, \theta(t - t')
     \\[1em]
-    \delta_{\a \b} &\to \delta(t - t')
+    \delta_{\alpha \beta} &\to \delta(t - t')
 \end{aligned}
 $$
 
@@ -245,9 +245,9 @@ $$
 In general, for a system consisting of many independent oscillator modes (omitting the constant shift), we may add linear driving force for each mode
 
 $$
-H_0 = \sum_\a \hbar \omega_\a b_\a^\dagger b_\a
+H_0 = \sum_\alpha \hbar \omega_\alpha b_\alpha^\dagger b_\alpha
 , \quad
-V(t) = \sum_\a \Big[ \bar{z}_\a(t) b_\a + b^\dagger_\a z_\a(t) \Big]
+V(t) = \sum_\alpha \Big[ \bar{z}_\alpha(t) b_\alpha + b^\dagger_\alpha z_\alpha(t) \Big]
 $$
 
 After a similar procedure, one find
@@ -259,44 +259,38 @@ After a similar procedure, one find
 $$
 S(\bar{z},z) \equiv \amp{0}{S}{0} = \exp \bigg[
     \frac{-i}{\hbar} \int_{-\infty}^{\infty} dt \, dt'
-    \sum_{\a,\b}
-    \bar{z}_\a(t) G_{\a \b}(t - t') 
-    z_\b(t')
+    \sum_{\alpha,\beta}
+    \bar{z}_\alpha(t) G_{\alpha \beta}(t - t') 
+    z_\beta(t')
 \bigg] 
 $$
 
-where $G_{\a \b}(t - t')$ is called the **single-particle (sp) Green's function**:
+where $G_{\alpha \beta}(t - t')$ is called the **single-particle (sp) Green's function**:
 
 $$
-G_{\a \b}(t - t') = \frac{-i}{\hbar} 
-\delta_{\a \b} \, 
-\theta(t - t') e^{-i\omega_\a(t - t')}
+G_{\alpha \beta}(t - t') = \frac{-i}{\hbar} 
+\delta_{\alpha \beta} \, e^{-i\omega_\alpha(t - t')}
+\theta(t - t') 
 $$
 
 </div><br>
 
 ## Green's Function
 
-### Alternative Expression
+### Alternative Definition of Sp Green's Function
 
 We expand the functional $S(\bar{z},z)$ as a Dyson series:
 
 $$
 \begin{aligned}
-    S(\bar{z},z) &\equiv
-    \amp{0}{T{\left[ \exp{
-        \left(
-            \frac{-i}{\hbar} \int_{-\infty}^{\infty} dt \, V(t)
-        \right)
-    } \right]}}{0}
-    \\
+    S(\bar{z},z) 
     &= \sum_{n=0}^\infty \frac{(-i)^n}{n! \hbar^n} 
     \int_{-\infty}^{\infty} dt_1 \cdots dt_n \,
     \amp{0}{T[V(t_1) \cdots V(t_n)]}{0} \\
     &= \exp \bigg[
         \frac{-i}{\hbar} \int_{-\infty}^{\infty} dt \, dt'
-        \sum_{\a, \b}
-        \bar{z}_\a(t) G_{\a \b}(t - t') z_\b(t')
+        \sum_{\alpha, \beta}
+        \bar{z}_\alpha(t) G_{\alpha \beta}(t - t') z_\beta(t')
     \bigg] 
 \end{aligned}
 $$
@@ -313,14 +307,14 @@ The zeroth terms of both sides are 1. For the term of first order in both $z, \b
         &= \frac{(-i)^2}{2\hbar^2} \int dt_1 \, dt_2
         \amp{0}{T[V(t_1) V(t_2)]}{0} \\
         &= \frac{(-i)^2}{2\hbar^2} \int dt_1 \, dt_2
-        \sum_{\a, \b} \amp{0}{T \Big\{
-            [\bar{z}_\a b_\a + b_\a^\dagger z_\a]_{t_1}
-            [\bar{z}_\b b_\b + b_\b^\dagger z_\b]_{t_2}
+        \sum_{\alpha, \beta} \amp{0}{T \Big\{
+            [\bar{z}_\alpha b_\alpha + b_\alpha^\dagger z_\alpha]_{t_1}
+            [\bar{z}_\beta b_\beta + b_\beta^\dagger z_\beta]_{t_2}
         \Big \}}{0} \\
         &= \frac{(-i)^2}{2\hbar^2} \int dt_1 \, dt_2
-        \sum_{\a, \b} \amp{0}{T \Big\{
-            [\bar{z}_\a b_\a]_{t_1} [b_\b^\dagger z_\b]_{t_2}
-            + [b_\a^\dagger z_\a]_{t_1} [\bar{z}_\b b_\b]_{t_2}
+        \sum_{\alpha, \beta} \amp{0}{T \Big\{
+            [\bar{z}_\alpha b_\alpha]_{t_1} [b_\beta^\dagger z_\beta]_{t_2}
+            + [b_\alpha^\dagger z_\alpha]_{t_1} [\bar{z}_\beta b_\beta]_{t_2}
         \Big \}}{0} 
     \end{aligned}
     $$
@@ -330,9 +324,9 @@ The zeroth terms of both sides are 1. For the term of first order in both $z, \b
     $$
     \text{LHS}_1 = \left(\frac{-i}{\hbar}\right)^2
     \int dt_1 \, dt_2 
-    \sum_{\a, \b} \bar{z}_\a(t_1)
-    \amp{0}{T[b_\a(t_1) b_\b^\dagger(t_2)]}{0}
-    z_\b(t_2)
+    \sum_{\alpha, \beta} \bar{z}_\alpha(t_1)
+    \amp{0}{T[b_\alpha(t_1) b_\beta^\dagger(t_2)]}{0}
+    z_\beta(t_2)
     $$
 
 - RHS
@@ -342,105 +336,203 @@ The zeroth terms of both sides are 1. For the term of first order in both $z, \b
     $$
     \text{RHS}_1 
     = \frac{-i}{\hbar} \int_{-\infty}^{\infty} dt \, dt'
-    \sum_{\a, \b} \bar{z}_\a(t) G_{\a \b}(t - t') z_\b(t')
+    \sum_{\alpha, \beta} \bar{z}_\alpha(t) G_{\alpha \beta}(t - t') z_\beta(t')
     $$
 
-By comparison, we obtain an alternative expression of the sp Green's function:
+By comparison, we obtain an alternative definition of the sp Green's function:
 
 <div class="result">
 
 **Single-particle Green's function:**
 
 $$
-G_{\a \b}(t - t') = \frac{-i}{\hbar}
-\amp{0}{T[b_\a(t) b_\b^\dagger(t')]}{0}
+G_{\alpha \beta}(t - t') = \frac{-i}{\hbar}
+\amp{0}{T[b_\alpha(t) b_\beta^\dagger(t')]}{0}
 $$
 
 </div><br>
 
-<div class="remark">
-
-*Remark*: This definition can be generalized to arbitrary interacting systems.
-
-<div class="result">
-
-**Single-particle Green's function with interaction:**
+We can re-derive the explicit formula of $G_{\alpha \beta}$ from this alternative definition. 
 
 $$
-G_{\a \b}(t,t')
-= \frac{-i}{\hbar} \amp{\Psi_0^N}{
-    T[b_{\a H}(t) b^\dagger_{\b H}(t')]
-}{\Psi_0^N}
+\begin{aligned}
+    &i \hbar G_{\alpha \beta}(t - t') 
+    = \amp{0}{T[b_\alpha(t) b_\beta^\dagger(t')]}{0} \\
+    &= \amp{0}{b_\alpha(t) b_\beta^\dagger(t')}{0} \theta(t - t')
+    + \underbrace{
+        \amp{0}{b_\beta^\dagger(t') b_\alpha(t)}{0}
+    }_{=0} \theta(t' - t)
+    \\
+    &= \amp{0}{b_\alpha b_\beta^\dagger}{0}
+    e^{-i \omega_\alpha t + i \omega_\beta t'} \theta(t - t')
+    \\
+    &= \amp{0}{
+        [b_\alpha, b_\beta^\dagger] 
+        + \cancel{b_\beta^\dagger b_\alpha}
+    }{0} e^{-i \omega_\alpha t + i \omega_\beta t'} 
+    \theta(t - t')
+    \\
+    &= \delta_{\alpha \beta} e^{-i \omega_\alpha (t - t')}
+    \theta(t - t')
+\end{aligned}
 $$
-
-</div><br>
-
-where:
-
-- $\ket{\Psi_0^N}$: $N$-particle ground state (of full Hamiltonian)
-    
-    For non-interacting systems (such as free boson), it is also denoted by $\ket{0}$.
-
-- $b_{\a H}^{(\dagger)}$: Annihilation (creation) operator of state $\a$ in Heisenberg picture
-    
-    For non-interacting systems, this is the same as $b_{\a}^{(\dagger)}$ in interaction picture, since the two pictures coincide.
-
-</div><br>
 
 ### Green's Function from Functional Derivatives
 
-The sp Green's function can also be obtained from $S(\bar{z},z)$ by taking functional derivatives. Recall that $S(\bar{z},z)$ has Gaussian structure:
+The sp Green's function can also be obtained from $S(\bar{z},z)$ 
+
+$$
+\begin{aligned}
+    S(\bar{z},z) &= \amp{0}{T e^{
+        -(i/\hbar) \int d\tau \, V(\tau)
+    }}{0}
+    \\[1em]
+    V(\tau) &= \sum_\mu [
+        \bar{z}_\mu(\tau) b_\mu(\tau) 
+        + b^\dagger_\mu(\tau) z_\mu(\tau)
+    ]
+\end{aligned}
+$$
+
+by taking functional derivatives with respect to $\bar{z}$ or $z$. For this reason $S(\bar{z},z)$ is called a **generating functional**. For example,
+
+$$
+\begin{aligned}
+    \frac{\delta S}{\delta \bar{z}_\alpha(t)}
+    &= \amp{0}{T\left[
+        \frac{-i}{\hbar} \int d\tau 
+        \frac{\delta V(\tau)}{\delta \bar{z}_\alpha(t)}
+        \times e^{-(i/\hbar) \int d\tau \, V(\tau)}
+    \right]}{0}
+    \\
+    \frac{\delta V(\tau)}{\delta \bar{z}_\alpha(t)}
+    &= \sum_\mu \underbrace{
+        \frac{\delta \bar{z}_\mu(\tau)}
+        {\delta \bar{z}_\alpha(t)} 
+    }_{= \delta_{\mu \alpha} \delta(\tau - t)}
+    b_\mu(\tau) 
+    = b_\alpha(\tau) \theta(\tau - t)
+\end{aligned} 
+$$
+
+Thus we obtain
+
+$$
+\begin{aligned}
+    i\hbar \frac{\delta S}{\delta \bar{z}_\alpha(t)}
+    &= \amp{0}{T\left[
+        b_\alpha(t)
+        e^{-(i/\hbar) \int d\tau \, V(\tau)} 
+    \right]}{0} \\
+    &= \amp{0}{T[b_\alpha(t) S]}{0}
+\end{aligned}
+$$
+
+A similar result holds for derivative with respect to $z_\alpha(t)$: 
+
+$$
+i\hbar \frac{\delta S}{\delta z_\alpha(t)}
+= \amp{0}{T[b^\dagger_\alpha(t) S]}{0}
+$$
+
+Obviously the derivations can be applied repeatedly, with the following rules to add new operators to time-ordered product on the RHS:
+
+<div class="result">
+
+**$S(\bar{z}, z)$ as generating functional:**
+
+$$
+i\hbar \frac{\delta}{\delta \bar{z}_\alpha(t_\alpha)}
+\to b_\alpha(t_\alpha), \quad
+i\hbar \frac{\delta}{\delta z_\alpha(t_\alpha)}
+\to b^\dagger_\alpha(t_\alpha)
+$$
+
+</div><br>
+
+Later derivations will add the new operator between the old ones and the $S$. Finally, if we set all the $z, \bar{z}$ to zero after the derivations, the $S$ will not appear in the final result, and we get the VEV of a product of various $b$'s and $b^\dagger$'s. Now we see that the sp Green's function can be obtained from
+
+$$
+\begin{aligned}
+    i\hbar G_{\alpha \beta}(t - t')
+    &= \amp{0}{T[b_\alpha(t) b^\dagger_\beta(t')]}{0}
+    \\
+    &= \left[
+        (i \hbar)^2 
+        \frac{\delta}{\delta \bar{z}_\beta(t')}
+        \frac{\delta}{\delta \bar{z}_\alpha(t)}
+        S(\bar{z},z)
+    \right]_{z,\bar{z} = 0}
+\end{aligned}
+$$
+
+----
+
+Let us verify this result by plugging in
 
 $$
 S(\bar{z},z) = \exp \bigg[
-    \frac{-i}{\hbar} \sum_{\a,\b}
-    \int_{-\infty}^{\infty} dt_\a \, dt_\b \,
-    \bar{z}(\a) G(\a - \b) z(\b)
+    \frac{-i}{\hbar} \sum_{\mu,\nu}
+    \int dt_\mu \, dt_\nu \,
+    \bar{z}(\mu) G(\mu - \nu) z(\nu)
 \bigg] 
 $$
 
-Here we used the shorthand $(\a) \to {}_\a(t_\a), (\b) \to {}_\b(t_\b)$. Then
+Here we used the shorthand $(\alpha) \to {}_\alpha(t_\alpha)$, etc. Then
 
 $$
 \begin{aligned}
-    \frac{\delta S}{\delta z(\mu)}
-    = S \times \frac{-i}{\hbar} \sum_{\a,\b} 
-    \frac{\delta}{\delta z(\mu)}
-    \int_{-\infty}^{\infty} dt_\a \, dt_\b \,
-    \bar{z}(\a) G(\a - \b) z(\b)
+    i \hbar \frac{\delta S}{\delta \bar{z}(\alpha)}
+    &= S \times \sum_{\mu,\nu}
+    \int dt_\mu \, dt_\nu \,
+    \underbrace{
+        \frac{\delta \bar{z}(\mu)}{\delta \bar{z}(\alpha)} 
+    }_{= \delta(\mu - \alpha)}
+    G(\mu - \nu) z(\nu)
+    \\
+    &= S \times \underbrace{
+        \sum_\nu 
+        \int dt_\nu \, G(\alpha - \nu) z(\nu)
+    }_{\equiv \mathcal{I}}
 \end{aligned}
 $$
 
-Thus we have the following dictionary for taking the derivatives:
-
-$$
-i \frac{\delta}{\delta \bar{z}(\a)} \to b(\a), \quad
-i \frac{\delta}{\delta z(\a)} \to b^\dagger(\a)
-$$
-
-where $b(\a)$ is a shorthand for $b_\a(t_\a)$. 
-
-### *n*-Particle Green's Function
-
-## Energy Formulation
-
-Since we usually deal with time-independent Hamiltonian, the Green's function must also have time-translation symmetry:
-
-$$
-G_{\a \b}(t,t') = G_{\a \b}(t - t')
-$$
-
-Then we may Fourier transform the time to obtain Green's function in energy (or frequency) formulation:
+For the second derivative, we need to calculate
 
 $$
 \begin{aligned}
-    G_{\a \b}(\omega)
-    &= \int_{-\infty}^{\infty} dt \, 
-    e^{+i \omega t} G_{\a \b}(t)
-    \\ &\Updownarrow \\
-    G_{\a \b}(t)
-    &= \int_{-\infty}^{\infty} \frac{d \omega}{2\pi} \, 
-    e^{-i \omega t} G_{\a \b}(\omega)
+    i \hbar \frac{\delta}{\delta z(\beta)} (S \mathcal{I})
+    &= i \hbar \left[
+        \frac{\delta S}{\delta z(\beta)} \mathcal{I}
+        + S \frac{\delta \mathcal{I}}{\delta z(\beta)}
+    \right]
+
+    \\[1em]
+    
+    i \hbar \frac{\delta S}{\delta z(\beta)}
+    &= S \times \sum_\mu 
+    \int dt_\mu \, \bar{z}(\mu) G(\mu - \beta)
+    \xrightarrow{z,\bar{z} = 0} 0
+    
+    \\[1em]
+
+    i \hbar \frac{\delta \mathcal{I}}{\delta z(\beta)}
+    &= i\hbar \, G(\alpha - \beta)
 \end{aligned}
 $$
+
+Thus we are left with (and note that $S(\bar{z}=0, z=0) = 1$)
+
+$$
+\left[
+    (i \hbar)^2 
+    \frac{\delta}{\delta \bar{z}(\beta)}
+    \frac{\delta}{\delta \bar{z}(\alpha)}
+    S(\bar{z},z)
+\right]_{z,\bar{z} = 0}
+= i\hbar \, G(\alpha - \beta)
+\qquad \blacksquare
+$$
+
+----
 
