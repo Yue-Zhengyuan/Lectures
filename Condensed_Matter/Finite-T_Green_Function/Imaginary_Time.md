@@ -29,7 +29,7 @@ $$
 From this we define the **grand-canonical partition function** $Z$ and the **grand-canonical potential** $F$ (also often denoted by $\Omega$, but we use the same notation as the canonical ensemble):
 
 $$
-Z = \operatorname{tr} e^{-\beta H} = e^{-\beta F}
+Z = \tr e^{-\beta H} = e^{-\beta F}
 $$
 
 The imaginary time formulation is motivated by the similarity between the density matrix and the time evolution operator (starting from $t_0 = 0$)
@@ -59,8 +59,8 @@ $$
 But at finite temperature, the quantity is replaced by the *ensemble average*
 
 $$
-\expect{O} = \frac{\operatorname{tr}(\rho O)}
-{\operatorname{tr}(\rho)}
+\expect{O} = \frac{\tr(\rho O)}
+{\tr(\rho)}
 $$
 
 Thus we see the replacement
@@ -70,7 +70,7 @@ Thus we see the replacement
 **Expectation values from zero to finite temperature:**
 
 $$
-\amp{0}{S(+\infty,-\infty) O}{0} \to \operatorname{tr}(\rho O)
+\amp{0}{S(+\infty,-\infty) O}{0} \to \tr(\rho O)
 $$
 
 </div><br>
@@ -122,13 +122,17 @@ $$
     \begin{aligned}
         U(t,t_0) = e^{-iH(t - t_0)} 
         \ &\Rightarrow \ 
-        U(\tau,0) = e^{-H(\tau - \tau_0)}
+        U(\tau,\tau_0) = e^{-H(\tau - \tau_0)}
     \end{aligned}
     $$
 
     <div class="remark">
 
-    *Remark*: We now see that the density matrix corresponds to imaginary time evolution from $\tau = 0$ to $\beta$. 
+    *Remark*: We now see that the density matrix corresponds to imaginary time evolution from $\tau = 0$ to $\beta$
+
+    $$
+    \rho = e^{-\beta H} = U(\beta,0)
+    $$
 
     </div><br>
 
@@ -184,17 +188,25 @@ As usual, we separate the full $H$ into $H_0 + V$. The chemical potential term $
     
     $$
     \begin{aligned}
-        &S(t,t_0) = T{\left[ \exp{
-            \left(
-                -i \int_{t_0}^t dt' \, V_I(t')
-            \right)
-        } \right]} 
-        \\[1em]
-        &\Rightarrow \quad
-        S(\tau,\tau_0) = T{\left[ \exp{
-            \left(
-                - \int_{\tau_0}^\tau d\tau' \, V_I(\tau')
-            \right)
-        } \right]} 
+        \begin{aligned}
+            &S(t,t_0) = e^{iH_0 (t-t_0)} U(t, t_0)
+            \\
+            &= T{\left[ \exp{
+                \left(
+                    -i \int_{t_0}^t dt' \, V_I(t')
+                \right)
+            } \right]} 
+        \end{aligned}
+        \ \Rightarrow \ 
+        \begin{aligned}
+            &S(\tau,\tau_0) 
+            = e^{H_0 (\tau-\tau_0)} U(t, t_0)
+            \\
+            &= T{\left[ \exp{
+                \left(
+                    - \int_{\tau_0}^\tau d\tau' \, V_I(\tau')
+                \right)
+            } \right]} 
+        \end{aligned}
     \end{aligned}
     $$

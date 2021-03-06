@@ -50,7 +50,7 @@ $$
 
 ## Matsubara Frequencies
 
-The (anti-)periodicity of $\mathcal{G}$ allows up to expand it as a Fourier series:
+The (anti-)periodicity of $\mathcal{G}$ allows up to expand it as a Fourier series (instead of the continuous Fourier transform):
 
 $$
 \begin{aligned}
@@ -66,6 +66,10 @@ $$
 
 The factor $i$ is included into the argument $\mathcal{G}_{\rho \sigma}(i\omega_n)$ for later convenience. The requirement $\mathcal{G}_{\rho \sigma}(\tau + \beta) = \pm \mathcal{G}_{\rho \sigma}(\tau)$ restricts the allowed values of $\omega_n$:
 
+<div class="result">
+
+**Matsubara frequencies:**
+
 $$
 e^{-i\omega_n \beta} = \pm 1 
 \ \Rightarrow \ \omega_n = 
@@ -76,3 +80,9 @@ e^{-i\omega_n \beta} = \pm 1
     \text{fermion}
 \end{aligned}\right.
 $$
+
+</div><br>
+
+Thus for bosons the Fourier series only contains *even* frequencies, and for fermions there are only *odd* ones. 
+
+## The Summation Technique

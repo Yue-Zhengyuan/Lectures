@@ -21,11 +21,11 @@
     }
 </style>
 
-# Perturbative Expansion of <br>Correlation Functions
+# Perturbative Expansion of <br>Green's Function
 
 <font size=5>
 
-**Part 1: Time-Dependent Formulation**
+**Part 1: Time-Dependent Version**
 
 </font>
 
@@ -34,7 +34,7 @@ In the following we illustrate the perturbative expansion of 2-point functions (
 $$
 G_{\alpha \beta}(t - t')
 \equiv \frac{-i}{\hbar}
-\amp{\Psi_0}{T[a_\alpha(t) a^\dagger_\beta(t')]}{\Psi_0}
+\amp{\Psi_0}{T[a_{\alpha H}(t) a^\dagger_{\beta H}(t')]}{\Psi_0}
 $$
 
 using a Hamiltonian with two-body interactions (in interaction picture):
@@ -314,7 +314,9 @@ $$
 
 ### Fermion Loops and Minus Signs
 
-From the figures we see that if the arrowed lines representing Green's function form a closed loop, then the expression will get a minus sign. This is in general true: the expression will get $(-1)^n$, where $n$ is the number of such loops. Of course, these signs are absent for boson systems. 
+From the figures we see that if the arrowed lines representing Green's function form a closed loop, then the expression will get a minus sign. This is in general true: the expression will get $(-1)^n$, where $n$ is the number of such loops. 
+
+Of course, these signs are absent for boson. 
 
 ### Normalization and Cancellation of Disconnected Diagrams
 
@@ -374,19 +376,19 @@ To summarize, the true first order terms are
 
 <div class="result">
 
-**First order terms of Green's function:**
+**First order terms of Green's function with two-body interaction:**
 
 <div class="imgtext">
 <img src="Figures/2BodyV_1st-3.png" width="150pt">
 
 $$
 \quad \begin{aligned}
-    &\text{Direct term}
-    \\
-    &
+    &G^{(\text{1D})}_{\alpha \beta}(t - t') 
+    \quad (\text{Direct term})\\
+    &= 
     - i\hbar \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
-    \\ & \times
+    \\ & \quad \times
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \beta}(t_1 - t')
@@ -400,12 +402,12 @@ $$
 
 $$
 \quad \begin{aligned}
-    &\text{Exchange term}
-    \\[1em]
-    &
+    &G^{(\text{1E})}_{\alpha \beta}(t - t') 
+    \quad (\text{Exchange term})\\
+    &= 
     i\hbar \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
-    \\ & \times
+    \\ & \quad \times
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\epsilon \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\theta \beta}(t_1 - t')
@@ -416,113 +418,191 @@ $$
 
 </div><br>
 
-### Summary: Feynman Rules in Time
+### Summary: Feynman Rules in Time (General Basis)
 
-## In Position-Time Space
+## In Real (Time-Position) Space
 
-Now we demonstrate how to change to the position basis using the direct term:
+Now we demonstrate how to change to the position basis. Take the direct term as the example:
 
 $$
 \begin{aligned}
-    - i\hbar \sum_{\gamma \delta \epsilon \theta} 
+    G^{(1D)}_{\alpha \beta}(t,t')
+    &= - i\hbar \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
-    % \\ & \times
+    \\ & \quad \times
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \beta}(t_1 - t')
 \end{aligned}
 $$
 
-- **Conversion of $V$ amplitudes**
+- **Conversion of Green's function**
+
+    Let $\ket{\alpha} \to \ket{\mathbf{x},\alpha}, \ket{\beta} \to \ket{\mathbf{x}',\beta}$, we obtain (using 4-positions)
+
+    $$
+    \begin{aligned}
+        G^{(0)}_{\alpha \gamma}(t - t_\gamma)
+        &\to G^{(0)}_{\alpha \gamma}(x, x_\gamma)
+        \\
+        G^{(0)}_{\theta \delta}(t_\theta - t_\delta)
+        &\to G^{(0)}_{\theta \delta}(x_\theta - x_\delta)
+        \\
+        G^{(0)}_{\epsilon \beta}(t_\epsilon - t')
+        &\to G^{(0)}_{\epsilon \beta}(x_\epsilon, x')
+    \end{aligned}
+    $$
+
+- **Conversion of $V$ matrix elements**
+    
+    It is useful to introduce additional time-dependence to the two-body interaction:
+
+    $$
+    \begin{aligned}
+        V(t_1) &= \frac{1}{2} \sum_{\gamma \delta \epsilon \theta}
+        \int dt_2 \, dt_3 \, dt_4
+        \amp{\gamma \delta}
+        {\mathcal{V}(t_1,t_2,t_3,t_4)}{\epsilon \theta}
+        \\ &\qquad \qquad \times
+        a_\gamma^\dagger(t_1) a_\delta^\dagger(t_2)
+        a_\theta(t_4) a_\epsilon(t_3)
+        \\[0.5em]
+        \amp{\gamma \delta}{\mathcal{V}}{\epsilon \theta}
+        &= \delta(t_1 - t_2) \delta(t_2 - t_3) \delta(t_3 - t_4)
+        \amp{\gamma \delta}{V}{\epsilon \theta}
+    \end{aligned}
+    $$
+
+    Meanwhile, the change to position + spin basis means the conversion
 
     $$
     \begin{aligned}
         \amp{\gamma \delta}{V}{\epsilon \theta}
         &\to \amp{
-            \gamma, \mathbf{y}_1; 
-            \delta, \mathbf{y}'_1
+            \gamma, \mathbf{x}_\gamma; 
+            \delta, \mathbf{x}_\delta
         }{V}{
-            \epsilon, \mathbf{x}_1;
-            \theta, \mathbf{x}'_1
+            \epsilon, \mathbf{x}_\epsilon;
+            \theta, \mathbf{x}_\theta
         } \\
-        &= \delta^3(\mathbf{y}_1 - \mathbf{x}_1) 
-        \delta^3(\mathbf{y}'_1 - \mathbf{x}'_1)
+        &= \delta^3(\mathbf{x}_\gamma - \mathbf{x}_\epsilon) 
+        \delta^3(\mathbf{x}_\delta - \mathbf{x}_\theta)
         \delta_{\gamma \epsilon} \delta_{\delta \theta}
-        V(\mathbf{x}_1, \mathbf{x}'_1)
+        V(\mathbf{x}_\epsilon, \mathbf{x}_\theta)
 
         \\[0.6em]
 
         \sum_{\gamma \delta \epsilon \theta} 
+        \int dt_\gamma \, dt_\delta 
+        \, dt_\epsilon \, dt_\theta
         &\to \sum_{\gamma \delta \epsilon \theta} 
-        \int d^3 y_1 \, d^3 y'_1 \, d^3 x_1 \, d^3 x'_1
+        \int d^4x_\gamma \, d^4x_\delta 
+        \, d^4x_\epsilon \, d^4x_\theta
     \end{aligned}
     $$
 
-    The two spatial delta functions are immediately removed when summing over the $V$ amplitudes. 
-    
-- **Conversion of Green's function**
-    
-    We introduce a further integration over the time component of $x'_1 \equiv (t'_1, \mathbf{x}'_1)$, which allows us to write
+    Now we see the benefit of introducing the additional delta functions: the time integration are combined with the space integration.
 
-    $$
-    G^{(0)}_{\theta \delta}(t_1 - t_1^+)
-    \to \int dt'_1 \, G^{(0)}_{\theta \delta}(t'_1 - t'^+_1) 
-    \delta(t'_1 - t_1)
-    $$
-
-    Then we can write each Green's function using the 4-position:
-
-    $$
-    \begin{aligned}
-        G^{(0)}_{\epsilon \gamma}(t_1 - t_1^+)
-        &\to G^{(0)}_{\epsilon \gamma}
-        (\mathbf{x}_1, \mathbf{y}_1; t_1 - t_1^+)
-        \xrightarrow{\mathbf{y}_1 = \mathbf{x}_1}
-        G^{(0)}_{\epsilon \gamma}(x_1, x_1)
-        
-        \\
-        
-        G^{(0)}_{\theta \delta}(t'_1 - t'^+_1)
-        &\to G^{(0)}_{\theta \delta}
-        (\mathbf{x}'_1, \mathbf{y}'_1; t'_1 - t'^+_1)
-        \xrightarrow{\mathbf{y}'_1 = \mathbf{x}'_1}
-        G^{(0)}_{\theta \delta}(x'_1, x'_1)
-        
-        \\
-        
-        G^{(0)}_{\alpha \beta}(t - t')
-        &\to G^{(0)}_{\alpha \beta}(\mathbf{x}, \mathbf{x}'; t - t')
-        = G^{(0)}_{\alpha \beta}(x, x')
-    \end{aligned}
-    $$
-
-Finally, note that we can combine the remaining integrations (not cancelled by delta functions) into
+With the general conversion rules, we obtain
 
 $$
-\int d^3 x_1 \, d^3 x'_1 \, dt_1 \, dt'_1
-= \int d^4 x_1 \, d^4 x'_1
+\begin{aligned}
+    G^{(\text{1D})}_{\alpha \beta}(t,t')
+    &= - i\hbar \sum_{\gamma \delta \epsilon \theta} 
+    \int d^4x_\gamma \, d^4x_\delta 
+        \, d^4x_\epsilon \, d^4x_\theta
+    \, \amp{\gamma \delta}{U}{\epsilon \theta}
+    \\ & \quad \times
+    G^{(0)}_{\alpha \gamma}(x, x_\gamma) \,
+    G^{(0)}_{\theta \delta}(x_\theta, x_\delta) \,
+    G^{(0)}_{\epsilon \beta}(x_\epsilon, x')
+\end{aligned}
 $$
 
-Assembling these results together, we get
+Collecting the $3 + 2 \times 3 = 9$ delta functions we have (including the ones in $\mathcal{V}$), after the integrations (over $4 \times 4 = 16$ variables) we keep 8 integrations and 1 delta function:
+
+$$
+\begin{aligned}
+    &\int d^4x_\gamma \, d^4x_\delta 
+    \, d^4x_\epsilon \, d^4x_\theta \,
+    \\ & \qquad
+    \delta(t_\gamma - t_\delta) 
+    \delta(t_\delta - t_\epsilon) 
+    \delta(t_\epsilon - t_\theta)
+    \delta^3(\mathbf{x}_\gamma - \mathbf{x}_\epsilon) 
+    \delta^3(\mathbf{x}_\delta - \mathbf{x}_\theta)
+    \\
+    &\to \int d^4x_1 \, d^4x_2 \,
+    \delta(t_1 - t_2)
+\end{aligned}
+$$
+
+with the constraints
+
+$$
+x_\gamma = x_\epsilon \equiv x_1 , \quad
+x_\delta = x_\theta \equiv x_2 
+$$ 
+
+Here it is understood that
+
+$$
+t_\gamma = t_1^+, \quad t_\delta = t_2^+
+$$
+
+Assembling these results together, we get the diagram expression in position-time space:
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-1x.png" width="150pt">
+<img src="Figures/2BodyV_1st-3xt.png" width="150pt">
 
 $$
 \quad \begin{aligned}
-    &\frac{i\hbar}{2} \int d^4 x_1 \, d^4 x'_1 \, 
-    U_{\gamma \delta, \epsilon \theta}(x_1, x'_1)
+    &G^{(\text{1D})}_{\alpha \beta}(x,x')
+    \\
+    &= -i\hbar \int d^4 x_1 \, d^4 x_2 \, 
+    U_{\gamma \delta, \epsilon \theta}(x_1, x_2)
     \\ &\qquad \times
-    G^{(0)}_{\epsilon \gamma}(x_1, x_1) \,
-    G^{(0)}_{\theta \delta}(x'_1, x'_1) \,
-    G^{(0)}_{\alpha \beta}(x, x')
+    G^{(0)}_{\alpha \gamma}(x, x_1) \,
+    G^{(0)}_{\theta \delta}(x_2, x_2) \,
+    G^{(0)}_{\epsilon \beta}(x_1, x')
     \\[1em]
     &\text{with} \quad
-    U_{\gamma \delta, \epsilon \theta}(x_1, x'_1)
-    \equiv V(\mathbf{x}_1, \mathbf{x}'_1) \,
+    U_{\gamma \delta, \epsilon \theta}(x_1, x_2)
+    \equiv V(\mathbf{x}_1, \mathbf{x}_2) \,
     \delta_{\gamma \epsilon} \delta_{\delta \theta} \,
-    \delta(t_1 - t'_1)
+    \delta(t_1 - t_2)
 \end{aligned}
 $$
 
 </div><br>
+
+Here it is understood that equal-time Green's functions should be interpreted as
+
+$$
+G_{\alpha \beta}^{(0)}(\mathbf{x},t; \mathbf{x}',t)
+= G_{\alpha \beta}^{(0)}(\mathbf{x}, t; \mathbf{x}', t^+)
+$$
+
+Similarly, the exchange term is converted to
+
+<div class="imgtext">
+<img src="Figures/2BodyV_1st-4xt.png" width="150pt">
+
+$$
+\quad \begin{aligned}
+    &G^{(\text{1E})}_{\alpha \beta}(x,x') 
+    \quad (\text{Exchange term})\\
+    &= 
+    i\hbar \sum_{\gamma \delta \epsilon \theta} 
+    \int d^4 x_1 \, d^4 x_2 \, 
+    U_{\gamma \delta, \epsilon \theta}(x_1, x_2)
+    \\ & \quad \times
+    G^{(0)}_{\alpha \gamma}(x,x_1) \,
+    G^{(0)}_{\epsilon \delta}(x_1,x_2) \,
+    G^{(0)}_{\theta \beta}(x_2, x')
+\end{aligned}
+$$
+
+</div><br>
+
+### Summary: Feynman Rules in Real Space

@@ -18,7 +18,7 @@
 
 # Boson Coherent State
 
-## Eigenstate of Annihilation Operator
+## Coherent State: Eigenstate of Annihilation Operator
 
 The boson **coherent state** is *defined* as the eigenstate of the (boson) annihilation operator:
 
@@ -327,8 +327,7 @@ $$
 
 Now we consider the propagator from and to some arbitrary states (not
 necessarily labelled by the coordinates), and use the second-quantized,
-normal-ordered Hamiltonian. Instead of inserting a complete set of
-basis, we insert the *over-complete* coherent state basis:
+normal-ordered Hamiltonian. Instead of inserting a usual identity, we insert the *over-complete* coherent state basis:
 
 $$
 \begin{aligned}
@@ -412,19 +411,47 @@ $$
 
 Then
 
-$\left.\left\langle f\left|e^{-i H \left(a^\dagger,a\right)T}\right|i\right\rangle =\int \left(\prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha
-_k}{2\pi i}e^{-\bar{\alpha}_k\alpha_k}\right)\left\langle f\left| \alpha_N\right.\right\rangle \langle \alpha_N|1-i H\left(a^\dagger,a\right)\epsilon
-|\alpha_{N-1}\right\rangle \left(\prod_{k=1}^{N-2} e^{\bar{\alpha}_{k+1}\alpha_k}\left(1-i H\left(\bar{\alpha}_{k+1},\alpha_k\right)\epsilon
-\right)\right)\left\langle \alpha_1|1-i H\left(a^\dagger,a\right)\epsilon | \alpha_0\rangle \left\langle \left.\alpha_0\right| i\right\rangle
-\right.\\
-=\int \left(\prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}e^{-\bar{\alpha}_k\alpha_k}\right)\left(\prod_{k=0}^{N-1} e^{\bar{\alpha
-}_{k+1}\alpha_k}\left(1-i H\left(\bar{\alpha}_{k+1},\alpha_k\right)\epsilon \right)\right)\left\langle f\left| \alpha_N\right.\right\rangle \left\langle
-\left.\alpha_0\right| i\right\rangle \\
-=\int \left(\prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}\right)\left(\prod_{k=0}^N e^{-\bar{\alpha}_k\alpha_k}\right)\left(\prod
-_{k=0}^{N-1} e^{\bar{\alpha}_{k+1}\alpha_k}\right)\left(\prod_{k=0}^{N-1} e^{-i H\left(\bar{\alpha}_{k+1},\alpha_k\right)\epsilon}\right)\left\langle
-f\left| \alpha_N\right.\right\rangle \left\langle \left.\alpha_0\right| i\right\rangle$
+$$
+\begin{aligned}
+    &\amp{f}{e^{-i H (a^\dagger,a)T}}{i}
+    \\
+    &=\int \left[
+        \prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
+        e^{-\bar{\alpha}_k\alpha_k}
+    \right] \braket{f}{\alpha_N}
+    \amp{\alpha_N}{1 - iH(a^\dagger,a) \epsilon}{\alpha_{N-1}}
+    \\
+    &\quad \left[
+        \prod_{k=1}^{N-2} e^{\bar{\alpha}_{k+1}\alpha_k}
+        (1-i H(\bar{\alpha}_{k+1},\alpha_k)\epsilon)
+    \right]
+    \amp{\alpha_1}{
+        1-i H(a^\dagger,a)\epsilon
+    }{\alpha_0} \braket{\alpha_0}{i}
+    \\
+    &= \int \left[
+        \prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}e^{-\bar{\alpha}_k\alpha_k}
+    \right] \left[
+        \prod_{k=0}^{N-1} e^{\bar{\alpha}_{k+1}\alpha_k}
+        (1-i H(\bar{\alpha}_{k+1},\alpha_k)\epsilon )
+    \right] 
+    \braket{f}{\alpha_N} \braket{\alpha_0}{i}
+    \\
+    &=\int \left[
+        \prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
+    \right] \left[
+        \prod_{k=0}^N e^{-\bar{\alpha}_k\alpha_k}
+    \right] \left[
+        \prod_{k=0}^{N-1} e^{\bar{\alpha}_{k+1}\alpha_k}
+    \right] \left[
+        \prod_{k=0}^{N-1} 
+        e^{-i H(\bar{\alpha}_{k+1},\alpha_k)\epsilon}
+    \right]
+    \braket{f}{\alpha_N} \braket{\alpha_0}{i}
+\end{aligned}
+$$
 
-We try to rearrange the exponentials to produce an $\epsilon$ factor in
+We try to rearrange the exponential functions to produce an $\epsilon$ factor in
 order to merge it with the Hamiltonian term and get an integration over
 time. ${}{}$There are two ways of doing it:
 
@@ -453,7 +480,7 @@ _t\alpha \right)-H\left(\bar{\alpha},\alpha \right)\right]\right)\underbrace{\ex
 _f\right)\right)\left\langle f\left| \alpha_f\right.\right\rangle \left\langle \left.\alpha_i\right| i\right\rangle}_{\text{the projection
 operator}}$
 
-This is the for bosons. The action functional appears here is
+This is the **coherent state path integral** for bosons. The action functional appears here is
 
 $S=\int_0^Tdt \left[\frac{1}{2i}\left(\alpha \partial_t\bar{\alpha}-\bar{\alpha}\partial_t\alpha \right)-H\left(\bar{\alpha},\alpha \right)\right]$
 

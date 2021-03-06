@@ -32,15 +32,15 @@ By definition,
 $$
 \begin{aligned}
     \mathcal{G}_{\rho \sigma}(\tau - \tau')
-    &\equiv -\expect{T c_\rho(\tau) c_\sigma^\dagger(\tau')}
+    &\equiv -\expect{T [c_\rho(\tau) c_\sigma^\dagger(\tau')]}
     \\
-    &= -\operatorname{tr} \left[
+    &= -\tr \left[
         e^{-\beta(H - F)}
         T[c_\rho(\tau) c_\sigma^\dagger(\tau')]
     \right]
     \\[1em]
     \text{with} &\quad
-    Z = \operatorname{tr} e^{-\beta H} 
+    Z = \tr e^{-\beta H} 
     = e^{-\beta F}, \quad \tau = it
 \end{aligned}
 $$
