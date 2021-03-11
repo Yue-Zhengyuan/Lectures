@@ -101,15 +101,15 @@ $$
         a^\dagger_{\beta}
     }{\Psi_0^N}
     \\
-    &= \sum_m \amp{\Psi_0^N}{
+    &= \sum_n \amp{\Psi_0^N}{
         a_{\alpha} e^{-iH(t - t')} 
-    }{\Psi_m^{N+1}} \amp{\Psi_m^{N+1}}{
+    }{\Psi_n^{N+1}} \amp{\Psi_n^{N+1}}{
         a^\dagger_{\beta}
     }{\Psi_0^N}
     \\
-    &= \sum_m e^{-iE_m^{N+1}(t - t')} \amp{\Psi_0^N}{
+    &= \sum_n e^{-iE_n^{N+1}(t - t')} \amp{\Psi_0^N}{
         a_{\alpha}
-    }{\Psi_m^{N+1}} \amp{\Psi_m^{N+1}}{
+    }{\Psi_n^{N+1}} \amp{\Psi_n^{N+1}}{
         a^\dagger_{\beta}
     }{\Psi_0^N}
 
@@ -140,11 +140,11 @@ $$
 \begin{aligned}
     &i G_{\alpha\beta}(t)
     \\
-    &= \sum_m \amp{\Psi_0^N}{
+    &= \sum_n \amp{\Psi_0^N}{
         a_{\alpha}
-    }{\Psi_m^{N+1}} \amp{\Psi_m^{N+1}}{
+    }{\Psi_n^{N+1}} \amp{\Psi_n^{N+1}}{
         a^\dagger_{\beta}
-    }{\Psi_0^N} e^{- i(E_m^{N+1} - E_0^N)t} 
+    }{\Psi_0^N} e^{- i(E_n^{N+1} - E_0^N)t} 
     \theta(t)
     \\ &\quad
     \mp \sum_n \amp{\Psi_0^N}{
@@ -156,16 +156,16 @@ $$
 \end{aligned}
 $$
 
-<div class="remark">
+<!-- <div class="remark">
 
 *Remark*: It is implicitly assumed that states with more particles always has larger energy, therefore
 
 $$
-E_m^{N+1} - E_0^N > 0, \quad
+E_n^{N+1} - E_0^N > 0, \quad
 E_0^N - E_n^{N-1} > 0
 $$
 
-</div><br>
+</div><br> -->
 
 Now the time dependence is completely separated from the operators, making the Fourier transform easier. Here we need one theorem from complex analysis:
 
@@ -225,24 +225,26 @@ This integral provides the Fourier transformation. Thus we obtain
 $$
 \begin{aligned}
     G_{\alpha\beta}(E)
-    &= \sum_m \frac{
-        \amp{\Psi_0^N}{
-            a_{\alpha}
-        }{\Psi_m^{N+1}} \amp{\Psi_m^{N+1}}{
-            a^\dagger_{\beta}
-        }{\Psi_0^N}
-    }{
-        E - (E_m^{N+1} - E_0^N) + i\eta
-    } \\ &\quad
-    \mp \sum_n \frac{
-        \amp{\Psi_0^N}{
-            a^\dagger_{\beta}
-        }{\Psi_n^{N-1}} \amp{\Psi_n^{N-1}}{
-            a_{\alpha}
-        }{\Psi_0^N}
-    }{
-        E - (E_0^N - E_n^{N-1}) - i\eta
-    }
+    &= \sum_n \bigg[ 
+        \frac{
+            \amp{\Psi_0^N}{
+                a_{\alpha}
+            }{\Psi_n^{N+1}} \amp{\Psi_n^{N+1}}{
+                a^\dagger_{\beta}
+            }{\Psi_0^N}
+        }{
+            E - (E_n^{N+1} - E_0^N) + i\eta
+        } \\ &\qquad \qquad
+        \mp \frac{
+            \amp{\Psi_0^N}{
+                a^\dagger_{\beta}
+            }{\Psi_n^{N-1}} \amp{\Psi_n^{N-1}}{
+                a_{\alpha}
+            }{\Psi_0^N}
+        }{
+            E - (E_0^N - E_n^{N-1}) - i\eta
+        }
+    \bigg]
 \end{aligned}
 $$
 

@@ -86,3 +86,39 @@ $$
 Thus for bosons the Fourier series only contains *even* frequencies, and for fermions there are only *odd* ones. 
 
 ## The Summation Technique
+
+Reference: [Wikipedia](https://en.wikipedia.org/wiki/Matsubara_frequency#Summation_formalism)
+
+In the perturbative expansion of Green's function, one will encounter the summation over the Matsubara frequencies, i.e, evaluate the expression
+
+$$
+I \equiv \sum_{\omega_n} F(i \omega_n)
+$$
+
+Usually the function $F$ is the free boson/fermion propagator (ignoring the spin here)
+
+$$
+\mathcal{G}_\alpha(i\omega_n)
+= \frac{1}
+{i\omega_n - \epsilon_\alpha}
+$$
+
+The trick is to convert the summation to a contour integral
+
+$$
+\sum_{\omega_n} F(i \omega_n)
+= \oint_C \frac{dz}{2\pi i} F(z) f(z)
+$$
+
+The auxiliary function $f(z)$ should have the following properties:
+
+- It has poles at $z = i\omega_n \, (n \in \Z)$
+- The residue at $z = i\omega_n$ is just equal to $F(i\omega_n)$
+
+For boson/fermion, this function $f(z)$ can be chosen as the distribution function
+
+$$
+f(z) = \frac{1}{e^{\beta z} \mp 1}
+$$
+
+The contour $C$ is then chosen to enclose the imaginary axis, picking up the residues at all poles of $f(z)$. 

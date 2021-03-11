@@ -312,7 +312,7 @@ $$
 
 </div><br>
 
-### Fermion Loops and Minus Signs
+### Closed Loops and Minus Signs
 
 From the figures we see that if the arrowed lines representing Green's function form a closed loop, then the expression will get a minus sign. This is in general true: the expression will get $(-1)^n$, where $n$ is the number of such loops. 
 
@@ -320,7 +320,7 @@ Of course, these signs are absent for boson.
 
 ### Normalization and Cancellation of Disconnected Diagrams
 
-It turns out that the normalization of $\ket{\Psi_0}$ will cancel the terms with *disconnected diagrams* (a) and (b). Therefore, the true $k$th order term of the Green's function with normalized $\ket{\Psi_0}$ is
+It turns out that the normalization of $\ket{\Psi_0}$ will cancel the terms with *disconnected diagrams* (a) and (b) (known as the **linked cluster theorem**). Therefore, the true $k$th order term of the Green's function with normalized $\ket{\Psi_0}$ consists of only connected terms.
 
 $$
 \begin{aligned}
@@ -576,12 +576,20 @@ $$
 
 </div><br>
 
-Here it is understood that equal-time Green's functions should be interpreted as
+<div class="remark">
+
+*Remark*:
+
+- The 4-position-dependent $U$ reveals the *instantaneous property* of the interaction $V$ by the delta function $\delta(t_1 - t_2)$.
+
+- Equal-time Green's functions (arrowed lines with two ends connected on the same interaction line) should be interpreted as
 
 $$
 G_{\alpha \beta}^{(0)}(\mathbf{x},t; \mathbf{x}',t)
 = G_{\alpha \beta}^{(0)}(\mathbf{x}, t; \mathbf{x}', t^+)
 $$
+
+</div><br>
 
 Similarly, the exchange term is converted to
 

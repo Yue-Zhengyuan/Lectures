@@ -37,10 +37,10 @@ In this part we Fourier transform the time to obtain the diagram rules in energy
 
 $$
 G^{(n)}_{\alpha \beta}(E)
-= \int dt \, e^{iEt} G^{(n)}_{\alpha \beta}(t)
+= \int dt \, e^{iEt} G^{(n)}_{\alpha \beta}(t) \quad n = 0,1,2,...
 $$
 
-where we need to transform each $G^{(0)}$ appearing in the perturbation expansion
+where we need to transform each $G^{(0)}$ appearing in the perturbation expansion of $G^{(n)}$ by
 
 $$
 G^{(0)}_{\alpha \beta}(t)
@@ -85,11 +85,11 @@ $$
 
 <div class="remark">
 
-*Remark*: In general, for each arrowed lines with two ends connected by interaction (including closed loops), we will get an $e^{-iE' 0^-}$ factor. The limit can be achieved by extending the integral to a contour integral (going to the upper half plane):
+*Remark*: In general, for each arrowed lines with two ends connected by interaction (including closed loops), we will get an $e^{-iE' 0^-}$ factor (in the following we denote it as $e^{iE'\eta} \, (\eta \to 0^+)$). The limit can be achieved by extending the integral to a contour integral (going to the upper half plane):
 
 $$
 \begin{aligned}
-    \int \frac{dE'}{2\pi} e^{-iE' 0^-}
+    \int \frac{dE'}{2\pi} e^{iE'\eta}
     G^{(0)}_{\theta \delta}(E')
     = \oint_{C\uparrow} \frac{dE'}{2\pi} 
     G^{(0)}_{\theta \delta}(E')
@@ -120,7 +120,7 @@ $$
     \amp{\gamma \delta}{V}{\epsilon \theta}
     G^{(0)}_{\alpha \gamma}(E)
     \\ &\quad \times
-    \oint_{C\uparrow} \frac{dE'}{2\pi}
+    \int \frac{dE'}{2\pi} e^{iE'\eta}
     G^{(0)}_{\theta \delta}(E') \,
     G^{(0)}_{\epsilon \beta}(E)
 \end{aligned}
@@ -144,7 +144,7 @@ $$
     \amp{\gamma \delta}{V}{\epsilon \theta}
     G^{(0)}_{\alpha \gamma}(E)
     \\ &\quad \times
-    \oint_{C\uparrow} \frac{dE'}{2\pi}
+    \int \frac{dE'}{2\pi} e^{iE'\eta}
     G^{(0)}_{\epsilon \delta}(E') \,
     G^{(0)}_{\theta \beta}(E)
 \end{aligned}
@@ -228,24 +228,7 @@ We notice two properties in the energy version of diagrams:
 
     </div><br>
 
-- The diagram always starts with a $G^{(0)}(E)$ and ends with another $G^{(0)}(E)$, i.e. the incoming and outgoing propagator has the same energy $E$ specified by the full propagator $G(E)$. This property is illustrated by the following diagram:
-    
-    <div class="imgtext">
-    <img src="Figures/self-energy.png" width="180pt">
-
-    $$
-    \quad \begin{aligned}
-        G_{\alpha \beta}(E)
-        = \sum_{\gamma \epsilon}
-        G^{(0)}_{\alpha \gamma}(E)
-        \Sigma_{\gamma \epsilon}(E)
-        G^{(0)}_{\epsilon \beta}(E)
-    \end{aligned}
-    $$
-
-    </div><br>
-
-    Here the exact propagator is represented by an arrowed *double*-line. The quantity $\Sigma(E)$ (although the $E$-dependence is not obvious in first order diagrams) is called the **self-energy**.
+- The diagram always starts with a $G^{(0)}(E)$ and ends with another $G^{(0)}(E)$, i.e. the incoming and outgoing propagator has the same energy $E$ specified by the full propagator $G(E)$. 
 
 ### Summary: Feynman Rules in Energy (General Basis)
 
@@ -323,6 +306,16 @@ When using the energy formulation, one usually use the momentum states as the ba
     V(\mathbf{x}) = \int \frac{d^3p}{(2\pi)^3} 
     e^{i\mathbf{p}\cdot \mathbf{x}} V(\mathbf{p})
     $$
+
+    <div class="remark">
+
+    *Remark*: Due to the symmetry $V(\mathbf{x}_1 - \mathbf{x}_2) = V(\mathbf{x}_2 - \mathbf{x}_1)$ (i.e. $V(\mathbf{x})$ is an even function), the Fourier component is also an even function.
+
+    $$
+    V(\mathbf{p}) = V(-\mathbf{p})
+    $$
+
+    </div><br>
 
     Collecting these, we obtain
     
@@ -449,7 +442,7 @@ $$
     \amp{\gamma \delta}{V}{\epsilon \theta}
     G^{(0)}_{\alpha \gamma}(E) \,
     \\ &\quad \times
-    \oint_{C\uparrow} \frac{dE'}{2\pi}
+    \int \frac{dE'}{2\pi} e^{iE'\eta}
     G^{(0)}_{\epsilon \delta}(E') \,
     G^{(0)}_{\theta \beta}(E)
 \end{aligned}
@@ -475,9 +468,9 @@ $$
     (2\pi)^3 \delta^3(\mathbf{p}_3 - \mathbf{p}_2)
     (2\pi)^3 \delta^3(\mathbf{p}_4 - \mathbf{p}_\beta)
     \\ &\quad \times
-    \oint_{C\uparrow} \frac{dE'}{2\pi}
+    \int \frac{dE'}{2\pi}
     G^{(0)}(\mathbf{p}, E)
-    G^{(0)}(\mathbf{p}_3, E')
+    e^{iE'\eta} G^{(0)}(\mathbf{p}_3, E')
     G^{(0)}(\mathbf{p}_4, E)
 \end{aligned}
 $$
@@ -519,7 +512,7 @@ $$
 \end{aligned}
 $$
 
-The extra delta function means that $U$ is an *equal-time* interaction.
+The extra delta function means that $U$ is an *instantaneous* interaction.
 
 </div><br>
 
@@ -532,7 +525,7 @@ $$
     &= i (2\pi)^3 \delta^3(\mathbf{p} - \mathbf{p}_\beta)
     \\ &\quad \times
     \int \frac{d^4p'}{(2\pi)^4} U(p - p')
-    G^{(0)}(p) G^{(0)}(p') G^{(0)}(p)
+    G^{(0)}(p)  e^{iE'\eta} G^{(0)}(p') G^{(0)}(p)
     \\
     &= (2\pi)^3 \delta^3(\mathbf{p} - \mathbf{p}_\beta)
     G^{(\text{1D})}_{\alpha \beta}(p)
@@ -551,9 +544,9 @@ $$
     &= i \sum_{\gamma \delta \epsilon \theta} 
     \int \frac{d^4p'}{(2\pi)^4} 
     U_{\gamma \delta, \epsilon \theta}(p - p') 
-    \\ &\qquad \qquad \qquad \times
+    \\ &\qquad \quad \quad \times
     G^{(0)}_{\alpha \gamma}(p) 
-    G^{(0)}_{\theta \delta}(p') 
+    e^{iE'\eta} G^{(0)}_{\theta \delta}(p') 
     G^{(0)}_{\epsilon \beta}(p)
     \\[1.5em]
     &\text{with} \quad
@@ -581,8 +574,9 @@ $$
     &= - i \sum_{\gamma \delta \epsilon \theta} 
     \int \frac{d^4p'}{(2\pi)^4} 
     U_{\gamma \delta, \epsilon \theta}(0) 
+    \\ &\qquad \quad \quad \times
     G^{(0)}_{\alpha \gamma}(p) 
-    G^{(0)}_{\theta \delta}(p') 
+    e^{iE'\eta} G^{(0)}_{\theta \delta}(p') 
     G^{(0)}_{\epsilon \beta}(p)
 \end{aligned}
 $$
