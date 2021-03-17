@@ -90,38 +90,28 @@ Now we can obtain the new expectation value of $A$ at time $t$:
 **Kubo formula:**
 
 $$
-\expect{A}(t) = \expect{A}_0
-- \frac{i}{\hbar} \int_{-\infty}^t dt' \, 
-\expect{[A_I(t), V_I(t')]}_0
+\begin{aligned}
+    \delta\expect{A(t)}
+    &= \expect{A(t)} - \expect{A}_0 
+    \\
+    &= - \frac{i}{\hbar} \int_{-\infty}^t dt' \, 
+    \expect{[A_I(t), V_I(t')]}_0
+\end{aligned}
 $$
 
 </div><br>
 
-## Response Functions
+## Response Function
 
-Usually one assumes that the perturbation has the following form
-
-$$
-V(t) = B f(t)
-$$
-
-where $f(t)$ is a *c*-number function *coupled* to the operator $B$. 
-
-<div class="remark">
-
-*Remark*: One common example of $B f(t)$ is $\int d^3x \, \rho(\mathbf{x}) E(t)$, where $\rho(\mathbf{x})$ is the charge density operator, and $E(t)$ is the electric field. 
-
-</div><br>
-
-Then we can rewrite Kubo formula as
+We can rewrite Kubo formula as (note that the upper limit of $t'$ is changed to $+\infty$)
 
 $$
-\expect{A}(t) = \expect{A}_0
-- \int_{-\infty}^{\infty} dt' \, 
-\chi^R_{AB}(t - t') f(t')
+\delta\expect{A(t)} 
+= \int_{-\infty}^{\infty} dt' \, 
+\chi^R_{AV}(t - t')
 $$
 
-(note that we have changed the upper limit of $t'$ to $+\infty$) with the following definition:
+with the following definition (for an arbitrary operator $B$):
 
 <div class="result">
 
@@ -136,5 +126,53 @@ $$
 </div><br>
 
 The time-independence of $H_0$ ensures that $\chi$ depends only on the difference between $t$ and $t'$.  The introduction of $\theta(t - t')$ in $\chi^R$ means that the response (change of $\expect{A}$) only depends on perturbation from the past. 
+
+## In Frequency Domain
+
+Let us now determine the change of one Fourier component of $A$ 
+
+$$
+\delta\expect{A(\omega)} 
+= \int dt \, e^{i\omega t} \delta \expect{A(t)}
+$$
+
+We further Fourier transform $\chi_{AV}^R(t - t')$:
+
+$$
+\chi_{AV}^R(t - t')
+= \int \frac{d\omega'}{2\pi} e^{-i\omega'(t - t')}
+\chi_{AV}^R(\omega')
+$$
+
+Then
+
+$$
+\begin{aligned}
+    \delta\expect{A(\omega)} 
+    &= \int dt \, e^{i\omega t} \int dt' 
+    \int \frac{d\omega'}{2\pi} 
+    e^{-i\omega'(t - t')} \chi_{AV}^R(\omega')
+    \\
+    &= \int dt' \, \frac{d\omega}{2\pi}
+    (2\pi) \delta(\omega - \omega') e^{i\omega' t'}
+    \chi_{AV}^R(\omega')
+    \\
+    &= \int dt' \, e^{i\omega t'}
+    \chi_{AV}^R(\omega)
+\end{aligned}
+$$
+
+Thus we obtain
+
+<div class="result">
+
+**Kubo formula in frequency domain:**
+
+$$
+\delta\expect{A(\omega)} 
+= \int dt \, e^{i\omega t} \chi_{AV}^R(\omega)
+$$
+
+</div><br>
 
 ## In Imaginary Time
