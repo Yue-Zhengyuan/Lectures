@@ -22,9 +22,11 @@
 
 *Reference: Bruus and Flensberg, Sections 1.4.3 and 6.2*
 
-## Current Operator
+## Setting the Stage
 
-The (particle number) current operator consists of two parts:
+### Particle Current Operator
+
+The (particle number) current operator in the existence of electromagnetic field consists of two parts:
 
 $$
 \mathbf{J}_\sigma(\mathbf{x})
@@ -56,7 +58,7 @@ $$
 
 Here the paramagnetic current is the same as the usual probability current derived from Schrödinger equation.
 
-## Response to External Electric Field
+### Perturbation Hamiltonian
 
 Suppose that in addition to the equilibrium electromagnetic field, we add a perturbation
 
@@ -94,7 +96,7 @@ Some simplifications follow:
         )  \rho(\mathbf{x})
     \right] \cdot \mathbf{A}^\text{ext}(\mathbf{x},\omega)
     \\
-    &\simeq \mathbf{J}^0(\mathbf{x}) 
+    &\simeq \mathbf{j}(\mathbf{x}) 
     \cdot \mathbf{A}^\text{ext}(\mathbf{x},t)
     \end{aligned}
     $$
@@ -102,17 +104,17 @@ Some simplifications follow:
     where we introduced
 
     $$
-    \mathbf{J}^0(\mathbf{x}) 
+    \mathbf{j}(\mathbf{x}) 
     = \mathbf{J}^\nabla(\mathbf{x})
     -\frac{q}{m} \mathbf{A}^0(\mathbf{x}) 
     \rho(\mathbf{x})
     $$
 
-Thus $V$ is simplified to
+Thus $V$ is reduced to
 
 $$
 V = - q \int d^3x \,
-\mathbf{J}^0(\mathbf{x}) \cdot \mathbf{A}^\text{ext}(\mathbf{x},t)
+\mathbf{j}(\mathbf{x}) \cdot \mathbf{A}^\text{ext}(\mathbf{x},t)
 $$
 
 The linear response of the *electric* current $\mathbf{J}_e = q \mathbf{J}$ to the perturbation electric field $\mathbf{E}$ is described by
@@ -132,7 +134,7 @@ Here $\alpha,\beta$ are vector component labels.
 
 </div><br>
 
-### Going to the Frequency Domain
+## In the Frequency Domain
 
 We Fourier transform the perturbation field
 
@@ -180,7 +182,6 @@ $$
 
 </div><br>
 
-### Response at a Single Frequency
 
 Working in the frequency domain has the advantage that the electric field is simply related to the vector potential:
 
@@ -201,38 +202,23 @@ To obtain the current under perturbation, we separate it into two parts:
 
 $$
 \mathbf{J}(\mathbf{x}, \omega)
-= \mathbf{J}^0(\mathbf{x}, \omega)
+= \mathbf{j}(\mathbf{x}, \omega)
 - \frac{q}{m} \mathbf{A}^\text{ext}(\mathbf{x},\omega)
 \rho(\mathbf{x})
 $$
 
-- For the $\mathbf{J}^0$ part, the Kubo formula can be applied, with the observation that $\expect{\mathbf{J}^0}_0 = 0$ (no current in equilibrium): 
-  
-    $$
-    \expect{J^0_\alpha(t)} 
-    = \delta\expect{J^0_\alpha(t)} 
-    = \int_{-\infty}^{\infty} dt' \, 
-    \chi^R_{J^0_\alpha V}(t - t')
-    $$
-
-    The response function, before Fourier transformation, is explicitly
+- For the $\mathbf{j}$ part, the Kubo formula can be applied, with the observation that $\expect{\mathbf{j}}_0 = 0$ (no current in equilibrium): 
 
     $$
     \begin{aligned}
-        &\chi_{J^0_\alpha V}^R(t - t')
-        = - i \expect{[J^0_\alpha(\mathbf{x}, t), V_I(t')]}_0 
-        \theta(t - t')
-        \\
+        \expect{j_\alpha(\omega)} 
         &= -q \sum_\beta \int d^3x' \,
-        (-i) \expect{[
-            J^0_\alpha(\mathbf{x}, t), 
-            J^0_\beta(\mathbf{x}', t')
-        ]}_0 \theta(t - t')
-        A_\beta^\text{ext}(\mathbf{x}',t')
+        \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}', \omega)
+        A_\beta^\text{ext}(\mathbf{x}',\omega)
         \\
-        &= -q \sum_\beta \int d^3x' \,
-        \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}',t - t')
-        A_\beta^\text{ext}(\mathbf{x}',t')
+        &= \frac{iq}{\omega} \sum_\beta \int d^3x' \,
+        \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}', \omega)
+        E_\beta(\mathbf{x}',\omega)
     \end{aligned}
     $$
 
@@ -245,49 +231,12 @@ $$
     $$
     \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}',t - t')
     \equiv -i \expect{[
-        J^0_\alpha(\mathbf{x}, t), 
-        J^0_\beta(\mathbf{x}', t')
+        j_\alpha(\mathbf{x}, t), 
+        j_\beta(\mathbf{x}', t')
     ]}_0 \theta(t - t')
     $$
 
     </div><br>
-
-    Then we can perform Fourier transform to the frequency domain
-
-    $$
-    \begin{aligned}
-        \expect{J^0_\alpha(\omega)} 
-        &= \int dt \, dt' \, e^{i\omega t} 
-        \chi^R_{J^0_\alpha V}(t - t')
-        \\
-        &= -q \sum_\beta \int dt \, dt' \, d^3x'
-        e^{i\omega t} 
-        \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}',t - t')
-        A_\beta^\text{ext}(\mathbf{x}',t')
-        \\
-        &= -q \sum_\beta \int dt \, dt' \, d^3x'
-        \frac{d\omega_1}{2\pi} \frac{d\omega_2}{2\pi}
-        \\ &\qquad \quad \times e^{i\omega t} 
-        e^{-i\omega_1(t - t')} e^{-i\omega_2 t'}
-        \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}', \omega_1)
-        A_\beta^\text{ext}(\mathbf{x}',\omega_2)
-    \end{aligned}
-    $$
-
-    Note that the integration over $t$ and $t'$ gives $(2\pi) \delta(\omega - \omega_1)$ and $(2\pi) \delta(\omega_1 - \omega_2)$, respectively. Thus we finally have
-
-    $$
-    \begin{aligned}
-        \expect{J^0_\alpha(\omega)} 
-        &= -q \sum_\beta \int d^3x' \,
-        \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}', \omega)
-        A_\beta^\text{ext}(\mathbf{x}',\omega)
-        \\
-        &= \frac{iq}{\omega} \sum_\beta \int d^3x' \,
-        \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}', \omega)
-        E_\beta(\mathbf{x}',\omega)
-    \end{aligned}
-    $$
 
 - For the second part, we make the first order approximation
 
@@ -345,16 +294,63 @@ $$
 
 </div><br>
 
-### Translational Invariant Systems
+## Translational Invariant Systems
 
-For systems with translational symmetry, $\sigma_{\alpha \beta}$ only depends on the combination $\mathbf{x} - \mathbf{x}'$. Then it is convenient to also Fourier transform the space:
+For systems with translational symmetry, $\sigma_{\alpha \beta}$ only depends on the combination $\mathbf{x} - \mathbf{x}'$. Then it is convenient to also Fourier transform the space (setting $\mathbf{x}' = 0$):
 
+$$
+\begin{aligned}
+    \sigma_{\alpha \beta}(\mathbf{k},\omega)
+    &= \int d^3x \, 
+    e^{-i\mathbf{k}\cdot \mathbf{x}}
+    \sigma_{\alpha \beta}(\mathbf{x},\omega)
+    \\
+    &= \int d^3x \, e^{-i\mathbf{k}\cdot \mathbf{x}}
+    \frac{iq^2}{\omega} \bigg[
+        \Pi^R_{\alpha \beta}(\mathbf{x}, \omega)
+        + \frac{n(\mathbf{x})}{m} \delta_{\alpha \beta}
+        \delta^3(\mathbf{x})
+    \bigg]
+    \\
+    &= \frac{iq^2}{\omega} \bigg[
+        \Pi^R_{\alpha \beta}(\mathbf{k}, \omega)
+        + \frac{n_0}{m} \delta_{\alpha \beta}
+    \bigg]
+\end{aligned}
+$$
 
+In the last step, we set $n_0 = n(\mathbf{x} = 0)$, and it is the uniform particle density due to translational invariance. 
 
-<div class="remark">
+Explicitly, the current-current correlation function in momentum-frequency space is
 
-*Remark*: For *isotropic* media, we can make further simplifications.
+$$
+\begin{aligned}
+    \Pi^R_{\alpha \beta}(\mathbf{k}, \omega)
+    &= \int d^3x \, e^{-i\mathbf{k}\cdot \mathbf{x}}
+    \Pi^R_{\alpha \beta}(\mathbf{x}, \omega)
+    \\
+    &=  -i \int d^3x \, e^{-i\mathbf{k}\cdot \mathbf{x}}
+    \expect{[
+        j_\alpha(\mathbf{x}, t), 
+        j_\beta(0, t')
+    ]}_0 \theta(t - t')
+\end{aligned}
+$$
 
-- $\sigma_{\alpha \beta}$ will only have diagonal elements, and they are the same;
+### Long-Wavelength Limit
 
-</div><br>
+In experiment one is interested in the $\mathbf{k} \to 0$ limit. In this limit we omit the $\mathbf{k}$ argument in the various quantities:
+
+$$
+\lim_{\mathbf{k}\to 0} \ \left\{
+\begin{aligned}
+    \sigma_{\alpha \beta}(\mathbf{k},\omega)
+    &= \sigma_{\alpha \beta}(\omega)
+    \\
+    \Pi_{\alpha \beta}(\mathbf{k},\omega)
+    &= \Pi_{\alpha \beta}(\omega)
+    \\
+    & \ \ \vdots
+\end{aligned}
+\right.
+$$

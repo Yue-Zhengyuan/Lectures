@@ -23,9 +23,11 @@
 
 # Spectral Representation at Finite-*T*
 
-## Lehmann Representation at Finite-*T*
+The zero-temperature Green's function can be generalized to finite temperature by replacing the ground state expectation value with the grand-canonical ensemble average:
 
-Now we Fourier transform the usual time-ordered Green's function at finite temperature:
+<div class="result">
+
+**(Time-ordered) Green's function at finite temperature:**
 
 $$
 \begin{aligned}
@@ -37,7 +39,11 @@ $$
 \end{aligned}
 $$
 
-As usual, we first separate the time dependence from the $c$ operators: expressing the trace as a summation over energy eigenstates $\ket{m}$ (this label implicitly includes the number of particles), we have
+</div><br>
+
+## Lehmann Representation at Finite-*T*
+
+Now we Fourier transform $\bar{G}$. As usual, we first separate the time dependence from the $c$ operators: expressing the trace as a summation over energy eigenstates $\ket{m}$ (this label implicitly includes the number of particles), we have
 
 $$
 \begin{aligned}
@@ -150,7 +156,7 @@ $$
 
 <div class="remark">
 
-*Remark*: If the basis $\alpha, \beta$ etc. are obtained from a conserved operator, then we may simply write
+*Remark*: If the basis $\alpha, \beta$ etc. are obtained from a conserved operator $A$ (i.e. $[H,A] = 0$), we can choose the states $\ket{n}$ as the common eigenstates of $H, A$. Then we may simply write
 
 $$
 \amp{m}{a_{\alpha}}{n} \amp{n}{a^\dagger_{\beta}}{m} 
@@ -245,10 +251,33 @@ From the structure of $\bar{G}^{R/A}$, we define
 **The spectral function:**
 
 $$
+S_{\alpha \beta}(E) 
+= -2 \operatorname{Im} \bar{G}^R_{\alpha \beta}(E)
+$$
+
+or equivalently
+
+$$
+S_{\alpha \beta}(E) 
+= +2 \operatorname{Im} \bar{G}^A_{\alpha \beta}(E)
+$$
+
+</div><br>
+
+Using the Sokhotski–Plemelj theorem:
+
+$$
+\frac{1}{z \pm i\eta}
+= \mathcal{P}\frac{1}{z} \mp i\pi \delta(z)
+$$
+
+we get the explicit expression for $S_{\alpha \beta}$:
+
+$$
 \begin{aligned}
     S_{\alpha \beta}(E)
-    &= e^{\beta F} \sum_{m,n} 
-    e^{-\beta E_m} (1 \mp e^{-\beta E})
+    &= e^{\beta F} (1 \mp e^{-\beta E})
+    \sum_{m,n} e^{-\beta E_m} 
     \amp{m}{a_{\alpha}}{n} 
     \amp{n}{a^\dagger_{\beta}}{m} 
     \\ &\qquad \qquad \times
@@ -256,26 +285,11 @@ $$
 \end{aligned}
 $$
 
-</div><br>
-
-Let us now express the three kinds of Green's function in terms of $S$. The the Sokhotski–Plemelj theorem will be used below:
-
-$$
-\frac{1}{z \pm i\eta}
-= \mathcal{P}\frac{1}{z} \mp i\pi \delta(z)
-$$
+Let us now express the three kinds of Green's function in terms of $S$. 
 
 - **Retarded/Advanced Green's function**
 
-    From the Sokhotski–Plemelj theorem, one obtains
-
-    $$
-    \operatorname{Im} \bar{G}^A_{\alpha \beta}(E)
-    = - \operatorname{Im} \bar{G}^R_{\alpha \beta}(E)
-    = \frac{1}{2} S_{\alpha \beta}(E)
-    $$
-
-    The introduction of energy delta function in $S$ allows us to rewrite $\bar{G}^{R/A}$ as
+    The energy delta function in $S$ allows us to rewrite $\bar{G}^{R/A}$ as an integral over energy:
 
     $$
     \begin{aligned}
@@ -306,8 +320,6 @@ $$
     $$
 
 - **Time-ordered Green's function**
-
-    We reexpress its Lehmann representation using the Sokhotski–Plemelj theorem:
 
     $$
     \begin{aligned}
@@ -356,7 +368,7 @@ $$
     \end{aligned}
     $$
 
-Comparing this with the retarded and advanced Green's functions, we see that
+Comparing this with the retarded and advanced Green's functions, we obtain an identity between the three kinds of Green's functions:
 
 $$
 \begin{aligned}
@@ -379,5 +391,60 @@ $$
     \bigg\}
     \\
     &= \bar{G}_{\alpha \beta}(E)
+\end{aligned}
+$$
+
+## The Sum Rule
+
+<div class="result">
+
+**The sum rule of the spectral function:**
+
+$$
+\int_{-\infty}^\infty \frac{dE}{2\pi} \, S_{\alpha \alpha}(E)
+= 1
+$$
+
+</div><br>
+
+*Proof*: Due to the energy delta function in $S_{\alpha \alpha}$, the integration is converted to a summation
+
+$$
+\begin{aligned}
+    \int \frac{dE}{2\pi} \, S_{\alpha \alpha}(E)
+    &= e^{\beta F} \sum_{m,n} 
+    (e^{-\beta E_m} \mp e^{-\beta E_n}) 
+    \amp{m}{a_{\alpha}}{n} 
+    \amp{n}{a^\dagger_{\alpha}}{m} 
+\end{aligned}
+$$
+
+Now we "undo" the insertion of identities:
+
+$$
+\begin{aligned}
+    \int \frac{dE}{2\pi} \, S_{\alpha \alpha}(E)
+    &= e^{\beta F} \sum_{m,n} 
+    \bigg[
+        e^{-\beta E_m}
+        \amp{m}{a_{\alpha}}{n} 
+        \amp{n}{a^\dagger_{\alpha}}{m} 
+        \\ &\qquad \qquad \quad \mp
+        e^{-\beta E_n}
+        \amp{n}{a^\dagger_{\alpha}}{m} 
+        \amp{m}{a_{\alpha}}{n} 
+    \bigg]
+    \\
+    &= e^{\beta F} \bigg[
+        \sum_{m} \amp{m}{e^{-\beta H} a_{\alpha} a^\dagger_\alpha}{m} 
+        \\ &\qquad \quad \mp
+        \sum_{n} \amp{n}{e^{-\beta H} a^\dagger_{\alpha} a_\alpha}{n} 
+    \bigg]
+    \\
+    &= \operatorname{tr} (e^{-\beta(H - F)} 
+    [a_{\alpha} a^\dagger_\alpha]_\mp)
+    \\
+    &= \operatorname{tr} e^{-\beta(H - F)} = 1 
+    \qquad \blacksquare
 \end{aligned}
 $$

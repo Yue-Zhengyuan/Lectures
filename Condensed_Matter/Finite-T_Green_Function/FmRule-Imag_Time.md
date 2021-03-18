@@ -21,7 +21,7 @@
     }
 </style>
 
-# Perturbative Expansion of <br>Finite-*T* Green's Function
+# Perturbative Expansion of <br>Imaginary Time Green's Function
 
 
 
