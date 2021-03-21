@@ -135,7 +135,7 @@ $$
 V(t) = \int d^3x' B(\mathbf{x}') f(\mathbf{x}',t)
 $$
 
-and the operator $A$ in consideration is a function of space coordinate $A(\mathbf{x})$. Then
+and the operator $A$ is a function of space coordinate $A(\mathbf{x})$. Then
 
 $$
 \begin{aligned}
@@ -195,8 +195,98 @@ $$
 
 </div><br>
 
-## Translational Invariant Systems
+## Translation Invariant Systems
 
-For translational invariant systems, the response function $\chi^R_{AB}$ must only depends on $\mathbf{x} - \mathbf{x}'$. Then it is convenient to Fourier transform the space:
+For translation invariant systems, the response function $\chi^R_{AB}$ must only depends on $\mathbf{x} - \mathbf{x}'$. Mathematically, by Fourier transform both $A(\mathbf{x})$ and $B(\mathbf{x})$:
 
+$$
+\begin{aligned}
+    \chi^R_{AB}(\mathbf{x} - \mathbf{x}', t - t')
+    &= - i \int \frac{d^3k}{(2\pi)^3}
+    \frac{d^3k'}{(2\pi)^3} \, 
+    e^{i\mathbf{k} \cdot \mathbf{x}}
+    e^{i\mathbf{k}' \cdot \mathbf{x}'}
+    \\ &\qquad \quad \times
+    \expect{[
+        A_I(\mathbf{k},t), B_I(\mathbf{k}',t')
+    ]}_0 \theta(t - t')
+\end{aligned}
+$$
 
+we see that the only way to achieve translation invariance is requiring
+
+$$
+\expect{[
+    A_I(\mathbf{k},t), B_I(\mathbf{k}',t')
+]}_0
+= \expect{[
+    A_I(\mathbf{k},t), B_I(-\mathbf{k},t')
+]}_0 (2\pi)^3 \delta^3(\mathbf{k} + \mathbf{k}')
+$$
+
+Then
+
+$$
+\begin{aligned}
+    \chi^R_{AB}(\mathbf{x} - \mathbf{x}', t - t')
+    &= - i \int \frac{d^3k}{(2\pi)^3}
+    e^{i\mathbf{k} \cdot (\mathbf{x} - \mathbf{x}')}
+    \\ &\qquad \quad \times
+    \expect{[
+        A_I(\mathbf{k},t), B_I(-\mathbf{k},t')
+    ]}_0 \theta(t - t')
+\end{aligned}
+$$
+
+from which we get the Fourier component of $\chi^R_{AB}$:
+
+$$
+\begin{aligned}
+    \chi^R_{AB}(\mathbf{k}, t - t')
+    &= - i \expect{[
+        A_I(\mathbf{k},t), B_I(-\mathbf{k},t')
+    ]}_0 \theta(t - t')
+\end{aligned}
+$$
+
+<div class="remark">
+
+*Remark*: Usually the operators $B$ is Hermitian. After Fourier transform, we obtain
+
+$$
+\begin{aligned}
+    B^\dagger(\mathbf{x}) 
+    &= \int \frac{d^3k}{(2\pi)^3} 
+    e^{i\mathbf{k} \cdot \mathbf{x}} 
+    B^\dagger(\mathbf{k})
+    = \int \frac{d^3k}{(2\pi)^3} 
+    e^{-i\mathbf{k} \cdot \mathbf{x}} 
+    B(\mathbf{k})
+    \\ &\Downarrow \\
+    B(-\mathbf{k}) &= B^\dagger(\mathbf{k})
+    \\[0.5em]
+    \chi^R_{AB}(\mathbf{k}, t - t')
+    &= - i \expect{[
+        A_I(\mathbf{k},t), B_I^\dagger(\mathbf{k},t')
+    ]}_0 \theta(t - t')
+\end{aligned}
+$$
+
+</div><br>
+
+One can then further transform the time to frequency:
+
+$$
+\begin{aligned}
+    \chi^R_{AB}(\mathbf{k}, \omega)
+    &= - i \int_{-\infty}^\infty dt \,
+    e^{i\omega t} \expect{[
+        A_I(\mathbf{k},t), B_I(-\mathbf{k},0)
+    ]}_0 \theta(t)
+    \\
+    &= - i \int_0^\infty dt \,
+    e^{i\omega t} \expect{[
+        A_I(\mathbf{k},t), B_I(-\mathbf{k},0)
+    ]}_0
+\end{aligned}
+$$
