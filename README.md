@@ -25,7 +25,7 @@ None of the following is now complete or has reached my standard.
     - *Mechanics* by Lev Landau and Evgeny Lifshitz
     - Course *Engineering Physics: Mechanics* (PHYS1110, Fall 2020) at The Chinese University of Hong Kong (CUHK)
 
-- **Statistical Physics and Condensed Matter Physics**. Based on
+- **Condensed Matter Physics**. Based on
     - *Statistical Physics (Part 1)* by Lev Landau and Evgeny Lifshitz
     - *Introduction to Many-Body Physics* by Piers Coleman
     - Course *Advanced Statistical Physics* (PHYS5510, Spring 2020) at CUHK
@@ -50,9 +50,6 @@ None of the following is now complete or has reached my standard.
 
 - **Group Theory**. Based on
     - *Group Theory in a Nutshell for Physicists* by Anthony Zee
-
-- **Machine Learning**. Based on
-    - Course *Machine Learning (Coursera)* by Andrew Ng
 
 ## File Structure
 
