@@ -46,7 +46,7 @@ $$
 with the following choice of integration path $C$:
 
 <center>
-<img src="Figures/KK-int_path.png" width="250pt">
+<img src="images/KK-int_path.png" width="250pt">
 </center>
 
 Since there is no pole enclosed by $C$, we know that $f(\omega) = 0$. There is no contribution from $C_R$. Meanwhile, 

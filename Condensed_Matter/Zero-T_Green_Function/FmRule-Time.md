@@ -163,7 +163,7 @@ $$
 Note that extra minus signs may occur when moving the pairs in a contraction together for fermions. Let us now evaluate each term explicitly, and associate each with a Feynman diagram (the rules will be summarized later):
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-1.png" width="150pt">
+<img src="images/2BodyV_1st-1.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -188,7 +188,7 @@ $$
 </div><br>
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-2.png" width="150pt">
+<img src="images/2BodyV_1st-2.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -213,7 +213,7 @@ $$
 </div><br>
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-3.png" width="150pt">
+<img src="images/2BodyV_1st-3.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -238,7 +238,7 @@ $$
 </div><br>
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-4.png" width="150pt">
+<img src="images/2BodyV_1st-4.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -263,7 +263,7 @@ $$
 </div><br>
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-5.png" width="150pt">
+<img src="images/2BodyV_1st-5.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -288,7 +288,7 @@ $$
 </div><br>
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-6.png" width="150pt">
+<img src="images/2BodyV_1st-6.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -379,7 +379,7 @@ To summarize, the true first order terms are
 **First order terms of Green's function with two-body interaction:**
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-3.png" width="150pt">
+<img src="images/2BodyV_1st-3.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -398,7 +398,7 @@ $$
 </div><br>
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-4.png" width="150pt">
+<img src="images/2BodyV_1st-4.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -553,7 +553,7 @@ $$
 Assembling these results together, we get the diagram expression in position-time space:
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-3xt.png" width="150pt">
+<img src="images/2BodyV_1st-3xt.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -594,7 +594,7 @@ $$
 Similarly, the exchange term is converted to
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-4xt.png" width="150pt">
+<img src="images/2BodyV_1st-4xt.png" width="150pt">
 
 $$
 \quad \begin{aligned}

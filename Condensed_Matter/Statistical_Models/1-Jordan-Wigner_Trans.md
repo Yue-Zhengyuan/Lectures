@@ -129,7 +129,7 @@ $$
 $$
 
 <center>
-<img src="Figures/spin-fermion.png" width="450px" alt="string operator">
+<img src="images/spin-fermion.png" width="450px" alt="string operator">
 </center>
 
 The string operator has the following important properties: 

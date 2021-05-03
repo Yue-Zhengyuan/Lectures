@@ -26,7 +26,7 @@
 In energy formulation, each diagram in perturbation expansion if Green's function has the following property:
     
 <div class="imgtext">
-<img src="Figures/self-energy.png" width="180pt">
+<img src="images/self-energy.png" width="180pt">
 
 $$
 \quad \begin{aligned}

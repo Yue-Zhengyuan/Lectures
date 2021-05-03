@@ -50,7 +50,7 @@ $$
 For example, consider the first order direct term:
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-3E-mid.png" width="150pt">
+<img src="images/2BodyV_1st-3E-mid.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -107,7 +107,7 @@ $$
 Then only the integration over the energy $E'$ remains:
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-3E.png" width="150pt">
+<img src="images/2BodyV_1st-3E.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -131,7 +131,7 @@ $$
 For the exchange term, we obtain in a similar fashion:
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-4E.png" width="150pt">
+<img src="images/2BodyV_1st-4E.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -161,7 +161,7 @@ We notice two properties in the energy version of diagrams:
     **Energy conservation in interaction:**
 
     <div class="imgtext">
-    <img src="Figures/2BodyV_energy.png" width="180pt">
+    <img src="images/2BodyV_energy.png" width="180pt">
 
     $$
     \quad \begin{aligned}
@@ -204,7 +204,7 @@ We notice two properties in the energy version of diagrams:
     The energy conservation can be better demonstrated in *second order* diagrams. For example, the following second order diagram is expressed as
 
     <div class="imgtext">
-    <img src="Figures/2BodyV_2nd-9E.png" width="150pt">
+    <img src="images/2BodyV_2nd-9E.png" width="150pt">
 
     $$
     \quad \begin{aligned}
@@ -409,7 +409,7 @@ When using the energy formulation, one usually use the momentum states as the ba
     **Matrix elements of $V$ in momentum space:**
 
     <div class="imgtext">
-    <img src="Figures/2BodyV_momentum.png" width="180pt">
+    <img src="images/2BodyV_momentum.png" width="180pt">
 
     $$
     \quad \begin{aligned}
@@ -432,7 +432,7 @@ When using the energy formulation, one usually use the momentum states as the ba
 We demonstrate this conversion using the first order exchange term, which will show the momentum transfer clearly.
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-4E.png" width="150pt">
+<img src="images/2BodyV_1st-4E.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -535,7 +535,7 @@ $$
 Usually we only keep $G^{(\text{1D})}_{\alpha \beta}(p)$; putting the spin indices back, the final expression is
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-4pE.png" width="150pt">
+<img src="images/2BodyV_1st-4pE.png" width="150pt">
 
 $$
 \quad \begin{aligned}
@@ -565,7 +565,7 @@ $$
 For the direct interaction, there is no momentum transfer along the interaction line:
 
 <div class="imgtext">
-<img src="Figures/2BodyV_1st-3pE.png" width="150pt">
+<img src="images/2BodyV_1st-3pE.png" width="150pt">
 
 $$
 \quad \begin{aligned}
