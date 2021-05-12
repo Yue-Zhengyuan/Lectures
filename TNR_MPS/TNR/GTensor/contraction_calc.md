@@ -201,7 +201,7 @@ Remark: the case $g_{r1}=1$ reduces to *ordinary tensor contraction*, which make
 
 <center>
 
-![](gt_tensordot.png)  
+![](images/gt_tensordot.png)  
 *Graphical representation of Grassmann tensor contraction*
 
 </center>

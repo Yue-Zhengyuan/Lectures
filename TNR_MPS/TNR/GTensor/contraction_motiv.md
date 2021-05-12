@@ -1,5 +1,11 @@
 # Contraction of Grassmann Tensors: <br>Motivation for Definition
 
+## Motivation: Inserting Identities 
+
+We start from the simplest case where we want to insert an identity between the product of two fermion operators $A$ and $B$.
+
+
+
 ## Grassmann Tensors
 
 In general, a **Grassmann tensor** $\mathbf{T}(\theta)_{i_1 i_2 ...}^{n_1 n_2 ...}$ has the components
@@ -175,12 +181,3 @@ $$
 
 This motivates us to define the **contraction** of the 3rd axis of the first $T$ and the 1st axis of the second $T$.
 
-
-### Case 2: Trotter Gate Network of $t$-$J$ Model
-
-<center>
-
-![](grassmann_gate_network.png)   
-*Trotter gate network of $t$-$J$ model*
-
-</center>
