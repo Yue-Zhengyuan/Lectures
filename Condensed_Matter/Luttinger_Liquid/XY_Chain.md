@@ -1,8 +1,28 @@
+<style>
+    .katex {
+        font-size: 1.1em;
+    }
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: DarkSlateBlue;
+        color: White;
+    }
+</style>
+
 # The XY Spin Chain
 
 ## Model Hamiltonian
 
-The Hamiltonian of the (1+1)D anisotropic **XY spin chain** under external transverse field $h$ is
+<div class="result">
+
+**XY spin chain with external transverse field $h$**
 
 $$
 H = - \sum_{j=0}^{N-1} \left[
@@ -10,6 +30,8 @@ H = - \sum_{j=0}^{N-1} \left[
     + J_y S_j^y S_{j+1}^y 
 \right] - h \sum_{j=0}^{N-1} S_j^z
 $$
+
+</div><br>
 
 Here we assume periodic boundary condition (PBC):
 
@@ -70,45 +92,59 @@ $$
 
 Let us now apply Jordan-Wigner transformation to fermionize the model.
 
-$$
-\begin{aligned}
-    \sum_j S_j^+ S_{j+1}^-
-    &= \sum_j c_j^\dagger e^{i \phi_j} 
-    \underbrace{c_{j+1} e^{-i \phi_{j+1}}}_\text{commute}
-    \\
-    &= \sum_j c_j^\dagger e^{i (\phi_{j} - \phi_{j+1})} c_{j+1} 
-    \\
-    &= \sum_j c_j^\dagger e^{-i \pi n_j} c_{j+1} 
-\end{aligned}
-$$
+- **"Spin Hopping" Terms**
 
-Each term will give nonzero outcome only when $n_j = 0$, but this behavior is the same if the $e^{-i\pi n_j}$ is absent. So we obtain the first conversion (**nearest neighbor (tight-binding) hopping**)
+    $$
+    \begin{aligned}
+        \sum_j S_j^+ S_{j+1}^-
+        &= \sum_j c_j^\dagger e^{i \phi_j} 
+        \underbrace{c_{j+1} e^{-i \phi_{j+1}}}_\text{commute}
+        \\
+        &= \sum_j c_j^\dagger e^{i (\phi_{j} - \phi_{j+1})} c_{j+1} 
+        \\
+        &= \sum_j c_j^\dagger e^{-i \pi n_j} c_{j+1} 
+    \end{aligned}
+    $$
 
-$$
-\sum_j (S_j^+ S_{j+1}^- + h.c.) 
-= \sum_j (c_j^\dagger c_{j+1} + h.c.)
-$$
+    Each term will give nonzero outcome only when $n_j = 0$, but this behavior is the same if the $e^{-i\pi n_j}$ is absent. So we obtain the first conversion (**nearest neighbor (tight-binding) hopping**)
 
-Next,
+    $$
+    \sum_j (S_j^+ S_{j+1}^- + h.c.) 
+    = \sum_j (c_j^\dagger c_{j+1} + h.c.)
+    $$
 
-$$
-\begin{aligned}
-    \sum_j S_j^+ S_{j+1}^+
-    &= \sum_j c_j^\dagger e^{i \phi_j} 
-    \underbrace{c_{j+1}^\dagger e^{i \phi_{j+1}}}_\text{commute}
-    \\
-    &= \sum_j c_j^\dagger e^{i (2\phi_j + \pi n_j)} c_{j+1}^\dagger
-\end{aligned}
-$$
+- **"Spin Pair" Terms**
 
-But $e^{2 i \phi_j} = \exp(2\pi i \textstyle{\sum_{j < j} n_j}) = 1$, and the extra $e^{i\pi n_j}$ has no effect again. Therefore (such term is related to the **$p$-wave superconductivity**)
+    $$
+    \begin{aligned}
+        \sum_j S_j^+ S_{j+1}^+
+        &= \sum_j c_j^\dagger e^{i \phi_j} 
+        \underbrace{c_{j+1}^\dagger e^{i \phi_{j+1}}}_\text{commute}
+        \\
+        &= \sum_j c_j^\dagger e^{i (2\phi_j + \pi n_j)} c_{j+1}^\dagger
+    \end{aligned}
+    $$
 
-$$
-\sum_j (S_j^+ S_{j+1}^+ + h.c.) 
-= \sum_j (c_j^\dagger c_{j+1}^\dagger + h.c.)
-$$
+    But $e^{2 i \phi_j} = \exp(2\pi i \textstyle{\sum_{j < j} n_j}) = 1$, and the extra $e^{i\pi n_j}$ has no effect again. Therefore (such term is related to the **$p$-wave superconductivity**)
+
+    $$
+    \sum_j (S_j^+ S_{j+1}^+ + h.c.) 
+    = \sum_j (c_j^\dagger c_{j+1}^\dagger + h.c.)
+    $$
+
+- **Magnetic Field Terms**
+    
+    This simply corresponds to the replacement
+
+    $$
+    S_j^z = n_j - \frac{1}{2}
+    $$
 
 Finally, we obtain the fermion theory
+
+<div class="result">
+
+**Fermionized XY Chain:**
 
 $$
 H = - \sum_{j=0}^{N-1} \left[
@@ -117,11 +153,11 @@ H = - \sum_{j=0}^{N-1} \left[
 \right] - h \sum_{j=0}^{N-1} \bigg(n_j - \frac{1}{2} \bigg)
 $$
 
+</div><br>
+
 We see that the magnetic field $h$ now plays the role of the *chemical potential* $\mu$. 
 
-## Exact Solution
-
-### Hamiltonian in Momentum Space
+## Hamiltonian in Momentum Space
 
 To see the energy levels more clearly, we shall go to the momentum space (reciprocal lattice). We transform the Hamiltonian term by term:
 
@@ -228,7 +264,7 @@ $$
 \end{aligned}
 $$
 
-### Diagonalization: Bogoliubov Transformation
+## Diagonalization: Bogoliubov Transformation
 
 To put this into diagonal form, we further apply the **Bogoliubov transformation**, i.e. make a linear combination of $k$ and $-k$ operators:
 

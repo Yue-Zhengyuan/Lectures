@@ -1,6 +1,24 @@
+<style>
+    .katex {
+        font-size: 1.1em;
+    }
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: DarkSlateBlue;
+        color: White;
+    }
+</style>
+
 # Jordan-Wigner Transformation
 
-## Similarity between Spin and Fermion Operators
+## Similarity between Spin-1/2 and Fermion Operators
 
 The up and down states of a *single* spin-1/2 site can be thought as the occupied and empty states of a *one*-particle (spinless) fermion states:
 
@@ -84,7 +102,7 @@ $$
 \end{aligned}
 $$
 
-## String Operator and Jordan-Wigner Transformation
+## Jordan-Wigner Transformation
 
 Next, let us we try to generalize the above mapping to a 1D spin chain (with multiple sites). Each site of the chain will correspond to an independent fermion. The naive thinking is
 
@@ -103,7 +121,11 @@ $$
 
 The bracket means we are referring to either $c^\dagger$ or $c$, and $S^+$ or $S^-$. 
 
-One way to overcome this difficulty is to introduce a **string operator** to the fermion operators. This leads to the **Jordan-Wigner transformation**
+One way to overcome this difficulty is to introduce a **string operator** to the fermion operators. This leads to the
+
+<div class="result">
+
+**Jordan-Wigner transformation:**
 
 $$
 \begin{aligned}
@@ -121,6 +143,8 @@ $$
     \phi_i &= \pi \textstyle{\sum_{j=0}^{i-1} n_j}
 \end{aligned} \right.
 $$
+
+</div><br>
 
 Here $e^{i\phi_i}$ is the required string operator; we also define $\phi_0 = 0$. We see that
 

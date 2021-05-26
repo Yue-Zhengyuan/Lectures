@@ -37,18 +37,11 @@ $$
 | \cdots \eta_i \cdots \eta_j \cdots\rangle
 $$
 
-for any $i\neq j$. This means that $\eta_i$ are not ordinary numbers - they should *anti-commute with each other*:
+for any $i\neq j$. This means that the algebra of $\eta_i$ are not ordinary (called **Grassmann algebra**) - they should *anti-commute with each other*. To summarize, the anti-commutation rules to be imposed are:
 
-$$
-\{\eta_i,\eta_j\} = 0 \quad (i\neq j)
-$$
+- $\{\eta_i,\eta_j\} = 0 \quad (i\neq j)$
 
-They are called **Grassmann numbers**. For obvious reasons, we require 
-
-$$
-\{c_i,\eta_j\}=0 \quad
-(i \neq j)
-$$ 
+- $\{c_i,\eta_j\}=0 \quad (i \neq j)$ 
 
 The Hermitian conjugate of the definition is
 
@@ -63,8 +56,6 @@ The Grassmann number $\bar{\eta}_i$ is the "conjugate" of $\eta_i$. Since $\{c_i
 the relation $\{\bar{\eta}_i, \bar{\eta}_j\}=0$. 
 
 We also require that the Grassmann numbers *always anti-commute* with the annihilation / creation operators. 
-
-These anti-commutation relations form the **Grassmann algebra**.
 
 ## Building Coherent State from Vacuum
 
@@ -147,15 +138,13 @@ $$
 \begin{aligned}
     | \eta \rangle 
     &= \prod_k (1-\eta_kc_k^\dagger)| 0\rangle 
-    \\
-    &= \prod_k (| 0_k\rangle -\eta_k| 1_k\rangle)
     = \prod_k \exp (- \eta_k c_k^\dagger)| 0\rangle
 \end{aligned}
 $$
 
 This easy generalization is true because $\eta c^\dagger$ as a whole commutes between different kind of fermions.
 
-## Differentiation and Integration of Grassmann Variables
+## Grassmann Calculus
 
 Before we continue to write down the resolution of identity in the fermion case in analogy, we must first define how to differentiate and integrate functions of Grassmann numbers.
 
