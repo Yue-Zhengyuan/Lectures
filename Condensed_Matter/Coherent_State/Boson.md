@@ -20,141 +20,181 @@
 
 ## Coherent State: Eigenstate of Annihilation Operator
 
-The boson **coherent state** is *defined* as the eigenstate of the (boson) annihilation operator:
+The eigenstate of the (boson) annihilation operator bears a special name:
+
+<div class="result">
+
+**Boson coherent state:**
 
 $$
-a |\alpha \rangle =\alpha |\alpha \rangle, 
+a \ket{z} =z \ket{z}, 
 \quad
-\alpha \in \mathbb{C}
+z \in \mathbb{C}
 $$
 
-A generalization is to introduce *multiple kinds* of bosons into the system. 
+</div><br>
 
-Let the annihilation operator of the $i$th kind of be $a_i$. Because the annihilation operators of different kinds of bosons *commute*, they have a common set of eigenstates labelled by $\alpha_1, \alpha_2, ... \in \mathbb{C}$:
+A generalization is to introduce *multiple kinds* of bosons into the system. Let the annihilation operator of the $i$th kind of be $a_i$. Because the annihilation operators of different kinds of bosons *commute*, they have a common set of eigenstates labelled by $z_1, z_2, ... \in \mathbb{C}$:
 
 $$
 a_1 a_2 \cdots a_n 
-|\alpha_1\alpha_2 \cdots \alpha_n\rangle 
-= \alpha_1\alpha_2 \cdots \alpha_n
-| \alpha_1\alpha_2 \cdots \alpha_n\rangle
+|z_1z_2 \cdots z_n\rangle 
+= z_1z_2 \cdots z_n
+| z_1z_2 \cdots z_n\rangle
 $$
 
 Its Hermitian conjugate is
 
 $$
-\langle \alpha_1\alpha_2 \cdots \alpha_n|
+\langle z_1z_2 \cdots z_n|
 a_n^\dagger \cdots a_2^\dagger a_1^\dagger
-=\langle \alpha_1\alpha_2 \cdots \alpha_n|
-\bar{\alpha}_n \cdots \bar{\alpha}_2 \bar{\alpha}_1
+=\langle z_1z_2 \cdots z_n|
+\bar{z}_n \cdots \bar{z}_2 \bar{z}_1
 $$
 
 ## Building Coherent State from Vacuum
 
-## One Kind of Bosons
+We can obtain the coherent state from the vacuum state $\ket{0}$ using the following operation
 
-Expand the coherent state using the Fock space basis vectors (boson number representation):
+<div class="result">
+
+**Building coherent state from vacuum:**
 
 $$
 \begin{aligned}
-    | \alpha \rangle 
-    &= \sum_{n\geq 0}  c_n| n\rangle 
+    \ket{z}
+    &= \exp (z a^\dagger)\ket{0}
+    = \sum_n \frac{(z a^\dagger)^n}{n!}\ket{0} 
+    \\
+    \bra{z}
+    &= \bra{0} \exp (a \bar{z})
+    = \sum_n  \bra{0}\frac{\left(a \bar{z}\right)^n}{n!}
+\end{aligned}
+$$
+
+</div><br>
+
+*Proof*:
+
+Expand the coherent state using the Fock space basis vectors :
+
+$$
+\begin{aligned}
+    \ket{z} 
+    &= \sum_{n\geq 0}  c_n\ket{n} 
     \\
     \Rightarrow 
-    a| \alpha \rangle 
-    &=\sum_{n\geq 0}  c_n(a| n\rangle )
+    a\ket{z} 
+    &=\sum_{n\geq 0}  c_n(a\ket{n} )
     =\sum_{n\geq 1}  c_n\sqrt{n}|n-1\rangle 
     \\
-    &=\sum_{n\geq 0}  c_{n+1}\sqrt{n+1}| n\rangle
+    &=\sum_{n\geq 0}  c_{n+1}\sqrt{n+1}\ket{n}
 \end{aligned}
 $$
 
 Meanwhile
 
 $$
-a| \alpha \rangle 
-= \alpha | \alpha \rangle 
-=\sum_{n\geq 0}  \alpha c_n| n\rangle
+a\ket{z} 
+= z \ket{z} 
+=\sum_{n\geq 0}  z c_n\ket{n}
 $$
 
 Therefore,
 
 $$
-\alpha c_n = \sqrt{n+1}c_{n+1}
+z c_n = \sqrt{n+1}c_{n+1}
 $$
 
 By recursion, we find
 
 $$
-c_n = \frac{\alpha}{\sqrt{n}}c_{n-1}
-= \frac{\alpha}{\sqrt{n}}\frac{\alpha}{\sqrt{n-1}}c_{n-2}
+c_n = \frac{z}{\sqrt{n}}c_{n-1}
+= \frac{z}{\sqrt{n}}\frac{z}{\sqrt{n-1}}c_{n-2}
 = \cdots  
-= \frac{\alpha^n}{\sqrt{n!}}c_0
+= \frac{z^n}{\sqrt{n!}}c_0
 $$
 
-For convenience, we set $c_0=1$. Using
+Set $c_0 = 1$ (just a convenient choice of normalization). Using
 
 $$
-| n\rangle 
+\ket{n} 
 = \frac{a^\dagger}{\sqrt{n}}| n-1\rangle 
 = \frac{a^\dagger}{\sqrt{n}}\frac{a^\dagger}{\sqrt{n-1}}| n-2\rangle 
 = \cdots 
-= \frac{(a^\dagger)^n}{\sqrt{n!}}| 0\rangle
+= \frac{(a^\dagger)^n}{\sqrt{n!}}\ket{0}
 $$
 
 we obtain
 
 $$
-| \alpha \rangle 
-= \sum_n  \frac{\alpha^n}{\sqrt{n!}}\frac{(a^\dagger)^n}{\sqrt{n!}}| 0\rangle 
-= \sum_n  \frac{(\alpha a^\dagger)^n}{n!}| 0\rangle 
-= \exp (\alpha a^\dagger)| 0\rangle
+\ket{z} 
+= \sum_n  \frac{z^n}{\sqrt{n!}}\frac{(a^\dagger)^n}{\sqrt{n!}}\ket{0} 
+= \sum_n  \frac{(z a^\dagger)^n}{n!}\ket{0} 
+= \exp (z a^\dagger)\ket{0}
+\quad \blacksquare
 $$
 
-Its Hermitian conjugate is
+<div class="remark">
+
+*Remark*: If we have many kinds of bosons, the result is
 
 $$
-\langle \alpha |
-= \sum_n  \langle 0|\frac{\left(a \bar{\alpha}\right)^n}{n!}
-= \sum_n  \langle 0|\frac{\left(\bar{\alpha} a\right)^n}{n!}
-= \langle 0| \exp (a \bar{\alpha})
+\ket{z} 
+= \exp \bigg(\sum_k z_k a_k^\dagger \bigg)\ket{0}
 $$
 
-## Many Kinds of Bosons
-
-If we have many kinds of bosons, the result is
-
-$$
-| \alpha \rangle 
-= \exp \left(\sum_k \alpha_k a_k^\dagger \right)| 0\rangle
-$$
+</div><br>
 
 ## Resolution of Identity
 
-Suppose $\alpha =x+i y, \bar{\alpha}=x-i y \, (x,y\in \mathbb{R})$. We claim that
+We now prove the central result to be used in the construction of coherent state path integral:
+
+<div class="result">
+
+**Over-completeness relation of boson coherent states:**
 
 $$
-\int \frac{dx dy}{\pi}e^{-(x^2+y^2)}
-| \alpha \rangle \langle \alpha |
-=\mathbf{1}
+\int \frac{d\bar{z} dz}{2\pi i}
+\exp (-\bar{z} z) \ket{z} \bra{z} = 1
 $$
+
+</div><br>
+
+<div class="remark">
+
+*Remark*: The complex integration is just a fancy way of writing
+
+$$
+\begin{gathered}
+    \int \frac{dx dy}{\pi}e^{-(x^2+y^2)}
+    \ket{z} \bra{z}
+    = 1
+    \\
+    \text{with} \quad
+    z = x + i y, \quad 
+    \bar{z} = x - i y \quad (x,y\in \mathbb{R})
+\end{gathered}
+$$
+
+</div><br>
 
 *Proof*:
 
-To prove the LHS is the identity, we only need to verify that for all Fock space basis states,
+We verify that for any two Fock space basis states $\ket{m}, \ket{n}$
 
 $$
-\frac{1}{\pi} \left \langle m \mid
-\int dx \, dy \, e^{-(x^2 + y^2)} \mid
-\alpha \right \rangle 
-\langle \alpha |n \rangle =\delta_{m n}
+\amp{m}{
+    \int \frac{dx \, dy}{\pi} e^{-(x^2 + y^2)}
+}{z} \braket{z}{n}
+=\delta_{m n}
 $$
 
 Recall that
 
 $$
-| \alpha \rangle =\sum_{n\geq 0}  c_n| n\rangle ,
-\quad
-c_n=\frac{\alpha^n}{\sqrt{n!}}
+\ket{z} 
+= \sum_{n\geq 0}  \frac{z^n}{\sqrt{n!}} \ket{n} ,
 $$
 
 Then
@@ -163,20 +203,20 @@ $$
 \begin{aligned}
     \text{LHS} 
     &=\int \frac{dx dy}{\pi} e^{-(x^2 + y^2)}
-    \langle m| \alpha \rangle 
-    \langle \alpha | n\rangle 
+    \braket{m}{z} 
+    \braket{z}{n} 
     \\
     &= \int \frac{dx dy}{\pi} e^{-(x^2 + y^2)}
-    \frac{\alpha^m}{\sqrt{m!}}
-    \frac{\bar{\alpha}^m}{\sqrt{n!}}
+    \frac{z^m}{\sqrt{m!}}
+    \frac{\bar{z}^m}{\sqrt{n!}}
 \end{aligned}
 $$
 
 To evaluate this integral, we use the polar coordinates:
 
 $$
-\alpha =r e^{i \theta}, \quad 
-\bar{\alpha}=r e^{-i \theta}
+z =r e^{i \theta}, \quad 
+\bar{z}=r e^{-i \theta}
 $$
 
 Then
@@ -198,86 +238,40 @@ $$
     \\
     &=\delta_{m n}\frac{2}{n!}\frac{\Gamma (n+1)}{2}
     =\delta_{m n}
+    \quad \blacksquare
 \end{aligned}
-$$
-
-*Remark*: We can also change the integration variables to $\bar{\alpha},\alpha$, which has the Jacobian
-
-$$
-\begin{aligned}
-    \left|\frac{\partial \left(\bar{\alpha},\alpha \right)}{\partial (x,y)}\right|
-    &= \det \begin{pmatrix}
-        \partial \bar{\alpha}/\partial x & \partial \bar{\alpha}/\partial y \\
-        \partial \alpha /\partial x & \partial \alpha /\partial y
-    \end{pmatrix}
-    \\
-    &= \det \begin{pmatrix}
-        1 & -i \\
-        1 & i
-    \end{pmatrix}
-    = 2i
-\end{aligned}
-$$
-
-Then
-
-$$
-dx dy = 
-\left| \frac{\partial \left(\bar{\alpha},\alpha \right)}{\partial (x,y)}\right|^{-1}
-d\bar{\alpha} d\alpha 
-= \frac{d\bar{\alpha}d\alpha}{2i}
-$$
-
-So the resolution can also be written as
-
-$$
-\int \frac{d\bar{\alpha} d\alpha}{2\pi i}
-\exp (-\bar{\alpha} \alpha)
-| \alpha \rangle \langle \alpha |
-= \mathbf{1}
-$$
-
-For more than one kind of bosons,
-
-$$
-\int  \prod_k  \left(
-    \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
-\right)
-\exp \left(
-    -\sum_k  \bar{\alpha}_k \alpha_k
-\right)
-| \alpha \rangle \langle\alpha |
-= \mathbf{1}
 $$
 
 ## Operators in Coherent State Representation
 
-From the theory of second quantization, a 2-body operator has the form
+Since coherent states are eigenstates of the boson operator, finding the amplitudes of any second-quantized operators between two coherent states is easy.
+
+<div class="result">
+
+**Amplitudes between coherent states:**
+
+For any normal ordered operator $\normord{A(a^\dagger, a)}$ and two coherent states $\ket{z}, \ket{w}$, 
 
 $$
-A(a^\dagger,a)
-= \sum_{n,m} A_{n m} a^{\dagger n} a^m
+\amp{w}{\normord{A(a^\dagger,a)}}{z}
+= e^{\bar{w}z} \normord{A(\bar{w},z)}
 $$
 
-i.e. it *first annihilates* $m$ bosons and *then create* $n$ bosons with amplitude $A_{n m}$. 
-
-In the coherent state representation, its matrix elements are
+In particular, when $A$ is the identity operator, we find the overlap between two coherent states
 
 $$
-\langle \beta |A|\alpha \rangle 
-= \sum_{n,m} A_{n m} 
-\langle \beta |a^{\dagger n} a^m|\alpha \rangle 
-= \sum_{n,m} A_{n m} \bar{\beta}^n \alpha^m 
-\langle \beta |\alpha \rangle
+\braket{w}{z} = e^{\bar{w}z}
 $$
 
-What is the overlap $\langle \beta |\alpha \rangle$? By definition,
+</div><br>
+
+*Proof*:
 
 $$
-\langle \beta |\alpha \rangle 
+\braket{w}{z} 
 = \langle 0 | 
-e^{\bar{\beta} a} e^{\alpha a^\dagger}
-| 0\rangle
+e^{\bar{w} a} e^{z a^\dagger}
+\ket{0}
 $$
 
 Using the theorem (when $[A,B]$ is a $c$-number)
@@ -289,200 +283,121 @@ $$
 We have
 
 $$
-e^{\bar{\beta} a}e^{\alpha a^\dagger}
-= e^{\bar{\beta}\alpha [a,a^\dagger]}
-e^{\alpha a^\dagger} e^{\bar{\beta} a}
-= e^{\bar{\beta}\alpha}
-e^{\alpha a^\dagger} e^{\bar{\beta} a}
+e^{\bar{w} a}e^{z a^\dagger}
+= e^{\bar{w}z [a,a^\dagger]}
+e^{z a^\dagger} e^{\bar{w} a}
+= e^{\bar{w}z}
+e^{z a^\dagger} e^{\bar{w} a}
 $$
 
 But
 
 $$
-\langle 0|e^{\alpha a^\dagger}=\langle 0|, 
+\bra{0}e^{z a^\dagger}=\bra{0}, 
 \quad
-e^{\bar{\beta} a}| 0\rangle =| 0\rangle
+e^{\bar{w} a}\ket{0} =\ket{0}
 $$
 
 Thus
 
 $$
-\langle \beta |\alpha \rangle =e^{\bar{\beta}\alpha}
-$$
-
-Finally
-
-$$
-\langle \beta |A|\alpha \rangle =\sum_{n,m} A_{n m}e^{\bar{\beta}\alpha}\bar{\beta}^n\alpha^m
-$$
-
-Now we see that the result can be obtained by a formal replacement
-
-$$
-\langle \beta |A(a^\dagger,a)|\alpha \rangle 
-= e^{\bar{\beta}\alpha} A(\bar{\beta},\alpha)
+\braket{w}{z} =e^{\bar{w}z}
+\quad \blacksquare
 $$
 
 ## Coherent State Path Integral for Bosons
 
-Now we consider the propagator from and to some arbitrary states (not
-necessarily labelled by the coordinates), and use the second-quantized,
-normal-ordered Hamiltonian. Instead of inserting a usual identity, we insert the *over-complete* coherent state basis:
+The partition function of a statistical model is given by
+
+$$
+Z = \operatorname{Tr} e^{-\beta H}
+$$
+
+The Hamiltonian $H(a^\dagger,a)$ is assumed to be normal-ordered. 
+
+To obtain a path integral representation of $Z$, we divide $e^{-\beta H}$ into product of many small pieces:
+
+$$
+e^{-\beta H} = \prod_{n=1}^N e^{-\epsilon H}
+\approx \prod_{n=1}^N (1 - \epsilon H), \quad 
+\epsilon \equiv \frac{\beta}{N} \quad 
+(N \to \infty)
+$$
+
+Between these small pieces, we insert identities in coherent state representation 
 
 $$
 \begin{aligned}
-    &\langle f|e^{-i H (a^\dagger,a)T}|i\rangle 
+    Z &= \prod_{n=1}^N \int 
+    \frac{d\bar{z}_n \, dz_n}{2\pi i}
+    \exp (-\bar{z}_n z_n) 
+    \amp{z_{n}}{1 - \epsilon H(a^\dagger, a)}{z_{n-1}}
     \\
-    &= \int \left[
-        \prod_{k=1}^{N-1} 
-        \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
-        e^{-\bar{\alpha}_k\alpha_k}
-    \right]
-    \langle 
-        f |1-i H(a^\dagger,a)\epsilon |\alpha_{N-1}
-    \rangle 
+    &= \int D\bar{z} \, Dz
+    \prod_{n=1}^N \bigg[
+        \exp (-\bar{z}_n z_n) 
+        \exp (\bar{z}_n z_{n-1}) 
+        \underbrace{
+            [1 - \epsilon H(\bar{z}_n, z_{n-1})]
+        }_{\approx \exp[-\epsilon H(\bar{z}_n, z_n)]}
+    \bigg]
     \\
-    & \qquad \left[
-        \prod_{k=1}^{N-2} 
-        \langle 
-            \alpha_{k+1} |1-i H(a^\dagger,a)\epsilon |\alpha_k
-        \rangle 
-    \right]
-    \langle \alpha_1|1-iH(a^\dagger,a)\epsilon |i\rangle
+    &= \int D\bar{z}\, Dz \exp \bigg\{
+        \sum_{n=1}^N \bigg[
+            - \bar{z}_n (z_n - z_{n-1})
+            - \epsilon H(\bar{z}_n, z_n)
+        \bigg]
+    \bigg\}
 \end{aligned}
 $$
 
-Here the subscript $k$ in $\alpha_k$ denotes time, not species of
-bosons. For the inserted terms, using the replacement derived in the
-last section
+Here $z_0, \bar{z}_0 = z_N, \bar{z}_N$, meaning periodicity in (imaginary-)time direction 
 
 $$
-\langle \alpha_{k+1}|1-i H(a^\dagger,a)\epsilon |\alpha_k\rangle 
-= e^{\bar{\alpha}_{k+1}\alpha_k}
-(1-iH(\bar{\alpha}_{k+1},\alpha_k)\epsilon )
+z(\tau) = z(\tau + \beta)
 $$
 
-Now we have
+and we defined the integration measure
+
+$$
+D\bar{z} \, Dz = \prod_{n=1}^N \frac{d\bar{z}_n dz_n}{2\pi i}
+$$
+
+Note that the eigenvalues $z_n$ can be interpreted as an (imaginary-)time dependent variable $z(\tau)$ at $\tau_n = n \beta/N$. Then
 
 $$
 \begin{aligned}
-    &\langle f|e^{-i H (a^\dagger,a)T}|i\rangle 
-    \\
-    &= \int \left[
-        \prod_{k=1}^{N-1} 
-        \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
-        e^{-\bar{\alpha}_k\alpha_k}
-    \right] 
-    \langle 
-        f|1-i H(a^\dagger,a)\epsilon |\alpha_{N-1}
-    \rangle 
-    \\ & \qquad
-    \left[
-        \prod_{k=1}^{N-2} e^{\bar{\alpha}_{k+1}\alpha_k}
-        (1-i H(\bar{\alpha}_{k+1},\alpha_k)\epsilon)
-    \right]
-    \langle \alpha_1|1-iH(a^\dagger,a)\epsilon |i\rangle
+    Z &\approx \int D\bar{z}\, Dz \exp \bigg\{
+        - \epsilon \sum_{n=1}^N \Big[
+            \bar{z}_n \partial_\tau z_n
+            + H(\bar{z}_n, z_n)
+        \Big]
+    \bigg\}
 \end{aligned}
 $$
 
-To deal with the initial and final state, we also expand them using the
-coherent state basis
+In the $N\to \infty$ limit, the summation becomes an integration of $\tau$ from 0 to $\beta$. We finally arrive at
+
+<div class="result">
+
+**Boson partition function in path integral form:**
 
 $$
 \begin{aligned}
-    | i\rangle 
-    &= \int \frac{d\bar{\alpha}_0d\alpha_0}{2\pi i}
-    e^{-\bar{\alpha}_0\alpha_0}
-    | \alpha_0\rangle 
-    \langle \alpha_0|i \rangle
-    \\[1.5em]
-    \langle f|
-    &= \int \frac{d\alpha_Nd\bar{\alpha}_N}{-2\pi (-i)}
-    e^{-\bar{\alpha}_N\alpha_N}
-    \langle f| \alpha_N\rangle \langle
-    \alpha_N|
-    \\
-    &= \int \frac{d\alpha_Nd\bar{\alpha}_N}{2\pi i}
-    e^{-\bar{\alpha}_N\alpha_N}
-    \langle f| \alpha_N\rangle \langle
-    \alpha_N|
+    Z &= \int D\bar{z} \,Dz \exp \bigg[
+        - \int_0^\beta d\tau \, L[\bar{z}, z]
+    \bigg]
+    \\[1em]
+    \text{with} \quad 
+    L[\bar{z}, z]
+    &= \bar{z}(\tau) \partial_\tau z(\tau) + H(\bar{z}(\tau), z(\tau))
 \end{aligned}
 $$
 
-Then
+</div><br>
 
-$$
-\begin{aligned}
-    &\amp{f}{e^{-i H (a^\dagger,a)T}}{i}
-    \\
-    &=\int \left[
-        \prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
-        e^{-\bar{\alpha}_k\alpha_k}
-    \right] \braket{f}{\alpha_N}
-    \amp{\alpha_N}{1 - iH(a^\dagger,a) \epsilon}{\alpha_{N-1}}
-    \\
-    &\quad \left[
-        \prod_{k=1}^{N-2} e^{\bar{\alpha}_{k+1}\alpha_k}
-        (1-i H(\bar{\alpha}_{k+1},\alpha_k)\epsilon)
-    \right]
-    \amp{\alpha_1}{
-        1-i H(a^\dagger,a)\epsilon
-    }{\alpha_0} \braket{\alpha_0}{i}
-    \\
-    &= \int \left[
-        \prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}e^{-\bar{\alpha}_k\alpha_k}
-    \right] \left[
-        \prod_{k=0}^{N-1} e^{\bar{\alpha}_{k+1}\alpha_k}
-        (1-i H(\bar{\alpha}_{k+1},\alpha_k)\epsilon )
-    \right] 
-    \braket{f}{\alpha_N} \braket{\alpha_0}{i}
-    \\
-    &=\int \left[
-        \prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi i}
-    \right] \left[
-        \prod_{k=0}^N e^{-\bar{\alpha}_k\alpha_k}
-    \right] \left[
-        \prod_{k=0}^{N-1} e^{\bar{\alpha}_{k+1}\alpha_k}
-    \right] \left[
-        \prod_{k=0}^{N-1} 
-        e^{-i H(\bar{\alpha}_{k+1},\alpha_k)\epsilon}
-    \right]
-    \braket{f}{\alpha_N} \braket{\alpha_0}{i}
-\end{aligned}
-$$
+<div class="remark">
 
-We try to rearrange the exponential functions to produce an $\epsilon$ factor in
-order to merge it with the Hamiltonian term and get an integration over
-time. ${}{}$There are two ways of doing it:
+*Remark*: If there are $n > 1$ types of bosons, simply treat $z$ as an $n$-dimensional column vector, and $\bar{z}$ as an $n$-dimensional row vector. 
 
-Method 1:
-
-$\prod_{k=0}^N e^{-\bar{\alpha}_k\alpha_k}\prod_{k=0}^{N-1} e^{\bar{\alpha}_{k+1}\alpha_k}=e^{-\bar{\alpha}_N\alpha_N}\prod_{k=0}^{N-1}
-e^{\left(\bar{\alpha}_{k+1}-\bar{\alpha}_k\right)\alpha_k}=e^{-\bar{\alpha}_N\alpha_N}\prod_{k=0}^{N-1} e^{ \left(\partial_t\bar{\alpha}_k\right)\alpha
-_k\epsilon}$
-
-Method 2:
-
-$\prod_{k=0}^N e^{-\bar{\alpha}_k\alpha_k}\prod_{k=0}^{N-1} e^{\bar{\alpha}_{k+1}\alpha_k}=\prod_{k=0}^N e^{-\bar{\alpha}_k\alpha_k}\prod
-_{k=1}^N e^{\bar{\alpha}_k\alpha_{k-1}}=e^{-\bar{\alpha}_0\alpha_0}\prod_{k=1}^N e^{-\bar{\alpha}_k\left(\alpha_k-\alpha_{k-1}\right)}=e^{-\bar{\alpha
-}_0\alpha_0}\prod_{k=1}^N e^{-\bar{\alpha}_k \left(\partial_t\alpha_k\right)\epsilon}$
-
-To make the final result more symmetric, we take the square root of both
-and multiply them together:
-
-$\left\langle f\left|e^{-i H \left(a^\dagger,a\right)T}\right|i\right\rangle =\int \left(\prod_{k=0}^N \frac{d\bar{\alpha}_kd\alpha_k}{2\pi
- i}\right) \exp \left(-\frac{1}{2}\left(\bar{\alpha}_0\alpha_0+\bar{\alpha}_N\alpha_N\right)\right)\left(\prod_{k=0}^{N-1} \exp \left[\frac{1}{2}\left(\partial
-_t\bar{\alpha}_k\right)\alpha_k\epsilon -\frac{1}{2}\bar{\alpha}_{k+1} \left(\partial_t\alpha_{k+1}\right)\epsilon -i H\left(\bar{\alpha}_{k+1},\alpha
-_k\right)\epsilon \right]\right)\left\langle f\left| \alpha_N\right.\right\rangle \left\langle \left.\alpha_0\right| i\right\rangle$
-
-$=\int \left[d\bar{\alpha}\right][d\alpha ]\exp \left(i\int_0^Tdt \left[\frac{1}{2i}\left(\alpha \partial_t\bar{\alpha}-\bar{\alpha}\partial
-_t\alpha \right)-H\left(\bar{\alpha},\alpha \right)\right]\right)\underbrace{\exp \left(-\frac{1}{2}\left(\bar{\alpha}_i\alpha_i+\bar{\alpha}_f\alpha
-_f\right)\right)\left\langle f\left| \alpha_f\right.\right\rangle \left\langle \left.\alpha_i\right| i\right\rangle}_{\text{the projection
-operator}}$
-
-This is the **coherent state path integral** for bosons. The action functional appears here is
-
-$S=\int_0^Tdt \left[\frac{1}{2i}\left(\alpha \partial_t\bar{\alpha}-\bar{\alpha}\partial_t\alpha \right)-H\left(\bar{\alpha},\alpha \right)\right]$
-
-We have recovered the notation
-$\alpha_N\to \alpha_f,\alpha_0\to \alpha_i$
+</div><br>

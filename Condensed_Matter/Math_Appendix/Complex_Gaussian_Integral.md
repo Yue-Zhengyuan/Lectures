@@ -1,161 +1,277 @@
 <style>
     .katex {
         font-size: 1.1em;
-    }
+   }
     .remark {
         border-radius: 15px;
         padding: 20px;
         background-color: SeaGreen;
         color: White;
-    }
+   }
     .result {
         border-radius: 15px;
         padding: 20px;
         background-color: DarkSlateBlue;
         color: White;
-    }
+   }
 </style>
 
 # Complex Gaussian Integral
 
-Sometimes (when considering complex valued fields) we need to consider the following kinds of Gaussian integrals:
+Sometimes (when considering complex valued fields) we need to consider Gaussian integrals of pairs of "conjugate" complex variables.
 
-## "One"-Variable Case
+<div class="result">
 
-$$
-\int d\bar{z} \, dz \exp \left(-\bar{z}a z\right)
-$$
+**Complex Gaussian integral (one variable-pair):**
 
-Here we don't have the additional factor 1/2 here to account for the repeated counting. It should be emphasized that the variables $\bar{z}$ is *not* the complex conjugate of each other. They are *independent* variables constructed as
+- Generating function
 
-$$
-z=x+i y \qquad \bar{z}=x-i y
-$$
+    $$
+    Z(\bar{J},J)
+    = \int \frac{d\bar{z} \, dz}{2\pi i}
+    \exp (- \bar{z} a z + \bar{z} J + \bar{J} z)
+    $$
 
-Therefore, the integration measure means
+    - $a$ is a complex number.
+    - $z, \bar{z}$ are independent, *not* the complex conjugate of each other. 
+    - $J, \bar{J}$ are two independent complex numbers (the **sources**).
 
-$d\bar{z} \, dz=\frac{\partial \left(\bar{z},z\right)}{\partial (x,y)}dx \, dy=2i dx \, dy$
+- Integration result
 
-The polar coordinates are also often used
-($z=r e^{i \theta },\bar{z}=r e^{-i \theta }$):
+    $$
+    \begin{aligned}
+        Z(0,0) &= a^{-1}
+        \\[0.5em]
+        Z(\bar{J},J)
+        &= Z(0,0) \exp (\bar{J} a^{-1} J)
+    \end{aligned}
+    $$
 
-$d\bar{z} \, dz=\frac{\partial \left(\bar{z},z\right)}{\partial (r,\theta)}dr \, d\theta =\det \left(
-\begin{array}{cc}
- e^{-i \theta } & -i r e^{-i \theta } \\
- e^{i \theta } & i r e^{i \theta } \\
-\end{array}
-\right)dr \, d\theta =2i r dr \, d\theta$
+</div><br>
 
-as expected. Therefore, we usually define the Gaussian integral with the
-numerical factor $1/\pi$
+<div class="remark">
 
-$Z(0,0)=\int \frac{d\bar{z} \, dz}{2\pi i} \exp \left(-\bar{z}a z\right)=\int \frac{dx \, dy}{\pi } \exp \left(-a\left(x^2+y^2\right)\right)$
+*Remark*: The integration measure $d\bar{z} \, dz$ needs clarification. The additional $2\pi i$ factor is motivated by boson coherent state path integral. To really do the integration, we need to use real variables. 
 
-And the generating function with source $\left(\bar{J},J\right)$ is
+- In Cartesian coordinates
 
-$Z\left(\bar{J},J\right)=\int \frac{d\bar{z} \, dz }{2\pi i}\exp \left(-\bar{z}a z+\bar{z}J+\bar{J} z\right)$
+    $$
+    z=x+i y \qquad \bar{z}=x-i y
+    $$
 
-The two sources are *not* complex conjugate of each other; they are two
-independent quantities. We first prove that
+    $$
+    d\bar{z} \, dz
+    = \frac{\partial(\bar{z},z)}{\partial(x,y)} dx \, dy
+    = 2i \, dx \, dy
+    $$
 
-$Z(0,0)=\frac{1}{a},\text{           }Z\left(\bar{J},J\right)=Z(0,0)\exp \left(\bar{J} \frac{1}{a}J\right)$
+- In polar coordinates
+
+    $$
+    z = r e^{i \theta}, \quad \bar{z} = r e^{-i \theta}
+    $$
+
+    $$
+    d\bar{z} \, dz
+    = \frac{\partial (\bar{z},z)}{\partial (r,\theta)}dr \, d\theta 
+    = 2i r \, dr \, d\theta
+    $$
+
+</div><br>
 
 *Proof*:
 
-To evaluate the integral we have to use the real variables. Cartesian
-coordinates are better:
-
-$Z\left(\bar{J},J\right)=\frac{1}{\pi }\int dx \, dy \exp \left(-a \left(x^2+y^2\right)+(x-i y)J+\bar{J} (x+i y)\right)\\
-=\frac{1}{\pi }\int dx \exp \left[-a x^2+\left(J+\bar{J}\right)x\right] \int dy \exp \left[-a y^2+i \left(-J+\bar{J}\right)y\right]\\
-=\frac{1}{a}\exp \left(\frac{\left(J+\bar{J}\right)^2+\left[i \left(-J+\bar{J}\right)\right]^2}{4a}\right)=\frac{1}{a}\exp \left(\bar{J} \frac{1}{a}J\right)$
-
-## Multi-Variable Case
-
-The generalization to multi-variable case is straightforward:
-
-$$
-Z(0,0)
-=\int \frac{d\bar{z}_1dz_1}{2\pi i} \cdots 
-\frac{d\bar{z}_ndz_n}{2\pi i} 
-\exp \left(-\bar{z}_iA_{i j}z_j\right)
-$$
-
-The complex matrix $A$ is now assumed to be *Hermitian*. We also have the generating
-function
-
-$Z\left(\bar{J},J\right)=\int \prod _{k=1}^n  \left(\frac{d\bar{z}_kdz_k}{2\pi i}\right) \exp \left(- \bar{z}_iA_{i j}z_j+J_i\bar{z}_i +z_j \bar{J}_j\right)\\
-=\int \prod _{k=1}^n  \left(\frac{d\bar{z}_kdz_k}{2\pi i}\right) \exp \left(- \bar{z}^TA z+J^T\bar{z} +z^T \bar{J}\right)$
-
-Again, by diagonalizing the matrix $A$, we can prove that
+Using Cartesian coordinates, we find
 
 $$
 \begin{aligned}
-    Z(0,0) &= \frac{1}{\det A}
-    \\ \\
-    Z\left(\bar{J},J\right)
-    &= Z(0,0) \exp [
-        \bar{J}_i (A^{-1})_{i j} J_j
-    ]
+    Z(\bar{J}, J)
+    &= \frac{1}{\pi}\int dx \, dy \exp \left(
+        -a (x^2+y^2) + (x-i y)J + \bar{J} (x+i y)
+    \right)
+    \\
+    &= \frac{1}{\pi}
+    \int dx \, dy 
+    \exp \left[-a x^2+ (J+ \bar{J})x \right] 
+    \exp \left[-a y^2+i (-J+ \bar{J})y \right]
+    \\
+    &= \frac{1}{\pi} 
+    \times \sqrt{\frac{\pi}{a}} \exp
+    \frac{\left(J+ \bar{J}\right)^2}{4a}
+    \times \sqrt{\frac{\pi}{a}} \exp
+    \frac{\left[i \left(-J+ \bar{J}\right)\right]^2}{4a}
+    \\
+    &= a^{-1}\exp \left(\bar{J} a^{-1}J\right)
+    \qquad \blacksquare
 \end{aligned}
 $$
+
+## Multi-Variable-Pair Case
+
+The generalization to multi-variable-pair case is straightforward.
+
+<div class="result">
+
+**Complex Gaussian integral (multiple variable-pair):**
+
+- Generating function
+
+    $$
+    \begin{aligned}
+        Z(\bar{J}, J)
+        &= \int D\bar{z} \, Dz
+        \exp \left(
+            - \bar{z}_i A_{ij} z_j
+            + \bar{z}_i J_i + \bar{J}_i z_i
+        \right)
+        \\
+        &= \int D\bar{z} \, Dz
+        \exp \left(
+            - \bar{z} A z + \bar{z} J + \bar{J} z
+        \right)
+        \\
+        \text{with} \quad
+        D\bar{z} \, Dz &\equiv 
+        \prod_{j=1}^n \frac{d\bar{z}_j dz_j}{2\pi i}
+    \end{aligned}
+    $$
+
+    - $A$ is an $n \times n$ *Hermitian* matrix. 
+    - $J$ is an $n$-dimensional column vectors (the **sources**).
+    - When a bar is added on a column vector, it is "conjugated" and transposed to a row vector (similar to the Hermitian conjugation $\dagger$). E.g. $z, J \in \mathbb{C}^{n\times 1} \rightarrow \bar{z}, \bar{J} \in \mathbb{C}^{1\times n}$.
+
+- Integration result
+    
+    $$
+    \begin{aligned}
+        Z(0,0) &= \frac{1}{\det A}
+        \\[1em]
+        \frac{Z(\bar{J}, J)}{Z(0,0)}
+        &= \exp [
+            \bar{J}_i (A^{-1})_{i j} J_j
+        ] \equiv \mathcal{Z}(\bar{J}, J)
+    \end{aligned}
+    $$
+
+</div><br>
 
 *Proof*:
 
 Since $A$ is Hermitian, we can diagonalize it with a *unitary* matrix
 $U$ with determinant 1:
 
-$\Lambda =U^{\dagger }A U \Longrightarrow A=U \Lambda  U^{\dagger }, A^{-1}=\left(U^{\dagger }\right)^{-1}\frac{1}{\Lambda }O^{-1}=U\frac{1}{\Lambda
-}U^{\dagger }$
+$$
+\Lambda =U^{\dagger}A U \Rightarrow \left\{
+\begin{aligned}
+     A &=U \Lambda U^{\dagger}
+     \\
+     A^{-1} &= (U^{\dagger})^{-1} \Lambda^{-1} O^{-1}
+     = U \Lambda^{-1} U^{\dagger}
+\end{aligned}
+\right.
+$$
 
-Introduce the new variables $w=U^{\dagger }z, \bar{w}=U^T \bar{z}$ (just like a complex conjugate of $\mathcal{J}$). Then
+Introduce new variables and new sources
 
-$Z\left(\bar{J},J\right)=\int \prod _{k=1}^n  \left(\frac{d\bar{z}_kdz_k}{2\pi i}\right) \exp \left(-\bar{z}^TA z+\bar{z}^TJ+\bar{J}^Tz\right)\\
-=\int \prod _{k=1}^n  \left(\frac{d\bar{z}_kdz_k}{2\pi i}\right) \exp \left(-\bar{z}^TU \Lambda  U^{\dagger } z+\bar{w}^TU^{\dagger }J+\bar{J}^TU
-w\right)\\
-=\int \prod _{k=1}^n  \left(\frac{d\bar{w}_kdw_k}{2\pi i}\right) \exp \left(-\bar{w}^T\Lambda  w+\bar{w}^T\mathcal{J}+\bar{\mathcal{J}}^Tw\right)$
-
-Here we defined two new sources
-
-$\mathcal{J}=U^{\dagger }J,\text{           }\bar{\mathcal{J}}=U^T\bar{J}$
+$$
+\begin{aligned}
+    w &= U^{\dagger}z, &\quad 
+    \bar{w} &= \bar{z} U
+    \\
+    \mathcal{J} &= U^{\dagger}J, &\quad
+    \bar{\mathcal{J}} &= \bar{J} U
+\end{aligned}
+$$
 
 Then
 
-$Z\left(\bar{J},J\right)=\prod _{k=1}^n \int  \left(\frac{d\bar{w}_kdw_k}{2\pi i}\right) \exp \left(-\bar{w}_k\Lambda _k w_k+\bar{w}_k\mathcal{J}_k+\bar{\mathcal{J}}_kw_k\right)$
+$$
+\begin{aligned}
+    Z(\bar{J}, J)
+    &= \int D\bar{z} \, Dz 
+    \exp \left(- \bar{z}A z+ \bar{z}J+ \bar{J}z\right)
+    \\
+    &= \int D\bar{z} \, Dz
+    \exp \left(- \bar{z}U \Lambda  U^{\dagger} z+ \bar{w}U^{\dagger}J+ \bar{J}U
+    w\right)
+    \\
+    &= \int D\bar{z} \, Dz
+    \exp \left(- \bar{w}\Lambda  w+ \bar{w}\mathcal{J}+ \bar{\mathcal{J}}w\right)
+\end{aligned}
+$$
 
-Now we can apply our previous result about one-species integral
+We now successfully diagonalized the exponent
 
-$\int \frac{d\bar{z} \, dz }{2\pi i}\exp \left(-\bar{z}a z+\bar{z}J+\bar{J}z\right)=\frac{1}{a} \exp \left(\bar{J} a^{-1}J\right)$
+$$
+Z(\bar{J}, J)
+= \prod_{k=1}^n \int 
+\left[\frac{d\bar{w}_kdw_k}{2\pi i}\right] 
+\exp \left(
+    - \bar{w}_k \Lambda_k w_k
+    + \bar{w}_k \mathcal{J}_k
+    + \bar{\mathcal{J}}_k w_k
+\right)
+$$
 
-$\Longrightarrow Z\left(\bar{J},J\right)=\prod _{k=1}^n  \frac{1}{\Lambda _k} \exp \left(\bar{\mathcal{J}}_k\Lambda _k^{-1}\mathcal{J}_k\right)=\frac{1}{\det
- A} \exp \left(\bar{\mathcal{J}}^T\frac{1}{\Lambda }\mathcal{J}\right)\\
-=\frac{1}{\det A}\exp \left(\bar{J}^TU\frac{1}{\Lambda }U^{\dagger }J\right)=\frac{1}{\det A} \exp \left(\bar{J}^TA^{-1}J\right)$
+Now we can apply our previous result about one-variable-pair integral
+
+$$
+\begin{aligned}
+    Z(\bar{J}, J)
+    &= \prod_{k=1}^n  \frac{1}{\Lambda_k} \exp (
+        \bar{\mathcal{J}}_k \Lambda_k^{-1} \mathcal{J}_k
+    )
+    = \frac{1}{\det A} \exp (
+        \bar{\mathcal{J}}\Lambda^{-1}\mathcal{J}
+    )
+    \\
+    &= \frac{1}{\det A}\exp (
+        \bar{J} U \Lambda^{-1} U^{\dagger} J
+    )
+    = \frac{1}{\det A} \exp (\bar{J} A^{-1} J)
+    \quad \blacksquare
+\end{aligned}
+$$
 
 ## Wick's Theorem
 
-With the generating function, we can take the $J$ (or $\bar{J}$)
-derivative to get various mean values and derive Wick's Theorem.
+With the generating function, we can take the $J$ (or $\bar{J}$) derivative to get various mean values and derive Wick's Theorem. The basic building blocks are
 
-To see the difference from the case of real integrals, we first
-calculate the possible two-point functions. They are
+<div class="result">
 
-$\left\langle z_a z_b\right\rangle =0, \left\langle \bar{z}_a \bar{z}_b\right\rangle =0, \left\langle \bar{z}_a z_b\right\rangle =\left\langle z_b\bar{z}_a\right\rangle
-=(A^{-1})_{a b}$
+**Two-point functions:**
+
+$$
+\langle z_a z_b\rangle =0, \quad
+\langle \bar{z}_a \bar{z}_b\rangle =0, \quad
+\langle \bar{z}_a z_b\rangle = \langle z_b\bar{z}_a\rangle
+= (A^{-1})_{a b}
+$$
 
 They are also denoted by
-$\langle a b\rangle ,\left\langle \bar{a} \bar{b}\right\rangle ,\left\langle \bar{a} b\right\rangle /\left\langle b \bar{a}\right\rangle$.
-We see that a nonzero pair must include one variable and one "conjugate"
+
+$$
+\langle a b\rangle ,
+\langle \bar{a} \bar{b}\rangle ,
+\langle \bar{a} b\rangle, 
+\langle b \bar{a}\rangle
+$$
+
+A nonzero two-point function must include one variable and one "conjugate"
 variable.
+
+</div><br>
 
 *Proof*: We reproduce the (normalized) generating function here for
 convenience
 
-$\mathcal{Z}\left(\bar{J},J\right)=\frac{1}{Z(0,0)}\int \prod _{k=1}^n  \left(\frac{d\bar{z}_kdz_k}{2\pi i}\right) \exp \left(- \bar{z}_iA_{i j}z_j+J_i\bar{z}_i
-+z_j \bar{J}_j\right)=\exp \left(\bar{J}_i(A^{-1})_{i j}J_j\right)$
+$\mathcal{Z}(\bar{J}, J)= \frac{1}{Z(0,0)}\int \prod_{k=1}^n  \left[\frac{d\bar{z}_kdz_k}{2\pi i}\right] \exp \left(- \bar{z}_iA_{i j}z_j+J_i\bar{z}_i
++z_j \bar{J}_j\right)= \exp \left(\bar{J}_i(A^{-1})_{i j}J_j\right)$
 
 First take the derivative of $J_a$ and
 
-$\frac{\partial }{\partial J_a}\mathcal{Z}\left(\bar{J},J\right)=\left(\sum _{i=1}^n \bar{J}_i(A^{-1})_{i a}\right)\exp (\text{...})\equiv
-\bar{B}_a\left(\bar{J}\right)\exp (\text{...})$
+$\frac{\partial}{\partial J_a}\mathcal{Z}(\bar{J}, J)= \left(\sum_{i=1}^n \bar{J}_i(A^{-1})_{i a}\right)\exp ( ... )\equiv
+\bar{B}_a\left(\bar{J}\right)\exp ( ... )$
 
 Since the structure $\bar{B}_a$ does not contain $J$, the two point
 function $\langle a b\rangle$ must vanish. But
@@ -164,37 +280,50 @@ $\frac{\partial \bar{B}_a}{\partial \bar{J}_b}=(A^{-1})_{b a}$
 
 Similarly,
 
-$\frac{\partial }{\partial \bar{J}_a}\mathcal{Z}\left(\bar{J},J\right)=\left(\sum _{i=1}^n (A^{-1})_{a i}J_i\right)\exp (\text{...})\equiv
-B_a(J)\exp (\text{...})$
+$\frac{\partial}{\partial \bar{J}_a}\mathcal{Z}(\bar{J}, J)= \left(\sum_{i=1}^n (A^{-1})_{a i}J_i\right)\exp ( ... )\equiv
+B_a(J)\exp ( ... )$
 
 the structure $B_a$ does not contain $\bar{J}$, and
-$\left\langle \bar{a} \bar{b}\right\rangle$ vanishes. And
+$\langle \bar{a} \bar{b}\rangle$ vanishes. And
 
 $\frac{\partial B_a}{\partial J_b}=(A^{-1})_{a b}$
 
 Only the pairs with both kinds of variables survive:
 
-$\left\langle \bar{z}_a z_b\right\rangle =\frac{\partial }{\partial J_b}\frac{\partial }{\partial \bar{J}_a}\exp (\text{...})=\frac{\partial }{\partial
-J_b}B_a(J)\exp (\text{...})=(A^{-1})_{a b}\exp (\text{...})+B_a(J)\bar{B}_b\left(\bar{J}\right)\overset{J=0}{\rightarrow }(A^{-1})_{a
+$\langle \bar{z}_a z_b\rangle = \frac{\partial}{\partial J_b}\frac{\partial}{\partial \bar{J}_a}\exp ( ... )= \frac{\partial}{\partial
+J_b}B_a(J)\exp ( ... )=(A^{-1})_{a b}\exp ( ... )+B_a(J)\bar{B}_b\left(\bar{J}\right)\overset{J=0}{\rightarrow}(A^{-1})_{a
 b}$
 
 Now we know how to generalize the real integral Wick's Theorem. For
 example, the 4-point function
 
-$\left\langle \bar{i} j \bar{k}l\right\rangle =\left\langle \bar{i} j\right\rangle \left\langle \bar{k}l\right\rangle +\left\langle \bar{i} l\right\rangle
-\left\langle \bar{k} j\right\rangle$
+$\langle \bar{i} j \bar{k}l\rangle = \langle \bar{i} j\rangle \langle \bar{k}l\rangle + \langle \bar{i} l\rangle
+\langle \bar{k} j\rangle$
 
 *Proof*:
 
-$\text{LHS}=\frac{\partial }{\partial J_l}\frac{\partial }{\partial \bar{J}_k}\frac{\partial }{\partial J_j}\frac{\partial }{\partial \bar{J}_i}\exp
-(\text{...})=\frac{\partial }{\partial J_l}\frac{\partial }{\partial \bar{J}_k}\frac{\partial }{\partial J_j}\left(B_i\exp (\text{...})\right)\\
-=\frac{\partial }{\partial J_l}\frac{\partial }{\partial \bar{J}_k}\left((A^{-1})_{i j}\exp (\text{...})+B_i\bar{B}_j\exp (\text{...})\right)\\
-=\frac{\partial }{\partial J_l}\left((A^{-1})_{i j}B_k\exp (\text{...})+B_i(A^{-1})_{k j}\exp (\text{...})+B_i\bar{B}_jB_k\exp
-(\text{...})\right)\\
-=(A^{-1})_{i j}(A^{-1})_{k l}\exp (\text{...})+(A^{-1})_{i j}B_k\bar{B}_l\exp (\text{...})+(A^{-1})_{i
-l}(A^{-1})_{k j}\exp (\text{...})+\left(\text{terms} \propto B,\bar{B}\right)\\
-\overset{J=0}{\rightarrow }(A^{-1})_{i j}(A^{-1})_{k l}+(A^{-1})_{i l}(A^{-1})_{k j}=\left\langle
-\bar{i} j\right\rangle \left\langle \bar{k}l\right\rangle +\left\langle \bar{i} l\right\rangle \left\langle \bar{k} j\right\rangle$
+$$
+\begin{aligned}
+    \text{LHS}
+    &= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\frac{\partial}{\partial J_j}\frac{\partial}{\partial \bar{J}_i}\exp
+    ( ... )= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\frac{\partial}{\partial J_j}\left(B_i\exp ( ... )\right)
+    \\
+    &= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\left((A^{-1})_{i j}\exp ( ... )+B_i\bar{B}_j\exp ( ... )\right)
+    \\
+    &= \frac{\partial}{\partial J_l}\left((A^{-1})_{i j}B_k\exp ( ... )+B_i(A^{-1})_{k j}\exp ( ... )+B_i\bar{B}_jB_k\exp
+    ( ... )\right)
+    \\
+    &=(A^{-1})_{i j}(A^{-1})_{k l}\exp ( ... )+(A^{-1})_{i j}B_k\bar{B}_l\exp ( ... )
+    \\ &\qquad 
+    +(A^{-1})_{i
+    l}(A^{-1})_{k j}\exp ( ... )+ \left(\text{terms} \propto B,\bar{B}\right)
+    \\
+    &\xrightarrow{J=0}
+    (A^{-1})_{i j}(A^{-1})_{k l}+(A^{-1})_{i l}(A^{-1})_{k j}
+    = \langle
+    \bar{i} j\rangle \langle \bar{k}l\rangle + \langle \bar{i} l\rangle \langle \bar{k} j\rangle
+\end{aligned}
+$$
 
 ## Fourier Transform of Integration Variables
 
