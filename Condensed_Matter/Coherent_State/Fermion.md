@@ -222,6 +222,10 @@ $$
 \end{aligned}
 $$
 
+## Trace
+
+
+
 ## Operators in Coherent State Representation
 
 <div class="result">
@@ -264,7 +268,7 @@ $$
 
 ## Coherent State Path Integral for Fermions
 
-Similar to the boson case, the partition function for a fermion system can be split into the product of many pieces, and identities are inserted to obtain the path integral representation. 
+Similar to the boson case, the partition function for a fermion system can be split into the product of many pieces, and identities are inserted to obtain the path integral representation:
 
 $$
 \begin{aligned}
@@ -291,10 +295,12 @@ $$
 \end{aligned}
 $$
 
-Here comes an important difference from the boson case: while we have $z_0, \bar{z}_0 = z_N, \bar{z}_N$, for fermions an additional minus sign should be introduced: 
+While we have $z_0, \bar{z}_0 = z_N, \bar{z}_N$, for fermions an additional minus sign from the trace operation requires *anti-PBC* along the $\tau$-direction: 
 
 $$
 \psi_0, \bar{\psi}_0 = -\psi_N, -\bar{\psi}_N
+\ \Rightarrow \ 
+\psi(\tau) = -\psi(\tau + \beta)
 $$ 
 
 and we defined the integration measure

@@ -305,6 +305,24 @@ $$
 \quad \blacksquare
 $$
 
+## Trace
+
+The trace of a bosonic operator can be expressed as the integral
+
+<div class="result">
+
+**Trace of bosonic operators:**
+
+$$
+\operatorname{Tr} \Omega
+= \int \frac{d\bar{z} dz}{2\pi i}
+\exp (-\bar{z} z) \amp{z}{\Omega}{z}
+$$
+
+</div><br>
+
+*Proof*:
+
 ## Coherent State Path Integral for Bosons
 
 The partition function of a statistical model is given by
@@ -351,7 +369,7 @@ $$
 \end{aligned}
 $$
 
-Here $z_0, \bar{z}_0 = z_N, \bar{z}_N$, meaning periodicity in (imaginary-)time direction 
+Here $z_0, \bar{z}_0 = z_N, \bar{z}_N$, meaning periodicity in the $\tau$-direction 
 
 $$
 z(\tau) = z(\tau + \beta)

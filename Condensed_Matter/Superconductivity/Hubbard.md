@@ -1,1 +1,0 @@
-# Fermion Hubbard Model
