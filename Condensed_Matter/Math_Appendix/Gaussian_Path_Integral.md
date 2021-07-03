@@ -1,0 +1,136 @@
+<style>
+    .katex {
+        font-size: 1.1em;
+   }
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+   }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: DarkSlateBlue;
+        color: White;
+   }
+</style>
+
+# Gaussian Path Integral
+
+## Continuous Label of Integration Variables
+
+We start with the real Gaussian integral with many variables (the complex case will be treated later):
+
+$$
+Z(J) = \int du_1 ... du_N \exp \left(
+    - \frac{1}{2} u_i A_{ij} u_j + J_i u_i
+\right)
+$$
+
+Let us now make the variable label a *continuous* variable $x$ (which may be thought as a point in spacetime $(t,\mathbf{x})$):
+
+$$
+u_n \to u(x_n)
+$$
+
+Now we have an infinite number of integration variables, which needs to be normalized properly. Imagine $x_n$ as the position on a $d$-dimensional square lattice (possibly of finite or infinite size) with site spacing $a$, i.e.
+
+$$
+x_n = (n_1 a, ..., n_d a)
+$$
+
+and $u(x_n)$ as some physical quantity (e.g. mass, oscillation displacement) assigned to site $n$. Each site occupies a volume $a^d$. 
+
+In taking the continuum limit, we set $a \to 0$ while keeping the lattice volume unchanged ($V \equiv a^{Nd}$ is fixed). It is expected that the quantity $u(x_n)$ will scale as $a^d$, i.e. the volume per site; thus we set
+
+<div class="result">
+
+**Scaling of integration variables $u$:**
+
+$$
+u_i \to u_{\text{lattice}}(x_i)
+= u_{\text{continuum}}(x_i) a^d
+$$
+
+</div><br>
+
+To get reasonable expression inside the exponent, we also require the matrix $A$ and the source $J$ *not* to scale with $a$:
+
+$$
+\begin{aligned}
+    A_{ij} \to A_{\text{lattice}}(x_i, x_j)
+    &= A_{\text{continuum}}(x_i, x_j)
+    \\
+    J_i \to J_{\text{lattice}}(x_i)
+    &= J_{\text{continuum}}(x_i)
+\end{aligned}
+$$
+
+Then in terms of the continuum variables, the integral becomes
+
+$$
+\begin{aligned}
+    Z(J) &= \lim_{a \to 0}
+    V \int \bigg[\prod_n du(x_n) \bigg] 
+    \\ &\quad \times \exp \bigg[
+        - \frac{1}{2} a^{2d} \sum_{ij} 
+        u(x_i) A(x_i,x_j) u(x_j) 
+        + a^d \sum_{i} J(x_i) u(x_i)
+    \bigg]
+\end{aligned}
+$$
+
+Note that as $a \to 0$, the volume $a^d$ just serves as the *integration measure* over $x$. Define the integration measure (omitting unimportant constant normalization factors, such as the total volume $V$ of the parameter $x$ space)
+
+$$
+Du \equiv \prod_n du(x_n)
+$$
+
+we obtain
+
+<div class="result">
+
+**Real Gaussian path integral:**
+
+$$
+\begin{aligned}
+    Z(J) &\propto \int Du \,
+    \exp \bigg[
+        -\frac{1}{2} \int d^dx \, d^dy \,
+        u(x) A(x,y) u(y)
+        \\ &\qquad \qquad \qquad \qquad
+        + \int d^dx \, J(x) u(x)
+    \bigg]
+\end{aligned}
+$$
+
+</div><br>
+
+In the path integral case, we are usually not interested in the overall constant normalization factor, and use the normalized integral
+
+$$
+\begin{aligned}
+    \mathcal{Z}(J) &\equiv \frac{Z(J)}{Z(0)} 
+    \\
+    &= \exp \bigg[
+        \frac{1}{2} J_i [A^{-1}]_{i j}J_j
+    \bigg]
+\end{aligned}
+$$
+
+In the continuum limit, we obtain
+
+<div class="result">
+
+**Normalized real Gaussian path integral:**
+
+$$
+\mathcal{Z}(J)
+= \exp \bigg[
+    \frac{1}{2} \int d^dx \, d^dy \, 
+    J(x) A^{-1}(x,y) J(y)
+\bigg]
+$$
+
+</div><br>

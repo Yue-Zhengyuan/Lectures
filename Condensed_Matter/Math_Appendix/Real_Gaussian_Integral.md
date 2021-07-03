@@ -18,9 +18,44 @@
 
 # Real Gaussian Integral
 
+To begin with, we review the standard result of one-variable Gaussian integral:
+
 <div class="result">
 
-**Real-variable Gaussian integral:**
+**Real-variable Gaussian integral (multiple variable):**
+
+- Generating function
+
+    $$
+    \begin{aligned}
+        Z(J)
+        &= \int dx \exp \left(- \frac{1}{2}a x^2 + J x\right)
+    \end{aligned}
+    $$
+
+    - $a$ is a positive real number 
+    - $J$ is a real number (called the **source**).
+
+- Integration result of the generating function
+
+    $$
+    \begin{aligned}
+        Z(0) &= \bigg(\frac{2\pi}{a}\bigg)^{1/2}
+        \\
+        \frac{Z(J)}{Z(0)} &= \exp \left(
+            \frac{J^2}{2a}
+        \right)
+        \equiv \mathcal{Z}(J)
+    \end{aligned}
+    $$
+
+</div><br>
+
+Now we generalize Gaussian integral to many-variable case. 
+
+<div class="result">
+
+**Real-variable Gaussian integral (multiple variable):**
 
 - Generating function
 
@@ -165,7 +200,7 @@ $$
 
 *Proof*: 
 
-To save writing in the proofs in the following, we define the
+To save writing in the proofs in the following, we define a
 structure linear in the $J$'s
 
 $B_a[J]= \frac{1}{2}\sum_{i=1}^n  J_i [A^{-1}]_{i a}+ \frac{1}{2}\sum_{j=1}^n  [A^{-1}]_{a j}J_j\text{     }(a=1, ... ,n)$
@@ -183,8 +218,8 @@ $\frac{\partial B_a}{\partial J_k}= \frac{1}{2}[A^{-1}]_{k a}+ \frac{1}{2}[A^{-1
 Then
 
 $$
-\langle a b\rangle = \frac{\partial}{\partial J_b}\frac{\partial}{\partial J_a}\exp ( ... )= \frac{\partial}{\partial J_b}\left(B_a\exp ( ... )\right)=[A^{-1}]_{a
-b}\exp ( ... )+B_aB_b\exp ( ... )\overset{J=0}{\rightarrow}[A^{-1}]_{a b}
+\langle a b\rangle = \frac{\partial}{\partial J_b}\frac{\partial}{\partial J_a}\exp(...)= \frac{\partial}{\partial J_b}\left(B_a\exp(...)\right)=[A^{-1}]_{a
+b}\exp(...)+B_aB_b\exp(...)\overset{J=0}{\rightarrow}[A^{-1}]_{a b}
 $$
 
 <div class="result">
@@ -209,11 +244,39 @@ The four letters $i,j,k,l$ need *not* represent different variables.
 
 *Proof*:
 
-$\langle i j k l\rangle = \frac{\partial}{\partial J_l}\frac{\partial}{\partial J_k}\frac{\partial}{\partial J_j}\frac{\partial}{\partial J_i}\exp
-( ... )= \frac{\partial}{\partial J_l}\frac{\partial}{\partial J_k}\frac{\partial}{\partial J_j}\left[B_i\exp ( ... )\right]\\
-= \frac{\partial}{\partial J_l}\frac{\partial}{\partial J_k}\left(\langle i j\rangle \exp ( ... )+B_iB_j\exp ( ... )\right)\\
-= \frac{\partial}{\partial J_l}\left(\langle i j\rangle B_k\exp ( ... )+ \langle i k\rangle B_j\exp ( ... )+B_i\langle j k\rangle \exp ( ... )+B_iB_jB_k\exp
-( ... )\right)$
+$$
+\begin{aligned}
+    \langle i j k l\rangle 
+    &= \frac{\partial}{\partial J_l}
+    \frac{\partial}{\partial J_k}
+    \frac{\partial}{\partial J_j}
+    \frac{\partial}{\partial J_i} 
+    \exp( ... )
+    \\
+    &= \frac{\partial}{\partial J_l}
+    \frac{\partial}{\partial J_k}
+    \frac{\partial}{\partial J_j}
+    \left[
+        B_i \exp(...)
+    \right]
+    \\
+    &= \frac{\partial}{\partial J_l}
+    \frac{\partial}{\partial J_k}
+    \left[
+        \langle i j\rangle \exp(...)
+        + B_i B_j \exp(...)
+    \right]
+    \\
+    &= \frac{\partial}{\partial J_l}
+    \big[
+        \langle i j\rangle B_k \exp(...)
+        + \langle i k\rangle B_j \exp(...)
+        \\ &\qquad \qquad
+        + B_i\langle j k\rangle \exp(...)
+        + B_i B_j B_k \exp( ... )
+    \big]
+\end{aligned}
+$$
 
 If we stop differentiation here, we are evaluating
 $\langle i j k\rangle$, containing 3 variables; it is obviously zero
@@ -221,8 +284,8 @@ because of the $B$'s in each term.
 
 Now we continue:
 
-$\langle i j k l\rangle = \langle i j\rangle \langle k l\rangle \exp ( ... )+ \langle i k\rangle \langle j l\rangle \exp ( ... )+ \langle
-i l\rangle \langle j k\rangle \exp ( ... )+(\text{terms} \text{proportional} \text{to} B)$
+$\langle i j k l\rangle = \langle i j\rangle \langle k l\rangle \exp(...)+ \langle i k\rangle \langle j l\rangle \exp(...)+ \langle
+i l\rangle \langle j k\rangle \exp(...)+(\text{terms} \text{proportional} \text{to} B)$
 
 Setting $J=0$, and we are left with the desired result:
 
