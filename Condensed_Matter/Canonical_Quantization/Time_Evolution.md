@@ -256,7 +256,7 @@ $$
     T[H(t_1) \cdots H(t_n)]
     &\equiv \sum_{\sigma \in S_n}
     H(t_{\sigma(1)}) \cdots H(t_{\sigma(n)}) 
-    \\ &\qquad \quad \times
+    \\ &\qquad \times
     \theta(t_{\sigma(1)} - t_{\sigma(2)}) \cdots
     \theta(t_{\sigma(n-1)} - t_{\sigma(n)})
 \end{aligned}

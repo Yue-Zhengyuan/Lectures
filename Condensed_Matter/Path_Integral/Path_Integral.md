@@ -1,4 +1,22 @@
-# Feynman Path Integral
+<style>
+    .katex {
+        font-size: 1.1em;
+    }
+    .remark {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: SeaGreen;
+        color: White;
+    }
+    .result {
+        border-radius: 15px;
+        padding: 20px;
+        background-color: DarkSlateBlue;
+        color: White;
+    }
+</style>
+
+# Path Integral in Real Time
 
 ## Path Integral in Phase Space 
 
@@ -21,7 +39,8 @@ $$
 
 Here 
 
-$$|q_0\rangle =|q_i\rangle ,\, |q_N\rangle =|q_f\rangle ,
+$$
+|q_0\rangle =|q_i\rangle ,\, |q_N\rangle =|q_f\rangle ,
 \quad 
 \epsilon = T/N \, (N \to \infty)
 $$
@@ -76,5 +95,3 @@ $$
     \right]
 \end{aligned}
 $$
-
-## Path Integral in Configuration (Coordinate) Space
