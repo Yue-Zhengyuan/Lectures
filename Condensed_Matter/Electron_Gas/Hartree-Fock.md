@@ -228,10 +228,13 @@ U^{\text{el}}(x)\equiv \sum_{\text{other} a} \frac{e^2}{\left| x-x_a\right| }\to
 x-x'\right| }
 $$
 
-In an actual solid, $$
-U^{\text{ion}}+U^{\text{el}}=0$$
-, then only the
-exchange term survives.
+In an actual solid, 
+
+$$
+U^{\text{ion}}+U^{\text{el}}=0
+$$
+
+then only the exchange term survives.
 
 ### Fourier Component of Energy
 

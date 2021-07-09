@@ -28,21 +28,20 @@ Z(J) = \int du_1 ... du_N \exp \left(
 \right)
 $$
 
-Let us now make the variable label a *continuous* variable $x$ (which may be thought as a point in spacetime $(t,\mathbf{x})$):
+Note that we may finally take the $N \to \infty$ limit. We imagine that $u_n$ is the value of a physical quantity $u(x)$ (e.g. mass, oscillation displacement) at position $x_n$:
 
 $$
-u_n \to u(x_n)
+u_n = u(x_n)
 $$
 
-Now we have an infinite number of integration variables, which needs to be normalized properly. Imagine $x_n$ as the position on a $d$-dimensional square lattice (possibly of finite or infinite size) with site spacing $a$, i.e.
+where $x_n$ are positions on a $d$-dimensional, $N$-site square lattice (possibly of finite or infinite size, determined by $N$) with site spacing $a$, i.e.
 
 $$
-x_n = (n_1 a, ..., n_d a)
+x_n = (n_1 a, ..., n_d a) \quad
+n_1,...,n_d \in \mathbb{Z}
 $$
 
-and $u(x_n)$ as some physical quantity (e.g. mass, oscillation displacement) assigned to site $n$. Each site occupies a volume $a^d$. 
-
-In taking the continuum limit, we set $a \to 0$ while keeping the lattice volume unchanged ($V \equiv a^{Nd}$ is fixed). It is expected that the quantity $u(x_n)$ will scale as $a^d$, i.e. the volume per site; thus we set
+Let us now take the continuum limit $a \to 0$ of the lattice (while keeping its volume $V = a^{Nd}$ unchanged). It is expected that the quantity $u(x_n)$ will scale as $a^d$, i.e. the volume per site; thus we set
 
 <div class="result">
 
@@ -54,6 +53,13 @@ u_i \to u_{\text{lattice}}(x_i)
 $$
 
 </div><br>
+
+Then, the integration measure of $Z$ is scaled to
+
+$$
+a^{Nd} \int \bigg[\prod_n du_n \bigg]
+= V \int \bigg[\prod_n du_n \bigg]
+$$
 
 To get reasonable expression inside the exponent, we also require the matrix $A$ and the source $J$ *not* to scale with $a$:
 
@@ -81,7 +87,13 @@ $$
 \end{aligned}
 $$
 
-Note that as $a \to 0$, the volume $a^d$ just serves as the *integration measure* over $x$. Define the integration measure (omitting unimportant constant normalization factors, such as the total volume $V$ of the parameter $x$ space)
+Note that in the exponential function, as $a \to 0$, the volume $a^d$ just serves as the *integration measure* over $x$:
+
+$$
+a^d \sum_i \to \int d^dx
+$$
+
+Define the integration measure (omitting unimportant constant normalization factors, such as the total volume $V$ of the parameter $x$ space)
 
 $$
 Du \equiv \prod_n du(x_n)
@@ -112,8 +124,7 @@ In the path integral case, we are usually not interested in the overall constant
 $$
 \begin{aligned}
     \mathcal{Z}(J) &\equiv \frac{Z(J)}{Z(0)} 
-    \\
-    &= \exp \bigg[
+    = \exp \bigg[
         \frac{1}{2} J_i [A^{-1}]_{i j}J_j
     \bigg]
 \end{aligned}
@@ -134,3 +145,7 @@ $$
 $$
 
 </div><br>
+
+## Example 1: Scalar Field Theory
+
+## Example 2: Electromagnetism in Vacuum

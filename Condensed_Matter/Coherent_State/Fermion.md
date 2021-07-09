@@ -28,20 +28,9 @@ The eigenstates of the fermion annihilation operator are called
 
 **Fermion coherent state:**
 
-- One-fermion states:
-    
-    $$
-    c \ket{\psi} = \psi \ket{\psi}
-    $$
+- One-fermion states: $c \ket{\psi} = \psi \ket{\psi}$
 
-- $n$-fermion states:
-
-    $$
-    \begin{aligned}
-        c_1 \cdots c_n \ket{\psi_1 \cdots \psi_n}
-        = \psi_1 \cdots \psi_n \ket{\psi_1 \cdots \psi_n}
-    \end{aligned}
-    $$
+- $n$-fermion states: $c_1 \cdots c_n \ket{\psi_1 \cdots \psi_n} = \psi_1 \cdots \psi_n \ket{\psi_1 \cdots \psi_n}$
 
 </div><br>
 
@@ -56,15 +45,6 @@ $$
 
 for any $i\neq j$. This means that $\psi_i$ are not ordinary numbers - they should *anti-commute with each other*. They are called **Grassmann numbers**. We also require that the Grassmann numbers *always anti-commute* with the annihilation / creation operators. 
 
-The Hermitian conjugate of the definition is
-
-$$
-\langle \psi_1\psi_2 \cdots\psi_n|
-c_n^\dagger \cdots c_2^\dagger c_1^\dagger 
-= \langle \psi_1\psi_2 \cdots\psi_n|
-\bar{\psi}_n \cdots \bar{\psi}_2 \bar{\psi}_1
-$$
-
 ## Building Coherent State from Vacuum
 
 <div class="result">
@@ -78,7 +58,7 @@ $$
     = (1-\psi c^\dagger)\ket{0}
     = \exp (-\psi c^\dagger)\ket{0}
     \\
-    \bra{\psi}
+    \bra{\bar{\psi}}
     &= \bra{0} - \bra{1} \bar{\psi}
     = \bra{0}(1 - c\bar{\psi})
     = \bra{0} \exp(-c\bar{\psi})
@@ -95,7 +75,7 @@ $$
 \ket{\psi} =c_0\ket{0} +c_1\ket{1}
 $$
 
-We point out that the coefficients here are *Grassmann numbers*. Then
+The coefficients here are *Grassmann numbers*. Then
 
 $$
 \begin{aligned}
@@ -114,7 +94,7 @@ $$
 c_1 = -\psi
 $$
 
-Again, $c_0$ is just a normali\psiation and we can set it to be 1. What about the $\psi c_1\ket{1}$ term? Recall that $\psi^n=0$ for any $n \ge 2$. Then $\psi c_1\ket{1} =-\psi^2\ket{1} =0$. Therefore 
+Again, $c_0$ is just a normalization and we can set it to be 1. What about the $\psi c_1\ket{1}$ term? Recall that $\psi^n=0$ for any $n \ge 2$. Then $\psi c_1\ket{1} =-\psi^2\ket{1} =0$. Therefore 
 
 $$
 \ket{\psi} 
@@ -126,7 +106,7 @@ The "Hermitian conjugate" of this state is
 
 $$
 \begin{aligned}
-    \bra{\psi}
+    \bra{\bar{\psi}}
     &= \bra{0} (1-c \bar{\psi})
     = \bra{0} - \bra{1}\bar{\psi}
     \quad \blacksquare
@@ -135,7 +115,9 @@ $$
 
 <div class="remark">
 
-*Remark*: For systems containing multiple kinds of fermions,
+*Remark*: 
+
+- For systems containing multiple kinds of fermions,
 
 $$
 \begin{aligned}
@@ -144,6 +126,8 @@ $$
     = \prod_k \exp (- \psi_k c_k^\dagger)\ket{0}
 \end{aligned}
 $$
+
+- The number $\bar{\psi}$ is completely independent of $\psi$ (they are *not* "Hermitian conjugates" of each other). We might even call it as a new variable $\eta$, i.e. $\bra{\eta} = \bra{0} - \bra{1} \eta$. 
 
 </div><br>
 
@@ -185,7 +169,7 @@ Integration over Grassmann variables is *defined to be the same* as differentiat
 
 $$
 \int d\bar{\psi} \, d\psi \exp (- \bar{\psi} \psi) 
-\ket{\psi} \bra{\psi} =\mathbf{1}
+\ket{\psi} \bra{\bar{\psi}} =\mathbf{1}
 $$
 
 </div><br>
@@ -198,7 +182,7 @@ $$
 \begin{aligned}
     \text{LHS}
     &= \int d\bar{\psi} \, d\psi 
-    (1-\bar{\psi} \psi) \ket{\psi} \bra{\psi}
+    (1-\bar{\psi} \psi) \ket{\psi} \bra{\bar{\psi}}
     \\
     &= \int d\bar{\psi} \, d\psi (1-\bar{\psi} \psi) 
     (\ket{0} - \psi \ket{1})
@@ -222,27 +206,23 @@ $$
 \end{aligned}
 $$
 
-## Trace
-
-
-
 ## Operators in Coherent State Representation
 
 <div class="result">
 
 **Amplitudes between coherent states:**
 
-For any normal ordered operator $\normord{A(c^\dagger, c)}$ and two coherent states $\ket{\psi}, \ket{\xi}$, 
+For any normal ordered operator $\normord{A(c^\dagger, c)}$ and two coherent states $\bra{\bar{\xi}}, \ket{\psi}$, 
 
 $$
-\amp{\xi}{\normord{A(c^\dagger,c)}}{\psi}
+\amp{\bar{\xi}}{\normord{A(c^\dagger,c)}}{\psi}
 = e^{\bar{\xi} \psi} \normord{A(\bar{\xi},\psi)}
 $$
 
 In particular, when $A$ is the identity operator, we find the overlap between two coherent states
 
 $$
-\braket{\xi}{\psi} = e^{\bar{\xi} \psi}
+\braket{\bar{\xi}}{\psi} = e^{\bar{\xi} \psi}
 $$
 
 </div><br>
@@ -266,6 +246,52 @@ $$
 \end{aligned}
 $$
 
+## Trace
+
+The trace of a bosonic operator $O$ (made of product of an even number of fermion operators) can be expressed as the integral
+
+<div class="result">
+
+**Trace of bosonic operators:**
+
+$$
+\operatorname{Tr} O
+= \int d\bar{\psi}\,d\psi
+\exp (-\bar{\psi} \psi) \amp{-\bar{\psi}}{O}{\psi}
+$$
+
+</div><br>
+
+Notice the *additional minus sign* compared to the boson case. 
+
+*Proof*: 
+
+$$
+\begin{aligned}
+    \text{RHS} &= \int d\bar{\psi}\,d\psi \,
+    (1 - \bar{\psi} \psi) \Big[
+        (\bra{0} + \bra{1} \bar{\psi}) O
+        (\ket{0} - \psi \ket{1})
+    \Big]
+    \\
+    &= \int d\bar{\psi}\,d\psi \,
+    (1 - \bar{\psi} \psi) \Big[
+        \amp{0}{O}{0} - \psi \amp{0}{O}{1}
+        + \bar{\psi} \amp{1}{O}{0}
+        - \bar{\psi} \psi \amp{1}{O}{1}
+    \Big]
+    \\
+    &= \int d\bar{\psi}\,d\psi \,
+    \Big[
+        1 \times (- \bar{\psi} \psi \amp{1}{O}{1})
+        + (-\bar{\psi} \psi) \times \amp{0}{O}{0} 
+    \Big]
+    \\
+    &= \amp{1}{O}{1} + \amp{0}{O}{0} = \operatorname{Tr} O = \text{LHS}
+    \quad \blacksquare
+\end{aligned}
+$$
+
 ## Coherent State Path Integral for Fermions
 
 Similar to the boson case, the partition function for a fermion system can be split into the product of many pieces, and identities are inserted to obtain the path integral representation:
@@ -275,7 +301,7 @@ $$
     Z &= \prod_{n=1}^N \int 
     d\bar{\psi}_n \, d\psi_n
     \exp (-\bar{\psi}_n \psi_n) 
-    \amp{\psi_{n}}{1 - \epsilon H(c^\dagger, c)}{\psi_{n-1}}
+    \amp{\bar{\psi}_{n}}{1 - \epsilon H(c^\dagger, c)}{\psi_{n-1}}
     \\
     &= \int D\bar{\psi} \, D\psi
     \prod_{n=1}^N \bigg[
@@ -295,7 +321,7 @@ $$
 \end{aligned}
 $$
 
-While we have $z_0, \bar{z}_0 = z_N, \bar{z}_N$, for fermions an additional minus sign from the trace operation requires *anti-PBC* along the $\tau$-direction: 
+Notice that for fermions the additional minus sign in the trace operation requires *anti-PBC* along the $\tau$-direction: 
 
 $$
 \psi_0, \bar{\psi}_0 = -\psi_N, -\bar{\psi}_N

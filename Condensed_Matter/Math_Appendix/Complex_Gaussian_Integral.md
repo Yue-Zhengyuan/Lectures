@@ -262,43 +262,65 @@ variable.
 
 </div><br>
 
-*Proof*: We reproduce the (normalized) generating function here for
-convenience
+*Proof*: First take the derivative of $J_a$ of the normalized generating function
 
-$\mathcal{Z}(\bar{J}, J)= \frac{1}{Z(0,0)}\int \prod_{k=1}^n  \left[\frac{d\bar{z}_kdz_k}{2\pi i}\right] \exp \left(- \bar{z}_iA_{i j}z_j+J_i\bar{z}_i
-+z_j \bar{J}_j\right)= \exp \left(\bar{J}_i(A^{-1})_{i j}J_j\right)$
-
-First take the derivative of $J_a$ and
-
-$\frac{\partial}{\partial J_a}\mathcal{Z}(\bar{J}, J)= \left(\sum_{i=1}^n \bar{J}_i(A^{-1})_{i a}\right)\exp ( ... )\equiv
-\bar{B}_a\left(\bar{J}\right)\exp ( ... )$
+$$
+\begin{aligned}
+    \frac{\partial}{\partial J_a}\mathcal{Z}(\bar{J}, J)
+    &= \left(\sum_{i=1}^n \bar{J}_i(A^{-1})_{i a}\right)\exp(...)
+    \\
+    &\equiv \bar{B}_a(\bar{J}) \exp(...)
+\end{aligned}
+$$
 
 Since the structure $\bar{B}_a$ does not contain $J$, the two point
 function $\langle a b\rangle$ must vanish. But
 
-$\frac{\partial \bar{B}_a}{\partial \bar{J}_b}=(A^{-1})_{b a}$
+$$
+\frac{\partial \bar{B}_a}{\partial \bar{J}_b}=(A^{-1})_{b a}
+$$
 
-Similarly,
+Similarly, taking the derivative of $\bar{J}_a$ of the normalized generating function
 
-$\frac{\partial}{\partial \bar{J}_a}\mathcal{Z}(\bar{J}, J)= \left(\sum_{i=1}^n (A^{-1})_{a i}J_i\right)\exp ( ... )\equiv
-B_a(J)\exp ( ... )$
+$$
+\begin{aligned}
+    \frac{\partial}{\partial \bar{J}_a}\mathcal{Z}(\bar{J}, J)
+    &= \left(\sum_{i=1}^n (A^{-1})_{a i}J_i\right)\exp(...)
+    \\
+    &\equiv B_a(J)\exp(...)
+\end{aligned}
+$$
 
-the structure $B_a$ does not contain $\bar{J}$, and
+The structure $B_a$ does not contain $\bar{J}$, and
 $\langle \bar{a} \bar{b}\rangle$ vanishes. And
 
-$\frac{\partial B_a}{\partial J_b}=(A^{-1})_{a b}$
+$$
+\frac{\partial B_a}{\partial J_b}=(A^{-1})_{a b}
+$$
 
 Only the pairs with both kinds of variables survive:
 
-$\langle \bar{z}_a z_b\rangle = \frac{\partial}{\partial J_b}\frac{\partial}{\partial \bar{J}_a}\exp ( ... )= \frac{\partial}{\partial
-J_b}B_a(J)\exp ( ... )=(A^{-1})_{a b}\exp ( ... )+B_a(J)\bar{B}_b\left(\bar{J}\right)\overset{J=0}{\rightarrow}(A^{-1})_{a
-b}$
+$$
+\begin{aligned}
+    \expect{\bar{z}_a z_b}
+    &= \frac{\partial}{\partial J_b}
+    \frac{\partial}{\partial \bar{J}_a} \exp(...)
+    = \frac{\partial}{\partial J_b} B_a(J) \exp(...)
+    \\
+    &= (A^{-1})_{a b}\exp(...)+B_a(J)\bar{B}_b(\bar{J})
+    \xrightarrow{J=0}
+    (A^{-1})_{ab}
+\end{aligned}
+$$
 
 Now we know how to generalize the real integral Wick's Theorem. For
 example, the 4-point function
 
-$\langle \bar{i} j \bar{k}l\rangle = \langle \bar{i} j\rangle \langle \bar{k}l\rangle + \langle \bar{i} l\rangle
-\langle \bar{k} j\rangle$
+$$
+\expect{\bar{i} j \bar{k} l} 
+= \expect{\bar{i} j} \expect{\bar{k} l} 
++ \expect{\bar{i} l} \expect{\bar{k} j}
+$$
 
 *Proof*:
 
@@ -306,22 +328,22 @@ $$
 \begin{aligned}
     \text{LHS}
     &= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\frac{\partial}{\partial J_j}\frac{\partial}{\partial \bar{J}_i}\exp
-    ( ... )= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\frac{\partial}{\partial J_j}\left(B_i\exp ( ... )\right)
+    ( ... )= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\frac{\partial}{\partial J_j}\left(B_i\exp(...)\right)
     \\
-    &= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\left((A^{-1})_{i j}\exp ( ... )+B_i\bar{B}_j\exp ( ... )\right)
+    &= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\left((A^{-1})_{i j}\exp(...)+B_i\bar{B}_j\exp(...)\right)
     \\
-    &= \frac{\partial}{\partial J_l}\left((A^{-1})_{i j}B_k\exp ( ... )+B_i(A^{-1})_{k j}\exp ( ... )+B_i\bar{B}_jB_k\exp
+    &= \frac{\partial}{\partial J_l}\left((A^{-1})_{i j}B_k\exp(...)+B_i(A^{-1})_{k j}\exp(...)+B_i\bar{B}_jB_k\exp
     ( ... )\right)
     \\
-    &=(A^{-1})_{i j}(A^{-1})_{k l}\exp ( ... )+(A^{-1})_{i j}B_k\bar{B}_l\exp ( ... )
+    &=(A^{-1})_{i j}(A^{-1})_{k l}\exp(...)+(A^{-1})_{i j}B_k\bar{B}_l\exp(...)
     \\ &\qquad 
     +(A^{-1})_{i
-    l}(A^{-1})_{k j}\exp ( ... )+ \left(\text{terms} \propto B,\bar{B}\right)
+    l}(A^{-1})_{k j}\exp(...)+ \left(\text{terms} \propto B,\bar{B}\right)
     \\
     &\xrightarrow{J=0}
     (A^{-1})_{i j}(A^{-1})_{k l}+(A^{-1})_{i l}(A^{-1})_{k j}
-    = \langle
-    \bar{i} j\rangle \langle \bar{k}l\rangle + \langle \bar{i} l\rangle \langle \bar{k} j\rangle
+    = \expect{\bar{i} j} \expect{\bar{k} l} 
+    + \expect{\bar{i} l} \expect{\bar{k} j}
 \end{aligned}
 $$
 

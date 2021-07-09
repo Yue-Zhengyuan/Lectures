@@ -18,8 +18,6 @@
 
 # Fourier Transform
 
-Reference: *Quantum Field Theory in Condensed Matter Physics* by Nagaosa
-
 ## One-Dimensional Chain
 
 To motivate the discrete Fourier transform, we first construct a (periodic) 1D chain (let us call it $I$) of $N$ sites. The distance between two nearest neighbors is $a$; the length of the chain (period in space) is therefore $L = Na$.
@@ -39,7 +37,7 @@ x_n = na, \quad x_{n + N} = x_n
 \  (\text{Periodicity})
 $$
 
-Due to the periodicity, the sites on the chain can be labelled by any $N$ consecutive integers. Two conventional choices are:
+Due to the periodicity, the sites on the chain can be labelled by any $N$ consecutive integers $n_0, n_0+1, ..., n_0+N-1$. Two conventional choices are:
 
 - When the number of sites is finite, we usually use the "**finite convention**":
     
@@ -67,7 +65,6 @@ Consider a function $f(x): I \to \mathbb{C}$ assigning a complex number to each 
 
 $$
 f_n \equiv f(x_n), \quad
-n = 0,...,N-1 \ \text{(Finite convention)}
 $$
 
 Obviously $f_n$ also has the periodicity $f_{n+N} = f_n$. We assemble these values $\{f_n\}$ into a column vector
@@ -77,7 +74,7 @@ f = (f_0, ..., f_{N-1})^\mathsf{T} \
 \text{or} \  (f_{-(N-1)/2}, ..., f_{(N-1)/2})^\mathsf{T}
 $$
 
-The **discrete Fourier transform** is a *unitary transformation* on this vector $f$.
+The **discrete Fourier transform** is a linear transformation on this vector $f$.
 
 <div class="result">
 
@@ -88,7 +85,7 @@ f(k_m) = \sum_n U_{mn} f(x_n)
 = \frac{1}{\sqrt{N}} \sum_n e^{i k_m x_n} f(x_n)
 $$
 
-- The transformation matrix $U_{mn}$ is given by
+- The *unitary* transformation matrix $U_{mn}$ is given by
 
     $$
     U_{mn} = \frac{1}{\sqrt{N}} e^{i k_m x_n}
@@ -493,3 +490,7 @@ $$
     \to f(k') \quad \blacksquare
 \end{aligned}
 $$
+
+## Relation to Quantum Mechanics
+
+

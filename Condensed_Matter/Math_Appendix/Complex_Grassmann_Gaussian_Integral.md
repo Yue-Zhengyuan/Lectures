@@ -106,9 +106,9 @@ Now we generalize the result above to the $n$-pair case
             + \bar{\psi} J + \bar{J} \psi 
         )
         \\
-        \text{with} \quad
+        \text{with} \quad &
         D\bar{\psi} \, D\psi
-        &= \prod_{k=1}^n \left(d\bar{\psi}_kd\psi_k\right)
+        = \prod_{k=1}^n \left(d\bar{\psi}_kd\psi_k\right)
     \end{aligned}
     $$
 

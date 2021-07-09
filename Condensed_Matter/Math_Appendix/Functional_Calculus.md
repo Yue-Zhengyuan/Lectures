@@ -82,4 +82,3 @@ $$
 
 ## Functional Extrema and Euler-Lagrange Equation
 
-## From Multi-variable Integral to Path Integral

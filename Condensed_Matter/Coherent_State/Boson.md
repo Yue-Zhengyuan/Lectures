@@ -155,7 +155,7 @@ We now prove the central result to be used in the construction of coherent state
 **Over-completeness relation of boson coherent states:**
 
 $$
-\int \frac{d\bar{z} dz}{2\pi i}
+\int \frac{d\bar{z}\,dz}{2\pi i}
 \exp (-\bar{z} z) \ket{z} \bra{z} = 1
 $$
 
@@ -269,9 +269,7 @@ $$
 
 $$
 \braket{w}{z} 
-= \langle 0 | 
-e^{\bar{w} a} e^{z a^\dagger}
-\ket{0}
+= \amp{0}{e^{\bar{w} a} e^{z a^\dagger}}{0}
 $$
 
 Using the theorem (when $[A,B]$ is a $c$-number)
@@ -283,22 +281,18 @@ $$
 We have
 
 $$
-e^{\bar{w} a}e^{z a^\dagger}
-= e^{\bar{w}z [a,a^\dagger]}
-e^{z a^\dagger} e^{\bar{w} a}
-= e^{\bar{w}z}
-e^{z a^\dagger} e^{\bar{w} a}
+\begin{aligned}
+    e^{\bar{w} a}e^{z a^\dagger}
+    &= e^{\bar{w}z [a,a^\dagger]} e^{z a^\dagger} e^{\bar{w} a}
+    = e^{\bar{w}z} e^{z a^\dagger} e^{\bar{w} a}
+    \\
+    \Rightarrow \quad
+    \braket{w}{z} &= e^{\bar{w}z} 
+    \amp{0}{e^{z a^\dagger} e^{\bar{w} a}}{0}
+\end{aligned}
 $$
 
-But
-
-$$
-\bra{0}e^{z a^\dagger}=\bra{0}, 
-\quad
-e^{\bar{w} a}\ket{0} =\ket{0}
-$$
-
-Thus
+But $\bra{0}e^{z a^\dagger}=\bra{0}$ and $e^{\bar{w} a}\ket{0} =\ket{0}$, thus
 
 $$
 \braket{w}{z} =e^{\bar{w}z}
@@ -307,21 +301,21 @@ $$
 
 ## Trace
 
-The trace of a bosonic operator can be expressed as the integral
+The trace of a bosonic operator $O$ can be expressed as the integral
 
 <div class="result">
 
 **Trace of bosonic operators:**
 
 $$
-\operatorname{Tr} \Omega
-= \int \frac{d\bar{z} dz}{2\pi i}
-\exp (-\bar{z} z) \amp{z}{\Omega}{z}
+\operatorname{Tr} O
+= \int \frac{d\bar{z}\,dz}{2\pi i}
+\exp (-\bar{z} z) \amp{z}{O}{z}
 $$
 
 </div><br>
 
-*Proof*:
+which is the same as inserting an identity into a closed "spacetime loop".
 
 ## Coherent State Path Integral for Bosons
 
