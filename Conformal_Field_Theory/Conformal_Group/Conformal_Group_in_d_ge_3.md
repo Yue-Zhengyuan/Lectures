@@ -210,7 +210,7 @@ $$
 Now we derive the transformation **generators** corresponding to the conformal group in $d\ge 3$. Under an infinitesimal transformation, the coordinates and the field will change according to
 
 <center>
-<img src="Figures/field_trans.png" width="300pt">
+<img src="images/field_trans.png" width="300pt">
 </center>
 
 $$

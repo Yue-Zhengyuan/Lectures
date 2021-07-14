@@ -35,7 +35,7 @@ $$
 Here we have used the following deformation of contour; the original contour must enclose all the $w$'s of each field.
 
 <center>
-<img src="Figures/conformal_ward.png" width="500pt">
+<img src="images/conformal_ward.png" width="500pt">
 </center>
 
 When deriving the OPE, we have shown that ($\delta_\epsilon$ simply means the change of $\phi$ due to the chiral $\epsilon(z)$)

@@ -49,7 +49,7 @@ $$
 </div><br>
 
 <center>
-<img src="Figures/radial_quant.png" width="500pt">
+<img src="images/radial_quant.png" width="500pt">
 </center>
 
 The time direction $x^0$ now becomes the *radial direction* on $\C$, hence the name **radial quantization**. In particular:
@@ -112,7 +112,7 @@ The subscript $0,w$ means paths enclosing $0,w$ respectively.
 *Proof*: With the following deformation of the integration path:
 
 <center>
-<img src="Figures/norm_ord_int_path.png" width="600pt">
+<img src="images/norm_ord_int_path.png" width="600pt">
 </center>
 
 $$

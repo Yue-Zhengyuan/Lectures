@@ -367,9 +367,6 @@ $$
 
 </div><br>
 
-### Time Ordering as Path Ordering
-
-
 ## Heisenberg Picture
 
 There is another description of time evolution which gives the same result for the expectation value of any physical observables $O$, which is 

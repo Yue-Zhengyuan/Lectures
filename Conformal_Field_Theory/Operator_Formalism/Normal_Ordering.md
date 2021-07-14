@@ -70,7 +70,7 @@ $$
 
 <center>
 
-![integration path](Figures/norm_ord_int_path.png)   
+![integration path](images/norm_ord_int_path.png)   
 *Deformation of integration path*
 
 </center>

@@ -82,14 +82,14 @@ The **discrete Fourier transform** is a linear transformation on this vector $f$
 
 $$
 f(k_m) = \sum_n U_{mn} f(x_n) 
-= \frac{1}{\sqrt{N}} \sum_n e^{i k_m x_n} f(x_n)
+= \frac{1}{\sqrt{N}} \sum_n e^{-i k_m x_n} f(x_n)
 $$
 
 - The *unitary* transformation matrix $U_{mn}$ is given by
 
     $$
-    U_{mn} = \frac{1}{\sqrt{N}} e^{i k_m x_n}
-    = \frac{1}{\sqrt{N}} e^{2\pi i m n/N}, \quad
+    U_{mn} = \frac{1}{\sqrt{N}} e^{-i k_m x_n}
+    = \frac{1}{\sqrt{N}} e^{-2\pi i m n/N}, \quad
     k_m = \frac{2\pi m}{L}
     $$
 
@@ -108,22 +108,22 @@ $$
 We first prove the unitarity of the matrix $U$:
 
 $$
-\begin{aligned}
+\begin{align*}
     (U^\dagger U)_{nn'}
     &= \sum_m (U^\dagger)_{nm} U_{mn'}
     \\
-    &= \frac{1}{N} \sum_m e^{-2\pi imn/N} e^{2\pi imn'/N}
+    &= \frac{1}{N} \sum_m e^{2\pi imn/N} e^{-2\pi imn'/N}
     \\
-    &= \frac{1}{N} \sum_m e^{2\pi im(n'-n)/N} = \delta_{nn'}
+    &= \frac{1}{N} \sum_m e^{2\pi im(n-n')/N} = \delta_{nn'}
     \\
     (U U^\dagger)_{mm'}
     &= \sum_m U_{mn} (U^\dagger)_{nm'}
     \\
-    &= \frac{1}{N} \sum_n e^{2\pi imn/N} e^{-2\pi im'n/N}
+    &= \frac{1}{N} \sum_n e^{-2\pi imn/N} e^{2\pi im'n/N}
     \\
-    &= \frac{1}{N} \sum_n e^{2\pi i(m-m')n/N} = \delta_{mm'}
+    &= \frac{1}{N} \sum_n e^{2\pi i(m'-m)n/N} = \delta_{mm'}
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 <div class="remark">
@@ -131,13 +131,13 @@ $$
 *Remark*: In term of $k_m, x_n$, these unitarity conditions can be written as
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{1}{N} \sum_m e^{ik_m (x_{n'} - x_n)} &= \delta_{nn'}
     &\quad &\text{(Position $x$ orthogonality)}
     \\
     \frac{1}{N} \sum_n e^{i(k_m - k_{m'}) x_n} &= \delta_{mm'}
     &\quad &\text{(Momentum $k$ orthogonality)}
-\end{aligned}
+\end{align*}
 $$
 
 which will give us the **Dirac delta function** when taking the continuum limit, as we will see later. 
@@ -149,15 +149,15 @@ which will give us the **Dirac delta function** when taking the continuum limit,
 The range of $m$ can also be chosen as any $N$ consecutive integers, due to the periodicity in momentum $k$ space:
     
 $$
-\begin{aligned}
+\begin{align*}
     f(k_{m+N})
     &= \sum_{n=0}^{N-1} 
-    f(x_n) e^{ik_{m+N} x_n} \\
+    f(x_n) e^{-ik_{m+N} x_n} \\
     &= \sum_{n=0}^{N-1} 
-    f(x_n) e^{ik_m x_n} \underbrace{
-        e^{i(2\pi/a)na}
-    }_{=\exp(2\pi in) = 1} = f(k_m)
-\end{aligned}
+    f(x_n) e^{-ik_m x_n} \underbrace{
+        e^{-i(2\pi/a)na}
+    }_{=\exp(-2\pi in) = 1} = f(k_m)
+\end{align*}
 $$
 
 A shift of the range of $m$ corresponds to a cyclic permutation of rows of the matrix $U$, which does not affect its unitarity. 
@@ -168,7 +168,7 @@ One can perform an *inverse* transform to recover $f(x_n)$ from $f(k_m)$. Since 
 
 $$
 (U^{-1})_{nm} = (U^\dagger)_{nm} = U_{mn}^*
-= \frac{1}{\sqrt{N}} e^{-ik_m x_n}
+= \frac{1}{\sqrt{N}} e^{ik_m x_n}
 $$
 
 Therefore
@@ -179,7 +179,7 @@ Therefore
 
 $$
 f(x_n) = \sum_m (U^{-1})_{nm} f(k_m) 
-= \frac{1}{\sqrt{N}} \sum_m e^{-i k_m x_n} f(k_m)
+= \frac{1}{\sqrt{N}} \sum_m e^{i k_m x_n} f(k_m)
 $$
 
 </div><br>
@@ -189,15 +189,15 @@ $$
 *Remark*: Another commonly used definition of the matrix $U$ is 
 
 $$
-U_{mn} = e^{ik_m x_n}, \quad 
-(U^{-1})_{nm} = \frac{1}{N} e^{-ik_m x_n}
+U_{mn} = e^{-ik_m x_n}, \quad 
+(U^{-1})_{nm} = \frac{1}{N} e^{ik_m x_n}
 $$
 
 Then the DFT formulas become
 
 $$
-f(k_m) = \sum_n e^{i k_m x_n} f(x_n), \quad
-f(x_n) = \frac{1}{N} \sum_m e^{-i k_m x_n} f(k_m)
+f(k_m) = \sum_n e^{-i k_m x_n} f(x_n), \quad
+f(x_n) = \frac{1}{N} \sum_m e^{i k_m x_n} f(k_m)
 $$
 
 which are more convenient for deriving the continuum limit, and will be used below. 
@@ -225,17 +225,17 @@ $$
 The DFT formulas become (assuming finite convention for labelling of $x$, so that $x \in [0,L)$)
 
 $$
-\begin{aligned}
-    f(k_m) &= \sum_n f(x_n) e^{ik_m x_n} 
-    = \sum_n \frac{\Delta x}{a} \,f(x_n) e^{ik_m x_n}
+\begin{align*}
+    f(k_m) &= \sum_n f(x_n) e^{-ik_m x_n} 
+    = \sum_n \frac{\Delta x}{a} \,f(x_n) e^{-ik_m x_n}
     \\
-    &\to \frac{1}{a} \int_0^L dx \, f(x) e^{ik x}
+    &\to \frac{1}{a} \int_0^L dx \, f(x) e^{-ik x}
     
     \\[1.5em]
 
     f(x) &= \frac{1}{N} \sum_{m=-\infty}^{\infty} 
-    f(k_m) e^{-ik_m x}
-\end{aligned}
+    f(k_m) e^{ik_m x}
+\end{align*}
 $$
 
 However, from physical considerations, function $f(x)$ should be *rescaled*. As $a \to 0$, the amount of any physical quantity $f$ (e.g. mass, charge, displacement from equilibrium) assigned to each single site ("averaging" over the whole chain) approaches 0 as $O(a)$. Thus we redefine the function $f(x)$ as
@@ -266,8 +266,8 @@ Thus, replace $f(x)$ by $a f(x)$ in the above transformation (keep $f(k)$ unchan
 
 $$
 f(x) = \frac{1}{L} \sum_{m=-\infty}^{\infty} 
-f(k_m) e^{-ik_m x}, \quad
-f(k_m) = \int_0^L dx \, f(x) e^{ik_m x}
+f(k_m) e^{ik_m x}, \quad
+f(k_m) = \int_0^L dx \, f(x) e^{-ik_m x}
 $$
 
 </div><br>
@@ -279,15 +279,15 @@ $$
 - Since $f(x) = f(x+L)$, the Fourier series can be evaluated on any interval $[x_0, x_0 + L)$ (in particular, when $x_0 = -L/2$).
 
     $$
-    f(k_m) = \int_{x_0}^{x_0+L} dx \, f(x) e^{ik_m x}
+    f(k_m) = \int_{x_0}^{x_0+L} dx \, f(x) e^{-ik_m x}
     $$
 
 - An alternative, more symmetric definition of Fourier series is
 
     $$
     f(x) = \frac{1}{\sqrt{L}} \sum_{m=-\infty}^{\infty} 
-    f(k_m) e^{-ik_m x}, \quad
-    f(k_m) = \frac{1}{\sqrt{L}} \int_0^L dx \, f(x) e^{ik_m x}
+    f(k_m) e^{ik_m x}, \quad
+    f(k_m) = \frac{1}{\sqrt{L}} \int_0^L dx \, f(x) e^{-ik_m x}
     $$
 
 </div><br>
@@ -299,12 +299,12 @@ For Fourier series, the unitary conditions are slightly different:
 - $k$-Orthogonality
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \frac{1}{N} \sum_{n=0}^{N-1} e^{i (k_m - k_{m'}) x_n} 
         = \frac{1}{L} \sum_{n=0}^{N-1} 
         \Delta x \, e^{i (k_m - k_{m'}) x_n} 
         &= \delta_{m,m'}
-    \end{aligned}
+    \end{align*}
     $$
 
     In the $N \to \infty$ limit, we obtain
@@ -361,7 +361,7 @@ For Fourier series, the unitary conditions are slightly different:
     To show this, we return to the discrete case: the LHS is then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\sum_n \Delta x \, f(x_n) 
         \sum_m e^{ik_m (x_{n'} - x_n)}
         \quad (\Delta x = L/N = a)
@@ -371,7 +371,7 @@ For Fourier series, the unitary conditions are slightly different:
         \\
         &= L f(x_{n'}) \to L f(x') 
         \qquad \blacksquare
-    \end{aligned}
+    \end{align*}
     $$
 
 ## Continuous Fourier Transform
@@ -397,12 +397,12 @@ $$
 Physically, this means that the system does not have asymmetry between both sides of the origin $x = 0$. Then the Fourier series formulas become
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{Fourier Series:} &\quad
-    f(x) = \frac{1}{L} \sum_{m=-\infty}^{\infty} f(k_m) e^{-ik_m x}
+    f(x) = \frac{1}{L} \sum_{m=-\infty}^{\infty} f(k_m) e^{ik_m x}
     \\
     \text{Series Coefficient:} &\quad
-    f(k_m) = \int_{-L/2}^{L/2} dx \, f(x) e^{ik_m x}
+    f(k_m) = \int_{-L/2}^{L/2} dx \, f(x) e^{-ik_m x}
     \\
     k \text{-Orthogonality:} &\quad
     \int_{-L/2}^{L/2} dx \, e^{i(k_m - k_{m'}) x} 
@@ -411,7 +411,7 @@ $$
     x \text{-Orthogonality:} &\quad
     \frac{1}{L} \sum_{m=-\infty}^{\infty} e^{ik_m (x' - x)} 
     = \delta(x - x')
-\end{aligned}
+\end{align*}
 $$
 
 In the $L\to \infty$ limit, we have the replacement
@@ -428,8 +428,8 @@ Then
 **Continuous Fourier transform:**
 
 $$
-f(x) = \int_{-\infty}^{\infty} \frac{dk}{2\pi} f(k) e^{-ikx}, \quad 
-f(k) = \int_{-\infty}^{\infty} dx \, f(x) e^{ikx}
+f(x) = \int_{-\infty}^{\infty} \frac{dk}{2\pi} f(k) e^{ikx}, \quad 
+f(k) = \int_{-\infty}^{\infty} dx \, f(x) e^{-ikx}
 $$
 
 </div><br>
@@ -439,8 +439,8 @@ $$
 *Remark*: An alternative, more symmetric definition is
 
 $$
-f(x) = \int_{-\infty}^{\infty} \frac{dk}{\sqrt{2\pi}} f(k) e^{-ikx}, \quad 
-f(k) = \int_{-\infty}^{\infty} \frac{dx}{\sqrt{2\pi}} \, f(x) e^{ikx}
+f(x) = \int_{-\infty}^{\infty} \frac{dk}{\sqrt{2\pi}} f(k) e^{ikx}, \quad 
+f(k) = \int_{-\infty}^{\infty} \frac{dx}{\sqrt{2\pi}} \, f(x) e^{-ikx}
 $$
 
 </div><br>
@@ -482,15 +482,53 @@ $$
 In the finite-$L$ case, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     &\frac{1}{L} \sum_m f(k_m) 
     \int_{-L/2}^{L/2} dx \, e^{i(k_m - k_{m'}) x} 
     \\
     &= \sum_m f(k_m) \delta_{mm'} = f(k_{m'})
     \to f(k') \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ## Relation to Quantum Mechanics
 
+In quantum mechanics, the position-space wave function of the momentum eigenstate $\ket{k}$ is (not normalized)
 
+$$
+\braket{x}{k} = e^{ikx}
+$$
+
+which can be verified by plugging in the operator $\hat{p} = -i\partial_x$ 
+
+$$
+\amp{x}{\hat{p}}{k} = -i\partial_x e^{ikx} = k e^{ikx} = \amp{x}{k}{k}
+$$
+
+The orthogonality relations for Fourier transform then becomes
+
+$$
+\begin{alignat*}{3}
+    \int \frac{dk}{2\pi} e^{ik(x' - x)} 
+    &= \int \frac{dk}{2\pi} \braket{x'}{k} \braket{k}{x}
+    &&= \delta(x - x')
+    \\
+    \int dx \, e^{i(k-k')x} 
+    &= \int dx \, \braket{k'}{x} \braket{x}{k}
+    &&= 2\pi \delta(k - k')
+\end{alignat*}
+$$
+
+Regarding $f(x), f(k)$ as the wave function in position/momentum space of the state $\ket{f}$, we have (by inserting an identity)
+
+$$
+\begin{align*}
+    f(x) &= \braket{x}{f} 
+    = \int \frac{dk}{2\pi} \braket{x}{k} \braket{k}{f}
+    = \int \frac{dk}{2\pi} e^{ikx} f(k)
+    \\
+    f(k) &= \braket{k}{f}
+    = \int dx\, \braket{k}{x} \braket{x}{f}
+    = \int dx\, e^{-ikx} f(x)
+\end{align*}
+$$

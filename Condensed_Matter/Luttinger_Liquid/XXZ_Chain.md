@@ -18,7 +18,10 @@
 
 # The XXZ Spin Chain
 
-Reference: *Quantum Physics in One Dimension* by Thierry Giamarchi
+Reference: 
+
+- *Quantum Physics in One Dimension* by Thierry Giamarchi
+- *Quantum Field Theory in Strongly Correlated Electronic Systems* by Naoto Nagaosa
 
 <div class="result">
 

@@ -176,7 +176,9 @@ $$
 \end{aligned}
 $$
 
-![image](Fig-7_1.png)
+<center>
+<img src="images/vanishing_curve.png" width="300pt">
+</center>
 
 The functions $h_{r,s}$ can be expressed in many ways:
 
