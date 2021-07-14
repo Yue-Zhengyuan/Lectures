@@ -98,7 +98,7 @@ Below we derive a theorem relating commutators and radial-ordered products.
 
 <div class="result">
 
-**Theorem:** Let $a(z), b(z)$ be two chiral fields; $w$ is an arbitrary point on the complex plane. Then
+**Theorem:** Let $a(z), b(z)$ be two chiral fields having no singularities except possibly at the origin; $w$ is an arbitrary nonzero point on the complex plane. Then
 
 $$
 \oint_0 dz [a(z),b(w)]
@@ -110,6 +110,11 @@ The subscript $0,w$ means paths enclosing $0,w$ respectively.
 </div><br>
 
 *Proof*: With the following deformation of the integration path:
+
+$$
+\oint_{|z|>|w|} dz - \oint_{|z|<|w|} dz
+= \oint_w dz
+$$
 
 <center>
 <img src="images/norm_ord_int_path.png" width="600pt">

@@ -393,7 +393,8 @@ and similarly for the anti-chiral part. Let us record this intermediate result:
 
 $$
 \delta \phi(w,\bar{w})
-= -\frac{1}{2\pi i} \oint_w \epsilon (z) R[T(z) \phi(w,\bar{w})]
+= -\frac{1}{2\pi i} \oint_w dz \,
+\epsilon (z) R[T(z) \phi(w,\bar{w})]
 + \text{anti-chiral}
 $$
 

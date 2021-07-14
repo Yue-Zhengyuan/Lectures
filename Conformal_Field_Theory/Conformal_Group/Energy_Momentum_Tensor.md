@@ -30,7 +30,7 @@ The **energy-momentum tensor** $T^{\mu \nu}$ is a rather mysterious object due t
     - \delta_\nu^\mu \mathcal{L}
     $$
     
-    This is in general not symmetric. However, one can make it so by adding a term
+    This is in general not symmetric. However, one can make it so by adding a term $B$ satisfying the following relations 
     
     $$
     T^{\mu \nu} = (T_c)^{\mu \nu} + \partial_\rho B^{\rho \mu \nu},
@@ -114,10 +114,10 @@ Conformal invariance
 
 <i>
 
+> <br>
 > Under certain conditions, the energy-momentum tensor of a theory with scale invariance can be made traceless, much in the same way as it can be made symmetric in a theory with rotation invariance. If this is possible, then it follows from the above that full conformal invariance is a consequence of scale invariance and Poincaré invariance. 
 > 
-> We know of no general proof that the energy-momentum tensor 
-of a two-dimensional field theory with scale invariance can be made traceless. However, we shall hold it to be true. 
+> We know of no general proof that the energy-momentum tensor of a two-dimensional field theory with scale invariance can be made traceless. However, we shall hold it to be true. <br><br>
 
 </i>
 
@@ -140,7 +140,7 @@ x^0 = \frac{1}{2}(z+\bar{z}),
 x^1 = -\frac{i}{2}(z-\bar{z})
 $$
 
-The energy-momentum tensor will then transform:
+The energy-momentum tensor will then transform to:
 
 $$
 \begin{aligned}
@@ -203,7 +203,7 @@ $$
 
 <div class="remark">
 
-*Remark*: At first sight, $T_{zz} + T_{\bar{z}\bar{z}} = T_{00} \ne 0$ will make people think something's wrong. But the trace of the complexified $T_{\mu \nu}$ should be taken with the complexified *metric* $g_{\mu \nu}$, which we shall verify later.
+*Remark*: At first sight, $T_{zz} + T_{\bar{z}\bar{z}} = T_{00} \ne 0$ will make people think something's wrong. But the trace of the complexified $T_{\mu \nu}$ should be taken with the *complexified* metric $g_{\mu \nu}$, which we shall verify later.
 
 </div><br>
 

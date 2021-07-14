@@ -57,7 +57,9 @@ Otherwise the correlation function vanishes.
 
 Since the holomorphic (no-bar) and the anti-holomorphic (with-bar) parts decouples, once we have shown the holomorphic result, it is not difficult to write down the corresponding anti-holomorphic equations.
 
-*Proof of the chiral case*: To save writing, let $G(z_1,z_2) = \expect{\phi_1(z_1) \phi_2(z_2)}$.
+*Proof of the chiral case*: 
+
+To save writing, let $G(z_1,z_2) = \expect{\phi_1(z_1) \phi_2(z_2)}$.
 
 We apply infinitesimal conformal transformations $\epsilon(z_i)$ for each $i = 1,2$. The variation of the correlation function is
 

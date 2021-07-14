@@ -18,7 +18,21 @@
 
 # Conformal Ward Identity
 
-Consider the action of $T(z)$ on the $N$-point correlation function ($\phi_i \equiv \phi_i(w_i, \bar{w}_i)$):
+Consider the action of $T(z)$ on the $N$-point correlation function ($\phi_i \equiv \phi_i(w_i, \bar{w}_i)$): 
+
+$$
+\delta \expect{\phi_1 \cdots \phi_n}
+= -\frac{1}{2\pi i} \oint_w \epsilon (z) R[T(z) \phi_1 \cdots \phi_n]
++ \text{anti-chiral}
+$$
+
+We first focus on the first (chiral) term: with the following deformation of contour 
+
+<center>
+<img src="images/conformal_ward.png" width="500pt">
+</center>
+
+we obtain (the original contour must enclose all the $w$'s of each field)
 
 $$
 \begin{aligned}
@@ -32,13 +46,7 @@ $$
 \end{aligned}
 $$
 
-Here we have used the following deformation of contour; the original contour must enclose all the $w$'s of each field.
-
-<center>
-<img src="images/conformal_ward.png" width="500pt">
-</center>
-
-When deriving the OPE, we have shown that ($\delta_\epsilon$ simply means the change of $\phi$ due to the chiral $\epsilon(z)$)
+When deriving the OPE, we have shown that ($\delta_\epsilon$ simply means the change of $\phi$ due to the chiral $\epsilon(z)$, thus the anti-chiral part is zero)
 
 $$
 \begin{aligned}

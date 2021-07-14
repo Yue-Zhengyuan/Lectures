@@ -122,9 +122,9 @@ $$
 \det \left(
     \frac{\partial x'}{\partial x}
 \right)
-= \left|
+= \abs{
     \frac{\partial x'}{\partial x}
-\right| = \lambda^d
+} = \lambda^d
 $$
 
 Thus the transformation of $\phi$ above is in fact a special case of (the Yellow Book 4.2.1)
@@ -134,9 +134,9 @@ Thus the transformation of $\phi$ above is in fact a special case of (the Yellow
 **General (spinless) primary fields in $d \ge 2$:**
 
 $$
-\phi(x') = \left|
+\phi(x') = \abs{
     \frac{\partial x'}{\partial x}
-\right|^{-\Delta/d} \phi(x)
+}^{-\Delta/d} \phi(x)
 $$
 
 </div><br>
@@ -177,21 +177,21 @@ $$
     - \frac{\partial w^0}{\partial x^1}
     \frac{\partial w^1}{\partial x^0}
     \\[1em]
-    &= \left|
+    &= \abs{
         \frac{\partial x'}{\partial x}
-    \right|
+    }
 \end{aligned}
 $$
 
 Then
 
 $$
-\phi(x') = \left|
+\phi(x') = \abs{
     \frac{\partial x'}{\partial x}
-\right|^{-h} \phi(x)
-= \left|
+}^{-h} \phi(x)
+= \abs{
     \frac{\partial x'}{\partial x}
-\right|^{-\Delta/2} \phi(x)
+}^{-\Delta/2} \phi(x)
 $$
 
 which is a special case ($d = 2$) of the general formula.
