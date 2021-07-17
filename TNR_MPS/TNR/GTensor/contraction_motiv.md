@@ -51,7 +51,7 @@ Grassmann tensors are represented by blocks (or circles, etc); its axes are *dou
 We focus on a portion (let us call it $A$) of the propagator of the spinless $t$-$V$ model:
 
 $$
-\begin{aligned}
+\begin{align*}
     A \equiv \int 
     &\langle 
         \xi_{i-1} \xi_{i} | 
@@ -84,24 +84,24 @@ $$
         e^{-\epsilon H_{i+1, i+2}} | 
         \zeta_{i+1} \zeta_{i+2} 
     \rangle
-\end{aligned}
+\end{align*}
 $$
 
 To save writing, we have renamed the states in each evolution layer to
 
 $$
-\begin{aligned}
+\begin{align*}
     |\eta^{n-1} \rangle \rightarrow |\zeta\rangle &, \quad
     |\eta^n \rangle \rightarrow |\eta\rangle \\
     |\eta^{n+1} \rangle \rightarrow |\theta\rangle &, \quad
     |\eta^{n+2} \rangle \rightarrow |\xi\rangle
-\end{aligned}
+\end{align*}
 $$
 
 Since $e^{-\epsilon H_{i, i+1}}$ has spatial translational symmetry (i.e. independent of the site position $i$), each Trotter gate is related to the same Grassmann tensor $\mathbf{T}$ (up to a difference of the names of the Grassmann numbers):
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle 
         \theta_i \theta_{i+1} | e^{-\epsilon H_{i, i+1}} | \eta_i \eta_{i+1} 
     \rangle 
@@ -114,13 +114,13 @@ $$
     \equiv \sum_{n=0,1} 
     \mathbf{T}(\bar{\theta},\eta)^{\bar{n}_{i+1} \bar{n}_i n_i n_{i+1}}
     \qquad
-\end{aligned}
+\end{align*}
 $$
 
 Then $A$ can be expressed in terms of $T$:
 
 $$
-\begin{aligned}
+\begin{align*}
     A \equiv \sum_{m,n,p} \int 
     &
     \mathbf{T}(\bar{\xi},\theta)^{\bar{m}_i \bar{m}_{i-1} m_{i-1} m_i}
@@ -134,13 +134,13 @@ $$
     \\ & \times
     \mathbf{T}(\bar{\eta},\zeta)^{\bar{p}_i \bar{p}_{i-1} p_{i-1} p_i}
     \mathbf{T}(\bar{\eta},\zeta)^{\bar{p}_{i+2} \bar{p}_{i+1} p_{i+1} p_{i+2}}
-\end{aligned}
+\end{align*}
 $$
 
 In particular, we pick out the terms
 
 $$
-\begin{aligned}
+\begin{align*}
     &\mathbf{A}(\bar{\xi},\zeta)^{
         (\bar{m}_{i} \bar{m}_{i-1} m_{i-1} \bar{m}_{i+2} \bar{m}_{i+1} m_{i+2})
         (\bar{p}_{i-1} p_{i-1} p_i \bar{p}_{i+2} p_{i+1} p_{i+2})
@@ -159,7 +159,7 @@ $$
     \\ & \qquad \times
     \mathbf{T}(\bar{\eta},\xi)^{\bar{p}_i \bar{p}_{i-1} p_{i-1} p_i}
     \mathbf{T}(\bar{\eta},\xi)^{\bar{p}_{i+2} \bar{p}_{i+1} p_{i+1} p_{i+2}}
-\end{aligned}
+\end{align*}
 $$
 
 The summation over the rest $m, \bar{m}, p, \bar{p}$ will be assigned to the evaluation of other parts of the gate network. 
@@ -167,7 +167,7 @@ The summation over the rest $m, \bar{m}, p, \bar{p}$ will be assigned to the eva
 In the integration, $\bar{\eta}_1, \eta_1$ are treated as independent variables. Thus nothing prevents us to rename the integration variables:
 
 $$
-\begin{aligned}
+\begin{align*}
     A = \sum_{m,n} \int
     &T^{m_1 m_2 m_3 m_4} 
     \bar{\theta}_1^{m_1} \bar{\theta}_2^{m_2} 
@@ -176,7 +176,7 @@ $$
     T^{n_1 n_2 n_3 n_4} 
     \bar{\eta}_1^{n_1} \bar{\eta}_2^{n_2} 
     \eta_3^{n_3} \eta_4^{n_4}
-\end{aligned}
+\end{align*}
 $$
 
 This motivates us to define the **contraction** of the 3rd axis of the first $T$ and the 1st axis of the second $T$.

@@ -59,19 +59,19 @@ where:
 Introduce a third primary field $\phi_r(w,\bar{w})$, and calculate
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \phi_r | \phi_1(z,\bar{z}) | \phi_2\rangle
     \\
     &\equiv \lim_{w,\bar{w} \to \infty}
     w^{2h_r} \bar{w}^{2\bar{h}_r}
     \langle \phi_r(w,\bar{w}) \phi_1(z,\bar{z}) \phi_2(0,0)\rangle
-\end{aligned}
+\end{align*}
 $$
 
 where $C_{r12}$ are coefficients of 3-point functions: recall that
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \phi_1(x_1) \phi_2(x_2) \phi_3(x_3) \rangle
     &= C_{123} [
         z_{12}^{h_1+h_2-h_3}
@@ -84,13 +84,13 @@ $$
         \bar{z}_{23}^{\bar{h}_2+\bar{h}_3-\bar{h}_1}
         \bar{z}_{13}^{\bar{h}_3+\bar{h}_1-\bar{h}_2}
     ]^{-1}
-\end{aligned}
+\end{align*}
 $$
 
 Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \phi_r | \phi_1(z,\bar{z}) | \phi_2\rangle
     \\
     &= \lim_{w,\bar{w} \to \infty}
@@ -118,6 +118,6 @@ $$
     ]^{-1}
     \\
     &= \frac{C_{r12}}{z^{h_1+h_2-h_r} \bar{z}^{\bar{h}_1+\bar{h}_2-\bar{h}_r}}
-\end{aligned}
+\end{align*}
 $$
 

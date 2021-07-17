@@ -64,19 +64,19 @@ $$
 To get reasonable expression inside the exponent, we also require the matrix $A$ and the source $J$ *not* to scale with $a$:
 
 $$
-\begin{aligned}
+\begin{align*}
     A_{ij} \to A_{\text{lattice}}(x_i, x_j)
     &= A_{\text{continuum}}(x_i, x_j)
     \\
     J_i \to J_{\text{lattice}}(x_i)
     &= J_{\text{continuum}}(x_i)
-\end{aligned}
+\end{align*}
 $$
 
 Then in terms of the continuum variables, the integral becomes
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(J) &= \lim_{a \to 0}
     V \int \bigg[\prod_n du(x_n) \bigg] 
     \\ &\quad \times \exp \bigg[
@@ -84,7 +84,7 @@ $$
         u(x_i) A(x_i,x_j) u(x_j) 
         + a^d \sum_{i} J(x_i) u(x_i)
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 Note that in the exponential function, as $a \to 0$, the volume $a^d$ just serves as the *integration measure* over $x$:
@@ -106,7 +106,7 @@ we obtain
 **Real Gaussian path integral:**
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(J) &\propto \int Du \,
     \exp \bigg[
         -\frac{1}{2} \int d^dx \, d^dy \,
@@ -114,7 +114,7 @@ $$
         \\ &\qquad \qquad \qquad \qquad
         + \int d^dx \, J(x) u(x)
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -122,12 +122,12 @@ $$
 In the path integral case, we are usually not interested in the overall constant normalization factor, and use the normalized integral
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{Z}(J) &\equiv \frac{Z(J)}{Z(0)} 
     = \exp \bigg[
         \frac{1}{2} J_i [A^{-1}]_{i j}J_j
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 In the continuum limit, we obtain

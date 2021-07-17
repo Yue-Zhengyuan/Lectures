@@ -33,10 +33,10 @@
 
     $$
     \left.
-    \begin{aligned}
+    \begin{align*}
         c = \sum_i c_i \sigma_{r,i} \\ 
         c' = \sum_i c'_i \sigma_{r,i}
-    \end{aligned}
+    \end{align*}
     \right\} \Rightarrow
     c + c' = \sum_i (c_i + c'_i) \sigma_{r,i}
     $$
@@ -61,23 +61,23 @@
 - **Boundary $\partial_r \sigma_r$ of an oriented $r$-simplex $\sigma_r = (p_0 ... p_r)$**:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \partial_r \sigma_r &\equiv
         \sum_{i=0}^r (-1)^i (p_0 ... \cancel{p_i}... p_r)
         \quad (r > 0)
         \\
         \partial_0 \sigma_0 &\equiv 0
-    \end{aligned}
+    \end{align*}
     $$
 
     *Example*:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \partial_1 (p_0 p_1) &= p_1 - p_0 \\
         \partial_2 (p_0 p_1 p_2) &=
         (p_1 p_2) - (p_0 p_2) + (p_0 p_1)
-    \end{aligned}
+    \end{align*}
     $$
     
     *Remark*: 
@@ -122,14 +122,14 @@
 - **$r$-Boundary group $B_r(K)$**: the *image* of the boundary operator $\partial_{r+1}$, which is also a *subgroup* of $C_r(K)$.
     
     $$
-    \begin{aligned}
+    \begin{align*}
         B_r(K) &= \text{im }{\partial_{r+1}} \\
         &= \{
             c \in C_r(K) \mid 
             c = \partial_{r+1}d, \,
             \exist d \in C_{r+1}(K)
         \}
-    \end{aligned}
+    \end{align*}
     $$
 
     - **$r$-Boundary**: An element in $B_r(K)$, i.e. an $r$-chain which is the boundary of some $(r+1)$-chain

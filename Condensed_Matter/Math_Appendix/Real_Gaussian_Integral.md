@@ -27,10 +27,10 @@ To begin with, we review the standard result of one-variable Gaussian integral:
 - Generating function
 
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(J)
         &= \int dx \exp \left(- \frac{1}{2}a x^2 + J x\right)
-    \end{aligned}
+    \end{align*}
     $$
 
     - $a$ is a positive real number 
@@ -39,14 +39,14 @@ To begin with, we review the standard result of one-variable Gaussian integral:
 - Integration result of the generating function
 
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(0) &= \bigg(\frac{2\pi}{a}\bigg)^{1/2}
         \\
         \frac{Z(J)}{Z(0)} &= \exp \left(
             \frac{J^2}{2a}
         \right)
         \equiv \mathcal{Z}(J)
-    \end{aligned}
+    \end{align*}
     $$
 
 </div><br>
@@ -60,12 +60,12 @@ Now we generalize Gaussian integral to many-variable case.
 - Generating function
 
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(J)
         &= \int dx_1 ... dx_n \exp \left(- \frac{1}{2}x_iA_{i j}x_j+J_ix_i\right)
         \\
         &= \int dx_1 ... dx_n \exp \left(- \frac{1}{2}x^{\mathsf{T}}A x+J^{\mathsf{T}}x\right)
-    \end{aligned}
+    \end{align*}
     $$
 
     - $A$ is a real symmetric $n\times n$ matrix
@@ -74,14 +74,14 @@ Now we generalize Gaussian integral to many-variable case.
 - Integration result of the generating function
 
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(0) &= \frac{(2\pi)^{n/2}}{(\det A)^{1/2}}
         \\
         \frac{Z(J)}{Z(0)} &= \exp \left(
             \frac{1}{2} J_i [A^{-1}]_{i j}J_j
         \right)
         \equiv \mathcal{Z}(J)
-    \end{aligned}
+    \end{align*}
     $$
 
 </div><br>
@@ -91,20 +91,20 @@ Now we generalize Gaussian integral to many-variable case.
 The standard method is to *diagonalize* the matrix $A$. Since it is real symmetric, diagonalization can be done by an *orthogonal matrix* $O$ (which has *unit determinant*). Let the matrix after diagonalization be $\Lambda$:
 
 $$
-\Lambda =O^{\mathsf{T}}A O \Rightarrow \left\{ \begin{aligned}
+\Lambda =O^{\mathsf{T}}A O \Rightarrow \left\{ \begin{align*}
     A &= O \Lambda  O^{\mathsf{T}}
     \\ 
     A^{-1} &=
     (O^{\mathsf{T}})^{-1} \frac{1}{\Lambda} O^{-1}
     = O \frac{1}{\Lambda} O^{\mathsf{T}}
-\end{aligned} \right. 
+\end{align*} \right. 
 $$
 
 Here $1/\Lambda$ is the inverse of $\Lambda$. Introduce the new
 variables $y=O^{\mathsf{T}}x$. The corresponding Jacobian is 1 (since we choose $\det O=1$). Then
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(0)
     &= \int dx_1 ... dx_n \exp \left(- \frac{1}{2}x^{\mathsf{T}}O \Lambda  O^{\mathsf{T}}x\right)
     \\
@@ -118,13 +118,13 @@ $$
     &= \prod_{k=1}^n \left(\frac{2\pi}{\Lambda_k}\right)^{1/2}
     = \frac{(2\pi
     )^{n/2}}{(\det \Lambda)^{1/2}}= \frac{(2\pi)^{n/2}}{(\det A)^{1/2}}
-\end{aligned}
+\end{align*}
 $$
 
 The general $Z(J)$ can be found similarly:
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(J)
     &= \int dx_1 ... dx_n \exp \left(
         - \frac{1}{2}x^{\mathsf{T}}O \Lambda O^{\mathsf{T}}x
@@ -132,13 +132,13 @@ $$
     \right)
     \\
     &= \int dy_1 ... dy_n \exp \left(- \frac{1}{2}y^{\mathsf{T}}\Lambda  y+J^{\mathsf{T}}Oy\right)
-\end{aligned}
+\end{align*}
 $$
 
 Define the new parameters $\mathcal{J}=O^{\mathsf{T}}J$:
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(J)
     &= \int dy_1 ... dy_n \exp \left(- \frac{1}{2}y^{\mathsf{T}}\Lambda  y+ \mathcal{J}^{\mathsf{T}} y\right)
     \\
@@ -157,7 +157,7 @@ $$
     [A^{-1}]_{i j}J_j\right)
 
     \qquad \blacksquare
-\end{aligned} 
+\end{align*} 
 $$
 
 ## Wick's Theorem
@@ -165,7 +165,7 @@ $$
 By differentiating the normalized generating function with respect to the sources $J$, we can obtain the **$n$-point function** (this name comes from quantum field theory and statistical physics):
 
 $$
-\begin{aligned}
+\begin{align*}
     \left\langle x_{a(1)} ... x_{a(m)}\right\rangle 
     &\equiv \frac{
         \int dx_1 ... dx_n x_{a(1)} ... x_{a(m)}
@@ -183,7 +183,7 @@ $$
         \frac{\partial}{\partial J_{a(1)}}
         \mathcal{Z}(J)
     \right]_{J=0}
-\end{aligned}
+\end{align*}
 $$
 
 Sometimes we simply write $\langle a(1) ... a(m)\rangle$. 
@@ -245,7 +245,7 @@ The four letters $i,j,k,l$ need *not* represent different variables.
 *Proof*:
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle i j k l\rangle 
     &= \frac{\partial}{\partial J_l}
     \frac{\partial}{\partial J_k}
@@ -275,7 +275,7 @@ $$
         + B_i\langle j k\rangle \exp(...)
         + B_i B_j B_k \exp( ... )
     \big]
-\end{aligned}
+\end{align*}
 $$
 
 If we stop differentiation here, we are evaluating

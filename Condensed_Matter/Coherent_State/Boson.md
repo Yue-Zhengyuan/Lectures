@@ -61,7 +61,7 @@ We can obtain the coherent state from the vacuum state $\ket{0}$ using the follo
 **Building coherent state from vacuum:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{z}
     &= \exp (z a^\dagger)\ket{0}
     = \sum_n \frac{(z a^\dagger)^n}{n!}\ket{0} 
@@ -69,7 +69,7 @@ $$
     \bra{z}
     &= \bra{0} \exp (a \bar{z})
     = \sum_n  \bra{0}\frac{\left(a \bar{z}\right)^n}{n!}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -79,7 +79,7 @@ $$
 Expand the coherent state using the Fock space basis vectors :
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{z} 
     &= \sum_{n\geq 0}  c_n\ket{n} 
     \\
@@ -89,7 +89,7 @@ $$
     =\sum_{n\geq 1}  c_n\sqrt{n}|n-1\rangle 
     \\
     &=\sum_{n\geq 0}  c_{n+1}\sqrt{n+1}\ket{n}
-\end{aligned}
+\end{align*}
 $$
 
 Meanwhile
@@ -200,7 +200,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS} 
     &=\int \frac{dx dy}{\pi} e^{-(x^2 + y^2)}
     \braket{m}{z} 
@@ -209,7 +209,7 @@ $$
     &= \int \frac{dx dy}{\pi} e^{-(x^2 + y^2)}
     \frac{z^m}{\sqrt{m!}}
     \frac{\bar{z}^m}{\sqrt{n!}}
-\end{aligned}
+\end{align*}
 $$
 
 To evaluate this integral, we use the polar coordinates:
@@ -222,7 +222,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS} 
     &= \int \frac{r \, dr \, d\theta}{\pi \sqrt{m!n!}}
     e^{-r^2 + i(m-n)\theta} r^{m+n}
@@ -239,7 +239,7 @@ $$
     &=\delta_{m n}\frac{2}{n!}\frac{\Gamma (n+1)}{2}
     =\delta_{m n}
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ## Operators in Coherent State Representation
@@ -281,7 +281,7 @@ $$
 We have
 
 $$
-\begin{aligned}
+\begin{align*}
     e^{\bar{w} a}e^{z a^\dagger}
     &= e^{\bar{w}z [a,a^\dagger]} e^{z a^\dagger} e^{\bar{w} a}
     = e^{\bar{w}z} e^{z a^\dagger} e^{\bar{w} a}
@@ -289,7 +289,7 @@ $$
     \Rightarrow \quad
     \braket{w}{z} &= e^{\bar{w}z} 
     \amp{0}{e^{z a^\dagger} e^{\bar{w} a}}{0}
-\end{aligned}
+\end{align*}
 $$
 
 But $\bra{0}e^{z a^\dagger}=\bra{0}$ and $e^{\bar{w} a}\ket{0} =\ket{0}$, thus
@@ -339,7 +339,7 @@ $$
 Between these small pieces, we insert identities in coherent state representation 
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &= \prod_{n=1}^N \int 
     \frac{d\bar{z}_n \, dz_n}{2\pi i}
     \exp (-\bar{z}_n z_n) 
@@ -360,7 +360,7 @@ $$
             - \epsilon H(\bar{z}_n, z_n)
         \bigg]
     \bigg\}
-\end{aligned}
+\end{align*}
 $$
 
 Here $z_0, \bar{z}_0 = z_N, \bar{z}_N$, meaning periodicity in the $\tau$-direction 
@@ -378,14 +378,14 @@ $$
 Note that the eigenvalues $z_n$ can be interpreted as an (imaginary-)time dependent variable $z(\tau)$ at $\tau_n = n \beta/N$. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &\approx \int D\bar{z}\, Dz \exp \bigg\{
         - \epsilon \sum_{n=1}^N \Big[
             \bar{z}_n \partial_\tau z_n
             + H(\bar{z}_n, z_n)
         \Big]
     \bigg\}
-\end{aligned}
+\end{align*}
 $$
 
 In the $N\to \infty$ limit, the summation becomes an integration of $\tau$ from 0 to $\beta$. We finally arrive at
@@ -395,7 +395,7 @@ In the $N\to \infty$ limit, the summation becomes an integration of $\tau$ from 
 **Boson partition function in path integral form:**
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &= \int D\bar{z} \,Dz \exp \bigg[
         - \int_0^\beta d\tau \, L[\bar{z}, z]
     \bigg]
@@ -403,7 +403,7 @@ $$
     \text{with} \quad 
     L[\bar{z}, z]
     &= \bar{z}(\tau) \partial_\tau z(\tau) + H(\bar{z}(\tau), z(\tau))
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

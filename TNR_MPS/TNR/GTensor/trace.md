@@ -20,7 +20,7 @@
 The **trace** of a Grassmann tensor over the pairs of axes $(a,b), (c,d), ...$ is defined in similar way to the tensor contraction: 
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\operatorname{tr} \mathbf{A}(\theta)]_{i_1 ... \cancel{i_a} \cancel{i_b} \cancel{i_c} \cancel{i_d} ... i_r}^{n_1 ... \cancel{n_a} \cancel{n_b} \cancel{n_c} \cancel{n_d} ... n_r} 
     \\
     &\equiv \sum_{n_a,n_b} \sum_{n_c,n_d} \cdots \sum_{i_a,i_b} \sum_{i_c,i_d} \cdots
@@ -42,7 +42,7 @@ $$
     A_{i_1 ... i_r}^{n_1 ... n_r} 
     \\ &\quad \times
     \theta_1^{n_1} \cdots \cancel{\theta_a^{n_a}} \cancel{\theta_b^{n_b}} \cancel{\theta_c^{n_c}} \cancel{\theta_d^{n_d}} \cdots \theta_r^{n_r} 
-\end{aligned}
+\end{align*}
 $$
 
 Notes about notation: 
@@ -91,7 +91,7 @@ To remove the annoying parity $P$, we can first transpose $A$ so that the axes $
 Using this transposed tensor, the formula is simplified to
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\operatorname{tr} \mathbf{A}(\theta)]_{i_{2q+1} ... i_r}^{n_{2q+1} ... n_r} 
     \\
     &= \sum_{n_1,n_2} \cdots \sum_{n_{2q-1},n_{2q}} 
@@ -109,7 +109,7 @@ $$
     \\ &\quad \times
     A_{i_2 i_2 i_4 i_4 ... i_{2q} i_{2q} i_{2q+1} ... i_r}^{n_2 n_2 n_4 n_4 ... n_{2q} n_{2q} n_{2q+1} ... n_r} 
     \theta_{2q+1}^{n_{2q+1}} \cdots \theta_r^{n_r} 
-\end{aligned}
+\end{align*}
 $$
 
 ### Merge Axes for Tracing
@@ -128,7 +128,7 @@ Thus we can also use the following transposition:
 Now we are contracting over the pairs $(1,2q), (2,2q-1), ..., (q,q+1)$. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\operatorname{tr} \mathbf{A}(\theta)]_{i_{2q+1} ... i_r}^{n_{2q+1} ... n_r} 
     \\
     &= \sum_{n_1,n_{2q}} \cdots \sum_{n_q,n_{q+1}} 
@@ -145,7 +145,7 @@ $$
     \\ &\quad \times
     A_{(i_1 i_2 ... i_q) (i_q ... i_2 i_1) i_{2q+1} ... i_r}^{(n_1 n_2 ... n_q) (n_q ... n_2 n_1) n_{2q+1} ... n_r} 
     \theta_{2q+1}^{n_{2q+1}} \cdots \theta_r^{n_r} 
-\end{aligned}
+\end{align*}
 $$
 
 In the second way of calculating the trace, we can absorb the $g$'s into the tensor $A$:
@@ -168,7 +168,7 @@ $$
 then
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\operatorname{tr} \mathbf{A}(\theta)]_{i_{2q+1} ... i_r}^{n_{2q+1} ... n_r} 
     \\
     &= \sum_{N} \sum_{I}
@@ -178,7 +178,7 @@ $$
     &= \sum_{N} \left(\operatorname{tr}_I 
     \tilde{A}_{I I, i_{2q+1} ... i_r}^{N N, n_{2q+1} ... n_r} \right)
     \theta_{2q+1}^{n_{2q+1}} \cdots \theta_r^{n_r} 
-\end{aligned}
+\end{align*}
 $$
 
 Here $\operatorname{tr}_I$ means trace over the index $I$ only.

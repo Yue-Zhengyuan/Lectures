@@ -30,7 +30,7 @@ $$
 By definition,
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{G}_{\rho \sigma}(\tau - \tau')
     &\equiv -\expect{T [c_\rho(\tau) c_\sigma^\dagger(\tau')]}
     \\
@@ -42,7 +42,7 @@ $$
     \text{with} &\quad
     Z = \tr e^{-\beta H} 
     = e^{-\beta F}, \quad \tau = it
-\end{aligned}
+\end{align*}
 $$
 
 At equal time, one finds from statistical physics that 
@@ -68,7 +68,7 @@ $$
 one obtain (at equal time)
 
 $$
-\begin{aligned}
+\begin{align*}
     \expect{c_\rho c^\dagger_\sigma}
     &= \delta_{\rho \sigma} \pm 
     \expect{c^\dagger_\sigma c_\rho}
@@ -80,7 +80,7 @@ $$
     &= \delta_{\rho \sigma}
     \frac{e^{\beta \epsilon_\rho}}
     {e^{\beta \epsilon_\rho} \mp 1}
-\end{aligned}
+\end{align*}
 $$
 
 We use the Heisenberg picture to obtain the time dependence of the operators: in imaginary time
@@ -92,22 +92,22 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial c_\rho}{\partial \tau}
     &= \epsilon_\rho [c_\rho^\dagger c_\rho, c_\rho]
     \\
     &= \epsilon_\rho [c_\rho^\dagger, c_\rho] c_\rho
     \\
     &= - \epsilon_\rho c_\rho
-\end{aligned} \qquad
-\begin{aligned}
+\end{align*} \qquad
+\begin{align*}
     \frac{\partial c_\rho^\dagger}{\partial \tau}
     &= \epsilon_\rho [c_\rho^\dagger c_\rho, c_\rho^\dagger]
     \\
     &= \epsilon_\rho c_\rho^\dagger [c_\rho, c_\rho^\dagger]
     \\
     &= \epsilon_\rho c_\rho
-\end{aligned}
+\end{align*}
 $$
 
 Therefore
@@ -120,7 +120,7 @@ $$
 Then the Green's function has the explicit form
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{G}_{\rho \sigma}(\tau - \tau')
     &\equiv -\expect{T c_\rho(\tau) c_\sigma^\dagger(\tau')}
     \\
@@ -148,7 +148,7 @@ $$
         \pm \theta(\tau' - \tau)
         \frac{1}{e^{\beta \epsilon_\rho} \mp 1}
     \bigg] 
-\end{aligned}
+\end{align*}
 $$
 
 ## In Matsubara Frequency
@@ -156,7 +156,7 @@ $$
 Now we Fourier transform this result to find
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{G}_{\rho \sigma}(i\omega_n)
     &= \int_0^\beta d\tau \, e^{+i\omega_n \tau} 
     \mathcal{G}_{\rho \sigma}(\tau)
@@ -172,7 +172,7 @@ $$
     \frac{
         e^{(i\omega_n - \epsilon_\rho)\beta} - 1
     }{1 \mp e^{-\beta \epsilon_\rho}}
-\end{aligned}
+\end{align*}
 $$
 
 One can check explicitly that

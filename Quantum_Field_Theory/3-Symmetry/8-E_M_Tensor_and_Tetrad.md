@@ -5,7 +5,7 @@
 Since the tensor $T^{\mu \nu}$ can be made symmetric, we can write
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta S
     &= \int d^dx \epsilon_{\nu} \partial_{\mu}T^{\mu  \nu}
     = -\int d^dx T^{\mu  \nu} \partial_{\mu} \epsilon_{\nu}
@@ -15,7 +15,7 @@ $$
         \partial_{\mu} \epsilon_{\nu}
         + \partial_{\nu} \epsilon_{\mu}
     )
-\end{aligned}
+\end{align*}
 $$
 
 But in flat spacetime, we recognize that

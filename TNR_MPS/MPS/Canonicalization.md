@@ -73,7 +73,7 @@ we to obtain $R^0, ..., R^{N}$ and $L^N, ..., L^0$ by successive QR and LQ decom
 </center>
 
 $$
-\begin{aligned}
+\begin{align*}
     R^{n-1}_{ik} M^{n,\sigma_n}_{kj}
     = C^{n,\sigma_n}_{ij}
     \to C^n_{(i \sigma_n)j}
@@ -87,7 +87,7 @@ $$
     = L^n_{ik} Q'^n_{k (\sigma_n j)}
     &\to
     L^n_{ik} Q'^{n,\sigma_n}_{kj}
-\end{aligned}
+\end{align*}
 $$
 
 Or using the shorthand (omitting the physical index and use matrix notation)
@@ -160,11 +160,11 @@ from which we define the "projectors" $P_a, P_b$:
 ```
 
 $$
-\begin{aligned}
+\begin{align*}
     P_a^n &= (R^n)^{-1} U^n \sqrt{\Lambda^n}
     \\
     P_b^{n+1} &= \sqrt{\Lambda^n} (V^\dagger)^n (L^{n+1})^{-1}
-\end{aligned}
+\end{align*}
 $$
 
 To avoid calculation of inverse matrix, we use
@@ -173,22 +173,22 @@ $$
 (R^n L^{n+1})^{-1} = (L^{n+1})^{-1} (R^n)^{-1} 
 = V^n \frac{1}{\Lambda^n} (U^n)^\dagger
 \\ \Rightarrow 
-\left\{ \begin{aligned}
+\left\{ \begin{align*}
     (R^n)^{-1} &= L^{n+1} V^n \frac{1}{\Lambda^n} (U^n)^\dagger
     \\
     (L^{n+1})^{-1} &= V^n \frac{1}{\Lambda^n} (U^n)^\dagger R^n
-\end{aligned}
+\end{align*}
 \right.
 $$
 
 Finally,
 
 $$
-\begin{aligned}
+\begin{align*}
     P_a^n &= L^{n+1} V^n \frac{1}{\sqrt{\Lambda^n}}
     \\
     P_b^{n+1} &= \frac{1}{\sqrt{\Lambda^n}} (U^n)^\dagger R^n
-\end{aligned}
+\end{align*}
 $$
 
 and we combine them with the original $M^n$:
@@ -203,7 +203,7 @@ $$
 The new matrices $\tilde{M}^{n, \sigma_n}$ can be expressed in terms of the unitary matrices $U, V, Q, Q'$ and the singular value spectrum $\Lambda$: (in the following derivation, we omit the physical index $\sigma_n$; it is clear which matrix it belongs to)
 
 $$
-\begin{aligned}
+\begin{align*}
     \tilde{M}^n 
     &= P_b^n M^n P_a^n
     \\
@@ -222,13 +222,13 @@ $$
     \\
     &= \frac{1}{\sqrt{\Lambda^{n-1}}} (U^{n-1})^\dagger Q^n 
     U^n \sqrt{\Lambda^n}
-\end{aligned}
+\end{align*}
 $$
 
 Similarly
 
 $$
-\begin{aligned}
+\begin{align*}
     \tilde{M}^n 
     &= P_b^n M^n P_a^n
     \\
@@ -247,7 +247,7 @@ $$
     \\
     &= \sqrt{\Lambda^{n-1}} (V^{n-1})^\dagger
     Q'^n V^n \frac{1}{\sqrt{\Lambda^n}}
-\end{aligned}
+\end{align*}
 $$
 
 Then we discover that $\tilde{M}$'s satisfy the so-called left and right **canonical conditions**:
@@ -315,7 +315,7 @@ Suppose that we want to approximate the MPS with another one which has the same 
 We perform SVD at the link to be approximated:
 
 $$
-\begin{aligned}
+\begin{align*}
     \psi^{(\sigma_0,...,\sigma_{n-1})(\sigma_n,...,\sigma_N)}
     &= \sum_{i} (U)^{\sigma_0,...,\sigma_{n-1}}_i
     \Lambda_i
@@ -323,7 +323,7 @@ $$
     \\
     &= \sum_{i} (\psi_L)^{\sigma_0,...,\sigma_{n-1}}_i
     (\psi_R)^{\sigma_n,...,\sigma_N}_i
-\end{aligned}
+\end{align*}
 $$
 
 Here we absorbed the spectrum $\Lambda$ into the left and right parts of the MPS:

@@ -39,10 +39,10 @@ But due to the PBC, such a complexification has lots of redundancy. However, one
 **Mapping from cylinder to plane:**
 
 $$
-\begin{aligned}
+\begin{align*}
     z \mapsto w = e^{\omega z} \\
     \bar{z} \mapsto \bar{w} = e^{\omega \bar{z}}
-\end{aligned} \quad
+\end{align*} \quad
 (\omega \equiv 2\pi/L)
 $$
 
@@ -121,14 +121,14 @@ $$
 </center>
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{RHS}
     &=\oint_{|z|>|w|} dz \, a(z) b(w)
     - \oint_{|z|<|w|} dz \, b(w) a(z)
     \\
     &=\oint_0 dz \, [a(z),b(w)]
     \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 <div class="result">
@@ -151,7 +151,7 @@ $$
 *Proof*:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{RHS}
     &= \oint_0 dw \oint_0 dz \, [a(z),b(w)]
     \\
@@ -159,5 +159,5 @@ $$
     \\
     & = [A,B] 
     \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$

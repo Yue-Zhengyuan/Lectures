@@ -28,32 +28,32 @@ $$
 H_0 = \hbar \omega \left(
     b^\dagger b + \frac{1}{2}
 \right) \qquad
-\begin{aligned}
+\begin{align*}
     V(t) &= \bar{z}(t) b + b^\dagger z(t) \\
     [b, b^\dagger] &= 1
-\end{aligned}
+\end{align*}
 $$
 
 where $z(t), \bar{z}(t)$ are two *c*-number-valued functions; they are not complex conjugates of each other. In interaction picture, the time dependence of $b, b^\dagger$ can be easily determined (in the following the $I$ label is omitted):
 
 $$
 \begin{gathered}
-    \begin{aligned}
+    \begin{align*}
         \frac{\partial b}{\partial t}
         &= \frac{i}{\hbar} [H_0, b]
         \\
         &= i \omega [b^\dagger, b] b
         \\
         &= -i \omega b
-    \end{aligned} \qquad
-    \begin{aligned}
+    \end{align*} \qquad
+    \begin{align*}
         \frac{\partial b^\dagger}{\partial t}
         &= \frac{i}{\hbar} [H_0, b^\dagger]
         \\
         &= i \omega b^\dagger [b, b^\dagger]
         \\
         &= i \omega b^\dagger
-    \end{aligned}
+    \end{align*}
     \\ \Downarrow \\
     b(t) = b e^{-i\omega t}, \quad
     b^\dagger(t) = b^\dagger e^{i\omega t}
@@ -69,7 +69,7 @@ $$
 One is interested in the vacuum expectation value (VEV) of the time-evolution operator from $t = -\infty$ to $+\infty$:
 
 $$
-\begin{aligned}
+\begin{align*}
     S(\bar{z},z) &\equiv
     \amp{0}{S(-\infty, +\infty)}{0}
     \\
@@ -78,13 +78,13 @@ $$
             \frac{-i}{\hbar} \int_{-\infty}^{\infty} dt' \, V(t')
         \right)
     } \right]}
-\end{aligned}
+\end{align*}
 $$
 
 Here $\ket{0}$ is the *free* vacuum, or ground state of $H_0$. We now evaluate the time-ordered exponential explicitly. We first decomposed $S$ the product of many small evolution steps
 
 $$
-\begin{aligned}
+\begin{align*}
     S(t_f,t_i) &= \lim_{N \to \infty} S(t_f, t_{N-1})
     \cdots S(t_2,t_1) S(t_1, t_i)
     \\
@@ -93,13 +93,13 @@ $$
     t_r &= t_i + r \, \delta t, \quad
     \delta t = \frac{t_f - t_i}{N} \quad
     (r = 1,...,N)
-\end{aligned}
+\end{align*}
 $$
 
 In each small step $S_r \, (n = 1,...,N)$, the time ordering can be removed, and the integral becomes product with $\delta t$:
 
 $$
-\begin{aligned}
+\begin{align*}
     S_r &\simeq \exp{
         \left(
             -(i/\hbar) \delta t \, V(t_{n}) / \hbar
@@ -110,7 +110,7 @@ $$
     \quad
     A_r^\dagger
     = +(i/\hbar) \delta t \, b^\dagger(t_r) z(t_r)
-\end{aligned}
+\end{align*}
 $$
 
 Strictly, $A_r^\dagger$ is not the Hermitian conjugate of $A_r$, but we use this notation for convenience. Then the full evolution operator can be expressed as
@@ -136,12 +136,12 @@ $$
 In our context, we set $A \to A_r, B \to A_s^\dagger$, and find
 
 $$
-\begin{aligned}
+\begin{align*}
     [A_r, A_s^\dagger]
     &= (\delta t/\hbar)^2 \bar{z}(t_r) z(t_s) [b(t_r), b^\dagger(t_s)]
     \\
     &= (\delta t/\hbar)^2 \bar{z}(t_r) z(t_s) e^{-i\omega(t_r - t_s)}
-\end{aligned}
+\end{align*}
 $$
 
 which is indeed a *c*-number. Then
@@ -155,7 +155,7 @@ $$
 Now we move all the $e^{A_r}$ to the right. From the theorem stated earlier, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     S &= \cdots 
     e^{-A_3^\dagger} e^{A_3}
     e^{-A_2^\dagger} \underbrace{e^{A_2}
@@ -178,7 +178,7 @@ $$
     e^{-[A_3, A_2^\dagger] - [A_3, A_1^\dagger]}
     e^{-[A_2, A_1^\dagger]}
     e^{-\sum_r [A_r,A^\dagger_r] / 2} \\
-\end{aligned}
+\end{align*}
 $$
 
 From these simple examples, we can conclude that the final result is
@@ -194,7 +194,7 @@ $$
 Due to the exponential function, $\expect{\normord{S}} = 1$. Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     \expect{S(t_f,t_i)} &= e^{-\sum_{r > s} [A_r, A_s^\dagger]}
     e^{-\sum_r [A_r,A^\dagger_r] / 2} \\
     &= \exp \bigg[
@@ -210,26 +210,26 @@ $$
             1 - \frac{1}{2} \delta_{\alpha \beta}
         \right)
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 In the $N \to +\infty$ limit, setting $t_r \to t, t_s \to t'$, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     (\delta t)^2 \sum_{r \ge s} &\to 
     \int_{t_i}^{t_f} dt \int_{t_i}^t dt'
     \\
     &= \int_{t_i}^{t_f} dt \, dt' \, \theta(t - t')
     \\[1em]
     \delta_{\alpha \beta} &\to \delta(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 Due to the step function, the delta function does *not* contribute to the integral. Finally, sending $t_i \to -\infty, t_f \to +\infty$, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     S(\bar{z},z) &= \exp \bigg[
         \frac{-i}{\hbar} \int_{-\infty}^{\infty} dt \, dt'
         \bar{z}(t) G(t - t') z(t')
@@ -237,7 +237,7 @@ $$
     \\[1em] \text{with} \quad
     G(t - t') &= \frac{-i}{\hbar} \theta(t - t') 
     e^{-i\omega(t - t')}
-\end{aligned}
+\end{align*}
 $$
 
 ### Multiple Oscillators
@@ -282,7 +282,7 @@ $$
 We expand the functional $S(\bar{z},z)$ as a Dyson series:
 
 $$
-\begin{aligned}
+\begin{align*}
     S(\bar{z},z) 
     &= \sum_{n=0}^\infty \frac{(-i)^n}{n! \hbar^n} 
     \int_{-\infty}^{\infty} dt_1 \cdots dt_n \,
@@ -292,7 +292,7 @@ $$
         \sum_{\alpha, \beta}
         \bar{z}_\alpha(t) G_{\alpha \beta}(t - t') z_\beta(t')
     \bigg] 
-\end{aligned}
+\end{align*}
 $$
 
 The zeroth terms of both sides are 1. For the term of first order in both $z, \bar{z}$: 
@@ -302,7 +302,7 @@ The zeroth terms of both sides are 1. For the term of first order in both $z, \b
     Note that $V(t)$ itself has zero VEV, thus the first order term corresponds to $n = 2$:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \text{LHS}_1
         &= \frac{(-i)^2}{2\hbar^2} \int dt_1 \, dt_2
         \amp{0}{T[V(t_1) V(t_2)]}{0} \\
@@ -316,7 +316,7 @@ The zeroth terms of both sides are 1. For the term of first order in both $z, \b
             [\bar{z}_\alpha b_\alpha]_{t_1} [b_\beta^\dagger z_\beta]_{t_2}
             + [b_\alpha^\dagger z_\alpha]_{t_1} [\bar{z}_\beta b_\beta]_{t_2}
         \Big \}}{0} 
-    \end{aligned}
+    \end{align*}
     $$
 
     In the last step we used the property that only terms containing one $b$ and one $b^\dagger$ may survive. But the two remaining terms are in fact the same, since we are free to rename $t_1,t_2$ to $t_2,t_1$, or rename $r,s$ to $s,r$. Thus
@@ -355,7 +355,7 @@ $$
 We can re-derive the explicit formula of $G_{\alpha \beta}$ from this alternative definition. 
 
 $$
-\begin{aligned}
+\begin{align*}
     &i \hbar G_{\alpha \beta}(t - t') 
     = \amp{0}{T[b_\alpha(t) b_\beta^\dagger(t')]}{0} \\
     &= \amp{0}{b_\alpha(t) b_\beta^\dagger(t')}{0} \theta(t - t')
@@ -374,7 +374,7 @@ $$
     \\
     &= \delta_{\alpha \beta} e^{-i \omega_\alpha (t - t')}
     \theta(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 ### Green's Function from Functional Derivatives
@@ -382,7 +382,7 @@ $$
 The sp Green's function can also be obtained from $S(\bar{z},z)$ 
 
 $$
-\begin{aligned}
+\begin{align*}
     S(\bar{z},z) &= \amp{0}{T e^{
         -(i/\hbar) \int d\tau \, V(\tau)
     }}{0}
@@ -391,13 +391,13 @@ $$
         \bar{z}_\mu(\tau) b_\mu(\tau) 
         + b^\dagger_\mu(\tau) z_\mu(\tau)
     ]
-\end{aligned}
+\end{align*}
 $$
 
 by taking functional derivatives with respect to $\bar{z}$ or $z$. For this reason $S(\bar{z},z)$ is called a **generating functional**. For example,
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\delta S}{\delta \bar{z}_\alpha(t)}
     &= \amp{0}{T\left[
         \frac{-i}{\hbar} \int d\tau 
@@ -412,20 +412,20 @@ $$
     }_{= \delta_{\mu \alpha} \delta(\tau - t)}
     b_\mu(\tau) 
     = b_\alpha(\tau) \theta(\tau - t)
-\end{aligned} 
+\end{align*} 
 $$
 
 Thus we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     i\hbar \frac{\delta S}{\delta \bar{z}_\alpha(t)}
     &= \amp{0}{T\left[
         b_\alpha(t)
         e^{-(i/\hbar) \int d\tau \, V(\tau)} 
     \right]}{0} \\
     &= \amp{0}{T[b_\alpha(t) S]}{0}
-\end{aligned}
+\end{align*}
 $$
 
 A similar result holds for derivative with respect to $z_\alpha(t)$: 
@@ -453,7 +453,7 @@ $$
 Later derivations will add the new operator between the old ones and the $S$. Finally, if we set all the $z, \bar{z}$ to zero after the derivations, the $S$ will not appear in the final result, and we get the VEV of a product of various $b$'s and $b^\dagger$'s. Now we see that the sp Green's function can be obtained from
 
 $$
-\begin{aligned}
+\begin{align*}
     i\hbar G_{\alpha \beta}(t - t')
     &= \amp{0}{T[b_\alpha(t) b^\dagger_\beta(t')]}{0}
     \\
@@ -463,7 +463,7 @@ $$
         \frac{\delta}{\delta \bar{z}_\alpha(t)}
         S(\bar{z},z)
     \right]_{z,\bar{z} = 0}
-\end{aligned}
+\end{align*}
 $$
 
 ----
@@ -481,7 +481,7 @@ $$
 Here we used the shorthand $(\alpha) \to {}_\alpha(t_\alpha)$, etc. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     i \hbar \frac{\delta S}{\delta \bar{z}(\alpha)}
     &= S \times \sum_{\mu,\nu}
     \int dt_\mu \, dt_\nu \,
@@ -494,13 +494,13 @@ $$
         \sum_\nu 
         \int dt_\nu \, G(\alpha - \nu) z(\nu)
     }_{\equiv \mathcal{I}}
-\end{aligned}
+\end{align*}
 $$
 
 For the second derivative, we need to calculate
 
 $$
-\begin{aligned}
+\begin{align*}
     i \hbar \frac{\delta}{\delta z(\beta)} (S \mathcal{I})
     &= i \hbar \left[
         \frac{\delta S}{\delta z(\beta)} \mathcal{I}
@@ -518,7 +518,7 @@ $$
 
     i \hbar \frac{\delta \mathcal{I}}{\delta z(\beta)}
     &= i\hbar \, G(\alpha - \beta)
-\end{aligned}
+\end{align*}
 $$
 
 Thus we are left with (and note that $S(\bar{z}=0, z=0) = 1$)

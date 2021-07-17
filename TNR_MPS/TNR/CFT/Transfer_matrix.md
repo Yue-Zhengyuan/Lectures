@@ -73,11 +73,11 @@ $$
 Consider the transform of $\tau$ of one tensor under one RG step for square lattice. The $(2m)$th step will keep the network orientation unchanged, but $(2m+1)$st step will rotate the network clockwise, so that
 
 $$
-\begin{aligned}
+\begin{align*}
     w_1^{2m+1} &= w_1^{2m} - w_2^{2m} 
     \\[0.5em]
     w_2^{2m+1} &= w_1^{2m} + w_2^{2m} 
-\end{aligned}
+\end{align*}
 \qquad
 (m = 0, 2, 4, ...)
 $$
@@ -104,13 +104,13 @@ Recall that (for the horizontal TM) $\tau^{2m} = iw/vh$; then
 $$
 \tau^{2m+1} 
 = \frac{vh + iw}{vh - iw}
-\, \Rightarrow \, \left\{ \begin{aligned}
+\, \Rightarrow \, \left\{ \begin{align*}
     \operatorname{Re} \tau^{2m+1} 
     &= \frac{(vh)^2 - w^2}{(vh)^2 + w^2}
     \\
     \operatorname{Im} \tau^{2m+1}
     &= \frac{2vhw}{(vh)^2 + w^2}
-\end{aligned}
+\end{align*}
 \right.
 $$
 
@@ -127,7 +127,7 @@ For "good" models not affected by finite size effects (one notable exception bei
     </center>
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \tau^v 
         &= \frac{vh}{w} e^{i\theta}, &\qquad
         \Delta_i 
@@ -139,7 +139,7 @@ For "good" models not affected by finite size effects (one notable exception bei
         \Delta_i 
         &= - \frac{1}{2\pi} \frac{v h}{w \sin \theta} 
         \ln \frac{|\lambda^h_i|}{|\lambda^h_0|}
-    \end{aligned}
+    \end{align*}
     $$
 
     Therefore
@@ -163,7 +163,7 @@ For "good" models not affected by finite size effects (one notable exception bei
     For the lower-left to upper-right TM, we have
 
     $$
-    \begin{aligned}
+    \begin{align*}
         |w_1|^2 &= \Big( \frac{w}{2} \Big)^2
         + \Big(\frac{vh}{2}\Big)^2
         - 2 \frac{w}{2} \frac{vh}{2} \cos \theta
@@ -171,7 +171,7 @@ For "good" models not affected by finite size effects (one notable exception bei
         |w_2|^2 &= \Big(\frac{w}{2}\Big)^2
         + \Big( \frac{vh}{2} \Big)^2
         - 2 \frac{w}{2} \frac{vh}{2} \cos (\pi - \theta)
-    \end{aligned}
+    \end{align*}
     $$
 
     Thus we obtain similarly
@@ -209,13 +209,13 @@ $$
 The central charge can be determined from two transfer matrices along different directions, and *of the same size* (i.e. $w \times h$), so that we can get rid of the normalization factor of the tensors. From both the vertical and the horizontal transfer matrices (we select $vh \ne w$ so that $\tau^v \ne \tau^h$)
 
 $$
-\begin{aligned}
+\begin{align*}
     \ln |\lambda^h_0| 
     &= 2 \pi \operatorname{Im}(\tau^h) \frac{c}{12}
     \\
     \ln |\lambda^v_0| 
     &= 2 \pi \operatorname{Im}(\tau^v) \frac{c}{12}
-\end{aligned}
+\end{align*}
 $$
 
 we obtain

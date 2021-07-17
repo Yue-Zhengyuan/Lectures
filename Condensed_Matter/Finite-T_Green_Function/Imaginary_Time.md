@@ -100,7 +100,7 @@ $$
 - Time evolution operator 
     
     $$
-    \begin{aligned}
+    \begin{align*}
         &U(t,t_0) = T{\left[ \exp{
             \left(
                 -i \int_{t_0}^t dt' \, H(t')
@@ -113,17 +113,17 @@ $$
                 - \int_{\tau_0}^\tau d\tau' \, H(\tau')
             \right)
         } \right]}
-    \end{aligned}
+    \end{align*}
     $$
 
     On the RHS $T$ means time-ordering in $\tau$. For time-independent $H$, the formulas simplify to
 
     $$
-    \begin{aligned}
+    \begin{align*}
         U(t,t_0) = e^{-iH(t - t_0)} 
         \ &\Rightarrow \ 
         U(\tau,\tau_0) = e^{-H(\tau - \tau_0)}
-    \end{aligned}
+    \end{align*}
     $$
 
     <div class="remark">
@@ -143,17 +143,17 @@ For time-independent $H$:
 - Operator evolution (for convenience, set $t_0, \tau_0 = 0$)
     
     $$
-    \begin{aligned}
+    \begin{align*}
         O_H(t) &= e^{iHt} O_S e^{-iHt}
         \\[0.5em]
         \frac{\partial O_H}{\partial t} &= i [H, O_H]
-    \end{aligned}
+    \end{align*}
     \ \Rightarrow \ 
-    \begin{aligned}
+    \begin{align*}
         O_H(\tau) &= e^{H\tau} O_S e^{-H\tau}
         \\[0.5em]
         \frac{\partial O_H}{\partial \tau} &= [H, O_H]
-    \end{aligned}
+    \end{align*}
     $$
 
 ### Interaction Picture
@@ -171,24 +171,24 @@ As usual, we separate the full $H$ into $H_0 + V$. The chemical potential term $
 - Operator evolution (by $H_0$)
     
     $$
-    \begin{aligned}
+    \begin{align*}
         O_I(t) &= e^{iH_0 t} O_S e^{-iH_0 t}
         \\[0.5em]
         \frac{\partial O_I}{\partial t} &= i [H_0, O_I]
-    \end{aligned}
+    \end{align*}
     \ \Rightarrow \ 
-    \begin{aligned}
+    \begin{align*}
         O_I(\tau) &= e^{H_0 \tau} O_S e^{-H_0 \tau}
         \\[0.5em]
         \frac{\partial O_I}{\partial \tau} &= [H_0, O_I]
-    \end{aligned}
+    \end{align*}
     $$
 
 - State evolution operator
     
     $$
-    \begin{aligned}
-        \begin{aligned}
+    \begin{align*}
+        \begin{align*}
             &S(t,t_0) = e^{iH_0 (t-t_0)} U(t, t_0)
             \\
             &= T{\left[ \exp{
@@ -196,9 +196,9 @@ As usual, we separate the full $H$ into $H_0 + V$. The chemical potential term $
                     -i \int_{t_0}^t dt' \, V_I(t')
                 \right)
             } \right]} 
-        \end{aligned}
+        \end{align*}
         \ \Rightarrow \ 
-        \begin{aligned}
+        \begin{align*}
             &S(\tau,\tau_0) 
             = e^{H_0 (\tau-\tau_0)} U(t, t_0)
             \\
@@ -207,6 +207,6 @@ As usual, we separate the full $H$ into $H_0 + V$. The chemical potential term $
                     - \int_{\tau_0}^\tau d\tau' \, V_I(\tau')
                 \right)
             } \right]} 
-        \end{aligned}
-    \end{aligned}
+        \end{align*}
+    \end{align*}
     $$

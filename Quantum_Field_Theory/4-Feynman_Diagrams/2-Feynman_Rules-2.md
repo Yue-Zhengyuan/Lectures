@@ -30,7 +30,7 @@ $$
 For this particular type of theory, the Schwinger-Dyson equation states that
 
 $$
-\begin{aligned}
+\begin{align*}
     &(\partial_x^2 + m^2) 
     \langle \phi_x \phi_1 ... \phi_n \rangle
     \\
@@ -45,7 +45,7 @@ $$
     \phi_x \equiv \phi(x), \quad
     \phi_j \equiv \phi(x_j), \quad
     \partial_x^2 = (\partial/\partial x)^2
-\end{aligned}
+\end{align*}
 $$
 
 ## Perturbation Expansion of Correlation Functions

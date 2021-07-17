@@ -54,7 +54,7 @@ T.gT
 We shall use $\mathbf{T}^\Dagger$ to denote the combination of these two operations:
 
 $$
-\begin{aligned}
+\begin{align*}
     [\mathbf{T}^\Dagger(\theta)]_{i_1 ... i_r}^{n_1 ... n_r} 
     &\equiv [(\mathbf{T}^{\dagger \mathsf{T}}(\theta)]
     _{i_1 ... i_r}^{n_1 ... n_r} 
@@ -64,7 +64,7 @@ $$
     \\
     &= (-1)^{P(p|n)} (T^*)_{i_1 ... i_r}^{n_1 ... n_r}
     \theta_1^{n_1} ... \theta_r^{n_r}
-\end{aligned}
+\end{align*}
 $$
 
 where $p$ is the permutation that reverses the axis order, and $P(p|n)$ is the parity of $p$ restricted to nonzero Grassmann indices in $\{n\}$. We shall mainly work with $\mathbf{T}^\Dagger$ below. 
@@ -105,7 +105,7 @@ Graphically, $\mathbf{T}, \mathbf{T}^\dagger$ and $\mathbf{T}^\Dagger$ are repre
 A natural question to ask is how to obtain $(\mathbf{A} \mathbf{B})^\Dagger$ from $\mathbf{A}^\Dagger$ and $\mathbf{B}^\Dagger$. We start from the simplest case where we have only one pair of axes (say the $a$th of $\mathbf{A}$ and the $b$th of $\mathbf{B}$) to be contracted. Let $\mathbf{C} = \mathbf{AB}$; then
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{C}(\theta,\eta)]_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
     \\[0.5em]
     &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(a,b; \{m, n\})} g_{ab}^{m_a}
@@ -115,20 +115,20 @@ $$
     B_{j_1 ... j_s}^{n_1 ... n_s} 
     \theta_1^{m_1} ... \cancel{\theta_a^{m_a}} ...\theta_r^{m_r} 
     \eta_1^{n_1} ... \cancel{\eta_b^{n_b}} ...\eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 The tensor elements are
 
 $$
-\begin{aligned}
+\begin{align*}
     &C_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
     \\
     &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(a,b; \{m, n\})} g_{ab}^{m_a}
     \delta_{m_a n_b} \delta_{i_a j_b}
     A_{i_1 ... i_r}^{m_1 ... m_r} 
     B_{j_1 ... j_s}^{n_1 ... n_s} 
-\end{aligned}
+\end{align*}
 $$
 
 By definition of Grassmann conjugation:
@@ -159,7 +159,7 @@ $$
 This can be calculated by contracting the pairs of axes $(r,1), (r-1,2), ..., (1,r)$ in $\mathbf{T}^\dagger, \mathbf{T}$ with all Grassmann metrics all set to $+1$; recall that such a set of contraction pairs does not involve reordering of Grassmann variables:
 
 $$
-\begin{aligned}
+\begin{align*}
     (\text{norm } \mathbf{T})^2
     &= [\mathbf{T}^\dagger(\bar{\theta}) \mathbf{T}(\theta)]
     \\
@@ -175,7 +175,7 @@ $$
     \\ & =
     \sum_{n_1, ..., n_r} \sum_{i_1, ..., i_r} 
     |T_{i_1 i_2 ... i_r}^{n_1 n_2 ... n_r}|^2
-\end{aligned}
+\end{align*}
 $$
 
 Graphically, we flip $\mathbf{T}^\dagger$ horizontally, and connect the axes of $\mathbf{T}^\dagger$ and $\mathbf{T}$ in reversed order with $g = +1$:
@@ -208,7 +208,7 @@ nrmsqr = gt.tensordot(a.gT, a, [axes, axes]).value()
 - If $\mathbf{T}$ is of *even-parity*, it does not matter if we set *all* $g$ to $1$ or $-1$. Because the summand
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &g_{r,1}^{n_1} g_{r-1,2}^{n_2} \cdots g_{1,r}^{n_r}
         (T^\dagger)_{i_r ... i_1}^{n_r ... n_1} 
         T_{i_1 ... i_r}^{n_1 ... n_r} 
@@ -217,7 +217,7 @@ nrmsqr = gt.tensordot(a.gT, a, [axes, axes]).value()
         (\pm 1)^{n_1 + \cdots + n_r}
         (T^\dagger)_{i_r ... i_1}^{n_r ... n_1} 
         T_{i_1 ... i_r}^{n_1 ... n_r} 
-    \end{aligned}
+    \end{align*}
     $$
 
     is nonzero only when
@@ -231,7 +231,7 @@ nrmsqr = gt.tensordot(a.gT, a, [axes, axes]).value()
 - We can exchange of $\mathbf{T}, \mathbf{T}^\dagger$ in the calculation (the pairs of axes are certainly unchanged, thus we still need not to permute the Grassmann variables) :
     
     $$
-    \begin{aligned}
+    \begin{align*}
         &(\text{norm } \mathbf{T})^2
         = [\mathbf{T}(\theta) \mathbf{T}^\dagger(\bar{\theta})]
         \\
@@ -248,7 +248,7 @@ nrmsqr = gt.tensordot(a.gT, a, [axes, axes]).value()
         \sum_{n_1, ..., n_r} \sum_{i_1, ..., i_r} 
         |T_{i_1 i_2 ... i_r}^{n_1 n_2 ... n_r}|^2
         \quad \qquad \text{(rename variables)}
-    \end{aligned}
+    \end{align*}
     $$
 
 </div><br>

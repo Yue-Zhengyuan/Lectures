@@ -192,7 +192,7 @@ i.e. we are calculating
 In order to see that we are really acting on a *vector*, and which matrix does the eigenvalues belong to, we can merge the first two axes and the last two axes of the transfer tensor, to get a real *matrix*:
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{T}_{(i_0 i_1)(i_2 i_3)}^{(n_0 n_1)(n_2 n_3)}
     v_{(i_2 i_3)}^{(n_2 n_3)}
     &\xrightarrow[\text{for contraction}]{\text{transpose}}
@@ -200,7 +200,7 @@ $$
     v_{(i_2 i_3)}^{(n_2 n_3)}
     \\ \\ & \xrightarrow{\text{merge axes}}
     \mathcal{T}_{I J}^{M N} v_J^N
-\end{aligned}
+\end{align*}
 $$
 
 This is done by (`tm2` stands for either `tm_pbc` or `tm_apbc`)
@@ -258,7 +258,7 @@ In physical applications, $\mathcal{T}$ has *even parity*, while $v$ can be eith
 Similar to the 2 $\times$ 2 case, we can merge the first four axes and the last four axes of the transfer tensor, to get a real *matrix*:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\mathcal{T}_{(i_0 ... i_3)(i_4 ... i_7)}^{(n_0 ... n_3)(n_4 ... n_7)}
     v_{(i_4 ... i_7)}^{(n_4 ... n_7)}
     \\ \\
@@ -268,7 +268,7 @@ $$
     \\ \\
     & \xrightarrow{\text{merge axes}}
     \mathcal{T}_{I J}^{M N} v_J^N
-\end{aligned}
+\end{align*}
 $$
 
 This is done by
@@ -302,7 +302,7 @@ Thus:
 However, under some cases (e.g. [computing on the Klein bottle](trsf_mat_on_klein_bottle.md)), we do not want to merge the axes of $\mathcal{T}$ so completely. Suppose we only merge two axes together:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\mathcal{T}_{(i_0 i_1)(i_2 i_3)(i_4 i_5)(i_6 i_7)}^{(n_0 n_1)(n_2 n_3)(n_4 n_5)(n_6 n_7)}
     v_{(i_4 i_5)(i_6 i_7)}^{(n_4 n_5)(n_6 n_7)}
     \\ \\
@@ -312,7 +312,7 @@ $$
     \\ \\
     & \xrightarrow{\text{merge axes}}
     \mathcal{T}_{I J K L}^{M N P Q} v_{K L}^{P Q}
-\end{aligned}
+\end{align*}
 $$
 
 This is done by

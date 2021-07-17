@@ -38,7 +38,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta \mathcal{L} &= \frac{1}{2}
     \sqrt{g} T^{\mu \nu} \delta g_{\mu \nu}
     \\
@@ -53,7 +53,7 @@ $$
     \\
     &\to \p_\mu (T^{\mu\nu} \epsilon_\nu) 
     \quad \, \, \, \quad (\text{flat limit})
-\end{aligned}
+\end{align*}
 $$
 
 Now we define
@@ -71,7 +71,7 @@ $$
 For common CFTs, $T^{\mu\nu}$ is traceless. Then we can prove that this current is indeed conserved:
 
 $$
-\begin{aligned}
+\begin{align*}
     \p_\mu j^\mu 
     &= \p_\mu (T^{\mu \nu} \epsilon_\nu)
     = T^{\mu \nu} \p_\mu \epsilon_\nu \\
@@ -84,7 +84,7 @@ $$
     \\
     &= \frac{1}{d} (\p \cdot \epsilon) {T^\mu}_\mu
     = 0
-\end{aligned}
+\end{align*}
 $$
 
 ## Conserved Current on Complex Plane
@@ -141,13 +141,13 @@ $$
 In particular, let us calculate the current associated with the conformal transformation in complex coordinates. First, the infinitesimal transformation $\epsilon^\mu$, which is also a vector, is transformed to
 
 $$
-\begin{aligned}
+\begin{align*}
     \epsilon_z &= \frac{1}{2}(\epsilon_0 - i \epsilon_1)
     = \frac{1}{2} \bar{\epsilon} (\bar{z})
     \\
     \epsilon_{\bar{z}} &= \frac{1}{2}(\epsilon_0 + i \epsilon_1)
     = \frac{1}{2} \epsilon(z)
-\end{aligned}
+\end{align*}
 $$
 
 And we derived earlier that the metric in the complex coordinates is
@@ -164,7 +164,7 @@ $$
 Then, using $j_\mu = {T_\mu}^\nu \epsilon_\nu = T_{\mu \rho} g^{\rho \nu} \epsilon_\nu$ in complex coordinates, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \begin{pmatrix}
         j_z \\ j_{\bar{z}}
     \end{pmatrix} &= \begin{pmatrix}
@@ -182,7 +182,7 @@ $$
         T_{zz} \epsilon(z) \\
         T_{\bar{z}\bar{z}} \bar{\epsilon}(\bar{z})
     \end{pmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 We defined earlier $T(z) = -2\pi T_{zz}, \bar{T}(\bar{z}) = -2\pi T_{\bar{z}\bar{z}}$; then we arrive at
@@ -277,7 +277,7 @@ $$
 With radial quantization, constant $x^1$ lines is mapped to a circle (let us call it $C(0)$) centered at the origin; its radius (or the value of $x^0$) is irrelevant. Then we transform the integration measure to $dw, d\bar{w}$:
 
 $$
-\begin{aligned}
+\begin{align*}
     w = e^{\omega(x^0 + ix^1)} 
     \quad &\Rightarrow \quad
     dw = i \omega w \, dx^1
@@ -285,7 +285,7 @@ $$
     \bar{w} = e^{\omega(x^0 - ix^1)} 
     \quad &\Rightarrow \quad
     d\bar{w} = -i \omega \bar{w} \, dx^1
-\end{aligned}
+\end{align*}
 $$
 
 - For the first term depending on $w$: 
@@ -298,13 +298,13 @@ $$
 - For the second term depending on $\bar{w}$, we have a similar expression:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \int_0^L dx^1 
         &\to \frac{1}{-i\omega} \oint_{-C(0)} 
         \frac{1}{\bar{w}} d\bar{w} 
         \\
         &= \frac{1}{i\omega} \oint_0 \frac{1}{\bar{w}} d\bar{w} 
-    \end{aligned}
+    \end{align*}
     $$
 
     where the extra minus sign changed the clockwise integration to a counter-clockwise one. 
@@ -350,7 +350,7 @@ $$
 Let us evaluate the commutator: note that $\epsilon$ is just a coordinate transformation function, which brought out of the commutator
 
 $$
-\begin{aligned}
+\begin{align*}
     \left[Q, \phi(w,\bar{w})\right]
     &= -\frac{1}{2 \pi i} \oint dz \, \epsilon(z) [
         T(z), \phi(w,\bar{w})
@@ -360,7 +360,7 @@ $$
     \bar{\epsilon}(\bar{z}) [
         \bar{T}(\bar{z}), \phi(w,\bar{w})
     ]
-\end{aligned}
+\end{align*}
 $$
 
 Now we impose radial (time) ordering: using the theorem we proved at the beginning
@@ -373,7 +373,7 @@ $$
 for the chiral part, we obtain ($\epsilon(z)$ is just a coordinate-change function, not an operator)
 
 $$
-\begin{aligned}
+\begin{align*}
     \oint dz \, \epsilon(z) [
         T(z), \phi(w,\bar{w})
     ]
@@ -382,7 +382,7 @@ $$
     ] 
     \\
     &= \oint_w dz \, \epsilon (z) R[T(z) \phi(w,\bar{w})]
-\end{aligned}
+\end{align*}
 $$
 
 and similarly for the anti-chiral part. Let us record this intermediate result:
@@ -403,18 +403,18 @@ $$
 Recall that the change of a primary field under a conformal transformation is
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta \phi(w, \bar{w}) &= - [
         h \phi(w, \bar{w}) \p_w \epsilon(w) 
         + \epsilon(w) \p_w \phi(w, \bar{w})
      ] \\ &\quad + \text{anti-chiral}
-\end{aligned}
+\end{align*}
 $$
 
 which can be expressed as a contour integral using the Cauchy integral formula (see [appendix](#a-cauchy-integral-formula)): for the chiral part
 
 $$
-\begin{aligned}
+\begin{align*}
     \p_w \epsilon(w, \bar{w}) 
     &= \frac{1}{2\pi i} \oint_w dz \, 
     \frac{\epsilon(z)}{(z - w)^2}
@@ -422,13 +422,13 @@ $$
     \epsilon(w)
     &= \frac{1}{2\pi i} \oint_w dz \, 
     \frac{\epsilon(z)}{z - w}
-\end{aligned}
+\end{align*}
 $$
 
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     & \frac{1}{2\pi i} \oint_w dz \, 
     \epsilon (z) R[T(z) \phi(w,\bar{w})]
     \\
@@ -436,7 +436,7 @@ $$
         \frac{\epsilon(z)}{(z-w)^2} h \phi(w,\bar{w})
         + \frac{\epsilon(z)}{z-w} \p_w \phi(w,\bar{w})
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 which leads to the local expression (we add the anti-chiral result below, and omit the radial ordering symbol)
@@ -446,7 +446,7 @@ which leads to the local expression (we add the anti-chiral result below, and om
 **Operator product expansion: <br>Energy-momentum tensor with primary field**
 
 $$
-\begin{aligned}
+\begin{align*}
     T(z) \phi(w,\bar{w})
     &= \frac{1}{(z-w)^2} h \phi(w,\bar{w})
     \\ &\quad 
@@ -458,7 +458,7 @@ $$
     \\ &\quad 
     + \frac{1}{\bar{z}-\bar{w}} \p_{\bar{w}} \phi(w,\bar{w})
     + \text{Regular terms}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

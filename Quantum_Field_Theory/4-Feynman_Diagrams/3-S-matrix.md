@@ -102,13 +102,13 @@ We now investigate each part of this $dP$:
 - The normalization of the states $\langle f|f \rangle, \langle i|i \rangle$ should be treated carefully. Usually, the initial and final states will be chosen as the momentum eigenstates. For example, we write for $2 \to n$ scattering
     
     $$
-    \begin{aligned}
+    \begin{align*}
         |i\rangle &= |\mathbf{p}_A, \mathbf{p}_B\rangle
         = |\mathbf{p}_A\rangle \otimes |\mathbf{p}_B\rangle
         \\
         |f\rangle &= |\mathbf{p}_1, ..., \mathbf{p}_n \rangle
         = |\mathbf{p}_1\rangle \otimes \cdots \otimes |\mathbf{p}_n\rangle
-    \end{aligned}
+    \end{align*}
     $$
 
     Recall that in relativistic field theory, the momentum eigenstates are defined as
@@ -120,7 +120,7 @@ We now investigate each part of this $dP$:
     Therefore, its norm is
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \langle \mathbf{p} | \mathbf{p} \rangle
         &= 2E_\mathbf{p} 
         \langle 0| a_\mathbf{p} a_\mathbf{p}^\dagger |0\rangle
@@ -129,7 +129,7 @@ We now investigate each part of this $dP$:
         \langle 0| [a_\mathbf{p} a_\mathbf{p}^\dagger] + a_\mathbf{p}^\dagger a_\mathbf{p} |0\rangle
         \\
         &= 2E_\mathbf{p} (2\pi)^3 \delta^3(0)
-    \end{aligned}
+    \end{align*}
     $$
 
     which seems to be unphysical. However, with the finite volume (and the experiment time $T$), using
@@ -149,13 +149,13 @@ We now investigate each part of this $dP$:
     We now can write
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \langle i | i \rangle
         &= (2E_A V) (2E_B V) 
         \\
         \langle f | f \rangle
         &= (2E_1 V) \cdots (2E_n V)
-    \end{aligned}
+    \end{align*}
     $$
 
     We shall see that the $V$ factors will eventually cancel each other
@@ -170,14 +170,14 @@ We now investigate each part of this $dP$:
     Since we are usually not interested in the trivial case $|i\rangle = |f\rangle$ (no scattering at all), the identity part plays no role:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         |S_{fi}|^2
         &= |T_{fi}|^2
         \\
         &= |\mathcal{M}_{fi}|^2 [
             (2\pi)^4 \delta^4(\textstyle{\sum p_f - \sum p_i})
         ]^2
-    \end{aligned}
+    \end{align*}
     $$
 
     The square of delta function is interpreted as follows:
@@ -212,7 +212,7 @@ We now investigate each part of this $dP$:
 Combine all these together, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     dP &= \frac{
         T V (2\pi)^4 \delta^4(\textstyle{\sum p_f - \sum p_i})
     }{
@@ -225,7 +225,7 @@ $$
     \\
     &= \frac{T}{V} \frac{1}{2E_A 2E_B}
     |\mathcal{M}_{fi}|^2 d\Pi_n
-\end{aligned}
+\end{align*}
 $$
 
 where we introduced the structure
@@ -266,13 +266,13 @@ $$
 We consider the special case of $2 \to 2$ scattering (of massive particles) in the center-of-mass reference frame, in which
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathbf{p}_A + \mathbf{p}_B 
     &= \mathbf{p}_1 + \mathbf{p}_2 = 0
     \\
     E_A + E_B 
     &= E_1 + E_2 = E_\text{CM}
-\end{aligned}
+\end{align*}
 $$
 
 Thus we can set the final and the initial momenta as
@@ -321,7 +321,7 @@ $$
     Then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\int dp_f \delta(E_1 + E_2 - E_\text{CM})
         \\ &\to \left|
             \frac{\partial}{\partial p_f}
@@ -330,7 +330,7 @@ $$
         \\ &= \left(
             \frac{p_f}{E_1} + \frac{p_f}{E_2}
         \right)^{-1}_{E_1+E_2=E_\text{CM}}
-    \end{aligned}
+    \end{align*}
     $$
 
 Putting these together:
@@ -340,7 +340,7 @@ Putting these together:
 **2-Particle Phase Space $d\Pi_2$ in CM Frame:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \int d\Pi_2
     &= \int \frac{d\Omega}{(2\pi)^2} \left[
         \frac{p_f^2}{2E_1 2E_2} 
@@ -351,7 +351,7 @@ $$
     \\
     &= \int d\Omega \, 
     \frac{p_f}{16\pi^2 E_\text{CM}}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -359,7 +359,7 @@ $$
 Besides, the relative velocity factor can also be simplified to
 
 $$
-\begin{aligned}
+\begin{align*}
     |v_A - v_B| &= \left|
         \frac{|\mathbf{p}_A|}{E_A}
         + \frac{|\mathbf{p}_B|}{E_B}
@@ -369,7 +369,7 @@ $$
     = \frac{p_i (E_A + E_B)}{E_A E_B}
     \\
     &= \frac{p_i E_\text{CM}}{E_A E_B}
-\end{aligned}
+\end{align*}
 $$
 
 Finally, the cross section is
@@ -424,7 +424,7 @@ $$
 We shall solve this problem in the CM frame. In this frame, the particle $A$ is at rest, and $E_A = m_A$. Similar to the derivation above, the probability that a particle $A$ will decay into $n$ particles within some differential region of parameters is
 
 $$
-\begin{aligned}
+\begin{align*}
     dP &= \frac{
         T V (2\pi)^4 \delta^4(\textstyle{\sum p_f - \sum p_i})
     }{
@@ -437,7 +437,7 @@ $$
     \\
     &= \frac{T}{2m_A}
     |\mathcal{M}_{fi}|^2 d\Pi_n
-\end{aligned}
+\end{align*}
 $$
 
 The differential decay rate is then

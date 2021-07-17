@@ -38,13 +38,13 @@ $$
 But recall that $e^{-\beta H} = U(\beta,0)$, therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &= \tr [e^{-\beta H_0} S(\beta,0)]
     \\
     &= Z_0 \frac{\tr [e^{-\beta H_0} S(\beta,0)]}{Z_0}
     \\
     &= Z_0 \expect{S(\beta,0)}_0
-\end{aligned}
+\end{align*}
 $$
 
 where $\expect{}_0$ means the free ensemble average. With $\Delta F = F - F_0$, we rewrite this result as

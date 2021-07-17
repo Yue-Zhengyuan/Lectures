@@ -23,7 +23,7 @@
 **Kramers-Krönig relations:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \sigma_1(\omega) &= \frac{1}{\pi} \mathcal{P}
     \int_{-\infty}^\infty d\omega' \, 
     \frac{\sigma_2(\omega')}{\omega' - \omega}
@@ -31,7 +31,7 @@ $$
     \sigma_2(\omega) &= - \frac{1}{\pi} \mathcal{P}
     \int_{-\infty}^\infty d\omega' \, 
     \frac{\sigma_1(\omega')}{\omega' - \omega}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -71,7 +71,7 @@ $$
 Thus
 
 $$
-\begin{aligned}
+\begin{align*}
     f(\omega) &= \pi i \sigma(\omega)
     + \mathcal{P} 
     \int_{-\infty}^\infty d\omega' \,
@@ -82,7 +82,7 @@ $$
     \mathcal{P} 
     \int_{-\infty}^\infty d\omega' \,
     \frac{\sigma(\omega')}{\omega' - \omega}
-\end{aligned}
+\end{align*}
 $$
 
 The real and imaginary parts of this equation are the Kramers-Krönig relations. $\blacksquare$
@@ -95,7 +95,7 @@ $$
 $$
 
 $$
-\begin{aligned}
+\begin{align*}
     \sigma_1(\omega)
     &= \frac{1}{\pi} \mathcal{P}
     \int_{-\infty}^0 d\omega' \, 
@@ -120,13 +120,13 @@ $$
     \\
     &= \frac{2}{\pi} \int_0^\infty d\omega' \,
     \frac{\omega' \sigma_2(\omega')}{\omega'^2 - \omega^2}
-\end{aligned}
+\end{align*}
 $$
 
 Similarly
 
 $$
-\begin{aligned}
+\begin{align*}
     \sigma_2(\omega)
     &= - \left[
         \frac{1}{\pi} \mathcal{P}
@@ -157,5 +157,5 @@ $$
     \\
     &= - \frac{2\omega}{\pi} \int_0^\infty d\omega' \,
     \frac{\sigma_1(\omega')}{\omega'^2 - \omega^2}
-\end{aligned}
+\end{align*}
 $$

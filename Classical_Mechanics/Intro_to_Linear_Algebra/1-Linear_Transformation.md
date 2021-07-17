@@ -206,7 +206,7 @@ $$
 Then for any vector $v$, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     v' 
     &\equiv A v 
     \\
@@ -218,7 +218,7 @@ $$
     \\
     &= v_i e'_i
     &\quad &(e'_i = A e_i)
-\end{aligned}
+\end{align*}
 $$
 
 We note that components of $v'$ along the new basis are the same as the components of $v$ along the old basis.
@@ -241,7 +241,7 @@ The numbers $A_{j i}$ are linear combination coefficients. We do not write $A_{i
 For example, when $\dim{V} = 2$:
 
 $$
-\begin{aligned}
+\begin{align*}
     e'_1 &= A e_1 = A_{11} e_1 + A_{21} e_2
     = \begin{bmatrix}
         A_{11} \\ A_{21}
@@ -251,7 +251,7 @@ $$
     =\begin{bmatrix}
         A_{12} \\ A_{22}
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 Then we combine this two column vectors to form a **matrix** that represents the linear transformation $A$ (it does not matter whether you use usual or square brackets):
@@ -359,11 +359,11 @@ In all the following examples, we use the standard basis to describe the transfo
 
 $$
 \left.
-\begin{aligned}
+\begin{align*}
     T (v + w) &= (v + w) + t
     \\
     T v + T w &= (v + w) + 2t
-\end{aligned}
+\end{align*}
 \right\} \Rightarrow
 T(v + w) \ne Tv + Tw
 $$
@@ -381,7 +381,7 @@ Write down the transformation matrices of the reflection, the scaling, and the s
 Using the linearity $A$, we can find the new vector $A v$ to which the vector $v$ is sent by the linear transformation $A$: 
 
 $$
-\begin{aligned}
+\begin{align*}
     v' &= v_j e'_j
     \\
     &= v_j (e_i A_{i j}) 
@@ -389,7 +389,7 @@ $$
     \\
     &= (A_{i j} v_j) e_i
     &\quad &\text{(Rearrange)}
-\end{aligned}
+\end{align*}
 $$
 
 Meanwhile, under the old basis $\{e_i\}$
@@ -456,12 +456,12 @@ Suppose we have two linear transformations $A, B$. We first apply $B$ onto a vec
 Now let us find its components: using the representation matrices of $A,B$ under the same (original) basis, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     [A (B v)]_{i}
     = A_{i j} (B v)_{j}
     = A_{i j} (B_{j k} v_k)
     = A_{i j} B_{j k} v_k
-\end{aligned}
+\end{align*}
 $$
 
 We discover that if we define a new matrix $C$ by
@@ -589,18 +589,18 @@ We emphasize that **this formula is valid only when we are using the components 
 After the linear transformation $A$, the inner product $u \cdot v$ is transformed to 
 
 $$
-\begin{aligned}
+\begin{align*}
     (Au) \cdot (Av)
     &= (Au)_i (Av)_j (e_i \cdot e_j)
     \\
     &= (A_{ik} u_k) (A_{jl} v_l) (e_i \cdot e_j)
-\end{aligned}
+\end{align*}
 $$
 
 If we are using an orthonormal basis, then
 
 $$
-\begin{aligned}
+\begin{align*}
     (Au) \cdot (Av)
     &= (A_{ik} u_k) (A_{jl} v_l) \delta_{ij}
     \\
@@ -609,7 +609,7 @@ $$
     &= u_k (A^\mathsf{T})_{ki} A_{il} v_l
     \\
     &= u_k (A^\mathsf{T} A)_{kl} v_l
-\end{aligned}
+\end{align*}
 $$
 
 ### Orthogonal Matrix
@@ -630,12 +630,12 @@ $$
 then
 
 $$
-\begin{aligned}
+\begin{align*}
     (Au) \cdot (Av)
     &= u_k \delta_{il} v_l
     \\
     &= u_k v_k = u \cdot v
-\end{aligned}
+\end{align*}
 $$
 
 i.e. the inner product is invariant under $A$. We call such a representation matrix an **orthogonal matrix**. 

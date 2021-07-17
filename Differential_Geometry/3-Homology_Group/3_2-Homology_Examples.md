@@ -42,12 +42,12 @@ This simplicial complex is *connected*, and contains 0- and 1-simplexes only. Th
 ### The Chain Groups
 
 $$
-\begin{aligned}
+\begin{align*}
     C_0(K) &= \{z_0 = i p_0 + j p_1 + k p_2 
     \mid i,j,k \in \mathbb{Z}\}
     \\
     C_1(K) &= \{z_1 = i (p_0 p_1) + j (p_1 p_2) + k (p_2 p_0)\mid i,j,k \in \mathbb{Z}\}\}
-\end{aligned}
+\end{align*}
 $$
 
 ### Homology Group $H_0(K)$
@@ -72,13 +72,13 @@ Nevertheless, we verify this result by direct calculation.
     The 0-boundaries, which are boundaries of 1-chains, are
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \partial z_1 &= i (p_0 - p_1) + j (p_1 - p_2) + k (p_2 - p_0) 
         \\
         &= (i-k)p_0 + (-i+j)p_1 + (-j+k)p_2
         \\
         & = i' p_0 + j' p_1 + k' p_2
-    \end{aligned}
+    \end{align*}
     $$
 
     However, the three integers $i', j', k'$ are not independent:
@@ -106,13 +106,13 @@ $$
 - **Cycle Group $Z_1(K)$**
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \partial z_1 &= (i-k)p_0 + (-i+j)p_1 + (-j+k)p_2 \overset{!}{=} 0
         \\
         &\Rightarrow i = j = k 
         \\
         &\Rightarrow Z_1(K) \cong \mathbb{Z}
-    \end{aligned}
+    \end{align*}
     $$
 
     This result is intuitive: the cycle without boundary

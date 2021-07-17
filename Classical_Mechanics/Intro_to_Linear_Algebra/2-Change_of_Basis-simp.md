@@ -106,12 +106,12 @@ This is easy to understand if you think in terms of the transformations they rep
 Is it obvious to you that $A_1, A_3$ are inverse of each other? Net effect: 
 
 $$
-\begin{aligned}
+\begin{align*}
     &|\text{elephant in refrigerator} \rangle
     \\
     & \quad = 
     A_3 A_2 A_1 | \text{elephant out of refrigerator} \rangle
-\end{aligned}
+\end{align*}
 $$
 
 The inverse operation is evidently
@@ -129,12 +129,12 @@ The inverse operation is evidently
 Net effect: 
 
 $$
-\begin{aligned}
+\begin{align*}
     &|\text{elephant out of refrigerator} \rangle
     \\
     & \quad = 
     A_1^{-1} A_2^{-1} A_3^{-1} | \text{elephant in refrigerator} \rangle
-\end{aligned}
+\end{align*}
 $$
 
 ### EXERCISE
@@ -191,7 +191,7 @@ $$
 For an arbitrary vector, its components along the new and the old basis vectors are related by
 
 $$
-\begin{aligned}
+\begin{align*}
     v 
     &= v_1 e_1 + v_2 e_2 
     &\quad &\text{(in old basis)}
@@ -203,7 +203,7 @@ $$
     \\
     &= \mathcal{D} (v'_1 e_1 + v'_2 e_2)
     &\quad &\text{(using linearity of $\mathcal{D}$)}
-\end{aligned}
+\end{align*}
 $$
 
 Using the matrix notation to make the expression more clear:
@@ -288,12 +288,12 @@ $$
 Then we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{D}^{-1} w 
     &= A' \mathcal{D}^{-1} v
     \\
     &= \mathcal{D}^{-1} A v \qquad (w = A v)
-\end{aligned}
+\end{align*}
 $$
 
 Since $v$ is arbitrary, we must have

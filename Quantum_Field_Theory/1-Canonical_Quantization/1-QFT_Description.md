@@ -11,7 +11,7 @@ $$
 Varying the fields $\phi \to \delta \phi$ ($\delta \phi = 0$ at the boundary), the variation of action is
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta S 
     &= \int d^d x \, \left[
         \frac{\partial \mathcal{L}}{\partial \phi} \delta \phi
@@ -34,7 +34,7 @@ $$
             \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)}
         \right)
     \right] \delta \phi
-\end{aligned}
+\end{align*}
 $$
 
 The last term in the second step can be converted (using Gauss' theorem) to an integration over the boundary, and hence vanishes. The **principle of least action** requires $\delta S = 0$. Due to the arbitrariness of $\delta \phi$, this means

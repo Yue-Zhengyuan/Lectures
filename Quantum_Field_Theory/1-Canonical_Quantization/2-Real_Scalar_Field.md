@@ -21,7 +21,7 @@
 The Lagrangian of the **real scalar (Klein-Gordon) field theory** is
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{L} 
     &= \frac{1}{2} [(\partial \phi)^2 
     -  m^2 \phi^2]
@@ -29,7 +29,7 @@ $$
     &= \frac{1}{2} (
         \dot{\phi}^2 - (\nabla \phi)^2 - m^2 \phi^2
     )
-\end{aligned}
+\end{align*}
 $$
 
 where $\phi$ is a *real-valued* field. The equation of motion is found to be (called the **Klein-Gordon equation**)
@@ -48,14 +48,14 @@ $$
 which lead to the Hamiltonian
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{H} 
     &= \pi \dot{\phi} - \mathcal{L}
     \\
     &= \frac{1}{2} (
         \pi^2 + (\nabla \phi)^2 + m^2 \phi^2
     )
-\end{aligned}
+\end{align*}
 $$
 
 ## Discretized Quantization
@@ -77,7 +77,7 @@ $$
 The Lagrangian now takes the discrete form
 
 $$
-\begin{aligned}
+\begin{align*}
     L &= \int dx \, \frac{1}{2} (
         \dot{\phi}^2 - (\nabla \phi)^2 - m^2 \phi^2
     ) \\
@@ -88,7 +88,7 @@ $$
         \right)^2
         - m^2 \phi_n^2 
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 The momentum operators conjugate to $\phi_n$ are
@@ -102,34 +102,34 @@ $$
 Thus the Hamiltonian is
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= \sum_n \pi_n \dot{\phi}_n - L
     \\
     &= \frac{1}{2a} \sum_{n=0}^{N-1} \left[
         \pi_n^2 + (\phi_{n+1}-\phi_n)^2 - a^2 m^2 \phi_n^2
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 The **canonical quantization** means that we *impose* the following **equal-time commutation relations (ETC)**:
 
 $$
-\begin{aligned}
+\begin{align*}
     [\phi_n, \pi_m] &= i \delta_{nm}
     \\
     [\phi_n, \phi_m] &= [\pi_n, \pi_m] = 0
-\end{aligned} \quad
+\end{align*} \quad
 (x_n^0 = x_m^0)
 $$
 
 The periodic boundary conditions and the translational invariance of $H$ motivate the use of [**discrete Fourier transforms**](https://en.wikipedia.org/wiki/Discrete_Fourier_transform#Definition):
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_k &= \frac{1}{\sqrt{N}} \sum_{n=0}^{N-1} \phi_n e^{-2\pi ikn/N}
     \\
     \pi_k &= \frac{1}{\sqrt{N}} \sum_{n=0}^{N-1} \pi_n e^{-2\pi ikn/N}
-\end{aligned} \quad
+\end{align*} \quad
 (k = 0, 1, ..., N-1)
 $$
 
@@ -149,7 +149,7 @@ $$
 Using these Fourier modes, the Hamiltonian becomes
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= \frac{1}{2a} \sum_{k=0}^{N-1} \left[
         \pi_k \pi_k^\dagger 
         + a^2 \omega_k^2 \phi_k \phi_k^\dagger
@@ -159,25 +159,25 @@ $$
     &= m^2 + \frac{2}{a^2} 
     (1 - \cos p_k a), \quad
     p_k = \frac{2\pi k}{N a}
-\end{aligned}
+\end{align*}
 $$
 
 We see that *each mode labelled by $k$ is an harmonic oscillator*. Following the usual methods, we define the **raising and lowering operators**:
 
 $$
-\begin{aligned}
+\begin{align*}
     a_k &= \frac{1}{\sqrt{2 a \omega_k}} 
     (a \omega_k \phi_k + i \pi_k)
     \\
     a_k^\dagger &= \frac{1}{\sqrt{2 a \omega_k}} 
     (a \omega_k \phi_k^\dagger - i \pi_k^\dagger)
-\end{aligned}
+\end{align*}
 \, \Leftrightarrow \,
-\begin{aligned}
+\begin{align*}
     \phi_k &= 
     \\
     \pi_k &= 
-\end{aligned}
+\end{align*}
 $$
 
 which can be verified to obey the commutation rules
@@ -189,14 +189,14 @@ $$
 Then the Hamiltonian becomes
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= \frac{1}{2} \sum_{k=0}^{N-1} 
     (a_k^\dagger a_k + a_k a_k^\dagger) \omega_k
     \\
     &= \sum_{k=0}^{N-1} \left(
         a_k^\dagger a_k + \frac{1}{2}
     \right) \omega_k
-\end{aligned}
+\end{align*}
 $$
 
 The time evolution of $a_k$ (in Heisenberg picture) is determined by
@@ -214,7 +214,7 @@ $$
 Thus, performing the inverse Fourier transform, the complete time-dependent field $\phi_n(t)$ is
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_n(t) 
     &= \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} \phi_k(t) e^{+2\pi ikn/N}
     \\
@@ -227,7 +227,7 @@ $$
         a_k(0) e^{i(- \omega_k t + p_k x_n)}
         + a_k^\dagger(0) e^{i(\omega_k t -p_k x_n)}
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 ## Continuum Limit
@@ -271,7 +271,7 @@ $$
 The frequency takes the limit
 
 $$
-\begin{aligned}
+\begin{align*}
     \omega_\mathbf{p}
     &= m^2 + \frac{2}{a^2} (1 - \cos \mathbf{p} a)
     \\
@@ -280,7 +280,7 @@ $$
     \right]
     \\
     &\sim m^2 + \mathbf{p}^2
-\end{aligned}
+\end{align*}
 $$
 
 The commutation relations between the ladder operators are
@@ -294,7 +294,7 @@ $$
 where $d$ is the spacetime dimension. Finally, the field $\phi(x)$ can be expanded as
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi(x) 
     &= \int \frac{d^{d-1} p}{(2\pi)^{d-1}} 
     \frac{1}{\sqrt{2 \omega_\mathbf{p}}} [
@@ -306,7 +306,7 @@ $$
         a_\mathbf{p} e^{-ipx} 
         + a^\dagger_\mathbf{p} e^{ipx}
     )
-\end{aligned}
+\end{align*}
 $$
 
 where $p^0 = \omega_\mathbf{p} = \sqrt{m^2 + \mathbf{p}^2}$. 
@@ -340,7 +340,7 @@ $$
 Therefore, the orthogonality relation is
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \mathbf{p}|\mathbf{q} \rangle
     &= 2 \sqrt{E_\mathbf{p} E_\mathbf{q}}
     \langle 0 |a_\mathbf{p} a_\mathbf{q}^\dagger| 0\rangle
@@ -353,7 +353,7 @@ $$
     \\
     &= 2 E_\mathbf{p} (2\pi)^3
     \delta^3(\mathbf{p} - \mathbf{q})
-\end{aligned}
+\end{align*}
 $$
 
 and the completeness relation is

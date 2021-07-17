@@ -3,12 +3,12 @@
 To begin with, we consider a general interacting Lagrangian and calculate the 2-point function
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \Omega|T[\phi(x_1) \phi(x_2)] |\Omega \rangle
     \\
     &= \frac{1}{Z} \int [d\phi] \,\phi(x_1) \phi(x_2) 
     e^{i \int d^4 x \, \mathcal{L}[\phi]}
-\end{aligned}
+\end{align*}
 $$
 
 where $Z$ is the "vacuum" functional
@@ -28,19 +28,19 @@ $$
 A change of variable should not affect the value of the correlation function (and $Z$ itself). Besides, the change is a shift, which should not affect the integration measure. Therefore, we expect
 
 $$
-\begin{aligned}
+\begin{align*}
     &\int [d\phi] \,\phi(x_1) \phi(x_2)
     e^{i \int d^4 x \, \mathcal{L}[\phi]}
     \\
     &= \int [d\phi] \,\phi'(x_1) \phi'(x_2)
     e^{i \int d^4 x \, \mathcal{L}[\phi']}
-\end{aligned}
+\end{align*}
 $$
 
 Let us calculate the right-hand side (new correlation function) up to $O(\epsilon)$ terms. For convenience, we write $\phi(x_i) = \phi_i, \, \epsilon(x_i) = \epsilon_i$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{RHS}
     &= \int [d\phi]
     (\phi_1 + \epsilon_1)
@@ -53,13 +53,13 @@ $$
         + \phi_1 \phi_2 
         e^{i \int d^4 x \, \mathcal{L}[\phi'(x)]}
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 The exponential function in the last term can be expanded to $O(\epsilon)$ as
 
 $$
-\begin{aligned}
+\begin{align*}
     e^{i \int d^4 y \, \mathcal{L}[\phi'(y)]}
     &= e^{i \int d^4 y \, \mathcal{L}[\phi(y)]}
     + \int d^4x \, \epsilon(x)
@@ -70,23 +70,23 @@ $$
     + \int d^4x \, i \epsilon(x) 
     \frac{\delta}{\delta \phi(x)}
     \int d^4 y \, \mathcal{L}[\phi(y)]
-\end{aligned}
+\end{align*}
 $$
 
 We note that this functional derivative is exactly the one that produces the equation of motion:
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\delta S}{\delta \phi(x)}
     &= \frac{\delta}{\delta \phi(x)}
     \int d^4 y \, \mathcal{L}[\phi(y)]
-\end{aligned}
+\end{align*}
 $$
 
 Equating the $O(\epsilon)$ terms of both the new and the old correlation functions, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     0 &= \int [d\phi] e^{i \int d^4 x \, \mathcal{L}[\phi]}
     \bigg[
         (\epsilon_1 \phi_2 + \phi_1 \epsilon_2)
@@ -107,13 +107,13 @@ $$
             \int d^4y \, \mathcal{L[\phi(y)]}
         \bigg]
     \bigg\}
-\end{aligned}
+\end{align*}
 $$
 
 Thus we conclude that the thing in the square bracket must be zero (under time ordering):
 
 $$
-\begin{aligned}
+\begin{align*}
     &\left\langle
         \left(
             \frac{\delta}{\delta \phi(x)}
@@ -123,13 +123,13 @@ $$
     \\[1em] &\qquad
     = i\delta(x-x_1) \langle \phi_2 \rangle
     + i\delta(x-x_2) \langle \phi_1 \rangle
-\end{aligned}
+\end{align*}
 $$
 
 The generalization to $n$-point function is straightforward (here we put the $\hbar$ back into the equation):
 
 $$
-\begin{aligned}
+\begin{align*}
     &\left\langle
         \left(
             \frac{\delta}{\delta \phi(x)}
@@ -140,7 +140,7 @@ $$
     = i \hbar \sum_{j=1}^n \delta(x-x_j) 
     \langle \phi_1 \cdots \cancel{\phi_j}
     \cdots \phi_n \rangle
-\end{aligned}
+\end{align*}
 $$
 
 This is called the **Dyson-Schwinger equation**. 

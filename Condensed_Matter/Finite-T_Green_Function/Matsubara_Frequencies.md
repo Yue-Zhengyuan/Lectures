@@ -53,7 +53,7 @@ $$
 The (anti-)periodicity of $\mathcal{G}$ allows up to expand it as a Fourier series (instead of the continuous Fourier transform):
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{G}_{\rho \sigma}(\tau)
     &= \beta^{-1} \sum_n e^{-i\omega_n \tau} 
     \mathcal{G}_{\rho \sigma}(i\omega_n)
@@ -61,7 +61,7 @@ $$
     \mathcal{G}_{\rho \sigma}(i\omega_n)
     &= \int_0^\beta d\tau \, e^{+i\omega_n \tau} 
     \mathcal{G}_{\rho \sigma}(\tau)
-\end{aligned}
+\end{align*}
 $$
 
 The factor $i$ is included into the argument $\mathcal{G}_{\rho \sigma}(i\omega_n)$ for later convenience. The requirement $\mathcal{G}_{\rho \sigma}(\tau + \beta) = \pm \mathcal{G}_{\rho \sigma}(\tau)$ restricts the allowed values of $\omega_n$:
@@ -73,12 +73,12 @@ The factor $i$ is included into the argument $\mathcal{G}_{\rho \sigma}(i\omega_
 $$
 e^{-i\omega_n \beta} = \pm 1 
 \ \Rightarrow \ \omega_n = 
-\left\{ \begin{aligned}
+\left\{ \begin{align*}
     &2n \pi \beta^{-1}, &\, &
     \text{boson} \\
     &(2n+1)\pi \beta^{-1}, &\, &
     \text{fermion}
-\end{aligned}\right.
+\end{align*}\right.
 $$
 
 </div><br>

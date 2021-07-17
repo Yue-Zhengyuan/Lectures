@@ -30,14 +30,14 @@
     - **Exact $r$-form**: an $r$-form which is the derivative of an $(r-1)$-form
     
     $$
-    \begin{aligned}
+    \begin{align*}
         B^r(M) &= \text{im } d_{r-1} \\
         &= \{
             \omega \in \Omega^r(M) \mid
             \omega = d_{r-1} \xi , \,
             \exist \xi \in \Omega^{r-1}(M)
         \}
-    \end{aligned}
+    \end{align*}
     $$
 
     *Remark*: 

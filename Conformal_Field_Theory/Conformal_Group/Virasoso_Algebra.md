@@ -44,12 +44,12 @@ There is a *unique* central extension of the Witt algebra, called the **Virasoro
 We first consider the holomorphic part. The generators $l_n$ are promoted to $L_n$, and a new element $c\in \mathbb{C}$ (the **central charge**) is introduced so that
 
 $$
-\begin{aligned}
+\begin{align*}
     [L_n, L_m] &=(n-m)L_{m+n}+c p(n,m)
     \\
     [L_n, c] &= 0\\
     [c,c] &= 0
-\end{aligned}
+\end{align*}
 $$
 
 where $p$ is a *bilinear* mapping onto $\mathbb{C}$ (this is required by

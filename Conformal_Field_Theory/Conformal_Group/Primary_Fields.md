@@ -58,10 +58,10 @@ Below we consider two special cases:
     A (global) scaling in the complex plane means
 
     $$
-    \begin{aligned}
+    \begin{align*}
         w(z) &= \lambda z \\
         \bar{w}(\bar{z}) &= \lambda \bar{z}
-    \end{aligned}
+    \end{align*}
     \qquad \lambda \in \mathbb{R}
     $$
 
@@ -86,10 +86,10 @@ Below we consider two special cases:
     A (global) rotation in the complex plane is done by
 
     $$
-    \begin{aligned}
+    \begin{align*}
         w(z) &= z e^{i \theta} \\
         \bar{w}(\bar{z}) &= \bar{z} e^{-i \theta}
-    \end{aligned}
+    \end{align*}
     \qquad \theta \in \mathbb{R}
     $$
 
@@ -170,7 +170,7 @@ $$
 Using the Cauchy-Riemann relations, we can put this into a nicer form:
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{dw}{dz} \frac{d\bar{w}}{d\bar{z}}
     &= \frac{\partial w^0}{\partial x^0}
     \frac{\partial w^1}{\partial x^1}
@@ -180,7 +180,7 @@ $$
     &= \abs{
         \frac{\partial x'}{\partial x}
     }
-\end{aligned}
+\end{align*}
 $$
 
 Then
@@ -201,13 +201,13 @@ which is a special case ($d = 2$) of the general formula.
 For the infinitesimal transformation
 
 $$
-\begin{aligned}
+\begin{align*}
     z &\mapsto 
     w(z)=z+\epsilon (z)
     \\
     \bar{z} &\mapsto 
     \bar{w}(\bar{z}) = \bar{z} + \bar{\epsilon}(\bar{z})
-\end{aligned}
+\end{align*}
 $$
 
 (note that $\epsilon (z)$ and $\bar{\epsilon}(\bar{z})$ are two *independent* transformations; we do not impose the reality condition), we have
@@ -252,7 +252,7 @@ Thus the variation of the field due to both $\epsilon$ and $\bar{\epsilon}$ is
 **Conformal transformation of primary fields:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta_{\epsilon ,\bar{\epsilon}}\phi (z,\bar{z})
     &\equiv \phi' (z, \bar{z}) - \phi (z, \bar{z})
     \\
@@ -263,7 +263,7 @@ $$
         \bar{h} \phi \bar{\partial} \bar{\epsilon}
         + \bar{\epsilon} \bar{\partial} \phi
     )
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

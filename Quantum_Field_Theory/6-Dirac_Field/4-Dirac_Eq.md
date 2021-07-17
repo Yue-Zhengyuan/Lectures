@@ -19,14 +19,14 @@ $$
 the equation of motion with respect to $\psi$ is
 
 $$
-\begin{aligned}
+\begin{align*}
     0 &= \partial_{\mu} \left(
         \frac{\partial \mathcal{L}}{\partial \left(\partial_{\mu} \psi \right)}
     \right) 
     - \frac{\partial \mathcal{L}}{\partial \psi}
     \\
     &= i (\partial_\mu \bar{\psi}) \gamma^\mu + m \bar{\psi}
-\end{aligned}
+\end{align*}
 $$
 
 Its Hermitian conjugate is called the **Dirac equation**:
@@ -53,11 +53,11 @@ $$
 When $m = 0$, the equations for $\psi_L$ and $\psi_L$ decouple:
 
 $$
-\begin{aligned}
+\begin{align*}
     i \bar{\sigma}^\mu \partial_\mu \psi_L &= 0
     \\
     i \sigma^\mu \partial_\mu \psi_R &= 0
-\end{aligned}
+\end{align*}
 $$
 
 They are called the **Weyl equations**.
@@ -67,7 +67,7 @@ They are called the **Weyl equations**.
 The Dirac equation implies the Klein-Gordon equation, since
 
 $$
-\begin{aligned}
+\begin{align*}
     0 &= (-i \gamma^\mu \partial_\mu - m)(i \gamma^\nu \partial_\nu - m) \psi(x)
     \\
     &= (\gamma^\mu \gamma^\nu \partial_\mu \partial_\nu - m^2) \psi
@@ -75,7 +75,7 @@ $$
     &= (\tfrac{1}{2} \underbrace{\{\gamma^\mu, \gamma^\nu\}}_{2\eta^{\mu \nu}} \partial_\mu \partial_\nu + m^2) \psi
     \\
     &= (\partial^2 + m^2) \psi
-\end{aligned}
+\end{align*}
 $$
 
 Based on this, we know that the *plane wave* solutions of the Dirac equation takes the form
@@ -87,13 +87,13 @@ $$
 A subtlety here is that $p^0$ can be either positive or negative. When $p^0$ is negative, we shall change the sign of the exponent to $+$ instead. Thus we have two types of solutions:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\text{Positive frequency:} &\quad
     \psi(x) &= u(p) e^{-ipx}
     \\
     &\text{Negative frequency:} &\quad
     \psi(x) &= v(p) e^{+ipx}
-\end{aligned} \quad (p^2 = m^2)
+\end{align*} \quad (p^2 = m^2)
 $$
 
 Here $u(p), v(p)$ are both 4-component objects. Next let us find the constraints on them. Plugging the solution into the Dirac equation:
@@ -158,7 +158,7 @@ $$
 Thus the general $u(p)$ is ($\beta$ is the rapidity of the boost)
 
 $$
-\begin{aligned}
+\begin{align*}
     u(p) &= \exp (-i \beta S^{03}) \, u(p_0)
     \\
     &= \sqrt{m} \begin{bmatrix}
@@ -179,13 +179,13 @@ $$
             0 & e^{-\beta/2}
         \end{bmatrix} \xi
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 Now we can eliminate $m$ using the boost to the momentum to $p^\mu = (E,0,0,p^3)$ (below we omit the $x,y$ components)
 
 $$
-\begin{aligned}
+\begin{align*}
     \begin{bmatrix}
         E \\ p^3
     \end{bmatrix} &= \exp \left\{
@@ -210,7 +210,7 @@ $$
     \Rightarrow
     e^\beta &= \frac{E + p^3}{m}, \quad
     e^{-\beta} = \frac{E - p^3}{m}, \quad
-\end{aligned}
+\end{align*}
 $$
 
 Then
@@ -237,7 +237,7 @@ $$
 By direct calculation 
 
 $$
-\begin{aligned}
+\begin{align*}
     p_\mu \sigma^\mu &= \begin{bmatrix}
         E - p^3 & 0 \\
         0 & E + p^3
@@ -247,7 +247,7 @@ $$
         E + p^3 & 0 \\
         0 & E - p^3
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 We finally obtain (here we put back the label $s$ to represent two linearly independent solutions)
@@ -275,7 +275,7 @@ $$
 Naively, we may think that the object $u^\dagger u$ can be normalized by $u^\dagger u$. However, this object is *not* Lorentz invariant:
 
 $$
-\begin{aligned}
+\begin{align*}
     u^\dagger u 
     &= \begin{bmatrix}
         \xi^\dagger \sqrt{p_\mu \sigma^\mu} &
@@ -301,7 +301,7 @@ $$
     \right\} \xi
     \\
     &= 2E \xi^\dagger \xi
-\end{aligned}
+\end{align*}
 $$
 
 To make a Lorentz scalar, we define

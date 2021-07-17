@@ -20,7 +20,7 @@
     In local coordinates, this requirement can be translated as
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \omega_{\mu_1 ... \mu_r} 
         V_{P(1)}^{\mu_1} \cdots V_{P(r)}^{\mu_r}
         &= \text{sgn}(P) \,
@@ -35,7 +35,7 @@
         \omega_{\mu_1 ... \mu_r} 
         &= \text{sgn}(P) \,
         \omega_{\mu_{P(1)} ... \mu_{P(r)}} 
-    \end{aligned}
+    \end{align*}
     $$
 
     or equivalently (since $\text{sgn}(P) = \pm 1$)
@@ -72,13 +72,13 @@
     which acts on $r+s$ vectors $V_i \in T_p M$ as
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &(\omega \wedge \xi)(V_1, ..., V_{r+s})
         \\ & \quad =
         \frac{1}{q! r!}\sum_{P \in S_{q+r}} \text{sgn}(P) \,
         \omega(V_{P(1)}, ..., V_{P(r)})
         \xi(V_{P(r+1)}, ..., V_{P(r+s)})
-    \end{aligned}
+    \end{align*}
     $$
 
     where $S_r$ denotes the **symmetric group** of all $r$-permutations.
@@ -127,7 +127,7 @@ $$
 then
 
 $$
-\begin{aligned}
+\begin{align*}
     (\omega \wedge \xi)(V_1, V_2)
     &= \sum_{P \in S_2} \text{sgn}(P) \,
     \omega(V_{P(1)}) \, \xi(V_{P(2)})
@@ -137,7 +137,7 @@ $$
     \\
     &= \sum_{P \in S_2} \text{sgn}(P) \,
     V_{1}^{\mu_{P(1)}} V_{2}^{\mu_{P(2)}}
-\end{aligned}
+\end{align*}
 $$
 
 In the last step we are in fact summing over $P^{-1}$. But $\text{sgn}(P) = \text{sgn}(P^{-1})$, so we need not change the notation. Therefore
@@ -150,7 +150,7 @@ $$
 Next we proceed to the product of 3 dual basis vectors (associativity of wedge product makes things easier): let $\eta = dx^{\mu_3}$, then
 
 $$
-\begin{aligned}
+\begin{align*}
     &\omega \wedge \xi \wedge \eta \, (V_1, V_2, V_3)
     \\
     &= (\omega \wedge \xi) \wedge \eta \, (V_1, V_2, V_3)
@@ -170,20 +170,20 @@ $$
         V_{P(1)}^{\mu_1} V_{P(2)}^{\mu_2} V_{P(3)}^{\mu_3}
         - V_{P'(2)}^{\mu_2} V_{P'(1)}^{\mu_1} V_{P'(3)}^{\mu_3}
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 Here $P' = (12) P \in S_3$ (i.e. $P$ combined with exchange of 1 and 2). Obviously $\text{sgn}(P) = -\text{sgn}(P')$. Therefore we can merge the two terms and cancel the $1/2$ factor:
 
 $$
-\begin{aligned}
+\begin{align*}
     \omega \wedge \xi \wedge \eta
     &= \sum_{P \in S_3} \text{sgn}(P) \,
     V_{P(1)}^{\mu_1} V_{P(2)}^{\mu_2} V_{P(3)}^{\mu_3}
     \\ 
     &= \sum_{P \in S_3} \text{sgn}(P) \,
     V_{1}^{\mu_{P(1)}} V_{2}^{\mu_{P(2)}} V_{3}^{\mu_{P(3)}}
-\end{aligned}
+\end{align*}
 $$
 
 Finally, 
@@ -223,7 +223,7 @@ which means that for nonzero $\omega_{\mu_{P(1)} ... \mu_{P(r)}}$, the indices $
 Next, we exploit the anti-symmetry of $\omega$ and collect all terms in $\omega$ which are obtained from an $r$-permutation. For example, the 2-form in $M = \mathbb{R}^3$ is
 
 $$
-\begin{aligned}
+\begin{align*}
     \omega^{(2)} &= 
     \omega_{12} dx^1 dx^2 + \omega_{13} dx^1 dx^3 
     \\ &\quad 
@@ -241,13 +241,13 @@ $$
     &= \sum_{\mu_1 < \mu_2} \omega_{\mu_1 \mu_2}
     \sum_{P\in S_2} \text{sgn}(P) \,
     dx^{\mu_{P(1)}} dx^{\mu_{P(2)}}
-\end{aligned}
+\end{align*}
 $$
 
 In general, for an $r$-form
 
 $$
-\begin{aligned}
+\begin{align*}
     \omega^{(r)}
     &= \sum_{\mu_1 < \cdots < \mu_r} 
     \omega_{\mu_1 ... \mu_r}
@@ -257,7 +257,7 @@ $$
     &= \sum_{\mu_1 < \cdots < \mu_r} 
     \omega_{\mu_1 ... \mu_r} \,
     dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
-\end{aligned}
+\end{align*}
 $$
 
 We can also remove the constraint $\mu_1 < \cdots < \mu_r$ and introduce a factor of $1/r!$ to account for repeated counting:
@@ -307,7 +307,7 @@ $$
 - **Exterior derivative on differential forms**: for a general $r$-form
     
     $$
-    \begin{aligned}
+    \begin{align*}
         \omega 
         &= \sum_{\mu_1 < \cdots < \mu_r} 
         \omega_{\mu_1 ... \mu_r} \,
@@ -315,13 +315,13 @@ $$
         \\
         &= \frac{1}{r!} \omega_{\mu_1 ... \mu_r}
         dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
-    \end{aligned}
+    \end{align*}
     $$
 
     the exterior derivative $d_r: \Omega^r(M) \to \Omega^{r+1}(M)$ (or simply $d$) is defined to act on $\omega$ as follows:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         d \omega &\equiv 
         \sum_{\mu_1 < \cdots < \mu_r} \left(
             \frac{\partial}{\partial x^\mu} 
@@ -333,7 +333,7 @@ $$
             \frac{\partial}{\partial x^\mu}
             \omega_{\mu_1 ... \mu_r}
         \right) dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
-    \end{aligned}
+    \end{align*}
     $$
 
     Due to anti-commutativity of 1-forms with respect to wedge product, we see that nonzero terms must have $\mu \ne \mu_1, ..., \mu_r$. 
@@ -357,7 +357,7 @@ $$
     we obtain
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \text{LHS}
         &= \partial_\mu \omega_{\nu}
         (dx^\mu \wedge dx^{\nu})(X, Y)
@@ -376,19 +376,19 @@ $$
         )
         \\
         &= \partial_\mu \omega_\nu (X^\mu Y^\nu - X^\nu Y^\mu) = \text{LHS} \qquad \blacksquare
-    \end{aligned}
+    \end{align*}
     $$
 
 - General formula for $r$-forms
     
     $$
-    \begin{aligned}
+    \begin{align*}
         &(d\omega)(X_1, ..., X_r, X_{r+1}) \\
         &= \sum_{i=1}^r (-1)^{i+1} X_i[\omega(X_1, ..., \cancel{X_i}, ..., X_{r+1})]
         \\ &\quad
         + \sum_{i<j} (-1)^{i+j} 
         \omega([X_i,X_j], X_1, ..., \cancel{X_i}, ..., \cancel{X_j}, ..., X_{r+1})
-    \end{aligned}
+    \end{align*}
     $$
 
 
@@ -421,7 +421,7 @@ $$
     *Proof*: Let the coordinates used in $M, N$ be $x, y$ respectively. Using the coordinate expression, we obtain
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &d (f^*\omega) 
         = \frac{1}{r!} 
         \partial_\mu (f^* \omega)_{\mu_1 ... \mu_r}
@@ -434,13 +434,13 @@ $$
             \frac{\partial y^{\nu_s}}{\partial x^{\mu_s}}
         \right)
         dx^\mu \wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r}
-    \end{aligned}
+    \end{align*}
     $$
 
     On the other hand,
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &f^* (d\omega)
         = f^* \left(
             \frac{1}{r!} \left( 
@@ -467,7 +467,7 @@ $$
         \frac{\partial y^{\nu_r}}{\partial x^{\mu_r}} \,
         dx^{\mu} \wedge dx^{\mu_1}
         \wedge \cdots \wedge dx^{\mu_r}
-    \end{aligned}
+    \end{align*}
     $$
 
     Thus the two sides are equal. $\blacksquare$

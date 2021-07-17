@@ -69,25 +69,25 @@ $$
 the variation of action is (with a symmetric $T^{\mu \nu}$)
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta S 
     &= - \int d^dx \, (\partial_\mu \epsilon_\nu) T^{\mu \nu}
     \\
     &= -\frac{1}{2} \int d^dx \, T^{\mu \nu}
     (\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu)
-\end{aligned}
+\end{align*}
 $$
 
 For conformal transformations
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_{\mu} \epsilon_{\nu}(x)
     + \partial_{\nu} \epsilon_{\mu}(x)
     &= f(x) \eta_{\mu \nu}
     \\
     f(x) &= \frac{2}{d} (\partial \cdot \epsilon) (x)
-\end{aligned}
+\end{align*}
 $$
 
 then
@@ -143,7 +143,7 @@ $$
 The energy-momentum tensor will then transform to:
 
 $$
-\begin{aligned}
+\begin{align*}
     \begin{pmatrix}
         T_{zz} & T_{z \bar{z}} \\
         T_{\bar{z} z} & T_{\bar{z}\bar{z}}
@@ -151,13 +151,13 @@ $$
     = \frac{\partial x^\rho}{\partial z^\mu}
     \frac{\partial x^\sigma}{\partial z^\nu}
     T_{\rho \sigma}(x)
-\end{aligned}
+\end{align*}
 $$
 
 For example:
 
 $$
-\begin{aligned}
+\begin{align*}
     T_{z z} 
     &=
     \frac{\partial x^0}{\partial z} \frac{\partial x^0}{\partial z}T_{00}
@@ -172,25 +172,25 @@ $$
     + \frac{-i}{2} \frac{-i}{2}T_{11}
     \\
     &= \frac{1}{4} (T_{00} - 2i T_{10} - T_{11})
-\end{aligned}
+\end{align*}
 $$
 
 Proceeding in the same way, we find
 
 $$
-\begin{aligned}
+\begin{align*}
     T_{\bar{z} \bar{z}} 
     &= \frac{1}{4} (T_{00} + 2i \, T_{10} - T_{11})
     \\
     T_{z \bar{z}} = T_{\bar{z}z}
     &= \frac{1}{4} (T_{00}+T_{11})
-\end{aligned}
+\end{align*}
 $$
 
 Since the energy-momentum tensor for 2D CFT is *traceless*, we can simplify further:
 
 $$
-\begin{aligned}
+\begin{align*}
     T_{z z}
     &= \frac{1}{2} (T_{00}-i T_{10})
     \\
@@ -198,7 +198,7 @@ $$
     &=\frac{1}{2} (T_{00}+i T_{10})
     \\
     T_{z \bar{z}} = T_{\bar{z}z} &=0
-\end{aligned}
+\end{align*}
 $$
 
 <div class="remark">
@@ -232,7 +232,7 @@ $$
 Since the energy-momentum tensor is traceless and symmetric:
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_{\bar{z}}T_{z z}
     &= \frac{1}{4} 
     (\partial_0 + i\partial_1)
@@ -257,7 +257,7 @@ $$
         - i (\partial_0T_{01} + \partial_1T_{11})
     ]
     = 0
-\end{aligned}
+\end{align*}
 $$
 
 Similarly, we can show that $\partial_zT_{\bar{z} \bar{z}}=0$. $\blacksquare$
@@ -267,7 +267,7 @@ Similarly, we can show that $\partial_zT_{\bar{z} \bar{z}}=0$. $\blacksquare$
 Let us transform the Euclidean metric in 2D into complex coordinates:
 
 $$
-\begin{aligned}
+\begin{align*}
     \begin{pmatrix}
         g_{zz} & g_{z \bar{z}} \\
         g_{\bar{z} z} & g_{\bar{z}\bar{z}}
@@ -275,13 +275,13 @@ $$
     = \frac{\partial x^\rho}{\partial z^\mu}
     \frac{\partial x^\sigma}{\partial z^\nu}
     g_{\rho \sigma}(x)
-\end{aligned}
+\end{align*}
 $$
 
 One then obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \begin{pmatrix}
         g_{zz} & g_{z \bar{z}} \\
         g_{\bar{z} z} & g_{\bar{z}\bar{z}}
@@ -294,13 +294,13 @@ $$
     \end{pmatrix} &= \begin{pmatrix}
         0 & 2 \\ 2 & 0
     \end{pmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 Let us verify that the complexified energy-momentum tensor is still traceless:
 
 $$
-\begin{aligned}
+\begin{align*}
     {T^\mu}_\mu &= g^{\mu \nu} T_{\nu \mu}
     \\
     &= \operatorname{Tr} \left[ \begin{pmatrix}
@@ -311,5 +311,5 @@ $$
     \end{pmatrix} \right]
     \\
     &= 0
-\end{aligned}
+\end{align*}
 $$

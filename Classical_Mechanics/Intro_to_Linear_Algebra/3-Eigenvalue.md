@@ -44,7 +44,7 @@ $$
 i.e. the big block 1 moves towards the small block 2. There will be series of collisions (all of which are assumed to be perfectly elastic) following:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\text{1 and 2 $\to$ 2 and Wall $\to$ 1 and 2 $\to \cdots$}
     \\
     &\cdots \to
@@ -52,7 +52,7 @@ $$
         \text{2 and Wall (end)} \\
         \text{2 and Wall $\to$ 1 and 2 (end)}
     \end{cases}
-\end{aligned}
+\end{align*}
 $$
 
 We see that there are two possible endings. People discover that when $m_1 / m_2 = 10^{2d}$, the number of collisions is the *first $\mathcal{D} + 1$ digits of $\pi$*! Now we shall prove why this is true. 
@@ -78,7 +78,7 @@ Now let us find the relation between $v_{1,2}^{(n)}$ and $v_{1,2}^{(n+1)}$.
 - When $n = 0,2,4,...$ (even), the next collision happens between 1 and 2. Using conservation of linear momentum and energy, we obtain
     
     $$
-    \begin{aligned}
+    \begin{align*}
         m_1 v_1^{(n)} + m_2 v_2^{(n)}
         &= m_1 v_1^{(n+1)} + m_2 v_2^{(n+1)}
         \\
@@ -86,19 +86,19 @@ Now let us find the relation between $v_{1,2}^{(n)}$ and $v_{1,2}^{(n+1)}$.
         + \frac{1}{2} m_2 v_2^{(n)2}
         &= \frac{1}{2} m_1 v_1^{(n+1)2}
         + \frac{1}{2} m_2 v_2^{(n+1)2}
-    \end{aligned}
+    \end{align*}
     $$
 
     Solving this set of equations, we obtain the familiar result ($a \equiv m_1 / m_2$)
 
     $$
-    \begin{aligned}
+    \begin{align*}
         v_1^{(n+1)} &= \frac{a-1}{a+1} v_1^{(n)}
         + \frac{2}{a+1} v_2^{(n)}
         \\
         v_2^{(n+1)} &= \frac{2a}{a+1} v_1^{(n)}
         + \frac{-a+1}{a+1} v_2^{(n)}
-    \end{aligned}
+    \end{align*}
     $$
 
     This set of linear equations can be written as matrix-vector product: define
@@ -248,7 +248,7 @@ Some consequences immediately follow:
     Let us solve
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \det (A - \lambda 1)
         &= \det \begin{bmatrix}
             3 - \lambda & 1 \\
@@ -256,7 +256,7 @@ Some consequences immediately follow:
         \end{bmatrix}
         \\
         &= (3-\lambda)(2-\lambda) = 0
-    \end{aligned}
+    \end{align*}
     $$
 
     The results are
@@ -270,7 +270,7 @@ Some consequences immediately follow:
     Finally, let us find the eigenvectors (up to a scaling factor):
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (R - \lambda_1 1) v_1
         &= \begin{bmatrix}
             0 & 1 \\
@@ -296,7 +296,7 @@ Some consequences immediately follow:
         v_2 = \begin{bmatrix}
             -1 \\ 1
         \end{bmatrix}
-    \end{aligned}
+    \end{align*}
     $$
 
 - **Isotropic Scaling**
@@ -376,7 +376,7 @@ Some consequences immediately follow:
     Let us solve
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \det (R - \lambda 1)
         &= \det \begin{bmatrix}
             \cos \theta - \lambda & -\sin \theta\\
@@ -384,17 +384,17 @@ Some consequences immediately follow:
         \end{bmatrix}
         \\
         &= \lambda^2 - 2\lambda \cos \theta + 1 = 0
-    \end{aligned}
+    \end{align*}
     $$
 
     The results are *just amazing*:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \lambda_1 &= e^{-i\theta} = \cos \theta - i \sin \theta
         \\
         \lambda_2 &= e^{+i\theta} = \cos \theta + i \sin \theta
-    \end{aligned}
+    \end{align*}
     $$
 
     Now you have seen an example where the matrix is real, but the eigenvalues are complex. Is it obvious to you that 2D rotation matrix cannot have real eigenvalues?
@@ -402,7 +402,7 @@ Some consequences immediately follow:
     Next, let us find the eigenvectors of $\lambda_1$:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (R - \lambda_1 1) v
         &= \begin{bmatrix}
             i \sin \theta & -\sin \theta \\
@@ -417,13 +417,13 @@ Some consequences immediately follow:
         \end{bmatrix} = \begin{bmatrix}
             0 \\ 0
         \end{bmatrix}
-    \end{aligned}
+    \end{align*}
     $$
 
     Then, the eigenvectors of $R(\theta)$ are
 
     $$
-    \begin{aligned}
+    \begin{align*}
         v_1 &= \begin{bmatrix}
             1 \\ i
         \end{bmatrix} 
@@ -435,7 +435,7 @@ Some consequences immediately follow:
         \end{bmatrix} 
         &\quad 
         &\text{(corresponding to $\lambda_2 = e^{+i\theta}$)}
-    \end{aligned}
+    \end{align*}
     $$
 
 ## Eigen-Decomposition
@@ -510,7 +510,7 @@ $$
 We notice that $\lambda_2$ is the *complex conjugate* of $\lambda_1$. The eigenvectors (columns of the $\mathcal{D}$ matrix) are 
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{D} = \begin{bmatrix}
         i/\sqrt{a} & -i/\sqrt{a} \\
         1 & 1
@@ -520,19 +520,19 @@ $$
         -i\sqrt{a} & 1 \\
         i\sqrt{a} & 1
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 Then 
 
 $$
-\begin{aligned}
+\begin{align*}
     S^k &= (\mathcal{D} \Lambda \mathcal{D}^{-1})^k
     \\
     &= \mathcal{D} \Lambda \mathcal{D}^{-1} \mathcal{D} \Lambda \mathcal{D}^{-1} \cdots \mathcal{D} \Lambda \mathcal{D}^{-1}
     \\
     &= \mathcal{D} \Lambda^k \mathcal{D}^{-1}
-\end{aligned}
+\end{align*}
 $$
 
 But since $\Lambda$ is diagonal, finding its power is easy:
@@ -565,12 +565,12 @@ $$
 We add a minus sign before $\theta$ for convenience later. Obviously $r = |\lambda| = 1$; to determine $\theta$, we rewrite $\lambda$ as
 
 $$
-\begin{aligned}
+\begin{align*}
     \lambda &\equiv \frac{\sqrt{a}-i}{\sqrt{a}+i}
     = \frac{(\sqrt{a}-i)^2}{(\sqrt{a}+i)(\sqrt{a}-i)}
     \\
     &= \frac{(a - 1) - 2 \sqrt{a} i}{a + 1}
-\end{aligned}
+\end{align*}
 $$
 
 Thus
@@ -583,7 +583,7 @@ $$
 i.e. $\theta$ is an angle between $0$ and $\pi/2$. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     v^{(2k)} &= \frac{v_0}{2}
     \begin{bmatrix}
         - (e^{-ik\theta} + e^{ik\theta}) \\
@@ -594,7 +594,7 @@ $$
         - \cos k\theta \\
         \sqrt{a} \sin k\theta
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 For the odd collisions $n = 2k-1 \, (k = 1,2,...)$, we simply reverse the direction of $v_2$ to obtain
@@ -619,7 +619,7 @@ $$
 Then we make $V^{(n)}$ always *on the unit circle*:
 
 $$
-\begin{aligned}
+\begin{align*}
     V^{(2k)} &= \begin{bmatrix}
         -\cos k\theta \\ \sin k\theta
     \end{bmatrix} &\quad &k = 0,1,2,...
@@ -627,7 +627,7 @@ $$
     V^{(2k-1)} &= \begin{bmatrix}
         -\cos k\theta \\ -\sin k\theta
     \end{bmatrix} &\quad &k = 1,2,3...
-\end{aligned} 
+\end{align*} 
 $$
 
 The collision stops at $0 \le v_2 \le v_1$. In terms of the components of $V^{(n)}$, this condition reads

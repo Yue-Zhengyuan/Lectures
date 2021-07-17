@@ -30,13 +30,13 @@ The zero-temperature Green's function can be generalized to finite temperature b
 **(Time-ordered) Green's function at finite temperature:**
 
 $$
-\begin{aligned}
+\begin{align*}
     i \bar{G}_{\alpha \beta}(t - t')
     &= \expect{T[a_\alpha(t) c^\dagger_\beta(t')]} \\
     &= e^{\beta F} \tr \left\{
         e^{-\beta H} T[a_\alpha(t) c^\dagger_\beta(t')]
     \right \}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -46,7 +46,7 @@ $$
 Now we Fourier transform $\bar{G}$. As usual, we first separate the time dependence from the $c$ operators: expressing the trace as a summation over energy eigenstates $\ket{m}$ (this label implicitly includes the number of particles), we have
 
 $$
-\begin{aligned}
+\begin{align*}
     &\tr \left\{
         e^{-\beta H} T[a_\alpha(t) c^\dagger_\beta(t')]
     \right \}
@@ -64,13 +64,13 @@ $$
         a^\dagger_{\beta} e^{-iH(t' - t)}
         a_{\alpha}
     }{m} e^{i E_m (t' - t)} \theta(t' - t)
-\end{aligned}
+\end{align*}
 $$
 
 As in the zero-*T* case, we insert identities to deal with $e^{\pm iH(t-t')}$: 
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{m}{
         a_{\alpha} e^{-iH(t - t')} 
         a^\dagger_{\beta}
@@ -106,13 +106,13 @@ $$
     }{n} \amp{n}{
         a_{\alpha}
     }{m}
-\end{aligned}
+\end{align*}
 $$
 
 Collecting these results, we obtain (setting $t - t' \to t$)
 
 $$
-\begin{aligned}
+\begin{align*}
     &i \bar{G}_{\alpha\beta}(t)
     \\
     &= e^{\beta F} \sum_{m,n} \bigg[
@@ -126,7 +126,7 @@ $$
         \amp{m}{a_{\alpha}}{n} 
         e^{-i(E_n - E_m)t} \theta(-t)
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 Here we have secretly swapped the label $m,n$ for the second term in the summand. We note that the summand in both summations is nonzero when $\ket{n}$ has one more particle than $\ket{m}$ (i.e. $N_n = N_m + 1$). 
@@ -138,7 +138,7 @@ We can now Fourier transform: through a calculation parallel to the zero-*T* cas
 **Green's function at finite temperature <br>(Lehmann representation):**
 
 $$
-\begin{aligned}
+\begin{align*}
     \bar{G}_{\alpha\beta}(E)
     &= e^{\beta F} \sum_{m,n} 
     \amp{m}{a_{\alpha}}{n} 
@@ -149,7 +149,7 @@ $$
         \mp \frac{e^{-\beta E_n}}
         {E - (E_n - E_m) - i\eta}
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -174,7 +174,7 @@ In addition to the time-ordered Green's function, we also introduce two other ki
 **Retarded and Advanced Green's functions:**
 
 $$
-\begin{aligned}
+\begin{align*}
     i \bar{G}^R_{\alpha \beta}(t - t')
     &= \theta(t - t') \expect{
         [a_\alpha(t), a^\dagger_\beta(t')]_{\mp}
@@ -183,7 +183,7 @@ $$
     &= - \theta(t' - t) \expect{
         [a_\alpha(t), a^\dagger_\beta(t')]_{\mp}
     } 
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -191,7 +191,7 @@ $$
 By similar calculations, one obtains
 
 $$
-\begin{aligned}
+\begin{align*}
     &i \bar{G}^R_{\alpha\beta}(t)
     \\
     &= e^{\beta F} \sum_{m,n} \amp{m}{a_{\alpha}}{n} 
@@ -208,7 +208,7 @@ $$
     \\ &\qquad \qquad \qquad \times
     (- e^{-\beta E_m} \pm e^{-\beta E_n})
     e^{-i(E_n - E_m)t} \theta(-t)
-\end{aligned}
+\end{align*}
 $$
 
 Their Fourier transforms are
@@ -218,7 +218,7 @@ Their Fourier transforms are
 **Retarded/Advanced Green's function at finite temperature <br>(Lehmann representation):**
 
 $$
-\begin{aligned}
+\begin{align*}
     \bar{G}^R_{\alpha\beta}(E)
     &= e^{\beta F} \sum_{m,n} 
     e^{-\beta E_m} \frac{
@@ -237,7 +237,7 @@ $$
     }{
         E - (E_n - E_m) - i\eta
     }
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -274,7 +274,7 @@ $$
 we get the explicit expression for $S_{\alpha \beta}$:
 
 $$
-\begin{aligned}
+\begin{align*}
     S_{\alpha \beta}(E)
     &= e^{\beta F} (1 \mp e^{-\beta E})
     \sum_{m,n} e^{-\beta E_m} 
@@ -282,7 +282,7 @@ $$
     \amp{n}{a^\dagger_{\beta}}{m} 
     \\ &\qquad \qquad \times
     (2\pi) \delta[E - (E_n - E_m)]
-\end{aligned}
+\end{align*}
 $$
 
 Let us now express the three kinds of Green's function in terms of $S$. 
@@ -292,7 +292,7 @@ Let us now express the three kinds of Green's function in terms of $S$.
     The energy delta function in $S$ allows us to rewrite $\bar{G}^{R/A}$ as an integral over energy:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \bar{G}^R_{\alpha \beta}(E)
         &= \int_{-\infty}^{\infty} \frac{dE'}{2\pi}
         \frac{S_{\alpha \beta}(E')}
@@ -316,13 +316,13 @@ Let us now express the three kinds of Green's function in terms of $S$.
             \mathcal{P} \frac{1}{E - E'}
             + i \pi \delta(E - E')
         \bigg]
-    \end{aligned}
+    \end{align*}
     $$
 
 - **Time-ordered Green's function**
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \bar{G}_{\alpha\beta}(E)
         &= e^{\beta F} \sum_{m,n} 
         \amp{m}{a_{\alpha}}{n} 
@@ -349,13 +349,13 @@ Let us now express the three kinds of Green's function in terms of $S$.
             - i\pi \delta[E - (E_n - E_m)]
             [1 \pm e^{-\beta(E_n - E_m)}]
         \bigg]
-    \end{aligned}
+    \end{align*}
     $$
 
     The first term in the square bracket can be converted using the delta function in $S$, yielding
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \bar{G}_{\alpha \beta}(E)
         &= \int_{-\infty}^{\infty} \frac{dE'}{2\pi} 
         S_{\alpha \beta}(E') 
@@ -365,13 +365,13 @@ Let us now express the three kinds of Green's function in terms of $S$.
             \frac{1 \pm e^{-\beta E}}
             {1 \mp e^{-\beta E}}
         \bigg]
-    \end{aligned}
+    \end{align*}
     $$
 
 Comparing this with the retarded and advanced Green's functions, we obtain an identity between the three kinds of Green's functions:
 
 $$
-\begin{aligned}
+\begin{align*}
     &(1 \mp e^{-\beta E})^{-1} \bar{G}^R_{\alpha \beta}(E)
     + (1 \mp e^{\beta E})^{-1} \bar{G}^A_{\alpha \beta}(E)
     \\
@@ -391,7 +391,7 @@ $$
     \bigg\}
     \\
     &= \bar{G}_{\alpha \beta}(E)
-\end{aligned}
+\end{align*}
 $$
 
 ## The Sum Rule
@@ -410,19 +410,19 @@ $$
 *Proof*: Due to the energy delta function in $S_{\alpha \alpha}$, the integration is converted to a summation
 
 $$
-\begin{aligned}
+\begin{align*}
     \int \frac{dE}{2\pi} \, S_{\alpha \alpha}(E)
     &= e^{\beta F} \sum_{m,n} 
     (e^{-\beta E_m} \mp e^{-\beta E_n}) 
     \amp{m}{a_{\alpha}}{n} 
     \amp{n}{a^\dagger_{\alpha}}{m} 
-\end{aligned}
+\end{align*}
 $$
 
 Now we "undo" the insertion of identities:
 
 $$
-\begin{aligned}
+\begin{align*}
     \int \frac{dE}{2\pi} \, S_{\alpha \alpha}(E)
     &= e^{\beta F} \sum_{m,n} 
     \bigg[
@@ -446,5 +446,5 @@ $$
     \\
     &= \operatorname{tr} e^{-\beta(H - F)} = 1 
     \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$

@@ -45,13 +45,13 @@ These claims will be justified in the example of *massless free boson* in Part 5
 *Remark*: Comparing with
 
 $$
-\begin{aligned}
+\begin{align*}
     T(z) \phi(w,\bar{w})
     &= \frac{1}{(z-w)^2} h \phi(w,\bar{w})
     \\ &\quad 
     + \frac{1}{z-w} \p_w \phi(w,\bar{w})
     + \cdots
-\end{aligned}
+\end{align*}
 $$
 
 we see that central charge term indicates that $T(z)$ and $\bar{T}(\bar{z})$ are not primary fields. The appearance of a nonzero $c$ is called the **conformal anomaly** (the word **anomaly** refers to things not exist in the classical theory).
@@ -63,7 +63,7 @@ we see that central charge term indicates that $T(z)$ and $\bar{T}(\bar{z})$ are
 We expand the energy-momentum tensor at the origin: since $T$ has conformal dimension 2, we write
 
 $$
-\begin{aligned}
+\begin{align*}
     T(z)
     &= \sum_n z^{-n-2} L_n, \quad 
     L_n = \frac{1}{2 \pi i} \oint dz \, 
@@ -73,7 +73,7 @@ $$
     &= \sum_n \bar{z}^{-n-2} \bar{L}_n, \quad
     \bar{L}_n = \frac{1}{2 \pi i} \oint d\bar{z} \, 
     \bar{z}^{n+1} \bar{T}(\bar{z})
-\end{aligned}
+\end{align*}
 $$
 
 To see the meaning of $L_n, \bar{L}_n$, we expand infinitesimal conformal transformation $\epsilon (z)$ at the origin:
@@ -89,7 +89,7 @@ $$
 and consider the conserved charge of conformal transformation (for simplicity, keep chiral terms only)
 
 $$
-\begin{aligned}
+\begin{align*}
     Q_{\epsilon}
     &= -\frac{1}{2 \pi i} \oint dz \, T(z)\epsilon (z)
     \\
@@ -103,7 +103,7 @@ $$
     &= -\sum_{n,m} \frac{1}{(n-m)!} \frac{d^{n-m}}{dz^{n-m}} (L_n\epsilon_m)
     \\
     &= - \sum_n \epsilon_n L_n
-\end{aligned}
+\end{align*}
 $$
 
 Thus we see that the modes $L_n$ can be interpreted as generators of conformal transformations (and so do $\bar{L}_n$). The algebra of the generators $L_n,\bar{L}_n$ is found to be 
@@ -113,7 +113,7 @@ Thus we see that the modes $L_n$ can be interpreted as generators of conformal t
 **Virasoro algebra**:
 
 $$
-\begin{aligned}
+\begin{align*}
     [L_n, L_m]
     &= (n-m)L_{n+m}
     + \frac{c}{12} n (n^2 - 1) \delta_{n+m, 0} 
@@ -123,7 +123,7 @@ $$
     + \frac{c}{12} n (n^2 - 1) \delta_{n+m, 0}
     \\[1em]
     [L_n, \bar{L}_m] &= 0
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -139,7 +139,7 @@ $$
     we obtain
 
     $$
-    \begin{aligned}
+    \begin{align*}
         [L_n, L_m]
         &= \frac{1}{(2 \pi i)^2} \left[
             \oint dz \, z^{n+1} T(z),
@@ -161,13 +161,13 @@ $$
             + \frac{\p_w T(w)}{z-w}
             + \cdots
         \right]
-    \end{aligned}
+    \end{align*}
     $$
 
     Integrate over $z$ using Cauchy Integral Formula
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\frac{1}{2 \pi i} \oint_w dz \, z^{n+1} 
         \left[
             \frac{c/2}{(z-w)^4}
@@ -190,13 +190,13 @@ $$
         &= \frac{c}{12} n (n^2 - 1) w^{n-2}
         + 2(n + 1) w^n T(w)
         + w^{n+1} \p_w T(w)
-    \end{aligned}
+    \end{align*}
     $$
 
     Then complete the integration over $w$
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &[L_n, L_m]
         = \frac{1}{2 \pi i} \oint_0 dw
         \Bigg[
@@ -221,7 +221,7 @@ $$
         \\[1em]
         &= \frac{c}{12} n (n^2 - 1) \delta_{m+n, 0}
         + (n-m) L_{m+n}
-    \end{aligned}
+    \end{align*}
     $$
 
 - $[\bar{L}_n, \bar{L}_m]$ can be found in the same way using the OPE of $\bar{T} (\bar{z})$ with itself.
@@ -257,7 +257,7 @@ $$
 Plug in the OPE of the energy-momentum tensor and apply Cauchy integral formula:
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta_\epsilon T(w) 
     &= -\frac{1}{2 \pi i} \oint dz \, \epsilon (z) 
     \left[
@@ -267,7 +267,7 @@ $$
     \\
     &= -\frac{c}{12} \partial_w^3 \epsilon(w)
     - 2T(w) \partial_w \epsilon(w) - \epsilon(w) \partial_wT(w)
-\end{aligned}
+\end{align*}
 $$
 
 One can verify that the finite version of this transformation is (the Yellow Book 5.4.1)
@@ -328,7 +328,7 @@ $$
 Let us go to the complex coordinates $z, \bar{z} = x^0 \pm ix^1$. First, we have seen in Part 2 that ($T_{10}$ has been secretly changed to $T_{01}$ because $T_{\mu \nu}$ is symmetric)
 
 $$
-\begin{aligned}
+\begin{align*}
     T_{z z}^\text{cyl}
     &= -\frac{1}{2\pi} T^\text{cyl}(z)
     = \frac{1}{2} (T^\text{cyl}_{00}-i T^\text{cyl}_{01})
@@ -336,23 +336,23 @@ $$
     T_{\bar{z} \bar{z}}^\text{cyl}
     &= -\frac{1}{2\pi} \bar{T}^\text{cyl}(\bar{z})
     = \frac{1}{2} (T^\text{cyl}_{00}+i T^\text{cyl}_{01})
-\end{aligned}
+\end{align*}
 $$
 
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     T^\text{cyl}_{00} &= -\frac{1}{2\pi} (T^\text{cyl}(z) + \bar{T}^\text{cyl}(\bar{z}))
     \\[1em]
     T^\text{cyl}_{01} &= -\frac{i}{2\pi} (T^\text{cyl}(z) - \bar{T}^\text{cyl}(\bar{z}))
-\end{aligned}
+\end{align*}
 $$
 
 For the integration, we transform as before ($w, \bar{w}$ are the plane coordinates)
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{Chiral: } &\quad &
     \int_0^L dx^1 
     \to \frac{1}{i \omega} \oint \frac{1}{w} dw 
@@ -360,13 +360,13 @@ $$
     \text{Anti-Chiral: } &\quad &
     \int_0^L dx^1 
     \to \frac{1}{i \omega} \oint \frac{1}{\bar{w}} d\bar{w} 
-\end{aligned}
+\end{align*}
 $$
 
 Then we need to convert $T^\text{cyl}(z)$ to $T(w)$ (and the anti-chiral counterpart) defined on the plane. The coordinate transformation from $w$ back to $z = \omega^{-1} \ln w$ gives
 
 $$
-\begin{aligned}
+\begin{align*}
     T_\text{cyl}(z) 
     &= \left(\frac{\partial z}{\partial w}\right)^{-2} 
     \left (
@@ -376,13 +376,13 @@ $$
     &= \omega^2 \left(
         w^2 T(w) - \frac{c}{24}
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 We obtain (with Laurent expansion of $T(w)$ on the plane)
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= \frac{\omega}{2\pi i} \oint dw \,
     \left( w T(w) - \frac{c}{24w} \right) 
     + \text{anti-chiral}
@@ -404,7 +404,7 @@ $$
         \sum_n \frac{L_n}{w^{n+1}}
         - \frac{c}{24 w}
     \right) - \text{anti-chiral}
-\end{aligned}
+\end{align*}
 $$
 
 Applying Cauchy integral formula, we obtain

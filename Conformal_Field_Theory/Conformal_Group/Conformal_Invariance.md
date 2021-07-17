@@ -155,7 +155,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     g_{\mu \nu}^{\prime}\left(x'\right)
     &\simeq \left(
         \delta_{\mu}^{\rho}
@@ -174,7 +174,7 @@ $$
     &= g_{\mu \nu}(x)
     - g_{\mu \sigma}(x) \partial_{\nu} \epsilon^{\sigma}(x)
     - g_{\rho \nu}(x) \partial_{\mu} \epsilon^{\rho}(x)
-\end{aligned}
+\end{align*}
 $$
 
 For current purposes, we always assume that we are originally in *flat* (Euclidean) spacetime, i.e.
@@ -213,7 +213,7 @@ $$
 *Remark*: Some useful corollaries follow.
 
 $$
-\begin{aligned}
+\begin{align*}
     2 \partial_\mu \partial_{\nu} \epsilon_{\rho}
     &= \eta_{\rho \mu} \partial_\nu f
     + \eta_{\nu \rho} \partial_\mu f
@@ -227,7 +227,7 @@ $$
     (d - 1) \partial^2 f &= 0
     \qquad (d \ne 2)
     &\quad (3)
-\end{aligned}
+\end{align*}
 $$
 
 From (2) (3) we see that the case $d = 2$ will be different from the others. Thus we shall discuss $d = 2$ and $d \ge 3$ separately. 
@@ -239,7 +239,7 @@ From (2) (3) we see that the case $d = 2$ will be different from the others. Thu
 1. Take derivative of the general requirement and permute indices
 
     $$
-    \begin{aligned}
+    \begin{align*}
         -: &\quad 
         \partial_\rho \partial_{\mu} \epsilon_{\nu}(x)
         + \partial_\rho \partial_{\nu} \epsilon_{\mu}(x)
@@ -254,7 +254,7 @@ From (2) (3) we see that the case $d = 2$ will be different from the others. Thu
         \partial_\nu \partial_{\rho} \epsilon_{\mu}(x)
         + \partial_\nu \partial_{\mu} \epsilon_{\rho}(x)
         = \partial_\nu [f(x) \eta_{\rho \mu}]
-    \end{aligned}
+    \end{align*}
     $$
 
     Add these together (with sign described above)
@@ -290,7 +290,7 @@ From (2) (3) we see that the case $d = 2$ will be different from the others. Thu
     Take $\partial_\nu$ on Corollary 2:
     
     $$
-    \begin{aligned}
+    \begin{align*}
         (2 - d) \partial_\nu \partial_\mu f
         &= 2 \partial_\nu \partial^2 \epsilon_\mu 
         = 2 \partial^2 \partial_\nu  \epsilon_\mu 
@@ -300,20 +300,20 @@ From (2) (3) we see that the case $d = 2$ will be different from the others. Thu
         &= 2 \partial^2 \partial_\mu \epsilon_\nu 
         \quad (\text{Exchange } \mu, \nu)
         &\quad (\text{ii})
-    \end{aligned}
+    \end{align*}
     $$
 
     Then we add half of (i) and half of (ii) to obtain
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (2 - d) \partial_\mu \partial_\nu f
         &= \partial^2 (
             \partial_{\mu} \epsilon_{\nu}
             + \partial_{\nu} \epsilon_{\mu}
         ) \\
         &= \eta_{\mu \nu} \partial^2 f
-    \end{aligned}
+    \end{align*}
     $$
 
     <div class="remark">

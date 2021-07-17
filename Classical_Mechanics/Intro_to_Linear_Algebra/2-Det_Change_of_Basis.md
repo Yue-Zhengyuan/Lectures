@@ -98,11 +98,11 @@ $$
 We can use the three vectors to construct a **parallelepiped** (see figure), whose *volume* is given by the formula (see Appendix):
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{Volume} = 
     | &a_1 b_2 c_3 + a_2 b_3 c_1 + a_3 b_1 c_2 \\
     &- a_3 b_2 c_1 - a_2 b_1 c_3 - a_1 b_3 c_2|
-\end{aligned}
+\end{align*}
 $$
 
 The expression inside the absolute value sign $| \, |$ is defined as the **determinant** of matrix $A$, still denoted by $\det A$. It can be rewritten in terms of 2D determinants:
@@ -218,12 +218,12 @@ This is easy to understand if you think in terms of the transformations they rep
 Is it obvious to you that $A_1, A_3$ are inverse of each other? Net effect: 
 
 $$
-\begin{aligned}
+\begin{align*}
     &|\text{elephant in refrigerator} \rangle
     \\
     & \quad = 
     A_3 A_2 A_1 | \text{elephant out of refrigerator} \rangle
-\end{aligned}
+\end{align*}
 $$
 
 The inverse operation is evidently
@@ -241,12 +241,12 @@ The inverse operation is evidently
 Net effect: 
 
 $$
-\begin{aligned}
+\begin{align*}
     &|\text{elephant out of refrigerator} \rangle
     \\
     & \quad = 
     A_1^{-1} A_2^{-1} A_3^{-1} | \text{elephant in refrigerator} \rangle
-\end{aligned}
+\end{align*}
 $$
 
 ### EXERCISE
@@ -307,7 +307,7 @@ $$
 For an arbitrary vector, its components along the new and the old basis vectors are related by
 
 $$
-\begin{aligned}
+\begin{align*}
     v 
     &= v_1 e_1 + v_2 e_2 
     &\quad &\text{(in old basis)}
@@ -319,7 +319,7 @@ $$
     \\
     &= \mathcal{D} (v'_1 e_1 + v'_2 e_2)
     &\quad &\text{(using linearity of $\mathcal{D}$)}
-\end{aligned}
+\end{align*}
 $$
 
 Using the matrix notation to make the expression more clear:
@@ -404,12 +404,12 @@ $$
 Then we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{D}^{-1} w 
     &= A' \mathcal{D}^{-1} v
     \\
     &= \mathcal{D}^{-1} A v \qquad (w = A v)
-\end{aligned}
+\end{align*}
 $$
 
 Since $v$ is arbitrary, we must have
@@ -470,18 +470,18 @@ Then, from $\overrightarrow{OQ} = \overrightarrow{AB} + \overrightarrow{BQ} = \b
 
 $$
 \left.
-\begin{aligned}
+\begin{align*}
     x_{Q} = a_{x} + \alpha b_{x} \\
     0 = a_{y} + \alpha b_{y}
-\end{aligned}
+\end{align*}
 \right\}
 \, \Rightarrow \,
 \left\{
-\begin{aligned}
+\begin{align*}
     &\alpha = - \frac{a_{y}}{b_{y}}
     \\
     &x_{Q} = a_{x} - \frac{a_{y}b_{x}}{b_{y}}
-\end{aligned}
+\end{align*}
 \right.
 $$
 
@@ -519,19 +519,19 @@ Therefore, we write
 
 $$
 \left\{
-\begin{aligned}
+\begin{align*}
     x_{P} = a_{x} + \alpha c_{x} \\
     y_{P} = a_{y} + \alpha c_{y} \\
     0 = a_{z} + \alpha c_{z} 
-\end{aligned}
+\end{align*}
 \right. ,
 \quad
 \left\{
-\begin{aligned}
+\begin{align*}
     x_{R} = b_{x} + \beta c_{x} \\
     y_{R} = b_{y} + \beta c_{y} \\
     0 = b_{z} + \alpha c_{z}
-\end{aligned}
+\end{align*}
 \right.
 $$
 
@@ -546,24 +546,24 @@ Therefore
 
 $$
 \left\{
-\begin{aligned}
+\begin{align*}
     x_{P} = a_{x} - \frac{a_{z}c_{x}}{c_{z}} \\
     y_{P} = a_{y} - \frac{a_{z}c_{y}}{c_{z}}
-\end{aligned}
+\end{align*}
 \right. , 
 \quad
 \left\{
-\begin{aligned}
+\begin{align*}
     x_{R} = b_{x} - \frac{b_{z}c_{x}}{c_{z}} \\
     y_{R} = b_{y} - \frac{b_{z}c_{y}}{c_{z}}
-\end{aligned}
+\end{align*}
 \right.
 $$
 
 Using the results for 2D, we immediately get
 
 $$
-\begin{aligned}
+\begin{align*}
     &A_{\text{OPQR}} 
     = \det \begin{bmatrix}
         x_{P} & x_{R} \\
@@ -571,17 +571,17 @@ $$
     \end{bmatrix}
     \\
     &= \frac{1}{c_{z}}\left( a_{x}b_{y}c_{z} + a_{y}b_{z}c_{x} + a_{z}b_{x}c_{y} - a_{z}b_{y}c_{x} - a_{y}b_{x}c_{z} - a_{x}b_{z}c_{y} \right)
-\end{aligned}
+\end{align*}
 $$
 
 The height of the new parallelepiped is evidently equal to $c_{z}$. Then, the volume $V$ is simply
 
 $$
-\begin{aligned}
+\begin{align*}
     V &= A_{\text{OPQR}} \times c_{z} 
     \\
     &= a_{x}b_{y}c_{z} + a_{y}b_{z}c_{x} + a_{z}b_{x}c_{y} - a_{z}b_{y}c_{x} - a_{y}b_{x}c_{z} - a_{x}b_{z}c_{y}
-\end{aligned}
+\end{align*}
 $$
 
 This defines the determinant
@@ -617,7 +617,7 @@ $$
 Under the new basis:
 
 $$
-\begin{aligned}
+\begin{align*}
     u \cdot v 
     &= u'_i v'_j (e'_i \cdot e'_j)
     \\
@@ -637,7 +637,7 @@ $$
     \mathcal{D}_{ma} (e_i)_a
     \mathcal{D}_{nb} (e_j)_b
     (e_m \cdot e_n)
-\end{aligned}
+\end{align*}
 $$
 
 However, we know that the $a$th component of $e_i$ along the basis itself is
@@ -649,7 +649,7 @@ $$
 Similarly $(e_j)_b = \delta_{jb}$. Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     u \cdot v 
     &= (\mathcal{D}^{-1})_{ik} u_k
     (\mathcal{D}^{-1})_{jl} v_l
@@ -675,7 +675,7 @@ $$
     &= \delta_{mk} \delta_{nl} u_k v_l (e_m \cdot e_n)
     \\
     &= u_m v_n (e_m \cdot e_n)
-\end{aligned}
+\end{align*}
 $$
 
 Renaming $m,n$ to $i,j$, we have verified the result of $u \cdot v$ is unchanged if we calculate using the components along the new basis.

@@ -16,13 +16,13 @@ i.e. $\phi$ is treated as an angular variable.
 The currents have the mode expansion
 
 $$
-\begin{aligned}
+\begin{align*}
     j(z) &\equiv i \partial \phi 
     = \sum_{n \in \mathbb{Z}} j_n z^{-n-1}
     \\
     \bar{j}(\bar{z}) &\equiv i \bar{\partial} \phi 
     = \sum_{n \in \mathbb{Z}} \bar{j}_n \bar{z}^{-n-1}
-\end{aligned}
+\end{align*}
 $$
 
 After integration over $z, \bar{z}$, we obtain (here we take the $g = 1/4\pi$ normalization)
@@ -62,14 +62,14 @@ where $Q$ is the $j_0$ charge to be determined later.
 The partition function of the compactified boson (cb) is related to the free boson (fb) by
 
 $$
-\begin{aligned}
+\begin{align*}
     Z_{\text{cb}} (\tau,\bar{\tau})
     &= Z_{\text{fb}}(\tau, \bar{\tau}) 
     \sum_{Q, n} \langle Q,n | q^{j_0^2/2} \bar{q}^{\bar{j}_0^2/2} | Q,n \rangle
     \\
     &= \frac{1}{|\eta(\tau)|^2}
     \sum_{Q,n} q^{Q^2/2} \bar{q}^{(Q-nR)^2/2}
-\end{aligned}
+\end{align*}
 $$
 
 The partition function should be invariant under modular transformations. We can use the *T*-transformation ($\tau \to \tau + 1$) only to determine the form of $Q$: recall that $q \equiv e^{2\pi i \tau}$, then
@@ -94,7 +94,7 @@ $$
 Using this new notation, we write
 
 $$
-\begin{aligned}
+\begin{align*}
     j_0 |m,n \rangle &= \left(
         \frac{m}{R} + \frac{nR}{2}
     \right) |m,n \rangle
@@ -102,7 +102,7 @@ $$
     \bar{j}_0 |m,n \rangle &= \left(
         \frac{m}{R} - \frac{nR}{2}
     \right) |m,n \rangle
-\end{aligned}
+\end{align*}
 $$
 
 and
@@ -119,7 +119,7 @@ $$
 With the expression of $j_0, \bar{j}_0$ above, the mode expansions of $\phi$ and its derivatives are
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi(z,\bar{z})
     &= \phi_0
     - i \left(
@@ -145,25 +145,25 @@ $$
         \frac{m}{R} - \frac{nR}{2}
     \right) \frac{1}{\bar{z}}
     + \sum_{n \ne 0} \bar{a}_n \bar{z}^{-n-1}
-\end{aligned}
+\end{align*}
 $$
 
 Here we see that $a_0, \bar{a}_0$ should be redefined to
 
 $$
-\begin{aligned}
+\begin{align*}
     a_0 
     &= \frac{m}{R} + \frac{nR}{2}
     \\
     \bar{a}_0 
     &= \frac{m}{R} - \frac{nR}{2}
-\end{aligned}
+\end{align*}
 $$
 
 Then the generators $L_0, \bar{L}_0$ are found to be
 
 $$
-\begin{aligned}
+\begin{align*}
     L_0 
     &= \sum_{n>0} a_{-n} a_n 
     + \frac{1}{2} \left(
@@ -175,7 +175,7 @@ $$
     + \frac{1}{2} \left(
         \frac{m}{R} - \frac{nR}{2}
     \right)^2
-\end{aligned}
+\end{align*}
 $$
 
 ## Invariance of $Z_\text{cb}$ under *S*-Transformations

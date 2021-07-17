@@ -3,7 +3,7 @@
 We start from the Lagrangian of scalar QED:
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{L} 
     &= -\frac{1}{4} F_{\mu \nu} F^{\mu \nu}
     + (D_\mu \phi^*)(D^\mu \phi) - m^2 \phi^* \phi
@@ -16,14 +16,14 @@ $$
     + e^2 A_\mu A^\mu \phi^* \phi
     \\[1em]
     &\text{with} \qquad
-    \begin{aligned}
+    \begin{align*}
         D_\mu &= \partial_\mu + ieA_\mu
         \\
         F_{\mu\nu} &= \partial_\mu A_\nu - \partial_\nu A_\mu
         \\
         &= D_\mu A_\nu - D_\nu A_\mu
-    \end{aligned}
-\end{aligned}
+    \end{align*}
+\end{align*}
 $$
 
 $D_\mu$ is called the **gauge-covariant derivative**.
@@ -31,11 +31,11 @@ $D_\mu$ is called the **gauge-covariant derivative**.
 This theory is invariant under the following gauge transformation
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi &\to &\phi' &= e^{i\alpha(x)} \phi
     \\
     eA_\mu &\to &eA'_\mu &= eA_\mu - \partial_\mu \alpha(x)
-\end{aligned}
+\end{align*}
 $$
 
 ----
@@ -43,7 +43,7 @@ $$
 *Verify*: For the second term in $\mathcal{L}$: 
 
 $$
-\begin{aligned}
+\begin{align*}
     D'^\mu \phi'
     &= (\partial_\mu + ieA'_\mu) \phi'
     \\
@@ -53,7 +53,7 @@ $$
     &= (\partial_\mu + ieA_\mu) \phi
     \\
     &= D^\mu \phi
-\end{aligned}
+\end{align*}
 $$
 
 and similarly $D'_\mu \phi'^* = D_\mu \phi^*$. 
@@ -69,12 +69,12 @@ $$
 It can be directly generalized to a gauge-invariant one by using the covariant derivative
 
 $$
-\begin{aligned}
+\begin{align*}
     J^\mu &= i (\phi^* D^\mu \phi - \phi D^\mu \phi^*)
     \\
     &= i (\phi^* \partial^\mu \phi - \phi \partial^\mu \phi^*)
     - 2e A^\mu \phi^* \phi
-\end{aligned}
+\end{align*}
 $$
 
 ----
@@ -94,15 +94,15 @@ $$
 The propagator of the scalar particles is calculated from
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle 0 |T[\phi^*(x) \phi(y)] | 0\rangle
-\end{aligned}
+\end{align*}
 $$
 
 Since the terms in $\mathcal{L}$ containing only $\phi, \phi^*$ are the same as the scalar field theory, we use the same mode expansion to obtain the same propagator:
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle 0 |T[\phi^*(x) \phi(y)] | 0\rangle
     = \int \frac{d^4 p}{(2\pi)^4}
     \frac{
@@ -110,7 +110,7 @@ $$
     }{
         p^2 - m^2 + i \epsilon
     }
-\end{aligned}
+\end{align*}
 $$
 
 ## Propagator of the Photons

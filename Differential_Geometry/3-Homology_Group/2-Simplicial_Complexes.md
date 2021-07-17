@@ -9,7 +9,7 @@
 - **$r$-Simplex (单纯形) $\sigma_r$**: An object containing an $r$-dimensional region determined by $r+1$ *geometrically independent* points $p_0, ..., p_r$ in $\mathbb{R}^m (m \ge r)$
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \sigma_r &\equiv
         \langle p_0 p_1 ... p_r \rangle
         \\ &= 
@@ -18,7 +18,7 @@
             \in \mathbb{R}^m \mid
             c_i \ge 0, \, \sum_{i=0}^r c_i = 1
         \right\}
-    \end{aligned}
+    \end{align*}
     $$
 
     - **Barycentric coordinate (重心坐标)**: $(c_0, ..., c_r)$

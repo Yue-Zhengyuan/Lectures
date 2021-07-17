@@ -42,7 +42,7 @@ The model name comes from the fact that the coupling coefficient in the $X$ and 
 Using $S_i^\pm$ to represent the Hamiltonian, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     &S_i^x S_{i+1}^x + S_i^y S_{i+1}^y
     \\
     &= \frac{1}{4}(S_i^- + S_i^+)(S_{i+1}^- + S_{i+1}^+)
@@ -50,7 +50,7 @@ $$
     \\
     &= \frac{1}{2}(S_i^- S_{i+1}^+ + S_i^+ S_{i+1}^-)
     = \frac{1}{2}(S_{i}^+ S_{i+1}^- + h.c.)
-\end{aligned}
+\end{align*}
 $$
 
 Then
@@ -83,7 +83,7 @@ which does not affect the number operators $n_j$; but the hopping terms get an a
 **$t$-$V$ model of spinless fermion**
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= -t \sum_{i=0}^{N-1} (
         c_i^\dagger c_{i+1} + h.c.
     ) + V \sum_{i=0}^{N-1} \left(n_i - \frac{1}{2}\right)
@@ -91,7 +91,7 @@ $$
     \\
     \text{with} &\quad 
     t = \frac{J_{xy}}{2} > 0, \quad V = J_z
-\end{aligned}
+\end{align*}
 $$
 </div><br>
 
@@ -114,10 +114,10 @@ By comparison with Bethe ansatz exact solution, the Luttinger parameter (compact
 $$
 \frac{J_z}{J_{xy}} = -\cos (\pi g)
 \  \Rightarrow \  \left\{
-\begin{aligned}
+\begin{align*}
     K &= \frac{1}{2g} \\
     u &= \frac{1}{1-g} \sin(\pi(1-g)) \frac{J_{xy}}{2}
-\end{aligned}
+\end{align*}
 \right.
 $$
 

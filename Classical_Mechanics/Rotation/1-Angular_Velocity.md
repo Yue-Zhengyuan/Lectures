@@ -137,14 +137,14 @@ $$
 Therefore, the **general 3D rotation matrix** around the axis along direction $n = (\theta,\varphi)$ by angle $\alpha$ is
 
 $$
-\begin{aligned}
+\begin{align*}
     R_n(\alpha)
     &= \mathcal{D}_n
     R_z(\alpha) \mathcal{D}^{-1}_n
     \\
     &= R_z(\varphi) R_y(\theta) R_z(\alpha)
     R_y^{-1}(\theta) R_z^{-1}(\varphi)
-\end{aligned}
+\end{align*}
 $$
 
 ### EXERCISE
@@ -154,12 +154,12 @@ $$
 - Using properties of trigonometric functions, verify that 
     
     $$
-    \begin{aligned}
+    \begin{align*}
         R_i^{-1}(\alpha) &= R_i(-\alpha) \\
         R_i(\alpha + \beta) &= R_i(\alpha) R_i(\beta)
         \\
         &= R_i(\beta) R_i(\alpha) 
-    \end{aligned}
+    \end{align*}
     \qquad i = x,y,z
     $$
 
@@ -219,7 +219,7 @@ $$
 Its matrix elements are
 
 $$
-\begin{aligned}
+\begin{align*}
     \omega(t_0)
     &= R_z(\varphi) R_y(\theta) \left[
     \frac{d R_z(\alpha(t)-\alpha(t_0))}{dt}
@@ -237,13 +237,13 @@ $$
         \omega _3 & 0 & -\omega _1 \\
         -\omega _2 & \omega _1 & 0
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 where
 
 $$
-\begin{aligned}
+\begin{align*}
     \omega_1 = \omega_{32} 
     & = \omega(t_0) \sin \theta \cos \varphi 
     \\
@@ -252,7 +252,7 @@ $$
     \\
     \omega_3 = \omega_{21} 
     & = \omega(t_0)  \cos \theta
-\end{aligned} \qquad
+\end{align*} \qquad
 \omega(t_0) = \frac{d\alpha(t_0)}{dt}
 $$
 
@@ -261,12 +261,12 @@ If you are familiar with the spherical polar coordinates, you should immediately
 Then the linear velocity $\boldsymbol{v}(t_0)$ is given by
 
 $$
-\begin{aligned}
+\begin{align*}
     \boldsymbol{v}(t_0)
     &= \omega(t_0) R_n(\alpha(t_0)) \boldsymbol{r}(0)
     \\
     &= \omega(t_0) \boldsymbol{r}(t_0)
-\end{aligned}
+\end{align*}
 $$
 
 Since this holds for any time $t_0$, we can finally remove the subscript 0 and directly write
@@ -292,7 +292,7 @@ After we rewrite the matrix $dR/dt$ using the three numbers
 $\omega_i (i=1,2,3)$, the linear velocity can be expressed as
 
 $$
-\begin{aligned}
+\begin{align*}
     \boldsymbol{v}
     = \omega_{i j} r_j 
     &= \begin{bmatrix}
@@ -310,7 +310,7 @@ $$
         \omega_3 r_1 - \omega_1 r_3 \\
         \omega_1 r_2 - \omega_2 r_1
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 This *defines* the formula of **cross product**:
@@ -368,7 +368,7 @@ You should be able to write it down quickly using the meaning of the three colum
 In the mirror (reflected world), since $\boldsymbol{v}$ and $\boldsymbol{r}$ are both "true" vectors, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     &\boldsymbol{r}' = P_y\boldsymbol{r}, \quad
     \boldsymbol{v}' = P_y\boldsymbol{v}
     \\ \\
@@ -393,7 +393,7 @@ $$
         -v_y \\
         v_z
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 However, the new $\boldsymbol{\omega}'$ vector must be extracted from the new $\omega'$ matrix, instead of applying $\boldsymbol{\omega}' = P_y\boldsymbol{\omega}$ (wrong). By definition
@@ -419,7 +419,7 @@ $$
 Since this is true for *any* position $\boldsymbol{r}$, we obtain the following rule:
 
 $$
-\begin{aligned}
+\begin{align*}
     &P_y \omega = \omega' P_y
     \\
     &\Rightarrow  \omega'
@@ -429,7 +429,7 @@ $$
         -\omega_3 & 0 & \omega_1 \\
         -\omega_2 & -\omega_1 & 0
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 We remark that $\omega$ and $\omega'$ are related by a similarity transformation. Now we can read off the new angular velocity *vector*:

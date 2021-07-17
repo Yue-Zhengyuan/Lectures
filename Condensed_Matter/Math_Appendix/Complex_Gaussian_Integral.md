@@ -39,12 +39,12 @@ Sometimes (when considering complex valued fields) we need to consider Gaussian 
 - Integration result
 
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(0,0) &= a^{-1}
         \\[0.5em]
         Z(\bar{J},J)
         &= Z(0,0) \exp (\bar{J} a^{-1} J)
-    \end{aligned}
+    \end{align*}
     $$
 
 </div><br>
@@ -84,7 +84,7 @@ Sometimes (when considering complex valued fields) we need to consider Gaussian 
 Using Cartesian coordinates, we find
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(\bar{J}, J)
     &= \frac{1}{\pi}\int dx \, dy \exp \left(
         -a (x^2+y^2) + (x-i y)J + \bar{J} (x+i y)
@@ -103,7 +103,7 @@ $$
     \\
     &= a^{-1}\exp \left(\bar{J} a^{-1}J\right)
     \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ## Multi-Variable-Pair Case
@@ -117,7 +117,7 @@ The generalization to multi-variable-pair case is straightforward.
 - Generating function
 
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(\bar{J}, J)
         &= \int D\bar{z} \, Dz
         \exp \left(
@@ -133,7 +133,7 @@ The generalization to multi-variable-pair case is straightforward.
         \text{with} \quad
         D\bar{z} \, Dz &\equiv 
         \prod_{j=1}^n \frac{d\bar{z}_j dz_j}{2\pi i}
-    \end{aligned}
+    \end{align*}
     $$
 
     - $A$ is an $n \times n$ *Hermitian* matrix. 
@@ -143,14 +143,14 @@ The generalization to multi-variable-pair case is straightforward.
 - Integration result
     
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(0,0) &= \frac{1}{\det A}
         \\[1em]
         \frac{Z(\bar{J}, J)}{Z(0,0)}
         &= \exp [
             \bar{J}_i (A^{-1})_{i j} J_j
         ] \equiv \mathcal{Z}(\bar{J}, J)
-    \end{aligned}
+    \end{align*}
     $$
 
 </div><br>
@@ -162,31 +162,31 @@ $U$ with determinant 1:
 
 $$
 \Lambda =U^{\dagger}A U \Rightarrow \left\{
-\begin{aligned}
+\begin{align*}
      A &=U \Lambda U^{\dagger}
      \\
      A^{-1} &= (U^{\dagger})^{-1} \Lambda^{-1} O^{-1}
      = U \Lambda^{-1} U^{\dagger}
-\end{aligned}
+\end{align*}
 \right.
 $$
 
 Introduce new variables and new sources
 
 $$
-\begin{aligned}
+\begin{align*}
     w &= U^{\dagger}z, &\quad 
     \bar{w} &= \bar{z} U
     \\
     \mathcal{J} &= U^{\dagger}J, &\quad
     \bar{\mathcal{J}} &= \bar{J} U
-\end{aligned}
+\end{align*}
 $$
 
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(\bar{J}, J)
     &= \int D\bar{z} \, Dz 
     \exp \left(- \bar{z}A z+ \bar{z}J+ \bar{J}z\right)
@@ -197,7 +197,7 @@ $$
     \\
     &= \int D\bar{z} \, Dz
     \exp \left(- \bar{w}\Lambda  w+ \bar{w}\mathcal{J}+ \bar{\mathcal{J}}w\right)
-\end{aligned}
+\end{align*}
 $$
 
 We now successfully diagonalized the exponent
@@ -216,7 +216,7 @@ $$
 Now we can apply our previous result about one-variable-pair integral
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(\bar{J}, J)
     &= \prod_{k=1}^n  \frac{1}{\Lambda_k} \exp (
         \bar{\mathcal{J}}_k \Lambda_k^{-1} \mathcal{J}_k
@@ -230,7 +230,7 @@ $$
     )
     = \frac{1}{\det A} \exp (\bar{J} A^{-1} J)
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ## Wick's Theorem
@@ -265,12 +265,12 @@ variable.
 *Proof*: First take the derivative of $J_a$ of the normalized generating function
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial}{\partial J_a}\mathcal{Z}(\bar{J}, J)
     &= \left(\sum_{i=1}^n \bar{J}_i(A^{-1})_{i a}\right)\exp(...)
     \\
     &\equiv \bar{B}_a(\bar{J}) \exp(...)
-\end{aligned}
+\end{align*}
 $$
 
 Since the structure $\bar{B}_a$ does not contain $J$, the two point
@@ -283,12 +283,12 @@ $$
 Similarly, taking the derivative of $\bar{J}_a$ of the normalized generating function
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial}{\partial \bar{J}_a}\mathcal{Z}(\bar{J}, J)
     &= \left(\sum_{i=1}^n (A^{-1})_{a i}J_i\right)\exp(...)
     \\
     &\equiv B_a(J)\exp(...)
-\end{aligned}
+\end{align*}
 $$
 
 The structure $B_a$ does not contain $\bar{J}$, and
@@ -301,7 +301,7 @@ $$
 Only the pairs with both kinds of variables survive:
 
 $$
-\begin{aligned}
+\begin{align*}
     \expect{\bar{z}_a z_b}
     &= \frac{\partial}{\partial J_b}
     \frac{\partial}{\partial \bar{J}_a} \exp(...)
@@ -310,7 +310,7 @@ $$
     &= (A^{-1})_{a b}\exp(...)+B_a(J)\bar{B}_b(\bar{J})
     \xrightarrow{J=0}
     (A^{-1})_{ab}
-\end{aligned}
+\end{align*}
 $$
 
 Now we know how to generalize the real integral Wick's Theorem. For
@@ -325,7 +325,7 @@ $$
 *Proof*:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS}
     &= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\frac{\partial}{\partial J_j}\frac{\partial}{\partial \bar{J}_i}\exp
     ( ... )= \frac{\partial}{\partial J_l}\frac{\partial}{\partial \bar{J}_k}\frac{\partial}{\partial J_j}\left(B_i\exp(...)\right)
@@ -344,7 +344,7 @@ $$
     (A^{-1})_{i j}(A^{-1})_{k l}+(A^{-1})_{i l}(A^{-1})_{k j}
     = \expect{\bar{i} j} \expect{\bar{k} l} 
     + \expect{\bar{i} l} \expect{\bar{k} j}
-\end{aligned}
+\end{align*}
 $$
 
 ## Fourier Transform of Integration Variables

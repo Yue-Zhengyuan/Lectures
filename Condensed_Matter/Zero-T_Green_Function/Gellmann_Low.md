@@ -72,13 +72,13 @@ $$
 Recall that we have the following integral equation derived from the Schrödinger equation
 
 $$
-\begin{aligned}
+\begin{align*}
     U_\epsilon(t, s) &= 1 - i \int_{s}^{t} dt' \, 
     H_\epsilon(t') U_\epsilon(t', s)
     \\
     &= 1 - i \int_{s}^{t} dt' \, 
     (H_0 + e^{\epsilon(\theta - |t'|)} V) U_\epsilon(t', s)
-\end{aligned}
+\end{align*}
 $$
 
 We also construct two further Hamiltonians with the following artificial time dependence
@@ -90,13 +90,13 @@ $$
 and let the corresponding full evolution operators be $U_\pm(t,s)$, satisfying the integral equations
 
 $$
-\begin{aligned}
+\begin{align*}
     U_\pm(t, s) &= 1 - i \int_{s}^{t} dt' \, 
     H_\pm(t') U_\pm(t', s)
     \\
     &= 1 - i \int_{s}^{t} dt' \, 
     (H_0 + e^{\pm \epsilon t'}V) U_\epsilon(t', s)
-\end{aligned}
+\end{align*}
 $$
 
 However, we shall see that with proper shift of arguments, $U_\pm$ will yield the same integral equation as $U_\epsilon$, so they are closely related. 
@@ -104,7 +104,7 @@ However, we shall see that with proper shift of arguments, $U_\pm$ will yield th
 - For $0 \ge t \ge s$:
     
     $$
-    \begin{aligned}
+    \begin{align*}
         U_\epsilon(t, s) &= 1 - i \int_{s}^{t} dt' \, 
         (H_0 + e^{\epsilon(\theta + t')} V) U_\epsilon(t', s)
         \\
@@ -114,7 +114,7 @@ However, we shall see that with proper shift of arguments, $U_\pm$ will yield th
         \\
         &= 1 - i \int_{s}^{t} dt' \, 
         (H_0 + e^{\epsilon (\theta+t')}V) U_\epsilon(t', s+\theta)
-    \end{aligned}
+    \end{align*}
     $$
 
     The uniqueness of the solution implies that
@@ -127,7 +127,7 @@ However, we shall see that with proper shift of arguments, $U_\pm$ will yield th
 - For $t \ge s \ge 0$,
 
     $$
-    \begin{aligned}
+    \begin{align*}
         U_\epsilon(t, s) &= 1 - i \int_{s}^{t} dt' \, 
         (H_0 + e^{\epsilon(\theta - t')} V) U_\epsilon(t', s)
         \\
@@ -137,7 +137,7 @@ However, we shall see that with proper shift of arguments, $U_\pm$ will yield th
         \\
         &= 1 - i \int_{s}^{t} dt' \, 
         (H_0 + e^{-\epsilon (t'-\theta)}V) U_\epsilon(t', s-\theta)
-    \end{aligned}
+    \end{align*}
     $$
 
     This implies
@@ -150,7 +150,7 @@ However, we shall see that with proper shift of arguments, $U_\pm$ will yield th
 These relations make the $\theta$ (or $g$) dependence of $U_\epsilon$ very simple. Then we can apply the chain rule to obtain ($\partial_i$ means the derivative in the $i$th slot)
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_\theta U_\epsilon(t,s)
     &= \partial_1 U_\pm(t \pm \theta, s \pm \theta) 
     + \partial_2 U_\pm(t \pm \theta, s \pm \theta)
@@ -159,18 +159,18 @@ $$
     \\
     &= -i (\pm H_\epsilon(t) U_\epsilon(t,s)
     \mp U_\epsilon(t,s) H_\epsilon(s))
-\end{aligned}
+\end{align*}
 $$
 
 In the last line we used the Schrödinger equations
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_1 U_\epsilon(t,s) 
     &= - i H_\epsilon(t) U_\epsilon(t,s) \\
     \partial_2 U_\epsilon(t,s)
     &= + i U_\epsilon(t,s) H_\epsilon(s)
-\end{aligned}
+\end{align*}
 $$
 
 But do not forget that $\theta$ is related to $g$, then
@@ -203,11 +203,11 @@ Suppose the full Hamiltonian can be separated into $H = H_0 + gV$. Let:
 Define the state 
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{\Psi_\epsilon} 
     &\equiv \frac{U_{\epsilon I}(0, -\infty) \ket{\Phi_0}}
     {\amp{\Phi_0}{U_{\epsilon I}(0, -\infty)}{\Phi_0}}
-\end{aligned}
+\end{align*}
 $$
 
 Then the following limit (if it exists) is still an eigenstate of the full Hamiltonian $H$:
@@ -222,7 +222,7 @@ $$
 *Proof*: Since in the proof of the lemma we only used the Schrödinger equations, we can directly replace $U_\epsilon, H_\epsilon$ there by the corresponding operators in the interaction picture, we obtain for *all* $\epsilon > 0$ 
 
 $$
-\begin{aligned}
+\begin{align*}
     i\epsilon g \partial_g U_{\epsilon I}(t,s)
     &= \begin{cases}
         + H_{\epsilon I}(t) U_{\epsilon I}(t,s) - U_{\epsilon I}(t,s) H_{\epsilon I}(s),
@@ -233,7 +233,7 @@ $$
     \\[1.5em]
     H_{\epsilon I}(t) 
     &= e^{iH_0(t-t_0)} H_\epsilon(t) e^{-iH_0(t-t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 Now let us apply this to the Heisenberg picture eigenstate $\ket{\Phi_0}$ (time-independent) of $H_0$. Note that this state can be interpreted as
@@ -247,7 +247,7 @@ $$
 then
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS} \ket{\Phi_0(-\infty)}
     &= i\epsilon g \partial_g 
     U_{\epsilon I}(0,-\infty) \ket{\Phi_\epsilon(-\infty)}
@@ -265,7 +265,7 @@ $$
     }_{E_0 \ket{\Phi_0(-\infty)}}
     \\
     &= (H_{\epsilon I}(0) - E_0) \ket{\Phi_\epsilon(0)}
-\end{aligned}
+\end{align*}
 $$
 
 However, this $H_{\epsilon I}(0)$ is just the original full Hamiltonian $H$ in its own interaction picture

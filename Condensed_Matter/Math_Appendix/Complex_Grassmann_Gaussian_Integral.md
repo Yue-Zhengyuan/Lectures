@@ -38,12 +38,12 @@ We start from the simplest case: the Gaussian integral with one pair of Grassman
 - Integration result
     
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(0,0) &= a \\
         \frac{Z(\bar{J}, J) }{Z(0,0)}
         &= \exp (\bar{J} a^{-1}J )
         \equiv \mathcal{Z}(\bar{J}, J)
-    \end{aligned}
+    \end{align*}
     $$
 
 </div><br>
@@ -53,18 +53,18 @@ We start from the simplest case: the Gaussian integral with one pair of Grassman
 Since $\psi^n = 0 \  (n \ge 2)$ for any Grassmann number $\psi$, we can expand the exponential function as
 
 $$
-\begin{aligned}
+\begin{align*}
     \exp (-\bar{\psi}a \psi +\bar{\psi}J +\bar{J}\psi )
     = 1 - \bar{\psi}a \psi 
     + \bar{\psi}J + \bar{J}\psi 
     + \bar{\psi}J \bar{J}\psi
-\end{aligned}
+\end{align*}
 $$
 
 Only terms containing both $\psi$ and $\bar{\psi}$ can survive the integration. Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(\bar{J}, J)
     &= \int d\bar{\psi} \, d\psi (
         -\bar{\psi}a \psi +\bar{\psi}J  \bar{J}\psi 
@@ -79,7 +79,7 @@ $$
     \\
     &= a \exp (\bar{J} a^{-1}J )
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 Now we generalize the result above to the $n$-pair case
@@ -91,7 +91,7 @@ Now we generalize the result above to the $n$-pair case
 - Generating Function
 
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(\bar{J}, J)
         &= \int D\bar{\psi} \, D\psi 
         \exp (
@@ -109,7 +109,7 @@ Now we generalize the result above to the $n$-pair case
         \text{with} \quad &
         D\bar{\psi} \, D\psi
         = \prod_{k=1}^n \left(d\bar{\psi}_kd\psi_k\right)
-    \end{aligned}
+    \end{align*}
     $$
 
     - $A$ is an $n\times n$ *Hermitian* matrix. 
@@ -119,7 +119,7 @@ Now we generalize the result above to the $n$-pair case
 - Integration result
 
     $$
-    \begin{aligned}
+    \begin{align*}
         Z(0,0) &= \det A
         \\
         \frac{Z(\bar{J}, J)}{Z(0,0)}
@@ -129,7 +129,7 @@ Now we generalize the result above to the $n$-pair case
         % = \prod_{i,j=1}^n 
         % (1 + \bar{J}_i [A^{-1}]_{ij} J_j)
         \equiv \mathcal{Z}(\bar{J}, J)
-    \end{aligned}
+    \end{align*}
     $$
 </div><br>
 
@@ -139,31 +139,31 @@ Since $A$ is Hermitian, we can diagonalize it with a *unitary* matrix $U$ with d
 
 $$
 \Lambda =U^{\dagger}A U \Rightarrow \left\{
-\begin{aligned}
+\begin{align*}
      A &=U \Lambda U^{\dagger}
      \\
      A^{-1} &= (U^{\dagger})^{-1} \Lambda^{-1} O^{-1}
      = U \Lambda^{-1} U^{\dagger}
-\end{aligned}
+\end{align*}
 \right.
 $$
 
 Introduce the new variables and sources 
 
 $$
-\begin{aligned}
+\begin{align*}
     \theta &= U^{\dagger} \psi , &\quad
     \bar{\theta} &= \bar{\psi} U
     \\
     \mathcal{J} &= U^{\dagger}J , &\quad
     \bar{\mathcal{J}} &= \bar{J} U
-\end{aligned}
+\end{align*}
 $$
 
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(\bar{J}, J)
     &= \int D\bar{\psi}\, D\psi 
     \exp (
@@ -184,13 +184,13 @@ $$
         + \bar{\theta}_k \mathcal{J}_k
         + \bar{\mathcal{J}}_k \theta_k
     )
-\end{aligned}
+\end{align*}
 $$
 
 Now we can apply our previous result on one-variable-pair integral:
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(\bar{J}, J)
     &= \prod_{k=1}^n \Lambda_k \exp (\bar{\mathcal{J}}_k\Lambda_k^{-1}\mathcal{J}_k)
     \\
@@ -204,7 +204,7 @@ $$
     \\
     &= (\det A) \exp (\bar{J} A^{-1} J)
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ## Wick's Theorem

@@ -58,16 +58,16 @@ In the two-site gate case, $A', B' = A, B$ before RG, hence their notation.
 Before RG, the numbers of the 6 types of tensors in the numerator network are:
 
 $$
-\begin{aligned}
+\begin{align*}
     A + A' + C: &\quad (N_0 - 2) + 1 + 1 \\
     B + B' + D: &\quad (N_0 - 2) + 1 + 1 \\
-\end{aligned}
+\end{align*}
 $$
 
 It turns out that in each RG step, the DCA'B' impurity center will not affect the flow of the uniform tensors A and B (their flow is the same as the flow in the denominator network):
 
 $$
-\begin{aligned}
+\begin{align*}
     (A'^{(i)}, B'^{(i)}, C^{(i)}, D^{(i)})
     &\xrightarrow{\text{RG}}
     (A'^{(i+1)}, B'^{(i+1)}, C^{(i+1)}, D^{(i+1)})
@@ -75,16 +75,16 @@ $$
     (A^{(i)}, B^{(i)})
     &\xrightarrow{\text{RG}}
     (A^{(i+1)}, B^{(i+1)})
-\end{aligned}
+\end{align*}
 $$
 
 The numbers of tensors after the $i$th RG step are
 
 $$
-\begin{aligned}
+\begin{align*}
     A + A' + C: &\quad (N_i - 2) + 1 + 1 \\
     B + B' + D: &\quad (N_i - 2) + 1 + 1 \\
-\end{aligned} \quad \text{with} \quad
+\end{align*} \quad \text{with} \quad
 N_i = \frac{N_{i-1}}{2}
 $$
 
@@ -106,20 +106,20 @@ The two RG flows are normalized by the *quartic root* of following two factors (
 The normalized tensors (denoted by script letters) are
 
 $$
-\begin{aligned}
+\begin{align*}
     (\mathcal{A}'^{(i)}, \mathcal{B}'^{(i)}, 
     \mathcal{C}^{(i)}, \mathcal{D}^{(i)})
     &= \frac{1}{g_i} (A'^{(i)}, B'^{(i)}, C^{(i)}, D^{(i)})
     \\
     (\mathcal{A}^{(i)}, \mathcal{B}^{(i)})
     &= \frac{1}{f_i} (A^{(i)}, B^{(i)})
-\end{aligned}
+\end{align*}
 $$
 
 Therefore, the flow of the normalized tensors is then
 
 $$
-\begin{aligned}
+\begin{align*}
     (\mathcal{A}'^{(i)}, \mathcal{B}'^{(i)}, 
     \mathcal{C}^{(i)}, \mathcal{D}^{(i)})
     &\xrightarrow{\text{RG}} g_{i+1}
@@ -129,13 +129,13 @@ $$
     (\mathcal{A}^{(i)}, \mathcal{B}^{(i)})
     &\xrightarrow{\text{RG}} f_{i+1}
     (\mathcal{A}^{(i)}, \mathcal{B}^{(i)})
-\end{aligned}
+\end{align*}
 $$
 
 Then the un-normalized expectation value is then
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \psi |\mathcal{O}| \psi \rangle 
     &= \operatorname{Tr} [(A^{(0)})^{N_0-2} (B^{(0)})^{N_0-2}
     A'^{(0)} B'^{(0)} C^{(0)} D^{(0)}]
@@ -156,13 +156,13 @@ $$
         \mathcal{C}^{(1)} \mathcal{D}^{(1)}
     ]
     \\ &= \cdots
-\end{aligned}
+\end{align*}
 $$
 
 Finally we will reach the $a$th RG step, where $N_a = 2$, i.e. the network is reduced to the four tensors A', B', C, D. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \psi |\mathcal{O}| \psi \rangle 
     &= f_0^{2N_0} \cdots f_a^{2N_a} 
     \left(\frac{g_0 \cdots g_a}{f_0 \cdots f_a}\right)^4 
@@ -176,13 +176,13 @@ $$
     \\ 
     &= f_0^{2N_0} \cdots f_a^{2N_a} 
     \left(\frac{g_0 \cdots g_a}{f_0 \cdots f_a}\right)^4 
-\end{aligned}
+\end{align*}
 $$
 
 The series of $f_i$ factors in the front can be eliminated by the denominator:
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \psi|\psi \rangle 
     &= \operatorname{Tr} (A^{(0)} B^{(0)})^{N_0}
     \\
@@ -204,7 +204,7 @@ $$
     }_{\text{normalized to 1}}
     \\
     &= f_0^{2N_0} \cdots f_a^{2N_a}
-\end{aligned}
+\end{align*}
 $$
 
 Finally, we obtain

@@ -89,12 +89,12 @@ $$
 The time evolution duration $t_0 + T$ is interpreted as $t_0 - (-T)$. We try to put the time-evolution operator into the expression:
 
 $$
-\begin{aligned}
+\begin{align*}
     S(t_0, -T) &= e^{iH_0(t_0-t_0)}
     e^{-iH(t_0 - (-T))} e^{-iH_0(-T-t_0)}
     \\
     &= e^{-iH(t_0 + T)} e^{-iH_0(-T-t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 We notice that $H_0\ket{0} = 0$ (i.e. the empty state is the ground state of the free $H_0$, whose energy is set to 0). Thus $e^{-iH_0(-T-t_0)} \ket{0} = e^0 \ket{0} = \ket{0}$, and
@@ -136,7 +136,7 @@ $$
 When $t > t'$, we find
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{\Psi_0}{O_{1H}(t) O_{2H}(t')}{\Psi_0}
     \\
     &= \lim_{T \to \infty(1-i\epsilon)}
@@ -159,13 +159,13 @@ $$
     &= \lim_{T \to \infty(1-i\epsilon)}
     \frac{e^{i E_0 (2T)}}{|\braket{0}{\Psi_0}|^2}
     \amp{0}{T[S(T, -T) \phi_I(x) \phi_I(y) ]}{0}
-\end{aligned}
+\end{align*}
 $$
 
 Where we put $S(T,-T)$ in the time ordering does not matter, but conventionally it is put in front of the operators in the correlation function. Using the normalization of $\ket{\Psi_0}$
 
 $$
-\begin{aligned}
+\begin{align*}
     1 &= \braket{\Psi_0}{\Psi_0}
     \\
     &= \lim_{T\to \infty(1-i\epsilon)}
@@ -177,13 +177,13 @@ $$
     &= \lim_{T\to \infty(1-i\epsilon)}
     \frac{e^{i E_0 (2T)}}{|\braket{0}{\Psi_0}|^2}
     \amp{0}{S(T, -T)}{0}
-\end{aligned}
+\end{align*}
 $$
 
 we can eliminate the common factor in the front (and write $O_1(t) O_2(t')$ as $T[O_1(t) O_2(t')]$ since we assumed $t > t'$):
 
 $$
-\begin{aligned}
+\begin{align*}
     &\frac{\amp{\Psi_0}{T [O_{1H}(t) O_{2H}(t')]}{\Psi_0}}
     {\braket{\Psi_0}{\Psi_0}}
     \\
@@ -194,7 +194,7 @@ $$
     }{
         \amp{0}{S(T, -T)}{0}
     }
-\end{aligned}
+\end{align*}
 $$
 
 If we assumed $t < t'$ instead, one can verify that the time ordering still holds. One can generalize this result to:
@@ -204,7 +204,7 @@ If we assumed $t < t'$ instead, one can verify that the time ordering still hold
 **The $n$-point correlation function:**
 
 $$
-\begin{aligned}
+\begin{align*}
     &\frac{\amp{\Psi_0}{T [O_{1H}(t_1) \cdots O_{nH}(t_n)]}{\Psi_0}}
     {\braket{\Psi_0}{\Psi_0}}
     \\
@@ -214,7 +214,7 @@ $$
     }{
         \amp{0}{S(T, -T)}{0}
     }
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -232,7 +232,7 @@ $$
 Recall that the time-evolution operator $S$ can be expanded as the Dyson series
 
 $$
-\begin{aligned}
+\begin{align*}
     S(t,t_0) &= T{\left[ \exp{
         \left(
             \frac{-i}{\hbar} \int_{t_0}^t dt' \, V(t')
@@ -244,13 +244,13 @@ $$
     \int_{t_0}^t dt'_1 \cdots 
     \int_{t_0}^t dt'_k \,
     T[V(t'_1) \cdots V(t'_k)]
-\end{aligned}
+\end{align*}
 $$
 
 we can then also expand the correlation function; the $k$th order term (of the numerator) is
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{0}{T[O_{1}(t_1) \cdots O_{n}(t_n) S^{(k)}(T, -T)]}{0}
     \\
     &= \frac{1}{k!} \left(\frac{-i}{\hbar}\right)^k
@@ -260,7 +260,7 @@ $$
         V(t'_1) \cdots V(t'_k)
         O_{1}(t_1) \cdots O_{n}(t_n)
     ]}{0}
-\end{aligned}
+\end{align*}
 $$
 
 Note that inside the time-ordering, the $V$ always commutes with other operators, but the $O_I$ operators will anti-commute with other $O_I$ for a fermion system.

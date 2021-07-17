@@ -34,7 +34,7 @@ We call such kind of states **descendant states** (or simply **descendants**) of
     In the following calculation, since $L_n$ are not Hermitian, we can only apply them to *kets*. With help of some commutators, we obtain
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \langle i|j \rangle 
         &= \langle h | L_M L_{-N} | h \rangle 
         \\
@@ -48,7 +48,7 @@ We call such kind of states **descendant states** (or simply **descendants**) of
         \right| h\right\rangle
         \\[1em]
         &=(M-N)\left\langle h\left|L_{M-N} \right|h\right\rangle
-    \end{aligned}
+    \end{align*}
     $$
 
     Without loss of generality, assume $M>N$, then $L_{M-N}|h\rangle =0$, and we proved that $\langle i|j\rangle =0$. 
@@ -58,7 +58,7 @@ We call such kind of states **descendant states** (or simply **descendants**) of
 - In general, let
 
     $$
-    \begin{aligned}
+    \begin{align*}
         |i\rangle &= L_{-k_1} \cdots L_{-k_m}|h\rangle , 
         &\quad 
         &k_1 + \cdots + k_m = M
@@ -66,7 +66,7 @@ We call such kind of states **descendant states** (or simply **descendants**) of
         |j\rangle &= L_{-l_1} \cdots L_{-l_n}|h\rangle , 
         &\quad
         &l_1 + \cdots + l_n = N \ne M
-    \end{aligned}
+    \end{align*}
     $$
 
     We calculate
@@ -107,14 +107,14 @@ $$
 Then the descendant field $\phi^{(-n)}$ can be naturally chosen as
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi^{(-n)}(w)
     &= \frac{1}{2 \pi i} \oint_w dz (z-w)^{-n+1}T(z)\phi(w)
     \\
     &= L_{-n}(w)\phi(w)
     \\
     &\equiv \left(L_{-n} \phi \right)(w)
-\end{aligned}
+\end{align*}
 $$
 
 As two special cases, according to the general formulas
@@ -135,13 +135,13 @@ In general, we can partition $n$ into $m$ numbers $k_1+k_2+\cdots+k_m$ and defin
 descendant field as
 
 $$
-\begin{aligned}
+\begin{align*}
     &\phi^{\left(-k_1,-k_2,\cdots,k_m\right)}(w)
     = (L_{-k_1}L_{-k_2} \cdots L_{-k_m} \phi)(w)
     \\
     &= \frac{1}{2 \pi i} \oint_w dz \, 
     (z-w)^{-k_1+1} T(z) \phi^{(-k_2,...,-k_m)}(w)
-\end{aligned}
+\end{align*}
 $$
 
 In particular, we need to emphasize that $\phi^{(0,-n)}$ is *not* the same as $\phi^{(-n)}$:

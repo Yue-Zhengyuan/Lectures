@@ -14,13 +14,13 @@ $$
 where
 
 $$
-\begin{aligned}
+\begin{align*}
     \dim J = \frac{1}{2} \prod_{a=1}^q \dim{n_a} \dim{j_a} 
     &= 2^{q-1} \prod_{a=1}^q \dim{j_a} 
     \\
     \dim K = \frac{1}{2} \prod_{a=q+1}^r \dim{n_a} \dim{j_a}
     &= 2^{r-q-1} \prod_{a=q+1}^r \dim{j_a}
-\end{aligned}
+\end{align*}
 $$
 
 Since $T$ is of even parity, the nonzero components are $T^{0 0}, T^{1 1}$ (I call them the **even block** and the **odd block**, respectively). Now we perform the corresponding matrix decomposition on the four $T^{MN}$:
@@ -37,25 +37,25 @@ $$
 From the properties of the matrix decomposition, the new normal index $j$ will have dimension
 
 $$
-\begin{aligned}
+\begin{align*}
     \dim j &= \min{(\dim{J}, \dim{K})} \\
     &= \min{\left(
         \frac{1}{2} \prod_{a=1}^q \dim{n_a} \dim{j_a}, \quad 
         \frac{1}{2} \prod_{a=q+1}^r \dim{n_a} \dim{j_a}
         \right)}
-\end{aligned}
+\end{align*}
 $$
 
 Since $A^{0 1}, A^{1 0}, B^{0 1}, B^{1 0}$ are all zero, this enables us to rewrite the decomposition as
 
 $$
 \left.
-\begin{aligned}
+\begin{align*}
     T_{J K}^{0 0} &= A_{J j}^{0 0} B_{j K}^{0 0} +  A_{J j}^{0 1} B_{j K}^{1 0} \\
     T_{J K}^{0 1} &= A_{J j}^{0 0} B_{j K}^{0 1} +  A_{J j}^{0 1} B_{j K}^{1 1} \\
     T_{J K}^{1 0} &= A_{J j}^{1 0} B_{j K}^{0 0} +  A_{J j}^{1 1} B_{j K}^{1 0} \\
     T_{J K}^{1 1} &= A_{J j}^{1 0} B_{j K}^{0 1} +  A_{J j}^{1 1} B_{j K}^{1 1} \\
-\end{aligned}
+\end{align*}
 \right\} \Longrightarrow
 T_{J K}^{M N} = \sum_{n,j} A_{J j}^{M n} B_{j K}^{n N}
 $$

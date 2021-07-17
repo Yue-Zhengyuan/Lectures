@@ -49,10 +49,10 @@
     - **Homotopy (同伦)**: the *continuous* map $F: I \times I \to X$ which deform the two loops to each other. Concretely, 
 
         $$
-        \begin{aligned}
+        \begin{align*}
             (\forall s \in I) &\quad F(s,0) = \alpha(s), F(s, 1) = \beta(s) \\
             (\forall t \in I) &\quad F(0,t) = F(1,t) = x_0
-        \end{aligned}
+        \end{align*}
         $$
 
         - The first parameter $s$ controls the deformation:

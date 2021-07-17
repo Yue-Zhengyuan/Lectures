@@ -5,7 +5,7 @@
 Lagrangian of scalar QED:
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{L} 
     &= -\frac{1}{4} F_{\mu \nu} F^{\mu \nu}
     + (D_\mu \phi^*)(D^\mu \phi) - m^2 \phi^* \phi
@@ -18,14 +18,14 @@ $$
     + e^2 A_\mu A^\mu \phi^* \phi
     \\[1em]
     &\text{with} \qquad
-    \begin{aligned}
+    \begin{align*}
         D_\mu &= \partial_\mu + ieA_\mu
         \\
         F_{\mu\nu} &= \partial_\mu A_\nu - \partial_\nu A_\mu
         \\
         &= D_\mu A_\nu - D_\nu A_\mu
-    \end{aligned}
-\end{aligned}
+    \end{align*}
+\end{align*}
 $$
 
 ## Example: Compton Scattering

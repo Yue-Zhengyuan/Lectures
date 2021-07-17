@@ -38,32 +38,32 @@ $$
 The phonon Green's function $G$ (in momentum space) is (recall that $\phi_q^\dagger = \phi_{-q}$ due to reality condition)
 
 $$
-\begin{aligned}
+\begin{align*}
     i G(q, t-t') 
     &\equiv \amp{0}{T[\phi_q(t) \phi_q^\dagger(t')]}{0}
     \\
     &= \amp{0}{\phi_q(t) \phi_{-q}(t')}{0} \theta(t - t')
     \\ &\quad
     + \amp{0}{\phi_{-q}(t') \phi_q(t)}{0} \theta(t' - t)
-\end{aligned}
+\end{align*}
 $$
 
 Recall that
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_q(t) &= \frac{1}{\sqrt{2m\omega_q}} 
     (a_q(t) + a_{-q}^\dagger(t))
     \\
     &= \frac{1}{\sqrt{2m\omega_q}} 
     (a_q e^{-i\omega_q t} + a_{-q}^\dagger e^{i\omega_q t})
-\end{aligned}
+\end{align*}
 $$
 
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{0}{\phi_q(t) \phi_{-q}(t')}{0}
     \\
     &= \frac{1}{2m\omega_q} \amp{0}{
@@ -79,7 +79,7 @@ $$
     \amp{0}{[a_q,a_q^\dagger] + a_q^\dagger a_q}{0}
     \\
     &= \frac{1}{2m\omega_q} e^{-i\omega_q(t-t')}
-\end{aligned}
+\end{align*}
 $$
 
 Similarly, by exchanging $-q \leftrightarrow q$ and $t \leftrightarrow t'$, we get
@@ -92,7 +92,7 @@ $$
 Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     iG(q,t-t')
     &= \frac{1}{2m\omega_q} [
         e^{-i\omega_q(t-t')} \theta(t-t')
@@ -103,7 +103,7 @@ $$
         e^{-i\omega_q t} \theta(t)
         + e^{i\omega_q t} \theta(-t)
     ]
-\end{aligned}
+\end{align*}
 $$
 
 ## Energy Formulation
@@ -181,7 +181,7 @@ $$
 Then 
 
 $$
-\begin{aligned}
+\begin{align*}
     iG(q, t)
     &= \frac{1}{2m\omega_q} \int_{-\infty}^{\infty} 
     \frac{d\omega}{2\pi i} \left[
@@ -196,7 +196,7 @@ $$
     &= \frac{i}{m} \int_{-\infty}^{\infty} 
     \frac{d\omega}{2\pi} \,
     \frac{e^{-i\omega t}}{\omega^2 - \omega_q^2 + i\epsilon}
-\end{aligned}
+\end{align*}
 $$
 
 Here we used the common notation (since $\omega_q$ is finite)

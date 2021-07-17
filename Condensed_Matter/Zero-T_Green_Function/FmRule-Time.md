@@ -40,12 +40,12 @@ $$
 using a Hamiltonian with two-body interactions (in interaction picture):
 
 $$
-\begin{aligned}
+\begin{align*}
     V(t) = \frac{1}{2} \sum_{\gamma \delta \epsilon \theta}
     \amp{\gamma \delta}{V}{\epsilon \theta}
     a_\gamma^\dagger(t) a_\delta^\dagger(t)
     a_\theta(t) a_\epsilon(t)
-\end{aligned}
+\end{align*}
 $$
 
 ## Zeroth Order Term
@@ -72,7 +72,7 @@ The application of Wick's theorem is then made simple.
 *In the following time integrations, we suppress the limits $\pm (\infty - i\epsilon)$.*
 
 $$
-\begin{aligned}
+\begin{align*}
     &G^{(1)}_{\alpha \beta}(t - t')
     \\
     &= \left(\frac{-i}{\hbar} \right)^2 \int dt_1 \,
@@ -87,7 +87,7 @@ $$
         a_\theta(t_1) a_\epsilon(t_1) 
         a_\alpha(t) a^\dagger_\beta(t')
     ]}{0}
-\end{aligned}
+\end{align*}
 $$
 
 The notation $t_1^+$ is introduced to indicate the original order of operators in $V$. Now we can apply Wick's theorem: 
@@ -110,7 +110,7 @@ However, note that:
 With these observations, we obtain $3! = 6$ terms (omitting the time in intermediate steps for convenience)
 
 $$
-\begin{aligned}
+\begin{align*}
     & \amp{0}{T[
         a_\gamma^\dagger(t_1^+) a_\delta^\dagger(t_1^+)
         a_\theta(t_1) a_\epsilon(t_1) 
@@ -157,7 +157,7 @@ $$
         a^{\bullet 1}_\theta a^{\bullet 3}_\epsilon 
         a^{\bullet 2}_\alpha a^{\dagger \bullet 3}_\beta
     }_{(f)}
-\end{aligned}
+\end{align*}
 $$
 
 Note that extra minus signs may occur when moving the pairs in a contraction together for fermions. Let us now evaluate each term explicitly, and associate each with a Feynman diagram (the rules will be summarized later):
@@ -166,7 +166,7 @@ Note that extra minus signs may occur when moving the pairs in a contraction tog
 <img src="images/2BodyV_1st-1.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &\text{Term} \ (a) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 2}_\theta a^{\bullet 1}_\epsilon 
@@ -182,7 +182,7 @@ $$
     G^{(0)}_{\epsilon \gamma}(t_1 - t_1^+) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\alpha \beta}(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -191,7 +191,7 @@ $$
 <img src="images/2BodyV_1st-2.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &\text{Term} \ (b) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 1}_\theta a^{\bullet 2}_\epsilon 
@@ -207,7 +207,7 @@ $$
     G^{(0)}_{\theta \gamma}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\alpha \beta}(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -216,7 +216,7 @@ $$
 <img src="images/2BodyV_1st-3.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &\text{Term} \ (c) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 2}_\theta a^{\bullet 3}_\epsilon 
@@ -232,7 +232,7 @@ $$
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \beta}(t_1 - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -241,7 +241,7 @@ $$
 <img src="images/2BodyV_1st-4.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &\text{Term} \ (d) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 3}_\theta a^{\bullet 2}_\epsilon 
@@ -257,7 +257,7 @@ $$
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\epsilon \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\theta \beta}(t_1 - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -266,7 +266,7 @@ $$
 <img src="images/2BodyV_1st-5.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &\text{Term} \ (e) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 3}_\theta a^{\bullet 1}_\epsilon 
@@ -282,7 +282,7 @@ $$
     G^{(0)}_{\epsilon \gamma}(t_1 - t_1^+) \,
     G^{(0)}_{\alpha \delta}(t - t_1) \,
     G^{(0)}_{\theta \beta}(t_1 - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -291,7 +291,7 @@ $$
 <img src="images/2BodyV_1st-6.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &\text{Term} \ (f) \\
     &a^{\dagger \bullet 1}_\gamma a^{\dagger \bullet 2}_\delta
     a^{\bullet 1}_\theta a^{\bullet 3}_\epsilon 
@@ -307,7 +307,7 @@ $$
     G^{(0)}_{\theta \gamma}(t_1 - t_1^+) \,
     G^{(0)}_{\alpha \delta}(t - t_1) \,
     G^{(0)}_{\epsilon \beta}(t_1 - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -323,7 +323,7 @@ Of course, these signs are absent for boson.
 It turns out that the normalization of $\ket{\Psi_0}$ will cancel the terms with *disconnected diagrams* (a) and (b) (known as the **linked cluster theorem**). Therefore, the true $k$th order term of the Green's function with normalized $\ket{\Psi_0}$ consists of only connected terms.
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{1}{k!} \left(\frac{-i}{\hbar}\right)^{k+1}
     &\int dt_1 \cdots dt_k \,
     \\ &\quad
@@ -331,7 +331,7 @@ $$
         V(t_1) \cdots V(t_k)
         a_\alpha(t) a_\beta^\dagger(t')
     ]}{0}_\text{connected}
-\end{aligned}
+\end{align*}
 $$
 
 ### Equivalent Diagrams
@@ -339,7 +339,7 @@ $$
 Among the remaining four diagrams, we can see that (c)(e), if without the labels, are (topologically) equivalent diagrams. Looking at the expressions they represent: 
 
 $$
-\begin{aligned}
+\begin{align*}
     (c) &= - \frac{i\hbar}{2} \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
     \\ &\qquad \times
@@ -360,7 +360,7 @@ $$
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \beta}(t_1 - t')
-\end{aligned}
+\end{align*}
 $$
 
 But we know that $V$ has the symmetry property $V(i,j) = V(j,i)$, i.e.
@@ -382,7 +382,7 @@ To summarize, the true first order terms are
 <img src="images/2BodyV_1st-3.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1D})}_{\alpha \beta}(t - t') 
     \quad (\text{Direct term})\\
     &= 
@@ -392,7 +392,7 @@ $$
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \beta}(t_1 - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -401,7 +401,7 @@ $$
 <img src="images/2BodyV_1st-4.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1E})}_{\alpha \beta}(t - t') 
     \quad (\text{Exchange term})\\
     &= 
@@ -411,7 +411,7 @@ $$
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\epsilon \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\theta \beta}(t_1 - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -425,7 +425,7 @@ $$
 Now we demonstrate how to change to the position basis. Take the direct term as the example:
 
 $$
-\begin{aligned}
+\begin{align*}
     G^{(1D)}_{\alpha \beta}(t,t')
     &= - i\hbar \sum_{\gamma \delta \epsilon \theta} 
     \int dt_1 \, \amp{\gamma \delta}{V}{\epsilon \theta}
@@ -433,7 +433,7 @@ $$
     G^{(0)}_{\alpha \gamma}(t - t_1) \,
     G^{(0)}_{\theta \delta}(t_1 - t_1^+) \,
     G^{(0)}_{\epsilon \beta}(t_1 - t')
-\end{aligned}
+\end{align*}
 $$
 
 - **Conversion of Green's function**
@@ -441,7 +441,7 @@ $$
     Let $\ket{\alpha} \to \ket{\mathbf{x},\alpha}, \ket{\beta} \to \ket{\mathbf{x}',\beta}$, we obtain (using 4-positions)
 
     $$
-    \begin{aligned}
+    \begin{align*}
         G^{(0)}_{\alpha \gamma}(t - t_\gamma)
         &\to G^{(0)}_{\alpha \gamma}(x, x_\gamma)
         \\
@@ -450,7 +450,7 @@ $$
         \\
         G^{(0)}_{\epsilon \beta}(t_\epsilon - t')
         &\to G^{(0)}_{\epsilon \beta}(x_\epsilon, x')
-    \end{aligned}
+    \end{align*}
     $$
 
 - **Conversion of $V$ matrix elements**
@@ -458,7 +458,7 @@ $$
     It is useful to introduce additional time-dependence to the two-body interaction:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         V(t_1) &= \frac{1}{2} \sum_{\gamma \delta \epsilon \theta}
         \int dt_2 \, dt_3 \, dt_4
         \amp{\gamma \delta}
@@ -470,13 +470,13 @@ $$
         \amp{\gamma \delta}{\mathcal{V}}{\epsilon \theta}
         &= \delta(t_1 - t_2) \delta(t_2 - t_3) \delta(t_3 - t_4)
         \amp{\gamma \delta}{V}{\epsilon \theta}
-    \end{aligned}
+    \end{align*}
     $$
 
     Meanwhile, the change to position + spin basis means the conversion
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \amp{\gamma \delta}{V}{\epsilon \theta}
         &\to \amp{
             \gamma, \mathbf{x}_\gamma; 
@@ -498,7 +498,7 @@ $$
         &\to \sum_{\gamma \delta \epsilon \theta} 
         \int d^4x_\gamma \, d^4x_\delta 
         \, d^4x_\epsilon \, d^4x_\theta
-    \end{aligned}
+    \end{align*}
     $$
 
     Now we see the benefit of introducing the additional delta functions: the time integration are combined with the space integration.
@@ -506,7 +506,7 @@ $$
 With the general conversion rules, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     G^{(\text{1D})}_{\alpha \beta}(t,t')
     &= - i\hbar \sum_{\gamma \delta \epsilon \theta} 
     \int d^4x_\gamma \, d^4x_\delta 
@@ -516,13 +516,13 @@ $$
     G^{(0)}_{\alpha \gamma}(x, x_\gamma) \,
     G^{(0)}_{\theta \delta}(x_\theta, x_\delta) \,
     G^{(0)}_{\epsilon \beta}(x_\epsilon, x')
-\end{aligned}
+\end{align*}
 $$
 
 Collecting the $3 + 2 \times 3 = 9$ delta functions we have (including the ones in $\mathcal{V}$), after the integrations (over $4 \times 4 = 16$ variables) we keep 8 integrations and 1 delta function:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\int d^4x_\gamma \, d^4x_\delta 
     \, d^4x_\epsilon \, d^4x_\theta \,
     \\ & \qquad
@@ -534,7 +534,7 @@ $$
     \\
     &\to \int d^4x_1 \, d^4x_2 \,
     \delta(t_1 - t_2)
-\end{aligned}
+\end{align*}
 $$
 
 with the constraints
@@ -556,7 +556,7 @@ Assembling these results together, we get the diagram expression in position-tim
 <img src="images/2BodyV_1st-3xt.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1D})}_{\alpha \beta}(x,x')
     \\
     &= -i\hbar \int d^4 x_1 \, d^4 x_2 \, 
@@ -571,7 +571,7 @@ $$
     \equiv V(\mathbf{x}_1, \mathbf{x}_2) \,
     \delta_{\gamma \epsilon} \delta_{\delta \theta} \,
     \delta(t_1 - t_2)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -597,7 +597,7 @@ Similarly, the exchange term is converted to
 <img src="images/2BodyV_1st-4xt.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1E})}_{\alpha \beta}(x,x') 
     \quad (\text{Exchange term})\\
     &= 
@@ -608,7 +608,7 @@ $$
     G^{(0)}_{\alpha \gamma}(x,x_1) \,
     G^{(0)}_{\epsilon \delta}(x_1,x_2) \,
     G^{(0)}_{\theta \beta}(x_2, x')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

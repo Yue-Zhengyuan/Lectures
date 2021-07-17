@@ -19,7 +19,7 @@ $$u_{n + jN} = u_{n}\text{\ \ }\left( \forall j\mathbb{\in Z} \right)$$
 For each ball:
 
 $$
-\begin{aligned}
+\begin{align*}
 m{\ddot{u}}_{n}(t)
 &= m\Omega^{2} [ 
     ( u_{n + 1} - u_{n} ) 
@@ -30,17 +30,17 @@ m{\ddot{u}}_{n}(t)
     u_{n + 1} - 2u_{n} + u_{n - 1} 
 ), 
 \quad n = 0,1,...,N - 1 \\
-\end{aligned}$$
+\end{align*}$$
 
 We can verify that the expression
 
 $$
-\begin{aligned}
+\begin{align*}
     u_{n}(t) 
     &= \left( A\cos kna + B\sin kna \right)\left( C\cos \omega t + D\sin \omega t \right),
     \\
     \omega &= 2\Omega\left| \sin\frac{ka}{2} \right|
-\end{aligned}
+\end{align*}
 $$
 
 is a solution of the equation of motion for arbitrary real
@@ -50,13 +50,13 @@ $k$ is called the **dispersion relation**.
 *Hint: You may need the **angle sum and difference identities***
 
 $$
-\begin{aligned}
+\begin{align*}
     \cos (\alpha \pm \beta) 
     &= \cos\alpha\cos\beta \mp \sin\alpha\sin\beta,
     \\
     \sin (\alpha \pm \beta) 
     &= \sin\alpha\cos\beta \pm \cos\alpha\sin\beta
-\end{aligned}
+\end{align*}
 $$
 
 Directly substituting the expression to the equation of motion, we

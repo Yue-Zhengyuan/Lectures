@@ -25,10 +25,10 @@ Under most cases, the **normal ordering** means that we put the creation operato
 $$
 N[a_\alpha a^\dagger_\beta]
 = \pm a^\dagger_\beta a_\alpha
-\qquad \begin{aligned}
+\qquad \begin{align*}
     \text{boson} &: + \\
     \text{fermion} &: -
-\end{aligned}
+\end{align*}
 $$
 
 In general, the normal ordering shares the following property with time ordering when permuting the operators:
@@ -36,10 +36,10 @@ In general, the normal ordering shares the following property with time ordering
 $$
 N[A_1 A_2 \cdots]
 = (\pm 1)^\sigma N[A_{\sigma(1)} A_{\sigma(2)} \cdots]
-\qquad \begin{aligned}
+\qquad \begin{align*}
     \text{boson} &: + \\
     \text{fermion} &: -
-\end{aligned}
+\end{align*}
 $$
 
 ## Contraction

@@ -42,14 +42,14 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \psi(x_1,...,x_N)
     & \equiv \braket{x_1,...,x_N}{\psi_1,...,\psi_N}
     \\
     &= \braket{x_1}{\psi_1} \cdots \braket{x_N}{\psi_N}
     \\
     &= \psi_1(x_1) \cdots \psi_N(x_N)
-\end{aligned}
+\end{align*}
 $$
 
 ## Particle Relabelling (Exchange)
@@ -133,7 +133,7 @@ These symmetrized states $\ket{\psi_\pm}$ are in general not normalized.
 Using the property $S_\pm^2 = S_\pm$, we calculate the inner product of two $N$-body symmetrized states
 
 $$
-\begin{aligned}
+\begin{align*}
     \braket{u_\pm}{v_\pm} 
     &\equiv \amp{u_1,...,u_N}{S_\pm^2}{v_1,...,v_N}
     \\
@@ -144,7 +144,7 @@ $$
     \\
     &= \frac{1}{N!} \sum_{\sigma \in S^N} (\pm 1)^\sigma
     \braket{u_1,...,u_N}{v_{\sigma(1)},...,v_{\sigma(N)}}
-\end{aligned}
+\end{align*}
 $$
 
 The last line can be put into matrix form:
@@ -192,21 +192,21 @@ For a system of $N$ identical particles, only the anti-/symmetrized states are a
 The symmetrized subspace can be described by another set of basis, called the **occupation number basis**. These basis states are constructed by anti-/symmetrizing the original basis states of $\mathcal{H}(N)$: if the system has $N_r$ particles in state $\ket{r} \, (r = 1,2,...)$, then the corresponding basis state (for bosons or fermions, respectively) is
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{N_1,N_2,...} &\equiv \text{const} \times 
     S_\pm \ket{r_1,...,r_N}
     \\
     &= \text{const} \times \ket{(r_1,...,r_N)_\pm}
-\end{aligned}
+\end{align*}
 $$
 
 In this definition, we conventionally set $r_1 \le \cdots \le r_N$. Obviously, $N_1 + N_2 + \cdots = N$, and
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{Bosons: } &\quad 0 \le N_r \le N \\
     \text{Fermions: } &\quad 0 \le N_r \le 1
-\end{aligned}
+\end{align*}
 $$
 
 By definition, it is obvious that for two Fock basis states $\ket{N_1,N_2,...}$ and $\ket{N'_1, N'_2,...}$, if $N_r \ne N'_r$ for any $r$, they are orthogonal. To make the Fock basis *orthonormal*, we will determine the constant (normalization factor) below.
@@ -216,14 +216,14 @@ By definition, it is obvious that for two Fock basis states $\ket{N_1,N_2,...}$ 
 Calculate the inner product:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\braket{N_1,N_2,...}{N_1,N_2,...}
     \\
     &= \frac{\text{const}^2}{N!}
     \sum_{\sigma \in S^N} (\pm 1)^\sigma
     \braket{r_1}{r_{\sigma(1)}} \cdots
     \braket{r_N}{r_{\sigma(N)}}
-\end{aligned}
+\end{align*}
 $$
 
 The the orthonormal condition for the states $\ket{r}$ means that $\braket{r_i}{r_{\sigma(i)}} = 1$ only when the particles $i$ and $\sigma(i)$ are in the same state; otherwise it is 0. In other words, the permutations that have nonzero contribution to the state norm can only shuffle particles in the same state. The number of such commutations is then $N_1! \times N_2! \times \cdots$. Then for bosons, we have

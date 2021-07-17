@@ -5,22 +5,22 @@
 The energy of the ground state is fixed to zero. This requires that both the holomorphic and the anti-holomorphic energy-momentum tensor 
 
 $$
-\begin{aligned}
+\begin{align*}
     T(z)|0\rangle
     &= \sum_n z^{-n-2} L_n |0\rangle 
     \\
     \bar{T}(\bar{z})|0\rangle
     &= \sum_n \bar{z}^{-n-2} \bar{L}_n |0\rangle 
-\end{aligned}
+\end{align*}
 $$
 
 are well-defined as $z, \bar{z} \to 0$ (no divergence). Then for $-n - 2 \le -1$, or $n \ge -1$, we must have
 
 $$
-\begin{aligned}
+\begin{align*}
     L_n|0\rangle =0 \\
     \bar{L}_n|0\rangle =0
-\end{aligned}
+\end{align*}
 \qquad
 n \ge -1
 $$
@@ -61,7 +61,7 @@ $$
 Now we evaluate the commutator
 
 $$
-\begin{aligned}
+\begin{align*}
     &[L_n,\phi(w,\bar{w})]
     = \frac{1}{2 \pi i} \oint_w dz \,
     z^{n+1} \underbrace{T(z)\phi(w,\bar{w})}_{\text{use OPE}} 
@@ -81,7 +81,7 @@ $$
     \\[1em]
     &= h(n+1) w^n \phi(w,\bar{w})
     + w^{n+1} \partial_w \phi(w,\bar{w})
-\end{aligned}
+\end{align*}
 $$
 
 Similarly
@@ -95,7 +95,7 @@ $$
 Finally
 
 $$
-\begin{aligned}
+\begin{align*}
     L_0|h,\bar{h} \rangle &= h|h,\bar{h} \rangle
     \\
     \bar{L}_0|h,\bar{h} \rangle &= \bar{h}|h,\bar{h} \rangle
@@ -104,7 +104,7 @@ $$
     \\
     \bar{L}_n|h,\bar{h} \rangle &= 0
     \qquad (n > 0)
-\end{aligned}
+\end{align*}
 $$
 
 Since $L_0+\bar{L}_0$ is proportional to the system Hamiltonian, we find
@@ -134,7 +134,7 @@ $$
 then
 
 $$
-\begin{aligned}
+\begin{align*}
     &\left[L_n,\phi_m\right]
     \\
     &= \frac{1}{2 \pi i} \oint_0 dw \, w^{m+h-1} 
@@ -166,7 +166,7 @@ $$
     \\
     &= \frac{1}{2 \pi i} \oint_0 dw \,
     (n(h-1)-m) w^{m+n+h-1} \phi(w)
-\end{aligned}
+\end{align*}
 $$
 
 This implies that
@@ -178,16 +178,16 @@ $$
 In particular,
 
 $$
-\begin{aligned}
+\begin{align*}
     [L_0, \phi_m] &= -m \phi_m\\
     [L_0, \phi_{-m}] &= m \phi_{-m}
-\end{aligned}
+\end{align*}
 $$
 
 This means that $\phi_{\pm m} (m>0)$ act as *lowering and raising operators for the eigenstates of* $L_0$: from $L_0|h\rangle =h|h\rangle$ we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     L_0 (\phi_{\pm m}|h\rangle )
     &= [L_0, \phi_{\pm m}] |h\rangle 
     + \phi_{\pm m} L_0 |h\rangle 
@@ -196,7 +196,7 @@ $$
     + h \phi_{\pm m} |h\rangle 
     \\
     &= (h\mp m) (\phi_m |h\rangle)
-\end{aligned}
+\end{align*}
 $$
 
 i.e. $\phi_{\pm m}|h\rangle$ is the eigenstate of $L_0$ with
@@ -213,10 +213,10 @@ $$
 Specially, for $n=0$
 
 $$
-\begin{aligned}
+\begin{align*}
     [L_0, L_m] &= -m L_m\\
     [L_0, L_{-m}] &= m L_{-m}
-\end{aligned}
+\end{align*}
 $$
 
 which has the *same* form as $\left[L_0,\phi_{\pm m} \right]$. Therefore, $L_{\pm m} (m>0)$ can also *lower and raise the conformal dimension*.

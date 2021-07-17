@@ -64,13 +64,13 @@ $$
 Substitute the second eq to the first one:
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{d^2}{dt^2} \sigma^2(t) = -\sigma^2(t)
     &\Rightarrow
     \sigma^2(t) = A \cos t + B \sin t
     \\ &\Rightarrow
     \sigma^1(t) = -A \sin t + B \cos t
-\end{aligned}
+\end{align*}
 $$
 
 Let the initial condition be $\sigma(0, \mathbf{r}) = \mathbf{r}$, then we can determine $A, B$:
@@ -153,7 +153,7 @@ $$
 Expand $\sigma(t,x)$ as a Taylor series with respect to $t$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \sigma^\mu(t,x) &= \sigma^\mu(0, x) 
     + t \left. \frac{d}{ds} \sigma^\mu(s,x) \right|_{s=0}
     \\ &\quad 
@@ -163,19 +163,19 @@ $$
     &= \left. \left(1 + t \frac{d}{ds} + \frac{t^2}{2!} \frac{d^2}{ds^2} + \cdots \right) \sigma^\mu(s,x) \right|_{s=0}
     \\
     &= \exp \left. \left(t \frac{d}{ds} \right) \sigma^\mu(s,x) \right|_{s=0}
-\end{aligned}
+\end{align*}
 $$
 
 Using the fact that $V$ is the tangent vector of the flow
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{d}{ds}\sigma^\mu(s, x) = 
     V^\mu (\sigma(s, x))
     &\Rightarrow
     \left. \frac{d}{ds}\sigma^\mu(s, x) \right|_{s=0}
     = V^\mu (x)
-\end{aligned}
+\end{align*}
 $$
 
 Thus we can make the identification of operators
@@ -211,11 +211,11 @@ the same as the result obtained from solving differential equations.
 Let $X, Y$ be two vector fields, generating flows $\sigma(t,x), \tau(t,x)$ respectively:
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{d\sigma^\mu(s,x)}{ds} &= X^\mu(\sigma(s,x))
     \\
     \frac{d\tau^\mu(t,x)}{dt} &= Y^\mu(\tau(t,x))
-\end{aligned}
+\end{align*}
 $$
 
 Consider two nearby points $x$ and $x^\prime \equiv \sigma_\varepsilon(x)$ on the flow $\sigma(s,x)$. We want to compare the values of $Y$ at these two points:
@@ -295,14 +295,14 @@ $$
 Then we can express $Y|_{\sigma_\varepsilon(x)}$ as
 
 $$
-\begin{aligned}
+\begin{align*}
     Y|_{\sigma_\varepsilon(x)}
     &= Y^\mu(\sigma_\varepsilon(x)) \partial_\mu|_{\sigma_\varepsilon(x)}
     \\
     &= Y^\mu(x + \varepsilon X|_x) \partial_\mu|_{x + \varepsilon X}
     \\
     &\simeq [Y^\mu(x) + \varepsilon X^\nu(x) \partial_\nu Y^\mu(x)] \partial_\mu|_{x+\varepsilon X}
-\end{aligned}
+\end{align*}
 $$
 
 i.e. the components of $Y$ at $\sigma_\varepsilon(x)$ are
@@ -329,7 +329,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     &[(\sigma_{-\varepsilon})_* Y|_{\sigma_\varepsilon(x)}]^\mu
     \\ &= 
     [Y^\lambda(x) + \varepsilon X^\nu(x) \partial_\nu Y^\lambda(x)] \,
@@ -342,7 +342,7 @@ $$
         X^\nu(x) \partial_\nu Y^\mu(x)
         - Y^\lambda(x) \partial_\lambda X^\mu(x)
     ]}_\text{Lie derivative} + O(\varepsilon^2)
-\end{aligned}
+\end{align*}
 $$
 
 Now we have shown that
@@ -400,27 +400,27 @@ Suppose we start a point $x \in M$. As before $\sigma, \tau$ are flows generated
 If we first move by "parameter distance" $\varepsilon$ along $\sigma$, then by $\delta$ along $\tau$, we will arrive at
 
 $$
-\begin{aligned}
+\begin{align*}
     \tau^\mu(\delta, \sigma(\varepsilon,x))
     &= \sigma^\mu(\varepsilon,x) + \delta Y^\mu(\sigma(\varepsilon,x))
     \\
     &= (x^\mu + \varepsilon X^\mu(x)) + \delta Y^\mu(x + \varepsilon X(x))
     \\
     &= x^\mu + \varepsilon X^\mu(x) + \delta Y^\mu(x) + \delta \varepsilon X^\nu(x) \partial_\nu Y^\mu(x)
-\end{aligned}
+\end{align*}
 $$
 
 If we *swap the two steps*, we will arrive at
 
 $$
-\begin{aligned}
+\begin{align*}
     \sigma^\mu(\varepsilon, \tau(\delta,x))
     &= \tau^\mu(\delta,x) + \varepsilon X^\mu(\tau(\delta,x))
     \\
     &= (x^\mu + \delta Y^\mu(x)) + \varepsilon X^\mu(x + \delta Y(x))
     \\
     &= x^\mu + \delta Y^\mu(x) + \varepsilon X^\mu(x) + \varepsilon \delta Y^\nu(x) \partial_\nu X^\mu(x)
-\end{aligned}
+\end{align*}
 $$
 
 We discover that
@@ -444,11 +444,11 @@ For vector fields $X, Y \in \mathfrak{X}(M)$:
 - **Bilinearity**: for constants $c_1, c_2$
     
     $$
-    \begin{aligned}
+    \begin{align*}
         [X, c_1 Y_1 + c_2 Y_2] &= c_1 [X,Y_1] + c_2 [X,Y_2]
         \\
         [c_1 X_1 + c_2 X_2, Y] &= c_1 [X_1,Y] + c_2 [X_2,Y]
-    \end{aligned}
+    \end{align*}
     $$
 
 - **Anti-symmetry**: 
@@ -464,10 +464,10 @@ For vector fields $X, Y \in \mathfrak{X}(M)$:
 - For $f \in \mathcal{F}(M)$
 
     $$
-    \begin{aligned}
+    \begin{align*}
         [fX, Y] &= f[X, Y] - Y[f] X \\
         [X, fY] &= f[X, Y] + X[f] Y
-    \end{aligned}
+    \end{align*}
     $$
 
 - For $f: M \to N$
@@ -479,19 +479,19 @@ For vector fields $X, Y \in \mathfrak{X}(M)$:
     *Proof*: Let $x,y$ be coordinates of points in $M, N$ respectively. We write down the component form of both sides $(\partial_\mu \equiv \partial/\partial x^\mu)$: 
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (f_* [X,Y])^\mu 
         &= [X,Y]^\nu \partial_\nu y^\mu
         \\
         &= X^\lambda (\partial_\lambda Y^\nu) (\partial_\nu y^\mu)
         - Y^\lambda (\partial_\lambda X^\nu) (\partial_\nu y^\mu)
         \\
-    \end{aligned}
+    \end{align*}
     $$
 
     However, for the RHS, we should be cautious that the components are in the $y$ coordinate, since $f_* X, f_* Y$ are tangent vectors to $N$ $(D_\mu \equiv \partial/\partial y^\mu)$:
     $$
-    \begin{aligned}
+    \begin{align*}
         [f_* X, f_* Y]^\mu 
         &= (f_* X)^\nu D_\nu (f_* Y)^\mu 
         - (f_* Y)^\nu D_\nu (f_* Y)^\mu
@@ -505,13 +505,13 @@ For vector fields $X, Y \in \mathfrak{X}(M)$:
         & \quad 
         - Y^\lambda (\partial_\lambda y^\nu) (D_\nu X^\alpha) (\partial_\alpha y^\mu)
         - X^\alpha Y^\lambda (\partial_\lambda y^\nu) (D_\nu \partial_\alpha y^\mu)
-    \end{aligned}
+    \end{align*}
     $$
 
     Finally, use the chain rule $\partial_\lambda y^\nu D_\nu = \partial_\lambda$ to simplify:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         [f_* X, f_* Y]^\mu 
         &= X^\lambda (\partial_\lambda Y^\alpha) (\partial_\alpha y^\mu)
         + \cancel{X^\lambda Y^\alpha (\partial_\lambda \partial_\alpha y^\mu)}
@@ -521,7 +521,7 @@ For vector fields $X, Y \in \mathfrak{X}(M)$:
         - \cancel{X^\alpha Y^\lambda (\partial_\lambda \partial_\alpha y^\mu)}
         \\
         &= (f_* [X,Y])^\mu \qquad \blacksquare
-    \end{aligned}
+    \end{align*}
     $$
 
 ## Lie Derivative of General Tensors

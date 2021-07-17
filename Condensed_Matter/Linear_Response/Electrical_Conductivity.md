@@ -38,7 +38,7 @@ $$
 **Paramagnetic and diamagnetic currents:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{Paramagnetic:} &\ &\mathbf{J}_\sigma^\nabla
     &= \frac{1}{2mi} \left[
         \psi^\dagger_\sigma(\mathbf{x})
@@ -51,7 +51,7 @@ $$
     &= - \frac{q}{m} \mathbf{A}(\mathbf{x}) 
     \psi^\dagger_\sigma(\mathbf{x}) \psi_\sigma(\mathbf{x})
     = -\frac{q}{m} \mathbf{A}(\mathbf{x}) \rho(\mathbf{x})
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -85,7 +85,7 @@ Some simplifications follow:
 - In the second term, keep first order term only:
     
     $$
-    \begin{aligned}
+    \begin{align*}
         &\mathbf{J}(\mathbf{x}) \cdot \mathbf{A}^\text{ext}(\mathbf{x},t)
         \\
         &= \left[
@@ -98,7 +98,7 @@ Some simplifications follow:
     \\
     &\simeq \mathbf{j}(\mathbf{x}) 
     \cdot \mathbf{A}^\text{ext}(\mathbf{x},t)
-    \end{aligned}
+    \end{align*}
     $$
 
     where we introduced
@@ -147,7 +147,7 @@ $$
 When the original Hamiltonian $H_0$ is time-independent, $\sigma_{\alpha \beta}$ should depends on the combination $t - t'$, which allows a further Fourier transform:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\int dt'\, d^3x' \, \sum_\beta 
     \int \frac{d\omega}{2\pi} e^{-i\omega(t - t')}
     \sigma_{\alpha \beta}(\mathbf{x},\mathbf{x}',\omega)
@@ -164,7 +164,7 @@ $$
     e^{-i\omega t} \sum_\beta 
     \sigma_{\alpha \beta}(\mathbf{x},\mathbf{x}',\omega)
     E_\beta(\mathbf{x}',\omega)
-\end{aligned}
+\end{align*}
 $$
 
 from which we recognize the Fourier transform of the current
@@ -186,7 +186,7 @@ $$
 Working in the frequency domain has the advantage that the electric field is simply related to the vector potential:
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathbf{E}(\mathbf{x},t) 
     &= -\nabla \phi^\text{ext}(\mathbf{x},t) 
     - \partial_t \mathbf{A}^\text{ext}(\mathbf{x},t)
@@ -195,7 +195,7 @@ $$
     \\ &\Downarrow \\
     \mathbf{E}(\mathbf{x},\omega) 
     &= i\omega \mathbf{A}^\text{ext}(\mathbf{x},\omega) 
-\end{aligned}
+\end{align*}
 $$
 
 To obtain the current under perturbation, we separate it into two parts:
@@ -210,7 +210,7 @@ $$
 - For the $\mathbf{j}$ part, the Kubo formula can be applied, with the observation that $\expect{\mathbf{j}}_0 = 0$ (no current in equilibrium): 
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \expect{j_\alpha(\omega)} 
         &= -q \sum_\beta \int d^3x' \,
         \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}', \omega)
@@ -219,7 +219,7 @@ $$
         &= \frac{iq}{\omega} \sum_\beta \int d^3x' \,
         \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}', \omega)
         E_\beta(\mathbf{x}',\omega)
-    \end{aligned}
+    \end{align*}
     $$
 
     where we introduced the 
@@ -241,7 +241,7 @@ $$
 - For the second part, we make the first order approximation
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \expect{
             - \frac{q}{m} A_\alpha^\text{ext}(\mathbf{x},\omega)
             \rho(\mathbf{x})
@@ -251,7 +251,7 @@ $$
         \\
         &= \frac{iq}{m\omega} n(\mathbf{x})
         E_\alpha(\mathbf{x},\omega)
-    \end{aligned}
+    \end{align*}
     $$
 
     where $n(\mathbf{x}) = \expect{\rho(\mathbf{x})}_0$ is the equilibrium particle number density.
@@ -259,7 +259,7 @@ $$
 Collecting these two terms:
 
 $$
-\begin{aligned}
+\begin{align*}
     \expect{J_\alpha(t)} 
     &= \frac{iq}{\omega} \sum_\beta \int d^3x' \,
     \Pi^R_{\alpha \beta}(\mathbf{x},\mathbf{x}', \omega)
@@ -274,7 +274,7 @@ $$
         + \frac{1}{m} n(\mathbf{x}) \delta_{\alpha \beta}
         \delta^3(\mathbf{x} - \mathbf{x}')
     \bigg] E_\beta(\mathbf{x}',\omega) 
-\end{aligned}
+\end{align*}
 $$
 
 By comparison with the definition of $\sigma_{\alpha \beta}$, and noting that $J^e_\alpha = q J_\alpha$, we obtain
@@ -299,7 +299,7 @@ $$
 For systems with translational symmetry, $\sigma_{\alpha \beta}$ only depends on the combination $\mathbf{x} - \mathbf{x}'$. Then it is convenient to also Fourier transform the space (setting $\mathbf{x}' = 0$):
 
 $$
-\begin{aligned}
+\begin{align*}
     \sigma_{\alpha \beta}(\mathbf{k},\omega)
     &= \int d^3x \, 
     e^{-i\mathbf{k}\cdot \mathbf{x}}
@@ -316,7 +316,7 @@ $$
         \Pi^R_{\alpha \beta}(\mathbf{k}, \omega)
         + \frac{n_0}{m} \delta_{\alpha \beta}
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 In the last step, we set $n_0 = n(\mathbf{x} = 0)$, and it is the uniform particle density due to translational invariance. 
@@ -324,7 +324,7 @@ In the last step, we set $n_0 = n(\mathbf{x} = 0)$, and it is the uniform partic
 Explicitly, the current-current correlation function in momentum-frequency space is
 
 $$
-\begin{aligned}
+\begin{align*}
     \Pi^R_{\alpha \beta}(\mathbf{k}, \omega)
     &= \int d^3x \, e^{-i\mathbf{k}\cdot \mathbf{x}}
     \Pi^R_{\alpha \beta}(\mathbf{x}, \omega)
@@ -334,7 +334,7 @@ $$
         j_\alpha(\mathbf{x}, t), 
         j_\beta(0, t')
     ]}_0 \theta(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 ### Long-Wavelength Limit
@@ -343,7 +343,7 @@ In experiment one is interested in the $\mathbf{k} \to 0$ limit. In this limit w
 
 $$
 \lim_{\mathbf{k}\to 0} \ \left\{
-\begin{aligned}
+\begin{align*}
     \sigma_{\alpha \beta}(\mathbf{k},\omega)
     &= \sigma_{\alpha \beta}(\omega)
     \\
@@ -351,6 +351,6 @@ $$
     &= \Pi_{\alpha \beta}(\omega)
     \\
     & \ \ \vdots
-\end{aligned}
+\end{align*}
 \right.
 $$

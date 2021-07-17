@@ -25,13 +25,13 @@ The $U(1)$ group simply has the number 1 as its generator. Thus $\alpha(x)$ is j
 The gauge transformation of the field $\phi(x)$ gives
 
 $$ 
-\begin{aligned}
+\begin{align*}
     \phi(x) \rightarrow \phi'(x) 
     &= U(x) \phi(x) \equiv e^{i\alpha(x)} \phi(x)
     \\[0.5em]
     \phi^\dagger(x) \rightarrow \phi'^{\dagger}(x) 
     &= \phi^\dagger(x) U^\dagger (x) \equiv \phi^\dagger(x) e^{-i\alpha(x)}
-\end{aligned}
+\end{align*}
 $$ 
 
 Terms like $|\phi(x)|^2$ will then be gauge invariant. 
@@ -39,13 +39,13 @@ Terms like $|\phi(x)|^2$ will then be gauge invariant.
 The partial derivatives $\partial_\mu \phi$ transforms, accordingly, as
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_\mu \phi(x)
     \rightarrow \partial_\mu \phi'(x) 
     &= U(x) \partial_\mu \phi(x) + (\partial_\mu U) \phi(x)
     \\
     &\equiv e^{i\alpha(x)} \partial_\mu \phi(x) + i (\partial_\mu \alpha) e^{i\alpha(x)} \phi(x) 
-\end{aligned}
+\end{align*}
 $$
 
 and a kinetic term of the form $\phi^\dagger \partial_\mu \phi$ is thus not invariant under this transformation.
@@ -59,12 +59,12 @@ $$
 The transformed $D'_\mu$ can be expressed as
 
 $$
-\begin{aligned}
+\begin{align*}
     D'_\mu \phi'(x) 
     &= D'_\mu U(x) \phi(x) = U(x) D_\mu \phi(x)
     \\[0.5em] \Rightarrow \, \,
     D'_\mu &= U(x) D_\mu U^\dagger(x)
-\end{aligned}
+\end{align*}
 $$
 
 Let
@@ -76,14 +76,14 @@ $$
 We thus compute (omitting the explicit $x$ dependencies for brevity)
 
 $$
-\begin{aligned}
+\begin{align*}
     D_\mu \phi \rightarrow D'_\mu \phi'
     &= D'_\mu U \phi 
     \\
     &= D_\mu U \phi + \delta D_\mu U \phi
     \\
     &= UD_\mu \phi + (\delta D_\mu U + [D_\mu,U])\phi
-\end{aligned}
+\end{align*}
 $$
 
 The requirement for $D_\mu$ to transform covariantly is now translated in the condition
@@ -113,7 +113,7 @@ $$
 Then the condition for covariance becomes
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta D_\mu U + [D_\mu,U] 
     &= -iq \, \delta A_\mu U + 
     [\partial_\mu - iq A_\mu, U]
@@ -122,7 +122,7 @@ $$
     - iq [A_\mu, U]
     \\
     &= 0
-\end{aligned}
+\end{align*}
 $$
 
 Therefore
@@ -161,7 +161,7 @@ $$
 This result is in fact exact for $U(1)$ gauge transformation:
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta A_\mu
     &= [U,A_\mu]U^\dagger -\frac{i}{q} [\partial_\mu,U]U^\dagger
     \\
@@ -170,7 +170,7 @@ $$
     e^{-i\alpha}
     \\
     &= \partial_\mu \alpha
-\end{aligned}
+\end{align*}
 $$
 
 ----

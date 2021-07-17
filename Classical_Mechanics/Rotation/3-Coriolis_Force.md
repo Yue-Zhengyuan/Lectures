@@ -63,18 +63,18 @@ $$
 We know that (in the second step, we used the obvious fact that the order of all rotations along the *same axis* does not matter)
 
 $$
-\begin{aligned}
+\begin{align*}
     R_n(\alpha(t))
     &= R_n(\alpha(t)-\alpha(t_0)) R_n(\alpha(t_0))
     \\
     &= R_n(\alpha(t_0)) R_n(\alpha(t)-\alpha(t_0))
-\end{aligned}
+\end{align*}
 $$
 
 therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     \left[
         \frac{dR_n(\alpha(t))}{dt}
     \right]_{t=t_0}
@@ -84,13 +84,13 @@ $$
     \right]_{t=t_0}
     \\
     &= R_n(\alpha(t_0)) \omega(t_0) 
-\end{aligned}
+\end{align*}
 $$
 
 Here comes the angular velocity matrix $\omega(t_0)$! The final expression for the velocity is therefore (renaming all $t_0$ to $t$, and applying $\omega \boldsymbol{r} = \boldsymbol{\omega} \times \boldsymbol{r}$, where the first $\omega$ is the angular velocity *matrix*)
 
 $$
-\begin{aligned}
+\begin{align*}
     \boldsymbol{v}(t)
     &= R_n(\alpha (t)) \,
     [\boldsymbol{\omega}(t)\times \boldsymbol{r}'(t)]
@@ -98,13 +98,13 @@ $$
     \\
     &=R_n(\alpha (t)) \,
     [\boldsymbol{\omega}(t) \times \boldsymbol{r}'(t) + \boldsymbol{v}'(t)]
-\end{aligned}
+\end{align*}
 $$
 
 To find the acceleration, we differentiate once more:
 
 $$
-\begin{aligned}
+\begin{align*}
     \boldsymbol{a}(t)
     &= \frac{d\boldsymbol{v}(t)}{dt}
     \\
@@ -121,7 +121,7 @@ $$
     ]
     + \frac{dR_n(\alpha (t))}{dt} \boldsymbol{v}'(t)
     + R_n(\alpha (t))\boldsymbol{a}'(t)
-\end{aligned}
+\end{align*}
 $$
 
 Using the result derived earlier
@@ -134,7 +134,7 @@ $$
 We obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \boldsymbol{a}(t)
     &= R_n(\alpha (t)) \, [
         \dot{\boldsymbol{\omega}}(t) \times \boldsymbol{r}'(t)
@@ -143,13 +143,13 @@ $$
         + 2\boldsymbol{\omega}(t)\times \boldsymbol{v}'(t)
         + \boldsymbol{a}'(t)
     ]
-\end{aligned}
+\end{align*}
 $$
 
 Usually, after getting this general result, people simply set $t=0$, i.e. people are interested in the instant when the two coordinate system *coincides* ($\alpha(0) = 0$). Then $R_n \to 1$, and the velocity and the acceleration of the object simplify to
 
 $$
-\begin{aligned}
+\begin{align*}
     \boldsymbol{v}
     &= \boldsymbol{\omega}\times \boldsymbol{r}'
     + \boldsymbol{v}'
@@ -162,7 +162,7 @@ $$
     \\ &\quad
     + 2\boldsymbol{\omega}\times \boldsymbol{v}'
     + \boldsymbol{a}'
-\end{aligned}
+\end{align*}
 $$
 
 *Remark*: In Wikipedia and most textbooks, these two results are obtained through some weird "operator" dealing with time derivatives in rotating frames. After going through the derivation above, you may try if you understand how they constructed that operator. 
@@ -172,7 +172,7 @@ $$
 Now we choose the rotation axis to be the $z$-axis. The force observed by $K'$ (when $K$ and $K'$ coincide) is
 
 $$
-\begin{aligned}
+\begin{align*}
     \boldsymbol{F}'
     &= m \boldsymbol{a}'
     \\
@@ -183,7 +183,7 @@ $$
     - m \boldsymbol{\omega} \times 
     (\boldsymbol{\omega} \times \boldsymbol{r}')
     - 2m \boldsymbol{\omega} \times \boldsymbol{v}'
-\end{aligned}
+\end{align*}
 $$
 
 The $\boldsymbol{F}=m \boldsymbol{a}$ term is the "real" force. Since the earth
@@ -282,12 +282,12 @@ $$
 The change in angular momentum in the rotating frame is
 
 $$
-\begin{aligned}
+\begin{align*}
     \Delta L
     &= L(t_0)-L(0)
     \\
     &= \int_0^{t_0} \tau (t) \, dt=2m\left(a^2-b^2\right)\omega
-\end{aligned}
+\end{align*}
 $$
 
 The new moment of inertia is $I'=2m b^2$, so the final angular velocity

@@ -43,7 +43,7 @@ $$
 The new correlation is (up to first order terms)
 
 $$
-\begin{aligned}
+\begin{align*}
     \left\langle X'\right\rangle 
     &= \frac{1}{Z} \int \left[d\phi' \right] 
     X' e^{-S'[\phi']}
@@ -61,13 +61,13 @@ $$
     + \langle \delta X \rangle 
     - \frac{1}{Z} \int [d\phi] \, X 
     e^{-S[\phi]} \delta S
-\end{aligned}
+\end{align*}
 $$
 
 Then, because $\left\langle X'\right\rangle =\langle X\rangle$
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \delta X\rangle 
     &= \frac{1}{Z} \int [d\phi] \, X 
     e^{-S[\phi]} \delta S
@@ -83,13 +83,13 @@ $$
     \\
     &=\int d^dx \, \omega_a(x) \, 
     \partial_{\mu} \langle X j_a^{\mu} \rangle
-\end{aligned}
+\end{align*}
 $$
 
 Meanwhile, we can directly write down $\delta X$ using the generators
 
 $$
-\begin{aligned}
+\begin{align*}
     &\delta X
     =\sum_{k=1}^n \phi (x_1) \cdots  
     \left(-i G_a\omega_a(x_k)\phi (x_k)\right) 
@@ -99,13 +99,13 @@ $$
     \delta^{(d)} (x - x_k)\,
     \omega_a(x)
     \sum_{k=1}^n \left[\phi (x_1) \cdots  \left(G_a\phi (x_k)\right) \cdots  \phi (x_n)\right]
-\end{aligned}
+\end{align*}
 $$
 
 Now we obtain the **Ward identity**
 
 $$
-\begin{aligned}
+\begin{align*}
     &\partial_{\mu} \left\langle 
     j_a^{\mu} \phi (x_1) \cdots \phi (x_n)
     \right\rangle 
@@ -115,7 +115,7 @@ $$
     \phi (x_1) \cdots 
     \left(G_a\phi (x_k)\right) 
     \cdots \phi (x_n)\right\rangle
-\end{aligned}
+\end{align*}
 $$
 
 ## Ward Identity for Translation

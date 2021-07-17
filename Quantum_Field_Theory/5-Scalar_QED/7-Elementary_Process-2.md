@@ -57,7 +57,7 @@ To the lowest order, this corresponds to only one diagram (s-channel):
 The t- and u- channels are not allowed, since there should be no vertices involving both $\phi$ and $\chi$. The corresponding amplitude is
 
 $$
-\begin{aligned}
+\begin{align*}
     i \mathcal{M}
     &= \color{green} ieQ_\phi (p_1 - p_2)^\mu
     \color{darkcyan} \frac{-i g_{\mu \nu}}{(p_1 + p_2)^2}
@@ -65,7 +65,7 @@ $$
     \\
     &= ie^2 Q_\phi Q_\chi 
     \frac{(p_1 - p_2)\cdot (p_3 - p_4)}{(p_1 + p_2)^2}
-\end{aligned}
+\end{align*}
 $$
 
 Next, consider the kinetics in the CM frame (we have implicitly applied 4-momentum conservation):
@@ -96,20 +96,20 @@ $$
 Using the kinetics, we can express the amplitude $\mathcal{M}$ as
 
 $$
-\begin{aligned}
+\begin{align*}
     i\mathcal{M}
     &= ie^2 Q_\phi Q_\chi 
     \frac{(p_1 - p_2)\cdot (p_3 - p_4)}{(p_1 + p_2)^2}
     \\
     &= ie^2 Q_\phi Q_\chi 
     \frac{-2pp'\cos\theta}{E^2}
-\end{aligned}
+\end{align*}
 $$
 
 From known results of $2\to 2$ scattering in CM frame:
 
 $$
-\begin{aligned}
+\begin{align*}
     \left( \frac{d\sigma}{d\Omega} \right)_\text{CM}
     &= \frac{1}{64 \pi^2 E_\text{CM}^2} 
     \frac{p_f}{p_i}
@@ -119,7 +119,7 @@ $$
     \\
     &= \frac{\alpha^2 Q_\phi^2 Q_\chi^2}{4} 
     \frac{p p'^3}{E^6} \cos^2\theta
-\end{aligned}
+\end{align*}
 $$
 
 ## Variants of Electron-Muon Scattering
@@ -139,7 +139,7 @@ This corresponds to the following diagram (t-channel)
 </center>
 
 $$
-\begin{aligned}
+\begin{align*}
     i \mathcal{M}
     &= \color{green} ieQ_\phi (p_1 + p_3)^\mu
     \color{darkcyan} \frac{-i g_{\mu \nu}}{(p_3 - p_1)^2}
@@ -147,7 +147,7 @@ $$
     \\
     &= ie^2 Q_\phi Q_\chi 
     \frac{(p_1 + p_3)\cdot (p_2 + p_4)}{(p_3 - p_1)^2}
-\end{aligned}
+\end{align*}
 $$
 
 The s- and u- channel diagrams are not allowed, again because there should be no vertices involving both $\phi$ and $\chi$. Using on-shell conditions, we have
@@ -195,20 +195,20 @@ $$
 Then the amplitude $\mathcal{M}$ can be expressed as
 
 $$
-\begin{aligned}
+\begin{align*}
     i \mathcal{M}
     &= ie^2 Q_\phi Q_\chi 
     \frac{(p_1 + p_3)\cdot (p_2 + p_4)}{(p_3 - p_1)^2}
     \\
     &= -ie^2 Q_\phi Q_\chi 
     \frac{p^2(1 + \cos^2\theta) + 2EE'}{p^2(1-\cos\theta)}
-\end{aligned}
+\end{align*}
 $$ 
 
 From known results of $2\to 2$ scattering in CM frame:
 
 $$
-\begin{aligned}
+\begin{align*}
     \left( \frac{d\sigma}{d\Omega} \right)_\text{CM}
     &= \frac{1}{64 \pi^2 E_\text{CM}^2} 
     \frac{p_f}{p_i}
@@ -223,7 +223,7 @@ $$
     \left(
         \frac{p^2(1 + \cos^2\theta) + 2EE'}{p^2(E+E')(1-\cos\theta)}
     \right)^2
-\end{aligned}
+\end{align*}
 $$
 
 ### Electron and Anti-Muon
@@ -241,7 +241,7 @@ This corresponds to the following diagram (t-channel)
 </center>
 
 $$
-\begin{aligned}
+\begin{align*}
     i \mathcal{M}
     &= \color{green} ieQ_\phi (p_1 + p_3)^\mu
     \color{darkcyan} \frac{-i g_{\mu \nu}}{(p_3 - p_1)^2}
@@ -249,7 +249,7 @@ $$
     \\
     &= -ie^2 Q_\phi Q_\chi 
     \frac{(p_1 + p_3)\cdot (p_2 + p_4)}{(p_3 - p_1)^2}
-\end{aligned}
+\end{align*}
 $$
 
 We merely get an extra minus sign for $\mathcal{M}$ since we are dealing with the anti-particle now. So the result of the differential cross section will be the same as electron-muon scattering derived above. 

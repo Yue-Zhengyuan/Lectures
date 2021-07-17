@@ -53,7 +53,7 @@ For example, consider the first order direct term:
 <img src="images/2BodyV_1st-3E-mid.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1D})}_{\alpha \beta}(t)
     \\
     &=
@@ -78,7 +78,7 @@ $$
     \\ &\quad \times
     \int \frac{dE_2}{2\pi} e^{-iE_2 t_1}
     G^{(0)}_{\epsilon \beta}(E_2)
-\end{aligned}
+\end{align*}
 $$
 
 </div>
@@ -88,12 +88,12 @@ $$
 *Remark*: In general, for each arrowed lines with two ends connected by interaction (including closed loops), we will get an $e^{-iE' 0^-}$ factor (in the following we denote it as $e^{iE'\eta} \, (\eta \to 0^+)$). The limit can be achieved by extending the integral to a contour integral (going to the upper half plane):
 
 $$
-\begin{aligned}
+\begin{align*}
     \int \frac{dE'}{2\pi} e^{iE'\eta}
     G^{(0)}_{\theta \delta}(E')
     = \oint_{C\uparrow} \frac{dE'}{2\pi} 
     G^{(0)}_{\theta \delta}(E')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -110,7 +110,7 @@ Then only the integration over the energy $E'$ remains:
 <img src="images/2BodyV_1st-3E.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1D})}_{\alpha \beta}(E)
     = \int dt \, e^{iEt} 
     G^{(\text{1D})}_{\alpha \beta}(t)
@@ -123,7 +123,7 @@ $$
     \int \frac{dE'}{2\pi} e^{iE'\eta}
     G^{(0)}_{\theta \delta}(E') \,
     G^{(0)}_{\epsilon \beta}(E)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -134,7 +134,7 @@ For the exchange term, we obtain in a similar fashion:
 <img src="images/2BodyV_1st-4E.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1E})}_{\alpha \beta}(E)
     = \int dt \, e^{iEt} 
     G^{(\text{1E})}_{\alpha \beta}(t)
@@ -147,7 +147,7 @@ $$
     \int \frac{dE'}{2\pi} e^{iE'\eta}
     G^{(0)}_{\epsilon \delta}(E') \,
     G^{(0)}_{\theta \beta}(E)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -164,10 +164,10 @@ We notice two properties in the energy version of diagrams:
     <img src="images/2BodyV_energy.png" width="180pt">
 
     $$
-    \quad \begin{aligned}
+    \quad \begin{align*}
         E_1 + E_2 &= E_3 + E_4 \\
         E_\text{out} &= E_\text{in}
-    \end{aligned}
+    \end{align*}
     $$
 
     </div>
@@ -191,12 +191,12 @@ We notice two properties in the energy version of diagrams:
     *Proof*: When Fourier transforming each propagators connecting to the interaction line (say at time $t$), the incoming ones will contribute an $e^{-iEt}$, while outgoing ones will contribute an $e^{+iEt}$. Thus we get the expression
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \int dt \, e^{i(E_1 + E_2 - E_3 - E_4)t}
         &= 2\pi \delta(E_1 + E_2 - E_3 - E_4 )\\
         &= 2\pi \delta(E_\text{out} - E_\text{in})
         \qquad \blacksquare
-    \end{aligned}
+    \end{align*}
     $$
 
     ----
@@ -207,7 +207,7 @@ We notice two properties in the energy version of diagrams:
     <img src="images/2BodyV_2nd-9E.png" width="150pt">
 
     $$
-    \quad \begin{aligned}
+    \quad \begin{align*}
         &G^{(\text{2i})}_{\alpha \beta}(E)
         \\
         &= - i \sum_{\gamma \delta \epsilon \theta} 
@@ -223,7 +223,7 @@ We notice two properties in the energy version of diagrams:
         G^{(0)}_{\lambda \beta}(E)
         \\ \\
         &\text{with} \quad E_3 \equiv E_1 + E_2 - E
-    \end{aligned}
+    \end{align*}
     $$
 
     </div><br>
@@ -253,7 +253,7 @@ When using the energy formulation, one usually use the momentum states as the ba
     It is trickier to obtain the form of $V$ elements in momentum space, since the translational symmetry of $V$ is best revealed in the *position* space. Let us first find the general form of $V$ in position space (using Schrödinger picture):
     
     $$
-    \begin{aligned}
+    \begin{align*}
         V &= \frac{1}{2} \sum_{\gamma \delta \epsilon \theta}
         a_\gamma^\dagger a_\delta^\dagger
         \amp{\gamma \delta}{V}{\epsilon \theta}
@@ -266,7 +266,7 @@ When using the energy formulation, one usually use the momentum states as the ba
         \amp{\mathbf{x}_1 \mathbf{x}_2}{V}
         {\mathbf{x}_3 \mathbf{x}_4}
         \phi(\mathbf{x}_4) \phi(\mathbf{x}_3)
-    \end{aligned}
+    \end{align*}
     $$
 
     Here the translational symmetric matrix element of $V$ is given by
@@ -282,7 +282,7 @@ When using the energy formulation, one usually use the momentum states as the ba
     Each item can be Fourier transformed (using $\braket{\mathbf{x}}{\mathbf{p}} = e^{i\mathbf{p}\cdot \mathbf{x}}$):
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \phi^{(\dagger)} (\mathbf{x})
         &= \int \frac{d^3p}{(2\pi)^3} \,
         \braket{\mathbf{x}}{\mathbf{p}}^{(*)} 
@@ -297,7 +297,7 @@ When using the energy formulation, one usually use the momentum states as the ba
         \braket{\mathbf{p}}{\mathbf{x}'}
         = \int \frac{d^3p}{(2\pi)^3} 
         e^{i\mathbf{p}\cdot (\mathbf{x} - \mathbf{x}')}
-    \end{aligned}
+    \end{align*}
     $$
 
     We also introduce the Fourier component of the function $V(\mathbf{x})$:
@@ -320,7 +320,7 @@ When using the energy formulation, one usually use the momentum states as the ba
     Collecting these, we obtain
     
     $$
-    \begin{aligned}
+    \begin{align*}
         V &= \frac{1}{2} \int d^3x_1 \, d^3x_2 \,
         d^3x_3 \, d^3x_4 \, 
         \\ &\qquad
@@ -340,7 +340,7 @@ When using the energy formulation, one usually use the momentum states as the ba
         e^{i\mathbf{p}_3\cdot \mathbf{x}_3} 
         e^{i\mathbf{p}_4\cdot \mathbf{x}_4} 
         \phi(\mathbf{p}_4) \phi(\mathbf{p}_3)
-    \end{aligned}
+    \end{align*}
     $$
 
     The integration of the exponential factors over $x_i \, (i = 1,...,4)$ results in:
@@ -372,7 +372,7 @@ When using the energy formulation, one usually use the momentum states as the ba
     It represents *momentum conservation* in the interaction process, as expected from the translational symmetry. Then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         V &= \frac{1}{2} 
         \int \frac{d^3p_1}{(2\pi)^3} \frac{d^3p_2}{(2\pi)^3}
         \frac{d^3p_3}{(2\pi)^3} \frac{d^3p_4}{(2\pi)^3} 
@@ -383,13 +383,13 @@ When using the energy formulation, one usually use the momentum states as the ba
         (2\pi)^3 \delta^3((\mathbf{p}_1 + \mathbf{p}_2)
         - (\mathbf{p}_3 + \mathbf{p}_4))
         \phi(\mathbf{p}_4) \phi(\mathbf{p}_3)
-    \end{aligned}
+    \end{align*}
     $$
     
     Comparing with direct change to momentum space:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         V &= \frac{1}{2} 
         \int \frac{d^3p_1}{(2\pi)^3} \frac{d^3p_2}{(2\pi)^3}
         \frac{d^3p_3}{(2\pi)^3} \frac{d^3p_4}{(2\pi)^3} 
@@ -399,7 +399,7 @@ When using the energy formulation, one usually use the momentum states as the ba
         \amp{\mathbf{p}_1 \mathbf{p}_2}{V}
         {\mathbf{p}_3 \mathbf{p}_4}
         \phi(\mathbf{p}_4) \phi(\mathbf{p}_3)
-    \end{aligned}
+    \end{align*}
     $$
 
     we find
@@ -412,7 +412,7 @@ When using the energy formulation, one usually use the momentum states as the ba
     <img src="images/2BodyV_momentum.png" width="180pt">
 
     $$
-    \quad \begin{aligned}
+    \quad \begin{align*}
         &\amp{\mathbf{p}_1 \mathbf{p}_2}{V}
         {\mathbf{p}_3 \mathbf{p}_4} 
         \\
@@ -420,7 +420,7 @@ When using the energy formulation, one usually use the momentum states as the ba
         \\ &\quad \times
         (2\pi)^3 \delta^3((\mathbf{p}_1 + \mathbf{p}_2)
         - (\mathbf{p}_3 + \mathbf{p}_4))
-    \end{aligned}
+    \end{align*}
     $$
 
     </div><br>
@@ -435,7 +435,7 @@ We demonstrate this conversion using the first order exchange term, which will s
 <img src="images/2BodyV_1st-4E.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1E})}_{\alpha \beta}(E) \\
     &= i 
     \sum_{\gamma \delta \epsilon \theta} 
@@ -445,7 +445,7 @@ $$
     \int \frac{dE'}{2\pi} e^{iE'\eta}
     G^{(0)}_{\epsilon \delta}(E') \,
     G^{(0)}_{\theta \beta}(E)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -453,7 +453,7 @@ $$
 Using the conversion rules stated above (and $\gamma,\delta,\epsilon,\theta \to 1,2,3,4$), we obtain (let $\mathbf{p}_\alpha = \mathbf{p}$)
 
 $$
-\begin{aligned}
+\begin{align*}
     G^{(\text{1D})}_{\alpha \beta}
     (\mathbf{p},\mathbf{p}_\beta;E) 
     &= - i 
@@ -472,7 +472,7 @@ $$
     G^{(0)}(\mathbf{p}, E)
     e^{iE'\eta} G^{(0)}(\mathbf{p}_3, E')
     G^{(0)}(\mathbf{p}_4, E)
-\end{aligned}
+\end{align*}
 $$
 
 The momentum delta functions (except the one from $V$) impose the following constraints:
@@ -501,7 +501,7 @@ $$
 *Remark*: The real space version of $U(p)$ is ($px \equiv Et - \mathbf{p}\cdot \mathbf{x}$)
 
 $$
-\begin{aligned}
+\begin{align*}
     U(x - x') &= \int \frac{d^4p}{(2\pi)^4}
     e^{-ip(x - x')} U(p) \\
     &= \int \frac{dE}{2\pi} e^{-iE(t - t')} 
@@ -509,7 +509,7 @@ $$
     e^{i\mathbf{p}\cdot (\mathbf{x} - \mathbf{x}')} 
     V(\mathbf{p}) \\
     &= \delta(t - t') V(\mathbf{x} - \mathbf{x}')
-\end{aligned}
+\end{align*}
 $$
 
 The extra delta function means that $U$ is an *instantaneous* interaction.
@@ -519,7 +519,7 @@ The extra delta function means that $U$ is an *instantaneous* interaction.
 we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     G^{(\text{1D})}_{\alpha \beta}
     (\mathbf{p},\mathbf{p}_\beta;E) 
     &= i (2\pi)^3 \delta^3(\mathbf{p} - \mathbf{p}_\beta)
@@ -529,7 +529,7 @@ $$
     \\
     &= (2\pi)^3 \delta^3(\mathbf{p} - \mathbf{p}_\beta)
     G^{(\text{1D})}_{\alpha \beta}(p)
-\end{aligned}
+\end{align*}
 $$
 
 Usually we only keep $G^{(\text{1D})}_{\alpha \beta}(p)$; putting the spin indices back, the final expression is
@@ -538,7 +538,7 @@ Usually we only keep $G^{(\text{1D})}_{\alpha \beta}(p)$; putting the spin indic
 <img src="images/2BodyV_1st-4pE.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1D})}_{\alpha \beta}(p) 
     \\
     &= i \sum_{\gamma \delta \epsilon \theta} 
@@ -550,14 +550,14 @@ $$
     G^{(0)}_{\epsilon \beta}(p)
     \\[1.5em]
     &\text{with} \quad
-    \begin{aligned}
+    \begin{align*}
         U_{\gamma \delta, \epsilon \theta}(p)
         &= \delta_{\gamma \epsilon} \delta_{\delta \theta}
         U(p) \\
         G^{(0)}_{\alpha \beta}(p) 
         &= \delta_{\alpha \beta} G^{(0)}(p)
-    \end{aligned}
-\end{aligned}
+    \end{align*}
+\end{align*}
 $$
 
 </div>
@@ -568,7 +568,7 @@ For the direct interaction, there is no momentum transfer along the interaction 
 <img src="images/2BodyV_1st-3pE.png" width="150pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     &G^{(\text{1D})}_{\alpha \beta}(p) 
     \\
     &= - i \sum_{\gamma \delta \epsilon \theta} 
@@ -578,7 +578,7 @@ $$
     G^{(0)}_{\alpha \gamma}(p) 
     e^{iE'\eta} G^{(0)}_{\theta \delta}(p') 
     G^{(0)}_{\epsilon \beta}(p)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

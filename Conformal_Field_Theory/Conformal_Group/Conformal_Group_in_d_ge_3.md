@@ -56,13 +56,13 @@ We now discuss all possible situations allowed by the general requirement.
     
     $$
     \left.
-    \begin{aligned}
+    \begin{align*}
         \text{Sym:} \quad s_{\mu \nu} 
         &= \frac{1}{2}(b_{\mu \nu} + b_{\nu \mu})
         \\
         \text{Anti-sym:} \quad r_{\mu \nu} 
         &= \frac{1}{2}(b_{\mu \nu} - b_{\nu \mu})
-    \end{aligned}
+    \end{align*}
     \right \} \Rightarrow
     b_{\mu \nu} = s_{\mu \nu} + r_{\mu \nu}
     $$
@@ -99,20 +99,20 @@ We now discuss all possible situations allowed by the general requirement.
     First evaluate $f$:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         f &= \frac{2}{d} 
         \eta^{\mu \nu} \partial_{\mu} \epsilon_{\nu}(x)
         \\
         &= \frac{2}{d} (
             {b^\mu}_\mu + 2{c^\mu}_{\mu \rho} x^\rho
         )
-    \end{aligned}
+    \end{align*}
     $$
 
     Plug into Corollary 1:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \text{LHS}
         &= 2 \partial_\mu \partial_{\nu} \epsilon_{\rho}
         = 2 c_{\rho \mu \nu}
@@ -129,7 +129,7 @@ We now discuss all possible situations allowed by the general requirement.
             + \eta_{\nu \rho} {c^\alpha}_{\alpha \mu}
             - \eta_{\mu \nu} {c^\alpha}_{\alpha \rho}
         )
-    \end{aligned}
+    \end{align*}
     $$
 
     Now we define (not to be confused with the $b_{\mu \nu}$ above)
@@ -152,7 +152,7 @@ We now discuss all possible situations allowed by the general requirement.
     When $a_\mu, b_{\mu\nu} = 0$ (i.e. remove the contribution from translation, scaling and rotation):
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \epsilon_\mu &= c_{\mu \nu \rho} x^\nu x^\rho 
         \\
         &= (
@@ -162,7 +162,7 @@ We now discuss all possible situations allowed by the general requirement.
         ) x^\nu x^\rho 
         \\
         &= 2 (x \cdot b) x_\mu - x^2 b_\mu
-    \end{aligned}
+    \end{align*}
     $$
 
     This is called the **special conformal transformation (SCT)**. We give its finite form below without proof.
@@ -194,12 +194,12 @@ $$
     x'^{\mu} = 
     \frac{x^{\mu} - b^{\mu} x^2}{1 - 2b \cdot x + b^2 x^2} &
     \def \arraystretch{0.2}
-    \begin{aligned}
+    \begin{align*}
         \\
         x'^\mu &= x^\mu + 2 (x \cdot b) x_\mu 
         \\ &\quad
         - x^2 b_\mu
-    \end{aligned}
+    \end{align*}
 \end{array}
 $$
 
@@ -214,11 +214,11 @@ Now we derive the transformation **generators** corresponding to the conformal g
 </center>
 
 $$
-\begin{aligned}
+\begin{align*}
     x &\mapsto x'(x)=x+\epsilon (x)
     \\
     \phi (x) &\mapsto \phi' \left(x'(x)\right)=F(\phi (x))
-\end{aligned}
+\end{align*}
 $$
 
 Assume that the transformation depends on some set of parameters $\left\{\omega_a\right\}$, i.e.
@@ -275,7 +275,7 @@ For the four types of conformal transformations, we then obtain
 **Conformal transformation generators (scalar fields, $d\ge 3$)**
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{Translation}&: \quad
     P_{\mu} = -i \partial_{\mu}
     \\
@@ -293,7 +293,7 @@ $$
         2x_{\mu}x^{\nu}\partial_{\nu}
         - x^2\partial_{\mu}
     )
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -303,14 +303,14 @@ $$
 The nonzero commutators of the conformal generators (the **conformal algebra**) are found to be
 
 $$
-\begin{aligned}
+\begin{align*}
 [D, P_\mu] &= i P_\mu \\
 [D, K_\mu] &= -i K_\mu \\
 [K_\mu, P_\nu] &= 2i (\eta_{\mu\nu} D - L_{\mu\nu} ) \\
 [K_\rho, L_{\mu\nu}] &= i (\eta_{\rho\mu} K_\nu - \eta_{\rho\nu} K_\mu) \\
 [P_\rho, L_{\mu\nu}] &= i (\eta_{\rho\mu} P_\nu - \eta_{\rho\nu} P_\mu ) \\
 [L_{\mu\nu}, L_{\rho\sigma}] &= i (\eta_{\nu\rho} L_{\mu\sigma} + \eta_{\mu\sigma} L_{\nu\rho} - \eta_{\mu\rho} L_{\nu\sigma} - \eta_{\nu\sigma} L_{\mu\rho} )
-\end{aligned}
+\end{align*}
 $$
 
 Here $\eta_{\mu\nu}$ is the metric in $\R^{d,0}$. We note that the algebra of the rotation generators $L$ form a sub-algebra $SO(d)$. 
@@ -318,7 +318,7 @@ Here $\eta_{\mu\nu}$ is the metric in $\R^{d,0}$. We note that the algebra of th
 These commutation relations can be greatly simplified if we define
 
 $$
-\begin{aligned}
+\begin{align*}
     J_{\mu \nu} &= L_{\mu \nu}
     \qquad &
     J_{-1,0} &= D
@@ -326,7 +326,7 @@ $$
     J_{0 \mu} &= \frac{1}{2} (P_{\mu} + K_{\mu})
     \qquad &
     J_{-1, \mu} &= \frac{1}{2} (P_{\mu} - K_{\mu})
-\end{aligned}
+\end{align*}
 $$
 
 so that $J_{a b} = -J_{b a}$ for $a, b \in \{-1,0,1, ...,d\}$, then we have the algebra

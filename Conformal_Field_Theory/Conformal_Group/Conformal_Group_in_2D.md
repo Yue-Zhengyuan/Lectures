@@ -23,7 +23,7 @@
 The case $d = 2$ is so special that we can directly find what the *finite* conformal transformations look like. Consider a map $(x^0,x^1) \mapsto (w^0,w^1)$. The metric transforms according to
 
 $$
-\begin{aligned}
+\begin{align*}
     \eta_{\alpha \beta}
     &= \frac{\partial w^\alpha}{\partial x^\mu}
     \frac{\partial w^\beta}{\partial x^\nu}
@@ -32,13 +32,13 @@ $$
     &= \frac{\partial w^\alpha}{\partial x^\mu}
     \frac{\partial w^\beta}{\partial x^\nu}
     \Lambda(w) \eta_{\mu \nu}
-\end{aligned}
+\end{align*}
 $$
 
 Writing down each component explicitly (in Euclidean space $\R^{2,0}$), we obtain:
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial w^0}{\partial x^0}
     \frac{\partial w^1}{\partial x^0}
     + \frac{\partial w^0}{\partial x^1}
@@ -51,7 +51,7 @@ $$
     \left( \frac{\partial w^1}{\partial x^0} \right)^2
     + \left( \frac{\partial w^1}{\partial x^1} \right)^2
     &= \Lambda(w)
-\end{aligned}
+\end{align*}
 $$
 
 These conditions are equivalent to either ($\partial_\alpha$ means $\partial/\partial x^\alpha$)
@@ -119,7 +119,7 @@ $$
 we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial \equiv \partial_z
     &= \frac{\partial x^{\rho}}{\partial z}
     \frac{\partial}{\partial x^{\rho}}
@@ -129,7 +129,7 @@ $$
     &= \frac{\partial x^{\rho}}{\partial \bar{z}}
     \frac{\partial}{\partial x^{\rho}}
     = \frac{1}{2} (\partial_0 + i \partial_1 )
-\end{aligned}
+\end{align*}
 $$
 
 which can also be inverted to give
@@ -166,11 +166,11 @@ $$
 The generators of 2D infinitesimal conformal transformation are found from the *Laurent expansion* (about the $z, \bar{z} = 0$) of $\epsilon (z)$ and $\bar{\epsilon}(\bar{z})$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \epsilon (z) &= \sum_n z^{n+1} \epsilon_n
     \\
     \bar{\epsilon}(\bar{z}) &= \sum_n \bar{z}^{n+1} \bar{\epsilon}_n
-\end{aligned}
+\end{align*}
 $$
 
 We define the differential operators
@@ -189,14 +189,14 @@ $$
 Then for the transformation of a particular $n$, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     z' &= z + z^{n+1} \epsilon_n
     \equiv \left(1-l_n\right)z
     \\
     \bar{z}'
     &= \bar{z} + \bar{z}^{n+1} \bar{\epsilon}_n
     = (1 - \bar{l}_n) \bar{z}
-\end{aligned}
+\end{align*}
 $$
 
 so that a finite transformation is the exponentiation $e^{-l_n}, e^{-\bar{l}_n}$.
@@ -208,14 +208,14 @@ The commutation rules of the generators $l_n,\bar{l}_n$ are collectively known a
 **The Witt algebra:**
 
 $$
-\begin{aligned}
+\begin{align*}
     [l_n, l_m] &= (n-m)l_{m+n}
     \\
     [\bar{l}_n, \bar{l}_m]
     &= (n-m)\bar{l}_{m+n}
     \\
     [l_n, \bar{l}_m] &= 0
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -272,22 +272,22 @@ Thus only $l_{-1}, l_0, l_1$ (and similarly $\bar{l}_{-1}, \bar{l}_0, \bar{l}_1$
 
     $$
     \left.
-    \begin{aligned}
+    \begin{align*}
         z &= re^{i\phi} \\
         \bar{z} &= re^{-i\phi}
-    \end{aligned} \right\}
+    \end{align*} \right\}
     \Rightarrow \left\{
-    \begin{aligned}
+    \begin{align*}
         r &= \sqrt{z \bar{z}}\\
         \phi &= \frac{1}{2i} \ln \frac{z}{\bar{z}}
-    \end{aligned}
+    \end{align*}
     \right.
     $$
 
     Then the $l_0$ generator can be expressed as
 
     $$
-    \begin{aligned}
+    \begin{align*}
         l_0 &= -z \partial_z
         \\
         &= - z \left(
@@ -296,7 +296,7 @@ Thus only $l_{-1}, l_0, l_1$ (and similarly $\bar{l}_{-1}, \bar{l}_0, \bar{l}_1$
         \right)
         \\
         &= -\frac{1}{2} r \partial_r + \frac{i}{2} \partial_\phi 
-    \end{aligned}
+    \end{align*}
     $$
 
     Similarly
@@ -309,13 +309,13 @@ Thus only $l_{-1}, l_0, l_1$ (and similarly $\bar{l}_{-1}, \bar{l}_0, \bar{l}_1$
     Then we recognize that
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \text{Scaling: } &\quad &
         l_0 + \bar{l}_0 &= -r \partial_r
         \\
         \text{Rotation: } &\quad &
             i(l_0 - \bar{l}_0) &= - \partial_\phi
-        \end{aligned}
+        \end{align*}
     $$
 
 - $l_1$ generates the following transformation
@@ -379,7 +379,7 @@ Therefore
 Here we re-express the conformal generators $P_\mu, D, L_{\mu \nu}, K_\mu$ using the $l_n, \bar{l}_n \, (n = -1,0,1)$ operators in 2D (Euclidean $\R^{2,0}$). To do this, we shall use the conversion
 
 $$
-\begin{aligned}
+\begin{align*}
     x_0 &= \frac{1}{2} (z+\bar{z}),
     &\quad
     x_1 &= -\frac{i}{2} (z-\bar{z})
@@ -387,7 +387,7 @@ $$
     \partial_0 &= \partial + \bar{\partial}, 
     &\quad
     \partial_1 &= i(\partial - \bar{\partial})
-\end{aligned}
+\end{align*}
 $$
 
 Note that in Euclidean space, the variables with upper indices are the same as those with lower indices.
@@ -395,7 +395,7 @@ Note that in Euclidean space, the variables with upper indices are the same as t
 - Translation
     
     $$
-    \begin{aligned}
+    \begin{align*}
         P_0 &= -i \partial_0
         = -i (\partial + \bar{\partial})
         \\ &= i (l_{-1} + \bar{l}_{-1})
@@ -403,13 +403,13 @@ Note that in Euclidean space, the variables with upper indices are the same as t
         P_1 &= -i \partial_1
         = \partial - \bar{\partial}
         \\ &= -l_{-1} + \bar{l}_{-1}
-    \end{aligned}
+    \end{align*}
     $$
 
 - Scaling (dilation)
     
     $$
-    \begin{aligned}
+    \begin{align*}
         D &= -i (x_0 \partial_0 + x_1 \partial_1)
         \\
         &= -\frac{i}{2} [
@@ -419,13 +419,13 @@ Note that in Euclidean space, the variables with upper indices are the same as t
         \\
         &= -i (z\partial + \bar{z} \bar{\partial})
         = i(l_0 + \bar{l}_0)
-    \end{aligned}
+    \end{align*}
     $$
 
 - Rotation
     
     $$
-    \begin{aligned}
+    \begin{align*}
         L_{10} &= i (x_1 \partial_0 - x_0 \partial_1)
         \\
         &= \frac{1}{2} (
@@ -435,7 +435,7 @@ Note that in Euclidean space, the variables with upper indices are the same as t
         \\
         &= z\partial - \bar{z} \bar{\partial}
         = -l_0 + \bar{l}_0
-    \end{aligned}
+    \end{align*}
     $$
 
 - SCT
@@ -443,7 +443,7 @@ Note that in Euclidean space, the variables with upper indices are the same as t
     Let us first calculate:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         x^{\nu}\partial_{\nu}
         &= x_0 \partial_0 + x_1 \partial_1
         \\
@@ -460,13 +460,13 @@ Note that in Euclidean space, the variables with upper indices are the same as t
         - \frac{1}{4} (z-\bar{z})^2
         \\
         &= z \bar{z}
-    \end{aligned}
+    \end{align*}
     $$
 
     Then
     
     $$
-    \begin{aligned}
+    \begin{align*}
         K_0 &= -i (
             2x_0 x^{\nu}\partial_{\nu}
             - x^2 \partial_0
@@ -488,5 +488,5 @@ Note that in Euclidean space, the variables with upper indices are the same as t
         \\
         &= -z^2 \partial + \bar{z}^2 \bar{\partial}
         = l_1 - \bar{l}_1
-    \end{aligned}
+    \end{align*}
     $$

@@ -11,20 +11,20 @@ $$
 Recall that for infinitesimal transformations depending on a set of parameters $\omega_a$, the coordinates and the field itself transform according to:
 
 $$
-\begin{aligned}
+\begin{align*}
     x'^{\mu}(x,\omega)
     & =x^{\mu}
     + \omega_a \frac{\partial x'^{\mu}}{\partial \omega_a}
     \\
     \phi' (x')
     &= \phi (x)+\omega_a\frac{\partial F}{\partial \omega_a}
-\end{aligned}
+\end{align*}
 $$
 
 from which we obtain the Jacobi matrices for coordinate transformation (up to $O(\omega)$ terms)
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial x'^\nu}{\partial x^\mu}
     &= \delta_\mu^\nu + \partial_\mu \left(
         \omega_a \frac{\partial x'^{\mu}}{\partial \omega_a}
@@ -34,13 +34,13 @@ $$
     &= \delta_\mu^\nu - \partial_\mu \left(
         \omega_a \frac{\partial x'^{\nu}}{\partial \omega_a}
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     d^d x' 
     &= d^d x \det \frac{\partial x'^\nu}{\partial x^\mu}
     \\
@@ -73,13 +73,13 @@ $$
         \omega_a \frac{\partial x'^{\nu}}{\partial \omega_a}
     \right) \partial_\nu \phi(x) 
     + O(\omega^2)
-\end{aligned}
+\end{align*}
 $$
 
 Up to $O(\omega)$ terms, the new action is
 
 $$
-\begin{aligned}
+\begin{align*}
     S' 
     &= \int d^d x \left[
         1 + \partial_\mu \left(
@@ -128,13 +128,13 @@ $$
     }_S 
     + \int d^dx \, \omega_a f_a 
     - \int d^dx \, (\partial_\mu \omega_a) j_a^\mu
-\end{aligned}
+\end{align*}
 $$
 
 where we introduced two new quantities
 
 $$
-\begin{aligned}
+\begin{align*}
     f_a &\equiv
     \mathcal{L} \, \partial_\mu 
     \frac{\partial x'^\mu}{\partial \omega_a}
@@ -167,7 +167,7 @@ $$
     \frac{\partial x'^\nu}{\partial \omega_a} 
     - \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}
     \frac{\partial F}{\partial \omega_a}
-\end{aligned}
+\end{align*}
 $$
 
 The quantity $j_a^\mu$ goes by a special name, called the **current** associated with the infinitesimal transformation. 

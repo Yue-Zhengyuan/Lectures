@@ -131,7 +131,7 @@ $$
 Then we can verify that
 
 $$
-\begin{aligned}
+\begin{align*}
     \int g_{\bar{\eta}_i \eta_i}
     |\eta_i\rangle \langle \eta_i |
     &=
@@ -146,7 +146,7 @@ $$
     \eta_i \bar{\eta}_i |h_i\rangle \langle h_i| 
     \\ &=
     |h_i\rangle \langle h_i| 
-\end{aligned}
+\end{align*}
 $$
 
 Thus the completeness relation (resolution of identity) becomes
@@ -213,7 +213,7 @@ $$
 so that each evolution slice corresponds to evolution by imaginary time $\epsilon \equiv \beta / M$:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \eta^\prime | e^{-\beta H} | \eta \rangle
     =
     \langle \eta^\prime | 
@@ -229,7 +229,7 @@ $$
     \langle \eta^2 | e^{-\epsilon H} | \eta^1 \rangle
     g_{\bar{\eta}^1 \eta^1}
     \langle \eta^1 | e^{-\epsilon H} | \eta^0 \rangle
-\end{aligned}
+\end{align*}
 $$
 
 where $|\eta^k\rangle$ is the state after $k$ evolution layers, and $\eta^0 \equiv \eta, \eta^M \equiv \eta^\prime$. 
@@ -237,7 +237,7 @@ where $|\eta^k\rangle$ is the state after $k$ evolution layers, and $\eta^0 \equ
 Each layer of evolution can further be separated to 
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \eta^{l+1} | e^{-\epsilon H} | \eta^{l} \rangle 
     =
     \langle \eta^{l+1} | e^{-\epsilon (H_e+H_o)} | \eta^{l} \rangle 
@@ -248,7 +248,7 @@ $$
     \langle \eta^{2k+2} | e^{-\epsilon H_e} | \eta^{2k+1} \rangle
     g_{\bar{\eta}^{2k+1} \eta^{2k+1}}
     \langle \eta^{2k+1}|e^{-\epsilon H_o} | \eta^{2k} \rangle 
-\end{aligned}
+\end{align*}
 $$
 
 where
@@ -261,7 +261,7 @@ $$
 Then each layer of evolution involves $H_e$ or $H_o$ only. The terms in $H_e$ (or $H_o$) obviously commute, then we can proceed further and write
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \eta^{n+1} | e^{-\epsilon H_e} | \eta^{n} \rangle
     &= \prod_{i \text{ even}}
     \langle \eta_{i}^{n+1} \eta_{i+1}^{n+1} | 
@@ -273,7 +273,7 @@ $$
     \langle \eta_{i}^{n+1} \eta_{i+1}^{n+1} | 
     e^{-\epsilon H_{i, i+1}} | 
     \eta_{i}^{n} \eta_{i+1}^{n} \rangle
-\end{aligned}
+\end{align*}
 $$
 
 Now we obtain the elements of the two-site **Trotter gate** evolving from state $|\eta\rangle$ to state $|\theta\rangle$:
@@ -321,7 +321,7 @@ $$
 It corresponds to a set of numbers $\mathbf{T}$ by the relation
 
 $$
-\begin{aligned}
+\begin{align*}
     &\sum_{\theta, \eta} 
     \langle \theta_i \theta_{i+1} | H_{i,i+1} | \eta_i \eta_{i+1} \rangle 
     \\ &= 
@@ -334,7 +334,7 @@ $$
     \mathbf{T}(\bar{\theta},\eta)_{j_{i+1} j_i k_i k_{i+1}}^{m_{i+1} m_i n_i n_{i+1}}
     \qquad
     m, n = 0, 1
-\end{aligned}
+\end{align*}
 $$
 
 The inclusion of the summation $\sum_{\theta, \eta}$ is to take the complete basis at each site into account. Compared with the spinless case, the object $\mathbf{T}$ now carries *subscripts*. 
@@ -395,7 +395,7 @@ $$
 Using the definition of coherent states, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \theta_i | \eta_i \rangle
     &= 
     \langle 0 | (1 - h_i \bar{\theta}_i)
@@ -405,7 +405,7 @@ $$
     + \langle 0 | h_i \bar{\theta}_i \eta_i h_i^\dagger | 0 \rangle
     \\ &=
     1 + \bar{\theta}_i \eta_i
-\end{aligned}
+\end{align*}
 $$
 
 However, the $1$ term should be discarded, since it means there are neither holes nor spins at site $i$, which *violates the no-double-occupancy constraint*. Thus we have the following nonzero elements of $T$:
@@ -430,11 +430,11 @@ $$
 Similar to **Case 2**, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \theta_{i+1} | \eta_{i+1} \rangle
     &=
     1 + \bar{\theta}_{i+1} \eta_{i+1}
-\end{aligned}
+\end{align*}
 $$
 
 Discarding the term $1$, we are left with the following nonzero elements of $T$ (`s` = 0 or 1):
@@ -450,7 +450,7 @@ Discarding the term $1$, we are left with the following nonzero elements of $T$ 
 #### Case 4: Both sites are empty
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \theta_i \theta_{i+1} | \eta_i \eta_{i+1} \rangle
     \\
     &= \langle 0| (1 - c_{i+1} \bar{\theta}_{i+1})(1 - c_i \bar{\theta}_i) (1 - \eta_i c_i^\dagger) (1 - \eta_{i+1} c_{i+1}^\dagger) |0\rangle
@@ -462,7 +462,7 @@ $$
     + (-c_{i+1} \bar{\theta}_{i+1})(-c_i \bar{\theta}_i)(-\eta_i c_i^\dagger)(-\eta_{i+1} c_{i+1}^\dagger) |0\rangle
     \\
     &= 1 + \bar{\theta}_{i+1} \eta_{i+1} + \bar{\theta}_i \eta_i + \bar{\theta}_{i+1} \bar{\theta}_i \eta_i \eta_{i+1} 
-\end{aligned}
+\end{align*}
 $$
 
 The no-double-occupancy constraint keeps the last term only. Thus we have one more nonzero element of $T$:
@@ -480,7 +480,7 @@ The no-double-occupancy constraint keeps the last term only. Thus we have one mo
 Hamiltonian with chemical potential term
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= t\sum_{i, \sigma} (c_{i,\sigma}^\dagger c_{i+1,\sigma} + h.c.)
     \\ &\quad 
     + J \sum_{i} (S_i \cdot S_{i+1} - \frac{1}{4} n_i n_{i+1})
@@ -491,7 +491,7 @@ $$
     \\ &\quad 
     + J (S_i \cdot S_{i+1} - \frac{1}{4} n_i n_{i+1})
     - \frac{\mu}{2}(n_i + n_{i+1})
-\end{aligned}
+\end{align*}
 $$
 
 Fermion operator in the no-double-occupancy subspace:
@@ -503,12 +503,12 @@ $$
 where
 
 $$
-\begin{aligned}
+\begin{align*}
     (S_i \cdot S_{i+1})_{\sigma_i^\prime \sigma_{i+1}^\prime, \sigma_i \sigma_{i+1}} &\equiv 
     \sum_{\alpha=1}^3 (S_i^\alpha)_{\sigma_i^\prime \sigma_i} (S_{i+1}^\alpha)_{\sigma_{i+1}^\prime \sigma_{i+1}}
     \\
     n_i &\equiv \sum_{\sigma} n_{i,\sigma}
-\end{aligned}
+\end{align*}
 $$
 
 The no-double-occupancy constraint is included as part of the model definition. 
@@ -528,13 +528,13 @@ The gate axis order is chosen as below:
 - **Tight-binding term**
 
     $$
-    \begin{aligned}
+    \begin{align*}
         t \sum_{\sigma} (c_{i,\sigma}^\dagger c_{i+1,\sigma} + h.c.) 
         &\rightarrow 
         t \sum_{\sigma} (b_{i,\sigma}^\dagger h_i h_{i+1}^\dagger b_{i+1,\sigma} + h.c.)
         \\ &=
         -t \sum_{\sigma} (h_{i+1}^\dagger h_i b_{i,\sigma}^\dagger b_{i+1,\sigma} + h.c.)
-    \end{aligned}
+    \end{align*}
     $$
 
     The nonzero elements satisfying the no-double-occupancy constraint are ("hop to" and "hop from" refer to the spin (boson))
@@ -553,18 +553,18 @@ The gate axis order is chosen as below:
     $\tau^\alpha (\alpha = 1,2,3)$ below are the Pauli matrices:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (S_i^\alpha)_{\sigma^\prime \sigma} \rightarrow
             b_{i,\sigma^\prime}^\dagger 
             \tau_{\sigma^\prime \sigma}^\alpha 
             b_{i,\sigma}
-    \end{aligned}
+    \end{align*}
     $$
 
     Then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (S_i \cdot S_{i+1})_{\sigma_i^\prime \sigma_{i+1}^\prime, \sigma_i \sigma_{i+1}} 
         &= 
         \sum_{\alpha=1}^3 
@@ -582,7 +582,7 @@ The gate axis order is chosen as below:
         b_{i+1,\sigma_{i+1}^\prime}^\dagger 
         b_{i,\sigma_i} 
         b_{i+1,\sigma_{i+1}}
-    \end{aligned}
+    \end{align*}
     $$
 
     Nonzero tensor elements satisfying no-double-occupancy constraint

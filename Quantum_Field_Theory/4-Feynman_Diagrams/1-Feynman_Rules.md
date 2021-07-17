@@ -5,7 +5,7 @@
 Previously, we have shown that the correlation function of an interacting scalar field theory is given by
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \Omega | T[\phi(x_1) \cdots \phi(x_n)] | \Omega\rangle
     \\
     &= \lim_{T \to \infty(1-i\epsilon)}
@@ -26,19 +26,19 @@ $$
             -i \int_{-T}^{+T} dt \, H_I(t)
         \right)
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 The field $\phi_I(x)$ and the interaction Hamiltonian $H_I$ are time evolved by the free part of the Hamiltonian:
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_I(\mathbf{x},t) 
     &= e^{i H_0(t-t_0)} \phi(\mathbf{x},t_0) e^{-i H_0(t-t_0)}
     \\
     H_I(t) 
     &= e^{i H_0(t-t_0)} H_\text{int} e^{-i H_0(t-t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 In practice, the interaction Lagrangian is given as a power series expansion controlled by some parameter, such as
@@ -67,7 +67,7 @@ $$
 Let us first focus on the nominator: we can perform perturbation expansion on $\lambda$ as follows (from now on we omit the subscript $I$ of the interacting picture fields):
 
 $$
-\begin{aligned}
+\begin{align*}
     &\left\langle 0 \left| T[
         \phi(x_1) \cdots \phi(x_n) U(T, -T) 
     ]
@@ -100,7 +100,7 @@ $$
     \right] \right| 0 \right\rangle
     \\[1em] &\quad
     + O(\lambda^3)
-\end{aligned}
+\end{align*}
 $$
 
 For the term at each order of expansion, we can apply Wick's theorem to compute the time-ordered product. Similar expansion holds for the denominator as well. 

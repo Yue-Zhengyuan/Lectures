@@ -54,11 +54,11 @@ For massive spin-1, we definitely needs fields with more degrees of freedom. We 
 A natural guess based on real scalar field theory is
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{L} 
     &= - \frac{1}{2} \partial_\mu A_\nu \partial^\mu A^\nu
     + \frac{1}{2} m^2 A_\mu A^\mu
-\end{aligned}
+\end{align*}
 $$
 
 But in this theory, the decoupling $3 = 1 \oplus 1 \oplus 1$ (into three spin-0 particles) occurs, as can be seen from the equations of motion:
@@ -99,12 +99,12 @@ $$
 which removes one degree of freedom. Taking $a = b = 1$, the Lagrangian becomes (called the **Proca Lagrangian**)
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{L} 
     &= - \frac{1}{2} \partial_\mu A_\nu \partial^\mu A^\nu
     + \frac{1}{2} (\partial^\mu A_\mu)^2
     + \frac{1}{2} m^2 A_\mu A^\mu
-\end{aligned}
+\end{align*}
 $$
 
 We can write it into an equivalent neater form:
@@ -126,7 +126,7 @@ $$
 *Verify*: We only process the first two terms.
 
 $$
-\begin{aligned}
+\begin{align*}
     -\frac{1}{4} F_{\mu \nu} F^{\mu \nu}
     &= -\frac{1}{4}(
         \partial_\mu A_\nu \partial^\mu A^\nu
@@ -140,13 +140,13 @@ $$
         - \partial_\mu A_\nu \partial^\mu A^\nu
         + \partial_\mu A_\nu \partial^\nu A^\mu
     )
-\end{aligned}
+\end{align*}
 $$
 
 Up to an integration by parts (removal of surface integral at infinity), the terms $\partial_\mu A_\nu \partial^\nu A^\mu$ and $(\partial^\mu A_\mu)^2$ are equivalent:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\int d^4 x \, \partial_\mu A_\nu \partial^\nu A^\mu
     \\
     &= \int d^4 x \, [
@@ -169,7 +169,7 @@ $$
     \\
     &= - \int d^4 x \, A^\mu \partial^\nu \partial_\mu A_\nu 
     \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ----
@@ -177,14 +177,14 @@ $$
 Now the equations of motion implies
 
 $$
-\begin{aligned}
+\begin{align*}
     &\partial^\nu \partial_\nu A_\mu 
     - \partial_\mu 
     \underbrace{\partial^\nu A_\nu}_{=0}
     + m^2 A_\mu
     \\
     &= (\partial^2 + m^2) A_\mu = 0
-\end{aligned}
+\end{align*}
 $$
 
 which is the same as the scalar field. But now we have $\partial^\mu A_\mu = 0$ so that the fields do not decouple. 
@@ -194,13 +194,13 @@ which is the same as the scalar field. But now we have $\partial^\mu A_\mu = 0$ 
 Since the equations of motion is linear in $A_\mu$, the 3 degrees of freedom can be linearly introduced to the mode expansion of $A_\mu$ as the (complex) **polarization vectors** $\epsilon_\mu^j(p)$: 
 
 $$
-\begin{aligned}
+\begin{align*}
     A_\mu(x) &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E_\mathbf{p}}}
     \sum_{j=1}^3 (
         \epsilon^j_\mu(p) a_{\mathbf{p},j} e^{-ipx}
         + \epsilon^{j*}_\mu(p) a_{\mathbf{p},j}^\dagger e^{+ipx}
     )
-\end{aligned}
+\end{align*}
 $$
 
 also with $p^0 = E_\mathbf{p} = \sqrt{|\mathbf{p}|^2 + m^2}$. 
@@ -208,7 +208,7 @@ also with $p^0 = E_\mathbf{p} = \sqrt{|\mathbf{p}|^2 + m^2}$.
 The constraint $\partial^\mu A_\mu = 0$ gives
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial^\mu A_\mu(x) 
     &= \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E_\mathbf{p}}} \times
     \\ &\quad
@@ -218,7 +218,7 @@ $$
     )
     \\
     &= 0
-\end{aligned}
+\end{align*}
 $$
 
 The only way to achieve this is
@@ -302,7 +302,7 @@ $$
 It helps to separate this into time and space parts:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{time:} \quad &\partial^2 A_0 
     - \partial_0 \partial^\nu A_\nu
     \\
@@ -318,7 +318,7 @@ $$
     &= \partial^2 A_i
     - \partial_i (\partial_0 A_0 - \partial_j A_j)
     = 0
-\end{aligned}
+\end{align*}
 $$
 
 Under the gauge transformation, 
@@ -336,7 +336,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{time:} \quad & 
     \partial_j^2 A_0 = 0
     \\[0.5em]
@@ -344,5 +344,5 @@ $$
     \partial^2 A_i
     - \partial_i \partial_0 A_0 
     = 0
-\end{aligned}
+\end{align*}
 $$

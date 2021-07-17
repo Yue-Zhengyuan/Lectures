@@ -21,7 +21,7 @@ $$
 For infinitesimal transformations, the parameters are small. This means that all change in position and field can be approximated by terms linear in $\omega_a$:
 
 $$
-\begin{aligned}
+\begin{align*}
     x'^{\mu}(x,\omega)
     & =x^{\mu}
     + \omega_a \frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)
@@ -31,7 +31,7 @@ $$
     &= \phi (x)+\omega_a\frac{\partial F}{\partial \omega_a}(\phi (x),0)
     \\
     &= F(\phi (x),\omega)
-\end{aligned}
+\end{align*}
 $$
 
 The partial derivatives are evaluated at $\omega_a=0$.
@@ -45,7 +45,7 @@ $$
 The coefficient $-i$ is the conventional choice required by the *active picture* of transformations and produce *Hermitian* generators. Continue calculation: 
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS}
     &=\phi \left(x-\omega_a\frac{\partial x'}{\partial \omega_a}(x,0)\right)
     \\ &\quad
@@ -53,18 +53,18 @@ $$
         \phi \left(x-\omega_a\frac{\partial x'}{\partial \omega_a}(x,0)\right), 0
     \right)
     -\phi (x)
-\end{aligned}
+\end{align*}
 $$
 
 discarding terms of $O\left(\omega^2\right)$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS}
     = -\omega_a\frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)\frac{\partial \phi}{\partial x^{\mu}}(x)
     +\omega_a\frac{\partial
     F}{\partial \omega_a}(\phi (x),0)
-\end{aligned}
+\end{align*}
 $$
 
 Therefore, the generator is given by
@@ -81,13 +81,13 @@ $$
 For *scalar* fields, the functional $F$ depends on the parameters $\omega$ only through the coordinates $x$. Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial F}{\partial \omega_a} = 0
     \, \Rightarrow \,
     i G_a\phi (x)
     = \frac{\partial x'^{\mu}}{\partial \omega_a}(x,0)
     \, \partial_{\mu} \phi (x)
-\end{aligned}
+\end{align*}
 $$
 
 Now we give some examples. 
@@ -167,7 +167,7 @@ $$
 The requirement $\eta_{\mu \nu} {\Lambda^{\mu}}_{\rho} {\Lambda^{\nu}}_{\sigma}=\eta_{\rho \sigma}$ restrict the form of the matrix $\omega_{\mu \nu}$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS}
     &= \eta_{\mu \nu}
     (\delta^{\mu}_{\rho} + {\omega^{\mu}}_{\rho})
@@ -178,7 +178,7 @@ $$
     = \eta_{\rho \sigma}
     + \omega_{\rho \sigma} + \omega_{\sigma \rho}
     + O(\omega^2)
-\end{aligned}
+\end{align*}
 $$
 
 Now we see that $\omega_{\mu \nu}$ should be *antisymmetric*: 
@@ -190,7 +190,7 @@ $$
 Therefore, when we calculate the derivative $\partial x'^{\mu}/\partial \omega_{\rho \sigma}$, we will get two terms and a factor of 1/2:
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial x'^{\mu}}{\partial \omega_{\rho \sigma}}(x,0)
     &= \frac{\partial}{\partial \omega_{\rho \sigma}} 
     \bigg(
@@ -210,13 +210,13 @@ $$
         \eta^{\mu \rho} x^{\sigma}
         - \eta^{\mu \sigma} x^{\rho}
     )
-\end{aligned}
+\end{align*}
 $$
 
 Now we find the generator $L^{\rho \sigma}$ corresponding to $\omega_{\rho \sigma}$:
 
 $$
-\begin{aligned}
+\begin{align*}
     i L^{\rho \sigma} \phi (x)
     &=\frac{\partial x'^{\mu}}{\partial \omega_{\rho \sigma}}(x,0) \, 
     \partial_{\mu} \phi (x)
@@ -230,7 +230,7 @@ $$
         x^{\sigma} \partial^{\rho}
         - x^{\rho} \partial^{\sigma}
     ) \, \phi (x)
-\end{aligned}
+\end{align*}
 $$
 
 Because of the anti-symmetry of the $\omega$ matrix, we slightly modify the left-hand side to include an additional factor of 1/2:
@@ -257,7 +257,7 @@ It is also anti-symmetric, as expected.
 - The space part of $L$
 
     $$
-    \begin{aligned}
+    \begin{align*}
         L_1 &\equiv L^{32} 
         = -i(x^2 \partial^3 - x^3 \partial^2)
         \\
@@ -266,7 +266,7 @@ It is also anti-symmetric, as expected.
         \\
         L_3 &\equiv L^{21} 
         = -i(x^1 \partial^2 - x^2 \partial^1)
-    \end{aligned}
+    \end{align*}
     $$
 
     generate *rotations*, and are called the **orbital angular momentum operators**. They can be collectively written using vector notation
@@ -279,7 +279,7 @@ It is also anti-symmetric, as expected.
 - The time part of $L$
     
     $$
-    \begin{aligned}
+    \begin{align*}
         K_1 &\equiv L^{01} 
         = -i(x^0 \partial^1 - x^1 \partial^0)
         \\
@@ -288,7 +288,7 @@ It is also anti-symmetric, as expected.
         \\
         K_3 &\equiv L^{03} 
         = -i(x^0 \partial^3 - x^3 \partial^0)
-    \end{aligned}
+    \end{align*}
     $$
 
     generate *boosts*. 
@@ -340,7 +340,7 @@ $$
 The parameters are the vector $b^{\mu}$. Then we evaluate the derivative (which is somewhat complicated)
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial x'^{\nu}}{\partial b^{\mu}}
     &= \frac{\partial}{\partial b^{\mu}} \left(
         \frac{
@@ -377,20 +377,20 @@ $$
     &\xrightarrow{b=0}
     - \delta_{\mu}^{\nu} x^2 
     + 2 x^{\nu} x_{\mu}
-\end{aligned}
+\end{align*}
 $$
 
 The SCT generator by $K_{\mu}$ corresponding to $b^\mu$ is then
 
 $$
-\begin{aligned}
+\begin{align*}
     i K_{\mu} \phi (x)
     &= \frac{\partial x'^{\nu}}{\partial b^{\mu}}(x,0) \,
     \partial_{\nu} \phi (x)
     \\
     &= (-\delta_{\mu}^{\nu}x^2+2x^{\nu}x_{\mu}) \,
     \partial_{\nu} \phi (x)
-\end{aligned}
+\end{align*}
 $$
 
 Thus

@@ -134,7 +134,7 @@ $$
 Then for any vector $v$, we have
 
 $$
-\begin{aligned}
+\begin{align*}
     v' 
     &\equiv A v 
     \\
@@ -146,7 +146,7 @@ $$
     \\
     &= v_i e'_i
     &\quad &(e'_i = A e_i)
-\end{aligned}
+\end{align*}
 $$
 
 We note that components of $v'$ along the new basis are the same as the components of $v$ along the old basis.
@@ -162,7 +162,7 @@ The numbers $A_{j i}$ are linear combination coefficients. We do not write $A_{i
 For example, when $\dim{V} = 2$:
 
 $$
-\begin{aligned}
+\begin{align*}
     e'_1 &= A e_1 = A_{11} e_1 + A_{21} e_2
     = \begin{bmatrix}
         A_{11} \\ A_{21}
@@ -172,7 +172,7 @@ $$
     =\begin{bmatrix}
         A_{12} \\ A_{22}
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 Then we combine this two column vectors to form a **matrix** that represents the linear transformation $A$ (it does not matter whether you use usual or square brackets):
@@ -203,7 +203,7 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
     Question: Let $v' = a e'_1 + b e'_2$. What is the value of $(a, b)$?
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \text{A. } (1, 2)
         \quad
         \text{B. } (2, 1)
@@ -211,7 +211,7 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
         \text{C. } (\frac{1}{2}, 2)
         \quad
         \text{D. } (1,1)
-    \end{aligned}
+    \end{align*}
     $$
 
 - **Reflection**
@@ -226,7 +226,7 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
     Question: what is the representation matrix?
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\text{A. } \begin{bmatrix}
             1 & -1 \\
             0 & 0
@@ -246,7 +246,7 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
             1 & 0 \\
             0 & 1
         \end{bmatrix}
-    \end{aligned}
+    \end{align*}
     $$
 
 - **Rotation**
@@ -261,7 +261,7 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
     Question: what is the representation matrix?
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\text{A. } \begin{bmatrix}
             \cos \theta & -\sin \theta \\
             \sin \theta & \cos \theta
@@ -281,7 +281,7 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
             \cos \theta & \sin \theta \\
             -\sin \theta & \cos \theta 
         \end{bmatrix}
-    \end{aligned}
+    \end{align*}
     $$
 
 ## Matrix-Vector Multiplication
@@ -289,7 +289,7 @@ Remember the meaning of each column of the transformation matrix: **the $i$th co
 Using the linearity $A$, we can find the new vector $A v$: 
 
 $$
-\begin{aligned}
+\begin{align*}
     v' &= v_j e'_j
     \\
     &= v_j (e_i A_{i j}) 
@@ -297,7 +297,7 @@ $$
     \\
     &= (A_{i j} v_j) e_i
     &\quad &\text{(Rearrange)}
-\end{aligned}
+\end{align*}
 $$
 
 Meanwhile, under the old basis $\{e_i\}$
@@ -344,7 +344,7 @@ $$
 The result of the product above is:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{A. } \begin{bmatrix}
         -1 \\ 2
     \end{bmatrix}
@@ -360,7 +360,7 @@ $$
     \text{D. } \begin{bmatrix}
         1 \\ 2
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 ## Composition of Linear Transformation

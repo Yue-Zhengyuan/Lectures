@@ -82,12 +82,12 @@ $$
 - **Tensor product**: Let $\mu \in \mathcal{T}^p_q, \, \nu \in \mathcal{T}^r_s$. The tensor product of $\mu$ and $\nu$ (denoted by $\tau \equiv \mu \otimes \nu$) is an element in $\mathcal{T}^{p+r}_{q+s}$ defined by
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\tau(\omega_1,...,\omega_p,\xi_1,...,\xi_r; u_1,...,u_q,v_1,...,v_s) 
         \\ & \quad \equiv 
         \mu(\omega_1,...,\omega_p; u_1,...,u_q)
         \nu(\xi_1,...,\xi_r; v_1,...,v_s)
-    \end{aligned}
+    \end{align*}
     $$
 
 - **Tensor contraction**

@@ -43,10 +43,10 @@ Therefore $P(\mathbf{T})$ can only be zero.
 We write down the components of $\mathbf{T}\mathbf{v} = \lambda \mathbf{v}$ explicitly (omitting the common string of Grassmann variables):
 
 $$
-\begin{aligned}
+\begin{align*}
     \sum_{j, n} g_{21}^n T_{i j}^{m n} v_j^n
     = \lambda v_i^m 
-\end{aligned}
+\end{align*}
 $$
 
 where $g_{21}$ is the Grassmann metric for the contraction of the 2nd axis of $T$ and the 1st axis of $v$. But we know that if $g_{21} = -1$, we can use the function `flip_gSign` to change it to $+1$, i.e. redefine the matrix $T$ to
@@ -64,13 +64,13 @@ $$
 But $T$ is of even-parity, therefore we can separate the equation above to two nonzero sectors (sum over $j$ is implied):
 
 $$
-\begin{aligned}
+\begin{align*}
     &\text{when $v$ is of even-parity: }
     &T_{i j}^{0 0} v_j^0 = \lambda v_i^0
     \\
     &\text{when $v$ is of odd-parity: }
     &T_{i j}^{1 1} v_j^1 = \lambda v_i^1
-\end{aligned}
+\end{align*}
 $$
 
 Thus we conclude that **a (square) Grassmann matrix has two spectrums of eigenvalues, belonging to the ordinary matrices $T^{00}, T^{11}$. The corresponding eigenvectors are of even-parity and odd-parity, respectively**.
@@ -111,13 +111,13 @@ $$
 As before, we have two nonzero sectors:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\text{when $v^\dagger$ is of even-parity: }
     &(v^\dagger)_j^0 (T^\dagger)_{j i}^{00}= \lambda^* (v^\dagger)_j^0
     \\
     &\text{when $v^\dagger$ is of odd-parity: }
     &(v^\dagger)_j^1 (T^\dagger)_{j i}^{11}= \lambda^* (v^\dagger)_j^1
-\end{aligned}
+\end{align*}
 $$
 
 Now we can recover the original eigenvalue equations by taking the Hermitian conjugate.

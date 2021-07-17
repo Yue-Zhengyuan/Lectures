@@ -30,11 +30,11 @@
 From the Laurent expansion
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial \phi &= (-i) j(z) = (-i) \sum_n z^{-n-1} j_n \\
     \bar{\partial} \phi &= (-i) \bar{j}(\bar{z})
     = (-i) \sum_n \bar{z}^{-n-1} \bar{j}_n
-\end{aligned}
+\end{align*}
 $$
 
 one can integrate over $z, \bar{z}$ and obtain an expansion of $\phi$:
@@ -66,13 +66,13 @@ $$
 we expand it as a Fourier series
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi(t,x) &= \sum_{n\in \Z} e^{2\pi inx/L} \phi_n(t)
     \\
     \text{Inverse: }\quad
     \phi_n(t) &= \frac{1}{L} \int_0^L dx \,
     e^{-2\pi inx/L} \phi(t,x)
-\end{aligned}
+\end{align*}
 $$
 
 <div class="remark">
@@ -90,7 +90,7 @@ $$
 Now we recast the Lagrangian using the Fourier modes
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{L}
     &=\frac{\kappa}{2} \int_0^L dx \,
     [(\partial_t \phi)^2 - (\partial_x \phi)^2]
@@ -113,7 +113,7 @@ $$
         \dot{\phi}_n \dot{\phi}_{-n}
         - \left( \frac{2\pi n}{L} \right)^2 \phi_n \phi_{-n}
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 Here we used the orthogonal relation
@@ -154,7 +154,7 @@ $$
 The $\phi_n$ modes will commute with each other, and so do the $\pi_n$ modes. Then the Hamiltonian is
 
 $$
-\begin{aligned}
+\begin{align*}
     H &=\sum_n  \pi_n\dot{\phi}_n-\mathcal{L}
     \\
     &= \sum_n  \pi_n \frac{\pi_{-n}}{\kappa L}
@@ -165,7 +165,7 @@ $$
         \pi_n\pi_{-n}
         + (2\pi n \kappa)^2 \phi_n \phi_{-n}
     \right] \equiv \sum_n H_n
-\end{aligned}
+\end{align*}
 $$
 
 This indeed is a sum of *decoupled harmonic oscillators*: each summand can be rewritten as
@@ -174,10 +174,10 @@ $$
 H_n = \frac{1}{2m} \pi_n\pi_{-n}
 + \frac{1}{2}m \omega_n^2 \phi_n \phi_{-n}
 \quad \text{with} \quad \left\{
-\begin{aligned}
+\begin{align*}
     m &= \kappa L \\
     \omega_n &= \frac{2\pi |n|}{L}
-\end{aligned}
+\end{align*}
 \right.
 $$
 
@@ -188,7 +188,7 @@ However, *the $n=0$ mode has zero frequency*, which needs special treatment when
 For each mode $n \ne 0$, we can define the creation and annihilation operators in a way analogous to the simple harmonic oscillator:
 
 $$
-\begin{aligned}
+\begin{align*}
     b_n
     &= \sqrt{\frac{m \omega_n}{2}}
     \left(
@@ -202,7 +202,7 @@ $$
         \phi_{-n}^\dagger
         - \frac{i}{m \omega_n} \pi_{-n}
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 Using the commutator $[\phi_n, \pi_{-m}] = i \delta_{n m}$ and the reality condition for $\phi$ and $\pi$, we can verify that
@@ -216,17 +216,17 @@ $$
 The inverse expressions of $\phi, \pi$ in terms of $a, a^\dagger$ are
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_n &= \frac{1}{\sqrt{2m\omega_n}} (b_n + b_{-n}^\dagger)
     \\
     \pi_n &= -i \sqrt{\frac{m \omega_n}{2}}(b_n - b_{-n}^\dagger)
-\end{aligned}
+\end{align*}
 $$
 
 It follows that (no commutation rules are used here)
 
 $$
-\begin{aligned}
+\begin{align*}
     \pi_n \pi_{-n}
     &= \frac{m \omega_n}{2} (
         b_{-n}^\dagger b_{-n}
@@ -242,13 +242,13 @@ $$
         + b_{-n}^\dagger b_n^\dagger
         + b_n b_{-n}
     )
-\end{aligned}
+\end{align*}
 $$
 
 Then the Hamiltonian can be written as
 
 $$
-\begin{aligned}
+\begin{align*}
     H
     &= \frac{1}{2m} \pi_0^2 + \sum_{n \ne 0} H_n
     \\
@@ -279,7 +279,7 @@ $$
         b_{n}^\dagger b_{n}
         + \frac{1}{2}
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 ### Step 4: Determine Time Dependence in Heisenberg Picture
@@ -305,13 +305,13 @@ $$
     Then for $\phi_0(t)$, we obtain
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \frac{d}{dt} \phi_0
         &= i \, [H, \phi_0]
         \\
         &= \frac{i}{2 m} \, [\pi_0^2, \phi_0]
         = \frac{\pi_0}{m}
-    \end{aligned}
+    \end{align*}
     \quad \Rightarrow \quad
     \phi_0(t) = \phi_0(0) + \frac{\pi_0}{m} t
     $$
@@ -321,22 +321,22 @@ $$
 - $n \ne 0$
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \frac{\partial b_n}{\partial t}
         &= i \omega_n [b_n^\dagger b_n, b_n]
         \\
         &= i \omega_n [b_n^\dagger, b_n] b_n
         \\
         &= -i \omega_n b_n
-    \end{aligned} \qquad
-    \begin{aligned}
+    \end{align*} \qquad
+    \begin{align*}
         \frac{\partial b_n^\dagger}{\partial t}
         &= i \omega_n [b_n^\dagger b_n, b_n^\dagger]
         \\
         &= i \omega_n b_n^\dagger [b_n, b_n^\dagger]
         \\
         &= i \omega_n b_n
-    \end{aligned}
+    \end{align*}
     $$
 
     Therefore
@@ -394,25 +394,25 @@ We note that $\bar{a}_n \ne a_n^\dagger$. With this definition:
     - For $n > 0$:
 
         $$
-        \begin{aligned}
+        \begin{align*}
             b_n &= \frac{i}{\sqrt{n}} a_n, \quad
             b_{-n}^\dagger = \frac{-i}{\sqrt{n}} \bar{a}_{-n}
             \\ \Rightarrow \quad
             \phi_n &= \frac{i}{n \sqrt{4 \pi \kappa}}
             (a_n - \bar{a}_{-n})
-        \end{aligned}
+        \end{align*}
         $$
 
     - For $n < 0$:
 
         $$
-        \begin{aligned}
+        \begin{align*}
             b_n &= \frac{i}{\sqrt{-n}} \bar{a}_{-n}, \quad
             b_{-n}^\dagger = \frac{-i}{\sqrt{-n}} a_n
             \\ \Rightarrow \quad
             \phi_n &= \frac{i}{(-n) \sqrt{4 \pi \kappa}}
             (\bar{a}_{-n} - a_n)
-        \end{aligned}
+        \end{align*}
         $$
 
     Thus in both case we get the same result. Then the time dependence of $\phi_n(t)$ is
@@ -428,7 +428,7 @@ We note that $\bar{a}_n \ne a_n^\dagger$. With this definition:
 Finally
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi(x,t)
     &= \sum_n e^{2 \pi i n x / L} \phi_n(t)
     \\
@@ -447,7 +447,7 @@ $$
         a_n e^{2\pi n(-\tau + ix)/L}
         - \bar{a}_{-n} e^{2\pi n(\tau + ix)/L}
     )
-\end{aligned}
+\end{align*}
 $$
 
 In the last step we changed to the Euclidean spacetime by Wick rotation $(\tau \to it)$. Now we can map the cylinder to complex plane using
@@ -493,7 +493,7 @@ $$
 Then we get a further requirement on the zero modes $j_0, \bar{j}_0$ (obviously the $n \ne 0$ terms, which are not multi-valued, is not affected)
 
 $$
-\begin{aligned}
+\begin{align*}
     j_0 \ln z + \bar{j}_0 \ln \bar{z}
     &= j_0 \ln w + \bar{j}_0 \ln \bar{w}
     \\
@@ -501,7 +501,7 @@ $$
     + 2\pi i(j_0 - \bar{j}_0)
     \\[0.5em] \Rightarrow \quad
     j_0 &= \bar{j}_0
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -509,7 +509,7 @@ $$
 Its derivative, the holomorphic field $j(z) = i \partial \phi$, is then (a similar result holds for $\bar{j}(\bar{z})$)
 
 $$
-\begin{aligned}
+\begin{align*}
     j (z)
     &= \frac{1}{4\pi \kappa} \frac{\pi_0}{z}
     + \frac{1}{\sqrt{4\pi \kappa}} \sum_{n \ne 0}
@@ -517,7 +517,7 @@ $$
     \\
     &= \frac{1}{\sqrt{4\pi \kappa}} \sum_{n}
     a_n z^{-n-1}
-\end{aligned}
+\end{align*}
 $$
 
 where, for convenience, we defined
@@ -569,7 +569,7 @@ $$
 **The Vertex Operator:**
 
 $$
-\begin{aligned}
+\begin{align*}
     V_\alpha(z,\bar{z})
     &\equiv \normord{e^{i\alpha \phi(z,\bar{z})}}
     \\
@@ -583,7 +583,7 @@ $$
         - \frac{\alpha}{\sqrt{4\pi \kappa}} \sum_{n > 0}
         \frac{1}{n} (a_n z^{-n} + \bar{a}_n \bar{z}^{-n})
     \right\}}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -603,25 +603,25 @@ $$
 Setting $B = \pi_0, \, A = i\alpha \phi$, and noting that $\pi_0$ will commute with all $a_n, \bar{a}_n$, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     [\pi_0, i\alpha \phi]
     = \left[
         \pi_0, i\alpha \phi_0
     \right] = \alpha
-\end{aligned}
+\end{align*}
 $$
 
 Therefore, using $\pi_0 \ket{0} = 0$, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     [\pi_0, V_\alpha] &= \alpha V_\alpha
     \\ &\Downarrow \\
     \pi_0 V_\alpha(0) \ket{0}
     &= ([\pi_0, V_\alpha(0)] + V_\alpha(0) \pi_0) \ket{0} \\
     &= \alpha V_\alpha\ket{0}
     \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 The state $\ket{\alpha}$ is sometimes called the **conformal vacuum** because
@@ -646,20 +646,20 @@ $$
 Now we set $B = a_n \, (n \ne 0), \, A = i\alpha \phi$. Note that $a_n$ commutes with $\phi_0, \pi_0, \bar{a}_n$, then
 
 $$
-\begin{aligned}
+\begin{align*}
     [a_n, i\alpha \phi]
     &= \frac{-\alpha}{\sqrt{4\pi \kappa}}
     \sum_{m \ne 0} \frac{1}{m} z^{-m}
     \underbrace{[a_n, a_m]}_{n \, \delta_{n+m, 0}}
     \\
     &= \frac{\alpha z^n}{\sqrt{4\pi \kappa}}
-\end{aligned}
+\end{align*}
 $$
 
 Therefore,
 
 $$
-\begin{aligned}
+\begin{align*}
     [a_n, V_\alpha(z,\bar{z})]
     &= \frac{\alpha z^n}{\sqrt{4\pi \kappa}}
     V_\alpha(z, \bar{z})
@@ -668,7 +668,7 @@ $$
     &= ([a_n, V_\alpha(0)] + V_\alpha(0) a_n) \ket{0} \\
     &= 0 \quad (n > 0)
     \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ### $\ket{\alpha}$ as an Eigenstate of $L_0$
@@ -676,7 +676,7 @@ $$
 The $\pi_0$ eigenstate $\ket{\alpha}$ turns out to be also an eigenstate of $L_0$. To show this, we express $L_0$ in terms of $a_n$ (or equivalently $j_n$)
 
 $$
-\begin{aligned}
+\begin{align*}
     L_0 &= 2\pi \kappa \, N[jj]_0 \\
     &= 2\pi \kappa \bigg[
         \sum_{k \le -1} j_k j_{-k}
@@ -686,7 +686,7 @@ $$
         j_0 j_0 + 2 \sum_{k \ge 1} j_{-k} j_k
     \bigg] \\
     &= \frac{1}{2} a_0^2 + \sum_{k \ge 1} a_{-k} a_k
-\end{aligned}
+\end{align*}
 $$
 
 Therefore (do not forget the normalization $a_0 = \pi_0/\sqrt{4\pi \kappa}$)
@@ -741,7 +741,7 @@ $$
 which has the *same* form as $\left[L_0,L_{\pm m} \right]$. Therefore, $\phi_{\pm m}$ can also serve as the ladder operators. Nevertheless, let us repeat the verification:
 
 $$
-\begin{aligned}
+\begin{align*}
     L_0 (\phi_{\pm m}|h\rangle )
     &= [L_0, \phi_{\pm m}] |h\rangle
     + \phi_{\pm m} L_0 |h\rangle
@@ -750,7 +750,7 @@ $$
     + h \phi_{\pm m} |h\rangle
     \\
     &= (h\mp m) (\phi_{\pm m} |h\rangle) \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 For free massless boson, we then have two choices to build the Hilbert space: the ladder operators are chosen as $a_n, \bar{a}_n \, (n > 0)$, but the highest weight state can either be $\ket{\alpha}$ or $\ket{0}$ (regarded as the state corresponding to the identity field). The states are then (building on $\ket{\alpha}$, say)

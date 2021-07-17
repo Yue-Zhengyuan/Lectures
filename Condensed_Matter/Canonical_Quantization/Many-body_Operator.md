@@ -64,13 +64,13 @@ $$
 **Lemma for two-body operators:**
 
 $$
-\begin{aligned}
+\begin{align*}
     &a_r^\dagger a_s^\dagger a_{s'} a_{r'}
     S_\pm(N) \ket{r_1,...,r_N}
     \\
     &= \sum_{i\ne j} \delta_{r',r_i} \delta_{s',r_j}
     S_\pm(N) \ket{...,r,...,s,...}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -89,7 +89,7 @@ $$
 Next, for the action of $a_{s'}$, since we have already removed the $i$th particle, the particles $j$ removed by $a_{s'}$ must satisfy $j \ne i$. However, the parity factor is slightly different for $j < i$ and $j > i$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS}
     &= \frac{1}{\sqrt{N(N-1)}}
     a_r^\dagger a_s^\dagger \sum_{i=1}^N (\pm 1)^{i+1} 
@@ -102,13 +102,13 @@ $$
         \delta_{s',r_j} \delta_{r',r_i}
         S_\pm(N-2) \ket{...,\cancel{r_i},...,\cancel{r_j},...}
     \bigg)
-\end{aligned}
+\end{align*}
 $$
 
 Finally we put the two particle back using $a_r, a_s$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS} 
     &= \sum_{i=1}^N 
     \bigg(
@@ -120,7 +120,7 @@ $$
         \delta_{s',r_j} \delta_{r',r_i} S_\pm(N) 
         \ket{r,s,...,\cancel{r_i},...,\cancel{r_j},...}
     \bigg)
-\end{aligned}
+\end{align*}
 $$
 
 To put $r,s$ back to the original place $r_i = r', r_j = s'$:
@@ -153,7 +153,7 @@ $$
 With this lemma, let us calculate the action of $V$ on the symmetrized states (using orthonormal one-body basis) is
 
 $$
-\begin{aligned}
+\begin{align*}
     &V S_\pm \ket{r_1,...,r_N}
     \\
     &= \frac{1}{2} S_\pm \sum_{i \ne j} 
@@ -179,7 +179,7 @@ $$
     \sum_{r',s'} \bra{r,s} V 
     \ket{r',s'} \delta_{r',r_i} \delta_{s',r_j}
     \sum_{i\ne j} S_\pm \ket{...,r,...,s,...}
-\end{aligned}
+\end{align*}
 $$
 
 By comparison with the lemma, we finally have
@@ -211,12 +211,12 @@ $$
 When $V(i,j)$ is a function of $x_i, x_j$, the amplitude can be expressed as
 
 $$
-\begin{aligned}
+\begin{align*}
     \amp{x,y}{V}{x',y'}
     &= V(x',y') \braket{x,y}{x',y'}
     \\
     &= V(x',y') \delta(x-x') \delta(y-y')
-\end{aligned}
+\end{align*}
 $$
 
 Then we can remove the integration over $x', y'$ and write

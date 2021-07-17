@@ -68,7 +68,7 @@ $$
 Let us then write the partition function in terms of the normalized tensors.
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &= \operatorname{Tr} (T_A^{(0)} T_B^{(0)})^{N_0}
     \\
     &= f_0^{2N_0} 
@@ -84,7 +84,7 @@ $$
     \\
     &= f_0^{2N_0} f_1^{2N_1} \cdots f_a^{2N_a}
     \operatorname{Tr} (\mathcal{T}_A^{(a)} \mathcal{T}_B^{(a)})^{N_a}
-\end{aligned}
+\end{align*}
 $$
 
 Take the logarithm:
@@ -138,12 +138,12 @@ Usually the *density* of the free energy $F = -T \ln Z$ (per particle) is more i
     **Free Energy Density (1+1D Quantum Models)**
 
     $$
-    \begin{aligned}
+    \begin{align*}
         - \frac{1}{2\sqrt{2N_0}} T \ln Z
         &= - \frac{1}{4N_0 \beta} \ln Z
         \\
         &= -\frac{1}{\beta} \sum_{i=0}^a \frac{1}{2^{i+1}} \ln f_i
-    \end{aligned}
+    \end{align*}
     $$
 
     </div><br>

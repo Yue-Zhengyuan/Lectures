@@ -27,7 +27,7 @@
 In the Euclidean space, the action of free massless boson in real coordinates is
 
 $$
-\begin{aligned}
+\begin{align*}
     S &= \frac{\kappa}{2} \int d^2x \,
     \sqrt{|g|} \, g^{\mu\nu}
     \p_\mu \phi \,\p_\nu \phi \\
@@ -35,7 +35,7 @@ $$
         (\partial_0 \phi)^2
         + (\partial_1 \phi)^2
     )
-\end{aligned}
+\end{align*}
 $$
 
 where $g_{\mu \nu} = \operatorname{diag}(1,1)$ is the usual flat metric, and $g = \det g_{\mu \nu}$. The normalization constant $\kappa$ is usually chosen as $1/4\pi$.
@@ -79,13 +79,13 @@ $$
 Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     S' &= \int d^dx' \, \p'_\mu \phi'(x') \,\p'^\mu \phi'(x')
     \\
     &= \lambda^{d - 2(1+\Delta)}
     \int d^dx \, \p_\mu \phi(x) \, \p^\mu \phi(x)
     = \lambda^{d - 2(1+\Delta)} S
-\end{aligned}
+\end{align*}
 $$
 
 To achieve scaling invariance, we set
@@ -100,11 +100,11 @@ $$
 Integrating by parts (i.e. removing some divergence term by converting it to vanishing surface integration at infinity), we can write $S$ as
 
 $$
-\begin{aligned}
+\begin{align*}
     S &= -\frac{1}{2} \int d^2x \, \phi(x) \partial^2 \phi(x)
     \\
     &= \frac{1}{2} \int d^2x \, d^2y \, \phi(x) A(x,y) \phi(y)
-\end{aligned}
+\end{align*}
 $$
 
 where we defined 
@@ -116,7 +116,7 @@ $$
 Thus the action is a *continuum limit* of a multi-variable Gaussian integral. Let us first review some results for the discrete integral: define the generating function
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(J)
     &=\int dx_1 ... dx_n \exp \left(-\frac{1}{2}x_iA_{i j}x_j+J_ix_i\right)
     \\
@@ -124,13 +124,13 @@ $$
     \exp \left(
         \frac{1}{2} J_i [A^{-1}]_{i j}J_j
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 Then we find that the discrete version of the two-point function is
 
 $$
-\begin{aligned}
+\begin{align*}
     \expect{x_a x_b}
     &\equiv \frac{
         \int dx_1 ... dx_n \, x_a x_b
@@ -146,7 +146,7 @@ $$
     \right]_{J=0}
     \\
     &= [A^{-1}]_{a b}
-\end{aligned}
+\end{align*}
 $$
 
 Take the continuum limit $x_a \to \phi(x_a)$, one obtain
@@ -182,7 +182,7 @@ $$
 In complex coordinates $z, \bar{z} = x^0 \pm ix^1$, the laplacian $\partial^2$ is translated into
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial^2 &= g^{\mu \nu} \partial_\mu \partial_\nu
     = g^{a b} \partial_a \partial_b
     \\[0.5em] \text{with} \quad
@@ -192,7 +192,7 @@ $$
     g_{ab} = \begin{pmatrix}
         0 & 1/2 \\ 1/2 & 0
     \end{pmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 Therefore
@@ -239,12 +239,12 @@ $$
 we find
 
 $$
-\begin{aligned}
+\begin{align*}
     \expect{j(z) j(w)}
     &= - \partial_z \partial_w \expect{\phi(z) \phi(w)}
     \\
     &= \frac{1}{4\pi \kappa} \frac{1}{(z-w)^2}
-\end{aligned}
+\end{align*}
 $$
 
 which leads to the OPE ($\sim$ means "modulo regular terms")
@@ -263,7 +263,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     [j_n, j_m]
     &= \frac{1}{(2 \pi i)^2} \left[
         \oint dz \, z^{n} j(z),
@@ -279,13 +279,13 @@ $$
     \left[
         \frac{1}{(z-w)^2} + \cdots
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 Integrate over $z$ using Cauchy Integral Formula
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{1}{2 \pi i} \oint_w dz \, z^{n}
     \left[
         \frac{1}{(z-w)^2} + \cdots
@@ -295,13 +295,13 @@ $$
     \right]_{z=w}
     \\[1em]
     &= n w^{n-1}
-\end{aligned}
+\end{align*}
 $$
 
 Then complete the integration over $w$
 
 $$
-\begin{aligned}
+\begin{align*}
     [j_n, j_m]
     &= \frac{1}{4\pi \kappa} \frac{1}{2 \pi i}
     \oint_0 dw \Big[n w^{m+n-1}\Big]
@@ -310,7 +310,7 @@ $$
         \frac{d}{dw} (w^{m+n})
     \right]_{w = 0}
     = \frac{1}{4\pi \kappa} n \, \delta_{m+n,0}
-\end{aligned}
+\end{align*}
 $$
 
 The results are summarized below
@@ -322,11 +322,11 @@ The results are summarized below
 Defining $j(z) = i \partial \phi$ (with $(h,\bar{h}) = (1,0)$), then
 
 $$
-\begin{aligned}
+\begin{align*}
     j(z) j(w) \sim \frac{1}{4\pi \kappa} \frac{1}{(z-w)^2},
     \quad
     [j_n, j_m] = \frac{1}{4\pi \kappa} n \, \delta_{m+n, 0}
-\end{aligned}
+\end{align*}
 $$
 
 Similar results hold for the anti-chiral derivative $\bar{j}(\bar{z}) = i \bar{\partial} \phi$.
@@ -344,7 +344,7 @@ Similar results hold for the anti-chiral derivative $\bar{j}(\bar{z}) = i \bar{\
 Using the original real coordinates, one finds the canonical energy-momentum tensor:
 
 $$
-\begin{aligned}
+\begin{align*}
     T_{\mu \nu}
     &= -\eta_{\mu \nu} \mathcal{L}
     + \frac{\partial \mathcal{L}}{\partial (\partial^\mu \phi)}
@@ -355,17 +355,17 @@ $$
         \partial_\alpha \phi  \, \partial^\alpha \phi
         + \partial_\mu \phi \, \partial_\nu \phi
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 which happens to be the same as the Hilbert energy-momentum tensor, and symmetric. Now we take the trace:
 
 $$
-\begin{aligned}
+\begin{align*}
     {T^{\nu}}_\nu &= \eta^{\nu \mu} T_{\mu \nu}
     \\
     &= \kappa \left(-\frac{d}{2} + 1\right) \partial_\alpha \phi  \, \partial^\alpha \phi
-\end{aligned}
+\end{align*}
 $$
 
 We see that $T_{\mu \nu}$ is traceless *if and only if* $d = 2$. This means that the massless free boson theory has conformal invariance only (? according to Schellekens' *Introduction to conformal field theory*, Section 1.6) for $d = 2$. 
@@ -375,7 +375,7 @@ We see that $T_{\mu \nu}$ is traceless *if and only if* $d = 2$. This means that
 Next we can transform it into the complex coordinates using the tensor transformation rules ($z^{0,1} = z, \bar{z}$):
 
 $$
-\begin{aligned}
+\begin{align*}
     T_{ab}(z,\bar{z})
     &= \frac{\partial x^\mu}{\partial z^a}
     \frac{\partial x^\nu}{\partial z^b}
@@ -385,13 +385,13 @@ $$
         \partial\phi \, \partial\phi & 0 \\
         0 & \bar{\partial}\phi \, \bar{\partial}\phi
     \end{pmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 The non-diagonal elements vanish, as expected. We extract the diagonal elements:
 
 $$
-\begin{aligned}
+\begin{align*}
     T(z) &\equiv -2\pi T_{zz}
     = -2\pi \kappa \, \partial\phi \, \partial\phi
     = 2\pi \kappa j^2(z)
@@ -399,7 +399,7 @@ $$
     \bar{T}(\bar{z}) &\equiv -2\pi T_{\bar{z}\bar{z}}
     = -2\pi \kappa \, \bar{\partial}\phi \, \bar{\partial}\phi
     = 2\pi \kappa \bar{j}^2(\bar{z})
-\end{aligned}
+\end{align*}
 $$
 
 ### Normal Ordering in Quantization
@@ -437,7 +437,7 @@ $$
 Let us now examine the current $j(z)$: when finding the OPE, we do not care about the regular (normal ordered) terms; thus (on the LHS there is an implicit time ordering, allowing us to apply Wick's theorem)
 
 $$
-\begin{aligned}
+\begin{align*}
     T(z) j(w) &\sim 2\pi \kappa \,
     (\normord{j j})(z) \, j(w)
     \\
@@ -447,7 +447,7 @@ $$
     ) \\
     &= \frac{j(z)}{(z-w)^2}
     \sim \frac{j(w)}{(z-w)^2} + \frac{\partial j(w)}{z - w}
-\end{aligned}
+\end{align*}
 $$
 
 Therefore $h = 1$. 
@@ -481,7 +481,7 @@ $$
 we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     [L_n, \phi_m]
     &= \oint \frac{dw}{2\pi i}  \, w^{m+h-1}
     [L_n, \phi(w)]
@@ -499,7 +499,7 @@ $$
     w^{(m+n)+h-1} \phi(w)
     \\
     &= (n(h-1)-m) \phi_{n+m} \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 Then let us evaluate the commutator
@@ -519,7 +519,7 @@ $$
 Then (using $[AB, C] = A[B,C] + [A,C]B$)
 
 $$
-\begin{aligned}
+\begin{align*}
     [L_n, j_m]
     &= 2\pi \kappa \sum_{k \le -1} [j_k j_{n-k}, j_m]
     + 2\pi \kappa \sum_{k > -1} [j_{n-k} j_k, j_m]
@@ -541,7 +541,7 @@ $$
     \Big\}
     \\
     &= - m j_{m+n}
-\end{aligned}
+\end{align*}
 $$
 
 Remarkably, this result is independent of the normalization $\kappa$. Comparing with
@@ -565,7 +565,7 @@ $$
 By direct calculation (with Wick's theorem)
 
 $$
-\begin{aligned}
+\begin{align*}
     T(z)T(w) &\sim (2\pi \kappa)^2
     (\normord{jj})(z) (\normord{jj})(w)
     \\
@@ -581,7 +581,7 @@ $$
     &= \frac{1/2}{(z - w)^4}
     + \frac{2 T(w)}{(z-w)^2}
     + \frac{\partial T(w)}{z - w}
-\end{aligned}
+\end{align*}
 $$
 
 where we Taylor expanded the last term as
@@ -613,7 +613,7 @@ $$
 Of course one can plug in $L_n = 2\pi \kappa \, N[j j]_n$ and perform tedious calculations, but there exists a neater way to find $c$ by evaluating some inner products. We shall exploit the following result (recall that $L_n \ket{0} = 0$ for $n \ge -1$):
 
 $$
-\begin{aligned}
+\begin{align*}
     |L_{-2} \ket{0}|^2
     &= \amp{0}{L_2 L_{-2}}{0}
     \\
@@ -622,7 +622,7 @@ $$
     &= \amp{0}{\cancel{4 L_0} + \frac{c}{12}2(2^2 - 1)}{0}
     \\
     &= \frac{c}{2}
-\end{aligned}
+\end{align*}
 $$
 
 Now we focus on this particular term $L_2 L_{-2}$:
@@ -635,7 +635,7 @@ $$
 It seems difficult to calculate
 
 $$
-\begin{aligned}
+\begin{align*}
     N[jj]_{-2} \ket{0}
     &= \bigg[
         \sum_{k \le -1} j_k j_{-2-k}
@@ -647,28 +647,28 @@ $$
         \sum_{k \le -1} j_k j_{2-k}
         + \sum_{k > -1} j_{2-k} j_k
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 However, because $j$ is a primary field, the requirement that $j(z = 0)$ is well-defined again lead to the following conditions on the Laurent modes (see Part 3)
 
 $$
-\begin{aligned}
+\begin{align*}
     j_n \ket{0} &= 0 \qquad n > -1 \, &(n \ge 0)\\
     \bra{0} j_n &= 0 \qquad n < 1 \, &(n \le 0)
-\end{aligned}
+\end{align*}
 $$
 
 Then lots of terms are eliminated:
 
 $$
-\begin{aligned}
+\begin{align*}
     N[jj]_{-2} \ket{0}
     &= j_{-1} j_{-1} \ket{0}
     \\
     \bra{0} N[jj]_2
     &= \bra{0} (j_2 j_0 + j_1 j_1)
-\end{aligned}
+\end{align*}
 $$
 
 Furthermore
@@ -681,7 +681,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \amp{0}{L_2 L_{-2}}{0}
     &= (2\pi \kappa)^2 \amp{0}{j_1 j_1 j_{-1} j_{-1}}{0}
     \\
@@ -701,7 +701,7 @@ $$
     \\
     &= \frac{1}{4} + \frac{1}{4} = \frac{1}{2}
     \overset{!}{=} \frac{c}{2}
-\end{aligned}
+\end{align*}
 $$
 
 Therefore $c = 1$.

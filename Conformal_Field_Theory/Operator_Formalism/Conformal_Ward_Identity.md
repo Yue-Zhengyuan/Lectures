@@ -35,7 +35,7 @@ We first focus on the first (chiral) term: with the following deformation of con
 we obtain (the original contour must enclose all the $w$'s of each field)
 
 $$
-\begin{aligned}
+\begin{align*}
     &\oint \frac{dz}{2\pi i} \, \epsilon(z) T(z)
     \phi_1 \cdots \phi_N
     \\
@@ -43,13 +43,13 @@ $$
         \oint_{w_i} \frac{dz}{2\pi i} 
         \epsilon(z) T(z) \phi_i
     \right) \cdots \phi_N
-\end{aligned}
+\end{align*}
 $$
 
 When deriving the OPE, we have shown that ($\delta_\epsilon$ simply means the change of $\phi$ due to the chiral $\epsilon(z)$, thus the anti-chiral part is zero)
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta_\epsilon \phi
     &= \oint_w dz \, \epsilon (z) T(z) \phi(w,\bar{w})
     \\
@@ -57,13 +57,13 @@ $$
         \frac{1}{(z-w)^2} h 
         + \frac{1}{z-w} \p_w 
     \right] \phi(w,\bar{w})
-\end{aligned}
+\end{align*}
 $$
 
 Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     &\oint \frac{dz}{2\pi i} \, \epsilon(z) T(z)
     \phi_1 \cdots \phi_N
     \\
@@ -74,7 +74,7 @@ $$
             + \frac{1}{z-w_i} \p_{w_i} 
         \right] \phi_i
     \right) \cdots \phi_N
-\end{aligned}
+\end{align*}
 $$
 
 Finally, we average this over the field configurations, and swap this average with the contour integral, leading to the local equality
@@ -84,7 +84,7 @@ Finally, we average this over the field configurations, and swap this average wi
 **Conformal Ward identity:**
 
 $$
-\begin{aligned}
+\begin{align*}
     &\expect{T(z) \phi_1(w_1,\bar{w}_1) 
     \cdots \phi_N(w_N,\bar{w}_N)}
     \\
@@ -95,7 +95,7 @@ $$
     \right] \expect{
         \phi_1(w_1,\bar{w}_1) \cdots \phi_N(w_N,\bar{w}_N)
     }
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

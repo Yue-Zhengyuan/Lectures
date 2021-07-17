@@ -24,11 +24,11 @@ $$
 where $T$ appears in the action:
 
 $$
-\begin{aligned}
+\begin{align*}
     S &\equiv \int_{-T}^T dx^4 \, \mathcal{L}[\phi(x)]
     \\
     &= \int_{-T}^T dx^0 \int dx^3 \, \mathcal{L}[\phi(x)]
-\end{aligned}
+\end{align*}
 $$
 
 *Proof*: 

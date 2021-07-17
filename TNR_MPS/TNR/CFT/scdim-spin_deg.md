@@ -12,7 +12,7 @@ $$
 Ising model is described by the Ising CFT, which is a minimal model of $m = 3$. Recall that the minimal model central charge and conformal dimension (unitary representation of Virasoro algebra) are given by
 
 $$
-\begin{aligned}
+\begin{align*}
     c &= 1 - \frac{6}{m(m+1)} 
     \qquad \quad \qquad m = 3,4,...
     \\
@@ -24,7 +24,7 @@ $$
         \\
         1 \le q \le m
     \end{array}
-\end{aligned}
+\end{align*}
 $$
     
 Then we obtain a table of all possible $h, \bar{h}$. 
@@ -147,11 +147,11 @@ Finally, let us see a much higher scaling dimension, for which the descendant le
 The compactified boson CFT has conformal dimensions given by
 
 $$
-\begin{aligned}
+\begin{align*}
     h_{m,n} &= \left(\frac{m}{R} + \frac{n R}{2}\right)^2
     \\[1em]
     \bar{h}_{m,n} &= \left(\frac{m}{R} - \frac{n R}{2}\right)^2
-\end{aligned} \qquad
+\end{align*} \qquad
 (m,n \in \mathbb{Z})
 $$
 

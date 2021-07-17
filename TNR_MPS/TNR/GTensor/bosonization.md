@@ -62,7 +62,7 @@ tm_apbc = gt.trace(a,3,1,-1)`   # Anti-PBC
 ```
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathbf{T}(\theta)_{j_0 j_2}^{n_0 n_2}
     &= [\operatorname{tr} \mathbf{A}(\theta)]_{j_0 j_2}^{n_0 n_2}
     \\
@@ -75,7 +75,7 @@ $$
     &= \sum_{n,j} (-1)^{P(1;3;\{n_0,n,n_2,n\})} g_{13}^n
     A_{j_0 j j_2 j}^{n_0 n n_2 n} 
     \theta_0^{n_0} \theta_2^{n_2}
-\end{aligned}
+\end{align*}
 $$
 
 The Grassmann metric $g_{13}$ is
@@ -104,7 +104,7 @@ tm_np = np.trace(anp, 0, 1, 3)
 ```
 
 $$
-\begin{aligned}
+\begin{align*}
     T_{\alpha_0 \alpha_2}^{(b)} 
     &= \sum_{\alpha_1 \alpha_3} \delta_{\alpha_1 \alpha_3} A_{\alpha_0 ... \alpha_3}^{(b)}
     = \sum_{i} A_{\alpha_0 i \alpha_2 i}^{(b)}
@@ -112,7 +112,7 @@ $$
     &\to 
     \sum_{n,j} A_{j_0 j j_2 j}^{n_0 n n_2 n}
     = T_{j_0 j_2}^{n_0 n_2}
-\end{aligned}
+\end{align*}
 $$
 
 Let us list the factor $(-1)^{P(1;3;\{n_0,n,n_2,n\})} g_{13}^n$ of all terms ($n = n_1 = n_3$) in the following table:
@@ -153,7 +153,7 @@ We contract the 1 $\times$ 2 transfer matrix according to the following order:
 ```
 
 $$
-\begin{aligned}
+\begin{align*}
     &\mathbf{T}(\theta)_{j_0 j_2 j_4 j_6}^{n_0 n_2 n_4 n_6}
     \\
     &= \sum_{n,j} (-1)^{P(1,3; \, 7,5; \{n\})} 
@@ -164,20 +164,20 @@ $$
     A_{j_0 j_1 j_2 j_3}^{n_0 n_1 n_2 n_3}
     A_{j_4 j_5 j_6 j_7}^{n_4 n_5 n_6 n_7}
     \theta_0^{n_0} \theta_2^{n_2} \theta_4^{n_4} \theta_6^{n_6} 
-\end{aligned}
+\end{align*}
 $$
 
 The Grassmann metrics are
 
 $$
-\begin{aligned}
+\begin{align*}
     g_{3,5} &= 1
     \\
     g_{1,7} &= \begin{cases}
         -1, & \text{PBC} \\
         +1, & \text{Anti-PBC}
     \end{cases} 
-\end{aligned}
+\end{align*}
 $$
 
 After the transposition $(0,2,4,6) \to (2,6,0,4)$ (the permutation $p = (1,3,0,2)$), each term in the sum acquires an additional factor of 

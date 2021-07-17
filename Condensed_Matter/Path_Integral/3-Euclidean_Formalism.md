@@ -9,14 +9,14 @@ $$
 We define the **Euclidean Lagrangian** as
 
 $$
-\begin{aligned}
+\begin{align*}
     L_E \left(\phi, \frac{dx}{d\tau}, \tau\right)
     &= - \left.
     L \left(\phi, \frac{dx}{dt}, t \right)
     \right|_{t \to -i\tau}
     \\
     &= - L \left(\phi, i \, \frac{dx}{d\tau}, -i\tau \right)
-\end{aligned}
+\end{align*}
 $$
 
 and the **Euclidean action** as

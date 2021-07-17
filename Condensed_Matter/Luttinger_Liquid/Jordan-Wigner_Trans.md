@@ -23,21 +23,21 @@
 The up and down states of a *single* spin-1/2 site can be thought as the occupied and empty states of a *one*-particle (spinless) fermion states:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{(Up)} \quad 
-    |\uparrow\rangle &\longleftrightarrow |1\rangle = c^\dagger |0\rangle
+    \ket{\uparrow} &\longleftrightarrow \ket{1} = c^\dagger \ket{0}
     &&\text{(Occupied)}
     \\
     \text{(Down)} \quad 
-    |\downarrow\rangle &\longleftrightarrow |0\rangle
+    \ket{\downarrow} &\longleftrightarrow \ket{0}
     &&\text{(Empty)}
-\end{aligned}
+\end{align*}
 $$
 
 Under these basis vectors, 
 
 $$
-\begin{aligned}
+\begin{align*}
     S^+ = c^\dagger &= \begin{bmatrix}
         0 & 1 \\
         0 & 0
@@ -51,35 +51,32 @@ $$
     \end{bmatrix}
     = \frac{1}{2}(\sigma^x - i \sigma^y)
     = S^x - iS^y
-\end{aligned}
+\end{align*}
 $$
 
-where $\sigma^a \, (a = x,y,z)$ are Pauli matrices. 
-
-The $S^z$ operator can also be expressed using the fermion operators:
+where $\sigma^a \, (a = x,y,z)$ are Pauli matrices. The $S^z$ operator can also be expressed using the fermion operators:
 
 $$
-\begin{aligned}
+\begin{align*}
     S^z &= \frac{1}{2}\sigma^z = \frac{1}{2} \begin{bmatrix}
         1 & 0 \\
         0 & -1
     \end{bmatrix} 
-    \\[1em]
-    &= S^+ S^- - \tfrac{1}{2} 
+    = S^+ S^- - \frac{1}{2} 
     \\[0.5em]
-    &\to c^\dagger c - \tfrac{1}{2}
-    = n - \tfrac{1}{2}
-\end{aligned}
+    &\to c^\dagger c - \frac{1}{2}
+    = n - \frac{1}{2}
+\end{align*}
 $$
 
 Let us also check that the (anti-)commutation relations: the spin operators satisfy
 
 $$
-\begin{aligned}
+\begin{align*}
     [S^a, S^b] &= i \epsilon^{abc} S^c
     \\
     \{S^a, S^b\} &= \frac{1}{2} \delta^{ab}
-\end{aligned} \qquad (a = x,y,z)
+\end{align*} \qquad (a = x,y,z)
 $$
 
 Then we can also show that the ladder operators satisfy
@@ -93,18 +90,18 @@ $$
 which is the same as the fermion operators:
 
 $$
-\begin{aligned}
+\begin{align*}
     \{c, c^\dagger\} &= 1 \qquad
     \{c, c\} = \{c^\dagger, c^\dagger\} = 0
     \\
     [c^\dagger, c] &= 2 c^\dagger c - \{c, c^\dagger\}
     = 2 \left(n - \tfrac{1}{2} \right)
-\end{aligned}
+\end{align*}
 $$
 
 ## Jordan-Wigner Transformation
 
-Next, let us we try to generalize the above mapping to a 1D spin chain (with multiple sites). Each site of the chain will correspond to an independent fermion. The naive thinking is
+Next, let us we try to generalize the above mapping to a 1D spin chain (with $N$ sites). Each site of the chain will correspond to an independent fermion. The naive mapping is
 
 $$
 S_i^+, S_i^-, S_i^z \longleftrightarrow 
@@ -112,41 +109,39 @@ c_i^\dagger, c_i, n_i - \tfrac{1}{2}
 \qquad i = 0,1,...,N-1
 $$
 
-However, there is one problem: the independent fermion operators *anti-commute*, while the spin operators  of different sites *commute*:
+However, different fermion operators should *anti-commute*, while the spin operators at different sites *commute*:
 
 $$
 [S_i^{(\pm)}, S_j^{(\pm)}] = 0 \qquad
 \{c_i^{(\dagger)}, c_j^{(\dagger)}\} = 0 \qquad (i \ne j)
 $$
 
-The bracket means we are referring to either $c^\dagger$ or $c$, and $S^+$ or $S^-$. 
-
-One way to overcome this difficulty is to introduce a **string operator** to the fermion operators. This leads to the
+The bracket means we are referring to either $c^\dagger$ or $c$, and $S^+$ or $S^-$. One way to overcome this difficulty is to introduce a **string operator** to the fermion operators. This leads to 
 
 <div class="result">
 
-**Jordan-Wigner transformation:**
+**The Jordan-Wigner transformation:**
 
 $$
-\begin{aligned}
-    S_i^z &= n_i - \tfrac{1}{2}
+\begin{align*}
+    S_j^z &= n_j - \tfrac{1}{2}
     \\
-    S_i^+ &= c_i^\dagger e^{i \phi_i}
+    S_j^+ &= c_j^\dagger e^{i \phi_j}
     \\
-    S_i^- &= c_i e^{-i \phi_i}
-\end{aligned} \qquad \text{where} \quad \left\{
-\begin{aligned}
-    S_i^{\pm} &= S_i^x \pm i S_i^y
+    S_j^- &= c_j e^{-i \phi_j}
+\end{align*} \quad \text{with} \ \left\{
+\begin{align*}
+    n_j &= c_j^\dagger c_j
     \\
-    n_i &= c_i^\dagger c_i
-    \\
-    \phi_i &= \pi \textstyle{\sum_{j=0}^{i-1} n_j}
-\end{aligned} \right.
+    \phi_j &= \pi \textstyle{\sum_{l=0}^{j-1} n_l}
+\end{align*} \right.
 $$
+
+Here $F_j \equiv e^{i\phi_j}$ is the required string operator; we also define $\phi_0 = 0$. 
 
 </div><br>
 
-Here $e^{i\phi_i}$ is the required string operator; we also define $\phi_0 = 0$. We see that
+We see that
 
 $$
 \text{spin = fermion$\times$string}
@@ -156,14 +151,22 @@ $$
 <img src="images/spin-fermion.png" width="450px" alt="string operator">
 </center>
 
-The string operator has the following important properties: 
+## Properties of the String
+
+It is useful to derive an alternative expression for the string $F_j$:
 
 $$
-\begin{aligned}
+\begin{align*}
+    
+\end{align*}
+$$
+
+$$
+\begin{align*}
     \{e^{i \phi_j}, c_l^{(\dagger)}\} &= 0 \qquad j > l
     \\
     [e^{i \phi_j}, c_l^{(\dagger)}] &= 0 \qquad j \le l
-\end{aligned}
+\end{align*}
 $$
 
 ----
@@ -185,13 +188,13 @@ $$
 Similarly 
 
 $$
-\begin{aligned}
+\begin{align*}
     \{e^{i\pi n_j}, c_j^\dagger\}
     &= e^{i\pi n_j} c_j^\dagger + c_j^\dagger e^{i\pi n_j}
     \\
     &= e^{i\pi 1} c_j^\dagger + c_j^\dagger e^{i\pi 0}
     = 0
-\end{aligned}
+\end{align*}
 $$
 
 Meanwhile, for $i \ne j$
@@ -223,13 +226,13 @@ $$
 Here $N$ is the number of spin sites. Under the Jordan-Wigner transformation 
 
 $$
-\begin{aligned}
+\begin{align*}
     S_N^{(\pm)} &= c_N^{(\dagger)} e^{\pm i \phi_N}
     = c_N^{(\dagger)} \exp(\pm i \pi n_\text{tot})
     \\
     S_0^{(\pm)} &= c_0^{(\dagger)} e^{\pm i \phi_0}
     = c_0^{(\dagger)}
-\end{aligned}
+\end{align*}
 $$
 
 Here $n_\text{tot} \equiv \sum_i n_i$ is the total number of fermions. Thus, depending on $n_\text{tot}$, the original spin theory is separated into *two sectors* of the fermion theory:
@@ -250,38 +253,26 @@ Here $n_\text{tot} \equiv \sum_i n_i$ is the total number of fermions. Thus, dep
     
     $$
 
-The two boundary condition will alow different values of the lattice momentum $k$ in the fermion theory. The Fourier transform of the $c_i^{(\dagger)}$ operators gives ($a$ is the lattice spacing, and $x_j = ja$):
+The two boundary condition will alow different values of the lattice momentum $k$ in the fermion theory. The Fourier transform of the $c_i^{(\dagger)}$ operators gives ($a$ is the lattice spacing, and $x_j = ja$; using the symmetric convention):
 
 $$
-\begin{aligned}
-    c_k &= \frac{1}{\sqrt{N}} \sum_j 
-    c_j e^{-i k x_j} \\
-    c_k^\dagger &= \frac{1}{\sqrt{N}} \sum_j 
-    c_j^\dagger e^{+i k x_j}
-\end{aligned}
-\, \Longleftrightarrow \,
-\begin{aligned}
+\begin{align*}
     c_j &= \frac{1}{\sqrt{N}} \sum_k 
     c_k e^{+i k x_j} 
     \\
     c_j^\dagger &= \frac{1}{\sqrt{N}} \sum_k
     c_k^\dagger e^{-i k x_j}
-\end{aligned}
+\end{align*}
+\, \Longleftrightarrow \,
+\begin{align*}
+    c_k &= \frac{1}{\sqrt{N}} \sum_j 
+    c_j e^{-i k x_j} \\
+    c_k^\dagger &= \frac{1}{\sqrt{N}} \sum_j 
+    c_j^\dagger e^{+i k x_j}
+\end{align*}
 $$
 
-where $j$ sums over the lattice sites, and $k$ sums over the reciprocal lattice in the 1st Brillouin zone (BZ). This transform is based on the following orthogonal and completeness relations:
-
-$$
-\begin{aligned}
-    \sum_j e^{i (k - k') x_j} 
-    &= N \delta_{k, k'}
-    \\
-    \sum_k e^{i k (x_i - x_j)} 
-    &= N \delta_{i,j}
-\end{aligned}
-$$
-
-Then, for the two boundary conditions:
+where $j$ sums over the lattice sites, and $k$ sums over the reciprocal lattice in the 1st Brillouin zone (BZ). Then, for the two boundary conditions:
 
 - PBC: $c_{N} = c_0$
 
@@ -322,7 +313,7 @@ Then, for the two boundary conditions:
 We now prove that
 
 $$
-\begin{aligned}
+\begin{align*}
     \{c_k, c_k\} &= \{c_k^\dagger, c_k^\dagger\} = 0
     \\
     \{c_{-k}, c_{-k}\} &= \{c_{-k}^\dagger, c_{-k}^\dagger\} = 0
@@ -332,5 +323,5 @@ $$
     \{c_k, c_{k}^\dagger\} &= \{c_{-k}, c_{-k}^\dagger\} = 1
     \\
     \{c_{k}, c_{-k}\} &= \{c_{k}^\dagger, c_{-k}^\dagger\} = 0
-\end{aligned}
+\end{align*}
 $$

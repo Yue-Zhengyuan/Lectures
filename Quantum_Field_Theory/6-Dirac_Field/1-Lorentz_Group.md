@@ -5,7 +5,7 @@
 By definition, the spacetime interval is invariant under the Lorentz transformation $\Lambda_{\mu \nu}$:
 
 $$
-\begin{aligned}
+\begin{align*}
     ds^2 &= \eta_{\mu \nu} dx^\mu dx^\nu
     \\
     &= \eta_{\rho \sigma} dx'^\rho dx'^\sigma
@@ -13,7 +13,7 @@ $$
     &= \eta_{\rho \sigma} 
     ({\Lambda^\rho}_\mu dx^\mu)
     ({\Lambda^\sigma}_\nu dx^\nu)
-\end{aligned}
+\end{align*}
 $$
 
 Here $\eta_{\mu \nu} = \operatorname{diag}(1,-1,-1,-1)$ is the flat spacetime metric, which happens to be equal to its inverse $\eta^{\mu \nu}$. Therefore, the matrix $\Lambda_{\mu \nu}$ should satisfy the constraint
@@ -77,7 +77,7 @@ $$
 Here $L \ll 1$ is the parameters controlling the "amount" of the transformation. Plug it into the constraint above and keep only terms up to $O(L)$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \eta_{\mu \nu}
     &=\eta_{\rho \sigma} {\Lambda^\rho}_\mu {\Lambda^\sigma}_\nu
     \\
@@ -100,7 +100,7 @@ $$
     &= \eta_{\mu \nu}
     - i (L_{\mu \nu} + L_{\nu \mu}) 
     + O(L^2)
-\end{aligned}
+\end{align*}
 $$
 
 This indicates that $L_{\mu \nu}$ is an antisymmetric tensor:
@@ -147,7 +147,7 @@ $$
 linearly independent such basic generators, as can be seen by requiring $\alpha < \beta$. Thus a general infinitesimal Lorentz transformation (or more rigorously, a *proper* Lorentz transformation **connected with identity**) can be represented as
 
 $$
-\begin{aligned}
+\begin{align*}
     \Lambda_{\mu \nu} 
     &= \eta_{\mu \nu} 
     - i \sum_{\alpha < \beta} 
@@ -155,7 +155,7 @@ $$
     \\
     &= \eta_{\mu \nu} 
     - \frac{1}{2} i \omega_{\alpha \beta} L^{\alpha \beta}_{\mu \nu}
-\end{aligned}
+\end{align*}
 $$
 
 where we have shown explicitly the infinitesimal parameters $\omega_{\alpha \beta} \ll 1$. In the last line we release the constraint $\alpha < \beta$ by setting $\omega_{\alpha \beta}$ to be also an antisymmetric matrix, and introducing the factor $1/2$ to cancel the repeated counting. 
@@ -181,7 +181,7 @@ This is called the **Lorentz algebra** $so(1,3)$. Although this algebra is deriv
 *Proof*:
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS}_{\alpha \beta}
     &= L^{\mu \nu}_{\alpha \gamma} L^{\rho \sigma}_{\gamma \beta}
     - L^{\rho \sigma}_{\alpha \gamma} L^{\mu \nu}_{\gamma \beta}
@@ -249,7 +249,7 @@ $$
     \\
     &= \text{RHS}_{\alpha \beta}
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ----
@@ -281,7 +281,7 @@ It turns out that these generators $L^{\alpha \beta}$ are no other than the 3 **
 The 3D rotation matrices around $x, y, z$ axes are, respectively (promoted as $4 \times 4$ matrices)
 
 $$
-\begin{aligned}
+\begin{align*}
     R^x(\alpha) 
     &= \begin{bmatrix}
         1 & 0 & 0 & 0 \\
@@ -323,7 +323,7 @@ $$
         0 & \alpha  & 1  & 0 \\
         0 & 0 & 0 & 1
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 Using $R^a = 1 - i \alpha J^a \, (a = x,y,z)$, we obtain
@@ -358,7 +358,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     J^1 &= \begin{bmatrix}
         0 & 0 & 0 & 0 \\
         0 & 0 & 0 & 0 \\
@@ -379,7 +379,7 @@ $$
         0 & -i & 0 & 0 \\
         0 & 0 & 0 & 0
     \end{bmatrix} = L^{12} = -L^{21}
-\end{aligned}
+\end{align*}
 $$
 
 These three relations can be summarized as
@@ -397,7 +397,7 @@ Here $a,b,c$ are all space indices.
 The 3+1D boost matrices along $x, y, z$ axes are, respectively
 
 $$
-\begin{aligned}
+\begin{align*}
     B^x(\beta) &= \begin{bmatrix}
         \cosh \beta & \sinh \beta & 0 & 0 \\
         \sinh \beta & \cosh \beta & 0 & 0 \\
@@ -436,7 +436,7 @@ $$
         0 & 0 & 1 & 0 \\
         \beta & 0 & 0 & 1
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 The parameter $\beta$ is called the **rapidity** of the boost. Using $B^a = 1 - i\beta K^a \, (a = x,y,z)$, we obtain
@@ -471,7 +471,7 @@ $$
 we see that
 
 $$
-\begin{aligned}
+\begin{align*}
     K^1 &= \begin{bmatrix}
         0 & i & 0 & 0 \\
         -i & 0 & 0 & 0 \\
@@ -492,7 +492,7 @@ $$
         0 & 0 & 0 & 0 \\
         -i & 0 & 0 & 0
     \end{bmatrix} = L^{03} = -L^{30}
-\end{aligned}
+\end{align*}
 $$
 
 which are summarized as
@@ -519,14 +519,14 @@ $$
 A general infinitesimal *proper* Lorentz transformation can be written using $J^a, K^a$ as (summation over $a$ is assumed)
 
 $$
-\begin{aligned}
+\begin{align*}
     \Lambda_{\mu \nu} 
     &= \eta_{\mu \nu} 
     - i \theta^a J^a - i \beta^a K^a
     \\
     &= \eta_{\mu \nu} 
     - i \theta \cdot \mathbf{J} - i \beta \cdot \mathbf{K}
-\end{aligned}
+\end{align*}
 $$
 
 The finite transformation is then obtained by exponentiation:
@@ -540,13 +540,13 @@ $$
 From direct calculation, the commutation relations of the six generators (the Lorentz algebra $so(1,3)$) can be simplified as follows: 
 
 $$
-\begin{aligned}
+\begin{align*}
     [J^a, J^b] &= i \epsilon^{abc} J^c
     \\
     [K^a, K^b] &= -i \epsilon^{abc} K^c
     \\
     [J^a, K^b] &= i \epsilon^{abc} K^c
-\end{aligned} \qquad
+\end{align*} \qquad
 a,b,c = 1,2,3
 $$
 
@@ -560,13 +560,13 @@ $$
 we can separate the Lorentz algebra into two commuting sub-algebras ("independent pieces")
 
 $$
-\begin{aligned}
+\begin{align*}
     [J^a_+, J^b_+] &= i\epsilon^{abc} J^c_+
     \\
     [J^a_-, J^b_-] &= i\epsilon^{abc} J^c_-
     \\
     [J^a_+, J^b_-] &= 0
-\end{aligned} \qquad
+\end{align*} \qquad
 a,b,c = 1,2,3
 $$
 

@@ -29,7 +29,7 @@ $$
 Before turning on the perturbation, the ensemble average of a quantity $A$ is given by (working in the Heisenberg picture)
 
 $$
-\begin{aligned}
+\begin{align*}
     \expect{A}_0 &= \tr \rho_0 A 
     \qquad \left(
         \rho_0 = \frac{1}{Z_0} e^{-\beta H_0}
@@ -37,7 +37,7 @@ $$
     \\
     &= \frac{1}{Z_0} \sum_n e^{-\beta E_n}
     \amp{n}{A}{n}
-\end{aligned}
+\end{align*}
 $$
 
 where $\ket{n}$ are eigenstates of $H_0$ with energies $E_n$. Here we have used $\amp{n}{A_H(t)}{n}$ as $\amp{n}{A}{n}$ when $H = H_0$, where $A$ is in Schrödinger picture. 
@@ -52,7 +52,7 @@ $$
 where $A_H(t)$ is the operator in the full Heisenberg picture. It can be related to the interaction picture $A_I(t)$ by (setting the reference time to $-\infty$, when there is still no perturbation)
 
 $$
-\begin{aligned}
+\begin{align*}
     A_H(t) &= U_I^\dagger(t,-\infty) A_I(t) U_I(t,-\infty)
     \\
     &\simeq \left[
@@ -65,7 +65,7 @@ $$
     \\
     &\simeq A_I(t) - i 
     \int_{-\infty}^t dt' \, [A_I(t), V_I(t')]
-\end{aligned}
+\end{align*}
 $$
 
 Here we keep terms up to first order in $V_I$. But we know that
@@ -90,13 +90,13 @@ Now we can obtain the new expectation value of $A$ at time $t$:
 **Kubo formula:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta\expect{A(t)}
     &= \expect{A(t)} - \expect{A}_0 
     \\
     &= - i \int_{-\infty}^t dt' \, 
     \expect{[A_I(t), V_I(t')]}_0
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -138,7 +138,7 @@ $$
 and the operator $A$ is a function of space coordinate $A(\mathbf{x})$. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta\expect{A(\mathbf{x},t)}
     &= - i \int dt' \, d^3x' \,
     \expect{[A_I(\mathbf{x},t), B_I(\mathbf{x}',t')]}_0
@@ -147,7 +147,7 @@ $$
     &= \int dt' \, d^3x' \,
     \chi^R_{AB}(\mathbf{x}, \mathbf{x}', t - t')
     f(\mathbf{x}',t')
-\end{aligned}
+\end{align*}
 $$
 
 where we defined
@@ -162,7 +162,7 @@ $$
 Now we Fourier transform to find the response of one Fourier component of $A$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta \expect{A(\mathbf{x},\omega)} 
     &= \int dt \, e^{i\omega t} 
     \int dt' \, d^3x' \,
@@ -175,7 +175,7 @@ $$
     e^{i\omega t} e^{-i\omega_1(t - t')} 
     \chi^R_{AB}(\mathbf{x}, \mathbf{x}', \omega_1)
     e^{-i\omega_2 t'} f(\mathbf{x}',\omega_2)
-\end{aligned}
+\end{align*}
 $$
 
 Note that the integration over $t$ and $t'$ gives $(2\pi) \delta(\omega - \omega_1)$ and $(2\pi) \delta(\omega_1 - \omega_2)$, respectively. Thus we finally have
@@ -185,12 +185,12 @@ Note that the integration over $t$ and $t'$ gives $(2\pi) \delta(\omega - \omega
 **Kubo formula in frequency domain:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta \expect{A(\mathbf{x},\omega)} 
     &= \int d^3x' \,
     \chi^R_{AB}(\mathbf{x},\mathbf{x}', \omega)
     f(\mathbf{x}',\omega)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -200,7 +200,7 @@ $$
 For translation invariant systems, the response function $\chi^R_{AB}$ must only depends on $\mathbf{x} - \mathbf{x}'$. Mathematically, by Fourier transform both $A(\mathbf{x})$ and $B(\mathbf{x})$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \chi^R_{AB}(\mathbf{x} - \mathbf{x}', t - t')
     &= - i \int \frac{d^3k}{(2\pi)^3}
     \frac{d^3k'}{(2\pi)^3} \, 
@@ -210,7 +210,7 @@ $$
     \expect{[
         A_I(\mathbf{k},t), B_I(\mathbf{k}',t')
     ]}_0 \theta(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 we see that the only way to achieve translation invariance is requiring
@@ -227,7 +227,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \chi^R_{AB}(\mathbf{x} - \mathbf{x}', t - t')
     &= - i \int \frac{d^3k}{(2\pi)^3}
     e^{i\mathbf{k} \cdot (\mathbf{x} - \mathbf{x}')}
@@ -235,18 +235,18 @@ $$
     \expect{[
         A_I(\mathbf{k},t), B_I(-\mathbf{k},t')
     ]}_0 \theta(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 from which we get the Fourier component of $\chi^R_{AB}$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \chi^R_{AB}(\mathbf{k}, t - t')
     &= - i \expect{[
         A_I(\mathbf{k},t), B_I(-\mathbf{k},t')
     ]}_0 \theta(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 <div class="remark">
@@ -254,7 +254,7 @@ $$
 *Remark*: Usually the operators $B$ is Hermitian. After Fourier transform, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     B^\dagger(\mathbf{x}) 
     &= \int \frac{d^3k}{(2\pi)^3} 
     e^{i\mathbf{k} \cdot \mathbf{x}} 
@@ -269,7 +269,7 @@ $$
     &= - i \expect{[
         A_I(\mathbf{k},t), B_I^\dagger(\mathbf{k},t')
     ]}_0 \theta(t - t')
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -277,7 +277,7 @@ $$
 One can then further transform the time to frequency:
 
 $$
-\begin{aligned}
+\begin{align*}
     \chi^R_{AB}(\mathbf{k}, \omega)
     &= - i \int_{-\infty}^\infty dt \,
     e^{i\omega t} \expect{[
@@ -288,5 +288,5 @@ $$
     e^{i\omega t} \expect{[
         A_I(\mathbf{k},t), B_I(-\mathbf{k},0)
     ]}_0
-\end{aligned}
+\end{align*}
 $$

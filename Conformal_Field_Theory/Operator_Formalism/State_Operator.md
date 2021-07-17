@@ -93,7 +93,7 @@ $$
 To explain the pre-factors, let us take the inner product of the in-state and the out-state:
 
 $$
-\begin{aligned}
+\begin{align*}
     \braket{\phi_\text{out}}{\phi_\text{in}}
     &= \lim_{z,\bar{z},w,\bar{w}\to 0}
     \amp{0}{\phi^\dagger(z,\bar{z}) \phi(w,\bar{w})}{0}
@@ -105,7 +105,7 @@ $$
     &= \lim_{\xi,\bar{\xi} \to \infty}
     \xi^{2h} \bar{\xi}^{2\bar{h}} 
     \amp{0}{\phi(\xi,\bar{\xi}) \phi(0,0)}{0}
-\end{aligned}
+\end{align*}
 $$
 
 Here we defined $\xi = \bar{z}^{-1}, \bar{\xi} = z^{-1}$. On the RHS we encounter the 2-point function, which has the general form
@@ -185,7 +185,7 @@ This notation will be used in Part 4.
 For the out-state, we Laurent expand $\phi^\dagger$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi^\dagger(z, \bar{z})
     &=\bar{z}^{-2h}z^{-2\bar{h}} 
     \sum_{m,n}
@@ -193,7 +193,7 @@ $$
     \\
     &= \sum_{m,n}
     \bar{z}^{m-h} z^{n-\bar{h}} \phi_{m,n}
-\end{aligned}
+\end{align*}
 $$
 
 Meanwhile, direct Hermitian conjugation of the Laurent expansion of the field $\phi(z,\bar{z})$ givens
@@ -219,18 +219,18 @@ $$
 Finally, consider the action of teh Laurent modes on vacuum *bras*. Repeat the definition of out-state here:
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \phi_{\text{out}} |
     &= \lim_{z,\bar{z} \to 0}
     \bar{z}^{-2h}z^{-2\bar{h}} \langle 0 |
     \phi (\bar{z}^{-1}, z^{-1})
-\end{aligned}
+\end{align*}
 $$
 
 Now we change $z^{-1}, \bar{z}^{-1}$ to $\bar{w}, w$. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \phi_{\text{out}} |
     &= \lim_{w, \bar{w} \to \infty}
     w^{2h} \bar{w}^{2\bar{h}} \langle 0 |
@@ -239,7 +239,7 @@ $$
     &= \lim_{w, \bar{w} \to \infty}
     \sum_{m,n} w^{-m+h} \bar{w}^{-n+\bar{h}} 
     \langle 0 | \phi_{m,n}
-\end{aligned}
+\end{align*}
 $$
 
 For well-definition, we need to impose the requirement that

@@ -18,7 +18,7 @@ $$
 We can easily verify that $f_\alpha = 0$. The current ${j^\mu}_\alpha$ corresponding to $\epsilon^\alpha$ is
 
 $$
-\begin{aligned}
+\begin{align*}
     {j^\mu}_\alpha &=
     \left[
         \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} 
@@ -32,7 +32,7 @@ $$
     &= \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} 
         \partial_\alpha \phi
         - \delta_\nu^\alpha \mathcal{L}
-\end{aligned}
+\end{align*}
 $$
 
 The $\alpha$ labels the transformation, and $\mu$ refers to the components of the current $j_\alpha$. This conserved current is called the **(canonical) energy-momentum tensor**, denoted by ${(T_c)^\mu}_\alpha$. Using superscripts only, and rename $\alpha$ to $\nu$, we obtain
@@ -73,7 +73,7 @@ $$
 *Proof*: To show the conservation law, the equation of motion must be used.
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_\mu T^{\mu \nu}
     &= \partial_\mu \left[
         \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \partial^\nu \phi
@@ -90,7 +90,7 @@ $$
     \partial^\nu \phi
     + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \partial_\mu \partial^\nu \phi
     - \partial^\nu \mathcal{L}
-\end{aligned}
+\end{align*}
 $$
 
 Notice that $\mathcal{L} = \mathcal{L}(\phi(x), \partial_\mu \phi(x))$, we can expand $\partial^\nu \mathcal{L}$ to

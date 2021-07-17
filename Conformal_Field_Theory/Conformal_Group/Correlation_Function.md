@@ -114,12 +114,12 @@ Now we check the three special cases of global $\epsilon(z)$:
     We can write the derivative terms as
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &(z_1 \partial_1 + z_2 \partial_2)G(z_1 - z_2) 
         \\
         &= (z_1 - z_2) \partial_x G(x) 
         = x\partial_x G(x)
-    \end{aligned}
+    \end{align*}
     $$
 
     Then we have a differential equation of $G(x)$:
@@ -144,22 +144,22 @@ Now we check the three special cases of global $\epsilon(z)$:
     We simplify the derivative terms to
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (z_1^2 \partial_1 + z_2^2 \partial_2) G(z_1 - z_2)
         &= (z_1^2 - z_2^2) \partial_x G(x)
         \\
         &= (z_1 + z_2) \, x \, \partial_x G(x)
         \\
         &= - (z_1 + z_2) (h_1 + h_2) G(x)
-    \end{aligned}
+    \end{align*}
     $$
 
     Plug in the equation
     
     $$
-    \begin{aligned}
+    \begin{align*}
         (h_1 - h_2) (z_1 - z_2) G(x) = 0
-    \end{aligned}
+    \end{align*}
     $$
 
     Since $z_1, z_2$ are arbitrary, we must have $h_1 = h_2$ for nonzero $G(x)$. $\blacksquare$
@@ -182,7 +182,7 @@ Now we check the three special cases of global $\epsilon(z)$:
 - General
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\expect{\phi_1(z_1, \bar{z}_1) \phi_2(z_2, \bar{z}_2) \phi_3(z_3, \bar{z}_3)}
         \\
         &= C_{123} \times
@@ -198,13 +198,13 @@ Now we check the three special cases of global $\epsilon(z)$:
             \bar{z}_{23}^{\bar{h}_2 + \bar{h}_3 - \bar{h}_1}
             \bar{z}_{13}^{\bar{h}_1 + \bar{h}_3 - \bar{h}_2}
         }
-    \end{aligned}
+    \end{align*}
     \quad \text{with} \quad 
-    \begin{aligned}
+    \begin{align*}
         z_{ij} &\equiv z_i - z_j 
         \\
         \bar{z}_{ij} &\equiv \bar{z}_i - \bar{z}_j
-    \end{aligned}
+    \end{align*}
     $$
 
 </div><br>
@@ -223,17 +223,17 @@ Strictly speaking, $z_{13}$ is not an independent variable because $z_{13} = z_{
 - Apply scaling/rotation invariance
     
     $$
-    \begin{aligned}
+    \begin{align*}
         z & \to z' = \lambda z
         \\
         \phi(z) & \to \phi'(z') = \lambda^{-h} \phi(z)
-    \end{aligned}
+    \end{align*}
     $$
 
     The correlation function transforms as
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \expect{\phi_1(z'_1) \phi_2(z'_2) \phi_3(z'_3)}
         &= \expect{\phi'_1(z'_1) \phi'_2(z'_2) \phi'_3(z'_3)}
         \\ &\Downarrow \\
@@ -243,7 +243,7 @@ Strictly speaking, $z_{13}$ is not an independent variable because $z_{13} = z_{
         \\ &\Downarrow \\
         f(\lambda z_{12}, \lambda z_{23}, \lambda z_{13})
         &= \lambda^{-(h_1+h_2+h_3)} f(z_{12}, z_{23}, z_{13})
-    \end{aligned}
+    \end{align*}
     $$
 
     Thus
@@ -256,33 +256,33 @@ Strictly speaking, $z_{13}$ is not an independent variable because $z_{13} = z_{
 - Apply SCT. We choose a special one
     
     $$
-    \begin{aligned}
+    \begin{align*}
         z &\to z' = -1/z
         \\
         \phi(z) & \to \phi'(z') 
         = z^{2h} \phi(z)
-    \end{aligned}
+    \end{align*}
     $$
 
     The correlation function transforms as
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \expect{\phi_1(z'_1) \phi_2(z'_2) \phi_3(z'_3)}
         &= \expect{\phi'_1(z'_1) \phi'_2(z'_2) \phi'_3(z'_3)}
         \\ &\Downarrow \\
         \expect{\phi_1(-z_1^{-1}) \phi_2(-z_2^{-1}) \phi_3(-z_3^{-1})}
         &= z_1^{2h_1} z_2^{2h_2} z_3^{2h_3}
         \expect{\phi_1(z_1) \phi_2(z_2) \phi_3(z_3)}
-    \end{aligned}
+    \end{align*}
     $$
 
     By direct calculation, one sees that
 
     $$
-    \begin{aligned}
+    \begin{align*}
         a &= h_1 + h_2 - h_3 \\
         b &= h_2 + h_3 - h_1 \\
         c &= h_1 + h_3 - h_2 \qquad \blacksquare
-    \end{aligned}
+    \end{align*}
     $$

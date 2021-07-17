@@ -36,11 +36,11 @@ $$
 Here we sum over the new normal index $j$ only. From the properties of the matrix decomposition, $j$ will have dimension
 
 $$
-\begin{aligned}
+\begin{align*}
     \dim j[0] &= \min{(\dim{I[0]}, \dim{J[0]})}
     \\
     \dim j[1] &= \min{(\dim{I[1]}, \dim{J[1]})}
-\end{aligned}
+\end{align*}
 $$
 
 which also depends on the corresponding Grassmann index $n$. 
@@ -49,12 +49,12 @@ Since $A^{0 1}, A^{1 0}, B^{0 1}, B^{1 0}$ are all zero, this enables us to rewr
 
 $$
 \left.
-\begin{aligned}
+\begin{align*}
     T_{I J}^{0 0} &= A_{I j}^{0 0} B_{j J}^{0 0} +  A_{I j}^{0 1} B_{j J}^{1 0} \\
     T_{I J}^{0 1} &= A_{I j}^{0 0} B_{j J}^{0 1} +  A_{I j}^{0 1} B_{j J}^{1 1} \\
     T_{I J}^{1 0} &= A_{I j}^{1 0} B_{j J}^{0 0} +  A_{I j}^{1 1} B_{j J}^{1 0} \\
     T_{I J}^{1 1} &= A_{I j}^{1 0} B_{j J}^{0 1} +  A_{I j}^{1 1} B_{j J}^{1 1} \\
-\end{aligned}
+\end{align*}
 \right\} \Longrightarrow
 T_{I J}^{M N} = \sum_{n,j} A_{I j}^{M n} B_{j J}^{n N}
 $$
@@ -84,11 +84,11 @@ Here summation over $n,j$ is implied.
     The new index $j$ will have the dimension
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \dim j[0] &= \min{(\dim{I[0]}, \dim{J[1]})}
         \\
         \dim j[1] &= \min{(\dim{I[1]}, \dim{J[0]})}
-    \end{aligned}
+    \end{align*}
     $$
 
 - *Case 2*: A is odd, B is even (used in QR)
@@ -105,11 +105,11 @@ Here summation over $n,j$ is implied.
     The new index $j$ will have the dimension
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \dim j[0] &= \min{(\dim{I[1]}, \dim{J[0]})}
         \\
         \dim j[1] &= \min{(\dim{I[0]}, \dim{J[1]})}
-    \end{aligned}
+    \end{align*}
     $$
 
 In both cases, we can still write the decomposition as (similar to the decomposition of even-parity Grassmann tensors)

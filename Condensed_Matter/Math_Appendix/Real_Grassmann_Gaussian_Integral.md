@@ -25,9 +25,9 @@ For Grassmann numbers, *integration is the same as differentiation.* This leads 
 We first consider Gaussian integral of purely non-conjugate variables ($n$ must be an *even* integer in order that the integral does not vanish), motivated by the **Majorana (real) fermion**
 
 $$
-\begin{aligned}
+\begin{align*}
     Z(0)=\int d\eta_1 ... d\eta_n\exp \left(-\frac{1}{2}\sum_{i,j=1}^n \eta_iA_{i j}\eta_j\right)
-\end{aligned}
+\end{align*}
 $$
 
 Because $n$ is even, it makes no difference if we write the integral measure in reverse order. The matrix $A$ here, however, is assumed to be a real *anti-symmetric* matrix. The additional factor 1/2 is introduced to account for repeated counting:
@@ -156,7 +156,7 @@ The four letters *must* represent different variables (without loss of generalit
 *Proof:*
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle i j k l\rangle 
     &=
     \frac{\partial}{\partial \xi_l}
@@ -199,5 +199,5 @@ $$
     \langle i j\rangle \langle k l\rangle 
     - \langle i k\rangle \langle j l\rangle 
     + \langle i l\rangle \langle j k\rangle
-    \end{aligned}
+    \end{align*}
 $$

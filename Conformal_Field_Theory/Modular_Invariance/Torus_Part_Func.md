@@ -26,7 +26,7 @@ called the **modular parameter**.
 Recall that the *finite* time evolution and spatial translation are done by the operators
 
 $$
-\begin{aligned}
+\begin{align*}
     U(t) &= \exp (-iHt) 
     \xrightarrow{\text{Euclidean}} 
     \exp(-\tau H)
@@ -34,7 +34,7 @@ $$
     T(x) &= \exp(-ipx)
     \xrightarrow{\text{Euclidean}} 
     \exp(+p x)
-\end{aligned}
+\end{align*}
 $$
 
 Therefore, the operator that translates the system parallel to the period $w_2$ over a distance $a$ in *Euclidean* spacetime is
@@ -71,7 +71,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &= \text{Tr}\, \exp 
     \left\{ 2\pi \left[
         - \left( L_0 + \bar{L}_0 - \frac{c}{12} \right) \text{Im} \, \tau
@@ -83,7 +83,7 @@ $$
         \tau (L_0 - c/24)
         - \bar{\tau} (\bar{L}_0 - c/24)
     \right] \right\}
-\end{aligned}
+\end{align*}
 $$
 
 Here $\bar{\tau}$ is the complex conjugate of $\tau$. To simplify writing, we define
@@ -152,7 +152,7 @@ i.e. matrices in $SL(2,\mathbb{Z})$ only differing by a sign change are identifi
 The modular group is generated (proof is not easy) by the following two transformations (called the **Dehn twists**)
 
 $$
-\begin{aligned}
+\begin{align*}
     T &= \begin{pmatrix}
         1 & 1 \\
         0 & 1
@@ -164,7 +164,7 @@ $$
         1 & 1
     \end{pmatrix}: 
     \tau \to \frac{\tau}{\tau + 1}
-\end{aligned}
+\end{align*}
 $$
 
 In practice, we usually use another generator $S$ instead of $U$:

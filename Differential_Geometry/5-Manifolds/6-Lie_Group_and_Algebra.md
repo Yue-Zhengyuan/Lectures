@@ -80,10 +80,10 @@ Every closed subgroup $H$ of a Lie group $G$ is also a Lie group.
     Then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         L_{a*} [X, Y]|_g &= [L_{a*} X|g, L_{a*} Y|g] \\
         &= [X|_{ag}, Y|_{ag}] = [X, Y]|_{ag}
-    \end{aligned}
+    \end{align*}
     $$
 
     Thus $[X, Y] \in \frak{g}$. $\blacksquare$

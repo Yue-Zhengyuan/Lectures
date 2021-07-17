@@ -44,12 +44,12 @@ gives the Fourier component $$
 :
 
 $$
-\begin{aligned}
+\begin{align*}
     \left\langle \psi_{k+q}^0|\phi (x)|\psi_k^0\right\rangle =\langle k+q|\phi (x)|k\rangle =\int d^3x\langle k+q|\phi (x)|x\rangle \langle x|k\rangle
     \\
     =\int d^3x \phi (x)\langle k+q|x\rangle \langle x|k\rangle =\int d^3x \phi (x)e^{-i(k+q)\cdot x+i k\cdot x}\\
     =\int d^3x \phi (x)e^{-i q\cdot x}=\phi (q)
-\end{aligned}
+\end{align*}
 $$
 
 To obtain $$
@@ -78,20 +78,20 @@ $$
 and
 
 $$
-\begin{aligned}
+\begin{align*}
     \psi_k(x)=\psi_k^0(x)+c_q\psi_{k+q}^0(x)+c_{-q}\psi_{k-q}^0(x)\\
     =e^{i k\cdot x}+c_qe^{i (k+q)\cdot x}+c_{-q}e^{i (k-q)\cdot x}
-\end{aligned}
+\end{align*}
 $$
 
 The charge density is again given by the Fermi distribution:
 
 $$
-\begin{aligned}
+\begin{align*}
     \rho (x)=-e\sum_k \frac{2\left| \psi_k(x)\right| {}^2}{\exp \left(\beta \left(\epsilon_k-\mu \right)\right)+1}\\
     \simeq -e\sum_k \frac{2\left| \psi_k(x)\right| {}^2}{\exp \left(\beta \left(\epsilon_k^0-\mu \right)\right)+1}=-e\sum_k f(k)\left| \psi_k(x)\right|
     {}^2
-\end{aligned}
+\end{align*}
 $$
 
 with the Fermi distribution (with spin degeneracy 2)
@@ -111,13 +111,13 @@ O(c)$$
 )
 
 $$
-\begin{aligned}
+\begin{align*}
     \rho ^{\text{ind}}(x)=\rho (x)-\rho_0(x)=-e\sum_k f(k)\left(\left| \psi_k(x)\right| {}^2-1\right)\\
     =-e\sum_k f(k)\left[\left(c_q+c_{-q}^*\right)e^{i q\cdot x}+\left(c_{-q}+c_q^*\right)e^{-i q\cdot x}\right]\\
     =\left[e^2\phi (q)\sum_k f(k)\left(\frac{1}{\epsilon ^0(k)-\epsilon ^0(k+q)}+\frac{ 1}{\epsilon ^0(k)-\epsilon ^0(k-q)}\right)\right]+\text{complex}
     \text{conjugate}\\
     =\rho ^{\text{ind}}(q)+\rho ^{\text{ind}}(-q)
-\end{aligned}
+\end{align*}
 $$
 
 which also has two components ($$

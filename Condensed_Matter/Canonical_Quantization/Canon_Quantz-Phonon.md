@@ -47,14 +47,14 @@ $$
 The Hamiltonian is
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= \sum_{j=1}^N \pi_j \dot{\phi}_j - L
     \\
     &= \sum_{j=1}^N \left[
         \frac{1}{2m} \pi_j^2
         + \frac{1}{2} m \omega^2 (\phi_{j+1} - \phi_j)^2
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 ## Fourier Expansion
@@ -69,13 +69,13 @@ $$
 we can write $\phi_j, \pi_j$ as Fourier series ($a$ is the separation of the atoms when in equilibrium):
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_j &= \frac{1}{\sqrt{N}} 
     \sum_q e^{iq R_j} \phi_q
     \\
     \pi_j &= \frac{1}{\sqrt{N}} 
     \sum_q e^{iq R_j} \pi_q
-\end{aligned} \qquad
+\end{align*} \qquad
 (R_j = j a)
 $$
 
@@ -91,22 +91,22 @@ $$
 But we only need $q \in [-\pi/a, \pi/a]$ (in the first Brillouin zone) in the Fourier series. In addition, the reality condition on $\phi_j$ and $\pi_j$ require
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_j &= \phi_j^\dagger \\
     \pi_j &= \pi_j^\dagger
-\end{aligned} \quad \Rightarrow \quad
-\begin{aligned}
+\end{align*} \quad \Rightarrow \quad
+\begin{align*}
     \phi_q^\dagger &= \phi_{-q} \\
     \pi_q^\dagger &= \pi_{-q}
-\end{aligned}
+\end{align*}
 $$
 
 The nonzero commutation rules for the Fourier modes are
 
 $$
-\begin{aligned}
+\begin{align*}
     [\phi_q, \pi_{-q}]
-\end{aligned}
+\end{align*}
 $$
 
 Using the orthogonality condition
@@ -118,19 +118,19 @@ $$
 we obtain the inverse transformation
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_q &= \frac{1}{\sqrt{N}} 
     \sum_j e^{-iq R_j} \phi_j
     \\
     \pi_q &= \frac{1}{\sqrt{N}} 
     \sum_j e^{-iq R_j} \pi_j
-\end{aligned}
+\end{align*}
 $$
 
 and the nonzero commutation rules 
 
 $$
-\begin{aligned}
+\begin{align*}
     [\phi_q, \pi_{q'}]
     &= \frac{1}{N} \sum_{j,j'} 
     e^{-iq R_j} e^{-iq' R_{j'}} [\phi_j, \pi_{j'}]
@@ -138,7 +138,7 @@ $$
     &= \frac{i}{N} \sum_j e^{-iq R_j} e^{-iq' R_j}
     \\
     &= i \delta_{q+q',0}
-\end{aligned}
+\end{align*}
 $$
 
 The Hamiltonian can be expressed in terms of the Fourier modes:
@@ -146,7 +146,7 @@ The Hamiltonian can be expressed in terms of the Fourier modes:
 - The kinetic energy term
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \sum_{j=1}^N \pi_j^2
         &= \frac{1}{N} \sum_{j=1}^N 
         \sum_{q,q'} e^{iq R_j} \pi_q
@@ -155,13 +155,13 @@ The Hamiltonian can be expressed in terms of the Fourier modes:
         &= \sum_{q,q'} \pi_q \pi_{q'} \delta_{q+q',0}
         \\
         &= \sum_q \pi_q \pi_{-q}
-    \end{aligned}
+    \end{align*}
     $$
 
 - The potential energy term
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\sum_{j=1}^N (\phi_{j+1} - \phi_j)^2
         \\
         &= \frac{1}{N} \sum_{j=1}^N 
@@ -176,7 +176,7 @@ The Hamiltonian can be expressed in terms of the Fourier modes:
         \phi_q \phi_{-q}
         \\
         &= \sum_q 4 \sin^2(qa/2) \phi_q \phi_{-q}
-    \end{aligned}
+    \end{align*}
     $$
 
 Therefore, 
@@ -204,7 +204,7 @@ $$
 We then introduce the creation and annihilation operators for the $q \ne 0$ modes:
 
 $$
-\begin{aligned}
+\begin{align*}
     a_q &= \sqrt{\frac{m \omega_q}{2}}
     \left( \phi_q + \frac{i}{m\omega_q} \pi_q \right)
     \\
@@ -212,13 +212,13 @@ $$
     \left( \phi_q^\dagger - \frac{i}{m\omega_q} \pi_q^\dagger \right)
     = \sqrt{\frac{m \omega_q}{2}}
     \left( \phi_{-q} - \frac{i}{m\omega_q} \pi_{-q} \right)
-\end{aligned}
+\end{align*}
 $$
 
 The nonzero commutation rules are
 
 $$
-\begin{aligned}
+\begin{align*}
     [a_q, a_{q'}^\dagger]
     &= \frac{m \sqrt{\omega_q \omega_{q'}}}{2}
     \left[
@@ -239,23 +239,23 @@ $$
     \right)
     \\
     &= \delta_{q,q'}
-\end{aligned}
+\end{align*}
 $$
 
 We can express $H$ in terms of $a_q, a_{q'}$: first, 
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi_q &= \frac{1}{\sqrt{2m\omega_q}} (a_q + a_{-q}^\dagger)
     \\
     \pi_q &= -i \sqrt{\frac{m \omega_q}{2}}(a_q - a_{-q}^\dagger)
-\end{aligned}
+\end{align*}
 $$
 
 It follows that (no commutation rules are used here)
 
 $$
-\begin{aligned}
+\begin{align*}
     \pi_q \pi_{-q}
     &= \frac{m \omega_q}{2} (
         a_{-q}^\dagger a_{-q}
@@ -271,13 +271,13 @@ $$
         + a_{-q}^\dagger a_q^\dagger
         + a_q a_{-q}
     )
-\end{aligned}
+\end{align*}
 $$
 
 Then the Hamiltonian can be written as
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= \frac{1}{2m} \pi_0^2 + \sum_{q \ne 0} 
     \frac{\omega_q}{4} \bigg[
         (
@@ -311,7 +311,7 @@ $$
         a_q^\dagger a_q
         + \frac{1}{2}
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 ## To the Heisenberg Picture
@@ -329,22 +329,22 @@ $$
 - Annihilation/Creation $a_q, a_q^\dagger$
     
     $$
-    \begin{aligned}
+    \begin{align*}
         \frac{\partial a_q}{\partial t}
         &= i \omega_q [a_q^\dagger a_q, a_q]
         \\
         &= i \omega_q [a_q^\dagger, a_q] a_q
         \\
         &= -i \omega_q a_q
-    \end{aligned} \qquad
-    \begin{aligned}
+    \end{align*} \qquad
+    \begin{align*}
         \frac{\partial a_q^\dagger}{\partial t}
         &= i \omega_q [a_q^\dagger a_q, a_q^\dagger]
         \\
         &= i \omega_q a_q^\dagger [a_q, a_q^\dagger]
         \\
         &= i \omega_q a_q^\dagger
-    \end{aligned}
+    \end{align*}
     $$
 
     Therefore

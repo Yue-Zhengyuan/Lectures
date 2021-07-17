@@ -64,13 +64,13 @@ $$
 *Proof*: This property follows from the requirement that the state norm is unchanged by time evolution.
 
 $$
-\begin{aligned}
+\begin{align*}
     \braket{\psi_S(s)}{\psi_S(s)} 
     &= \braket{\psi_S(t)}{\psi_S(t)}
     \\
     &= \amp{\psi_S(s)}{U^\dagger(t,s) U(t,s)}{\psi_S(s)}
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 <div class="result">
@@ -97,10 +97,10 @@ $$
 Then the two arguments of $U$ can take any value independently. We can verify that this definition is quite natural: for $t_2 > t_1 > t_0$
 
 $$
-\begin{aligned}
+\begin{align*}
     U(t_1, t_0) &= U^\dagger(t_2, t_1) U(t_2, t_0) \\
     &= U(t_1, t_2) U(t_2, t_0)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -118,7 +118,7 @@ $$
 *Proof*: From the Schrödinger equation
 
 $$
-\begin{aligned}
+\begin{align*}
     \delta \ket{\psi_S(t)} 
     &= - i \delta t \, H(t) \ket{\psi_S(t)} 
     \\
@@ -126,7 +126,7 @@ $$
     - \ket{\psi_S(t)} 
     \\
     &= (U(t+\delta t, t) - 1) \ket{\psi_S(t)} 
-\end{aligned}
+\end{align*}
 $$
 
 Due to the arbitrariness of $\ket{\psi_S(t)}$, we get the desired result. $\blacksquare$
@@ -144,7 +144,7 @@ $$
 *Proof*: This follows from the Schrödinger equation for the states due to the arbitrariness of the state. But nevertheless let us verify it again by definition:
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_1 U(t, s)
     &= \frac{1}{\delta t} (U(t+\delta t,s) - U(t,s))
     \\
@@ -155,7 +155,7 @@ $$
     &\simeq \frac{1}{\delta t} [-i H(t) \delta t] \, U(t,s)
     \\
     &= -i H(t) U(t,s) \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 <div class="result">
@@ -171,7 +171,7 @@ $$
 *Proof*: We calculate by definition
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_2 U(t,s) 
     &= \frac{1}{\delta s} (U(t, s+\delta s) - U(t,s))
     \\
@@ -183,17 +183,17 @@ $$
     [i H(s) \delta s]
     \\
     &\simeq i U(t,s) H(s)
-\end{aligned}
+\end{align*}
 $$
 
 Alternatively, we can also directly take the Hermitian conjugate (adjoint). But notice that $U^\dagger(t,s) = U(s,t)$, so the original $\partial_1$ becomes $\partial_2$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \partial_1 U^\dagger(t,s) &= i U^\dagger(t,s) H(t)
     \\ &\Downarrow \\
     \partial_2 U(s,t) &= i U(s,t) H(t)
-\end{aligned}
+\end{align*}
 $$
 
 Renaming $t,s$ to $s,t$ gives the equation to be proved. $\blacksquare$
@@ -217,7 +217,7 @@ $$
 An approximate solution can be obtained iteratively:
 
 $$
-\begin{aligned}
+\begin{align*}
     U(t,t_0) &= 1 - i 
     \int_{t_0}^{t} dt_1 \, H(t_1) 
     \\ &\qquad \times\left[
@@ -238,7 +238,7 @@ $$
     \int_{t_0}^{t_{n-1}} dt_n 
     \, H(t_1) \cdots H(t_n)
     \\ &\quad + \cdots 
-\end{aligned}
+\end{align*}
 $$
 
 This expansion is called the **Dyson series**. 
@@ -252,14 +252,14 @@ To put the Dyson series into a nicer form, we introduce the
 **Time-ordering operator $T$:**
 
 $$
-\begin{aligned}
+\begin{align*}
     T[H(t_1) \cdots H(t_n)]
     &\equiv \sum_{\sigma \in S_n}
     H(t_{\sigma(1)}) \cdots H(t_{\sigma(n)}) 
     \\ &\qquad \times
     \theta(t_{\sigma(1)} - t_{\sigma(2)}) \cdots
     \theta(t_{\sigma(n-1)} - t_{\sigma(n)})
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -267,7 +267,7 @@ $$
 Only one term with $t_{\sigma(1)} > \cdots > t_{\sigma(n)}$ will survive. For example, when $n = 2$
 
 $$
-\begin{aligned}
+\begin{align*}
     &T[H(t_1) H(t_2)]
     \\
     &= H(t_1) H(t_2) \theta(t_1 - t_2)
@@ -277,7 +277,7 @@ $$
         H(t_1) H(t_2), & t_1 > t_2 \\
         H(t_2) H(t_1), & t_2 > t_1
     \end{cases}
-\end{aligned}
+\end{align*}
 $$
 
 <div class="remark">
@@ -287,10 +287,10 @@ $$
 $$
 T[A_1 A_2 \cdots]
 = (\pm 1)^\sigma T[A_{\sigma(1)} A_{\sigma(2)} \cdots]
-\qquad \begin{aligned}
+\qquad \begin{align*}
     \text{boson} &: + \\
     \text{fermion} &: -
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -298,7 +298,7 @@ $$
 For the $n$th-order ($n = 2,3,...$) term in the Dyson series (call it $D_n$), we can make the integration range of $t_1,...,t_n$ all equal to $[t_0,t]$ by introducing step functions:
 
 $$
-\begin{aligned}
+\begin{align*}
     D_n &\equiv
     \int_{t_0}^t dt_1 \int_{t_0}^{t_1} dt_2 \cdots
     \int_{t_0}^{t_{n-1}} dt_n 
@@ -309,13 +309,13 @@ $$
     \\ &\qquad
     \int_{t_0}^t dt_n \, \theta(t_{n-1} - t_n)
     \, H(t_1) \cdots H(t_n)
-\end{aligned}
+\end{align*}
 $$
 
 Then we can permute the names of the integration variables using permutations $\sigma \in S_n$, and sum all of them with equal weight $1/n!$ (since there are $n!$ permutations):
 
 $$
-\begin{aligned}
+\begin{align*}
     D_n 
     &= \frac{1}{n!} \sum_{\sigma \in S_n}
     \int_{t_0}^t dt_{\sigma(1)}  
@@ -324,7 +324,7 @@ $$
     \theta(t_{\sigma(1)} - t_{\sigma(2)}) \cdots
     \theta(t_{\sigma(n-1)} - t_{\sigma(n)})
     \, H(t_{\sigma(1)}) \cdots H(t_{\sigma(n)})
-\end{aligned}
+\end{align*}
 $$
 
 But we recognize the integrand as the time-ordered product of all the $H$'s. Therefore
@@ -341,7 +341,7 @@ We can then write
 **The Dyson series as a time-ordered exponential:**
 
 $$
-\begin{aligned}
+\begin{align*}
     U(t,t_0) &= T{\left[ \exp{
         \left(
             -i \int_{t_0}^t dt' \, H(t')
@@ -352,7 +352,7 @@ $$
     \int_{t_0}^t dt_1 \cdots 
     \int_{t_0}^t dt_n \,
     T[H(t_1) \cdots H(t_n)]
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -372,11 +372,11 @@ $$
 There is another description of time evolution which gives the same result for the expectation value of any physical observables $O$, which is 
 
 $$
-\begin{aligned}
+\begin{align*}
     \expect{O}(t) &= \amp{\psi_S(t)}{O_S}{\psi_S(t)}
     \\
     &= \amp{\psi_S(t_0)}{U^\dagger(t,t_0) O_S U(t,t_0)}{\psi_S(t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 The reference time is usually chosen to be the infinite past $t_0 = -\infty$ or $t = 0$. In the **Heisenberg picture**, the time evolution is fully absorbed into the observable operators by defining
@@ -386,11 +386,11 @@ The reference time is usually chosen to be the infinite past $t_0 = -\infty$ or 
 **Heisenberg picture:**
 
 $$
-\begin{aligned}
+\begin{align*}
     O_H(t) &= U^\dagger(t,t_0) O_S U(t,t_0) 
     \\[0.5em]
     \ket{\psi_H} &= \ket{\psi_S(t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -412,7 +412,7 @@ $$
 Let us write down the differential equation determining the time evolution of $O_H$. By direct calculation (using the Schrödinger equation for $U(t,t_0)$)
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{\partial O_H}{\partial t}
     &= \frac{\partial U^\dagger}{\partial t} O_S U
     + U^\dagger O_S \frac{\partial U}{\partial t}
@@ -424,7 +424,7 @@ $$
         - U^\dagger O_S (U U^\dagger) H U
     ) \\
     &= -i [O_H, U^\dagger H U]
-\end{aligned}
+\end{align*}
 $$
 
 When the Hamiltonian $H$ is independent of time, it must commute with $U(t,t_0) = e^{-iH(t-t_0)}$. Then we have
@@ -460,11 +460,11 @@ The first part $H_0$ is time-*independent*, usually the no-interaction (free) pa
 **Interaction picture:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{\psi_I(t)} &= e^{iH_0 (t-t_0)} \ket{\psi_S(t)}
     \\[0.5em]
     O_I(t) &= e^{iH_0(t-t_0)} O_S e^{-iH_0(t-t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -484,13 +484,13 @@ $$
 Let us now determine the time evolution of $\ket{\psi_I}$. We rewrite the definition of $\ket{\psi_I}$ as
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{\psi_I(t)} &= e^{iH_0 (t-t_0)} \ket{\psi_S(t)}
     \\
     &= e^{iH_0 (t-t_0)} U(t, t_0) \ket{\psi_S(t_0)}
     \\
     &= e^{iH_0 (t-t_0)} U(t, t_0) \ket{\psi_I(t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 Then we can introduce, similarly to the $U$ in Schrödinger picture, 
@@ -500,11 +500,11 @@ Then we can introduce, similarly to the $U$ in Schrödinger picture,
 **The evolution operator $U_I$ in interaction picture:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{\psi_I(t)} &= U_I(t,t_0) \ket{\psi_I(t_0)} 
     \\[0.5em]
     U_I(t,t_0) &= e^{iH_0 (t-t_0)} U(t, t_0)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -526,7 +526,7 @@ $$
 To determine the differential equation governing $U_I$, we calculate
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{dU_I}{\partial t}
     &= \frac{\partial e^{iH_0 (t-t_0)}}{\partial t} U
     + e^{iH_0 (t-t_0)} \frac{\partial U}{\partial t}
@@ -543,7 +543,7 @@ $$
     }_{V_I(t)} \underbrace{
         e^{iH_0 (t-t_0)} U
     }_{U_I(t,t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 We get a Schrödinger-like equation, with $H$ replaced by $V_I$ for both the evolution operator and therefore the state:
@@ -553,7 +553,7 @@ We get a Schrödinger-like equation, with $H$ replaced by $V_I$ for both the evo
 **Schrödinger equation in interaction picture:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{Evol. operator:} &\quad &
     \frac{\partial}{\partial t}  U_I(t,t_0) 
     &= -i V_I(t) U_I(t,t_0)
@@ -561,7 +561,7 @@ $$
     \text{State:} &\quad &
     \frac{\partial}{\partial t} \ket{\psi_I(t)}
     &= -i V_I(t) \ket{\psi_I(t)}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -579,11 +579,11 @@ $$
 As a special case, when $H$ is independent of time, and $[H_0, V] = 0$, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     U_I(t,t_0) &= e^{iH_0 (t-t_0)} e^{-iH(t-t_0)}
     \\
     &= e^{-iV (t-t_0)}
-\end{aligned}
+\end{align*}
 $$
 
 which is time evolution solely by $V_I = V$. 

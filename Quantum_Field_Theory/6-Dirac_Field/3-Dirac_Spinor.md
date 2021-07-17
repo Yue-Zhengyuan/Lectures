@@ -45,10 +45,10 @@ $$
     \bar{\sigma}^\mu & 0
 \end{bmatrix} 
 \quad \text{where} \quad
-\begin{aligned}
+\begin{align*}
     \sigma^\mu &= (1, \boldsymbol{\sigma}) \\
     \bar{\sigma}^\mu &= (1, -\boldsymbol{\sigma})
-\end{aligned}
+\end{align*}
 $$
 
 Each entry is a $2 \times 2$ matrix. 
@@ -58,7 +58,7 @@ Each entry is a $2 \times 2$ matrix.
 *Remark*: Another choice, which we shall not use here, is the **Majorana representation**
 
 $$
-\begin{aligned}
+\begin{align*}
     \gamma^0 &= \begin{bmatrix}
         0 & \sigma^2 \\ \sigma^2 & 0
     \end{bmatrix} &\qquad
@@ -72,7 +72,7 @@ $$
     \gamma^3 &= \begin{bmatrix}
         -i\sigma^1 & 0 \\ 0 & -i\sigma^1
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 It is *unitarily equivalent* to the Weyl representation. 
@@ -84,7 +84,7 @@ In the Weyl representation:
 - The rotation and boost generators are
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\text{Rotation:} &\quad
         S^{ab} &= \frac{i}{4}[\gamma^a, \gamma^b]
         = \frac{1}{2} \epsilon^{abc} \begin{bmatrix}
@@ -96,13 +96,13 @@ In the Weyl representation:
         = \frac{i}{2} \begin{bmatrix}
             -\sigma^a & 0 \\ 0 & \sigma^a
         \end{bmatrix}
-    \end{aligned}
+    \end{align*}
     $$
 
     This block-diagonal structure is quite expected: we are simply packing $\psi_L, \psi_R$ together, and we know that the rotation and the boost generators for the two Weyl spinors are exactly
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \psi_L: &\quad
         S^{ab} = \epsilon^{abc} J^c 
         = \frac{1}{2} \epsilon^{abc} \sigma^c , \quad
@@ -112,7 +112,7 @@ In the Weyl representation:
         S^{ab} = \epsilon^{abc} J^c 
         = \frac{1}{2} \epsilon^{abc} \sigma^c , \quad
         K^a = \frac{i}{2} \sigma^a
-    \end{aligned}
+    \end{align*}
     $$
 
     <div class="remark">
@@ -145,7 +145,7 @@ In the Weyl representation:
 The infinitesimal transformations matrices in the 4-vector representation and the Weyl representation are
 
 $$
-\begin{aligned}
+\begin{align*}
     &\text{Vector:} &\quad
     {\Lambda^\mu}_\nu 
     &= \big(
@@ -157,7 +157,7 @@ $$
     &= \big(
         1 - \frac{i}{2} \omega_{\alpha \beta} S^{\alpha \beta}
     {\big)^\mu}_\nu
-\end{aligned}
+\end{align*}
 $$
 
 It can be verified that (the indices corresponding to matrix multiplication is omitted)

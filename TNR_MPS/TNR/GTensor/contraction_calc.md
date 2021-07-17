@@ -24,7 +24,7 @@ Now we consider the contraction between two Grassmann tensors $\mathbf{A}(\theta
 Let $A$ have $r$ axes, and $B$ have $s$ axes. The contraction of the $a$th axis of $A$ and the $b$th axis of $B$ is defined as
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
     \\
     &\equiv \sum_{m_a,n_b} \sum_{i_a,j_b} 
@@ -37,7 +37,7 @@ $$
     B_{j_1 ... j_s}^{n_1 ... n_s} 
     \theta_1^{m_1} ... \theta_r^{m_r} 
     \eta_1^{n_1} ... \eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 The contracted axes should have the same dimension, i.e.
@@ -53,7 +53,7 @@ The factor $g$ is the Grassmann metric. In analogy, the Kronecker delta $\delta_
 Now we bring $\theta_a, \eta_b$ to the next of $g_{\theta_a \eta_b}$ for integration: 
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
     \\
     &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(p(a,b) | m,n)}
@@ -64,7 +64,7 @@ $$
     B_{j_1 ... j_s}^{n_1 ... n_s} 
     \theta_1^{m_1} ... \cancel{\theta_a^{m_a}} ...\theta_r^{m_r} 
     \eta_1^{n_1} ... \cancel{\eta_b^{n_b}} ...\eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 <div class="remark">
@@ -92,46 +92,46 @@ $$
 - When $m = n = 0$
 
 $$
-\begin{aligned}
+\begin{align*}
     \int g_{\theta \eta} 
     &\equiv \int d\theta d\eta e^{-\theta \eta}
     = \int d\theta d\eta (1 - \theta \eta)
     \\
     &= \int d\theta d\eta (-\theta \eta)
     = \int d\theta d\eta (\eta \theta) = 1
-\end{aligned}
+\end{align*}
 $$
 
 - When $m = n = 1$
 
 $$
-\begin{aligned}
+\begin{align*}
     \int g_{\theta \eta} \theta \eta 
     &\equiv \int d\theta d\eta e^{-\theta \eta} \theta \eta 
     = \int d\theta d\eta (1 - \theta \eta) \theta \eta
     \\
     &= \int d\theta d\eta (\theta \eta)
     = \int d\theta d\eta (-\eta \theta) = -1
-\end{aligned}
+\end{align*}
 $$
 
 - When $m = 0, n = 1$ (proof is similar when $m = 1, n = 0$)
 
 $$
-\begin{aligned}
+\begin{align*}
     \int g_{\theta \eta} \eta 
     &\equiv \int d\theta d\eta e^{-\theta \eta} \eta 
     = \int d\theta d\eta (1 - \theta \eta) \eta
     \\
     &= \int d\theta d\eta (\eta)
     = \int d\theta (1) = 0  \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 Therefore, we can finally write the contraction result as
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
     \\
     &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(p(a,b) |m,n)} (-1)^{m_a}
@@ -141,7 +141,7 @@ $$
     B_{j_1 ... j_s}^{n_1 ... n_s} 
     \theta_1^{m_1} ... \cancel{\theta_a^{m_a}} ...\theta_r^{m_r} 
     \eta_1^{n_1} ... \cancel{\eta_b^{n_b}} ...\eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 ### Contracting with $g_{\eta \theta}$
@@ -158,7 +158,7 @@ without the $(-1)^m$ factor. We can then summarize the two cases as
 <div class="result">
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... i_r, j_1 ... \cancel{j_b} ... j_s}^{m_1 ... \cancel{m_a} ... m_r, n_1 ... \cancel{n_b} ... n_s} 
     \\[0.5em]
     &= \sum_{m_a,n_b} \sum_{i_a,j_b} (-1)^{P(a,b; m,n)} g_{ab}^{m_a}
@@ -175,7 +175,7 @@ $$
         -1, &\text{using } g_{\theta_a \eta_b}\\
         +1, &\text{using } g_{\eta_b \theta_a}
     \end{cases}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -185,14 +185,14 @@ $$
 The Kronecker delta in the formula of contraction enforces that $m_a = n_b$. Then we notice that $P(p(r,1) | m,n) = 1$ always holds when $m_r = n_1$, which makes it convenient to calculate the special case when the last axis of $A$ is contracted with the first axis of $B$:
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... i_{r-1}, j_2 ... j_s}^{m_1 ... m_{r-1}, n_2 ... n_s} \\
     &= \sum_{m,i} g_{r1}^{m}
     A_{i_1 ... i_{r-1}, i}^{m_1 ... m_{r-1}, m} 
     B_{i, j_2 ... j_s}^{m, n_2 ... n_s} 
     \theta_1^{m_1} ... \theta_{r-1}^{m_{r-1}} 
     \eta_2^{n_2} ... \eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 Remark: the case $g_{r1}=1$ reduces to *ordinary tensor contraction*, which makes it easy to generalize *tensor decompositions* to Grassmann tensors. 
@@ -222,7 +222,7 @@ The lines corresponding to free axes *does not carry arrows* (arrows on these ax
 The generalization to contraction of multiple pairs of axes is straightforward. The contraction the $a,c,...$th axes of $A$ with the $b,d,...$th axes of $B$ is defined as
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
     \\[1em]
     & \equiv
@@ -246,7 +246,7 @@ $$
     \\ &\quad \times
     \theta_1^{m_1} \cdots \cancel{\theta_a^{m_a}} \cdots \cancel{\theta_c^{m_c}} \cdots \theta_r^{m_r} 
     \eta_1^{n_1} \cdots \cancel{\eta_b^{n_b}} \cdots \cancel{\eta_d^{m_d}} \cdots \eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 The result is then
@@ -254,7 +254,7 @@ The result is then
 <div class="result">
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
     \\[0.5em]
     &= \sum_{m_a,n_b} \sum_{m_c,n_d} \cdots \sum_{i_a,j_b} \sum_{i_c,j_d} \cdots
@@ -268,7 +268,7 @@ $$
     \\ &\quad \times
     \theta_1^{m_1} \cdots \cancel{\theta_a^{m_a}} \cdots \cancel{\theta_c^{m_c}} \cdots \theta_r^{m_r} 
     \eta_1^{n_1} \cdots \cancel{\eta_b^{n_b}} \cdots \cancel{\eta_d^{m_d}} \cdots \eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -289,13 +289,13 @@ Since the Grassmann metric only contains the product *two* Grassmann variables, 
 Let the parity of $A, B$ be $P(A), P(B)$ respectively, then
 
 $$
-\begin{aligned}
+\begin{align*}
     &P(A B) 
     \equiv \bigg[ 
         \sum_{k \ne a,c,...} m_k + \sum_{l \ne b,d,...} n_l
     \bigg] \pmod{2} \\
     &= [P(A) + P(B) - (m_a+n_b) - (m_c+n_d) - \cdots] \pmod{2}
-\end{aligned}
+\end{align*}
 $$
 
 But in the formula of contraction, the Kronecker deltas enforce $m_a=n_b, m_c=n_d$, etc. Thus $m_a+n_b, m_c+n_d, \cdots = 0, 2$, and
@@ -322,7 +322,7 @@ always holds. Thus we can:
 and then apply the result
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... i_{r-q}, j_{q+1} ... j_s}^{m_1 ... m_{r-q}, n_{q+1} ... n_s}
     \\
     &= \sum_{m_r,n_1} \cdots \sum_{m_{r-q+1},n_q} 
@@ -344,7 +344,7 @@ $$
     B_{j_1 ... j_q, j_{q+1} ... j_s}^{n_1 ... n_q, n_{q+1} ... n_s} 
     \theta_1^{m_1} ... \theta_{r-q}^{m_{r-q}} 
     \eta_{q+1}^{n_{q+1}} ...\eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 ### Merge Axes to be Contracted
@@ -378,7 +378,7 @@ If the Grassmann metrics are not the same for all pairs of axes to be contracted
 In the contraction
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
     \\
     &= \sum_{m_a,n_b} \cdots \sum_{i_a,j_b} \cdots
@@ -392,7 +392,7 @@ $$
     \\ &\quad \times
     \theta_1^{m_1} \cdots \cancel{\theta_a^{m_a}} \cdots \cancel{\theta_c^{m_c}} \cdots \theta_r^{m_r} 
     \eta_1^{n_1} \cdots \cancel{\eta_b^{n_b}} \cdots \cancel{\eta_d^{m_d}} \cdots \eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 if we want to change $g_{ab}$ to $-g_{ab}$, we can cancel the extra minus signs by modifying (say) $A$ to (the string of Grassmann variables is unchanged)
@@ -406,7 +406,7 @@ $$
 then
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A} \mathbf{B}]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
     \\
     &= \sum_{m_a,n_b} \cdots \sum_{i_a,j_b} \cdots
@@ -420,7 +420,7 @@ $$
     \\ &\quad \times
     \theta_1^{m_1} \cdots \cancel{\theta_a^{m_a}} \cdots \cancel{\theta_c^{m_c}} \cdots \theta_r^{m_r} 
     \eta_1^{n_1} \cdots \cancel{\eta_b^{n_b}} \cdots \cancel{\eta_d^{m_d}} \cdots \eta_s^{n_s}
-\end{aligned}
+\end{align*}
 $$
 
 In general, if we want to change the Grassmann metric corresponding to the contraction involving axes $a,b,...$ of a tensor $\mathbf{T}$, we modify it to

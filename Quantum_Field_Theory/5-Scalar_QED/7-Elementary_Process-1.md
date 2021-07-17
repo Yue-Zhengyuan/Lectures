@@ -48,7 +48,7 @@ In scalar QED, Compton scattering involves the following 3 diagrams at the lowes
     </center>
 
     $$
-    \begin{aligned}
+    \begin{align*}
         i \mathcal{M}_s 
         &= \color{green} \epsilon_\mu(k) \cdot
         ieQ[p + (p+k)]^\mu 
@@ -58,7 +58,7 @@ In scalar QED, Compton scattering involves the following 3 diagrams at the lowes
         \\ & \quad \times
         \color{red}
         ieQ [(p'+k') + p']^\nu \epsilon'^*_\nu(k')
-    \end{aligned}
+    \end{align*}
     $$
 
     We can simplify a little bit using the on-shell conditions of the incoming $\phi, \gamma$:
@@ -71,23 +71,23 @@ In scalar QED, Compton scattering involves the following 3 diagrams at the lowes
     Then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (p+k)^2 - m^2 
         &= p^2 + k^2 + 2p\cdot k - m^2
         \\
         &= 2p \cdot k
-    \end{aligned}
+    \end{align*}
     $$
 
     Therefore
 
     $$
-    \begin{aligned}
+    \begin{align*}
         i \mathcal{M}_s 
         &= -i(eQ)^2 
         \epsilon_\mu(k) \epsilon'^*_\nu(k')
         \frac{(2p+k)^\mu (2p'+k')^\nu}{2p\cdot k}
-    \end{aligned}
+    \end{align*}
     $$
 
 - The u-channel diagram
@@ -99,7 +99,7 @@ In scalar QED, Compton scattering involves the following 3 diagrams at the lowes
     Then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         i \mathcal{M}_u 
         &= \color{green} \epsilon_\mu(k) \cdot
         ieQ[(p'-k) + p']^\mu 
@@ -109,47 +109,47 @@ In scalar QED, Compton scattering involves the following 3 diagrams at the lowes
         \\ & \quad \times
         \color{red}
         ieQ [p + (p-k')]^\nu \epsilon'^*_\nu(k')
-    \end{aligned}
+    \end{align*}
     $$
 
     Again, using the on-shell conditions of the incoming/outgoing $\phi, \gamma$, we have
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (p-k')^2 - m^2 
         &= p^2 + k'^2 - 2p\cdot k' - m^2
         \\
         &= -2p \cdot k'
-    \end{aligned}
+    \end{align*}
     $$
 
     Therefore
 
     $$
-    \begin{aligned}
+    \begin{align*}
         i \mathcal{M}_u 
         &= i(eQ)^2 
         \epsilon_\mu(k) \epsilon'^*_\nu(k')
         \frac{(2p'-k)^\mu (2p-k')^\nu}{2p\cdot k'}
-    \end{aligned}
+    \end{align*}
     $$
 
 The total amplitude $\mathcal{M}$ is the sum of these 3 terms:
 
 $$
-\begin{aligned}
+\begin{align*}
     i \mathcal{M}
     &= i (\mathcal{M}_4 + \mathcal{M}_s + \mathcal{M}_u)
     \\
     &= i(eQ)^2 
     \epsilon_\mu(k) \epsilon'^*_\nu(k') T^{\mu \nu}    
-\end{aligned}
+\end{align*}
 $$
 
 where
 
 $$
-\begin{aligned}
+\begin{align*}
     T^{\mu \nu} 
     &= 2 g^{\mu \nu} - A^{\mu \nu} + B^{\mu \nu}
     \\
@@ -158,7 +158,7 @@ $$
     \\
     B^{\mu \nu}
     &= \frac{(2p'-k)^\mu (2p-k')^\nu}{2p\cdot k'}
-\end{aligned}
+\end{align*}
 $$
 
 ### Side Note: Verifying Ward Identity
@@ -191,7 +191,7 @@ $$
 Let us check it is true: replace $\epsilon'^*_\nu(k')$ by $k'_\nu$ in $\mathcal{M}$ (omitting the overall constant $i(eQ)^2$), we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     &\epsilon_\mu k'_\nu T^{\mu \nu}
     = \epsilon_\mu k'_\nu 
     (2g^{\mu \nu} - A^{\mu \nu} + B^{\mu \nu})
@@ -201,13 +201,13 @@ $$
         - \frac{(2p+k)^\mu (2p'+k')\cdot k'}{2p\cdot k}
         + \frac{(2p'-k)^\mu (2p-k')\cdot k'}{2p\cdot k'}
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 Apply the on-shell conditions:
 
 $$
-\begin{aligned}
+\begin{align*}
     \epsilon_\mu k'_\nu T^{\mu \nu}
     &= \epsilon_\mu \left(
         2 k'^\mu 
@@ -218,19 +218,19 @@ $$
     &= \epsilon_\mu \left(
         2 k'^\mu - (2p+k)^\mu + (2p'-k)^\mu
     \right)
-\end{aligned}
+\end{align*}
 $$
 
 Here we used momentum conservation to obtain
 
 $$
-\left. \begin{aligned}
+\left. \begin{align*}
     p + k &= p' + k'
     \\
     (p+k)^2 - m^2 &= 2p\cdot k
     \\
     (p'+k')^2 - m^2 &= 2p'\cdot k'
-\end{aligned} \right\}
+\end{align*} \right\}
 \, \Rightarrow \, 
 p\cdot k = p' \cdot k'
 $$
@@ -240,13 +240,13 @@ $$
 *Remark*: In the same way, we can derive 
 
 $$
-\left. \begin{aligned}
+\left. \begin{align*}
     p - k' &= p' - k
     \\
     (p-k')^2 - m^2 &= - 2p\cdot k'
     \\
     (p'-k)^2 - m^2 &= - 2p'\cdot k
-\end{aligned} \right\}
+\end{align*} \right\}
 \, \Rightarrow \, 
 p' \cdot k = p \cdot k'
 $$
@@ -270,7 +270,7 @@ Thus the Ward identity is satisfied.
 What goes into the differential cross section is the *sum* of the squared norm $|\mathcal{M}|^2$ for *each* configuration of polarization $\epsilon, \epsilon'$, but *averaged* over the *incoming* polarization $\epsilon$ (*two* linearly independent choices). Mathematically, this refers to (note that $T^{\mu \nu}$ is real)
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{1}{2} \sum_{\text{pol.}} 
     |\mathcal{M}|^2
     &= \frac{(eQ)^4}{2} \sum_{\epsilon, \epsilon'} 
@@ -281,7 +281,7 @@ $$
     \sum_{\epsilon} \epsilon_\mu \epsilon^*_\rho
     \sum_{\epsilon'} \epsilon'_\sigma \epsilon'^*_\nu \,
     T^{\mu \nu} T^{\rho \sigma}
-\end{aligned}
+\end{align*}
 $$
 
 Using the substitution
@@ -296,7 +296,7 @@ $$
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{1}{2} \sum_{\text{pol.}} 
     |\mathcal{M}|^2
     &= \frac{(eQ)^4}{2} 
@@ -304,13 +304,13 @@ $$
     T^{\mu \nu} T^{\rho \sigma}
     \\
     &= \frac{(eQ)^4}{2} T^{\mu \nu} T_{\mu \nu}
-\end{aligned}
+\end{align*}
 $$
 
 Let us evaluate the scalar $T^{\mu \nu} T_{\mu \nu}$:
 
 $$
-\begin{aligned}
+\begin{align*}
     T^{\mu \nu} T_{\mu \nu}
     &= (2 g^{\mu \nu} - A^{\mu \nu} + B^{\mu \nu})
     (2 g_{\mu \nu} - A_{\mu \nu} + B_{\mu \nu})
@@ -320,7 +320,7 @@ $$
     \\ &\quad
     - 4{A^\mu}_\mu + 4{B^\mu}_\mu 
     + 4 \delta^\mu_\mu
-\end{aligned}
+\end{align*}
 $$
 
 These terms can all be simplified by the following replacements: 
@@ -335,7 +335,7 @@ These terms can all be simplified by the following replacements:
 - inner product replacement (we shall express all inner products using $p\cdot k$ and $p\cdot k'$)
 
     $$
-    \begin{aligned}
+    \begin{align*}
         p'\cdot k' &= p \cdot k
         \\[0.5em]
         p' \cdot k &= p \cdot k' 
@@ -348,13 +348,13 @@ These terms can all be simplified by the following replacements:
         \\ &= \frac{1}{2}[k\cdot(p+k-p') + (p'+k'-p)\cdot k']
         \\ &= \frac{1}{2}(p\cdot k - p'\cdot k + p'\cdot k' - p\cdot k')
         \\ &= p\cdot k - p\cdot k'
-    \end{aligned}
+    \end{align*}
     $$
 
 Let us now tackle the terms one by one :
 
 $$
-\begin{aligned}
+\begin{align*}
     A^{\mu \nu} A_{\mu \nu}
     &= \frac{(2p+k)^2 (2p'+k')^2}{(2p\cdot k)^2}
     \\ &= \frac{(4p^2 + 4p\cdot k)(4p'^2 + 4p'\cdot k')}{4(p\cdot k)^2}
@@ -396,13 +396,13 @@ $$
     \\[2em]
 
     \delta^\mu_\mu &= 4
-\end{aligned}
+\end{align*}
 $$
 
 Putting everything together, finally we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{1}{2} \sum_{\text{pol.}} 
     |\mathcal{M}|^2
     &= 2(eQ)^4 \bigg[
@@ -414,7 +414,7 @@ $$
             \frac{1}{p\cdot k} - \frac{1}{p\cdot k'}
         \right)^2
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 ### Lorentz Invariant Phase Space
@@ -448,7 +448,7 @@ $$
 Now let us evaluate $d\Pi_2$. By definition
 
 $$
-\begin{aligned}
+\begin{align*}
     \int d\Pi_2 
     &= \int \frac{d^3 p'}{(2\pi)^3} \frac{1}{2E'_\phi}
     \frac{d^3 k'}{(2\pi)^3} \frac{1}{2E'_\gamma}
@@ -465,13 +465,13 @@ $$
     (2\pi) \delta(
         E'_\phi + E'_\gamma - m - \omega
     )
-\end{aligned}
+\end{align*}
 $$
 
 Here we changed to spherical polar coordinates, using the fact that momentum $\mathbf{k}'$ has magnitude $\omega'$. To deal with the delta function, let us express $E'_\phi, E'_\gamma$ as functions of $\omega'$ (*without* using energy conservation, since the corresponding delta function has not been removed; but for the same reason, momentum conservation is fine):
 
 $$
-\begin{aligned}
+\begin{align*}
     E'_\gamma &= \omega'
     \\[0.5em]
     E'_\phi &= \sqrt{|\mathbf{p}'|^2 + m^2}
@@ -479,13 +479,13 @@ $$
     &= \sqrt{(-\omega' \sin \theta)^2 + (\omega - \omega' \cos \theta)^2 + m^2}
     \\
     &= \sqrt{m^2 + \omega^2 + \omega'^2 - 2\omega \omega' \cos \theta}
-\end{aligned}
+\end{align*}
 $$
 
 Then 
 
 $$
-\begin{aligned}
+\begin{align*}
     &\int d\omega' \delta(E'_\phi + E'_\gamma - m - \omega)
     \\
     &\to \left|
@@ -500,13 +500,13 @@ $$
     \\
     &= \frac{E'_\phi}{\omega' - \omega \cos \theta + E'_\phi}
     \quad (E'_\phi = m + \omega - \omega')
-\end{aligned}
+\end{align*}
 $$
 
 Now we remove the last delta function and impose energy conservation:
 
 $$
-\begin{aligned}
+\begin{align*}
     \int d\Pi_2 
     &= \int d\Omega \frac{\omega'^2 }{(2\pi)^3} 
     \frac{1}{4 \omega' E'_\phi}
@@ -518,7 +518,7 @@ $$
     \\
     &= \frac{1}{16 \pi^2} \int d\Omega \,
     \frac{\omega'^2}{m \omega}
-\end{aligned}
+\end{align*}
 $$
 
 ### Differential Cross Section
@@ -533,11 +533,11 @@ $$
 the polarization averaged amplitude becomes
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{1}{2} \sum_{\text{pol.}} 
     |\mathcal{M}|^2
     &= 2(eQ)^4 (1 + \cos^2 \theta)
-\end{aligned}
+\end{align*}
 $$
 
 The differential cross section (in lab frame) to the lowest order is
@@ -550,12 +550,12 @@ $$
 Plugging in
 
 $$
-\begin{aligned}
+\begin{align*}
     E_\phi = m, \quad E_\gamma = \omega, \quad
     |v_\phi - v_\gamma| = |0 - 1| = 1
     \\[0.5em]
     \alpha = \frac{e^2}{4\pi} \quad \text{(Fine structure constant)}
-\end{aligned}
+\end{align*}
 $$
 
 Finally
@@ -565,7 +565,7 @@ Finally
 **Compton Scattering Cross Section in Scalar QED (up to $O(\alpha^2)$):**
 
 $$
-\begin{aligned}
+\begin{align*}
     \left(\frac{d\sigma}{d\Omega}\right)_\text{lab}
     &= \frac{1}{4m \omega} 2(eQ)^4 (1 + \cos^2 \theta)
     \frac{1}{16 \pi^2} \frac{\omega'^2}{m \omega}
@@ -573,7 +573,7 @@ $$
     &= \frac{\alpha^2 Q^4}{2m^2} 
     \left(\frac{\omega'}{\omega}\right)^2
     (1 + \cos^2 \theta)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -599,7 +599,7 @@ Pair annihilation involves the following 3 diagrams (to the lowest order):
 The amplitudes for each diagram are found to be (used on-shell conditions to simplify the denominator)
 
 $$
-\begin{aligned}
+\begin{align*}
     i\mathcal{M}_4
     &= i (eQ)^2 \epsilon^*_\mu(k) \epsilon'^*_\nu(k') 2g_{\mu \nu}
     \\[1em]
@@ -618,7 +618,7 @@ $$
     \color{red} \times ieQ[p + (p-k')]^\nu \epsilon'^*_\nu(k')
     \\ &= -i (eQ)^2 \epsilon^*_\mu(k) \epsilon'^*_\nu(k')
     \frac{(2p'-k)^\mu (2p-k')^\nu}{2p\cdot k'}
-\end{aligned}
+\end{align*}
 $$
 
 ### Side Note: Crossing Symmetry
@@ -633,7 +633,7 @@ $$
 Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     \frac{1}{2}\sum_{\text{pol.}} |\mathcal{M}|^2
     &= 2(eQ)^4 \bigg[
         2 - 2m^2 \left(
@@ -644,7 +644,7 @@ $$
             \frac{1}{p\cdot k} + \frac{1}{p\cdot k'}
         \right)^2
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 The relation between these two scattering processes $\phi(p) \gamma(k) \to \phi(p') \gamma(k')$ and $\phi(p) \bar{\phi}(p') \to \gamma(k) \gamma(k')$ is called **crossing symmetry**. In general, the *S*-matrix for any process involving a particle with momentum $p$ in the initial state is equal to the *S*-matrix for an otherwise identical process but with an *antiparticle* of momentum $-p$ in the final state:
@@ -685,7 +685,7 @@ $$
 From known results of $2\to 2$ scattering in CM frame, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \left(\frac{d\sigma}{d\Omega}\right)_\text{CM}
     &= \frac{1}{64\pi^2 E_{\text{CM}}^2} \frac{p_f}{p_i}
     \times \frac{1}{2}\sum_{\text{pol.}}|\mathcal{M}|^2
@@ -695,21 +695,21 @@ $$
     \\
     &= \frac{1}{256\pi^2} \frac{1}{E p} \times
     \frac{1}{2}\sum_{\text{pol.}}|\mathcal{M}|^2
-\end{aligned}
+\end{align*}
 $$
 
 The polarization averaged amplitude is found by plugging in
 
 $$
-\begin{aligned}
+\begin{align*}
     p\cdot k &= E (E - p\cos \theta) \\[0.3em]
     p\cdot k'&= E (E + p\cos \theta)
-\end{aligned} \qquad
+\end{align*} \qquad
 (p = \sqrt{E^2 - m^2})
 $$
 
 $$
-\begin{aligned}
+\begin{align*}
     \Rightarrow
     & \, \frac{1}{2}\sum_{\text{pol.}}|\mathcal{M}|^2
     \\
@@ -718,7 +718,7 @@ $$
         - \frac{2 m^2 p \cos^2 \theta}{E (E^2 - p^2 \cos^2 \theta)}
         + \frac{2 m^4 p^2 \cos^2 \theta}{E^2 (E^2 - p^2 \cos^2 \theta)^2}
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 ## Pair Creation
@@ -756,10 +756,10 @@ $$
     p^\mu = (E, p\sin\theta, 0, p\cos\theta)
     \\
     k'^\mu = \omega(1,0,0,-1) & 
-    \begin{aligned}
+    \begin{align*}
         p'^\mu &= (p + p' -k)^\mu
         \\ &= (E, -p\sin\theta, 0, -p\cos\theta)
-    \end{aligned}
+    \end{align*}
 \end{array}
 $$
 
@@ -768,7 +768,7 @@ The momentum magnitude $p$ is again determined as usual by $E^2 - p^2 = m^2$. By
 From known results of $2\to 2$ scattering in CM frame, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \left(\frac{d\sigma}{d\Omega}\right)_\text{CM}
     &= \frac{1}{64\pi^2 E_{\text{CM}}^2} \frac{p_f}{p_i}
     \times \frac{1}{2}\sum_{\text{pol.}}|\mathcal{M}|^2
@@ -778,5 +778,5 @@ $$
     \\
     &= \frac{1}{256\pi^2} \frac{p}{\omega^3} \times
     \frac{1}{2}\sum_{\text{pol.}}|\mathcal{M}|^2
-\end{aligned}
+\end{align*}
 $$

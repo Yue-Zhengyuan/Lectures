@@ -29,13 +29,13 @@ In energy formulation, each diagram in perturbation expansion if Green's functio
 <img src="images/self-energy.png" width="180pt">
 
 $$
-\quad \begin{aligned}
+\quad \begin{align*}
     G_{\alpha \beta}(E)
     = \sum_{\gamma \epsilon}
     G^{(0)}_{\alpha \gamma}(E)
     \Sigma_{\gamma \epsilon}(E)
     G^{(0)}_{\epsilon \beta}(E)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

@@ -43,7 +43,7 @@ $$
 The number operator is related to the Green's function by
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathcal{G}_{\alpha \alpha}(\tau-\tau^+)
     &= -\expect{T [c_{\alpha H}(\tau) c_{\alpha H}^\dagger(\tau^+)]} \\
     &= \mp \expect{
@@ -53,7 +53,7 @@ $$
     &= \mp \expect{
         e^{H\tau^+} c_\alpha^\dagger c_\alpha e^{-H\tau}
     }
-\end{aligned}
+\end{align*}
 $$
 
 Here we used the definition of Heisenberg picture operators

@@ -38,7 +38,7 @@ $$
 If we change the coordinates from $x$ to $y$, the volume element transforms to
 
 $$
-\begin{aligned}
+\begin{align*}
     \omega &= h(p) \,
     \frac{\partial x^1}{\partial y^{\mu_1}} dy^{\mu_1}
     \wedge \cdots \wedge
@@ -47,7 +47,7 @@ $$
     &= h(p) \, 
     \det \left(\frac{\partial x}{\partial y} \right)
     dy^1 \wedge \cdots \wedge dy^m
-\end{aligned}
+\end{align*}
 $$
 
 Here we used the definition of the matrix determinant.

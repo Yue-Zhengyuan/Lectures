@@ -70,7 +70,7 @@ $$
 It must remove one particle from the symmetrized state. To find its action on kets, we calculate the following amplitude:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{v_1,...,v_{N-1}}{S_\pm(N-1) a_\ket{u} S_\pm(N)}{u_1,...,u_N}
     \\
     &= \sqrt{N} \amp{u,v_1,...,v_{N-1}}{S_\pm^2(N)}{u_1,...,u_N}
@@ -81,13 +81,13 @@ $$
         \vdots & & \vdots \\
         \braket{v_{N-1}}{u_1} & \cdots & \braket{v_{N-1}}{u_N}
     \end{bmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 We expand $D_\pm$ with respect to the first row:
 
 $$
-\begin{aligned}
+\begin{align*}
     &= \frac{\sqrt{N}}{N!} \sum_{j=1}^N
     (\pm 1)^{j+1} \braket{u}{u_j} 
     D_\pm \{\braket{v_i}{u_k}\}_{k\ne j}
@@ -95,7 +95,7 @@ $$
     &= \frac{1}{\sqrt{N}} \sum_{j=1}^N
     (\pm 1)^{j+1} \braket{u}{u_j}
     \amp{v_1,...,v_{N-1}}{S^2_\pm(N-1)}{u_1,...,\cancel{u_j},...,u_N}
-\end{aligned}
+\end{align*}
 $$
 
 Due to the arbitrariness of $\bra{v_1,...,v_{N-1}}$, we conclude that
@@ -105,13 +105,13 @@ Due to the arbitrariness of $\bra{v_1,...,v_{N-1}}$, we conclude that
 **Annihilation operator on an $N$-body state:**
 
 $$
-\begin{aligned}
+\begin{align*}
     &a_\ket{u} S_\pm(N) \ket{u_1,...,u_N}
     \\ &\quad
     = \frac{1}{\sqrt{N}} \sum_{j=1}^N (\pm 1)^{j+1}
     \braket{u}{u_j} S_\pm(N-1) 
     \ket{u_1,...,\cancel{u_j},...,u_N}
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -125,7 +125,7 @@ If we use the Fock basis, and let $\ket{u}$ be the $r$th basis state, then:
 - For boson:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         b_r^\dagger \sqrt{\frac{... N_r! ...}{N!}}
         \ket{...,N_r,...} 
         &= \sqrt{N+1} \sqrt{\frac{... (N_r+1)! ...}{(N+1)!}}
@@ -133,7 +133,7 @@ If we use the Fock basis, and let $\ket{u}$ be the $r$th basis state, then:
         \\ \Rightarrow \quad
         b_r^\dagger \ket{...,N_r,...} 
         &= \sqrt{N_r + 1} \ket{...,N_r+1,...}
-    \end{aligned} 
+    \end{align*} 
     $$
 
 - For fermion:
@@ -149,13 +149,13 @@ A special case of change of basis is to go to the *continuous position eigenstat
 **The field operators:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi(x) &= \sum_r \braket{x}{r} a_r
     = \sum_r \phi_r(x) a_r
     \\
     \phi^\dagger(x) &= \sum_r a_r^\dagger \braket{r}{x} 
     = \sum_r \phi_r^*(x) a_r^\dagger
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

@@ -17,7 +17,7 @@ A representation of the Virasoro algebra is said to be **unitary** if it contain
 Some simple conditions are obtained from the norm of $L_{-n}| h\rangle$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle h |L_n L_{-n} |h \rangle 
     &= \langle h |L_{-n} L_n + [L_n,L_{-n}] |h \rangle 
     \\
@@ -26,7 +26,7 @@ $$
     \\
     &= \left(2 n h + \frac{c}{12} n (n^2 - 1) \right)
     \langle h|h\rangle
-\end{aligned}
+\end{align*}
 $$
 
 1. If $c<0$, then the above becomes negative for sufficiently large $n$;
@@ -76,17 +76,17 @@ Now the theorem is obvious. $\blacksquare$
 Since descendants of different levels are orthogonal, the Gram matrix is *block-diagonal*, with blocks $M^{(l)}$ corresponding to level $l$. Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     \det M &= \prod_l  \det  M^{(l)}
     \\
     \text{tr} M &= \sum_l  \text{tr} M^{(l)}
-\end{aligned}
+\end{align*}
 $$
 
 The first few blocks are
 
 $$
-\begin{aligned}
+\begin{align*}
     M^{(0)} &= 1
     \\
     M^{(1)} &= 2h
@@ -96,13 +96,13 @@ $$
         4h(2h+1) & 6h \\
         6h & 4h+c/2 \\
     \end{pmatrix}
-\end{aligned}
+\end{align*}
 $$
 
 For example, $M^{(2)}$ corresponds to $L_{-1}L_{-1}, L_{-2}$, and
 
 $$
-\begin{aligned}
+\begin{align*}
     M_{22}^{(2)} 
     &\equiv \langle h |L_2L_{-2} |h \rangle 
     \\
@@ -116,13 +116,13 @@ $$
     \\
     &= \left\langle h\left| 4L_0 + \frac{c}{2} \right|h\right\rangle 
     =4h+\frac{c}{2}
-\end{aligned}
+\end{align*}
 $$
 
 Their determinants are
 
 $$
-\begin{aligned}
+\begin{align*}
     \det M^{(0)} &= 1
     \\
     \det M^{(1)} &= 2h
@@ -130,18 +130,18 @@ $$
     \det M^{(2)} 
     &= 32 h^3 - 20 h^2 + 4 h^2 c + 2h c \\
     &= 32 (h-h_{1,1}) (h-h_{1,2}) (h-h_{2,1})
-\end{aligned}
+\end{align*}
 $$
 
 with
 
 $$
-\begin{aligned}
+\begin{align*}
     h_{1,1} &= 0
     \\
     h_{1,2} &= \frac{1}{16} \left(5-c-\sqrt{(1-c)(25-c)}\right)\\
     h_{2,1} &= \frac{1}{16} \left(5-c+\sqrt{(1-c)(25-c)}\right)
-\end{aligned}
+\end{align*}
 $$
 
 The general formula is
@@ -161,7 +161,7 @@ $$
 Here
 
 $$
-\begin{aligned}
+\begin{align*}
     p(l-r s) &= \text{number of partitions of } l-r s
     \\
     \alpha_l &=\prod_{
@@ -173,7 +173,7 @@ $$
     } \left[(2r)^ss!\right]^{m(r, s)}
     \\
     m(r,s) &= p(l-r s) - p(l-r(s+1))
-\end{aligned}
+\end{align*}
 $$
 
 <center>

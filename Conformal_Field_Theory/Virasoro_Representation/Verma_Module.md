@@ -78,10 +78,10 @@ For any state $L_{-k_1}L_{-k_2} \cdots L_{-k_n}|h\rangle$ in
 the module, and any descendants $L_{-l_1}L_{-l_2} \cdots L_{-l_m}|\chi \rangle$ (whose "conjugate" is $\langle \chi |L_{l_m} \cdots L_{l_2}L_{l_1}$), we have
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \chi |L_{l_m} \cdots L_{l_2}L_{l_1}L_{-k_1}L_{-k_2} \cdots L_{-k_n} |h \rangle 
     \\
     &=\langle h |L_{k_n} \cdots L_{k_2}L_{k_1}L_{-l_1}L_{-l_2} \cdots L_{-l_m} |\chi \rangle^*
     =0. \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$

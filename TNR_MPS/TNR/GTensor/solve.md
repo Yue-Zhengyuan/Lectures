@@ -5,7 +5,7 @@
 Suppose that the contraction of the $a,c,...$th axes of a *known* Grassmann tensor $\mathbf{A}$ with the $b,d,...$th axes of an *unknown* Grassmann tensor $\mathbf{X}$ is equal to another *known* Grassmann tensor $\mathbf{B}$, i.e.
 
 $$
-\begin{aligned}
+\begin{align*}
     &[\mathbf{A}(\theta)  \mathbf{X}(\eta)]_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
     \\
     &= \sum_{m_a,n_b} \sum_{m_c,n_d} \cdots \sum_{i_a,j_b} \sum_{i_c,j_d} \cdots
@@ -21,7 +21,7 @@ $$
     \eta_1^{n_1} \cdots \cancel{\eta_b^{n_b}} \cdots \cancel{\eta_d^{m_d}} \cdots \eta_s^{n_s}
     \\
     &= \mathbf{B}(\theta, \eta)_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
-\end{aligned}
+\end{align*}
 $$
 
 Now we want to solve this linear equation for $\mathbf{X}$.
@@ -38,7 +38,7 @@ This transposition obviously does not affect $B$. We shall then solve for this t
 In the following, $A, X$ refer to the already transposed tensors. Suppose that there are $q$ pairs of axes to be contracted, then (omitting the Grassmann variables)
 
 $$
-\begin{aligned}
+\begin{align*}
     &[A  X]_{i_1 ... i_{r-q}, j_{q+1} ... j_s}^{m_1 ... m_{r-q}, n_{q+1} ... n_s}
     \\
     &= \sum_{n_1, ..., n_q} \sum_{j_1, ..., j_q}
@@ -51,7 +51,7 @@ $$
     X_{j_1 ... j_q, j_{q+1} ... j_s}^{n_1 ... n_q, n_{q+1} ... n_s} 
     \\
     &= B_{i_1 ... i_{r-q}, j_{q+1} ... j_s}^{m_1 ... m_{r-q}, n_{q+1} ... n_s}
-\end{aligned}
+\end{align*}
 $$
 
 Here we have absorbed the Grassmann metrics $g$ into $\tilde{A}$. 
@@ -61,14 +61,14 @@ Here we have absorbed the Grassmann metrics $g$ into $\tilde{A}$.
 Next we merge the axes of $\tilde{A}, X, B$ (note that the last $q$ axes of $\tilde{A}$ should be merged in *reversed order*, i.e. using the `order = -1` option):
 
 $$
-\begin{aligned}
+\begin{align*}
     \sum_{n_1, ..., n_q} &\sum_{j_1, ..., j_q}
     \tilde{A}_{(i_1 ... i_{r-q})(j_q ... j_1)}^{(m_1 ... m_{r-q})(n_q ... n_1)} 
     X_{(j_1 ... j_q)(j_{q+1} ... j_s)}^{(n_1 ... n_q)(n_{q+1} ... n_s)} \\
     &= B_{(i_1 ... i_{r-q})(j_{q+1} ... j_s)}^{(m_1 ... m_{r-q})(n_{q+1} ... n_s)}
     \Rightarrow \sum_{Q,J}
     \tilde{A}_{I J}^{M Q} X_{J K}^{Q N} = B_{I K}^{M N}    
-\end{aligned}
+\end{align*}
 $$
 
 Now we have reduced the Grassmann tensor equation to several ordinary linear equations.

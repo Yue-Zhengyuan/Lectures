@@ -48,18 +48,18 @@ We first express $S_j^x, S_j^y$ using the raising and lowering operators $S_j^\p
 $$
 S_j^{\pm} = S_j^x \pm i S_j^y 
 \, \Rightarrow \, \left\{
-\begin{aligned}
+\begin{align*}
     S_j^x &= \frac{1}{2}(S_j^- + S_j^+)
     \\
     S_j^y &= \frac{i}{2}(S_j^- - S_j^+)
-\end{aligned}
+\end{align*}
 \right.
 $$
 
 Then
 
 $$
-\begin{aligned}
+\begin{align*}
     &J_x S_j^x S_{j+1}^x 
     + J_y S_j^y S_{j+1}^y 
     \\
@@ -71,7 +71,7 @@ $$
     \\
     &= t(S_j^+ S_{j+1}^- + h.c.)
      + \Delta (S_j^+ S_{j+1}^+ + h.c.)
-\end{aligned}
+\end{align*}
 $$
 
 where we defined
@@ -95,7 +95,7 @@ Let us now apply Jordan-Wigner transformation to fermionize the model.
 - **"Spin Hopping" Terms**
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \sum_j S_j^+ S_{j+1}^-
         &= \sum_j c_j^\dagger e^{i \phi_j} 
         \underbrace{c_{j+1} e^{-i \phi_{j+1}}}_\text{commute}
@@ -103,7 +103,7 @@ Let us now apply Jordan-Wigner transformation to fermionize the model.
         &= \sum_j c_j^\dagger e^{i (\phi_{j} - \phi_{j+1})} c_{j+1} 
         \\
         &= \sum_j c_j^\dagger e^{-i \pi n_j} c_{j+1} 
-    \end{aligned}
+    \end{align*}
     $$
 
     Each term will give nonzero outcome only when $n_j = 0$, but this behavior is the same if the $e^{-i\pi n_j}$ is absent. So we obtain the first conversion (**nearest neighbor (tight-binding) hopping**)
@@ -116,13 +116,13 @@ Let us now apply Jordan-Wigner transformation to fermionize the model.
 - **"Spin Pair" Terms**
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \sum_j S_j^+ S_{j+1}^+
         &= \sum_j c_j^\dagger e^{i \phi_j} 
         \underbrace{c_{j+1}^\dagger e^{i \phi_{j+1}}}_\text{commute}
         \\
         &= \sum_j c_j^\dagger e^{i (2\phi_j + \pi n_j)} c_{j+1}^\dagger
-    \end{aligned}
+    \end{align*}
     $$
 
     But $e^{2 i \phi_j} = \exp(2\pi i \textstyle{\sum_{j < j} n_j}) = 1$, and the extra $e^{i\pi n_j}$ has no effect again. Therefore (such term is related to the **$p$-wave superconductivity**)
@@ -164,7 +164,7 @@ To see the energy levels more clearly, we shall go to the momentum space (recipr
 - Tight-binding term
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &(-t) \sum_j (c_j^\dagger c_{j+1} + h.c.)
         \\
         &= -\frac{t}{N} \sum_j 
@@ -183,13 +183,13 @@ To see the energy levels more clearly, we shall go to the momentum space (recipr
         (e^{ika} + e^{-ika})
         \\
         &= -2t \sum_k c_k^\dagger c_k \cos(ka)
-    \end{aligned}
+    \end{align*}
     $$
 
 - $p$-Wave potential term
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &(-\Delta) \sum_j (c_j^\dagger c_{j+1}^\dagger + h.c.) 
         \\
         &= -\frac{\Delta}{N} \sum_j 
@@ -212,13 +212,13 @@ To see the energy levels more clearly, we shall go to the momentum space (recipr
         &= -\Delta \sum_k e^{ika} (
             c_k^\dagger c_{-k}^\dagger + c_{k} c_{-k} 
         )
-    \end{aligned}
+    \end{align*}
     $$
 
 - Chemical potential term (omitting the constants)
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &(-h) \sum_j n_j
         = (-h) \sum_j c_j^\dagger c_j
         \\
@@ -226,7 +226,7 @@ To see the energy levels more clearly, we shall go to the momentum space (recipr
         c_k^\dagger e^{-ikja} c_p e^{ipja}
         \\
         &= -h \sum_k c_k^\dagger c_k 
-    \end{aligned}
+    \end{align*}
     $$
 
 Thus
@@ -243,7 +243,7 @@ $$
 We can restrict $k$ to positive values in $[0, \pi/a]$: 
 
 $$
-\begin{aligned}
+\begin{align*}
     H &= - \sum_{k\ge 0} \Big[
         (h + 2t \cos ka) (c_k^\dagger c_k + c_{-k}^\dagger c_{-k})
         \\ &\qquad \qquad
@@ -261,7 +261,7 @@ $$
             c_k^\dagger c_{-k}^\dagger + c_k c_{-k}
         )
     \Big]
-\end{aligned}
+\end{align*}
 $$
 
 ## Diagonalization: Bogoliubov Transformation
@@ -269,11 +269,11 @@ $$
 To put this into diagonal form, we further apply the **Bogoliubov transformation**, i.e. make a linear combination of $k$ and $-k$ operators:
 
 $$
-\begin{aligned}
+\begin{align*}
     \eta_k &= A_k c_k + B_k c_{-k}^\dagger
     \\
     \eta_{-k} &= C_k c_{-k} + D_k c_k^\dagger
-\end{aligned} \qquad
+\end{align*} \qquad
 A_k,B_k,C_k,D_k \in \mathbb{C}
 $$
 
@@ -307,7 +307,7 @@ $$
 We require that $\eta_k^{(\dagger)}$ still satisfies the fermion anti-commutators: when $k\ne 0$, we should obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \{\eta_k, \eta_k\} &= \{\eta_k^\dagger, \eta_k^\dagger\} = 0
     \\
     \{\eta_{-k}, \eta_{-k}\} &= \{\eta_{-k}^\dagger, \eta_{-k}^\dagger\} = 0
@@ -317,16 +317,16 @@ $$
     \{\eta_k, \eta_{k}^\dagger\} &= \{\eta_{-k}, \eta_{-k}^\dagger\} = 1
     \\
     \{\eta_{k}, \eta_{-k}\} &= \{\eta_{k}^\dagger, \eta_{-k}^\dagger\} = 0
-\end{aligned}
+\end{align*}
 $$
 
 The first three equations are automatically satisfied; the last two equations give us, respectively
 
 $$
-\begin{aligned}
+\begin{align*}
     |A_k|^2 + |B_k|^2 &= 1 \\
     |C_k|^2 + |D_k|^2 &= 1
-\end{aligned} 
+\end{align*} 
 \quad \text{and} \quad
 A_k D_k + B_k C_k = 0
 $$

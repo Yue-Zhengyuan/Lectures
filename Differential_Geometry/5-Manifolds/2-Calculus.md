@@ -61,16 +61,16 @@ where $x = \varphi(q)$ are coordinates of any point $q \in M$.
 
 $$
 \left\{
-\begin{aligned}
+\begin{align*}
     X^1 &= \sin{x^1} \cos{x^2} \\
     X^2 &= \sin{x^1} \sin{x^2} \\ 
     X^3 &= \cos{x^1}
-\end{aligned}
+\end{align*}
 \right. , \qquad
-\begin{aligned}
+\begin{align*}
     &0 \le x^1 \le \pi \\
     &0 \le x^2 < 2 \pi
-\end{aligned}
+\end{align*}
 $$
 
 - **Tangent vector**
@@ -205,14 +205,14 @@ $$
 - **Inner product**: a *bilinear function*: $\langle \, , \, \rangle: T_p^* M \times T_p M \to \mathbb{R}$ defined by
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \omega , V \rangle
     &= \left\langle \omega_\mu dx^\mu, V^\nu \frac{\partial}{\partial  x^\nu} \right\rangle
     \\ &\equiv 
     \omega_\mu V^\nu 
     \left\langle dx^\mu, \frac{\partial}{\partial  x^\nu} \right\rangle
     = \omega_\mu V^\mu
-\end{aligned}
+\end{align*}
 $$
 
 ### Change of Basis
@@ -316,30 +316,30 @@ Instead of $dx^\mu$, we may change to another basis of the one-forms.
     Vectors in $T_p M, T_{f(p)} N$ have the general form
 
     $$
-    \begin{aligned}
+    \begin{align*}
         V &= V^\mu \frac{\partial}{\partial x^\mu} \in T_p M
         \\
         f_* V \equiv W &= W^\alpha \frac{\partial}{\partial y^\alpha} \in T_{f(p)} N
-    \end{aligned}
+    \end{align*}
     $$
 
     Writing the defining property explicitly:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         (f_* V)[g] &= W^\alpha \frac{\partial (g \circ \psi^{-1})(y)}{\partial y^\alpha}
         \\
         V[g \circ f] &= V^\mu \frac{\partial (g \circ f \circ \varphi^{-1})(x)}{\partial x^\mu}
-    \end{aligned}
+    \end{align*}
     $$
 
     Now we make the special choice $g = \psi^\nu$, then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \psi^\nu \circ \psi^{-1}(y) = \psi^\nu (f(p)) &= y^\nu \\
         \psi^\nu \circ f \circ \varphi^{-1}(x) = \psi^\nu (f(p)) &= y^\nu
-    \end{aligned}
+    \end{align*}
     $$
 
     Since $\partial y^\nu / \partial y^\alpha = \delta_\alpha^\nu$, finally we obtain
@@ -387,22 +387,22 @@ Instead of $dx^\mu$, we may change to another basis of the one-forms.
     Dual vectors in $T_{f(p)}^* N, T_p^* M$ have the general form
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \omega &= \omega_\alpha dy^\alpha \in T_{f(p)}^* N
         \\
         f^* \omega \equiv \xi &= \xi_\mu dx^\mu \in T_p^* M
-    \end{aligned}
+    \end{align*}
     $$
 
     Writing the defining property explicitly:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \langle f^* \omega, V \rangle &= \xi_\mu V^\mu
         \\
         \langle \omega, f_* V \rangle &= 
         \omega_\nu V^\mu \frac{\partial y^\nu}{\partial x^\mu}
-    \end{aligned}
+    \end{align*}
     $$
 
     Since $V^\mu$ is arbitrary, we must have
@@ -426,7 +426,7 @@ Instead of $dx^\mu$, we may change to another basis of the one-forms.
     The component form is
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &(f^* \omega)_{\mu_1 ... \mu_r} 
         V_1^{\mu_1} \cdots V_r^{\mu_r}
         = \omega_{\nu_1 ... \nu_r} 
@@ -438,7 +438,7 @@ Instead of $dx^\mu$, we may change to another basis of the one-forms.
         \right) \cdots \left(
             V_r^{\mu_r} \frac{\partial y^{\nu_r}}{\partial x^{\mu_r}}
         \right)
-    \end{aligned}
+    \end{align*}
     $$
 
     Therefore

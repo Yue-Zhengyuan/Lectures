@@ -35,10 +35,10 @@ Whenever we use the additive notation, we have assumed that we are dealing with 
 - **Homomorphism (同态)**: a map $f: G_1 \to G_2$ such that
 
     $$
-    \forall x, y \in G_1 \quad \begin{aligned}
+    \forall x, y \in G_1 \quad \begin{align*}
         &f(xy)  = f(x) f(y)     & \text{(General)}\\
         &f(x+y) = f(x) + f(y)   & \text{(Abelian)}
-    \end{aligned} 
+    \end{align*} 
     $$
 
     - **Isomorphism (同构)**: an homomorphism from one group to another which is *also injective (one-to-one)*.
@@ -66,11 +66,11 @@ Whenever we use the additive notation, we have assumed that we are dealing with 
 - **Coset**: The set of group elements obtained by multiplying $g \in G$ on the left (or right) of a subgroup $H$ of $G$
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \text{Left coset} &: gH = \{gh \mid h \in H\}
         \\
         \text{Right coset}&: Hg = \{hg \mid h \in H\}
-    \end{aligned}
+    \end{align*}
     $$
 
 ----

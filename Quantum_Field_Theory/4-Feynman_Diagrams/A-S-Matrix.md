@@ -85,7 +85,7 @@ $$
 The in-state $|\phi_A \phi_B(\mathbf{b}) \rangle$ can be expressed in terms of the input momenta as
 
 $$
-\begin{aligned}
+\begin{align*}
     |\phi_A \phi_B(\mathbf{b}) \rangle
     &= \int \frac{d^3 k_A}{(2\pi)^3} \frac{d^3 k_B}{(2\pi)^3} 
     \frac{
@@ -105,7 +105,7 @@ $$
     \text{with} \quad
     E_i &= \sqrt{m_i^2 + \mathbf{k}_i^2} \qquad
     (i = A, B)
-\end{aligned}
+\end{align*}
 $$
 
 The $e^{-i \mathbf{k}_B \cdot \mathbf{b}}$ factor accounts for the spatial translation. We integrate over $\mathbf{b}$ to obtain the total number of scattering events that results in $d^3 p_1 \cdots d^3 p_n$
@@ -117,7 +117,7 @@ $$
 where $n_B$ is the area density of $B$ beam (assumed to be constant). The cross section is thus
 
 $$
-\begin{aligned}
+\begin{align*}
     d\sigma &= \frac{dN}{n_B N_A} \xrightarrow{N_A = 1}
     \int d^2 b \, \mathcal{P}(\mathbf{b})
     \\
@@ -135,7 +135,7 @@ $$
     e^{i (\mathbf{k}'_B - \mathbf{k}_B) \cdot \mathbf{b}}
     \langle \{\mathbf{p}_f\} |\{\mathbf{k}_i\} \rangle
     \langle \{\mathbf{p}_f\} |\{\mathbf{k}'_i\} \rangle^*
-\end{aligned}
+\end{align*}
 $$
 
 We simplify this integral as follows:
@@ -143,12 +143,12 @@ We simplify this integral as follows:
 - First integrate over $\mathbf{b}$: denote the component of $\mathbf{k}$ within the plane of $\mathbf{b}$ as $k^{xy}$ (since it is *perpendicular* to $v$), then
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \int d^2b \, e^{i (\mathbf{k}'_B - \mathbf{k}_B) \cdot \mathbf{b}}
         &= \int d^2b \, e^{i (k'^{xy}_B - k^{xy}_B) \cdot b}
         \\
         &= (2\pi)^2 \delta^2(k'^{xy}_B - k^{xy}_B)
-    \end{aligned}
+    \end{align*}
     $$
 
     Here we choose $\mathbf{b}$ to be in the $xy$-plane, and $v$ to be along $z$. This delta function then knocks out the integration over $k'^x_i, k'^y_i \, (i = A,B)$ by requiring
@@ -161,7 +161,7 @@ We simplify this integral as follows:
 - If we only want non-trivial events, the final two amplitudes can be expressed in terms of $\mathcal{M}$ (dropping the 1 corresponding to forward scattering):
 
     $$
-    \begin{aligned}
+    \begin{align*}
         \langle \{\mathbf{p}_f\} |\{\mathbf{k}_i\} \rangle
         &= i 
         \mathcal{M}(\{k_i\} \to \{p_f\})
@@ -171,13 +171,13 @@ We simplify this integral as follows:
         &= -i 
         \mathcal{M}^*(\{k'_i\} \to \{p_f\})
         (2\pi)^4 \delta^4(\textstyle{\sum p_f - \sum k'_i})
-    \end{aligned}
+    \end{align*}
     $$
 
     We then knock out integrations over $\mathbf{k}'_i$:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         I = &\left[
             \prod_{i=A,B} \int \frac{d^3 k'_i}{(2\pi)^3} 
             \frac{\phi^*_i(\mathbf{k}'_i)}{\sqrt{2E'_i}}
@@ -187,7 +187,7 @@ We simplify this integral as follows:
         \times (-i) 
         \mathcal{M}^*(\{k'_i\} \to \{p_f\})
         (2\pi)^4 \delta^4(\textstyle{\sum p_f - \sum k'_i})
-    \end{aligned}
+    \end{align*}
     $$
 
     To simplify writing, we use $f(\mathbf{k}')$ to represents things besides the $\delta$ functions that depend on $\mathbf{k}'_A, \mathbf{k}'_B$: 
@@ -211,7 +211,7 @@ We simplify this integral as follows:
     Use the delta function of $z$-direction to knock out $k'^z_B$:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         I &= \int d^3 k'_A \,
         [
             f(\mathbf{k}') \,
@@ -252,7 +252,7 @@ We simplify this integral as follows:
             k'^z_B = \sum p_f^z - k'^z_A, \,
             k'^{xy}_A = \sum p_f^{xy} - k'^{xy}_B
         }
-    \end{aligned}
+    \end{align*}
     $$
 
 - Focus on the last delta function:
@@ -268,7 +268,7 @@ We simplify this integral as follows:
     Now we have expressed $k'^{xy}_A$ and the whole $\mathbf{k}'_B$ as functions of $k'^z_A$: 
 
     $$
-    \begin{aligned}
+    \begin{align*}
         k'^{xy}_B &= k^{xy}_B \quad
         &\text{(independent of $k'^z_A$)}
         \\
@@ -276,7 +276,7 @@ We simplify this integral as follows:
         \\
         k'^{xy}_A &= \sum p_f^{xy} - k^{xy}_B \quad
         &\text{(independent of $k'^z_A$)}
-    \end{aligned}
+    \end{align*}
     $$
 
     Then we can apply the mathematical theorem
@@ -313,7 +313,7 @@ We simplify this integral as follows:
     evaluated at $\mathbf{k}'_i = \mathbf{k}_i$. Now we are only left with the integrals over $\mathbf{k}_i$:
 
     $$
-    \begin{aligned}
+    \begin{align*}
         d \sigma
         &= \left[
             \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
@@ -330,13 +330,13 @@ We simplify this integral as follows:
         \\[1em]
         &\text{where} \quad
         E_{A,B} = k_{A,B}^0 = \sqrt{m^2 + \mathbf{k}_{A,B}^2}
-    \end{aligned}
+    \end{align*}
     $$
 
 To simplify further, we exploit the properties of a wave packet that it is *sharply* peaked as some "average" momentum $\mathbf{p}_A, \mathbf{p}_B$, and other things in the integral are *smooth* functions (i.e. they does not change much) of $\mathbf{k}_A, \mathbf{k}_B$. Thus we can approximate the integral as
 
 $$
-\begin{aligned}
+\begin{align*}
     d \sigma
     &= \left[
         \prod_{f=1}^n \frac{d^3 p_f}{(2\pi)^3} \frac{1}{2E_f}
@@ -351,11 +351,11 @@ $$
     |\phi_B(\mathbf{k}_B)|^2
     \\[0.2em]
     & \quad 
-    \left( \begin{aligned}
+    \left( \begin{align*}
         &\text{This step uses the smoothness}
         \\
         &\text{Note that $E_{A,B}, v_{A,B}$ now does not depend on $p_f$}
-    \end{aligned} \right)
+    \end{align*} \right)
     \\[1em]
     &= \frac{1}{2E_A 2E_B|v_A - v_B|}
     \left[
@@ -365,15 +365,15 @@ $$
     |\mathcal{M}(p_A,p_B \to \{p_f\})|^2
     (2\pi)^4 \delta^4(\textstyle{p_A + p_B - \sum p_f}) 
     \\[0.2em]
-    & \quad \left( \begin{aligned}
+    & \quad \left( \begin{align*}
         &\text{This step uses the sharpness of $\phi(\mathbf{k_A})$ and $\phi(\mathbf{k_B}$)}
         \\
         &\text{i.e. treat them similarly to the delta function}
-    \end{aligned} \right)
+    \end{align*} \right)
     \\[1em]
     &\text{where} \quad
     E_{A,B} = p_{A,B}^0 = \sqrt{m^2 + \mathbf{p}_{A,B}^2}
-\end{aligned}
+\end{align*}
 $$
 
 ### The Lorentz-Invariant Phase Space

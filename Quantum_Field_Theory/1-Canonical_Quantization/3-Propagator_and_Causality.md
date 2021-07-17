@@ -5,18 +5,18 @@
 The **propagator** $D(x-y)$ is defined as the amplitude for a particle to propagate from $y$ to $x$ (in spacetime). Naturally, we require $x^0 > y^0$:
 
 $$
-\begin{aligned}
+\begin{align*}
     D(x-y) &\equiv 
     \langle \mathbf{x}|e^{-i H(x^0 - y^0)}|\mathbf{y} \rangle
     \\
     &= \langle 0 | \phi(x) \phi(y) | 0 \rangle
-\end{aligned}
+\end{align*}
 $$
 
 Using the expansion
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi(x) 
     &= \int \frac{d^3 p}{(2\pi)^3} 
     \frac{1}{\sqrt{2 E_\mathbf{p}}} [
@@ -25,13 +25,13 @@ $$
     ]
     \\[1em] \text{with} \quad
     p^0 &= \sqrt{m^2 + \mathbf{p}^2} = E_\mathbf{p}
-\end{aligned}
+\end{align*}
 $$
 
 We obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     \phi(x) \phi(y)
     &= \int \frac{d^3 p}{(2\pi)^3} 
     \frac{d^3 q}{(2\pi)^3} 
@@ -54,19 +54,19 @@ $$
         + a^\dagger_\mathbf{p} a_\mathbf{q} e^{i(px-qy)}
         + a^\dagger_\mathbf{p} a^\dagger_\mathbf{q} e^{i(px+qy)}
     ]
-\end{aligned}
+\end{align*}
 $$
 
 Noting that only the terms $\langle 0 | a_\mathbf{p} a_\mathbf{q}^\dagger |0\rangle = (2\pi)^3 \delta^3 (\mathbf{p-q})$ survives, we are left with
 
 $$
-\begin{aligned}
+\begin{align*}
     D(x-y) &= \langle 0 | \phi(x) \phi(y) | 0 \rangle
     \\
     &= \int \frac{d^3 p}{(2\pi)^3} \left.
     \frac{1}{2E_\mathbf{p}} e^{-ip(x-y)}
     \right|_{p^0 = E_\mathbf{p}}
-\end{aligned}
+\end{align*}
 $$
 
 ## The Feynman Propagator
@@ -74,7 +74,7 @@ $$
 We calculate the time-ordered product
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle 0 | T[\phi(x) \phi(y)] | 0 \rangle
     \\
     &= \langle 0 | \phi(x) \phi(y) | 0 \rangle \theta(x^0 - y^0)
@@ -97,7 +97,7 @@ $$
         \frac{e^{-ip(x-y)}}{2E_\mathbf{p}} \theta(y^0 - x^0)
         \right|_{p^0 = -E_\mathbf{p}}
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 In the second term we change $p \to -p$. These two terms can be expressed as the residue of the following $p^0$ integration along the path shown in the figure:
@@ -107,7 +107,7 @@ In the second term we change $p \to -p$. These two terms can be expressed as the
 </center>
 
 $$
-\begin{aligned}
+\begin{align*}
     &\lim_{\epsilon \to 0+} \int \frac{dp^0}{2\pi}
     \frac{i e^{-ip(x-y)}}{2 E_\mathbf{p}} \left(
         \frac{1}{p^0 - (E_\mathbf{p} - i \epsilon)} 
@@ -120,7 +120,7 @@ $$
     }{
         p^2 - m^2 + i\epsilon
     }
-\end{aligned}
+\end{align*}
 $$
 
 - When $x^0 < y^0$, the contour closes in the **upper** half plane, so that 
@@ -132,7 +132,7 @@ $$
     And the integration on the large circle is zero. Then the path of $p^0$ encloses only the pole $-E_\mathbf{p} + i \epsilon$ in **counter-clockwise** direction.
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\int \frac{dp^0}{2\pi}
         \frac{i e^{-ip(x-y)}}{2 E_\mathbf{p}} \left(
             \cancel{\frac{1}{p^0 - E_\mathbf{p}} }
@@ -144,7 +144,7 @@ $$
         \\
         &= \left. \frac{e^{-ip(x-y)}}{2 E_\mathbf{p}} 
         \right|_{p^0 = -E_\mathbf{p}} \theta(y^0 - x^0)
-    \end{aligned}
+    \end{align*}
     $$
 
 - When $x^0 > y^0$, the contour closes in the **lower** half plane, so that 
@@ -156,7 +156,7 @@ $$
     Then the path of $p^0$ encloses only the pole $E_\mathbf{p} - i \epsilon$ in **clockwise** direction (producing an additional minus sign).
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\int \frac{dp^0}{2\pi}
         \frac{i e^{-ip(x-y)}}{2 E_\mathbf{p}} \left(
             \frac{1}{p^0 - E_\mathbf{p}} 
@@ -168,13 +168,13 @@ $$
         \\
         &= \left. \frac{e^{-ip(x-y)}}{2 E_\mathbf{p}} 
         \right|_{p^0 = E_\mathbf{p}} \theta(y^0 - x^0)
-    \end{aligned}
+    \end{align*}
     $$
 
 Therefore, we finally obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     D_F(x - y)
     &\equiv \langle 0 | T[\phi(x) \phi(y)] |0 \rangle
     \\
@@ -185,7 +185,7 @@ $$
     }{
         p^2 - m^2 + i \epsilon
     }
-\end{aligned}
+\end{align*}
 $$
 
 This is sometimes simply denoted by $D_{xy}$. The integration variable can also be changed to $-p$ to yield
@@ -213,7 +213,7 @@ $$
 *Verify*:
 
 $$
-\begin{aligned}
+\begin{align*}
     &(\partial^2 + m^2) D_F(x-y)
     \\
     &= \lim_{\epsilon \to 0+} \int \frac{d^4 p}{(2\pi)^4}
@@ -226,7 +226,7 @@ $$
     &= -i \int \frac{d^4 p}{(2\pi)^4}
     e^{\pm i p(x - y)}
     = -i \delta^4 (x-y) \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ----

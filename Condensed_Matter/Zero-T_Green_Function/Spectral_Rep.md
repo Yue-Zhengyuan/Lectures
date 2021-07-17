@@ -33,7 +33,7 @@
 We introduce the time Fourier transform of the Green's function:
 
 $$
-\begin{aligned}
+\begin{align*}
     G_{\a \b}(E)
     &= \int_{-\infty}^{\infty} dt \, 
     e^{+i E t} G_{\a \b}(t)
@@ -41,13 +41,13 @@ $$
     G_{\a \b}(t)
     &= \int_{-\infty}^{\infty} \frac{d E}{2\pi} \, 
     e^{-i E t} G_{\a \b}(E)
-\end{aligned}
+\end{align*}
 $$
 
 To proceed, we first get an alternative expression of the original Green's function 
 
 $$
-\begin{aligned}
+\begin{align*}
     i G_{\alpha\beta}(t-t')
     &= \amp{\Psi_0^N}
     {T[a_{\alpha H}(t) a^\dagger_{\beta H}(t')]}{\Psi_0^N}
@@ -59,7 +59,7 @@ $$
     \pm \amp{\Psi_0^N}{
         a^\dagger_{\beta H}(t') a_{\alpha H}(t)
     }{\Psi_0^N} \theta(t' - t)
-\end{aligned}
+\end{align*}
 $$
 
 where $\ket{\Psi_0^N}$ is the $N$-particle ground state with energy $E_0^N$, i.e.
@@ -77,7 +77,7 @@ $$
 then we may write the time dependence explicitly as
 
 $$
-\begin{aligned}
+\begin{align*}
     &i G_{\alpha\beta}(t-t')
     \\
     &= \amp{\Psi_0^N}{
@@ -89,13 +89,13 @@ $$
         a^\dagger_{\beta} e^{-iH(t' - t)}
         a_{\alpha}
     }{\Psi_0^N} e^{iE_0^N(t' - t)} \theta(t' - t)
-\end{aligned}
+\end{align*}
 $$
 
 We then insert identities (using eigenstates of $H$) to deal with $e^{\pm iH(t-t')}$: 
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{\Psi_0^N}{
         a_{\alpha} e^{-iH(t - t')} 
         a^\dagger_{\beta}
@@ -131,13 +131,13 @@ $$
     }{\Psi_n^{N-1}} \amp{\Psi_n^{N-1}}{
         a_{\alpha}
     }{\Psi_0^N}
-\end{aligned}
+\end{align*}
 $$
 
 Collecting these results, we obtain (setting $t - t' \to t$)
 
 $$
-\begin{aligned}
+\begin{align*}
     &i G_{\alpha\beta}(t)
     \\
     &= \sum_n \amp{\Psi_0^N}{
@@ -153,7 +153,7 @@ $$
         a_{\alpha}
     }{\Psi_0^N} e^{-i(E_0^N - E_n^{N-1})t} 
     \theta(-t)
-\end{aligned}
+\end{align*}
 $$
 
 <!-- <div class="remark">
@@ -190,7 +190,7 @@ $$
 We then obtain some immediate corollaries:
 
 $$
-\begin{aligned}
+\begin{align*}
     \theta(-t) &= - \int_{-\infty}^{\infty} 
     \frac{dE}{2\pi i} 
     \frac{e^{+iE t}}{E + i\eta}
@@ -213,7 +213,7 @@ $$
     \frac{dE}{2\pi i}
     \frac{e^{-iE t}}
     {E - E_0 \pm i\eta}
-\end{aligned}
+\end{align*}
 $$
 
 This integral provides the Fourier transformation. Thus we obtain 
@@ -223,7 +223,7 @@ This integral provides the Fourier transformation. Thus we obtain
 **Green's function in energy <br>(Lehmann representation):**
 
 $$
-\begin{aligned}
+\begin{align*}
     G_{\alpha\beta}(E)
     &= \sum_n \bigg[ 
         \frac{
@@ -245,7 +245,7 @@ $$
             E - (E_0^N - E_n^{N-1}) - i\eta
         }
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -257,7 +257,7 @@ More compactly, we have the operator expression (by removing the identities we i
 **Green's function in energy <br>(Lehmann representation, operator form):**
 
 $$
-\begin{aligned}
+\begin{align*}
     G_{\alpha \beta}(E)
     &= \amp{\Psi_0^N}{
         a_\alpha 
@@ -270,7 +270,7 @@ $$
         \frac{1}{E - (E_0^N - H) - i\eta}
         a_\alpha
     }{\Psi_0^N}
-\end{aligned}
+\end{align*}
 $$
 
 Here $H$ is the Hamiltonian *operator*.

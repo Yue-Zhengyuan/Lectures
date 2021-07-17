@@ -18,13 +18,13 @@ $$
 where $j_a, n_a$ are the integer part and the remainder of $\alpha_a / q$:
 
 $$
-\begin{aligned}
+\begin{align*}
     j_a &\equiv \text{floor}\left( \frac{\alpha_a}{q} \right)
     &\quad \dim{j_a} &= \frac{\dim{\alpha_a}}{q}
     \\
     n_a &\equiv \alpha_a \text{ mod } q
     &\quad \dim{n_a} &= q
-\end{aligned}
+\end{align*}
 $$
 
 Now we understand why we require that $\dim{\alpha_a}$ must be an integer multiple of $q$. 
@@ -83,7 +83,7 @@ $$
 which is the same as *ordinary* contraction over *two* pairs of indices $(i_a, j_b)$ and $(m_a, n_b)$. The generalization to contraction of multiple pairs of indices is straightforward: contracting axes $a,c,...$ of $A$ with axes $b,d,...$ of $B$, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     &(AB)_{i_1 ... \cancel{i_a} ... \cancel{i_c} ... i_r, j_1... \cancel{j_b} ... \cancel{j_d} ... j_s}^{m_1 ... \cancel{m_a} ... \cancel{m_c} ... m_r, n_1 ... \cancel{n_b} ... \cancel{n_d} ... n_s}
     \\
     &= \sum_{m_a,n_b} \sum_{m_c,n_d} \cdots \sum_{i_a,j_b} \sum_{i_c,j_d} \cdots
@@ -92,19 +92,19 @@ $$
     \delta_{i_a j_b} \delta_{i_c j_d} \cdots
     A_{i_1 ... i_r}^{m_1 ... m_r} 
     B_{j_1 ... j_s}^{n_1 ... n_s}
-\end{aligned}
+\end{align*}
 $$
 
 ### Verification of $Z_q$ Symmetry of Contraction Result
 
 $$
-\begin{aligned} 
+\begin{align*} 
     &\sum_{k \ne a,c,...} m_k + \sum_{l \ne b,d,...} n_l
     \pmod{q}
     \\
     &= 
     p_A + p_B - (m_a+n_b) - (m_c+n_d) - \cdots \pmod{q}
-\end{aligned}
+\end{align*}
 $$
 
 where $p_A, p_B = 0$. Thus the result **does not have definite (even) parity (??????)**

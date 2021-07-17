@@ -52,7 +52,7 @@ for any $i\neq j$. This means that $\psi_i$ are not ordinary numbers - they shou
 **Building coherent state from vacuum:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{\psi}
     &= \ket{0} - \psi \ket{1}
     = (1-\psi c^\dagger)\ket{0}
@@ -62,7 +62,7 @@ $$
     &= \bra{0} - \bra{1} \bar{\psi}
     = \bra{0}(1 - c\bar{\psi})
     = \bra{0} \exp(-c\bar{\psi})
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -78,14 +78,14 @@ $$
 The coefficients here are *Grassmann numbers*. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     c\ket{\psi} 
     &= c c_0\ket{0} +c c_1\ket{1} 
     = -c_0c\ket{0} -c_1c\ket{1} =-c_1\ket{0}
     \\
     \psi \ket{\psi} 
     &=\psi \ket{0} +\psi c_1\ket{1}
-\end{aligned}
+\end{align*}
 $$
 
 Now we conclude that
@@ -105,12 +105,12 @@ $$
 The "Hermitian conjugate" of this state is
 
 $$
-\begin{aligned}
+\begin{align*}
     \bra{\bar{\psi}}
     &= \bra{0} (1-c \bar{\psi})
     = \bra{0} - \bra{1}\bar{\psi}
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 <div class="remark">
@@ -120,11 +120,11 @@ $$
 - For systems containing multiple kinds of fermions,
 
 $$
-\begin{aligned}
+\begin{align*}
     \ket{\psi} 
     &= \prod_k (1-\psi_kc_k^\dagger)\ket{0} 
     = \prod_k \exp (- \psi_k c_k^\dagger)\ket{0}
-\end{aligned}
+\end{align*}
 $$
 
 - The number $\bar{\psi}$ is completely independent of $\psi$ (they are *not* "Hermitian conjugates" of each other). We might even call it as a new variable $\eta$, i.e. $\bra{\eta} = \bra{0} - \bra{1} \eta$. 
@@ -179,7 +179,7 @@ $$
 Since differentiation and integration are equivalent for Grassmann numbers, the proof is much simpler than the bosonic case. 
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{LHS}
     &= \int d\bar{\psi} \, d\psi 
     (1-\bar{\psi} \psi) \ket{\psi} \bra{\bar{\psi}}
@@ -203,7 +203,7 @@ $$
     &= \ket{0} \bra{0}+\ket{1} \bra{1}
     =\mathbf{1}
     \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ## Operators in Coherent State Representation
@@ -230,7 +230,7 @@ $$
 *Proof*:
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \xi |\psi \rangle 
     &= \langle 0 |\exp ( \bar{\xi} c)\exp (-\psi c^\dagger)|0\rangle 
     \\
@@ -243,7 +243,7 @@ $$
     \\
     &= 1+\bar{\xi} \psi = e^{\bar{\xi} \psi}
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ## Trace
@@ -267,7 +267,7 @@ Notice the *additional minus sign* compared to the boson case.
 *Proof*: 
 
 $$
-\begin{aligned}
+\begin{align*}
     \text{RHS} &= \int d\bar{\psi}\,d\psi \,
     (1 - \bar{\psi} \psi) \Big[
         (\bra{0} + \bra{1} \bar{\psi}) O
@@ -289,7 +289,7 @@ $$
     \\
     &= \amp{1}{O}{1} + \amp{0}{O}{0} = \operatorname{Tr} O = \text{LHS}
     \quad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 ## Coherent State Path Integral for Fermions
@@ -297,7 +297,7 @@ $$
 Similar to the boson case, the partition function for a fermion system can be split into the product of many pieces, and identities are inserted to obtain the path integral representation:
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &= \prod_{n=1}^N \int 
     d\bar{\psi}_n \, d\psi_n
     \exp (-\bar{\psi}_n \psi_n) 
@@ -318,7 +318,7 @@ $$
             - \epsilon H(\bar{\psi}_n, \psi_n)
         \bigg]
     \bigg\}
-\end{aligned}
+\end{align*}
 $$
 
 Notice that for fermions the additional minus sign in the trace operation requires *anti-PBC* along the $\tau$-direction: 
@@ -338,14 +338,14 @@ $$
 Note that the eigenvalues $\psi_n$ can be interpreted as an (imaginary-)time dependent variable $\psi(\tau)$ at $\tau_n = n \beta/N$. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &\approx \int D\bar{\psi}\, D\psi \exp \bigg\{
         - \epsilon \sum_{n=1}^N \Big[
             \bar{\psi}_n \partial_\tau \psi_n
             + H(\bar{\psi}_n, \psi_n)
         \Big]
     \bigg\}
-\end{aligned}
+\end{align*}
 $$
 
 In the $N\to \infty$ limit, the summation becomes an integration of $\tau$ from 0 to $\beta$. We finally arrive at
@@ -355,7 +355,7 @@ In the $N\to \infty$ limit, the summation becomes an integration of $\tau$ from 
 **Fermion partition function in path integral form:**
 
 $$
-\begin{aligned}
+\begin{align*}
     Z &= \int D\bar{\psi} \,D\psi \exp \bigg[
         - \int_0^\beta d\tau \, L[\bar{\psi}, \psi]
     \bigg]
@@ -363,7 +363,7 @@ $$
     \text{with} \quad 
     L[\bar{\psi}, \psi]
     &= \bar{\psi}(\tau) \partial_\tau \psi(\tau) + H(\bar{\psi}(\tau), \psi(\tau))
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

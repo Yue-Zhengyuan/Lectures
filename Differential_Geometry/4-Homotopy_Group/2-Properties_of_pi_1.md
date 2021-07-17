@@ -90,10 +90,10 @@ $$
     Mathematically, there exist a *continuous* map $H: X \times I \to X$ such that
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\forall x \in X &\quad &H(x,0) = x, \quad H(x,1) \in R \\
         &\forall x \in R, t \in I &\quad &H(x,t) = x
-    \end{aligned}
+    \end{align*}
     $$
 
     *Remark*: 
@@ -105,10 +105,10 @@ $$
     Mathematically, we can find a homotopy $H: X \times I \to X$ such that ($a \in X$ is a point)
 
     $$
-    \begin{aligned}
+    \begin{align*}
         &\forall \, x \in X &\quad &H(x,0) = x, \quad H(x,1) = a \equiv c_a(x)\\
         &\forall \, t \in I &\quad &H(a,t) = a
-    \end{aligned}
+    \end{align*}
     $$
     
     - **Contraction**: the homotopy $H$

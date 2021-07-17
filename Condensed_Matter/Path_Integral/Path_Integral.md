@@ -35,13 +35,13 @@ $$
 which can be decomposed into $N \to \infty$ pieces using the property $U(t_2,t_1) U(t_1,t_0) = U(t_2,t_0)$ :
 
 $$
-\begin{aligned}
+\begin{align*}
     U(t,t_0)
     &= U(t_N,t_{N-1}) \cdots U(t_1,t_0)
     \\ \text{with} \quad
     t_n &\equiv t_0 + n \epsilon, \quad
     \epsilon = \frac{t - t_0}{N}
-\end{aligned}
+\end{align*}
 $$
 
 For each small piece $U(t_{n+1},t_n)$, the Hamiltonian $H$ can be approximated by the value at $t_{n}$; then the time ordering can be omitted:
@@ -79,7 +79,7 @@ $$
 With the decomposition of evolution operator, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{x}{U(t,t_0)}{x_0}
     \\
     &= \langle x|U(t_N,t_{N-1}) \cdots U(t_1,t_0)|x_0\rangle
@@ -91,7 +91,7 @@ $$
     \\
     &=\int \prod_{n=1}^{N-1} dx_n \prod_{j=0}^{N-1} 
     \langle x_{j+1}|e^{-iH\epsilon}|x_j\rangle
-\end{aligned}
+\end{align*}
 $$
 
 Here we introduced $\ket{x_N} \equiv \ket{x}$. 
@@ -101,7 +101,7 @@ Here we introduced $\ket{x_N} \equiv \ket{x}$.
 The propagator in the $n$th ($n = 0,..,N-1$) time step is
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle x_{n+1}|e^{-iH\epsilon}|x_n\rangle 
     \\
     &\approx \langle x_{n+1}|1-iH(p,x)\epsilon|x_n\rangle 
@@ -126,13 +126,13 @@ $$
     \exp \left[i \epsilon (
         p_n \dot{x}_n - H(p_n,x_n)
     ) \right]
-\end{aligned}
+\end{align*}
 $$
 
 where we introduced $\dot{x}_n = (x_{n+1} - x_n)/\epsilon$. Then
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{x}{U(t,t_0)}{x_0}
     \\
     &= \int \underbrace{\bigg[
@@ -142,7 +142,7 @@ $$
     \prod_{j=0}^{N-1} \exp [
         i \epsilon  (p_j \dot{x}_j - H(p_j,x_j))
     ]
-\end{aligned}
+\end{align*}
 $$
 
 In the $\epsilon \to 0$ limit, we obtain
@@ -152,7 +152,7 @@ In the $\epsilon \to 0$ limit, we obtain
 **Phase space path integral of $U(t,t_0)$:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \amp{x}{U(t,t_0)}{x_0}
     &= \int Dx \, Dp \, e^{iS}
     \\
@@ -161,7 +161,7 @@ $$
     dt' \, \Big[
         p \dot{x} - H(p,x)
     \Big]
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -171,7 +171,7 @@ $$
 It turns out that when $H$ has the classical kinetic + potential energy form, the integration over momentum can be evaluated
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle x_{n+1}|e^{-iH\epsilon}|x_n\rangle 
     \\
     &\approx \int \frac{dp_n}{2\pi} 
@@ -184,13 +184,13 @@ $$
     \exp \left[i \epsilon \left(
         - \frac{p_n^2}{2m} + p_n \dot{x}_n 
     \right) \right]
-\end{aligned}
+\end{align*}
 $$
 
 This is a Gaussian integral. To ensure convergence, we have to assume that $\epsilon$ has a very small negative imaginary part ($\epsilon \to \epsilon + i0^-$). Then
 
 $$
-\begin{aligned}
+\begin{align*}
     \int \frac{dp_n}{2\pi} 
     \exp \left[i \epsilon \left(
         - \frac{p_n^2}{2m} + p_n \dot{x}_n 
@@ -198,13 +198,13 @@ $$
     = \sqrt{\frac{m}{2\pi i\epsilon}} \exp \bigg[
         \frac{1}{2} m\dot{x}_n^2 \times i \epsilon
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 Therefore
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{x}{U(t,t_0)}{x_0}
     \\&=\int \prod_{n=1}^{N-1} dx_n \prod_{j=0}^{N-1} 
     \sqrt{\frac{m}{2\pi i\epsilon}} \exp \bigg[
@@ -214,7 +214,7 @@ $$
             }_{\text{Lagrangian} \ L[x,\dot{x}]}
         \bigg) 
     \bigg]
-\end{aligned}
+\end{align*}
 $$
 
 Define the integration measure
@@ -232,7 +232,7 @@ In the continuum limit, we obtain
 **Position space path integral of $U(t,t_0)$:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \amp{x}{U(t,t_0)}{x_0}
     &= \int Dx \, Dp \, e^{iS}
     \\
@@ -242,7 +242,7 @@ $$
     \\
     \text{Lagrangian:} \quad
     L &= \frac{1}{2} m\dot{x}^2 - V(x)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -294,7 +294,7 @@ $$
 Then, in analogy with the real time case, we obtain
 
 $$
-\begin{aligned}
+\begin{align*}
     &\amp{x}{\rho}{x_0} = \amp{x}{U(\beta,0)}{x_0}
     \\
     &= \langle x|U(\tau_N,\tau_{N-1}) \cdots U(\tau_1,\tau_0)|x_0\rangle
@@ -316,7 +316,7 @@ $$
         + i \epsilon p_n\dot{x}_n
     \right]
 
-\end{aligned}
+\end{align*}
 $$
 
 Note that $\dot{x}_n$ now refers to $\tau$-derivative. Then we obtain in the phase space
@@ -326,7 +326,7 @@ Note that $\dot{x}_n$ now refers to $\tau$-derivative. Then we obtain in the pha
 **Phase space path integral of $\rho = U(\beta,0)$:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \amp{x}{\rho}{x_0}
     &= \int Dx \, Dp \, e^{-S_E}
     \\
@@ -334,7 +334,7 @@ $$
     S_E &= \int_0^\beta d\tau \, \Big[
         -i p \, \partial_\tau x + H(p,x)
     \Big]
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>
@@ -342,7 +342,7 @@ $$
 Alternatively, we can evaluate the integration over $p$:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle x_{n+1}|e^{-\epsilon H}|x_n\rangle 
     \\
     &\approx \int \frac{dp_n}{2\pi} 
@@ -363,7 +363,7 @@ $$
             \frac{1}{2} m \dot{x}_n^2 + V(x_n)
         \right)
     \right]
-\end{aligned}
+\end{align*}
 $$
 
 Contrary to the real-time case, this Gaussian integration is well-defined. Define the integration measure
@@ -381,7 +381,7 @@ In the continuum limit, we obtain
 **Position space path integral of $\rho = U(\beta,0)$:**
 
 $$
-\begin{aligned}
+\begin{align*}
     \amp{x}{\rho}{x_0}
     &= \int Dx \, Dp \, e^{-S_E}
     \\
@@ -390,7 +390,7 @@ $$
     \\
     \text{(Euclidean) Lagrangian:} \quad
     L_E &= \frac{1}{2} m (\partial_\tau x)^2 + V(x)
-\end{aligned}
+\end{align*}
 $$
 
 </div><br>

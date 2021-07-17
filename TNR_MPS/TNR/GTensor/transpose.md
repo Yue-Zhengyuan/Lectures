@@ -47,14 +47,14 @@ where $P(p|n)$ is the parity of the sub-permutation of nonzero Grassmann indices
 In particular, the *full transposition* (reverse of axis order) will be denoted by $\mathbf{T}^\mathsf{T}$:
 
 $$
-\begin{aligned}
+\begin{align*}
     \mathbf{T}^\mathsf{T}(\theta)_{i_1 ... i_r}^{n_1 ... n_r}
     &= (-1)^{P(p|n)} T_{i_r ... i_1}^{n_r ... n_1} 
     \theta_1^{n_1} ... \theta_r^{n_r}
     \\
     &= (-1)^{P(p|n)} (T^\mathsf{T})_{i_1 ... i_r}^{n_1 ... n_r} 
     \theta_1^{n_1} ... \theta_r^{n_r}
-\end{aligned}
+\end{align*}
 $$
 
 This is implemented as `GTensor.T`.

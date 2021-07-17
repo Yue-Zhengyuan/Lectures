@@ -63,7 +63,7 @@ $$
 Plug in the Laurent expansion in the RHS of the Cauchy formula:
 
 $$
-\begin{aligned}
+\begin{align*}
     &\frac{1}{2 \pi i}
     \oint_C dz \frac{f(z)}{(z-z_0)^{n+1}}
     \\
@@ -77,7 +77,7 @@ $$
     \\
     &= \sum_{m=-\infty}^{\infty} r^{m-n}a_m \delta_{m n}
     = a_n \qquad \qquad \blacksquare
-\end{aligned}
+\end{align*}
 $$
 
 <div class="remark">

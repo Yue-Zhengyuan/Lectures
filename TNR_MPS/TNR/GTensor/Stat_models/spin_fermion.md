@@ -11,7 +11,7 @@ $$
 It corresponds to an 8-axis Grassmann tensor $\mathbf{T}$ by the relation
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \theta_{i,\uparrow} \theta_{i,\downarrow} \theta_{i+1,\uparrow} \theta_{i+1,\downarrow} | H_{i,i+1} | \eta_{i,\uparrow} \eta_{i,\downarrow} \eta_{i+1,\uparrow} \eta_{i+1,\downarrow} \rangle 
     \\
     &= \sum_{m,n=0,1} 
@@ -46,7 +46,7 @@ $$
         n_{i+1,\uparrow} 
         n_{i+1,\downarrow}
     }
-\end{aligned}
+\end{align*}
 $$
 
 with the following axis order:
@@ -66,18 +66,18 @@ with the following axis order:
 Similar to the spinless case, we have 
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \theta_{i,\uparrow} \theta_{i,\downarrow} \theta_{i+1,\uparrow} \theta_{i+1,\downarrow} | H(c^\dagger,c) | \eta_{i,\uparrow} \eta_{i,\downarrow} \eta_{i+1,\uparrow} \eta_{i+1,\downarrow} \rangle
     \\
     &= \langle \theta_{i,\uparrow} \theta_{i,\downarrow} \theta_{i+1,\uparrow} \theta_{i+1,\downarrow} | \eta_{i,\uparrow} \eta_{i,\downarrow} \eta_{i+1,\uparrow} \eta_{i+1,\downarrow} \rangle
     H(\bar{\theta},\eta)
-\end{aligned}
+\end{align*}
 $$
 
 The identity gate is
 
 $$
-\begin{aligned}
+\begin{align*}
     &\langle \theta_{i,\uparrow} \theta_{i,\downarrow} \theta_{i+1,\uparrow} \theta_{i+1,\downarrow} | \eta_{i,\uparrow} \eta_{i,\downarrow} \eta_{i+1,\uparrow} \eta_{i+1,\downarrow} \rangle
     \\ &=
     \langle 0 |
@@ -94,7 +94,7 @@ $$
     \\ &\downarrow \text{very tedious expansion}
     \\ &=
     1 + ...
-\end{aligned}
+\end{align*}
 $$
 
 After full expansion of the equation above, we obtain the following $\sum_{m=0}^{4} C_4^m = 16$ nonzero tensor elements, which all equal to 1:
@@ -132,7 +132,7 @@ This can also be directly read out using the physical meaning of the identity ga
 ## Example: (1 + 1)D Hubbard Model
 
 $$
-\begin{aligned}
+\begin{align*}
     H_{i, i+1} 
     &= -t \sum_{\sigma} (c_{i,\sigma}^\dagger c_{i+1,\sigma} + c_{i+1,\sigma}^\dagger c_{i,\sigma})
     \\ &\quad 
@@ -144,13 +144,13 @@ $$
         + \left( n_{i+1,\uparrow}-\frac{1}{2} \right)
         \left( n_{i+1,\downarrow}-\frac{1}{2} \right)
         \right]
-\end{aligned}
+\end{align*}
 $$
 
 #### Tight-binding hopping term
 
 $$
-\begin{aligned}
+\begin{align*}
     H_{tb} &= -t \sum_{\sigma} (
         c_{i,\sigma}^\dagger c_{i+1,\sigma} + c_{i+1,\sigma}^\dagger c_{i,\sigma}
     ) \\
@@ -159,15 +159,15 @@ $$
         \bar{\theta}_{i,\sigma} \eta_{i+1,\sigma} 
         + \bar{\theta}_{i+1,\sigma} \eta_{i,\sigma}
     ) \equiv H_{tb}(\bar{\theta},\eta)
-\end{aligned}
+\end{align*}
 $$
 
 The tensor elements are found from the expansion of
 
 $$
-\begin{aligned}
+\begin{align*}
     \langle \theta_{i,\uparrow} \theta_{i,\downarrow} \theta_{i+1,\uparrow} \theta_{i+1,\downarrow} | \eta_{i,\uparrow} \eta_{i,\downarrow} \eta_{i+1,\uparrow} \eta_{i+1,\downarrow} \rangle H_{tb}(\bar{\theta},\eta)
-\end{aligned}
+\end{align*}
 $$
 
 Therefore (these can also be directly written down according to the physical meaning of the Grassmann index)
@@ -210,13 +210,13 @@ For example, let us consider the case
 In the expansion of the gate elements, this case corresponds to the term
 
 $$
-\begin{aligned}
+\begin{align*}
     (\bar{\theta}_{i,\downarrow} \eta_{i,\downarrow})
     (\bar{\theta}_{i,\uparrow} \eta_{i+1,\uparrow})
     = 
     - \bar{\theta}_{i,\downarrow} \bar{\theta}_{i,\uparrow}
     \eta_{i,\downarrow} \eta_{i+1,\uparrow}
-\end{aligned}
+\end{align*}
 $$
 
 We see an additional minus sign pops out in order to match the axis order convention of the tensor. To intuitively understand the origin of the sign, 
@@ -237,7 +237,7 @@ $$
 This term will have a constant term $V/4$, which we shall remove. Then this term becomes
 
 $$
-\begin{aligned}
+\begin{align*}
     H_V &=\frac{V}{2} \left[
         n_{i,\uparrow} n_{i,\downarrow}
         + n_{i+1,\uparrow} n_{i+1,\downarrow}
@@ -261,7 +261,7 @@ $$
             + \bar{\theta}_{i+1,\sigma} \eta_{i+1,\sigma} 
         )
     \right] \equiv H_V(\bar{\theta},\eta)
-\end{aligned}
+\end{align*}
 $$
 
 Without need to worry about the possible sign changes (as in the hopping terms), we can directly write down the tensor elements of $H_V$: 
@@ -344,11 +344,11 @@ gate_4axis = gate_8axis.merge_axes((2,2,2,2), (1,1,-1,-1))
 To maintain the number of elements, the new normal indices $I_0, ..., I_3$ will have dimension
 
 $$
-\begin{aligned}
+\begin{align*}
     \dim{I_k} &= \frac{\dim{n_{2k}} \dim{n_{2k+1}} \dim{i_{2k}} \dim{i_{2k+1}}}{\dim{N_k}} \\
     &= \frac{2 \times 2 \times 1 \times 1}{2} = 2,
     \qquad k \in \{0,...,3\}
-\end{aligned}
+\end{align*}
 $$
 
 ### Physical Meaning of the Merged Axes
