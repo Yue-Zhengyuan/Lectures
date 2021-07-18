@@ -16,7 +16,7 @@
     }
 </style>
 
-# The XY Spin Chain
+# XY Spin Chain
 
 *References*:
 
@@ -24,28 +24,19 @@
 in Solid State Physics](http://www.thp.uni-koeln.de/~as/Mypage/PSfiles/Korrel/korrel.pdf)
 - [PhD Thesis of Zou Yijian](https://uwspace.uwaterloo.ca/handle/10012/16049)
 
-*Notes on notations*:
+*Notes on notations*: The Pauli matrices will be alternatively denoted by $(X_i, Y_i, Z_i)$ or $(\sigma_i^x, \sigma_i^y, \sigma_i^z)$.
 
-Sometimes we also express the Pauli matrices as $(X_i, Y_i, Z_i) \equiv (\sigma_i^x, \sigma_i^y, \sigma_i^z)$.
+## Periodic/Anti-Periodic Boundary Conditions
 
-## XY Chain with Different Boundary Conditions
+**Periodic boundary condition (PBC)** can intuitively be applied to any spin chain. However, the **anti-periodic boundary condition (APBC)** can only be imposed on spin chains with $\mathbb{Z}_2$ symmetry (symmetry with respect to the flip of all spins). 
 
-**Periodic boundary condition (PBC)** can intuitively be applied to any spin chain by imposing on the spin operators the requirement
-
-$$
-\sigma_{j+N}^a = \sigma_j^a 
-$$
-
-However, the **anti-periodic boundary condition (APBC)** can only be imposed on spin chains with $\mathbb{Z}_2$ symmetry (symmetry with respect to the flip of all spins). 
-
-Assume that both the PBC Hamiltonian and the $\mathbb{Z}_2$ symmetry generator are combinations of local term:
+In the following discussion, the chain sites will be labelled periodically for both boundary conditions, i.e.
 
 $$
-H^P = \sum_{j=1}^N H_j, \quad
-\mathcal{Z} \equiv \prod_{j=1}^N \mathcal{Z}_j
+\sigma_{j+N}^a = \sigma_j^a \qquad j = 1,...,N
 $$
 
-which is indeed the case for many physically relevant models. For XY chain
+For the XY chain, the PBC Hamiltonian $H^P$ and the $\mathbb{Z}_2$ symmetry generator $Z$ are combinations of local term (for convenience we use Pauli matrices instead of spin-1/2 operators $S^a = \sigma^a/2$):
 
 <div class="result">
 
@@ -53,136 +44,113 @@ which is indeed the case for many physically relevant models. For XY chain
 
 $$
 \begin{align*}
-    H_j &= - \left[
-        \frac{1+\gamma}{2} \sigma_j^x \sigma_{j+1}^x 
-        + \frac{1-\gamma}{2} \sigma_j^y \sigma_{j+1}^y 
-        + h \sigma_j^z
-    \right]
+    H^P &= \sum_{j=1}^N H_j, \quad
+    Z = \prod_{j=1}^N Z_j
     \\
-    \mathcal{Z}_i &= Z_i
-\end{align*} \quad (j = 1,...,N)
+    H_j &= - [J_x X_j X_{j+1} + J_y Y_j Y_{j+1} + h Z_j]
+    \\[0.7em]
+    J_x &\equiv \frac{1+\gamma}{2}, \quad
+    J_y \equiv \frac{1-\gamma}{2}
+\end{align*}
 $$
 
 </div><br>
 
+The system in invariant under the $\mathbb{Z}_2$ transformation in the sense that *each local Hamiltonian*, and therefore the full $H$ is invariant:
+
+$$
+Z^\dagger H_j Z = H_j
+\ \Rightarrow \ 
+Z^\dagger H Z = H
+$$
+
 ----
 
-*Verify the claimed $\mathcal{Z}_i$*: Using the fact that
+*Verify the claimed $Z$*: Using the fact that
 
-- The Pauli matrices are both Hermitian and unitary
-- The Pauli matrices square to identity
+- The Pauli matrices are both Hermitian and unitary (and therefore square to identity)
 - The commutators $[\sigma^a_m, \sigma^b_n] = \delta_{mn} \times 2i \epsilon^{abc} \sigma^c_m$
 
-Then
+Then for each term in $H_j$
 
 $$
 \begin{align*}
-    \mathcal{Z} X_j X_{j+1} \mathcal{Z}^\dagger
-    &= \bigg[ \prod_{m=1}^N Z_m \bigg]
+    Z^\dagger X_j X_{j+1} Z
+    &= \bigg[ \prod_{m=1}^N Z_m \bigg]^\dagger
     X_j X_{j+1}
-    \bigg[ \prod_{n=1}^N Z_n \bigg]^\dagger
+    \bigg[ \prod_{n=1}^N Z_n \bigg]
     \\
-    &= Z_j Z_{j+1} X_j X_{j+1} Z_{j+1} Z_j
+    &= Z_{j+1} Z_j X_j X_{j+1} Z_j Z_{j+1}
     \\
     &= Z_j X_j Z_j Z_{j+1} X_{j+1} Z_{j+1} 
     \\
     &= (-X_j) (-X_{j+1}) = X_j X_{j+1}
-    \\
-    \text{Similarly} \quad&
-    \\
-    \mathcal{Z} Y_j Y_{j+1} \mathcal{Z}^\dagger
-    &= Z_j Y_j Z_j Z_{j+1} Y_{j+1} Z_{j+1} 
-    \\
-    &= (-Y_j) (-Y_{j+1}) = Y_j Y_{j+1}
-    \\
-    \text{And obviously} &
-    \\
-    \mathcal{Z} Z_j \mathcal{Z}^\dagger &= Z_j
 \end{align*}
 $$
 
-Thus the local Hamiltonian of XY chain is invariant under the $\mathbb{Z}_2$ transformation:
+Similarly
 
 $$
-\mathcal{Z} H_j \mathcal{Z}^\dagger = H_j \qquad \blacksquare
+\begin{align*}
+    Z^\dagger Y_j Y_{j+1} Z
+    &= Z_j Y_j Z_j Z_{j+1} Y_{j+1} Z_{j+1} 
+    \\
+    &= (-Y_j) (-Y_{j+1}) = Y_j Y_{j+1}
+\end{align*}
 $$
+
+And obviously $Z^\dagger Z_j Z = Z_j$. Thus we have proved that $Z^\dagger H_j Z = H_j$. $\blacksquare$
 
 ----
 
-Then we introduce the lattice translation operator $\mathcal{T}$ and its **twisted** counterpart $\tilde{\mathcal{T}} \equiv \mathcal{Z}_1 \mathcal{T}$. The action of $\mathcal{T}$ on the local $H_j$ is defined as
+Then we introduce the lattice translation operator $T$ and its **twisted** counterpart $\tilde{T} \equiv Z_1 T$. The action of $T$ on any local spin operators $O_j$ is defined as
 
 $$
-\mathcal{T}
+T^\dagger O_j T = O_{j+1}
 $$
 
-For the XY chain, the Hamiltonian can be written as the sum of the following local Hamiltonian
-
-
-
-For convenience we write $H$ in terms of the pauli matrices $\sigma^a$ instead of the spin 1/2 operators $S^a = \sigma^a/2$. 
-
-More formally, let $\mathcal{T}$ be the (unitary) lattice translation operator (by one site), whose action on the local Hamiltonian is
-
-$$
-\mathcal{T} H_j \mathcal{T}^\dagger = H_{j+1} \quad
-(j = 1, ... N)
-$$
-
-We then *define* 
+We can then define the PBC *and* the APBC Hamiltonians as
 
 <div class="result">
 
 **PBC/APBC Hamiltonian:**
 
 $$
-H^P = \sum_{j=1}^N \mathcal{T}^{j-1} H_1 (\mathcal{T}^\dagger)^{j-1}
+\begin{align*}
+    H^P &= \sum_{j=1}^N H^P_j, &\quad
+    H^P_j &\equiv (T^\dagger)^{j-1} 
+    H_1 T^{j-1} (= H_j)
+    \\
+    H^A &= \sum_{j=1}^N H^A_j, &\quad
+    H^A_j &\equiv (\tilde{T}^\dagger)^{j-1} 
+    H_1 \tilde{T}^{j-1}
+\end{align*}
 $$
 
 </div><br>
 
-Then the PBC Hamiltonian will be invariant under lattice translation:
+The APBC Hamiltonian will include some non-trivial boundary terms. Let us determine the APBC local Hamiltonian: starting with $H^A_2$, we have
 
 $$
-\mathcal{T} H \mathcal{T}^\dagger
-= \sum_{j=1}^N \mathcal{T} H_j \mathcal{T}^\dagger
-= \sum_{j=2}^{N+1} \mathcal{T} H_j \mathcal{T}^\dagger
-= H
+\begin{align*}
+    H^A_2 &= \tilde{T}^\dagger H_1 \tilde{T}
+    \\
+    &= - T^\dagger Z_1^\dagger 
+    [J_x X_1 X_2 + J_y Y_1 Y_2 + h Z_1] Z_1 T
+    \\
+    &= - T^\dagger [
+        J_x Z_1 X_1 Z_1 X_2 + J_y Z_1 Y_1 Z_1 Y_2 + h Z_1^3
+    ] T
+    \\
+    &= 
+\end{align*}
 $$
-
-An alternative expression for the PBC Hamiltonian is then
-
-
-
-### Anti-Periodic Boundary Condition
-
-The anti-periodic boundary condition (APBC) can only be applied to spin chains with $\mathbb{Z}_2$ symmetry . The XY chain is such a model, with the $\mathbb{Z}_2$ generator
-
-$$
-\mathcal{Z} = \prod_{j=1}^N Z_j
-$$
-
-and the local Hamiltonian 
-
-$$
-H_j = -\left[
-    \frac{1+\gamma}{2} X_j X_{j+1}
-    + \frac{1-\gamma}{2} Y_j Y_{j+1} + h Z_j
-\right]
-$$
-
-
-
-The we can define the **twisted** lattice translation operator
-
-$$
-\tilde{\mathcal{T}} \equiv Z_1 \mathcal{T}
-$$
-
-The Hamiltonian of XY chain with APBC or PBC can
 
 ## Mapping to Fermion Model
 
 Below we shall use Jordan-Wigner transformation to map the spin Hamiltonian to fermion Hamiltonian. The boundary terms should be treated very carefully. 
+
+### Periodic Boundary Condition
 
 We first express $S_j^x, S_j^y$ using the raising and lowering operators $S_j^\pm$:
 
