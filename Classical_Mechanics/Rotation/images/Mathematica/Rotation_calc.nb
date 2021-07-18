@@ -29,7 +29,7 @@ Cell[BoxData[{
  CellLabel->"In[69]:=",ExpressionUUID->"d0bdb646-4372-474d-8844-57292e0178df"],
 
 Cell[BoxData["\<\"/Users/zhengyuanyue/Documents/GitHub/Zhengyuan_Lectures_on_\
-Physics/Classical_Mechanics/Rotation/Figures/Mathematica\"\>"], "Output",
+Physics/Classical_Mechanics/Rotation/images/Mathematica\"\>"], "Output",
  CellChangeTimes->{
   3.7814358673835278`*^9, 3.781436009375107*^9, 3.781436074978312*^9, 
    3.781787795268503*^9, 3.7817882505675383`*^9, 3.781788481330127*^9, 

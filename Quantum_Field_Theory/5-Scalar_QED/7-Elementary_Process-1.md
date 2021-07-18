@@ -34,7 +34,7 @@ In scalar QED, Compton scattering involves the following 3 diagrams at the lowes
 - The seagull diagram
     
     <center>
-    <img src="Figures/compton-seagull.png" height="180px">
+    <img src="images/compton-seagull.png" height="180px">
     </center>
 
     $$
@@ -44,7 +44,7 @@ In scalar QED, Compton scattering involves the following 3 diagrams at the lowes
 - The s-channel diagram
     
     <center>
-    <img src="Figures/compton-s.png" height="180px">
+    <img src="images/compton-s.png" height="180px">
     </center>
 
     $$
@@ -93,7 +93,7 @@ In scalar QED, Compton scattering involves the following 3 diagrams at the lowes
 - The u-channel diagram
 
     <center>
-    <img src="Figures/compton-u.png" height="200px">
+    <img src="images/compton-u.png" height="200px">
     </center>
 
     Then
@@ -166,7 +166,7 @@ $$
 Let us now again only focus on the outgoing $\gamma$:
 
 <center>
-<img src="Figures/ward2.png" height="160px">
+<img src="images/ward2.png" height="160px">
 </center>
 
 The amplitude $\mathcal{M}$ of Compton scattering can be expressed as
@@ -422,7 +422,7 @@ $$
 To find the differential cross section, we shall return to the lab frame. Let the scattering angle of the photon be $\theta$, and choose the coordinate system as shown below.
 
 <center>
-<img src="Figures/compton-lab.png" height="150px">
+<img src="images/compton-lab.png" height="150px">
 </center>
 
 $$
@@ -593,7 +593,7 @@ $$
 Pair annihilation involves the following 3 diagrams (to the lowest order):
 
 <center>
-<img src="Figures/pairanni.png" height="200px">
+<img src="images/pairanni.png" height="200px">
 </center>
 
 The amplitudes for each diagram are found to be (used on-shell conditions to simplify the denominator)
@@ -659,7 +659,7 @@ $$
 To find the differential cross section, we go to the CM frame. Let the scattering angle of the photons be $\theta$, and choose the coordinate system as shown below. 
 
 <center>
-<img src="Figures/pairanni-cm.png" height="150px">
+<img src="images/pairanni-cm.png" height="150px">
 </center>
 
 $$
@@ -734,7 +734,7 @@ $$
 Pair creation involves the following 3 diagrams (to the lowest order):
 
 <center>
-<img src="Figures/paircreate.png" height="200px">
+<img src="images/paircreate.png" height="200px">
 </center>
 
 The polarization averaged amplitude can be obtained by the same replacement as in the pair annihilation case. 
@@ -744,7 +744,7 @@ The polarization averaged amplitude can be obtained by the same replacement as i
 To find the differential cross section, we go to the CM frame. Let the scattering angle of the electron be $\theta$, and choose the coordinate system as shown below. Then
 
 <center>
-<img src="Figures/paircreate-cm.png" height="160px">
+<img src="images/paircreate-cm.png" height="160px">
 </center>
 
 $$

@@ -51,7 +51,7 @@ $$
 To the lowest order, this corresponds to only one diagram (s-channel):
 
 <center>
-<img src="Figures/ee-mumu.png" height="180px">
+<img src="images/ee-mumu.png" height="180px">
 </center>
 
 The t- and u- channels are not allowed, since there should be no vertices involving both $\phi$ and $\chi$. The corresponding amplitude is
@@ -71,7 +71,7 @@ $$
 Next, consider the kinetics in the CM frame (we have implicitly applied 4-momentum conservation):
 
 <center>
-<img src="Figures/ee-mumu-cm.png" height="160px">
+<img src="images/ee-mumu-cm.png" height="160px">
 </center>
 
 $$
@@ -135,7 +135,7 @@ $$
 This corresponds to the following diagram (t-channel)
 
 <center>
-<img src="Figures/emu-emu-t.png" height="200px">
+<img src="images/emu-emu-t.png" height="200px">
 </center>
 
 $$
@@ -170,7 +170,7 @@ $$
 Next, consider the kinetics in CM frame:
 
 <center>
-<img src="Figures/emu-emu-cm.png" height="160px">
+<img src="images/emu-emu-cm.png" height="160px">
 </center>
 
 $$
@@ -237,7 +237,7 @@ $$
 This corresponds to the following diagram (t-channel)
 
 <center>
-<img src="Figures/emubar-emubar-t.png" height="200px">
+<img src="images/emubar-emubar-t.png" height="200px">
 </center>
 
 $$

@@ -57,7 +57,7 @@ After going through this material, the *most important* (and maybe surprising to
 
 <center>
 
-![](Figures/z_rotation.svg)   
+![](images/z_rotation.svg)   
 *Rotation around the $z$-axis by angle $\alpha$*
 
 </center>
@@ -122,7 +122,7 @@ To obtain the general rotation matrix (denoted by $R_n( \alpha)$), we proceed in
 
 <center>
 
-![](Figures/rotation_matrix.svg)   
+![](images/rotation_matrix.svg)   
 *Two steps to obtain the new basis*
 
 </center>
@@ -348,7 +348,7 @@ Consider for simplicity the reflection about the $xz$-plane. You can apply the r
 
 <center>
 
-![](Figures/pseudovector.svg)   
+![](images/pseudovector.svg)   
 *A rotating disc and its image in the mirror*
 
 </center>

@@ -103,7 +103,7 @@ $$
 In the second term we change $p \to -p$. These two terms can be expressed as the residue of the following $p^0$ integration along the path shown in the figure:
 
 <center>
-<img src="Figures/p0-int-DF.png" width="500px">
+<img src="images/p0-int-DF.png" width="500px">
 </center>
 
 $$

@@ -1,5 +1,5 @@
 <center>
 
-![gif](Figures/rot_ref_frame_general.gif)
+![gif](images/rot_ref_frame_general.gif)
 
 </center>

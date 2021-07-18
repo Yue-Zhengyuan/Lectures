@@ -4,7 +4,7 @@
 
 <center>
 
-![](Figures/3b1b_LA.png)
+![](images/3b1b_LA.png)
 
 </center>
 
@@ -38,7 +38,7 @@
 
 <center>
 
-![](Figures/2d_det.svg)   
+![](images/2d_det.svg)   
 *Geometric meaning of 2D determinant*
 
 </center>
@@ -80,7 +80,7 @@ When $\det A = 0$, it means that $a$ and $b$ are *on the same line*.
 
 <center>
 
-![](Figures/3d_det.png)   
+![](images/3d_det.png)   
 *Geometric meaning of 3D determinant*
 
 </center>
@@ -174,7 +174,7 @@ Consider a linear transformation $A$.
 
 <center>
 
-![](Figures/non_invertible_trans.png)   
+![](images/non_invertible_trans.png)   
 *A non-invertible 2D linear transformation*   
 *(Screenshot from the linear transformation demo)*
 
@@ -436,7 +436,7 @@ we say that $A$ and $B$ are **similar** to each other (the word "similar" is cho
 
 <center>
 
-![](Figures/change_of_basis.svg)   
+![](images/change_of_basis.svg)   
 *An example of change of basis*
 
 </center>
@@ -453,7 +453,7 @@ From the information of the figure above:
 
 <center>
 
-![](Figures/2d_det-solution.svg)   
+![](images/2d_det-solution.svg)   
 *Calculation of area of parallelogram ABCD*
 
 </center>
@@ -496,7 +496,7 @@ $$
 
 <center>
 
-![](Figures/3d_det-solution.png)   
+![](images/3d_det-solution.png)   
 *Calculation of volume of parallelepiped*
 
 </center>

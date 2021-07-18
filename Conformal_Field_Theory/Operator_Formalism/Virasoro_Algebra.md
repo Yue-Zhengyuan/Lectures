@@ -303,7 +303,7 @@ $$
 the Schwarzian derivative is zero.
 
 <center>
-<img src="Figures/schwarzian_deri.png" width="500pt">
+<img src="images/schwarzian_deri.png" width="500pt">
 <br><i>which can be verified by brute force.</i>
 </center><br>
 

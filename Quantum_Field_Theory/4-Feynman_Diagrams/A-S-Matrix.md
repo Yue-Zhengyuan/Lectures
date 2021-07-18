@@ -5,7 +5,7 @@
 Consider a target of particles of type $A$ moving with velocity $v_A$, with density $\rho_A$ (particles per unit volume). We then shoot at it a bunch of particles of type $B$, with number density $\rho_B$ and velocity $v_B$ (parallel to $v_A$; this is always the case if we go to the center-of-mass frame).
 
 <center>
-<img src="Figures/scattering.png" width=400pt>
+<img src="images/scattering.png" width=400pt>
 </center>
 
 Let $l_A$ and $l_B$ be the lengths of the bunches of particles that will collide each other. We assume that 
@@ -68,7 +68,7 @@ $$
 Let us now consider the scattering between the target $|\phi_A\rangle$ and an incoming wave packet $|\phi_B(\mathbf{b})\rangle$ with **impact parameter** $\mathbf{b}$. 
 
 <center>
-<img src="Figures/impact_param.png">
+<img src="images/impact_param.png">
 </center>
 
 The probability that packets $B$ coming from the small area $d^2b$ near $\mathbf{b}$ are scattered to $n$ particles whose momenta are in a small region $d^3 p_1 \cdots d^3 p_n$ is (the factor of $1/2E_f$ is due to normalization)

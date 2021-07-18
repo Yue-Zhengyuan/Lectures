@@ -4,7 +4,7 @@
 
 <center>
 
-![](Figures/3b1b_LA.png)
+![](images/3b1b_LA.png)
 
 </center>
 
@@ -30,7 +30,7 @@ This problem is borrowed from the Grant Sanderson's video [*The most unexpected 
 
 <center>
 
-![](Figures/3b1b_collision.jpg)
+![](images/3b1b_collision.jpg)
 
 </center>
 
@@ -240,7 +240,7 @@ Some consequences immediately follow:
 
     <center>
 
-    ![](Figures/3b1b_eigenvector.png)   
+    ![](images/3b1b_eigenvector.png)   
     *Eigenvalues and eigenvectors of the transformation (matrix) $A$*
 
     </center>
@@ -642,7 +642,7 @@ When a collision happens, we shall add a disk sector with angle $\theta$. For ex
 
 <center>
 
-![](Figures/3b1b_collision-sol.svg)   
+![](images/3b1b_collision-sol.svg)   
 *Visualization of $V^{(n)}$ after each collision when $a = 16$*
 
 </center>

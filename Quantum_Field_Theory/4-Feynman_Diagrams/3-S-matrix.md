@@ -20,7 +20,7 @@
 Consider a target of particles of type $A$ moving with velocity $v_A$, with density $\rho_A$ (particles per unit volume). We then shoot at it a bunch of particles of type $B$, with number density $\rho_B$ and velocity $v_B$ (parallel to $v_A$; this is always the case if we go to the center-of-mass frame).
 
 <center>
-<img src="Figures/scattering.png" width=400pt>
+<img src="images/scattering.png" width=400pt>
 </center>
 
 Particles $B$ will be scattered by particles $A$. Let: 

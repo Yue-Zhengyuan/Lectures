@@ -67,7 +67,7 @@ we to obtain $R^0, ..., R^{N}$ and $L^N, ..., L^0$ by successive QR and LQ decom
 
 <center>
 
-![](Figures/QR_LQ.png)   
+![](images/QR_LQ.png)   
 *The QR and LQ decomposition*
 
 </center>
@@ -102,7 +102,7 @@ Thus the matrix $R^n$ (or $L^n$) is placed to the **R**ight (or **L**eft) of the
 
 <center>
 
-![](Figures/Q_tensors.png)   
+![](images/Q_tensors.png)   
 *Unitarity of $Q, Q'$ tensors*
 
 </center>
@@ -256,7 +256,7 @@ Then we discover that $\tilde{M}$'s satisfy the so-called left and right **canon
 
     <center>
 
-    ![](Figures/Left_cano_condition.png)
+    ![](images/Left_cano_condition.png)
 
     </center>
 
@@ -271,7 +271,7 @@ Then we discover that $\tilde{M}$'s satisfy the so-called left and right **canon
     
     <center>
 
-    ![](Figures/Right_cano_condition.png)
+    ![](images/Right_cano_condition.png)
 
     </center>
 
@@ -337,7 +337,7 @@ Due to the unitary properties of $U, V^\dagger$, we know that $\psi_L, \psi_R$ s
 
 <center>
 
-![](Figures/psi_LR.png)   
+![](images/psi_LR.png)   
 *In this figure $N=7, n=4$*
 
 </center>
@@ -346,7 +346,7 @@ The number of nonzero singular values is the dimension of the original MPS. To a
 
 <center>
 
-![](Figures/costfunc_svd.png)   
+![](images/costfunc_svd.png)   
 *The cost function for single link approximation by SVD*   
 *(Thicker line means larger link dimension; $D' > D$)*
 
@@ -356,9 +356,9 @@ The truncation is made easy if we use the canonical form of the MPS: due to the 
 
 <center>
 
-![](Figures/psi_L.png)
+![](images/psi_L.png)
 
-![](Figures/psi_R.png)
+![](images/psi_R.png)
 
 </center>
 
@@ -372,7 +372,7 @@ We may use a better, more *global* cost function, i.e. the Frobenius norm of the
 
 <center>
 
-![](Figures/costfunc_var.png)   
+![](images/costfunc_var.png)   
 *The cost function for iterative approximation*   
 
 </center>
@@ -383,7 +383,7 @@ We minimize this cost function *iteratively*:
 
     <center>
 
-    ![](Figures/mps_optimize.png)   
+    ![](images/mps_optimize.png)   
     *Obtaining optimal $M^{i}$; in this figure $i=2$ (the circled site)*
 
     </center>

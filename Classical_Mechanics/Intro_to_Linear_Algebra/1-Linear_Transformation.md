@@ -4,7 +4,7 @@
 
 <center>
 
-![](Figures/3b1b_LA.png)
+![](images/3b1b_LA.png)
 
 </center>
 
@@ -146,7 +146,7 @@ $$
 
     <center>
 
-    ![](Figures/different_basis.svg)   
+    ![](images/different_basis.svg)   
     *Two different vectors can have the same components (2, 3) <br>under different basis; the figures are drawn to the same scale*
 
     </center>
@@ -225,7 +225,7 @@ We note that components of $v'$ along the new basis are the same as the componen
 
 <center>
 
-![](Figures/linear_trans.svg)   
+![](images/linear_trans.svg)   
 *An arbitrary linear transformation in 2D. In this figure $v = 2 e_1 + 2 e_2$.*
 
 </center>
@@ -301,7 +301,7 @@ In all the following examples, we use the standard basis to describe the transfo
 
     <center>
 
-    ![](Figures/rotation_2d.svg)   
+    ![](images/rotation_2d.svg)   
     *2D counter-clockwise rotation by angle $\theta$*
 
     </center>
@@ -332,7 +332,7 @@ In all the following examples, we use the standard basis to describe the transfo
 
     <center>
 
-    ![](Figures/reflection_2d.svg)   
+    ![](images/reflection_2d.svg)   
     *Reflection with respect to x-axis*
 
     </center>
@@ -341,7 +341,7 @@ In all the following examples, we use the standard basis to describe the transfo
 
     <center>
 
-    ![](Figures/scale_2d.svg)   
+    ![](images/scale_2d.svg)   
     *Scaling by $e'_1 = 1.5 e_1$ (stretching) and $e'_2 = 0.8 e_2$ (shortening)*
 
     </center>
@@ -350,7 +350,7 @@ In all the following examples, we use the standard basis to describe the transfo
 
     <center>
 
-    ![](Figures/shear_2d.svg)   
+    ![](images/shear_2d.svg)   
     *Shear along direction of $e_1$ by $e'_2 = e_2 + e_1$*
 
     </center>
@@ -428,7 +428,7 @@ $$
 
 <center>
 
-![](Figures/3b1b_Mat_on_vec.png)   
+![](images/3b1b_Mat_on_vec.png)   
 *(Have you watched the [videos][LA_3b1b] now?)*
 
 </center>

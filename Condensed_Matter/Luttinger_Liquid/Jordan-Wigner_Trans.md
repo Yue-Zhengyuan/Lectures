@@ -106,7 +106,7 @@ Next, let us we try to generalize the above mapping to a 1D spin chain (with $N$
 $$
 S_i^+, S_i^-, S_i^z \longleftrightarrow 
 c_i^\dagger, c_i, n_i - \tfrac{1}{2}
-\qquad i = 0,1,...,N-1
+\qquad i = 1,...,N
 $$
 
 However, different fermion operators should *anti-commute*, while the spin operators at different sites *commute*:
@@ -133,19 +133,13 @@ $$
 \begin{align*}
     n_j &= c_j^\dagger c_j
     \\
-    \phi_j &= \pi \textstyle{\sum_{l=0}^{j-1} n_l}
+    \phi_j &= \pi \textstyle{\sum_{l=1}^{j-1} n_l}
 \end{align*} \right.
 $$
 
-Here $F_j \equiv e^{i\phi_j}$ is the required string operator; we also define $\phi_0 = 0$. 
+Here $F_j \equiv e^{i\phi_j}$ is the required string operator; we also define the phase on the first site $\phi_1 = 0$. 
 
 </div><br>
-
-We see that
-
-$$
-\text{spin = fermion$\times$string}
-$$
 
 <center>
 <img src="images/spin-fermion.png" width="450px" alt="string operator">
@@ -156,10 +150,16 @@ $$
 It is useful to derive an alternative expression for the string $F_j$:
 
 $$
-\begin{align*}
-    
-\end{align*}
+F_j \equiv \exp\bigg[
+    i\pi \sum_{l=1}^{j-1} n_l
+\bigg]
+= \prod_{l=1}^{j-1} (-1)^{n_l}
+= \prod_{l=1}^{j-1} (1 - 2n_l)
 $$
+
+In the last step we have used the fact that $n_l$ can only be 0, 1 and therefore $(-1)^{n_l} = 1 - 2n_l$. 
+
+In addition, we have
 
 $$
 \begin{align*}
@@ -220,18 +220,18 @@ $$
 Usually, we impose the **periodic boundary condition** on the spin chain
 
 $$
-S_N^a = S_0^a \qquad a = x,y,z
+S_{N+1}^a = S_1^a \qquad a = x,y,z
 $$
 
 Here $N$ is the number of spin sites. Under the Jordan-Wigner transformation 
 
 $$
 \begin{align*}
-    S_N^{(\pm)} &= c_N^{(\dagger)} e^{\pm i \phi_N}
-    = c_N^{(\dagger)} \exp(\pm i \pi n_\text{tot})
+    S_{N+1}^{(\pm)} &= c_{N+1}^{(\dagger)} e^{\pm i \phi_{N+1}}
+    = c_{N+1}^{(\dagger)} \exp(\pm i \pi n_\text{tot})
     \\
-    S_0^{(\pm)} &= c_0^{(\dagger)} e^{\pm i \phi_0}
-    = c_0^{(\dagger)}
+    S_1^{(\pm)} &= c_1^{(\dagger)} e^{\pm i \phi_1}
+    = c_1^{(\dagger)}
 \end{align*}
 $$
 
@@ -242,7 +242,7 @@ Here $n_\text{tot} \equiv \sum_i n_i$ is the total number of fermions. Thus, dep
     $$
     n_\text{tot} = \text{even}
     \qquad
-    c_N^{(\dagger)} = -c_0^{(\dagger)}
+    c_{N+1}^{(\dagger)} = -c_1^{(\dagger)}
     $$
 
 - The **odd** sector with **periodic** boundary condition
@@ -274,7 +274,7 @@ $$
 
 where $j$ sums over the lattice sites, and $k$ sums over the reciprocal lattice in the 1st Brillouin zone (BZ). Then, for the two boundary conditions:
 
-- PBC: $c_{N} = c_0$
+- PBC: $c_{N} = c_1$
 
     $$
     e^{-ikNa} = 1
@@ -290,7 +290,7 @@ where $j$ sums over the lattice sites, and $k$ sums over the reciprocal lattice 
     \left[-\frac{N}{2}, \frac{N}{2}\right]
     $$
 
-- Anti-PBC: $c_{N} = -c_0$
+- Anti-PBC: $c_{N} = -c_1$
     
     $$
     e^{-ikNa} = -1
