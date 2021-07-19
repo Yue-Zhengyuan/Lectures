@@ -18,24 +18,35 @@
 
 # The XXZ Spin Chain
 
-Reference: 
-
-- *Quantum Physics in One Dimension* by Thierry Giamarchi
-- *Quantum Field Theory in Strongly Correlated Electronic Systems* by Naoto Nagaosa
-
 <div class="result">
 
-**XXZ spin chain:** ($J_{xy} > 0$)
+**XXZ spin chain:**
 
-$$
-H = J_{xy} \sum_{i=0}^{N-1} (
-    S_i^x S_{i+1}^x + S_i^y S_{i+1}^y
-) + J_z \sum_{i=0}^{N-1} S_i^z S_{i+1}^z
-$$
+- Local Hamiltonian and $\mathbb{Z}_2$ generator
+
+    $$
+    H_j = J_\perp (
+        X_j X_{j+1} + Y_j Y_{j+1}
+    ) + J_z Z_j Z_{j+1}, \quad
+    Z = \textstyle{\prod_{j=1}^N} Z_j
+    $$
+
+    - When $J_\perp = J_z$, we get the isotropic **Heisenberg model**.
+    - When $J_\perp = 0$, we get the **Ising model** (without magnetic field).
+
+- APBC boundary term
+
+    $$
+    \begin{align*}
+        H^A_N &= Z_1 H_N Z_1 \\
+        &= Z_1 [
+            J_\perp (X_N X_1 + Y_N Y_1) + J_z Z_N Z_1
+        ] Z_1 \\
+        &= -J_\perp (X_N X_1 + Y_N Y_1) + J_z Z_N Z_1
+    \end{align*}
+    $$
 
 </div><br>
-
-The model name comes from the fact that the coupling coefficient in the $X$ and $Y$ directions are the same, but they are different from that in $Z$. 
 
 ## Mapping to Fermion Model
 
@@ -56,7 +67,7 @@ $$
 Then
 
 $$
-H = \frac{J_{xy}}{2} \sum_{i=0}^{N-1} (
+H = \frac{J_\perp}{2} \sum_{i=0}^{N-1} (
     S_{i}^+ S_{i+1}^- + h.c.
 ) + J_z \sum_{i=0}^{N-1} S_i^z S_{i+1}^z
 $$
@@ -64,7 +75,7 @@ $$
 This is mapped by Jordan-Wigner transformation to
 
 $$
-H = \frac{J_{xy}}{2} \sum_{i=0}^{N-1} (
+H = \frac{J_\perp}{2} \sum_{i=0}^{N-1} (
     c_i^\dagger c_{i+1} + h.c.
 ) + J_z \sum_{i=0}^{N-1} \left(n_i - \frac{1}{2}\right)
 \left(n_{i+1} - \frac{1}{2}\right)
@@ -90,7 +101,7 @@ $$
     \left(n_{i+1} - \frac{1}{2}\right)
     \\
     \text{with} &\quad 
-    t = \frac{J_{xy}}{2} > 0, \quad V = J_z
+    t = \frac{J_\perp}{2} > 0, \quad V = J_z
 \end{align*}
 $$
 </div><br>
@@ -104,7 +115,7 @@ $$
 The XXZ chain is in the Luttinger liquid phase when
 
 $$
--1 \le \frac{J_z}{J_{xy}} \le 1
+-1 \le \frac{J_z}{J_\perp} \le 1
 \quad \text{or} \quad
 -1 \le \frac{V}{2t} \le 1
 $$
@@ -112,11 +123,11 @@ $$
 By comparison with Bethe ansatz exact solution, the Luttinger parameter (compactified radius) $K$ and the velocity $u$ can be determined as ($0 \le g \le 1$)
 
 $$
-\frac{J_z}{J_{xy}} = -\cos (\pi g)
+\frac{J_z}{J_\perp} = -\cos (\pi g)
 \  \Rightarrow \  \left\{
 \begin{align*}
     K &= \frac{1}{2g} \\
-    u &= \frac{1}{1-g} \sin(\pi(1-g)) \frac{J_{xy}}{2}
+    u &= \frac{1}{1-g} \sin(\pi(1-g)) \frac{J_\perp}{2}
 \end{align*}
 \right.
 $$

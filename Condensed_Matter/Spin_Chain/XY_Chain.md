@@ -18,141 +18,39 @@
 
 # XY Spin Chain
 
-*References*:
-
-- [Strongly Correlated Systems
-in Solid State Physics](http://www.thp.uni-koeln.de/~as/Mypage/PSfiles/Korrel/korrel.pdf)
-- [PhD Thesis of Zou Yijian](https://uwspace.uwaterloo.ca/handle/10012/16049)
-
-*Notes on notations*: The Pauli matrices will be alternatively denoted by $(X_i, Y_i, Z_i)$ or $(\sigma_i^x, \sigma_i^y, \sigma_i^z)$.
-
-## Periodic/Anti-Periodic Boundary Conditions
-
-**Periodic boundary condition (PBC)** can intuitively be applied to any spin chain. However, the **anti-periodic boundary condition (APBC)** can only be imposed on spin chains with $\mathbb{Z}_2$ symmetry (symmetry with respect to the flip of all spins). 
-
-In the following discussion, the chain sites will be labelled periodically for both boundary conditions, i.e.
-
-$$
-\sigma_{j+N}^a = \sigma_j^a \qquad j = 1,...,N
-$$
-
-For the XY chain, the PBC Hamiltonian $H^P$ and the $\mathbb{Z}_2$ symmetry generator $Z$ are combinations of local term (for convenience we use Pauli matrices instead of spin-1/2 operators $S^a = \sigma^a/2$):
-
 <div class="result">
 
 **XY spin chain:**
 
-$$
-\begin{align*}
-    H^P &= \sum_{j=1}^N H_j, \quad
-    Z = \prod_{j=1}^N Z_j
-    \\
-    H_j &= - [J_x X_j X_{j+1} + J_y Y_j Y_{j+1} + h Z_j]
-    \\[0.7em]
-    J_x &\equiv \frac{1+\gamma}{2}, \quad
-    J_y \equiv \frac{1-\gamma}{2}
-\end{align*}
-$$
+- Local Hamiltonian and $\mathbb{Z}_2$ generator
+
+    $$
+    \begin{gather*}
+        H_j = J_x S^x_j S^x_{j+1} + J_y S^y_j S^y_{j+1} - h S^z_j, \quad
+        Z = \textstyle{\prod_{j=1}^N} Z_j
+    \end{gather*}
+    $$
+
+    Sometimes people fix the scale of $H$ by setting
+
+    $$
+    J_x \equiv 1+\gamma, \quad
+    J_y \equiv 1-\gamma
+    $$
+
+- APBC boundary term
+
+    $$
+    \begin{align*}
+        H^A_N &= Z_1 H_N Z_1 
+        = Z_1 (J_x S^x_N S^x_1 + J_y S^y_N S^y_1 - h S^z_N) Z_1 \\
+        &= - J_x S^x_N S^x_1 - J_y S^y_N S^y_1 - h S^z_N
+    \end{align*}
+    $$
 
 </div><br>
 
-The system in invariant under the $\mathbb{Z}_2$ transformation in the sense that *each local Hamiltonian*, and therefore the full $H$ is invariant:
-
-$$
-Z^\dagger H_j Z = H_j
-\ \Rightarrow \ 
-Z^\dagger H Z = H
-$$
-
-----
-
-*Verify the claimed $Z$*: Using the fact that
-
-- The Pauli matrices are both Hermitian and unitary (and therefore square to identity)
-- The commutators $[\sigma^a_m, \sigma^b_n] = \delta_{mn} \times 2i \epsilon^{abc} \sigma^c_m$
-
-Then for each term in $H_j$
-
-$$
-\begin{align*}
-    Z^\dagger X_j X_{j+1} Z
-    &= \bigg[ \prod_{m=1}^N Z_m \bigg]^\dagger
-    X_j X_{j+1}
-    \bigg[ \prod_{n=1}^N Z_n \bigg]
-    \\
-    &= Z_{j+1} Z_j X_j X_{j+1} Z_j Z_{j+1}
-    \\
-    &= Z_j X_j Z_j Z_{j+1} X_{j+1} Z_{j+1} 
-    \\
-    &= (-X_j) (-X_{j+1}) = X_j X_{j+1}
-\end{align*}
-$$
-
-Similarly
-
-$$
-\begin{align*}
-    Z^\dagger Y_j Y_{j+1} Z
-    &= Z_j Y_j Z_j Z_{j+1} Y_{j+1} Z_{j+1} 
-    \\
-    &= (-Y_j) (-Y_{j+1}) = Y_j Y_{j+1}
-\end{align*}
-$$
-
-And obviously $Z^\dagger Z_j Z = Z_j$. Thus we have proved that $Z^\dagger H_j Z = H_j$. $\blacksquare$
-
-----
-
-Then we introduce the lattice translation operator $T$ and its **twisted** counterpart $\tilde{T} \equiv Z_1 T$. The action of $T$ on any local spin operators $O_j$ is defined as
-
-$$
-T^\dagger O_j T = O_{j+1}
-$$
-
-We can then define the PBC *and* the APBC Hamiltonians as
-
-<div class="result">
-
-**PBC/APBC Hamiltonian:**
-
-$$
-\begin{align*}
-    H^P &= \sum_{j=1}^N H^P_j, &\quad
-    H^P_j &\equiv (T^\dagger)^{j-1} 
-    H_1 T^{j-1} (= H_j)
-    \\
-    H^A &= \sum_{j=1}^N H^A_j, &\quad
-    H^A_j &\equiv (\tilde{T}^\dagger)^{j-1} 
-    H_1 \tilde{T}^{j-1}
-\end{align*}
-$$
-
-</div><br>
-
-The APBC Hamiltonian will include some non-trivial boundary terms. Let us determine the APBC local Hamiltonian: starting with $H^A_2$, we have
-
-$$
-\begin{align*}
-    H^A_2 &= \tilde{T}^\dagger H_1 \tilde{T}
-    \\
-    &= - T^\dagger Z_1^\dagger 
-    [J_x X_1 X_2 + J_y Y_1 Y_2 + h Z_1] Z_1 T
-    \\
-    &= - T^\dagger [
-        J_x Z_1 X_1 Z_1 X_2 + J_y Z_1 Y_1 Z_1 Y_2 + h Z_1^3
-    ] T
-    \\
-    &= 
-\end{align*}
-$$
-
-## Mapping to Fermion Model
-
-Below we shall use Jordan-Wigner transformation to map the spin Hamiltonian to fermion Hamiltonian. The boundary terms should be treated very carefully. 
-
-### Periodic Boundary Condition
-
-We first express $S_j^x, S_j^y$ using the raising and lowering operators $S_j^\pm$:
+It is convenient to express $H_j$ in terms of $S^\pm$: 
 
 $$
 S_j^{\pm} = S_j^x \pm i S_j^y 
@@ -165,21 +63,19 @@ S_j^{\pm} = S_j^x \pm i S_j^y
 \right.
 $$
 
-Then
-
 $$
 \begin{align*}
-    &J_x S_j^x S_{j+1}^x 
-    + J_y S_j^y S_{j+1}^y 
-    \\
+    H_j
     &= \frac{J_x}{4} (S_j^- + S_j^+)(S_{j+1}^- + S_{j+1}^+)
-    - \frac{J_y}{4}(S_j^- - S_j^+)(S_{j+1}^- - S_{j+1}^+)
+    - \frac{J_y}{4}(S_j^- - S_j^+)(S_{j+1}^- - S_{j+1}^+) - h S_j^z
     \\
-    &= t(S_j^- S_{j+1}^+ + \underbrace{S_j^+ S_{j+1}^-}_\text{commute})
-    + \Delta (S_j^+ S_{j+1}^+ + \underbrace{S_j^- S_{j+1}^-}_\text{commute})
+    &= t(S_j^+ S_{j+1}^- + S_j^- S_{j+1}^+)
+    + \Delta (S_j^+ S_{j+1}^+ + S_j^- S_{j+1}^-) - h S_j^z
     \\
-    &= t(S_j^+ S_{j+1}^- + h.c.)
-     + \Delta (S_j^+ S_{j+1}^+ + h.c.)
+    &\boxed{
+        = t(S_j^+ S_{j+1}^- + h.c.)
+        + \Delta (S_j^+ S_{j+1}^+ + h.c.) - h S_j^z
+    }
 \end{align*}
 $$
 
@@ -190,85 +86,142 @@ t \equiv \frac{J_x + J_y}{4} \qquad
 \Delta \equiv \frac{J_x - J_y}{4}
 $$
 
-Therefore
+In terms of $\gamma$, we simply obtain $t = 1/2, \Delta = \gamma/2$. 
+
+## Mapping to Fermion Model
+
+Below we shall use Jordan-Wigner transformation to map the spin Hamiltonian to fermion Hamiltonian. 
+
+### Non-Boundary Terms
+
+For non-boundary terms $H_j \ (j = 1,...,N-1)$, the Jordan-Wigner transformation can be applied without subtleties. In the following we shall use the identity
 
 $$
-H_{xy} = - \sum_{j=0}^{N-1} \left[
-    t(S_j^+ S_{j+1}^- + h.c.)
-    + \Delta (S_j^+ S_{j+1}^+ + h.c.) 
-\right] - h \sum_{j=0}^{N-1} S_j^z
+F_j F_{j+1} 
+= \prod_{l=1}^{j-1} (-1)^{n_l} \prod_{l'=1}^{j} (-1)^{n_{l'}}
+= (-1)^{n_j}
 $$
-
-Let us now apply Jordan-Wigner transformation to fermionize the model.
 
 - **"Spin Hopping" Terms**
 
     $$
     \begin{align*}
-        \sum_j S_j^+ S_{j+1}^-
-        &= \sum_j c_j^\dagger e^{i \phi_j} 
-        \underbrace{c_{j+1} e^{-i \phi_{j+1}}}_\text{commute}
+        S_j^+ S_{j+1}^-
+        &= c_j^\dagger F_j c_{j+1} F_{j+1}
+        = c_j^\dagger c_{j+1} F_j F_{j+1}
         \\
-        &= \sum_j c_j^\dagger e^{i (\phi_{j} - \phi_{j+1})} c_{j+1} 
-        \\
-        &= \sum_j c_j^\dagger e^{-i \pi n_j} c_{j+1} 
+        &= c_j^\dagger c_{j+1} (-1)^{n_j} = c_j^\dagger c_{j+1}
     \end{align*}
     $$
 
-    Each term will give nonzero outcome only when $n_j = 0$, but this behavior is the same if the $e^{-i\pi n_j}$ is absent. So we obtain the first conversion (**nearest neighbor (tight-binding) hopping**)
+    The last equality used the fact that this term is nonzero only when $n_j = 0$, cancelling the $(-1)^{n_j}$ factor. Combining with the h.c. term, we arrive at:
 
     $$
-    \sum_j (S_j^+ S_{j+1}^- + h.c.) 
-    = \sum_j (c_j^\dagger c_{j+1} + h.c.)
+    S_j^+ S_{j+1}^- + h.c. = c_j^\dagger c_{j+1} + h.c.
     $$
 
 - **"Spin Pair" Terms**
 
     $$
     \begin{align*}
-        \sum_j S_j^+ S_{j+1}^+
-        &= \sum_j c_j^\dagger e^{i \phi_j} 
-        \underbrace{c_{j+1}^\dagger e^{i \phi_{j+1}}}_\text{commute}
+        S_j^+ S_{j+1}^+
+        &= c_j^\dagger F_j c_{j+1}^\dagger F_{j+1}
+        = c_j^\dagger c_{j+1}^\dagger F_j F_{j+1}
         \\
-        &= \sum_j c_j^\dagger e^{i (2\phi_j + \pi n_j)} c_{j+1}^\dagger
+        &= c_j^\dagger c_{j+1}^\dagger (-1)^{n_j} 
+        = c_j^\dagger c_{j+1}^\dagger
     \end{align*}
     $$
 
-    But $e^{2 i \phi_j} = \exp(2\pi i \textstyle{\sum_{j < j} n_j}) = 1$, and the extra $e^{i\pi n_j}$ has no effect again. Therefore (such term is related to the **$p$-wave superconductivity**)
+    The last equality follows from the same argument as for the previous term. Therefore (this term is related to the **$p$-wave superconductivity**)
 
     $$
-    \sum_j (S_j^+ S_{j+1}^+ + h.c.) 
-    = \sum_j (c_j^\dagger c_{j+1}^\dagger + h.c.)
+    S_j^+ S_{j+1}^+ + h.c. = c_j^\dagger c_{j+1}^\dagger + h.c.
     $$
 
 - **Magnetic Field Terms**
     
-    This simply corresponds to the replacement
-
     $$
     S_j^z = n_j - \frac{1}{2}
     $$
 
-Finally, we obtain the fermion theory
-
 <div class="result">
 
-**Fermionized XY Chain:**
+**Local non-boundary term of fermion theory:**
 
 $$
-H_F = - \sum_{j=0}^{N-1} \left[
-    t(c_j^\dagger c_{j+1} + h.c.)
+\begin{align*}
+    (H_F)_j &= t(c_j^\dagger c_{j+1} + h.c.)
+    \\ &\quad
     + \Delta (c_j^\dagger c_{j+1}^\dagger + h.c.) 
-\right] - h \sum_{j=0}^{N-1} \bigg(n_j - \frac{1}{2} \bigg)
+    - h \left(n_j - \tfrac{1}{2} \right)
+\end{align*} \quad (j = 1,...,N-1)
 $$
 
 </div><br>
 
-We see that the magnetic field $h$ now plays the role of the *chemical potential* $\mu$. 
+### The Boundary Term $H_N$
+
+Since XY chain contains only nearest neighbor interaction, the only boundary term is $H_N$, which must be transformed carefully:
+
+$$
+\begin{align*}
+    H^P_N &= + t(S_N^+ S_1^- + h.c.)
+    + \Delta (S_N^+ S_1^+ + h.c.) - h S_N^z
+    \\
+    H^A_N &= - t(S_N^+ S_1^- + h.c.)
+    - \Delta (S_N^+ S_1^+ + h.c.) - h S_N^z
+\end{align*}
+$$
+
+We focus on the term:
+
+$$
+S_N^+ S_1^{(\pm)} = c_N^\dagger F_N c_1^{(\dagger)} \cancel{F_1}
+$$
+
+Introduce the the **fermion number parity** operator
+
+$$
+P \equiv (-1)^{n_\text{tot}} = \exp(i\pi n_\text{tot})
+\quad \bigg( n_\text{tot} \equiv \sum_{l=1}^N n_l \bigg)
+$$
+
+Then we express $F_N$ in terms of $P$:
+
+$$
+\begin{align*}
+    F_N &= F_N (-1)^{2n_N} = P (-1)^{n_N} \\ \Rightarrow
+    S_N^+ S_1^{(\pm)} &= c_N^\dagger P (-1)^{n_N} c_1^{(\dagger)}
+    \\
+    &= c_N^\dagger P c_1^{(\dagger)} \quad 
+    (\text{RHS is nonzero only when $n_N = 0$})
+    \\
+    &= P c_N^\dagger c_1^{(\dagger)} \quad
+    
+\end{align*}
+$$
+
+Obviously $P^2 = 1$, so its eigenvalues are $\pm 1$ ($n_\text{tot}$ is even or odd). In the spin representation, $n_\text{tot} = S^z_\text{tot}$ and one can verify that $[H^{A/P}, P] = 0$ (i.e. the parity is conserved). Thus the Hilbert space of the spin chain is separated into two parts $(P = \pm 1)$. To summarize:
+
+<div class="result">
+
+**Boundary condition of fermion theory:**
+
+**Exact correspondence between spin Hamiltonian and fermion Hamiltonian:**
+
+</div><br>
 
 ## Hamiltonian in Momentum Space
 
-To see the energy levels more clearly, we shall go to the momentum space (reciprocal lattice). We transform the Hamiltonian term by term:
+To see the energy levels more clearly, we shall go to the momentum space (reciprocal lattice)
+
+$$
+c_j = \frac{1}{\sqrt{N}} \sum_p c_p e^{ipx_j}, \quad
+x_j = ja
+$$
+
+We transform the Hamiltonian term by term:
 
 - Tight-binding term
 
@@ -290,8 +243,7 @@ To see the energy levels more clearly, we shall go to the momentum space (recipr
         \\
         &= -t \sum_k c_k^\dagger c_k
         (e^{ika} + e^{-ika})
-        \\
-        &= -2t \sum_k c_k^\dagger c_k \cos(ka)
+        = -2t \sum_k c_k^\dagger c_k \cos(ka)
     \end{align*}
     $$
 
@@ -333,8 +285,7 @@ To see the energy levels more clearly, we shall go to the momentum space (recipr
         \\
         &= -\frac{h}{N} \sum_j \sum_{k,p}
         c_k^\dagger e^{-ikja} c_p e^{ipja}
-        \\
-        &= -h \sum_k c_k^\dagger c_k 
+        = -h \sum_k c_k^\dagger c_k 
     \end{align*}
     $$
 
@@ -452,7 +403,7 @@ $$
 H = \sum_{k \ge 0} \left[
     \Lambda_{1k} \eta_k^\dagger \eta_k
     + \Lambda_{2k} \eta_{-k}^\dagger \eta_{-k}
-    + X_k
+    + S^x_k
 \right]
 $$
 

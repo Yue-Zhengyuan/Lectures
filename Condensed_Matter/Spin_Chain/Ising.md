@@ -18,23 +18,29 @@
 
 # Transverse Field Ising Model
 
-## Periodic/Anti-Periodic Boundary Conditions
+## Boundary Conditions
 
-For the Ising chain, the PBC Hamiltonian $H^P$ and the $\mathbb{Z}_2$ symmetry generator $Z$ are combinations of local term:
+For the Ising chain (transverse field Ising model, TFIM), the PBC Hamiltonian $H^P$ and the $\mathbb{Z}_2$ symmetry generator $Z$ are combinations of local term:
 
 <div class="result">
 
-**Transverse field Ising model:**
+**Transverse field Ising model (TFIM):**
 
-$$
-\begin{align*}
-    H^P &= \sum_{j=1}^N H_j, \quad
-    Z = \prod_{j=1}^N Z_j
-    \\
-    H_j &= - [J X_j X_{j+1} + h Z_j]
-\end{align*}
-$$
+- Local Hamiltonian and $\mathbb{Z}_2$ generator
 
-</div><br>
+    $$
+    H_j = - (X_j X_{j+1} + h Z_j), \quad
+    Z = \textstyle{\prod_{j=1}^N} Z_j
+    $$
 
-Next we determine the APBC Hamiltonian. 
+- APBC boundary term
+
+    $$
+    \begin{align*}
+        H^A_N &= Z_1 H_N Z_1 
+        = - Z_1 (X_N X_1 + h Z_N) Z_1 \\
+        &= - (-X_N X_1 + h Z_N)
+    \end{align*}
+    $$
+
+</div>
