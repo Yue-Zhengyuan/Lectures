@@ -1,21 +1,3 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-    .remark {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: SeaGreen;
-        color: White;
-    }
-    .result {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: DarkSlateBlue;
-        color: White;
-    }
-</style>
-
 # Operator Product Expansion: <br>Energy-Momentum Tensor
 
 Having seen the OPE of $T(z)$ with primary fields, let us turn to the OPE of the energy-momentum tensor $T(z)$ with itself. The result *turns out* (few introductory texts will give a rigorous proof) to have the general form

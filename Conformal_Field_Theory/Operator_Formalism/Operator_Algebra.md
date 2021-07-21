@@ -1,21 +1,3 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-    .remark {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: SeaGreen;
-        color: White;
-    }
-    .result {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: DarkSlateBlue;
-        color: White;
-    }
-</style>
-
 # Operator Algebra
 
 The information needed in order to write down all *correlation functions*, i.e. the complete OPE (*including all regular terms*) of all primary fields with each other, and hence solve the field theory, is called the **operator algebra**.

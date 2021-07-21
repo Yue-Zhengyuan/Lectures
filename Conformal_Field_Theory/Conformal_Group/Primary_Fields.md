@@ -1,21 +1,3 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-    .remark {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: SeaGreen;
-        color: White;
-    }
-    .result {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: DarkSlateBlue;
-        color: White;
-    }
-</style>
-
 # Primary Fields
 
 Under the mapping from $(x,y)$ in $\R^2$ to the complex plane, a field $\phi(x^0, x^1)$ becomes $\phi(z,\bar{z})$. It will be called a **primary field** if it transforms under any (global or local) conformal transformations $z \mapsto w(z)$ according to the formula

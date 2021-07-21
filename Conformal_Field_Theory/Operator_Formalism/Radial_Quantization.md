@@ -1,21 +1,3 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-    .remark {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: SeaGreen;
-        color: White;
-    }
-    .result {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: DarkSlateBlue;
-        color: White;
-    }
-</style>
-
 # Radial Quantization
 
 In practice, one often introduce periodic boundary condition (PBC) on $x^1$, i.e. put the system onto a cylinder with circumference (period) $L$ (which is usually chosen as $2\pi$):

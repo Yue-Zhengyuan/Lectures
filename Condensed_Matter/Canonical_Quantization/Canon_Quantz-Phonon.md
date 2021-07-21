@@ -1,21 +1,3 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-    .remark {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: SeaGreen;
-        color: White;
-    }
-    .result {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: DarkSlateBlue;
-        color: White;
-    }
-</style>
-
 # Canonical Quantization: <br>1D Phonon Modes
 
 Consider a system of $N$ atoms (with mass $m$) along a one-dimensional chain, connected by springs of stiffness $m \omega^2$. The Lagrangian is 

@@ -1,21 +1,3 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-    .remark {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: SeaGreen;
-        color: White;
-    }
-    .result {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: DarkSlateBlue;
-        color: White;
-    }
-</style>
-
 # Conformal Group in $d \ge 3$
 
 Corollary 3 (which states that $\partial^2 f = 0$) imposes the restriction that $\partial \cdot \epsilon$ is at most *linear* in $x$. Thus $\epsilon$ itself is at most quadratic in $x$:

@@ -1,21 +1,3 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-    .remark {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: SeaGreen;
-        color: White;
-    }
-    .result {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: DarkSlateBlue;
-        color: White;
-    }
-</style>
-
 # Example of Free Green's Function: <br>Free Fermion
 
 For free fermion, the interaction picture coincides with the Heisenberg picture. We shall then omit the picture label $I$ or $H$ for the fields. The Hamiltonian is given by

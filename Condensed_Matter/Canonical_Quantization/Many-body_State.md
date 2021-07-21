@@ -1,21 +1,3 @@
-<style>
-    .katex {
-        font-size: 1.1em;
-    }
-    .remark {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: SeaGreen;
-        color: White;
-    }
-    .result {
-        border-radius: 15px;
-        padding: 20px;
-        background-color: DarkSlateBlue;
-        color: White;
-    }
-</style>
-
 # Many-Body State for Identical Particles
 
 Consider a system of $N$ particles (not necessarily indistinguishable). Suppose each particle has one-body Hilbert space $\mathcal{H}_k$ ($k = 1, ..., N$), and the interaction between the particles does not destroy it. Then the full Hilbert space for the system is
