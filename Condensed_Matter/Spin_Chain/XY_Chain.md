@@ -18,6 +18,39 @@
 
 # XY Spin Chain
 
+<div class="result">
+
+**XY spin chain:**
+
+- Non-boundary local spin Hamiltonian
+    
+    $$
+    \begin{align*}
+        H_j &= J_x S^x_j S^x_{j+1} + J_y S^y_j S^y_{j+1} - h S^z_j \\
+        &= t(S_j^+ S_{j+1}^- + h.c.)
+        + \Delta (S_j^+ S_{j+1}^+ + h.c.) - h S^z_j
+        \\[0.7em] &\text{with} \quad
+        t \equiv \frac{J_x + J_y}{4}, \quad
+        \Delta \equiv \frac{J_x - J_y}{4}
+    \end{align*}
+    $$
+
+- Fermion Hamiltonian
+    
+    $$
+    \begin{align*}
+        H_F &= \sum_{j=1}^N \Big[
+            t(c_j^\dagger c_{j+1} + h.c.)
+            + \Delta (c_j^\dagger c_{j+1}^\dagger + h.c.) 
+            - h (n_j - \tfrac{1}{2})
+        \Big]
+    \end{align*}
+    $$
+
+</div><br>
+
+From now on we omit the subscript F of the fermion Hamiltonian.
+
 ## Hamiltonian in Momentum Space
 
 To see the energy levels more clearly, we shall go to the momentum space (reciprocal lattice)
@@ -41,9 +74,8 @@ We transform the Hamiltonian term by term:
             + h.c.
         )
         \\
-        &= -\frac{t}{N} \sum_{k,p} \bigg[
-            c_k^\dagger c_p e^{ipa} 
-            \overbrace{\sum_{j} e^{i(p-k)ja}}^{= N \delta_{kp}}
+        &= -t \sum_{k,p} \bigg[
+            c_k^\dagger c_p e^{ipa} \delta_{k-p}
             + h.c.
         \bigg]
         \\
@@ -65,9 +97,8 @@ We transform the Hamiltonian term by term:
             + h.c.
         )
         \\
-        &= -\frac{\Delta}{N} \sum_{k,p} \bigg[
-            c_k^\dagger c_p^\dagger e^{-ipa} 
-            \overbrace{\sum_{j} e^{i(p+k)ja}}^{= N \delta_{k,-p}}
+        &= -\Delta \sum_{k,p} \bigg[
+            c_k^\dagger c_p^\dagger e^{-ipa} \delta_{k+p}
             + h.c.
         \bigg]
         \\
@@ -91,6 +122,8 @@ We transform the Hamiltonian term by term:
         \\
         &= -\frac{h}{N} \sum_j \sum_{k,p}
         c_k^\dagger e^{-ikja} c_p e^{ipja}
+        \\
+        &= -h \sum_{k,p} c_k^\dagger c_p \delta_{k-p}
         = -h \sum_k c_k^\dagger c_k 
     \end{align*}
     $$

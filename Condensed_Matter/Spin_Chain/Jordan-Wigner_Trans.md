@@ -56,11 +56,13 @@ where $\sigma^a \, (a = x,y,z)$ are Pauli matrices. We then have the following m
 
 <div class="result">
 
-**A single spin and a single fermion:**
+**Mapping a single spin to a single fermion:**
 
 $$
-S^z = c^\dagger c - \frac{1}{2}, \quad
-S^+ = c^\dagger, \quad S^- = c
+\begin{gather*}
+    S^+ = c^\dagger, \quad S^- = c \\ \Rightarrow
+    S^z = S^+ S^- - 1/2 = c^\dagger c - 1/2
+\end{gather*}
 $$
 
 </div><br>
@@ -71,31 +73,31 @@ $$
 \begin{align*}
     [S^a, S^b] &= i \epsilon^{abc} S^c
     \\
-    \{S^a, S^b\} &= \frac{1}{2} \delta^{ab}
-\end{align*} \qquad (a = x,y,z)
+    \{S^a, S^b\} &= \delta^{ab} / 2
+\end{align*} \qquad (a,b = x,y,z)
 $$
 
 Then we can also show that the ladder operators satisfy
 
 $$
-\{S^-, S^+\} = 1 \qquad
-\{S^\pm, S^\pm\} = 0 \qquad
-[S^+, S^-] = 2S_z 
+\{S^-, S^+\} = 1, \quad
+\{S^\pm, S^\pm\} = 0, \quad
+[S^+, S^-] = 2S^z
 $$
 
 which is the same as the fermion operators:
 
 $$
-\begin{align*}
-    \{c, c^\dagger\} &= 1 \qquad
+\begin{gather*}
+    \{c, c^\dagger\} = 1, \quad
     \{c, c\} = \{c^\dagger, c^\dagger\} = 0
     \\
-    [c^\dagger, c] &= 2 c^\dagger c - \{c, c^\dagger\}
+    [c^\dagger, c] = 2 c^\dagger c - \{c, c^\dagger\}
     = 2 \left(n - \frac{1}{2} \right)
-\end{align*}
+\end{gather*}
 $$
 
-## String/Kink Operator
+## String (Kink) Operator
 
 Next, let us we try to generalize the above mapping to a 1D spin chain (with $N$ sites). Each site of the chain will correspond to an independent fermion. The naive mapping is
 
@@ -133,54 +135,89 @@ $$
 - It is useful to derive an alternative expression for the string $F_j$:
 
     $$
-    F_j \equiv \exp\bigg[
-        i\pi \sum_{l=1}^{j-1} n_l
-    \bigg]
-    = \prod_{l=1}^{j-1} (-1)^{n_l}
-    = \prod_{l=1}^{j-1} (1 - 2n_l)
+    \begin{align*}
+        F_j &\equiv \exp\bigg[
+            i\pi \sum_{l=1}^{j-1} n_l
+        \bigg]
+        = \prod_{l=1}^N \exp(i\pi n_l) \quad
+        (\text{All $n_l$ commute})
+        \\
+        &= \prod_{l=1}^{j-1} (-1)^{n_l}
+        = \prod_{l=1}^{j-1} (1 - 2n_l)
+    \end{align*}
     $$
 
     In the last step we have used the fact that $n_l$ can only be 0, 1 and therefore $(-1)^{n_l} = 1 - 2n_l$. 
+
+- Different string operators commute (since all $n_l$ commute):
+    
+    $$
+    [F_i, F_j] = 0
+    $$
 
 - (Anti-)commutation relations with fermion operators
 
     $$
     \begin{align*}
-        [F_j, c_l^{(\dagger)}] &= 0 \qquad j \le l \\
-        \{F_j, c_l^{(\dagger)}\} &= 0 \qquad j > l
+        [F_j, c_m^{(\dagger)}] &= 0 \qquad j \le m \\
+        \{F_j, c_m^{(\dagger)}\} &= 0 \qquad j > m
     \end{align*}
     $$
 
     ----
 
-    *Proof*: 
+    *Proof*: We first observe the following commutation relations between $e^{i\pi n_l}$ and $c_m^{(\dagger)}$:
+    
+    $$
+    \begin{array}{ll}
+        l \ne m: \quad & [n_l, c_m^{(\dagger)}] = 0 \Rightarrow
+        [e^{i\pi n_l}, c_m^{(\dagger)}] = 0
+        \\[0.7em]
+        l = m: \quad & 
+        \begin{align*}
+            \{e^{i\pi n_m}, c_m\}
+            &= e^{i\pi n_m} c_m + c_m e^{i\pi n_m} \\
+            &= e^{i\pi (1-1)} c_m + c_m e^{i\pi 1} = 0
+            \\
+            \{e^{i\pi n_m}, c_m^\dagger\}
+            &= e^{i\pi n_m} c_m^\dagger + c_m^\dagger e^{i\pi n_m} \\
+            &= e^{i\pi (0+1)} c_m + c_m e^{i\pi 0} = 0
+        \end{align*}
+    \end{array}
+    $$
+
+    - When $j \le m$, $e^{i\pi n_m}$ is not in $F_j$. Each term in $F_j$ commutes with $e^{i\pi n_m}$. Therefore
+        
+        $$ [F_j, c_m^{(\dagger)}] = 0 $$
+
+    - When $j > m$, $e^{i\pi n_m}$ is in $F_j$. Then
+
+        $$
+        \{F_j, c_m^{(\dagger)}\}
+        = e^{i\pi n_1} \cdots \cancel{e^{i\pi n_m}} 
+        \cdots e^{i\pi n_{j-1}} \{e^{i\pi n_m} c_m^{(\dagger)}\}
+        = 0 \quad \blacksquare
+        $$
 
     ----
 
 ## Jordan-Wigner Transformation
 
-With the string operator, the complete mapping from spin to fermion is
+### Mapping to Complex Fermion
+
+With the string operator, the complete mapping from spin to (complex) fermion is
 
 <div class="result">
 
 **The Jordan-Wigner transformation:**
 
 $$
-S_j^+ = c_j^\dagger F_j = F_j c_j^\dagger, \quad 
-S_j^- = c_j F_j = F_j c_j
-\quad (j = 1,...,N)
-$$
-
-</div><br>
-
-<div class="remark">
-
-*Remark*: The expression of $S^z_j$ in terms of fermion operators is then (using $F_j^2 = 1$)
-
-$$
-\begin{align*}
-    S^z_j &= S^+_j S^-_j - 1/2 = c_j^\dagger c_j - 1/2
-\end{align*}
+\begin{gather*}
+    S_j^+ = c_j^\dagger F_j = F_j c_j^\dagger, \quad 
+    S_j^- = c_j F_j = F_j c_j
+    \\[0.5em] \Rightarrow
+    S^z_j = S^+_j S^-_j - 1/2 = c_j^\dagger c_j - 1/2
+\end{gather*} \qquad (j = 1,...,N)
 $$
 
 </div><br>
@@ -189,9 +226,166 @@ $$
 <img src="images/spin-fermion.png" width="450px" alt="string operator">
 </center>
 
-Let us check that the introduction of the string operator indeed gives us the correct commutation relations of the fermion operators.
+<div class="remark">
 
-## Application to Heisenberg-like Spin Chain
+*Remark*: In terms of spin operators, we have
+    
+- Expression of $F_j$
+    
+    $$
+    F_j = \prod_{l=1}^{j-1} (1 - 2n_l)
+    = \prod_{l=1}^{j-1} (-2S^z_l)
+    = \prod_{l=1}^{j-1} (-Z_l)
+    $$
+
+- Commutation relations with spin operators
+
+    $$
+    \begin{align*}
+        [F_j, S_m^{\pm}] &= 0 \qquad j \le m \\
+        \{F_j, S_m^{\pm}\} &= 0 \qquad j > m
+    \end{align*}
+    $$
+
+</div>
+
+----
+
+*Proof of the commutation relations*:
+
+- When $j \le m$, $S^z_m$ is not in the string $F_j$, which then only includes operators on other sites than $m$. Thus $[F_j, S^\pm_m] = 0$ 
+
+- When $j > m$, $S^z_m$ is in $F_j$. Then
+
+    $$
+    \{F_j, S_m^\pm\} = (-2)^{j-1} 
+    S^z_1 \cdots \cancel{S^z_m} \cdots S^z_{j-1} 
+    \underbrace{\{S^z_m, S_m^\pm\}}_{=0} = 0
+    \quad \blacksquare
+    $$
+
+----
+
+We are now prepared to check that the introduction of the string operator indeed gives us the correct commutation relations of fermions:
+
+$$
+\{c_i, c_j\} = \{c_i^\dagger, c_j^\dagger\} = 0, \quad
+\{c_i, c_j^\dagger\} = \delta_{ij}
+$$
+
+----
+
+*Proof*: Without loss of generality, we can assume $i < j$. Then
+
+$$
+\begin{align*}
+    \{c_i, c_j^{(\dagger)}\} &= \{S^-_i F_i, S^\pm_j F_j\}
+    = S^-_i (F_i S^\pm_j) F_j + S^\pm_j (F_j S^-_i) F_i \\
+    &= S^-_i (S^\pm_j F_i) F_j + S^\pm_j (-S^-_i F_j) F_i \\
+    &= S^-_i S^\pm_j F_i F_j - S^-_i S^\pm_j F_i F_j = 0
+    \\~\\
+    \{c_i, c_i^\dagger\} &= \{S^-_i F_i, S^+_i F_i\}
+    = S^-_i F_i S^+_i F_i + S^+_i F_i S^-_i F_i \\
+    &= \{S^-_i, S^+_i\} (F_i)^2 = 1 
+    &\qquad \blacksquare
+\end{align*}
+$$
+
+----
+
+### Mapping to Majorana Fermion
+
+The complex fermion $c_j$ can be rearranged into **Majorana fermions** $a_j, b_j$, whose corresponding operators are *Hermitian*:
+
+$$
+\begin{bmatrix}
+    c_j \\ c_j^\dagger
+\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+    a_j + i b_j \\ a_i - i b_j
+\end{bmatrix}
+\Rightarrow 
+\begin{bmatrix}
+    a_j \\ b_j
+\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+    c_j + c_j^\dagger \\
+    -i (c_j - c_j^\dagger)
+\end{bmatrix}    
+$$
+
+$a, b$ operators have the following anti-commutation relations: 
+
+$$
+\{a_i, a_j\} = \{b_i, b_j\} = \delta_{ij}, \quad
+\{a_i, b_j\} = 0
+$$
+
+----
+
+*Proof*:
+
+$$
+\begin{align*}
+    \{a_i, a_j\} &= \frac{1}{2} \{c_i+c_i^\dagger, c_j+c_j^\dagger\}
+    \\ &= \frac{1}{2} \Big[
+        \{c_i, c_j\} + \{c_i, c_j^\dagger\} 
+        + \{c_i^\dagger, c_j\} + \{c_i^\dagger, c_j^\dagger\}
+    \Big]
+    \\ &= \frac{1}{2} (0 + \delta_{ij} + \delta_{ij} + 0)
+    = \delta_{ij}
+    \\~\\
+    \{b_i, b_j\} &= \frac{-1}{2} \{c_i-c_i^\dagger, c_j-c_j^\dagger\}
+    \\ &= \frac{-1}{2} \Big[
+        \{c_i, c_j\} - \{c_i, c_j^\dagger\} 
+        - \{c_i^\dagger, c_j\} + \{c_i^\dagger, c_j^\dagger\}
+    \Big]
+    \\ &= \frac{-1}{2} (0 - \delta_{ij} - \delta_{ij} + 0)
+    = \delta_{ij}
+    \\~\\
+    \{a_i, b_j\} &\propto \{c_i + c_i^\dagger, c_j - c_j^\dagger\}
+    \\ &= \{c_i, c_j\} - \{c_i, c_j^\dagger\}
+    + \{c_i^\dagger, c_j\} - \{c_i^\dagger, c_j^\dagger\} 
+    \\ &= 0 - \delta_{ij} + \delta_{ij} - 0 = 0
+    \qquad \blacksquare
+\end{align*}
+$$
+
+----
+
+Next we determine the mapping from spin to Majorana fermions. 
+
+$$
+\begin{align*}
+    c_j &= S_j^- F_j = (S^x_j - iS^y_j) F_j
+    \overset{!}{=} \frac{1}{\sqrt{2}}(a_j + ib_j)
+    \\
+    c_j^\dagger &= S_j^+ F_j = (S^x_j + iS^y_j) F_j
+    \overset{!}{=} \frac{1}{\sqrt{2}}(a_j - ib_j)
+\end{align*}
+$$
+
+Comparing with the definition of $a_j, b_j$, we obtain (remember that $F_j$ is Hermitian)
+
+<div class="result">
+
+**Jordan-Wigner transformation to Majorana fermions:**
+
+$$
+a_j = \sqrt{2} S^x_j F_j, \quad
+b_j = -\sqrt{2} S^y_j F_j \qquad
+\bigg[ F_j = \prod_{l=1}^{j-1} (-Z_l) \bigg]
+$$
+
+</div><br>
+
+Let us verify the anti-commutation relations of $a, b$ again using the spin representation. 
+
+----
+
+*Proof*: 
+
+----
+
+## Application: Heisenberg-like Spin Chain
 
 Now we use Jordan-Wigner transformation to map the Hamiltonian $H^{A/P}$ of **Heisenberg-like models** to fermion Hamiltonian $H_F$. 
 
@@ -226,7 +420,7 @@ Now we use Jordan-Wigner transformation to map the Hamiltonian $H^{A/P}$ of **He
 *Remark*: Important special cases of Heisenberg-like models
 
 - **(Isotropic) Heisenberg model**: $J_x = J_y = J_z, \ h = 0$
-- **Transverse field Ising model**: $J_y = J_x = 0$
+- **Transverse field Ising model**: $J_y = J_z = 0$; critical value $-2J_x = h$
 - **XY model**: $J_z = 0$
 - **XXZ model**: $J_x = J_y, \ h = 0$
 
@@ -345,14 +539,14 @@ Since the spin chain contains only nearest neighbor interaction, the only bounda
 $$
 \begin{align*}
     H^P_N &= + t(S_N^+ S_1^- + h.c.)
-    + \Delta (S_N^+ S_1^+ + h.c.) - h S_N^z
+    + \Delta (S_N^+ S_1^+ + h.c.) + (\text{$S^z$-terms})
     \\
     H^A_N &= - t(S_N^+ S_1^- + h.c.)
-    - \Delta (S_N^+ S_1^+ + h.c.) - h S_N^z
+    - \Delta (S_N^+ S_1^+ + h.c.) + (\text{$S^z$-terms})
 \end{align*}
 $$
 
-The $h$-term can be transformed ordinarily. We focus on the term appearing in $t, \Delta$-terms:
+The $S^z$-term can be transformed ordinarily. We focus on the first two terms:
 
 $$
 S_N^+ S_1^{(\pm)} = c_N^\dagger F_N c_1^{(\dagger)} \cancel{F_1}
@@ -395,6 +589,10 @@ $$
 
 ($c_{N+1}$ will be defined shortly) so that the fermion Hamiltonian for *both* PBC and APBC are the *same*:
 
+<div class="result">
+
+**Hamiltonian of the fermion theory:**
+
 $$
 \begin{align*}
     H_F &= \sum_{j=1}^N \Big[
@@ -406,6 +604,8 @@ $$
     \Big]
 \end{align*}
 $$
+
+</div><br>
 
 Then we need to define $c_{N+1}$ (i.e. choose the boundary condition for the fermion theory) as:
 
@@ -431,11 +631,20 @@ $$
 
 </div><br>
 
+<div class="remark">
+
+*Remark*: The boundary conditions for the fermion theory are usually called:
+
+- PBC: **Ramond (R) sector**
+- APBC: **Neveu-Schwarz (NS) sector**
+
+</div><br>
+
 This leads to:
 
 <div class="result">
 
-**Relation between the spin Hamiltonian and the fermion Hamiltonian:**
+**Relation between spin theory $H^{A/P}$ and fermion theory $H_F$:**
 
 $$
 \begin{align*}

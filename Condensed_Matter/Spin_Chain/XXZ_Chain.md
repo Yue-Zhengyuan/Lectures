@@ -18,6 +18,37 @@
 
 # XXZ Spin Chain
 
+<div class="result">
+
+**XXZ spin chain:**
+
+- Non-boundary local spin Hamiltonian
+    
+    $$
+    \begin{align*}
+        H_j &= J_\perp (S^x_j S^x_{j+1} + S^y_j S^y_{j+1})
+        + J_z S^z_j S^z_{j+1} - h S^z_j \\
+        &= \frac{J_\perp}{2} (S_j^+ S_{j+1}^- + h.c.)
+        + J_z S^z_j S^z_{j+1} - h S^z_j
+    \end{align*}
+    $$
+
+- Fermion Hamiltonian
+    
+    $$
+    \begin{align*}
+        H_F &= \sum_{j=1}^N \bigg[
+            \frac{J_\perp}{2}(c_j^\dagger c_{j+1} + h.c.)
+            \\ &\qquad \quad
+            + J_z \left(n_j - \frac{1}{2}\right)
+            \left(n_{j+1} - \frac{1}{2}\right)
+            - h \left(n_j - \frac{1}{2}\right)
+        \bigg]
+    \end{align*}
+    $$
+
+</div><br>
+
 ## The Luttinger Liquid Phase
 
 <center>

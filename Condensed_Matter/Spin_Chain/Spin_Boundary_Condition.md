@@ -31,7 +31,7 @@
 
 </div><br>
 
-**Periodic boundary condition (PBC)** can intuitively be applied to any spin chain. However, the **anti-periodic boundary condition (APBC)** can only be defined on spin chains with *on-site* $\mathbb{Z}_2$ symmetry (symmetry with respect to the flip of all spins).
+**Periodic boundary condition (PBC)** can intuitively be applied to any spin chain. However, the **anti-periodic boundary condition (APBC)** can only be defined on spin chains with *on-site $\mathbb{Z}_2$ symmetry* (symmetry with respect to the flip of all spins).
 
 In the following we only consider spin chains with local interactions. This means that the Hamiltonian of the chain is a sum of local terms: the PBC version is simply ($N$ is the number of sites)
 
